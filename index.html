@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindful Moments</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Section -->
+    <header class="w-full max-w-2xl mb-8">
+        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">Mindful Moments</h1>
+            <p class="text-lg text-gray-600">A space for reflection and positive thoughts.</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area for Posts -->
+    <main id="posts-container" class="w-full max-w-2xl grid gap-6">
+        <!-- Posts will be dynamically loaded here by script.js -->
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="w-full max-w-2xl mt-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Mindful Moments. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript files -->
+    <!-- posts.js contains the data -->
+    <script type="module" src="posts.js"></script>
+    <!-- script.js contains the rendering logic -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
