@@ -81,5 +81,9 @@ export const posts = [
 {
 title: "Set Healthy Boundaries",
 content: "Learning to say 'no' can be empowering. Establishing clear boundaries protects your energy and time, allowing you to focus on what truly matters for your well-being."
+},
+{
+title: "Set Healthy Boundaries",
+content: "Learning to say 'no' can be empowering. Establishing clear boundaries protects your energy and time, allowing you to focus on what truly matters for your well-being."
 }
 ];
