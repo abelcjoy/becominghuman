@@ -3,16 +3,16 @@
 // Each object in the array represents a single post with a title and content.
 export const posts = [
     {
-        title: "Embrace the Present",
-        content: "In the rush of daily life, it's easy to forget the beauty of the present moment. Take a deep breath, look around, and truly experience what is happening right now. This moment is all you truly have."
+        title: "00001",
+        content: "Do you really want it or do you want others to see that you have it"
     },
     {
-        title: "The Power of Gratitude",
-        content: "Practicing gratitude can transform your perspective. Even on challenging days, finding one small thing to be thankful for can shift your focus towards positivity and abundance."
+        title: "00002",
+        content: "Crazy how people idolize celebritues who dont even know they exist, but laugh at their own friends for chasing their dreams"
     },
     {
-        title: "Small Steps, Big Changes",
-        content: "Don't underestimate the power of small, consistent efforts. Every little step forward, no matter how tiny, contributes to significant progress over time. Be patient and kind to yourself."
+        title: "00003",
+        content: "We live in a societty where sinners judge sinners for sinning differently"
     },
     {
         title: "Your Inner Strength",
