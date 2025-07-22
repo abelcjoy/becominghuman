@@ -36,7 +36,7 @@ export const posts = [
     },
     {
         title: "00009",
-        content: "Prioritize quality sleep. It's essential for physical and mental restoration. Create a relaxing bedtime routine to signal to your body that it's time to wind down."
+        content: "Give yourself permission to be mediocre. Just do it relentlessly. It’s paradoxically freeing and shockingly effective."
     },
     {
         title: "00010",
