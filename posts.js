@@ -8,19 +8,19 @@ export const posts = [
     },
     {
         title: "00002",
-        content: "Crazy how people idolize celebritues who dont even know they exist, but laugh at their own friends for chasing their dreams"
+        content: "Crazy how people idolize celebrities who dont even know they exist, but laugh at their own friends for chasing their dreams"
     },
     {
         title: "00003",
-        content: "We live in a societty where sinners judge sinners for sinning differently"
+        content: "We live in a society where sinners judge sinners for sinning differently"
     },
     {
-        title: "Your Inner Strength",
-        content: "Remember that you possess incredible resilience and strength within you. You've overcome challenges before, and you have the capacity to navigate whatever comes your way. Trust yourself."
+        title: "00004",
+        content: "Your Brain convinces you that researching is the same as doing. That planning is the same as starting. That preparing is the same as moving forward."
     },
     {
-        title: "Connect with Nature",
-        content: "Spending time in nature can be incredibly restorative for the mind and soul. Whether it's a walk in the park or simply observing a tree, let the natural world soothe and inspire you."
+        title: "00005",
+        content: "Every time you choose to research more instead of start, you're training yourself to delay."
     },
     {
         title: "The Gift of Self-Compassion",
