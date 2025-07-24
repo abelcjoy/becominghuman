@@ -1,0 +1,8 @@
+[build]
+  publish = "." # The directory to publish (your project root)
+  command = "echo 'No specific build command needed for simple static site yet. If using SSG, this will change.'"
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200
