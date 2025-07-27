@@ -7,12 +7,7 @@
 // IMPORTANT: Add NEW posts at the END of this array. They will appear at the TOP of your website.
 
 export const postsRaw = [
-`# Embrace the Present
-
-In the rush of daily life, it's easy to forget the beauty of the present moment. Take a deep breath, look around, and truly experience what is happening right now. This moment is all you truly have.
-
-**Key Insight:** Presence is power.
-`,
+`In the rush of daily life, it's easy to forget the beauty of the present moment. Take a deep breath, look around, and truly experience what is happening right now. This moment is all you truly have.`,
 `# The Power of Gratitude
 
 Practicing gratitude can transform your perspective. Even on challenging days, finding one small thing to be thankful for can shift your focus towards positivity and abundance.
