@@ -48,7 +48,7 @@ export const postsRaw = [
         title: "Your Personal Legend",
         content: "\"To realize one's destiny is a person's only obligation.\""
     }
-    // Add more Paulo Coelho quotes here, following the same format:
+    // Add more Clarity for Humans (CFH) quotes here, following the same format:
     // {
     //     title: "Your New Quote Title",
     //     content: "\"The actual quote text goes here.\""
