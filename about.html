@@ -5,51 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Mindful Moments</title>
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800">
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
 
-    <!-- Header Section (similar to index.html for consistency) -->
-    <header class="w-full max-w-2xl mb-8">
-        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">About Mindful Moments</h1>
-            <p class="text-lg text-gray-600">Our Vision: Becoming Human</p>
+    <header class="bg-gray-800 p-4 shadow-md">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold text-teal-400 mb-2 sm:mb-0">Mindful Moments</h1>
+            <nav class="flex space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Home</a>
+                <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Contact</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Privacy</a>
+            </nav>
         </div>
     </header>
 
-    <!-- About Us Content -->
-    <main class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg border border-gray-200 mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            Mindful Moments, under the umbrella of 'becominghuman', is dedicated to fostering mental well-being through the simple power of words. In a world filled with noise and distractions, we believe in the profound impact of a quiet moment of reflection. Our mission is to provide a serene, text-only space where individuals can find clarity, positivity, and a renewed sense of self, free from external pressures like likes, comments, or shares.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Our Philosophy</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            We firmly believe that **mindset is the core**. It is the fundamental determinant of success, personal growth, and indeed, every action we take. By nurturing a positive and resilient mindset, we empower individuals to navigate life's complexities with greater ease and purpose. This platform is built on the conviction that even small, consistent doses of positive thought can lead to significant transformations in one's outlook and actions.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">What You'll Find Here</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            Here, you will discover a curated collection of original text posts designed to inspire reflection, encourage self-compassion, and promote a mindful approach to daily living. Each post is crafted to offer a moment of peace, a fresh perspective, or a gentle reminder of your inner strength. There are no distractions, just words intended to uplift and support your journey towards a more mindful and fulfilling life.
-        </p>
-
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Join Us</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            We invite you to explore, reflect, and find your own moments of clarity. Thank you for being a part of the 'becominghuman' vision.
-        </p>
+    <main class="container mx-auto p-6 flex-grow">
+        <section class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-teal-300 mb-6 text-center">About Mindful Moments</h2>
+            <div class="prose prose-invert max-w-none">
+                <p>Welcome to Mindful Moments, a space dedicated to fostering clarity, personal growth, and inner peace. In our fast-paced world, it's easy to lose touch with ourselves and the present moment. This platform is designed to offer simple, profound insights that help you reconnect.</p>
+                <p>Our mission is to provide concise, actionable wisdom that can be integrated into your daily life, encouraging mindfulness, self-awareness, and a deeper understanding of your own potential.</p>
+                <p>We believe that true clarity comes from within, and by taking a few moments each day to reflect and absorb positive perspectives, you can cultivate a more balanced and fulfilling life.</p>
+                <p>Thank you for being here. We hope these moments bring you clarity and peace.</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section (similar to index.html for consistency) -->
-    <footer class="w-full max-w-2xl mt-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 Mindful Moments. All rights reserved.</p>
-        <p class="mt-2">
-            <a href="index.html" class="text-blue-600 hover:underline mr-4">Home</a>
-            <a href="privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a>
-        </p>
+    <footer class="bg-gray-800 p-4 text-center text-gray-400 text-sm mt-auto">
+        <div class="container mx-auto">
+            &copy; 2025 Mindful Moments. All rights reserved.
+        </div>
     </footer>
 
 </body>

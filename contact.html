@@ -5,45 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Mindful Moments</title>
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- Google Fonts - Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing styles.css -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="min-h-screen flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-100 text-gray-800">
+<body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
 
-    <!-- Header Section (similar to index.html for consistency) -->
-    <header class="w-full max-w-2xl mb-8">
-        <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-            <h1 class="text-4xl font-extrabold text-gray-800 mb-2">Contact Mindful Moments</h1>
-            <p class="text-lg text-gray-600">We'd love to hear from you.</p>
+    <header class="bg-gray-800 p-4 shadow-md">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-2xl font-bold text-teal-400 mb-2 sm:mb-0">Mindful Moments</h1>
+            <nav class="flex space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Home</a>
+                <a href="about.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">About</a>
+                <a href="contact.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Contact</a>
+                <a href="privacy.html" class="text-gray-300 hover:text-white px-3 py-2 rounded-md transition duration-200">Privacy</a>
+            </nav>
         </div>
     </header>
 
-    <!-- Contact Us Content -->
-    <main class="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg border border-gray-200 mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Get in Touch</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            If you have any questions, feedback, or just want to connect regarding Mindful Moments or the 'becominghuman' vision, please don't hesitate to reach out. We value your thoughts and strive to create a supportive space for everyone.
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            You can contact us directly via email:
-            <br>
-            <a href="mailto:yourname@example.com" class="text-blue-600 hover:underline font-semibold">yourname@example.com</a>
-        </p>
-        <p class="text-gray-700 leading-relaxed mb-4">
-            We aim to respond to all inquiries as quickly as possible.
-        </p>
+    <main class="container mx-auto p-6 flex-grow">
+        <section class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold text-teal-300 mb-6 text-center">Contact Us</h2>
+            <div class="prose prose-invert max-w-none">
+                <p>We'd love to hear from you! If you have any questions, feedback, or just want to share your mindful moments, please feel free to reach out.</p>
+                <p>You can contact us via email at: <a href="mailto:contact@clarityforhumans.com" class="text-blue-400 hover:underline">contact@clarityforhumans.com</a></p>
+                <p>We aim to respond to all inquiries within 2-3 business days.</p>
+                <p>Thank you for connecting with Mindful Moments!</p>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section (similar to index.html for consistency) -->
-    <footer class="w-full max-w-2xl mt-8 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 Mindful Moments. All rights reserved.</p>
-        <p class="mt-2">
-            <a href="index.html" class="text-blue-600 hover:underline mr-4">Home</a>
-            <a href="about.html" class="text-blue-600 hover:underline mr-4">About Us</a>
-            <a href="privacy.html" class="text-blue-600 hover:underline">Privacy Policy</a>
-        </p>
+    <footer class="bg-gray-800 p-4 text-center text-gray-400 text-sm mt-auto">
+        <div class="container mx-auto">
+            &copy; 2025 Mindful Moments. All rights reserved.
+        </div>
     </footer>
 
 </body>
