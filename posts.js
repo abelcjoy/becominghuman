@@ -1,4 +1,4 @@
-// This file contains all your Mindful Moments posts.
+// This file contains all your Clarity for Humans (CFH) posts.
 // To add a new post:
 // 1. Add a comma (,) after the previous post's closing backtick.
 // 2. Add a new block of text enclosed in backticks (`` ` ``).
@@ -7,54 +7,52 @@
 // IMPORTANT: Add NEW posts at the END of this array. They will appear at the TOP of your website.
 
 export const postsRaw = [
-`In the rush of daily life, it's easy to forget the beauty of the present moment. Take a deep breath, look around, and truly experience what is happening right now. This moment is all you truly have.`,
-`# The Power of Gratitude
+`# The Alchemist's Wisdom
 
-Practicing gratitude can transform your perspective. Even on challenging days, finding one small thing to be thankful for can shift your focus towards positivity and abundance.
-
-* Start a gratitude journal.
-* Thank someone verbally.
-* Notice small joys.
+"When you want something, all the universe conspires in helping you to achieve it."
 `,
-`# Navigating Inner Silence
+`# On Fear
 
-Sometimes the most profound clarity comes from sitting in silence. It's not about emptying your mind, but observing what arises without judgment. Allow thoughts to pass like clouds.
-
-This practice can feel challenging at first, but with persistence, it reveals a deep well of inner peace.
+"Tell your heart that the fear of suffering is worse than the suffering itself. And that no heart has ever suffered when it goes in search of its dreams, because every second of the search is a second of encounter with God and with eternity."
 `,
-`# Small Steps, Big Changes
+`# The Importance of Choice
 
-Don't underestimate the power of small, consistent efforts. Every little step forward, no matter how tiny, contributes to significant progress over time. Be patient and kind to yourself.
+"Every blessing ignored becomes a curse."
 `,
-`# Your Inner Strength
+`# Embracing Change
 
-Remember that you possess incredible resilience and strength within you. You've overcome challenges before, and you have the capacity to navigate whatever comes your way. Trust yourself.
+"If you're brave enough to say goodbye, life will reward you with a new hello."
 `,
-`# Connect with Nature
+`# On Love
 
-Spending time in nature can be incredibly restorative for the mind and soul. Whether it's a walk in the park or simply observing a tree, let the natural world soothe and inspire you.
+"One is loved because one is loved. No reason is needed for loving."
 `,
-`# The Gift of Self-Compassion
+`# The Path Forward
 
-Treat yourself with the same kindness and understanding you would offer a dear friend. Self-compassion is not self-indulgence; it's a vital component of mental well-being.
+"It is the possibility of having a dream come true that makes life interesting."
 `,
-`# Mindful Eating
+`# Finding Your Own Truth
 
-Pay attention to your food—its colors, textures, aromas, and flavors. Eating mindfully can enhance your appreciation for meals and help you feel more connected to your body's needs.
+"Don't listen to the malicious things people say about you. Think about the good things, and try to improve yourself."
 `,
-`# Digital Detox
+`# Living Fully
 
-Consider taking short breaks from screens. Disconnecting from digital noise can help clear your mind, reduce stress, and allow you to engage more fully with your immediate surroundings.
+"The simple things are also the most extraordinary things, and only the wise can see them."
 `,
-`# The Importance of Sleep
+`# On Failure
 
-Prioritize quality sleep. It's essential for physical and mental restoration. Create a relaxing bedtime routine to signal to your body that it's time to wind down.
+"There is only one thing that makes a dream impossible to achieve: the fear of failure."
 `,
-`# Set Healthy Boundaries
+`# The Power of the Present
 
-Learning to say 'no' can be empowering. Establishing clear boundaries protects your energy and time, allowing you to focus on what truly matters for your well-being.
+"Joy and sorrow are but two aspects of the same reality. One cannot exist without the other."
+`,
+`# Your Personal Legend
+
+"To realize one's destiny is a person's only obligation."
 `
-// Add your new posts here, following the same format:
-// `# Your New Post Title
-// Your new post content goes here. You can use **bold** or *italics* with Markdown.`
+// Add more Paulo Coelho quotes here, following the same format:
+// `# [Quote Title/Theme]
+// "[The actual quote text goes here.]"
+// `
 ];
