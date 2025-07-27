@@ -1,3 +1,0 @@
-[build]
-  publish = "." # This tells Netlify to publish files from the root directory
-  command = "echo 'Building static site...'" # A simple message
