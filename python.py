@@ -1,15 +1,26 @@
-# add_post.py
-# This script automates adding new posts to the top of your index.html file.
-# It requires no JavaScript or Netlify configuration changes.
+# add_post_to_page.py
+# This script automates adding new posts to the top of a SPECIFIED HTML file.
+# It does NOT automate page creation or navigation link updates for pagination.
+# You will manually manage creating new HTML pages (e.g., page2.html, page3.html)
+# and updating the "Next/Previous Page" links between them.
 
 import os
 
-def add_new_post():
+def add_new_post_to_page():
     """
-    Prompts the user for a new post's title and content,
-    then inserts it as an HTML article at the beginning of the posts-list section in index.html.
+    Prompts the user for the target HTML file, new post's title and content,
+    then inserts it as an HTML article at the beginning of the posts-list section.
     """
-    print("\n--- Add New Clarity for Humans (CFH) Post ---")
+    print("\n--- Add New Clarity for Humans (CFH) Post to Specific Page ---")
+
+    # Get target HTML file from user
+    target_html_file = input("Enter the HTML file name to add the post to (e.g., index.html, page2.html): ").strip()
+    if not target_html_file.lower().endswith('.html'):
+        target_html_file += '.html' # Ensure .html extension
+
+    if not os.path.exists(target_html_file):
+        print(f"Error: '{target_html_file}' not found. Please ensure the file exists in the current directory.")
+        return
 
     # Get title from user
     post_title = input("Enter the title for your new post: ").strip()
@@ -42,32 +53,25 @@ def add_new_post():
             </article>
 """
     # Ensure consistent indentation and newlines for clean HTML
-    post_html = '\n'.join([line.strip() for line in post_html.split('\n') if line.strip()]) + '\n'
-    post_html = '            ' + post_html.replace('\n', '\n            ').strip() # Re-indent for HTML structure
+    # This part is crucial for maintaining readable HTML structure
+    post_html_lines = [line.strip() for line in post_html.split('\n') if line.strip()]
+    post_html = '\n            ' + '\n            '.join(post_html_lines) + '\n'
 
-    # Define the path to index.html
-    index_html_path = 'index.html'
-
-    # Check if index.html exists
-    if not os.path.exists(index_html_path):
-        print(f"Error: '{index_html_path}' not found in the current directory. Make sure the script is in the same folder as index.html.")
-        return
 
     try:
-        # Read the existing index.html content
-        with open(index_html_path, 'r', encoding='utf-8') as f:
+        # Read the existing HTML content
+        with open(target_html_file, 'r', encoding='utf-8') as f:
             html_content = f.read()
 
         # Find the insertion point: right after <section id="posts-list">
-        # We need to be careful with indentation, so we look for the exact tag
         insertion_marker = '<section id="posts-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">'
         
         # Find the index of the insertion marker
         insert_index = html_content.find(insertion_marker)
 
         if insert_index == -1:
-            print(f"Error: Could not find the insertion marker '{insertion_marker}' in '{index_html_path}'.")
-            print("Please ensure your index.html has the exact <section id=\"posts-list\"...> tag.")
+            print(f"Error: Could not find the insertion marker '{insertion_marker}' in '{target_html_file}'.")
+            print("Please ensure your HTML file has the exact <section id=\"posts-list\"...> tag.")
             return
 
         # Calculate the position right after the closing '>' of the marker
@@ -80,15 +84,20 @@ def add_new_post():
             html_content[insert_position:]
         )
 
-        # Write the updated content back to index.html
-        with open(index_html_path, 'w', encoding='utf-8') as f:
+        # Write the updated content back to the HTML file
+        with open(target_html_file, 'w', encoding='utf-8') as f:
             f.write(updated_html_content)
 
-        print(f"\nSuccessfully added '{post_title}' to '{index_html_path}'.")
+        print(f"\nSuccessfully added '{post_title}' to '{target_html_file}'.")
         print("Remember to commit and push your changes to GitHub for your website to update!")
+        print("\n--- MANUAL PAGINATION STEP REQUIRED ---")
+        print("If this page is now 'full', you will need to:")
+        print("1. Manually create a new HTML file (e.g., 'page2.html') by copying content from this file.")
+        print("2. Manually remove the oldest posts from this file.")
+        print("3. Manually add 'Next Page' and 'Previous Page' navigation links to all affected HTML files.")
 
     except Exception as e:
         print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
-    add_new_post()
+    add_new_post_to_page()
