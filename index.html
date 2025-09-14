@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website - Home</title>
+    <title>My Website</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .truncate-text {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5; /* Show up to 5 lines */
+            -webkit-box-orient: vertical;
+        }
+    </style>
 </head>
 <body class="bg-gray-900 text-gray-100 flex flex-col min-h-screen">
 
@@ -28,45 +38,46 @@
 
     <main class="container mx-auto p-6 flex-grow">
         <section id="posts-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
                 <h3 class="text-xl font-bold text-teal-300 mb-2">Reward</h3>
-                <div class="prose prose-invert max-w-none">
-                    <p>When someone says “help others, and you’ll be rewarded,” it twists the action:The center shifts from helping to getting.The purity of the act is diluted, because it’s no longer about the person in need, but about the outcome for the helper.On the other hand, when someone says “help, but there’s no reward,” the ego resists: “Then why should I bother?” Because part of us still secretly calculates.So reward is strange.If it’s present, it can corrupt the action.If it’s absent, we can feel robbed of meaning.But maybe the deeper truth is that the action itself is the center point.To act in alignment with truth, love, or compassion is its own fulfillment.The “reward” isn’t an external prize ... it’s the integrity, the clarity, the wholeness of the act itself.In that sense:Reward is not a thing → because if you chase it, you’ve missed the point.Reward is a thing → because when the act is pure, the “reward” is built in. It’s inseparable from the action, like fragrance from a flower.It’s not cause → effect. It’s unity. The action is both seed and fruit.That’s why, across scriptures, you see this tension: promises of reward (to encourage the beginner), and teachings to abandon reward (to awaken the mature).</p>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">When someone says “Help others, and you'll be rewarded” it twists the action. The center shifts from helping to getting. The purity of the act is diluted, because it’s no longer about the person in need, but about the outcome for the helper. On the other hand, when someone says “Help, but there's no reward,” the ego resists. Then why should I bother? Because part of us still secretly calculates. So reward is strange. If it's present, it can corrupt the action. If it's absent, we can feel robbed of meaning. But maybe the deeper truth is that the action itself is the center point. To act in alignment with truth, love, or compassion is its own fulfillment. The "reward" isn't an external prize — it's the integrity, the clarity, the wholeness of the act itself. In that sense: Reward is not a thing → because if you chase it, you've missed the point. Reward is a thing → because when the act is pure, the "reward" is built in. It's inseparable from the action, like fragrance from a flower. It's not cause → effect. It's unity. The action is both seed and fruit. That's why, across scriptures, you see this tension: promises of reward (to encourage the beginner), and teachings to abandon reward (to awaken the mature).</p>
                 </div>
             </article>
 
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold text-teal-300 mb-2">Determination</h3>
-            <div class="prose prose-invert max-w-none">
-            <p>be determined in thing that really impacts your life, not on the ones that boosts your ego.</p>
-            </div>
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+                <h3 class="text-xl font-bold text-teal-300 mb-2">Determination</h3>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">be determined in thing that really impacts your life, not on the ones that boosts your ego.</p>
+                </div>
+            </article>
+            
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+                <h3 class="text-xl font-bold text-teal-300 mb-2">Peace</h3>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">peace is not a big deal, you can get that however you want, but what if I say that peace is also an illusion of leaving the search for your purpose.</p>
+                </div>
             </article>
 
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold text-teal-300 mb-2">Peace</h3>
-            <div class="prose prose-invert max-w-none">
-            <p>peace is not a big deal, you can get that however you want, but what if i say that peace is also an illusion of leaving the search for your purpose.</p>
-            </div>
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+                <h3 class="text-xl font-bold text-teal-300 mb-2">Luck</h3>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">luck means using your opportunities well, but sadly those particular opportunities wont knock your door, you have to either create it or find it.</p>
+                </div>
             </article>
 
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold text-teal-300 mb-2">Luck</h3>
-            <div class="prose prose-invert max-w-none">
-            <p>luck means using your opportunities well. but sadly those particular opportunities wont knock your door, you have to either create it or find it.</p>
-            </div>
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+                <h3 class="text-xl font-bold text-teal-300 mb-2">destiny</h3>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">your destiny is what you do today</p>
+                </div>
             </article>
-
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold text-teal-300 mb-2">destiny</h3>
-            <div class="prose prose-invert max-w-none">
-            <p>your destiny is what you do today</p>
-            </div>
-            </article>
-            <article class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 class="text-xl font-bold text-teal-300 mb-2">ego</h3>
-            <div class="prose prose-invert max-w-none">
-            <p>the more weight you carry, the more pain you will go through</p>
-            </div>
+            
+            <article class="post bg-gray-800 p-6 rounded-lg shadow-lg border-2 border-transparent hover:border-teal-400 transition-all duration-300">
+                <h3 class="text-xl font-bold text-teal-300 mb-2">ego</h3>
+                <div class="post-content prose prose-invert max-w-none">
+                    <p class="post-text">the more weight you carry, the more pain you will go through</p>
+                </div>
             </article>
         </section>
         <section id="links-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -79,6 +90,36 @@
             &copy; 2025 My Website. All rights reserved.
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const posts = document.querySelectorAll('.post-text');
+            const characterLimit = 300; // Change this number to show more or less text
 
+            posts.forEach(post => {
+                const fullText = post.textContent;
+                if (fullText.length > characterLimit) {
+                    const truncatedText = fullText.substring(0, characterLimit) + '...';
+                    post.textContent = truncatedText;
+                    
+                    const readMoreBtn = document.createElement('button');
+                    readMoreBtn.textContent = 'Read more';
+                    readMoreBtn.className = 'mt-4 text-teal-400 hover:text-teal-300 font-semibold transition-colors duration-200';
+                    
+                    post.parentNode.appendChild(readMoreBtn);
+                    
+                    readMoreBtn.addEventListener('click', () => {
+                        if (readMoreBtn.textContent === 'Read more') {
+                            post.textContent = fullText;
+                            readMoreBtn.textContent = 'Show less';
+                        } else {
+                            post.textContent = truncatedText;
+                            readMoreBtn.textContent = 'Read more';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
