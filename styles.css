@@ -3,8 +3,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-/* Custom styles for Markdown content rendered by marked.js */
-/* These styles enhance the 'prose' class used in the HTML */
+/* Custom styles for Markdown content rendered by prose classes */
 .prose {
     color: #E5E7EB; /* Light gray for text */
 }
@@ -29,16 +28,16 @@ body {
 .prose ul, .prose ol {
     margin-left: 1.5em;
     margin-bottom: 1em;
-    list-style-position: outside; /* Ensure bullets/numbers are outside content flow */
+    list-style-position: outside;
 }
 
 .prose ul li {
-    list-style-type: disc; /* Default bullet for unordered lists */
+    list-style-type: disc;
     margin-bottom: 0.5em;
 }
 
 .prose ol li {
-    list-style-type: decimal; /* Default numbers for ordered lists */
+    list-style-type: decimal;
     margin-bottom: 0.5em;
 }
 
@@ -48,8 +47,8 @@ body {
 }
 
 .prose strong {
-    color: #E5E7EB; /* Keep strong text light gray */
-    font-weight: 700; /* Bold */
+    color: #E5E7EB;
+    font-weight: 700;
 }
 
 .prose em {
@@ -57,28 +56,28 @@ body {
 }
 
 .prose code {
-    background-color: #4B5563; /* Gray-600 */
-    color: #F3F4F6; /* Gray-100 */
+    background-color: #4B5563;
+    color: #F3F4F6;
     padding: 0.2em 0.4em;
     border-radius: 0.25rem;
     font-family: monospace;
-    font-size: 0.875em; /* text-sm */
+    font-size: 0.875em;
 }
 
 .prose pre {
-    background-color: #1F2937; /* Gray-800 */
-    color: #F3F4F6; /* Gray-100 */
+    background-color: #1F2937;
+    color: #F3F4F6;
     padding: 1em;
     border-radius: 0.5rem;
-    overflow-x: auto; /* Enable horizontal scrolling for long code lines */
+    overflow-x: auto;
 }
 
 .prose blockquote {
-    border-left: 4px solid #6EE7B7; /* Teal border */
+    border-left: 4px solid #6EE7B7;
     padding-left: 1em;
     margin-left: 0;
     font-style: italic;
-    color: #9CA3AF; /* Gray-400 */
+    color: #9CA3AF;
 }
 
 .prose table {
@@ -88,12 +87,12 @@ body {
 }
 
 .prose th, .prose td {
-    border: 1px solid #4B5563; /* Gray-600 */
+    border: 1px solid #4B5563;
     padding: 0.75em;
     text-align: left;
 }
 
 .prose th {
-    background-color: #374151; /* Gray-700 */
+    background-color: #374151;
     font-weight: 600;
 }
