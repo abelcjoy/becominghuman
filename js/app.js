@@ -15,19 +15,8 @@ class LifeCountdown {
             minutesEl: document.getElementById('c-minutes'),
             secondsEl: document.getElementById('c-seconds'),
             millisecondsEl: document.getElementById('c-milliseconds'),
-            quoteEl: document.getElementById('quote-text'),
             shareBtn: document.getElementById('share-btn')
         };
-
-        this.quotes = [
-            "Memento Mori. Remember you must die.",
-            "You have power over your mind - not outside events.",
-            "Waste no more time arguing what a good man should be. Be one.",
-            "It is not death that a man should fear, but he should fear never beginning to live.",
-            "The time is now.",
-            "This is your life, ending one second at a time."
-        ];
-
         this.init();
     }
 
@@ -85,8 +74,8 @@ class LifeCountdown {
         this.elements.setupStep.classList.add('hidden');
         this.elements.countdownStep.classList.remove('hidden');
 
-        // Random quote
-        this.elements.quoteEl.textContent = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+        this.elements.setupStep.classList.add('hidden');
+        this.elements.countdownStep.classList.remove('hidden');
 
         this.tick();
         this.interval = setInterval(() => this.tick(), 31); // 30ms for smooth millisecond-ish updates
@@ -118,9 +107,8 @@ class LifeCountdown {
     shareResult() {
         const years = this.elements.yearsEl.textContent;
         const days = this.elements.daysEl.textContent;
-        const quote = this.elements.quoteEl.textContent.trim();
 
-        const text = `I have ${years} Years and ${days} Days of conscious time remaining.\n\n"${quote}"\n\nCalculate yours at #BecomingHuman`;
+        const text = `I have ${years} Years and ${days} Days of conscious time remaining.\n\n(Calculated by subtracting sleep from life expectancy)\n\nCheck yours at #BecomingHuman`;
 
         navigator.clipboard.writeText(text).then(() => {
             const originalText = this.elements.shareBtn.textContent;
