@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conscious Time | Memento Mori</title><link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description"
+        content="Calculate your remaining conscious time. A premium memento mori tool to remind you of the preciousness of life.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://becominghuman.site/">
+    <meta property="og:title" content="Conscious Time | Memento Mori">
+    <meta property="og:description"
+        content="You have less time than you think. Calculate your true remaining conscious moments.">
+    <meta property="og:image" content="https://source.unsplash.com/random/1200x630/?dark,time,clock">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Conscious Time | Memento Mori">
+    <meta property="twitter:description"
+        content="You have less time than you think. Calculate your true remaining conscious moments.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600&family=JetBrains+Mono:wght@100;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-black text-gray-200 h-screen w-screen overflow-hidden flex items-center justify-center font-sans">
+
+    <!-- Background Ambience -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div
+            class="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-cyan-900/10 blur-[120px] animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-slate-900/10 blur-[120px] animate-pulse-slow delay-1000">
+        </div>
+    </div>
+
+    <!-- Setup Step -->
+    <main id="setup-step"
+        class="relative z-10 w-full max-w-md p-8 bg-zinc-900/50 backdrop-blur-xl border border-white/5 rounded-2xl shadow-2xl transition-all duration-700">
+        <h1 class="text-3xl font-light text-center mb-2 tracking-tighter text-white">Setup Reality</h1>
+        <p class="text-center text-gray-400 text-sm mb-8 font-light">Calculate your remaining conscious moments.</p>
+
+        <div class="space-y-6">
+            <div class="group">
+                <label
+                    class="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-cyan-400 transition-colors">Date
+                    of Birth</label>
+                <input type="date" id="dob"
+                    class="w-full bg-transparent border-b border-gray-700 focus:border-cyan-400 outline-none py-2 text-xl font-light transition-colors text-white placeholder-gray-600">
+            </div>
+
+            <div class="group">
+                <label
+                    class="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-cyan-400 transition-colors">Location
+                    (Life Expectancy)</label>
+                <select id="country"
+                    class="w-full bg-transparent border-b border-gray-700 focus:border-cyan-400 outline-none py-2 text-xl font-light transition-colors text-white appearance-none">
+                    <!-- Populated by JS -->
+                </select>
+            </div>
+
+            <div class="group">
+                <label
+                    class="block text-xs uppercase tracking-widest text-gray-500 mb-2 group-focus-within:text-cyan-400 transition-colors">Daily
+                    Sleep (Hours)</label>
+                <input type="number" id="sleep" min="0" max="24" step="0.5" value="8"
+                    class="w-full bg-transparent border-b border-gray-700 focus:border-cyan-400 outline-none py-2 text-xl font-light transition-colors text-white">
+            </div>
+
+            <button id="start-btn"
+                class="w-full mt-8 bg-white text-black hover:bg-cyan-50 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                Initialize Sequence
+            </button>
+        </div>
+    </main>
+
+    <!-- Countdown Step -->
+    <main id="countdown-step"
+        class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-center h-full">
+        <p class="text-xs sm:text-sm uppercase tracking-[0.3em] text-gray-600 mb-12 animate-fade-in-down">Conscious Time
+            Remaining</p>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 w-full">
+            <div class="stat-block group">
+                <div id="c-years"
+                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    00</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Years</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-days"
+                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    00</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Days</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-hours"
+                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    00</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Hours</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-minutes"
+                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    00</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Minutes</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-seconds"
+                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    00</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Seconds</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-milliseconds"
+                    class="text-5xl md:text-8xl font-thin font-mono text-red-100/80 group-hover:text-red-50 transition-colors blur-[0.5px]">
+                    000</div>
+                <div
+                    class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
+                    Milliseconds</div>
+            </div>
+        </div>
+
+        <div id="quote-text" class="mt-24 text-gray-500 font-light text-sm md:text-base italic max-w-xl animate-pulse">
+            "Memento Mori."
+        </div>
+
+        <button id="share-btn"
+            class="mt-8 px-6 py-2 border border-gray-800 hover:border-cyan-900 text-gray-500 hover:text-cyan-400 rounded-full text-xs uppercase tracking-widest transition-all duration-300">
+            Share Reflection
+        </button>
+
+        <button onclick="localStorage.clear(); location.reload();"
+            class="absolute bottom-8 text-xs text-gray-800 hover:text-red-900 transition-colors uppercase tracking-widest">
+            Reset Reality
+        </button>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

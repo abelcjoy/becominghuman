@@ -1,0 +1,154 @@
+import { lifeExpectancyData } from './data.js';
+
+class LifeCountdown {
+    constructor() {
+        this.elements = {
+            setupStep: document.getElementById('setup-step'),
+            countdownStep: document.getElementById('countdown-step'),
+            dobInput: document.getElementById('dob'),
+            countrySelect: document.getElementById('country'),
+            sleepInput: document.getElementById('sleep'),
+            startButton: document.getElementById('start-btn'),
+            yearsEl: document.getElementById('c-years'),
+            daysEl: document.getElementById('c-days'),
+            hoursEl: document.getElementById('c-hours'),
+            minutesEl: document.getElementById('c-minutes'),
+            secondsEl: document.getElementById('c-seconds'),
+            millisecondsEl: document.getElementById('c-milliseconds'),
+            quoteEl: document.getElementById('quote-text'),
+            shareBtn: document.getElementById('share-btn')
+        };
+
+        this.quotes = [
+            "Memento Mori. Remember you must die.",
+            "You have power over your mind - not outside events.",
+            "Waste no more time arguing what a good man should be. Be one.",
+            "It is not death that a man should fear, but he should fear never beginning to live.",
+            "The time is now.",
+            "This is your life, ending one second at a time."
+        ];
+
+        this.init();
+    }
+
+    init() {
+        this.populateCountries();
+        this.elements.startButton.addEventListener('click', () => this.startCountdown());
+        this.elements.shareBtn.addEventListener('click', () => this.shareResult());
+
+        // Load saved state if available
+        const savedData = localStorage.getItem('lifeData');
+        if (savedData) {
+            this.startCountdown(JSON.parse(savedData));
+        }
+    }
+
+    populateCountries() {
+        const countries = Object.keys(lifeExpectancyData).sort();
+        countries.forEach(country => {
+            const option = document.createElement('option');
+            option.value = country;
+            option.textContent = country;
+            if (country === "World Average") option.selected = true;
+            this.elements.countrySelect.appendChild(option);
+        });
+    }
+
+    startCountdown(data = null) {
+        let dob, country, sleepHours;
+
+        if (data) {
+            ({ dob, country, sleepHours } = data);
+        } else {
+            dob = new Date(this.elements.dobInput.value);
+            country = this.elements.countrySelect.value;
+            sleepHours = parseFloat(this.elements.sleepInput.value) || 0;
+
+            if (isNaN(dob.getTime())) {
+                alert("Please enter a valid Date of Birth");
+                return;
+            }
+
+            localStorage.setItem('lifeData', JSON.stringify({ dob, country, sleepHours }));
+        }
+
+        const lifeExpectancyYears = lifeExpectancyData[country] || 72.6;
+        const deathDate = new Date(dob);
+        deathDate.setFullYear(deathDate.getFullYear() + Math.floor(lifeExpectancyYears));
+        // Add remaining fractional year in days
+        const fractionalYear = lifeExpectancyYears % 1;
+        deathDate.setDate(deathDate.getDate() + (fractionalYear * 365));
+
+        this.targetDate = deathDate;
+        this.sleepRatio = (24 - sleepHours) / 24;
+
+        this.elements.setupStep.classList.add('hidden');
+        this.elements.countdownStep.classList.remove('hidden');
+
+        // Random quote
+        this.elements.quoteEl.textContent = this.quotes[Math.floor(Math.random() * this.quotes.length)];
+
+        this.tick();
+        this.interval = setInterval(() => this.tick(), 31); // 30ms for smooth millisecond-ish updates
+    }
+
+    tick() {
+        const now = new Date();
+        const totalRemainingMs = this.targetDate - now;
+
+        if (totalRemainingMs <= 0) {
+            this.render(0, 0, 0, 0, 0, 0);
+            clearInterval(this.interval);
+            return;
+        }
+
+        // Apply Sleep Ratio (Conscious Time)
+        const consciousMs = totalRemainingMs * this.sleepRatio;
+
+        const years = Math.floor(consciousMs / (1000 * 60 * 60 * 24 * 365));
+        const days = Math.floor((consciousMs % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((consciousMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((consciousMs % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((consciousMs % (1000 * 60)) / 1000);
+        const ms = Math.floor(consciousMs % 1000);
+
+        this.render(years, days, hours, minutes, seconds, ms);
+    }
+
+    shareResult() {
+        const years = this.elements.yearsEl.textContent;
+        const days = this.elements.daysEl.textContent;
+        const quote = this.elements.quoteEl.textContent.trim();
+
+        const text = `I have ${years} Years and ${days} Days of conscious time remaining.\n\n"${quote}"\n\nCalculate yours at #BecomingHuman`;
+
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = this.elements.shareBtn.textContent;
+            this.elements.shareBtn.textContent = "Copied to Clipboard";
+            this.elements.shareBtn.classList.add('text-cyan-400', 'border-cyan-900');
+            setTimeout(() => {
+                this.elements.shareBtn.textContent = originalText;
+                this.elements.shareBtn.classList.remove('text-cyan-400', 'border-cyan-900');
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+    }
+
+    render(y, d, h, m, s, ms) {
+        // Helper to format with leading zeros
+        const f = (n) => n.toString().padStart(2, '0');
+        const fms = (n) => n.toString().padStart(3, '0');
+
+        this.elements.yearsEl.textContent = f(y);
+        this.elements.daysEl.textContent = f(d);
+        this.elements.hoursEl.textContent = f(h);
+        this.elements.minutesEl.textContent = f(m);
+        this.elements.secondsEl.textContent = f(s);
+        this.elements.millisecondsEl.textContent = fms(ms);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new LifeCountdown();
+});
