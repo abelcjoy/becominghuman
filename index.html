@@ -33,17 +33,7 @@
 <body class="bg-black text-gray-200 h-screen w-screen overflow-hidden flex items-center justify-center font-sans">
 
     <!-- Background Ambience -->
-    <div class="fixed inset-0 z-0 pointer-events-none">
-        <div
-            class="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-cyan-900/10 blur-[120px] animate-pulse-slow">
-        </div>
-        <div
-            class="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-slate-900/10 blur-[120px] animate-pulse-slow delay-1000">
-        </div>
-        <div
-            class="absolute top-[40%] left-[40%] w-[40%] h-[40%] rounded-full bg-violet-900/5 blur-[100px] animate-pulse-slow delay-2000">
-        </div>
-    </div>
+    <canvas id="bg-canvas" class="fixed inset-0 z-0 bg-transparent"></canvas>
 
     <!-- Setup Step -->
     <main id="setup-step"
@@ -160,6 +150,7 @@
     </main>
 
     <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/background.js"></script>
 </body>
 
 </html>
