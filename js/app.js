@@ -34,11 +34,19 @@ class LifeCountdown {
 
     populateCountries() {
         const countries = Object.keys(lifeExpectancyData).sort();
+
+        // Add Default "Select" Option
+        const defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.textContent = "Select Your Country";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        this.elements.countrySelect.appendChild(defaultOption);
+
         countries.forEach(country => {
             const option = document.createElement('option');
             option.value = country;
             option.textContent = country;
-            if (country === "World Average") option.selected = true;
             this.elements.countrySelect.appendChild(option);
         });
     }
@@ -55,6 +63,10 @@ class LifeCountdown {
 
             if (isNaN(dob.getTime())) {
                 alert("Please enter a valid Date of Birth");
+                return;
+            }
+            if (!country) {
+                alert("Please select your country");
                 return;
             }
 

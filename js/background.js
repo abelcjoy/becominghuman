@@ -3,9 +3,9 @@ const ctx = canvas.getContext('2d');
 
 let width, height;
 let particles = [];
-const particleCount = 150; // Balanced for performance and visuals
-const connectionDistance = 100;
-const mouseDistance = 200;
+const particleCount = 200; // More particles
+const connectionDistance = 140; // Longer connections
+const mouseDistance = 250; // Larger interaction radius
 
 let mouse = { x: -1000, y: -1000 };
 
@@ -13,11 +13,12 @@ class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.2; // Slow natural drift
-        this.vy = (Math.random() - 0.5) * 0.2;
-        this.size = Math.random() * 1.5 + 0.5;
-        this.alpha = Math.random() * 0.5 + 0.1;
+        this.vx = (Math.random() - 0.5) * 0.5; // Faster movement
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2.5 + 1; // Bigger particles
+        this.alpha = Math.random() * 0.5 + 0.3; // Higher base opacity
         this.origAlpha = this.alpha;
+        this.color = Math.random() > 0.5 ? '#22d3ee' : '#ffffff'; // Mix of Cyan and White
     }
 
     update() {
@@ -41,22 +42,22 @@ class Particle {
             const forceDirectionY = dy / distance;
             const force = (mouseDistance - distance) / mouseDistance;
 
-            // Gentle push away
-            const repulsionStrength = 0.8;
-            this.vx -= forceDirectionX * force * repulsionStrength * 0.05;
-            this.vy -= forceDirectionY * force * repulsionStrength * 0.05;
+            // Stronger push away
+            const repulsionStrength = 2.0;
+            this.vx -= forceDirectionX * force * repulsionStrength * 0.1;
+            this.vy -= forceDirectionY * force * repulsionStrength * 0.1;
 
-            // Brighten near mouse
-            this.alpha = Math.min(1, this.origAlpha + force * 0.5);
+            // Highlight near mouse
+            this.alpha = 1;
+            this.size = 4; // Temporarily grow
         } else {
-            // Return to original transparency
-            if (this.alpha > this.origAlpha) {
-                this.alpha -= 0.01;
-            }
+            // Return to original state
+            if (this.alpha > this.origAlpha) this.alpha -= 0.05;
+            if (this.size > 2.5) this.size -= 0.1;
         }
 
         // Dampen velocity to prevent chaos
-        const maxSpeed = 1.5;
+        const maxSpeed = 2.0;
         const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
         if (speed > maxSpeed) {
             this.vx = (this.vx / speed) * maxSpeed;
@@ -67,8 +68,10 @@ class Particle {
     draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(165, 243, 252, ${this.alpha})`; // Cyan-ish white
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.alpha;
         ctx.fill();
+        ctx.globalAlpha = 1;
     }
 }
 
@@ -91,45 +94,42 @@ function resize() {
 function animate() {
     ctx.clearRect(0, 0, width, height);
 
-    // Draw connections first (behind particles)
-    // Optional: Only connect near mouse for "flashlight" effect? 
-    // Let's connect all neighbors for structure
-    ctx.lineWidth = 0.5;
-
+    // Draw connections
     particles.forEach(p => {
         p.update();
         p.draw();
-
-        // Connect particles near mouse
-        /* 
-        // This block is optional - enabling it makes a "web" near the mouse. 
-        // Disabling for a cleaner "dust" look, or keeping it subtle.
-        // Let's keep it very connected but subtle.
-        */
     });
 
-    // Draw lines between nearby particles
+    // High contrast connections
     for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
 
-        // Check mouse distance for this particle
-        const dMouse = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+        // Optimization: Only check nearby particles? No, N^2 is fine for <200
+        for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const d = Math.hypot(p1.x - p2.x, p1.y - p2.y);
 
-        // Only form heavy connections near mouse
-        if (dMouse < mouseDistance * 1.2) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const p2 = particles[j];
-                const d = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-
-                if (d < connectionDistance) {
-                    const opacity = (1 - d / connectionDistance) * (1 - dMouse / (mouseDistance * 1.2)) * 0.5;
-                    ctx.strokeStyle = `rgba(103, 232, 249, ${opacity})`;
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-                }
+            if (d < connectionDistance) {
+                // Brighter lines
+                const opacity = (1 - d / connectionDistance) * 0.8;
+                ctx.strokeStyle = `rgba(34, 211, 238, ${opacity})`; // Cyan lines
+                ctx.lineWidth = 1.5;
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.stroke();
             }
+        }
+
+        // Connect to mouse extremely strongly
+        const dMouse = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+        if (dMouse < mouseDistance) {
+            ctx.strokeStyle = `rgba(255, 255, 255, ${0.8 - dMouse / mouseDistance})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
         }
     }
 
