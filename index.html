@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conscious Time | Memento Mori</title><link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Conscious Time | Memento Mori</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description"
         content="Calculate your remaining conscious time. A statistical life-expectancy tool that factors in sleep to help you value your time.">
 
@@ -38,6 +39,9 @@
         </div>
         <div
             class="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-slate-900/10 blur-[120px] animate-pulse-slow delay-1000">
+        </div>
+        <div
+            class="absolute top-[40%] left-[40%] w-[40%] h-[40%] rounded-full bg-violet-900/5 blur-[100px] animate-pulse-slow delay-2000">
         </div>
     </div>
 
@@ -90,7 +94,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16 w-full">
             <div class="stat-block group">
                 <div id="c-years"
-                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-white group-hover:text-cyan-100 transition-colors">
                     00</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -98,7 +102,7 @@
             </div>
             <div class="stat-block group">
                 <div id="c-days"
-                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-white group-hover:text-cyan-100 transition-colors">
                     00</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -106,7 +110,7 @@
             </div>
             <div class="stat-block group">
                 <div id="c-hours"
-                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-white group-hover:text-cyan-100 transition-colors">
                     00</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -114,7 +118,7 @@
             </div>
             <div class="stat-block group">
                 <div id="c-minutes"
-                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-white group-hover:text-cyan-100 transition-colors">
                     00</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -122,7 +126,7 @@
             </div>
             <div class="stat-block group">
                 <div id="c-seconds"
-                    class="text-5xl md:text-8xl font-thin font-mono text-white group-hover:text-cyan-100 transition-colors">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-white group-hover:text-cyan-100 transition-colors">
                     00</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -130,7 +134,7 @@
             </div>
             <div class="stat-block group">
                 <div id="c-milliseconds"
-                    class="text-5xl md:text-8xl font-thin font-mono text-red-100/80 group-hover:text-red-50 transition-colors blur-[0.5px]">
+                    class="text-5xl md:text-8xl font-thin font-mono tabular-nums text-red-100/80 group-hover:text-red-50 transition-colors blur-[0.5px]">
                     000</div>
                 <div
                     class="text-xs uppercase tracking-widest text-gray-600 group-hover:text-cyan-900 transition-colors mt-2">
@@ -140,7 +144,8 @@
 
         <div id="explanation-text" class="mt-16 text-gray-600 font-light text-xs md:text-sm max-w-xl text-center px-4">
             <p class="mb-2 uppercase tracking-wider text-gray-500">How it works</p>
-            <p>Total Life Expectancy (Country Data) − Time Spent Sleeping = <span class="text-cyan-400">Conscious Time</span></p>
+            <p>Total Life Expectancy (Country Data) − Time Spent Sleeping = <span class="text-cyan-400">Conscious
+                    Time</span></p>
         </div>
 
         <button id="share-btn"
