@@ -13,12 +13,12 @@ class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * 0.5; // Faster movement
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.size = Math.random() * 2.5 + 1; // Bigger particles
-        this.alpha = Math.random() * 0.5 + 0.3; // Higher base opacity
+        this.vx = (Math.random() - 0.5) * 0.15; // Much slower
+        this.vy = (Math.random() - 0.5) * 0.15;
+        this.size = Math.random() * 2 + 0.5;
+        this.alpha = Math.random() * 0.3 + 0.1;
         this.origAlpha = this.alpha;
-        this.color = Math.random() > 0.5 ? '#fbbf24' : '#ffffff'; // Amber Gold and White
+        this.color = Math.random() > 0.5 ? '#d6d3d1' : '#78716c'; // Marble and Warm Slate
     }
 
     update() {
