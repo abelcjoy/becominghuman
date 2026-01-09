@@ -26,8 +26,6 @@ class LifeCountdown {
             dailyReflection: document.getElementById('daily-reflection'),
             reflectionTitle: document.getElementById('reflection-title'),
             reflectionContent: document.getElementById('reflection-content'),
-            lifeMapContainer: document.getElementById('life-map-container'),
-            lifeMapGrid: document.getElementById('life-map-grid'),
             craveBtn: document.getElementById('crave-btn'),
             crisisMode: document.getElementById('crisis-mode'),
             breathingCircle: document.getElementById('breathing-circle'),
@@ -126,32 +124,10 @@ class LifeCountdown {
             this.interval = setInterval(() => this.tick(), 31);
 
             this.displayDailyReflection();
-            this.renderLifeMap(dob, lifeExpectancyYears);
         }, 500); // Sync with CSS animation duration
     }
 
-    renderLifeMap(dob, lifeExpectancy) {
-        this.elements.lifeMapGrid.innerHTML = '';
-        const now = new Date();
-        const totalWeeks = Math.floor(lifeExpectancy * 52);
-        const livedWeeks = Math.floor((now - dob) / (1000 * 60 * 60 * 24 * 7));
 
-        const fragment = document.createDocumentFragment();
-        for (let i = 0; i < totalWeeks; i++) {
-            const square = document.createElement('div');
-            let statusClass = 'future';
-            if (i < livedWeeks) statusClass = 'past';
-            if (i === livedWeeks) statusClass = 'current';
-
-            square.className = `map-square ${statusClass}`;
-            fragment.appendChild(square);
-        }
-        this.elements.lifeMapGrid.appendChild(fragment);
-
-        setTimeout(() => {
-            this.elements.lifeMapContainer.classList.remove('opacity-0');
-        }, 1500);
-    }
 
     enterCrisisMode() {
         this.elements.crisisMode.classList.remove('hidden');
