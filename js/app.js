@@ -1,5 +1,4 @@
 import { lifeExpectancyData } from './data.js';
-import { audioEngine } from './audio.js';
 import { dailyReflections } from './reflections.js';
 
 class LifeCountdown {
@@ -24,9 +23,6 @@ class LifeCountdown {
             unitMoons: document.getElementById('unit-moons'),
             unitSummers: document.getElementById('unit-summers'),
             unitBooks: document.getElementById('unit-books'),
-            soundToggle: document.getElementById('sound-toggle'),
-            soundIconOn: document.getElementById('sound-icon-on'),
-            soundIconOff: document.getElementById('sound-icon-off'),
             dailyReflection: document.getElementById('daily-reflection'),
             reflectionTitle: document.getElementById('reflection-title'),
             reflectionContent: document.getElementById('reflection-content')
@@ -38,19 +34,8 @@ class LifeCountdown {
         this.populateCountries();
         this.elements.startButton.addEventListener('click', () => {
             this.startCountdown();
-            audioEngine.play(); // Auto-play on start
-            this.updateSoundUI(true);
         });
         this.elements.shareBtn.addEventListener('click', () => this.shareResult());
-        this.elements.soundToggle.addEventListener('click', () => this.toggleSound());
-
-        // Any click on the body should resume audio context (Browser requirement)
-        document.body.addEventListener('click', () => {
-            if (audioEngine.isStarted && !audioEngine.isPlaying) {
-                // We don't force play here, just resume the context
-                if (audioEngine.ctx) audioEngine.ctx.resume();
-            }
-        }, { once: true });
 
         // Load saved state if available
         const savedData = localStorage.getItem('lifeData');
@@ -59,22 +44,7 @@ class LifeCountdown {
         }
     }
 
-    toggleSound() {
-        const isPlaying = audioEngine.toggle();
-        this.updateSoundUI(isPlaying);
-    }
 
-    updateSoundUI(isPlaying) {
-        if (isPlaying) {
-            this.elements.soundIconOn.classList.remove('hidden');
-            this.elements.soundIconOff.classList.add('hidden');
-            this.elements.soundToggle.classList.add('opacity-100');
-        } else {
-            this.elements.soundIconOn.classList.add('hidden');
-            this.elements.soundIconOff.classList.remove('hidden');
-            this.elements.soundToggle.classList.remove('opacity-100');
-        }
-    }
 
 
 
