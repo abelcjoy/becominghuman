@@ -32,9 +32,21 @@ class LifeCountdown {
 
     init() {
         this.populateCountries();
-        this.elements.startButton.addEventListener('click', () => this.startCountdown());
+        this.elements.startButton.addEventListener('click', () => {
+            this.startCountdown();
+            audioEngine.play(); // Auto-play on start
+            this.updateSoundUI(true);
+        });
         this.elements.shareBtn.addEventListener('click', () => this.shareResult());
         this.elements.soundToggle.addEventListener('click', () => this.toggleSound());
+
+        // Any click on the body should resume audio context (Browser requirement)
+        document.body.addEventListener('click', () => {
+            if (audioEngine.isStarted && !audioEngine.isPlaying) {
+                // We don't force play here, just resume the context
+                if (audioEngine.ctx) audioEngine.ctx.resume();
+            }
+        }, { once: true });
 
         // Load saved state if available
         const savedData = localStorage.getItem('lifeData');
@@ -45,6 +57,10 @@ class LifeCountdown {
 
     toggleSound() {
         const isPlaying = audioEngine.toggle();
+        this.updateSoundUI(isPlaying);
+    }
+
+    updateSoundUI(isPlaying) {
         if (isPlaying) {
             this.elements.soundIconOn.classList.remove('hidden');
             this.elements.soundIconOff.classList.add('hidden');
