@@ -54,8 +54,27 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #09090b inset !important;
+    -webkit-box-shadow: 0 0 0 30px #1e1b4b inset !important;
     -webkit-text-fill-color: white !important;
+}
+
+/* Brighten Date Input Icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+/* Improved Input Visibility */
+input,
+select {
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+input:focus,
+select:focus {
+    border-color: #22d3ee !important;
+    background: rgba(30, 41, 59, 0.9) !important;
 }
 
 /* Smooth Font Rendering */
