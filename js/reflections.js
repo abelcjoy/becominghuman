@@ -1,42 +1,42 @@
 export const dailyReflections = [
     {
-        title: "The Dichotomy of Control",
-        content: "Some things are within our power, and some are not. Motivation is a feeling; action is a choice. Focus only on the choice."
+        title: "Protocol: Alveolar Expansion",
+        content: "Perform a double-inhale through the nose followed by a long, slow exhale. This pops open the air sacs in your lungs to rapidly offload CO2 and lower heart rate in < 30 seconds."
     },
     {
-        title: "Dopamine Fasting",
-        content: "The urge to check your phone is a biological itch. Every time you don't scratch it, you strengthen the prefrontal cortex."
+        title: "Protocol: Photon Anchoring",
+        content: "Viewing morning sunlight triggers a cortisol spike that sets a 16-hour biological timer for melatonin. Your sleep tonight is a mathematical result of the light you see now."
     },
     {
-        title: "Memento Mori",
-        content: "You could leave life right now. Let that determine what you do and say and think."
+        title: "Protocol: Dopamine Baseline",
+        content: "Artificial spikes from scrolling or nicotine cause an equal 'trough' below baseline. Your current lack of focus is not a personality flaw; it is a dopamine deficit state."
     },
     {
-        title: "The Physiological Sigh",
-        content: "Feeling overwhelmed? Double inhale through the nose, long exhale through the mouth. You just manually hacked your nervous system."
+        title: "Protocol: Thermal Shock",
+        content: "30 seconds of cold water exposure triggers a 250% increase in baseline dopamine that lasts for hours. This is a manual override for the prefrontal cortex."
     },
     {
-        title: "Amor Fati",
-        content: "Do not seek for things to happen the way you want them to; rather, wish that what happens happen the way it happens."
+        title: "Protocol: Neural Pruning",
+        content: "Habits are physical structures in the brain. Every time a craving is denied, the associated synaptic pathway weakens (synaptic pruning). You are quite literally starving the addiction."
     },
     {
-        title: "Circadian Anchoring",
-        content: "Morning sunlight isn't just light; it's a chemical instruction. It sets the clock for your focus and your sleep."
+        title: "Protocol: Limbic Friction",
+        content: "Procrastination is 'Limbic Friction'—the gap between Intent and Action. Override it with 10 seconds of intense physical movement to force the brain into a high-utility state."
     },
     {
-        title: "The 15-Minute Rule",
-        content: "A craving is a peak that always subsides. If you can survive 15 minutes of discomfort, the neural spike will pass."
+        title: "Protocol: Insulin Blunting",
+        content: "Consuming 1 tablespoon of vinegar or lemon juice before a high-carb intake blunts the glucose spike, preventing the subsequent brain fog and cognitive fatigue."
     },
     {
-        title: "Deep Work",
-        content: "The ability to stay focused on a single task is the super-power of the 21st century. Everything else is noise."
+        title: "Protocol: Adenosine Clearance",
+        content: "Delay caffeine for 90 minutes after waking. This allows adenosine receptors to clear naturally, preventing the afternoon crash caused by caffeine-blockage backlogs."
     },
     {
-        title: "Vagus Nerve Reset",
-        content: "Splashing cold water on your face triggers the mammalian dive reflex. It immediately slows your heart rate and calms the mind."
+        title: "Protocol: The 15-Minute Wave",
+        content: "Neurological cravings are temporary chemical surges that peak at 10 minutes and subside by 15. Survival is a matter of managing the 900-second peak."
     },
     {
-        title: "The Illusion of 'Soon'",
-        content: "We spend our lives waiting for the 'perfect time.' The perfect time is a fiction designed to keep you safe and stagnant."
+        title: "Protocol: Gray-Scale Habituation",
+        content: "Removing color from your device reduces the 'variable reward' of digital interfaces, decreasing limbic attraction to the screen by approximately 40%."
     }
 ];
