@@ -18,7 +18,7 @@ class Particle {
         this.size = Math.random() * 2.5 + 1; // Bigger particles
         this.alpha = Math.random() * 0.5 + 0.3; // Higher base opacity
         this.origAlpha = this.alpha;
-        this.color = Math.random() > 0.5 ? '#22d3ee' : '#ffffff'; // Mix of Cyan and White
+        this.color = Math.random() > 0.5 ? '#10b981' : '#ffffff'; // Emerald and White
     }
 
     update() {
@@ -112,7 +112,7 @@ function animate() {
             if (d < connectionDistance) {
                 // Brighter lines
                 const opacity = (1 - d / connectionDistance) * 0.8;
-                ctx.strokeStyle = `rgba(34, 211, 238, ${opacity})`; // Cyan lines
+                ctx.strokeStyle = `rgba(16, 185, 129, ${opacity})`; // Emerald lines
                 ctx.lineWidth = 1.5;
                 ctx.beginPath();
                 ctx.moveTo(p1.x, p1.y);

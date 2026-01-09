@@ -1,8 +1,8 @@
 /* Premium Dark Theme Overrides */
 
 body {
-    /* Alto's Odyssey Style Gradient (Dusk/Zen) */
-    background: linear-gradient(to bottom, #1e1b4b 0%, #312e81 40%, #c026d3 100%);
+    /* Premium Forest/Zen Green Gradient */
+    background: linear-gradient(to bottom, #064e3b 0%, #065f46 40%, #10b981 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
 }
@@ -54,7 +54,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #1e1b4b inset !important;
+    -webkit-box-shadow: 0 0 0 30px #064e3b inset !important;
     -webkit-text-fill-color: white !important;
 }
 
