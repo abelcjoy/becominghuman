@@ -3,6 +3,7 @@ class AudioEngine {
         this.ctx = null;
         this.isStarted = false;
         this.isPlaying = false;
+        this.birdInterval = null;
     }
 
     init() {
@@ -13,64 +14,51 @@ class AudioEngine {
         this.mainGain.connect(this.ctx.destination);
         this.mainGain.gain.setValueAtTime(0.0001, this.ctx.currentTime);
 
-        // --- THE NEW SOUND: "ETHEREAL VOID" ---
-        // Combination of a Brownian Noise (Wind) and Resonant High Tones
+        // 1. "Morning Warmth" - Gentle background hum
+        this.morningOsc = this.ctx.createOscillator();
+        this.morningOsc.type = 'sine';
+        this.morningOsc.frequency.setValueAtTime(220, this.ctx.currentTime); // Warm A3
 
-        // 1. Procedural Wind (Brown Noise)
-        const bufferSize = 2 * this.ctx.sampleRate;
-        const noiseBuffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        let lastOut = 0;
-        for (let i = 0; i < bufferSize; i++) {
-            const white = Math.random() * 2 - 1;
-            output[i] = (lastOut + (0.02 * white)) / 1.02;
-            lastOut = output[i];
-            output[i] *= 3.5; // brown noise is quiet
-        }
+        this.morningGain = this.ctx.createGain();
+        this.morningGain.gain.setValueAtTime(0.02, this.ctx.currentTime);
 
-        this.noiseSource = this.ctx.createBufferSource();
-        this.noiseSource.buffer = noiseBuffer;
-        this.noiseSource.loop = true;
-
-        this.noiseFilter = this.ctx.createBiquadFilter();
-        this.noiseFilter.type = 'lowpass';
-        this.noiseFilter.frequency.setValueAtTime(400, this.ctx.currentTime);
-        this.noiseFilter.Q.setValueAtTime(0.5, this.ctx.currentTime);
-
-        this.noiseGain = this.ctx.createGain();
-        this.noiseGain.gain.setValueAtTime(0.1, this.ctx.currentTime);
-
-        // 2. Resonant High Tone (The "Soul" frequency)
-        this.soulOsc = this.ctx.createOscillator();
-        this.soulOsc.type = 'sine';
-        this.soulOsc.frequency.setValueAtTime(432, this.ctx.currentTime); // 432Hz "Healing" frequency
-
-        this.soulGain = this.ctx.createGain();
-        this.soulGain.gain.setValueAtTime(0.02, this.ctx.currentTime);
-
-        // LFO for the Soul Frequency (Breathing effect)
-        this.lfo = this.ctx.createOscillator();
-        this.lfo.type = 'sine';
-        this.lfo.frequency.setValueAtTime(0.1, this.ctx.currentTime); // 10 second cycle
-        this.lfoGain = this.ctx.createGain();
-        this.lfoGain.gain.setValueAtTime(0.01, this.ctx.currentTime);
-
-        this.lfo.connect(this.lfoGain);
-        this.lfoGain.connect(this.soulGain.gain);
-
-        // Connect everything to main
-        this.noiseSource.connect(this.noiseFilter);
-        this.noiseFilter.connect(this.noiseGain);
-        this.noiseGain.connect(this.mainGain);
-
-        this.soulOsc.connect(this.soulGain);
-        this.soulGain.connect(this.mainGain);
-
-        this.noiseSource.start();
-        this.soulOsc.start();
-        this.lfo.start();
+        this.morningOsc.connect(this.morningGain);
+        this.morningGain.connect(this.mainGain);
+        this.morningOsc.start();
 
         this.isStarted = true;
+    }
+
+    // Procedural Bird Chirp Synthesis
+    createChirp() {
+        if (!this.isPlaying) return;
+
+        const now = this.ctx.currentTime;
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        // Random Bird Character
+        const freq = 2500 + Math.random() * 2000;
+        const duration = 0.05 + Math.random() * 0.1;
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        // The "Chirp" effect - rapid pitch drop
+        osc.frequency.exponentialRampToValueAtTime(freq * 0.6, now + duration);
+
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.07, now + 0.01);
+        gain.gain.linearRampToValueAtTime(0, now + duration);
+
+        osc.connect(gain);
+        gain.connect(this.mainGain);
+
+        osc.start(now);
+        osc.stop(now + duration);
+
+        // Schedule next chirp randomly (morning vibe density)
+        const nextIn = 500 + Math.random() * 3000;
+        setTimeout(() => this.createChirp(), nextIn);
     }
 
     play() {
@@ -78,8 +66,12 @@ class AudioEngine {
         if (this.ctx.state === 'suspended') this.ctx.resume();
 
         if (!this.isPlaying) {
-            this.mainGain.gain.exponentialRampToValueAtTime(0.2, this.ctx.currentTime + 3);
+            this.mainGain.gain.exponentialRampToValueAtTime(0.3, this.ctx.currentTime + 2);
             this.isPlaying = true;
+            // Kick off the bird sequence
+            this.createChirp();
+            // Occasional double chirps
+            setTimeout(() => this.createChirp(), 200);
         }
     }
 

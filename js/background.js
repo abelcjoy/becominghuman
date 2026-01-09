@@ -18,7 +18,7 @@ class Particle {
         this.size = Math.random() * 2 + 0.5;
         this.alpha = Math.random() * 0.3 + 0.1;
         this.origAlpha = this.alpha;
-        this.color = Math.random() > 0.5 ? '#ffffff' : '#4a4a4a'; // Pure monochromatic dots
+        this.color = Math.random() > 0.5 ? '#ffffff' : '#fff9eb'; // Morning Cream Dots
     }
 
     update() {
