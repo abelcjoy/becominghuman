@@ -15,7 +15,9 @@ class LifeCountdown {
             minutesEl: document.getElementById('c-minutes'),
             secondsEl: document.getElementById('c-seconds'),
             millisecondsEl: document.getElementById('c-milliseconds'),
-            shareBtn: document.getElementById('share-btn')
+            shareBtn: document.getElementById('share-btn'),
+            progressBar: document.getElementById('life-progress-bar'),
+            soulRank: document.getElementById('soul-rank')
         };
         this.init();
     }
@@ -98,6 +100,20 @@ class LifeCountdown {
         }, 500); // Sync with CSS animation duration
     }
 
+    updateSoulRank(years) {
+        let rank = "";
+        const y = parseInt(years);
+        if (y >= 60) rank = "The Eternal Dreamer";
+        else if (y >= 40) rank = "The Boundless Seeker";
+        else if (y >= 25) rank = "The Timeless Watcher";
+        else if (y >= 10) rank = "The Conscious Soul";
+        else rank = "The Pure Presence";
+
+        if (this.elements.soulRank.textContent !== rank) {
+            this.elements.soulRank.textContent = rank;
+        }
+    }
+
     tick() {
         const now = new Date();
         const totalRemainingMs = this.targetDate - now;
@@ -118,6 +134,12 @@ class LifeCountdown {
         const seconds = Math.floor((consciousMs % (1000 * 60)) / 1000);
         const ms = Math.floor(consciousMs % 1000);
 
+        // Update Progress Bar (Percentage of life remaining)
+        // Assume max life is 100 for percentage purposes
+        const percentage = Math.min(100, (consciousMs / (1000 * 60 * 60 * 24 * 365 * 100)) * 100);
+        this.elements.progressBar.style.width = `${percentage}%`;
+
+        this.updateSoulRank(years);
         this.render(years, days, hours, minutes, seconds, ms);
     }
 
