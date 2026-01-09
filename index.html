@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conscious Time | Memento Mori</title>
+    <title>Life Expectancy Calculator | Remaining Conscious Time Tool</title>
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9639641684797882"
         crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <meta name="description"
-        content="Calculate your remaining conscious time. A statistical life-expectancy tool that factors in sleep to help you value your time.">
+        content="Free Life Expectancy Calculator. Discover your remaining conscious time by factoring in sleep and global health statistics. A philosophical tool for time management and intentional living.">
+
+    <!-- JSON-LD Schema for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Conscious Time Calculator",
+      "operatingSystem": "All",
+      "applicationCategory": "EducationalApplication",
+      "description": "A life expectancy calculator that determines remaining conscious hours based on lifestyle and global health data.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://becominghuman.site/">
-    <meta property="og:title" content="Conscious Time | Memento Mori">
+    <meta property="og:url" content="https://clarityforhumans.com/">
+    <meta property="og:title" content="Remaining Conscious Life Calculator">
     <meta property="og:description"
-        content="You have less time than you think. Calculate your true remaining conscious moments.">
+        content="How much conscious time do you have left? Calculate your remaining years, days, and hours factoring in health and sleep.">
     <meta property="og:image" content="https://source.unsplash.com/random/1200x630/?dark,time,clock">
 
     <!-- Twitter -->
@@ -209,13 +226,22 @@
                 <button onclick="document.getElementById('about-modal').classList.add('hidden')"
                     class="text-gray-500 hover:text-white">&times;</button>
             </div>
-            <h2 class="text-xl font-light text-white uppercase tracking-widest mb-4">Our Mission</h2>
-            <p class="text-gray-300 font-light mb-4 text-left">Clarity For Humans is an educational utility designed to
-                foster mindfulness through data. We use World Health Organization (WHO) statistical life expectancy data
-                combined with personal lifestyle factors like sleep to help individuals visualize their time.</p>
-            <p class="text-gray-300 font-light mb-6 text-left">Our goal is not to provoke anxiety, but to encourage
-                intentionality. Every second counted here is a reminder of the precious nature of conscious life.</p>
-            <p class="text-[10px] text-gray-500 uppercase tracking-widest">A #BecomingHuman Original Project</p>
+            <h2 class="text-xl font-light text-white uppercase tracking-widest mb-4 font-stoic">Life Expectancy Analysis
+            </h2>
+            <div class="text-left text-stone-400 space-y-4 text-xs">
+                <p>Understanding your <strong>Life Expectancy</strong> is the first step toward intentional living. Our
+                    calculator uses global health statistics to provide an estimate of your remaining time based on your
+                    country of residence.</p>
+                <p><strong>What is Conscious Time?</strong> Unlike a standard age calculator, we subtract the hours you
+                    spend sleeping. Since the average human spends 1/3 of their life asleep, your "conscious" time is
+                    significantly less than your total biological time.</p>
+                <p><strong>Stoic Perspective:</strong> In the tradition of <em>Memento Mori</em>, this tool helps focus
+                    the mind on the present. By visualizing the finite nature of our hours, we can better prioritize
+                    what truly matters.</p>
+                <p>Our algorithm pulls from World Health Organization (WHO) data to ensure statistical accuracy in every
+                    calculation.</p>
+            </div>
+            <p class="mt-6 text-[10px] text-stone-600 uppercase tracking-widest">A #BecomingHuman Original Project</p>
         </div>
     </div>
 
