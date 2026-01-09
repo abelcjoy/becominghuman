@@ -139,7 +139,11 @@ class LifeCountdown {
         const fragment = document.createDocumentFragment();
         for (let i = 0; i < totalWeeks; i++) {
             const square = document.createElement('div');
-            square.className = `map-square ${i < livedWeeks ? 'past' : 'future'}`;
+            let statusClass = 'future';
+            if (i < livedWeeks) statusClass = 'past';
+            if (i === livedWeeks) statusClass = 'current';
+
+            square.className = `map-square ${statusClass}`;
             fragment.appendChild(square);
         }
         this.elements.lifeMapGrid.appendChild(fragment);

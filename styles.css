@@ -182,21 +182,51 @@ select:focus {
     grid-template-columns: repeat(52, minmax(0, 1fr));
 }
 
+#life-map-grid {
+    gap: 3px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .map-square {
     width: 100%;
     aspect-ratio: 1;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
 }
 
 .map-square.past {
     background: #fff;
-    border: none;
-    box-shadow: 0 0 4px #fff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    opacity: 1;
 }
 
 .map-square.future {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #ffffff;
+    opacity: 0.15;
+}
+
+.map-square.current {
+    background: #ff0000;
+    box-shadow: 0 0 20px #ff0000;
+    z-index: 10;
+    animation: nowPulse 1.5s ease-in-out infinite;
+    border: none !important;
+    opacity: 1 !important;
+}
+
+@keyframes nowPulse {
+
+    0%,
+    100% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
 }
 
 /* --- Crisis Mode --- */
