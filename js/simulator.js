@@ -79,48 +79,62 @@ export class LifeSimulator {
     }
 
     init() {
-        this.startAgeSimulation();
-        this.startEventEngine();
-        this.startRelationshipDecay();
+        this.lastUpdate = Date.now();
+        this.accumulators = {
+            age: 0,
+            events: 0,
+            decay: 0
+        };
         this.render();
     }
 
-    startAgeSimulation() {
-        // Age increases based on real time passage
-        setInterval(() => {
+    update(now) {
+        const dt = now - this.lastUpdate;
+        this.lastUpdate = now;
+
+        // Update accumulators
+        this.accumulators.age += dt;
+        this.accumulators.events += dt;
+        this.accumulators.decay += dt;
+
+        // Age Simulation (Every 1000ms)
+        if (this.accumulators.age >= 1000) {
             const realSecondsPerSimYear = 60; // 1 minute = 1 year in sim
-            const increment = 1 / realSecondsPerSimYear;
-            this.state.biologicalAge += increment;
+            const yearsToAdd = (this.accumulators.age / 1000) / realSecondsPerSimYear;
+            this.state.biologicalAge += yearsToAdd;
+            this.accumulators.age = 0;
             this.updatePhase();
             this.checkMilestones();
+            this.render(); // Render on age change
             this.saveState();
-            this.render();
-        }, 1000);
-    }
+        }
 
-    startEventEngine() {
-        // Random events occur
-        setInterval(() => {
-            if (Math.random() < 0.1) { // 10% chance every 10 seconds
+        // Event Engine (Every 10000ms)
+        if (this.accumulators.events >= 10000) {
+            if (Math.random() < 0.1) { // 10% chance
                 this.triggerRandomEvent();
             }
-        }, 10000);
+            this.accumulators.events = 0;
+        }
+
+        // Relationship Decay (Every 60000ms)
+        if (this.accumulators.decay >= 60000) {
+            this.processRelationshipDecay();
+            this.accumulators.decay = 0;
+        }
     }
 
-    startRelationshipDecay() {
-        // Relationships decay over time if not maintained
-        setInterval(() => {
-            Object.keys(this.state.relationships).forEach(rel => {
-                const relationship = this.state.relationships[rel];
-                if (relationship.lastInteraction) {
-                    const daysSinceInteraction = (Date.now() - relationship.lastInteraction) / (1000 * 60 * 60 * 24);
-                    if (daysSinceInteraction > 7) {
-                        relationship.level = Math.max(0, relationship.level - 1);
-                    }
+    processRelationshipDecay() {
+        Object.keys(this.state.relationships).forEach(rel => {
+            const relationship = this.state.relationships[rel];
+            if (relationship.lastInteraction) {
+                const daysSinceInteraction = (Date.now() - relationship.lastInteraction) / (1000 * 60 * 60 * 24);
+                if (daysSinceInteraction > 7) {
+                    relationship.level = Math.max(0, relationship.level - 1);
                 }
-            });
-            this.saveState();
-        }, 60000); // Check every minute
+            }
+        });
+        this.saveState();
     }
 
     updatePhase() {
@@ -137,6 +151,7 @@ export class LifeSimulator {
         if (newPhase !== this.state.currentPhase) {
             this.state.currentPhase = newPhase;
             this.logEvent(`Entered ${newPhase.replace('_', ' ')} phase`, 'milestone');
+            this.render();
         }
     }
 
@@ -409,6 +424,19 @@ export class LifeSimulator {
         }
 
         this.updateEventLog();
+
+        // Trigger Toast for important events
+        if (this.app.ui) {
+            if (type === 'achievement') {
+                this.app.ui.toast(message, 'success', 5000);
+            } else if (type === 'milestone') {
+                this.app.ui.toast(message, 'info', 4000);
+            } else if (type === 'warning') {
+                this.app.ui.toast(message, 'warning', 3000);
+            } else if (type === 'negative') {
+                this.app.ui.toast(message, 'error', 4000);
+            }
+        }
     }
 
     updateEventLog() {

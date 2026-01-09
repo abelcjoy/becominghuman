@@ -1,9 +1,11 @@
 import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
 import { LifeSimulator } from './simulator.js';
+import { UI } from './ui.js';
 
 class LifeCountdown {
     constructor() {
+        this.ui = new UI();
         this.elements = {
             setupStep: document.getElementById('setup-step'),
             countdownStep: document.getElementById('countdown-step'),
@@ -104,11 +106,11 @@ class LifeCountdown {
             sleepHours = parseFloat(this.elements.sleepInput.value) || 0;
 
             if (isNaN(dob.getTime())) {
-                alert("Please enter a valid Date of Birth");
+                this.ui.toast("Please enter a valid Date of Birth", "error");
                 return;
             }
             if (!country) {
-                alert("Please select your country");
+                this.ui.toast("Please select your country", "error");
                 return;
             }
 
@@ -127,6 +129,7 @@ class LifeCountdown {
 
         // Cinematic Transition
         this.elements.setupStep.classList.add('view-exit');
+        this.ui.showLoading("Constructing Existence...");
 
         setTimeout(() => {
             this.elements.setupStep.classList.add('hidden');
@@ -142,7 +145,9 @@ class LifeCountdown {
             this.displayDailyReflection();
             this.startRecaptureSession();
             this.initSimulator(dob);
-        }, 500);
+
+            this.ui.hideLoading();
+        }, 1500);
     }
 
     initSimulator(dob) {
@@ -188,19 +193,31 @@ class LifeCountdown {
             { name: "Terminal Training", costHours: 50, reward: 0.60, desc: "Spend 50h Pocket -> +60% Equity" }
         ];
 
-        this.elements.jobList.innerHTML = jobs.map(j => `
-            <button class="sim-btn" ${biologicalAge < j.minAge ? 'disabled' : ''} onclick="window.app.commitJob('${j.name}', ${j.timeCostHours}, ${j.rewardHours})">
+        this.elements.jobList.innerHTML = jobs.map(j => {
+            const isDisabled = biologicalAge < j.minAge;
+            const tooltip = isDisabled ? `Requires Age ${j.minAge}` : j.desc;
+            return `
+            <button class="sim-btn" 
+                ${isDisabled ? 'disabled' : ''} 
+                data-tooltip="${tooltip}"
+                onclick="window.app.commitJob('${j.name}', ${j.timeCostHours}, ${j.rewardHours})">
                 <span>${j.name} <br><small class="opacity-50">${j.desc}</small></span>
                 <span class="cost">-${j.timeCostHours}H</span>
             </button>
-        `).join('');
+        `}).join('');
 
-        this.elements.eduList.innerHTML = edus.map(e => `
-            <button class="sim-btn" ${pocketTime < e.costHours ? 'disabled' : ''} onclick="window.app.commitEdu('${e.name}', ${e.costHours}, ${e.reward})">
+        this.elements.eduList.innerHTML = edus.map(e => {
+            const isDisabled = pocketTime < e.costHours;
+            const tooltip = isDisabled ? `Requires ${e.costHours}H Pocket Time` : e.desc;
+            return `
+            <button class="sim-btn" 
+                ${isDisabled ? 'disabled' : ''} 
+                data-tooltip="${tooltip}"
+                onclick="window.app.commitEdu('${e.name}', ${e.costHours}, ${e.reward})">
                 <span>${e.name} <br><small class="opacity-50">${e.desc}</small></span>
                 <span class="reward">+${(e.reward * 100).toFixed(0)}%</span>
             </button>
-        `).join('');
+        `}).join('');
     }
 
     commitJob(name, cost, reward) {
@@ -355,6 +372,11 @@ class LifeCountdown {
         this.updateBiologicalCapital(consciousMs);
         this.updateSoulRank(years);
         this.render(years, days, hours, minutes, seconds, ms);
+
+        // Update Simulator Game Loop
+        if (window.simulator) {
+            window.simulator.update(Date.now());
+        }
     }
 
     updateBiologicalCapital(ms) {
