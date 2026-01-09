@@ -112,7 +112,7 @@ function animate() {
             if (d < connectionDistance) {
                 // Brighter lines
                 const opacity = (1 - d / connectionDistance) * 0.8;
-                ctx.strokeStyle = `rgba(251, 191, 36, ${opacity})`; // Amber Gold lines
+                ctx.strokeStyle = `rgba(214, 211, 209, ${opacity})`; // Warm Stone lines
                 ctx.lineWidth = 1.5;
                 ctx.beginPath();
                 ctx.moveTo(p1.x, p1.y);

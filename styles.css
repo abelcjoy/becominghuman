@@ -1,10 +1,13 @@
 /* Premium Dark Theme Overrides */
 
 body {
-    /* Premium Twilight Gold Gradient */
-    background: linear-gradient(to bottom, #0f172a 0%, #1e1b4b 50%, #78350f 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 20s ease infinite;
+    /* Stoic Stone/Charcoal Gradient */
+    background: radial-gradient(circle at center, #1c1917 0%, #0c0a09 100%);
+    background-size: 100% 100%;
+}
+
+.font-stoic {
+    font-family: 'Cinzel', serif;
 }
 
 @keyframes gradientShift {
@@ -54,8 +57,8 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
-    -webkit-text-fill-color: white !important;
+    -webkit-box-shadow: 0 0 0 30px #1c1917 inset !important;
+    -webkit-text-fill-color: #d6d3d1 !important;
 }
 
 /* Brighten Date Input Icon */
