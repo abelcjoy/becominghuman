@@ -94,8 +94,19 @@ function resize() {
 function animate() {
     ctx.clearRect(0, 0, width, height);
 
+    // Check for Ritual
+    const ritualActive = document.getElementById('ritual-content')?.classList.contains('ritual-active');
+
     // Draw connections
     particles.forEach(p => {
+        if (ritualActive) {
+            p.vx *= 1.05; // Swirl faster
+            p.vy *= 1.05;
+            p.alpha = Math.min(1, p.alpha + 0.05);
+        } else {
+            p.vx *= 0.99; // Return to calm
+            p.vy *= 0.99;
+        }
         p.update();
         p.draw();
     });
