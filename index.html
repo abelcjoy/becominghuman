@@ -244,6 +244,8 @@
                     class="hover:text-white transition-colors">Privacy Policy</button>
                 <button onclick="document.getElementById('about-modal').classList.remove('hidden')"
                     class="hover:text-white transition-colors">About</button>
+                <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
+                    class="text-white hover:text-white/70 transition-all font-bold">The Protocol</button>
             </div>
         </div>
     </main>
@@ -300,6 +302,74 @@
                     calculation.</p>
             </div>
             <p class="mt-6 text-[10px] text-stone-600 uppercase tracking-widest">A #BecomingHuman Original Project</p>
+        </div>
+    </div>
+
+    <!-- The Protocol Modal (Science-Based Addictions/Brain) -->
+    <div id="protocol-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-2xl">
+        <div
+            class="glass-panel max-w-2xl w-full p-10 rounded-none border border-white/10 overflow-y-auto max-h-[90vh] scrollbar-hide">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] font-stoic">Neurobiological
+                    Optimization Protocol</h2>
+                <button onclick="document.getElementById('protocol-modal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Dopamine Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        01. Baseline Dopamine Restoration</h3>
+                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                        <p>To overcome addiction, you must manage your <span class="text-white">Dopamine
+                                Baseline</span>. Spikes from substances or digital feeds cause an equal and opposite
+                            "crash" below baseline, creating cravings.</p>
+                        <ul class="list-none space-y-2 border-l border-white/10 pl-4">
+                            <li>• <span class="text-white font-medium">Digital Fasting:</span> Zero scrolling for the
+                                first 90 minutes of your day.</li>
+                            <li>• <span class="text-white font-medium">Delay Gratification:</span> Never combine two
+                                high-dopamine activities (e.g., eating + watching).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Parasympathetic Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        02. Parasympathetic Override</h3>
+                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                        <p>Anxiety and cravings are Sympathetic (Fight or Flight) responses. You can manually override
+                            this through the <span class="text-white">Vagus Nerve</span>.</p>
+                        <ul class="list-none space-y-2 border-l border-white/10 pl-4">
+                            <li>• <span class="text-white font-medium">The Physiological Sigh:</span> Double inhale
+                                through nose, followed by a long, slow exhale through mouth. Repeat 3 times.</li>
+                            <li>• <span class="text-white font-medium">Thermogenic Reset:</span> 30 seconds of cold
+                                water exposure to trigger a natural dopamine release.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Circadian/Light Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        03. Circadian Precision</h3>
+                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                        <p>View sunlight within 30 minutes of waking. This triggers <span class="text-white">Cortisol
+                                release</span> and sets a timer for Melatonin, regulating the brain's internal rhythm.
+                        </p>
+                        <p class="italic text-[9px] text-stone-600 mt-4">Based on Stanford Neurobiology & Behavioral
+                            Science research.</p>
+                    </div>
+                </section>
+            </div>
+
+            <p class="mt-20 text-center text-[8px] text-stone-600 uppercase tracking-widest font-mono">This is not
+                motivation. This is biological maintenance.</p>
         </div>
     </div>
 
