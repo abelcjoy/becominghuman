@@ -111,6 +111,7 @@ select:focus {
     position: relative;
     background: linear-gradient(to bottom, #fff 20%, #a8a29e 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
