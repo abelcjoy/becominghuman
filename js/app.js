@@ -83,14 +83,19 @@ class LifeCountdown {
         this.targetDate = deathDate;
         this.sleepRatio = (24 - sleepHours) / 24;
 
-        this.elements.setupStep.classList.add('hidden');
-        this.elements.countdownStep.classList.remove('hidden');
+        // Cinematic Transition
+        this.elements.setupStep.classList.add('view-exit');
 
-        this.elements.setupStep.classList.add('hidden');
-        this.elements.countdownStep.classList.remove('hidden');
+        setTimeout(() => {
+            this.elements.setupStep.classList.add('hidden');
+            this.elements.setupStep.classList.remove('view-exit');
 
-        this.tick();
-        this.interval = setInterval(() => this.tick(), 31); // 30ms for smooth millisecond-ish updates
+            this.elements.countdownStep.classList.remove('hidden');
+            this.elements.countdownStep.classList.add('view-enter');
+
+            this.tick();
+            this.interval = setInterval(() => this.tick(), 31);
+        }, 500); // Sync with CSS animation duration
     }
 
     tick() {
