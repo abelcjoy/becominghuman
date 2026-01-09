@@ -290,19 +290,23 @@ class LifeCountdown {
         const years = this.elements.yearsEl.textContent;
         const days = this.elements.daysEl.textContent;
 
-        const text = `I have ${years} Years and ${days} Days of conscious time remaining.\n\n(Calculated by subtracting sleep from life expectancy)\n\nCheck yours at #BecomingHuman`;
+        const text = `I have exactly ${years} Years and ${days} Days of conscious life left. This is my map of existence. Calculate yours: https://clarityforhumans.com\n\n#MementoMori #ClarityForHumans`;
 
-        navigator.clipboard.writeText(text).then(() => {
-            const originalText = this.elements.shareBtn.textContent;
-            this.elements.shareBtn.textContent = "Copied to Clipboard";
-            this.elements.shareBtn.classList.add('text-cyan-400', 'border-cyan-900');
-            setTimeout(() => {
-                this.elements.shareBtn.textContent = originalText;
-                this.elements.shareBtn.classList.remove('text-cyan-400', 'border-cyan-900');
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
+        if (navigator.share) {
+            navigator.share({
+                title: 'Clarity For Humans',
+                text: text,
+                url: 'https://clarityforhumans.com'
+            }).catch(console.error);
+        } else {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = this.elements.shareBtn.textContent;
+                this.elements.shareBtn.textContent = "Copied to Clipboard";
+                setTimeout(() => {
+                    this.elements.shareBtn.textContent = originalText;
+                }, 2000);
+            });
+        }
     }
 
     render(y, d, h, m, s, ms) {
@@ -321,4 +325,15 @@ class LifeCountdown {
 
 document.addEventListener('DOMContentLoaded', () => {
     new LifeCountdown();
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(reg => {
+                console.log('SW registered:', reg);
+            }).catch(err => {
+                console.log('SW registration failed:', err);
+            });
+        });
+    }
 });

@@ -38,5 +38,41 @@ export const dailyReflections = [
     {
         title: "Protocol: Gray-Scale Habituation",
         content: "Removing color from your device reduces the 'variable reward' of digital interfaces, decreasing limbic attraction to the screen by approximately 40%."
+    },
+    {
+        title: "Protocol: Cognitive Reframing",
+        content: "A craving is not a command; it is a sensation. Label the craving as 'physiological data' rather than 'personal desire' to activate the medial prefrontal cortex."
+    },
+    {
+        title: "Protocol: Reticular Activation",
+        content: "Your brain filters reality based on focus. Write down your primary goal every morning to prime the Reticular Activating System (RAS) to spot opportunities you would otherwise ignore."
+    },
+    {
+        title: "Protocol: Glutamate Balance",
+        content: "Excess screen time increases glutamate, the brain's primary excitatory neurotransmitter. 5 minutes of total eye closure (NSDR) helps rebalance the glutamate/GABA ratio."
+    },
+    {
+        title: "Protocol: Proprioceptive Anchor",
+        content: "When mind-wandering becomes intrusive, focus intensely on the contact between your feet and the floor. This shifts neural load from the Default Mode Network to the Task Positive Network."
+    },
+    {
+        title: "Protocol: Non-Sleep Deep Rest",
+        content: "10 minutes of NSDR (Yoga Nidra) can recover neural energy comparable to 60 minutes of additional REM sleep by resetting the autonomic nervous system."
+    },
+    {
+        title: "Protocol: Precommittment friction",
+        content: "Place your device in another room 60 minutes before sleep. The 'activation energy' required to walk to the other room is a biological shield against late-night dopamine spikes."
+    },
+    {
+        title: "Protocol: Protein Priming",
+        content: "Consuming 30g of protein within 30 minutes of waking stabilizes the tyrosine-dopamine pathway, preventing the mid-day mood fluctuations that trigger substance cravings."
+    },
+    {
+        title: "Protocol: Monotonic Focus",
+        content: "Multitasking is 'Context Switching'—it costs 20% of your total daily cognitive energy in 'switch cost' alone. Do one thing at a time to preserve your neural battery."
+    },
+    {
+        title: "Protocol: The 2-Minute Rule",
+        content: "If a task takes < 120 seconds, do it immediately. This prevents 'Open Loops' in the brain which cause a constant background drain on working memory and anxiety levels."
     }
 ];
