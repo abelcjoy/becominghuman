@@ -185,9 +185,9 @@ select:focus {
 #life-map-grid {
     gap: 3px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid #fff;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.2), inset 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
 .map-square {
@@ -198,23 +198,23 @@ select:focus {
 
 .map-square.past {
     background:
-        linear-gradient(45deg, transparent 47%, #fff 50%, transparent 53%),
-        linear-gradient(-45deg, transparent 47%, #fff 50%, transparent 53%);
-    opacity: 0.5;
-    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.4) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.4) 50%, transparent 52%);
+    opacity: 0.2;
+    filter: none;
 }
 
 .map-square.future {
-    border: 1px solid #ffffff;
-    opacity: 0.15;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    opacity: 1;
 }
 
 .map-square.current {
     background: #ff0000;
-    box-shadow: 0 0 20px #ff0000;
+    box-shadow: 0 0 25px #ff0000;
     z-index: 10;
     animation: nowPulse 1.5s ease-in-out infinite;
-    border: none !important;
+    border: 1px solid #fff !important;
     opacity: 1 !important;
 }
 

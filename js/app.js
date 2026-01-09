@@ -33,9 +33,7 @@ class LifeCountdown {
             breathingCircle: document.getElementById('breathing-circle'),
             breathingText: document.getElementById('breathing-text'),
             crisisTimer: document.getElementById('crisis-timer'),
-            exitCrisis: document.getElementById('exit-crisis'),
-            mapLivedCount: document.getElementById('map-lived-count'),
-            mapRemainCount: document.getElementById('map-remain-count')
+            exitCrisis: document.getElementById('exit-crisis')
         };
         this.crisisInterval = null;
         this.breathingTimeout = null;
@@ -137,10 +135,6 @@ class LifeCountdown {
         const now = new Date();
         const totalWeeks = Math.floor(lifeExpectancy * 52);
         const livedWeeks = Math.floor((now - dob) / (1000 * 60 * 60 * 24 * 7));
-        const remainingWeeks = totalWeeks - livedWeeks;
-
-        if (this.elements.mapLivedCount) this.elements.mapLivedCount.textContent = livedWeeks.toLocaleString();
-        if (this.elements.mapRemainCount) this.elements.mapRemainCount.textContent = remainingWeeks.toLocaleString();
 
         const fragment = document.createDocumentFragment();
         for (let i = 0; i < totalWeeks; i++) {
