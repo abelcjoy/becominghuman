@@ -21,10 +21,7 @@ class LifeCountdown {
             unitSunsets: document.getElementById('unit-sunsets'),
             unitMoons: document.getElementById('unit-moons'),
             unitSummers: document.getElementById('unit-summers'),
-            unitBooks: document.getElementById('unit-books'),
-            ritualStone: document.getElementById('ritual-stone'),
-            ritualContent: document.getElementById('ritual-content'),
-            ritualHint: document.getElementById('ritual-hint')
+            unitBooks: document.getElementById('unit-books')
         };
         this.init();
     }
@@ -34,8 +31,6 @@ class LifeCountdown {
         this.elements.startButton.addEventListener('click', () => this.startCountdown());
         this.elements.shareBtn.addEventListener('click', () => this.shareResult());
 
-        this.setupRitual();
-
         // Load saved state if available
         const savedData = localStorage.getItem('lifeData');
         if (savedData) {
@@ -43,29 +38,7 @@ class LifeCountdown {
         }
     }
 
-    setupRitual() {
-        const stone = this.elements.ritualStone;
 
-        const activate = () => {
-            this.elements.ritualContent.classList.add('ritual-active');
-            this.elements.ritualHint.style.opacity = '0';
-        };
-
-        const deactivate = () => {
-            this.elements.ritualContent.classList.remove('ritual-active');
-            this.elements.ritualHint.style.opacity = '1';
-        };
-
-        stone.addEventListener('mousedown', activate);
-        stone.addEventListener('mouseup', deactivate);
-        stone.addEventListener('mouseleave', deactivate);
-
-        stone.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            activate();
-        });
-        stone.addEventListener('touchend', deactivate);
-    }
 
     populateCountries() {
         const countries = Object.keys(lifeExpectancyData).sort();

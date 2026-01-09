@@ -120,121 +120,98 @@
     <main id="countdown-step"
         class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
 
-        <!-- The Ritual Focal Point (ASMR Stone) -->
-        <div id="ritual-stone"
-            class="relative mb-24 cursor-crosshair select-none active:scale-95 transition-transform duration-700 shrink-0">
-            <div
-                class="w-24 h-24 rounded-full border border-stone-100/10 flex items-center justify-center relative shadow-[0_0_50px_rgba(255,255,255,0.03)] group transition-all duration-700 hover:border-stone-100/30">
-                <div class="absolute inset-0 bg-stone-100/5 animate-pulse opacity-20"></div>
-                <div class="absolute inset-0 bg-gradient-to-t from-stone-500/10 to-transparent"></div>
-                <span
-                    class="text-[8px] uppercase tracking-[0.4em] text-stone-500 group-hover:text-stone-200 transition-colors">Presence</span>
+        <!-- Soul Rank Label (Gamification) -->
+        <div id="soul-rank" class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-500 animate-pulse font-stoic">
+            Initializing Rank...
+        </div>
+
+        <p class="text-[10px] uppercase tracking-[0.5em] text-stone-600 mb-6 font-['Cinzel']">
+            Conscious Time Remaining</p>
+
+        <!-- Conscious Energy Bar (Gamification) -->
+        <div class="w-full max-w-md h-1 bg-stone-900 rounded-full mb-12 overflow-hidden border border-stone-800/30">
+            <div id="life-progress-bar"
+                class="h-full bg-gradient-to-r from-stone-800 via-stone-400 to-stone-800 transition-all duration-1000 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                style="width: 0%"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full">
+            <div class="stat-block group">
+                <div id="c-years"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
+                    00</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Years</div>
             </div>
-            <!-- Instruction -->
-            <div id="ritual-hint"
-                class="absolute -bottom-10 left-1/2 -translate-x-1/2 w-64 text-[9px] uppercase tracking-[0.3em] text-stone-600 transition-opacity duration-500 font-stoic text-center">
-                Hold to Perceive Your Essence
+            <div class="stat-block group">
+                <div id="c-days"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
+                    00</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Days</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-hours"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
+                    00</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Hours</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-minutes"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
+                    00</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Minutes</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-seconds"
+                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
+                    00</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Seconds</div>
+            </div>
+            <div class="stat-block group">
+                <div id="c-milliseconds"
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-red-100/40 blur-[1px]">
+                    000</div>
+                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                    Milliseconds</div>
             </div>
         </div>
 
-        <!-- The Ritual Shroud (Blurred Content) -->
-        <div id="ritual-content"
-            class="blur-2xl opacity-0 scale-[0.98] transition-all duration-[2000ms] flex flex-col items-center pointer-events-none w-full">
+        <div id="explanation-text" class="mt-16 text-gray-400 font-light text-xs md:text-sm max-w-xl text-center px-4">
+            <p class="mb-2 uppercase tracking-wider text-gray-300">How it works</p>
+            <p>Total Life Expectancy (Country Data) - Time Spent Sleeping = <span
+                    class="text-white font-medium">Conscious Time</span></p>
+        </div>
 
-            <!-- Soul Rank Label (Gamification) -->
-            <div id="soul-rank"
-                class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-500 animate-pulse font-stoic">
-                Initializing Rank...
-            </div>
-
-            <p class="text-[10px] uppercase tracking-[0.5em] text-stone-600 mb-6 font-['Cinzel']">
-                Conscious Time Remaining</p>
-
-            <!-- Conscious Energy Bar (Gamification) -->
-            <div class="w-full max-w-md h-1 bg-stone-900 rounded-full mb-12 overflow-hidden border border-stone-800/30">
-                <div id="life-progress-bar"
-                    class="h-full bg-gradient-to-r from-stone-800 via-stone-400 to-stone-800 transition-all duration-1000 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                    style="width: 0%"></div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full">
-                <div class="stat-block group">
-                    <div id="c-years"
-                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                        00</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Years</div>
+        <!-- Experiential Units (Creative Masterstroke) -->
+        <div class="mt-20 w-full max-w-4xl border-t border-stone-800/30 pt-16 mb-20">
+            <h3 class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic">Experiential
+                Remaining
+            </h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <span id="unit-sunsets" class="text-2xl text-stone-300 font-mono tracking-tighter">0000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Sunsets</span>
                 </div>
-                <div class="stat-block group">
-                    <div id="c-days"
-                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                        00</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Days</div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-moons" class="text-2xl text-stone-300 font-mono tracking-tighter">000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Full Moons</span>
                 </div>
-                <div class="stat-block group">
-                    <div id="c-hours"
-                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                        00</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Hours</div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-summers" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Summers</span>
                 </div>
-                <div class="stat-block group">
-                    <div id="c-minutes"
-                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                        00</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Minutes</div>
-                </div>
-                <div class="stat-block group">
-                    <div id="c-seconds"
-                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                        00</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Seconds</div>
-                </div>
-                <div class="stat-block group">
-                    <div id="c-milliseconds"
-                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-red-100/40 blur-[1px]">
-                        000</div>
-                    <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
-                        Milliseconds</div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-books" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Books to Read</span>
                 </div>
             </div>
+        </div>
 
-            <div id="explanation-text"
-                class="mt-16 text-gray-400 font-light text-xs md:text-sm max-w-xl text-center px-4">
-                <p class="mb-2 uppercase tracking-wider text-gray-300">How it works</p>
-                <p>Total Life Expectancy (Country Data) - Time Spent Sleeping = <span
-                        class="text-white font-medium">Conscious Time</span></p>
-            </div>
 
-            <!-- Experiential Units (Creative Masterstroke) -->
-            <div class="mt-20 w-full max-w-4xl border-t border-stone-800/30 pt-16 mb-20">
-                <h3 class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic">Experiential
-                    Remaining
-                </h3>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="flex flex-col items-center">
-                        <span id="unit-sunsets" class="text-2xl text-stone-300 font-mono tracking-tighter">0000</span>
-                        <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Sunsets</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="unit-moons" class="text-2xl text-stone-300 font-mono tracking-tighter">000</span>
-                        <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Full Moons</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="unit-summers" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Summers</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="unit-books" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
-                        <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Books to Read</span>
-                    </div>
-                </div>
-            </div>
-
-        </div> <!-- End Ritual Content -->
 
         <div class="mt-16 pb-12 flex flex-col items-center space-y-8 w-full">
             <button id="share-btn"
