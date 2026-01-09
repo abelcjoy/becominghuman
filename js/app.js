@@ -1,5 +1,6 @@
 import { lifeExpectancyData } from './data.js';
 import { audioEngine } from './audio.js';
+import { dailyReflections } from './reflections.js';
 
 class LifeCountdown {
     constructor() {
@@ -25,7 +26,10 @@ class LifeCountdown {
             unitBooks: document.getElementById('unit-books'),
             soundToggle: document.getElementById('sound-toggle'),
             soundIconOn: document.getElementById('sound-icon-on'),
-            soundIconOff: document.getElementById('sound-icon-off')
+            soundIconOff: document.getElementById('sound-icon-off'),
+            dailyReflection: document.getElementById('daily-reflection'),
+            reflectionTitle: document.getElementById('reflection-title'),
+            reflectionContent: document.getElementById('reflection-content')
         };
         this.init();
     }
@@ -135,9 +139,30 @@ class LifeCountdown {
             this.elements.countdownStep.classList.remove('hidden');
             this.elements.countdownStep.classList.add('view-enter');
 
+            if (this.interval) clearInterval(this.interval);
             this.tick();
             this.interval = setInterval(() => this.tick(), 31);
+
+            this.displayDailyReflection();
         }, 500); // Sync with CSS animation duration
+    }
+
+    displayDailyReflection() {
+        const now = new Date();
+        const startOfYear = new Date(now.getFullYear(), 0, 0);
+        const diff = now - startOfYear;
+        const oneDay = 1000 * 60 * 60 * 24;
+        const dayOfYear = Math.floor(diff / oneDay);
+
+        const index = dayOfYear % dailyReflections.length;
+        const reflection = dailyReflections[index];
+
+        this.elements.reflectionTitle.textContent = reflection.title;
+        this.elements.reflectionContent.textContent = reflection.content;
+
+        setTimeout(() => {
+            this.elements.dailyReflection.classList.remove('opacity-0');
+        }, 1000);
     }
 
     updateSoulRank(years) {
