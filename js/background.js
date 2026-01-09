@@ -18,7 +18,7 @@ class Particle {
         this.size = Math.random() * 2 + 0.5;
         this.alpha = Math.random() * 0.3 + 0.1;
         this.origAlpha = this.alpha;
-        this.color = Math.random() > 0.5 ? '#d6d3d1' : '#78716c'; // Marble and Warm Slate
+        this.color = Math.random() > 0.5 ? '#ffffff' : '#4a4a4a'; // Pure monochromatic dots
     }
 
     update() {
@@ -110,39 +110,6 @@ function animate() {
         p.update();
         p.draw();
     });
-
-    // High contrast connections
-    for (let i = 0; i < particles.length; i++) {
-        const p1 = particles[i];
-
-        // Optimization: Only check nearby particles? No, N^2 is fine for <200
-        for (let j = i + 1; j < particles.length; j++) {
-            const p2 = particles[j];
-            const d = Math.hypot(p1.x - p2.x, p1.y - p2.y);
-
-            if (d < connectionDistance) {
-                // Brighter lines
-                const opacity = (1 - d / connectionDistance) * 0.8;
-                ctx.strokeStyle = `rgba(214, 211, 209, ${opacity})`; // Warm Stone lines
-                ctx.lineWidth = 1.5;
-                ctx.beginPath();
-                ctx.moveTo(p1.x, p1.y);
-                ctx.lineTo(p2.x, p2.y);
-                ctx.stroke();
-            }
-        }
-
-        // Connect to mouse extremely strongly
-        const dMouse = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
-        if (dMouse < mouseDistance) {
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.8 - dMouse / mouseDistance})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-        }
-    }
 
     requestAnimationFrame(animate);
 }

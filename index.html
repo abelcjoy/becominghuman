@@ -50,8 +50,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body
-    class="bg-black text-stone-300 h-screen w-screen overflow-hidden flex items-center justify-center font-sans selective-blue-glow">
+<body class="bg-black text-white h-screen w-screen overflow-hidden flex items-center justify-center font-sans">
     <!-- Ethereal Grain Overlay -->
     <div
         class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]">
@@ -60,32 +59,25 @@
     <!-- Background Ambience -->
     <canvas id="bg-canvas" class="fixed inset-0 z-0 bg-transparent"></canvas>
 
-    <!-- Monumental Landscape (Stoic Divine) -->
-    <div class="fixed bottom-0 left-0 w-full h-[45vh] z-0 pointer-events-none overflow-hidden opacity-40">
+    <!-- Monumental Landscape (Black & White) -->
+    <div class="fixed bottom-0 left-0 w-full h-[30vh] z-0 pointer-events-none overflow-hidden opacity-30">
         <!-- Far Horizon -->
-        <div class="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-stone-900 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-t from-black to-transparent"></div>
         <!-- Solitary Obelisk -->
         <div
-            class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-32 h-full bg-[#0a0a0a] clip-obelisk border-x border-stone-800/20 shadow-[0_0_100px_rgba(0,0,0,1)]">
+            class="absolute bottom-[-10%] left-1/2 -translate-x-1/2 w-32 h-full bg-[#000000] clip-obelisk border-x border-white/5 shadow-[0_0_100px_rgba(0,0,0,1)]">
         </div>
-        <!-- Atmosphere -->
-        <div class="absolute inset-0 bg-radial-gradient from-transparent via-black/20 to-black"></div>
     </div>
 
     <style>
         .clip-obelisk {
             clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
         }
-
-        .selective-blue-glow {
-            box-shadow: inset 0 0 150px rgba(28, 25, 23, 0.5);
-        }
     </style>
 
-    <!-- Setup Step -->
     <main id="setup-step"
-        class="relative z-10 w-full max-w-md p-8 bg-zinc-900/50 backdrop-blur-xl border border-white/5 rounded-2xl shadow-2xl transition-all duration-700">
-        <h1 class="text-4xl font-bold text-center mb-2 tracking-[0.2em] text-stone-200 uppercase font-['Cinzel']">Setup
+        class="relative z-10 w-full max-w-md p-8 bg-black backdrop-blur-xl border border-white/10 rounded-none shadow-2xl transition-all duration-700">
+        <h1 class="text-4xl font-bold text-center mb-2 tracking-[0.2em] text-white uppercase font-['Cinzel']">Setup
             Reality</h1>
         <p class="text-center text-stone-500 text-sm mb-8 font-light italic">"Waste no more time arguing what a good man
             should be. Be one."</p>
@@ -93,32 +85,32 @@
         <div class="space-y-6">
             <div class="group">
                 <label
-                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-amber-400 transition-colors">Date
+                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Date
                     of Birth</label>
                 <input type="date" id="dob"
-                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-amber-400 rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-amber-400">
+                    class="w-full bg-black border border-white/20 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white">
             </div>
 
             <div class="group">
                 <label
-                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-amber-400 transition-colors">Location
+                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Location
                     (Life Expectancy)</label>
                 <select id="country"
-                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-amber-400 rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-amber-400">
+                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-white">
                     <!-- Populated by JS -->
                 </select>
             </div>
 
             <div class="group">
                 <label
-                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-amber-400 transition-colors">Daily
+                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Daily
                     Sleep (Hours)</label>
                 <input type="number" id="sleep" min="0" max="24" step="0.5" value="8"
-                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-amber-400 rounded-lg px-4 py-3 text-xl font-light transition-colors text-white focus:outline-none focus:ring-1 focus:ring-amber-400">
+                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white focus:outline-none focus:ring-1 focus:ring-white">
             </div>
 
             <button id="start-btn"
-                class="w-full mt-8 bg-white text-black hover:bg-amber-50 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                class="w-full mt-8 bg-white text-black hover:bg-stone-200 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                 Initialize Sequence
             </button>
         </div>
@@ -214,7 +206,7 @@
                 class="mt-16 text-gray-400 font-light text-xs md:text-sm max-w-xl text-center px-4">
                 <p class="mb-2 uppercase tracking-wider text-gray-300">How it works</p>
                 <p>Total Life Expectancy (Country Data) - Time Spent Sleeping = <span
-                        class="text-amber-400 font-medium">Conscious Time</span></p>
+                        class="text-white font-medium">Conscious Time</span></p>
             </div>
 
             <!-- Experiential Units (Creative Masterstroke) -->
@@ -246,12 +238,12 @@
 
         <div class="mt-16 pb-12 flex flex-col items-center space-y-8 w-full">
             <button id="share-btn"
-                class="px-6 py-2 border border-white/10 hover:border-amber-400 text-gray-300 hover:text-amber-400 rounded-full text-xs uppercase tracking-widest transition-all duration-300">
+                class="px-6 py-2 border border-white/10 hover:border-white text-gray-400 hover:text-white rounded-full text-xs uppercase tracking-widest transition-all duration-300">
                 Share Reflection
             </button>
 
             <button onclick="localStorage.clear(); location.reload();"
-                class="text-xs text-gray-500 hover:text-red-400 transition-colors uppercase tracking-widest">
+                class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">
                 Reset Reality
             </button>
 
