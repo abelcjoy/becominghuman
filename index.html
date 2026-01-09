@@ -65,7 +65,7 @@
                 type="video/mp4">
         </video>
         <!-- Dark Overlay for Readability -->
-        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <div class="absolute inset-0 bg-black/80 z-10"></div>
     </div>
 
     <main id="setup-step"
@@ -78,7 +78,7 @@
         <div class="space-y-6">
             <div class="group">
                 <label
-                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Date
+                    class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Date
                     of Birth</label>
                 <input type="date" id="dob"
                     class="w-full bg-black border border-white/20 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white">
@@ -86,7 +86,7 @@
 
             <div class="group">
                 <label
-                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Location
+                    class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Location
                     (Life Expectancy)</label>
                 <select id="country"
                     class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-white">
@@ -114,19 +114,19 @@
         class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
 
         <!-- Soul Rank Label (Gamification) -->
-        <div id="soul-rank" class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-500 animate-pulse font-stoic">
+        <div id="soul-rank" class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-300 font-bold font-stoic">
         </div>
 
         <!-- Daily Reflection (Retention Engine) -->
         <div id="daily-reflection" class="mb-12 max-w-lg text-center opacity-0 transition-opacity duration-1000">
-            <h4 class="text-[9px] uppercase tracking-[0.4em] text-stone-600 mb-3 font-mono">Daily Reflection</h4>
-            <h3 id="reflection-title" class="text-sm font-light text-white uppercase tracking-widest mb-2">The
+            <h4 class="text-[9px] uppercase tracking-[0.4em] text-stone-500 mb-3 font-mono">Daily Protocol</h4>
+            <h3 id="reflection-title" class="text-sm font-bold text-white uppercase tracking-widest mb-2">The
                 Architecture of Silence</h3>
-            <p id="reflection-content" class="text-[11px] leading-relaxed text-stone-400 font-light italic">Refining the
+            <p id="reflection-content" class="text-[11px] leading-relaxed text-stone-300 font-light italic">Refining the
                 baseline of human consciousness...</p>
         </div>
 
-        <p class="text-[10px] uppercase tracking-[0.5em] text-stone-600 mb-6 font-['Cinzel']">
+        <p class="text-[10px] uppercase tracking-[0.5em] text-stone-500 mb-6 font-['Cinzel'] font-bold">
             Conscious Time Remaining</p>
 
         <!-- Conscious Energy Bar (Gamification) -->
@@ -141,42 +141,42 @@
                 <div id="c-years"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
                     00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Years</div>
             </div>
             <div class="stat-block group">
                 <div id="c-days"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
                     00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Days</div>
             </div>
             <div class="stat-block group">
                 <div id="c-hours"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
                     00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Hours</div>
             </div>
             <div class="stat-block group">
                 <div id="c-minutes"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
                     00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Minutes</div>
             </div>
             <div class="stat-block group">
                 <div id="c-seconds"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
                     00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Seconds</div>
             </div>
             <div class="stat-block group">
                 <div id="c-milliseconds"
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-red-100/40 blur-[1px]">
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-white/60 blur-[1px]">
                     000</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-500 mt-2">
+                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
                     Milliseconds</div>
             </div>
         </div>
@@ -188,26 +188,27 @@
         </div>
 
         <!-- Experiential Units (Creative Masterstroke) -->
-        <div class="mt-20 w-full max-w-4xl border-t border-stone-800/30 pt-16 mb-20">
-            <h3 class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic">Experiential
+        <div class="mt-20 w-full max-w-4xl border-t border-stone-800 pt-16 mb-20">
+            <h3 class="text-stone-400 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic font-bold">Experiential
                 Remaining
             </h3>
             <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center">
-                    <span id="unit-sunsets" class="text-2xl text-stone-300 font-mono tracking-tighter">0000</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Sunsets</span>
+                    <span id="unit-sunsets" class="text-2xl text-white font-mono tracking-tighter">0000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Sunsets</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="unit-moons" class="text-2xl text-stone-300 font-mono tracking-tighter">000</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Full Moons</span>
+                    <span id="unit-moons" class="text-2xl text-white font-mono tracking-tighter">000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Full Moons</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="unit-summers" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Summers</span>
+                    <span id="unit-summers" class="text-2xl text-white font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Summers</span>
                 </div>
                 <div class="flex flex-col items-center">
-                    <span id="unit-books" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Books to Read</span>
+                    <span id="unit-books" class="text-2xl text-white font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Books to
+                        Read</span>
                 </div>
             </div>
         </div>
@@ -309,7 +310,7 @@
                     <h3
                         class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
                         01. Baseline Dopamine Restoration</h3>
-                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
                         <p>To overcome addiction, you must manage your <span class="text-white">Dopamine
                                 Baseline</span>. Spikes from substances or digital feeds cause an equal and opposite
                             "crash" below baseline, creating cravings.</p>
@@ -327,7 +328,7 @@
                     <h3
                         class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
                         02. Parasympathetic Override</h3>
-                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
                         <p>Anxiety and cravings are Sympathetic (Fight or Flight) responses. You can manually override
                             this through the <span class="text-white">Vagus Nerve</span>.</p>
                         <ul class="list-none space-y-2 border-l border-white/10 pl-4">
@@ -344,7 +345,7 @@
                     <h3
                         class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
                         03. Circadian Precision</h3>
-                    <div class="text-stone-400 text-xs leading-relaxed space-y-4">
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
                         <p>View sunlight within 30 minutes of waking. This triggers <span class="text-white">Cortisol
                                 release</span> and sets a timer for Melatonin, regulating the brain's internal rhythm.
                         </p>
@@ -362,7 +363,7 @@
                             <h4
                                 class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
                                 A. Digital Compulsion</h4>
-                            <div class="text-stone-400 text-[10px] leading-relaxed space-y-2">
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
                                 <p><span class="text-white font-medium">The Gray Mode Hack:</span> Set your device to
                                     grayscale. This removes the 'variable reward' of color, slashing interest by 40%.
                                 </p>
@@ -376,7 +377,7 @@
                             <h4
                                 class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
                                 B. High-Arousal Loops</h4>
-                            <div class="text-stone-400 text-[10px] leading-relaxed space-y-2">
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
                                 <p><span class="text-white font-medium">Environmental Cleansing:</span> Cues are stored
                                     in space. Never use your device in the same place you sleep or relax.</p>
                                 <p><span class="text-white font-medium">The 15-Min Wave:</span> Cravings are temporary
@@ -390,7 +391,7 @@
                             <h4
                                 class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
                                 C. Chemical Reward</h4>
-                            <div class="text-stone-400 text-[10px] leading-relaxed space-y-2">
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
                                 <p><span class="text-white font-medium">Glucose Blunting:</span> 1 tbsp vinegar or lemon
                                     juice before meals blunts the insulin spike and subsequent brain crash.</p>
                                 <p><span class="text-white font-medium">Protein Priming:</span> High protein intake at
@@ -403,7 +404,7 @@
                             <h4
                                 class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
                                 D. Substance Baseline</h4>
-                            <div class="text-stone-400 text-[10px] leading-relaxed space-y-2">
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
                                 <p><span class="text-white font-medium">The 72-Hour Reset:</span> It takes 3 days for
                                     primary withdrawal cues to weaken. Survival of the first 72 hours is the biological
                                     goal.</p>
@@ -416,7 +417,7 @@
                 </div>
             </div>
 
-            <p class="mt-20 text-center text-[8px] text-stone-600 uppercase tracking-widest font-mono">This is not
+            <p class="mt-20 text-center text-[8px] text-stone-400 uppercase tracking-widest font-mono">This is not
                 motivation. This is biological maintenance.</p>
         </div>
     </div>
