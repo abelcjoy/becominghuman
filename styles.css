@@ -185,3 +185,10 @@ select:focus {
         transform: translateX(100%);
     }
 }
+
+/* Mobile Polish */
+@media (max-width: 640px) {
+    .stat-number {
+        font-size: 3rem !important;
+    }
+}

@@ -1,4 +1,5 @@
 import { lifeExpectancyData } from './data.js';
+import { audioEngine } from './audio.js';
 
 class LifeCountdown {
     constructor() {
@@ -21,7 +22,10 @@ class LifeCountdown {
             unitSunsets: document.getElementById('unit-sunsets'),
             unitMoons: document.getElementById('unit-moons'),
             unitSummers: document.getElementById('unit-summers'),
-            unitBooks: document.getElementById('unit-books')
+            unitBooks: document.getElementById('unit-books'),
+            soundToggle: document.getElementById('sound-toggle'),
+            soundIconOn: document.getElementById('sound-icon-on'),
+            soundIconOff: document.getElementById('sound-icon-off')
         };
         this.init();
     }
@@ -30,11 +34,25 @@ class LifeCountdown {
         this.populateCountries();
         this.elements.startButton.addEventListener('click', () => this.startCountdown());
         this.elements.shareBtn.addEventListener('click', () => this.shareResult());
+        this.elements.soundToggle.addEventListener('click', () => this.toggleSound());
 
         // Load saved state if available
         const savedData = localStorage.getItem('lifeData');
         if (savedData) {
             this.startCountdown(JSON.parse(savedData));
+        }
+    }
+
+    toggleSound() {
+        const isPlaying = audioEngine.toggle();
+        if (isPlaying) {
+            this.elements.soundIconOn.classList.remove('hidden');
+            this.elements.soundIconOff.classList.add('hidden');
+            this.elements.soundToggle.classList.add('opacity-100');
+        } else {
+            this.elements.soundIconOn.classList.add('hidden');
+            this.elements.soundIconOff.classList.remove('hidden');
+            this.elements.soundToggle.classList.remove('opacity-100');
         }
     }
 
