@@ -17,7 +17,11 @@ class LifeCountdown {
             millisecondsEl: document.getElementById('c-milliseconds'),
             shareBtn: document.getElementById('share-btn'),
             progressBar: document.getElementById('life-progress-bar'),
-            soulRank: document.getElementById('soul-rank')
+            soulRank: document.getElementById('soul-rank'),
+            unitSunsets: document.getElementById('unit-sunsets'),
+            unitMoons: document.getElementById('unit-moons'),
+            unitSummers: document.getElementById('unit-summers'),
+            unitBooks: document.getElementById('unit-books')
         };
         this.init();
     }
@@ -140,7 +144,24 @@ class LifeCountdown {
         this.elements.progressBar.style.width = `${percentage}%`;
 
         this.updateSoulRank(years);
+        this.updateExperientialUnits(consciousMs);
         this.render(years, days, hours, minutes, seconds, ms);
+    }
+
+    updateExperientialUnits(ms) {
+        const days = ms / (1000 * 60 * 60 * 24);
+        const years = days / 365;
+
+        // Calculations
+        const sunsets = Math.floor(days);
+        const fullMoons = Math.floor(days / 29.53);
+        const summers = Math.floor(years);
+        const books = Math.floor(years * 6); // Assuming 1 book every 2 months
+
+        this.elements.unitSunsets.textContent = sunsets.toLocaleString();
+        this.elements.unitMoons.textContent = fullMoons.toLocaleString();
+        this.elements.unitSummers.textContent = summers.toLocaleString();
+        this.elements.unitBooks.textContent = books.toLocaleString();
     }
 
     shareResult() {

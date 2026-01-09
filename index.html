@@ -111,7 +111,7 @@
 
     <!-- Countdown Step -->
     <main id="countdown-step"
-        class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-center h-full">
+        class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
 
         <!-- Soul Rank Label (Gamification) -->
         <div id="soul-rank" class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-500 animate-pulse font-stoic">
@@ -183,6 +183,30 @@
             <p class="mb-2 uppercase tracking-wider text-gray-300">How it works</p>
             <p>Total Life Expectancy (Country Data) - Time Spent Sleeping = <span
                     class="text-amber-400 font-medium">Conscious Time</span></p>
+        </div>
+
+        <!-- Experiential Units (Creative Masterstroke) -->
+        <div class="mt-20 w-full max-w-4xl border-t border-stone-800/30 pt-16 mb-20">
+            <h3 class="text-stone-500 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic">Experiential Remaining
+            </h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center">
+                    <span id="unit-sunsets" class="text-2xl text-stone-300 font-mono tracking-tighter">0000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Sunsets</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-moons" class="text-2xl text-stone-300 font-mono tracking-tighter">000</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Full Moons</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-summers" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Summers</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <span id="unit-books" class="text-2xl text-stone-300 font-mono tracking-tighter">00</span>
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600 mt-2">Books to Read</span>
+                </div>
+            </div>
         </div>
 
         <button id="share-btn"
