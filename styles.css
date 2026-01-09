@@ -15,7 +15,7 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
-    animation: focusPulse 8s ease-in-out infinite;
+    animation: focusPulse 10s ease-in-out infinite;
 }
 
 @keyframes focusPulse {
@@ -23,10 +23,12 @@ body {
     0%,
     100% {
         transform: scale(1);
+        filter: brightness(1);
     }
 
     50% {
-        transform: scale(1.02);
+        transform: scale(1.01);
+        filter: brightness(1.2);
     }
 }
 
@@ -41,23 +43,23 @@ body {
 /* --- Universe-Tier UI Components --- */
 
 .glass-panel {
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+    border: 2px solid #fff;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.05);
 }
 
 /* The Liquid Number Glow (Premium Aesthetic) */
 .stat-number {
     position: relative;
-    background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+    background: #fff;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    font-weight: 300;
+    font-weight: 700;
     letter-spacing: -0.05em;
 }
 
@@ -187,12 +189,14 @@ select:focus {
 }
 
 .map-square.past {
-    background: white;
+    background: #fff;
     border: none;
+    box-shadow: 0 0 4px #fff;
 }
 
 .map-square.future {
     background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* --- Crisis Mode --- */
