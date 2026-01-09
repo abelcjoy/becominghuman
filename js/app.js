@@ -1,5 +1,6 @@
 import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
+import { LifeSimulator } from './simulator.js';
 
 class LifeCountdown {
     constructor() {
@@ -35,12 +36,21 @@ class LifeCountdown {
             attentionEquity: document.getElementById('attention-equity'),
             burnRate: document.getElementById('burn-rate'),
             recaptureTimer: document.getElementById('recapture-timer'),
-            globalSovereigns: document.getElementById('global-sovereigns')
+            globalSovereigns: document.getElementById('global-sovereigns'),
+            simHub: document.getElementById('sim-hub'),
+            simAge: document.getElementById('sim-age'),
+            simPocketTime: document.getElementById('sim-pocket-time'),
+            jobList: document.getElementById('job-list'),
+            eduList: document.getElementById('edu-list'),
+            simLog: document.getElementById('sim-log')
         };
         this.crisisInterval = null;
         this.breathingTimeout = null;
         this.recaptureStartTime = null;
         this.recaptureInterval = null;
+        this.pocketTime = 0;
+        this.biologicalAge = 0;
+        this.equityMultiplier = 1.0;
         this.init();
     }
 
@@ -131,7 +141,84 @@ class LifeCountdown {
 
             this.displayDailyReflection();
             this.startRecaptureSession();
+            this.initSimulator(dob);
         }, 500);
+    }
+
+    initSimulator(dob) {
+        this.elements.simHub.classList.remove('hidden');
+
+        // Initialize the life simulator engine
+        if (!window.simulator) {
+            window.simulator = new LifeSimulator(this);
+        }
+
+        this.updateSimState(dob);
+        this.renderSimMarket();
+    }
+
+    updateSimState(dob) {
+        const now = new Date();
+        const diffMs = now - new Date(dob);
+        this.biologicalAge = diffMs / (1000 * 60 * 60 * 24 * 365.25);
+        this.elements.simAge.textContent = this.biologicalAge.toFixed(2);
+
+        // Pocket Time logic
+        if (this.biologicalAge < 18) {
+            // Give 2 hours of pocket time for every "Real Day" lived in simulation context
+            this.pocketTime = Math.max(0, (18 - this.biologicalAge) * 10);
+        }
+        this.elements.simPocketTime.textContent = `${this.pocketTime.toFixed(1)} HRS`;
+    }
+
+    renderSimMarket() {
+        const biologicalAge = window.simulator ? window.simulator.state.biologicalAge : this.biologicalAge;
+        const pocketTime = window.simulator ? window.simulator.state.pocketTime : this.pocketTime;
+
+        const jobs = [
+            { name: "Dishwasher", minAge: 14, timeCostHours: 8, rewardHours: 4, desc: "Commit 8h life -> +4h Pocket" },
+            { name: "Lawn Mower", minAge: 12, timeCostHours: 4, rewardHours: 2.5, desc: "Commit 4h life -> +2.5h Pocket" },
+            { name: "Dog Walker", minAge: 10, timeCostHours: 2, rewardHours: 1.5, desc: "Commit 2h life -> +1.5h Pocket" },
+            { name: "Grocery Bagger", minAge: 16, timeCostHours: 6, rewardHours: 3.5, desc: "Commit 6h life -> +3.5h Pocket" }
+        ];
+
+        const edus = [
+            { name: "Self-Study Path", costHours: 5, reward: 0.05, desc: "Spend 5h Pocket -> +5% Equity" },
+            { name: "Deep Tech Course", costHours: 20, reward: 0.25, desc: "Spend 20h Pocket -> +25% Equity" },
+            { name: "Terminal Training", costHours: 50, reward: 0.60, desc: "Spend 50h Pocket -> +60% Equity" }
+        ];
+
+        this.elements.jobList.innerHTML = jobs.map(j => `
+            <button class="sim-btn" ${biologicalAge < j.minAge ? 'disabled' : ''} onclick="window.app.commitJob('${j.name}', ${j.timeCostHours}, ${j.rewardHours})">
+                <span>${j.name} <br><small class="opacity-50">${j.desc}</small></span>
+                <span class="cost">-${j.timeCostHours}H</span>
+            </button>
+        `).join('');
+
+        this.elements.eduList.innerHTML = edus.map(e => `
+            <button class="sim-btn" ${pocketTime < e.costHours ? 'disabled' : ''} onclick="window.app.commitEdu('${e.name}', ${e.costHours}, ${e.reward})">
+                <span>${e.name} <br><small class="opacity-50">${e.desc}</small></span>
+                <span class="reward">+${(e.reward * 100).toFixed(0)}%</span>
+            </button>
+        `).join('');
+    }
+
+    commitJob(name, cost, reward) {
+        if (window.simulator) {
+            window.simulator.workJob(name, cost, reward);
+        }
+    }
+
+    commitEdu(name, cost, rewardModifier) {
+        if (window.simulator) {
+            window.simulator.studyCourse(name, cost, rewardModifier);
+        }
+    }
+
+    logSim(msg) {
+        const div = document.createElement('div');
+        div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+        this.elements.simLog.prepend(div);
     }
 
     startRecaptureSession() {
@@ -273,7 +360,9 @@ class LifeCountdown {
     updateBiologicalCapital(ms) {
         // Market Value: $450,000 for full lifespan (~75 years)
         const totalConsciousHoursRemaining = ms / (1000 * 60 * 60);
-        const equity = totalConsciousHoursRemaining * 25;
+        // Apply Education Multiplier from simulator if available
+        const multiplier = window.simulator ? window.simulator.state.equityMultiplier : this.equityMultiplier;
+        const equity = totalConsciousHoursRemaining * 25 * multiplier;
         if (this.elements.attentionEquity) this.elements.attentionEquity.textContent = Math.floor(equity).toLocaleString();
 
         const dailyBurn = 3 * 25;
@@ -318,7 +407,7 @@ class LifeCountdown {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new LifeCountdown();
+    window.app = new LifeCountdown();
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

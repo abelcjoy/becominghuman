@@ -227,12 +227,138 @@
                 </div>
             </div>
 
+            <!-- Life Simulator: The Chronos Protocol -->
+            <div id="sim-hub" class="w-full max-w-6xl p-8 terminal-box mb-12 relative overflow-hidden hidden">
+                <div class="flex flex-col gap-8">
+                    <!-- Header: Age & Pocket Time -->
+                    <div class="flex justify-between items-center border-b border-white/20 pb-4">
+                        <div class="text-left">
+                            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-1 font-mono">Current
+                                Biological Age</h4>
+                            <div class="text-3xl font-stoic text-white" id="sim-age">00.00</div>
+                        </div>
+                        <div class="text-center">
+                            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-1 font-mono">Life Phase
+                            </h4>
+                            <div class="text-xl font-mono text-yellow-500 font-bold" id="sim-phase">Childhood</div>
+                        </div>
+                        <div class="text-right">
+                            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-1 font-mono">Available
+                                Pocket Time</h4>
+                            <div class="text-3xl font-mono text-green-500 font-bold" id="sim-pocket-time">0.0 HRS</div>
+                        </div>
+                    </div>
+
+                    <!-- Core Stats -->
+                    <div class="p-4 border border-white/10 bg-white/5">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">Core Attributes
+                        </h5>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="sim-stats">
+                            <!-- Stats injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Relationships -->
+                    <div class="p-4 border border-white/10 bg-white/5">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">Relationships
+                            (Decay Over Time)</h5>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="sim-relationships">
+                            <!-- Relationships injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="p-4 border border-white/10 bg-white/5">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">Skills & Mastery
+                        </h5>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="sim-skills">
+                            <!-- Skills injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Actions Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- The Labor Market -->
+                        <div class="p-4 border border-white/10 bg-white/5">
+                            <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">💼 Labor
+                                Market</h5>
+                            <div class="flex flex-col gap-2" id="job-list">
+                                <!-- Jobs injected by JS -->
+                            </div>
+                        </div>
+
+                        <!-- The Academy -->
+                        <div class="p-4 border border-white/10 bg-white/5">
+                            <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">📚 The
+                                Academy</h5>
+                            <div class="flex flex-col gap-2" id="edu-list">
+                                <!-- Education injected by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Health & Wellness -->
+                        <div class="p-4 border border-white/10 bg-white/5">
+                            <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">🏃 Health &
+                                Wellness</h5>
+                            <div class="flex flex-col gap-2">
+                                <button onclick="window.simulator.exercise()" class="sim-btn">
+                                    <span>Exercise<br><small class="opacity-50">+10 Health, +3 Fitness</small></span>
+                                    <span class="cost">-1H</span>
+                                </button>
+                                <button onclick="window.simulator.meditate()" class="sim-btn">
+                                    <span>Meditate<br><small class="opacity-50">+8 Happiness, +10 Energy</small></span>
+                                    <span class="cost">-0.5H</span>
+                                </button>
+                                <button onclick="window.simulator.rest()" class="sim-btn">
+                                    <span>Rest<br><small class="opacity-50">+30 Energy, +5 Health</small></span>
+                                    <span class="reward">FREE</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legacy & Creation -->
+                    <div class="p-4 border border-white/10 bg-white/5">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">🌟 Legacy &
+                            Creation</h5>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                            <button onclick="window.simulator.createSomething('art')" class="sim-btn">
+                                <span>Create Art<br><small class="opacity-50">+10 Legacy Impact</small></span>
+                                <span class="cost">-5H</span>
+                            </button>
+                            <button onclick="window.simulator.createSomething('writing')" class="sim-btn">
+                                <span>Write<br><small class="opacity-50">+10 Legacy Impact</small></span>
+                                <span class="cost">-5H</span>
+                            </button>
+                            <button onclick="window.simulator.createSomething('code')" class="sim-btn">
+                                <span>Build Software<br><small class="opacity-50">+10 Legacy Impact</small></span>
+                                <span class="cost">-5H</span>
+                            </button>
+                            <button onclick="window.simulator.createSomething('music')" class="sim-btn">
+                                <span>Compose Music<br><small class="opacity-50">+10 Legacy Impact</small></span>
+                                <span class="cost">-5H</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event Log -->
+                    <div class="p-4 border border-white/10 bg-white/5">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-4 font-mono">📜 Life Events
+                            Log</h5>
+                        <div id="sim-log"
+                            class="text-[10px] font-mono text-white/60 space-y-1 max-h-24 overflow-hidden">
+                            Initializing simulated existence...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mb-12 text-center">
                 <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
                 </p>
                 <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
             </div>
-        </div>
+        </div> <!-- End Dashboard Container -->
         <div class="mt-24 w-full max-w-2xl bg-white p-1 flex flex-col md:flex-row items-stretch justify-between gap-1
                 shadow-[0_0_100px_rgba(255,255,255,0.2)]">
             <button id="crave-btn"
