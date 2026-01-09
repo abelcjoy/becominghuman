@@ -15,6 +15,19 @@ body {
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
     min-height: 100vh;
+    animation: focusPulse 8s ease-in-out infinite;
+}
+
+@keyframes focusPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
 }
 
 .font-stoic {
@@ -156,6 +169,64 @@ select:focus {
     border-color: #ffffff !important;
     background: rgba(255, 255, 255, 0.05) !important;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- Life Map Grid --- */
+.grid-cols-26 {
+    grid-template-columns: repeat(26, minmax(0, 1fr));
+}
+
+.grid-cols-52 {
+    grid-template-columns: repeat(52, minmax(0, 1fr));
+}
+
+.map-square {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.map-square.past {
+    background: white;
+    border: none;
+}
+
+.map-square.future {
+    background: transparent;
+}
+
+/* --- Crisis Mode --- */
+#breathing-circle.inhale {
+    animation: breathingInhale 4s ease-in-out forwards;
+}
+
+#breathing-circle.exhale {
+    animation: breathingExhale 6s ease-in-out forwards;
+}
+
+@keyframes breathingInhale {
+    from {
+        transform: scale(1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    to {
+        transform: scale(2.5);
+        border-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 50px white;
+    }
+}
+
+@keyframes breathingExhale {
+    from {
+        transform: scale(2.5);
+        border-color: rgba(255, 255, 255, 1);
+    }
+
+    to {
+        transform: scale(1);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
 }
 
 /* --- Utilities --- */

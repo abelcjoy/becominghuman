@@ -51,6 +51,10 @@
 </head>
 
 <body class="bg-black text-white h-screen w-screen overflow-hidden flex items-center justify-center font-sans">
+    <!-- Living UI Frame (Focus Pulse) -->
+    <div id="living-ui"
+        class="fixed inset-0 z-0 pointer-events-none transition-transform duration-[4000ms] ease-in-out"></div>
+
     <!-- Ethereal Grain Overlay -->
     <div
         class="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]">
@@ -136,6 +140,19 @@
                 style="width: 0%"></div>
         </div>
 
+        <!-- Life Map (Visual Shock) -->
+        <div id="life-map-container" class="mb-16 w-full max-w-2xl px-4 opacity-0 transition-opacity duration-1000">
+            <h4 class="text-[9px] uppercase tracking-[0.4em] text-stone-500 mb-6 font-mono font-bold">The Map of Your
+                Existence (Weeks)</h4>
+            <div id="life-map-grid" class="grid grid-cols-26 sm:grid-cols-52 gap-[2px] w-full aspect-[52/90]">
+                <!-- Squares injected by JS -->
+            </div>
+            <div class="mt-4 flex justify-between text-[8px] uppercase tracking-[0.3em] text-stone-600 font-mono">
+                <span>Birth</span>
+                <span>End of Projection</span>
+            </div>
+        </div>
+
         <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full">
             <div class="stat-block group">
                 <div id="c-years"
@@ -215,25 +232,29 @@
 
 
 
-        <div class="mt-16 pb-12 flex flex-col items-center space-y-8 w-full">
-            <button id="share-btn"
-                class="px-6 py-2 border border-white/10 hover:border-white text-gray-400 hover:text-white rounded-full text-xs uppercase tracking-widest transition-all duration-300">
-                Share Reflection
-            </button>
+        <button id="crave-btn"
+            class="px-10 py-4 bg-white text-black font-bold uppercase tracking-[0.4em] text-[10px] hover:bg-red-600 hover:text-white transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+            I Have a Craving
+        </button>
 
-            <button onclick="localStorage.clear(); location.reload();"
-                class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">
-                Reset Reality
-            </button>
+        <button id="share-btn"
+            class="px-6 py-2 border border-white/10 hover:border-white text-gray-400 hover:text-white rounded-full text-xs uppercase tracking-widest transition-all duration-300">
+            Share Reflection
+        </button>
 
-            <div class="flex space-x-6 text-[10px] uppercase tracking-[0.2em] text-gray-500">
-                <button onclick="document.getElementById('policy-modal').classList.remove('hidden')"
-                    class="hover:text-white transition-colors">Privacy Policy</button>
-                <button onclick="document.getElementById('about-modal').classList.remove('hidden')"
-                    class="hover:text-white transition-colors">About</button>
-                <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
-                    class="text-white hover:text-white/70 transition-all font-bold">The Protocol</button>
-            </div>
+        <button onclick="localStorage.clear(); location.reload();"
+            class="text-xs text-gray-600 hover:text-white transition-colors uppercase tracking-widest">
+            Reset Reality
+        </button>
+
+        <div class="flex space-x-6 text-[10px] uppercase tracking-[0.2em] text-gray-500">
+            <button onclick="document.getElementById('policy-modal').classList.remove('hidden')"
+                class="hover:text-white transition-colors">Privacy Policy</button>
+            <button onclick="document.getElementById('about-modal').classList.remove('hidden')"
+                class="hover:text-white transition-colors">About</button>
+            <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
+                class="text-white hover:text-white/70 transition-all font-bold">The Protocol</button>
+        </div>
         </div>
     </main>
 
@@ -420,6 +441,24 @@
             <p class="mt-20 text-center text-[8px] text-stone-400 uppercase tracking-widest font-mono">This is not
                 motivation. This is biological maintenance.</p>
         </div>
+    </div>
+
+    <!-- Crisis Mode Overlay (Neuro-Shield) -->
+    <div id="crisis-mode"
+        class="fixed inset-0 z-[200] hidden bg-black flex flex-col items-center justify-center p-8 transition-all duration-1000">
+        <div id="breathing-circle"
+            class="w-32 h-32 border-2 border-white rounded-full flex items-center justify-center mb-12">
+            <span id="breathing-text" class="text-[10px] uppercase tracking-[0.5em] text-white">Inhale</span>
+        </div>
+        <div class="max-w-md text-center">
+            <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] mb-4">Crisis Containment</h2>
+            <p id="crisis-instruction" class="text-[11px] text-stone-400 italic">Survival is a 900-second wave. Breathe
+                with the circle.</p>
+            <div class="mt-12 text-2xl font-mono text-white tracking-widest" id="crisis-timer">15:00</div>
+        </div>
+        <button id="exit-crisis"
+            class="mt-20 text-[9px] uppercase tracking-widest text-stone-600 hover:text-white transition-colors">Abort
+            Override</button>
     </div>
 
     <script type="module" src="js/app.js"></script>

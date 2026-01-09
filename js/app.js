@@ -25,8 +25,18 @@ class LifeCountdown {
             unitBooks: document.getElementById('unit-books'),
             dailyReflection: document.getElementById('daily-reflection'),
             reflectionTitle: document.getElementById('reflection-title'),
-            reflectionContent: document.getElementById('reflection-content')
+            reflectionContent: document.getElementById('reflection-content'),
+            lifeMapContainer: document.getElementById('life-map-container'),
+            lifeMapGrid: document.getElementById('life-map-grid'),
+            craveBtn: document.getElementById('crave-btn'),
+            crisisMode: document.getElementById('crisis-mode'),
+            breathingCircle: document.getElementById('breathing-circle'),
+            breathingText: document.getElementById('breathing-text'),
+            crisisTimer: document.getElementById('crisis-timer'),
+            exitCrisis: document.getElementById('exit-crisis')
         };
+        this.crisisInterval = null;
+        this.breathingTimeout = null;
         this.init();
     }
 
@@ -36,6 +46,8 @@ class LifeCountdown {
             this.startCountdown();
         });
         this.elements.shareBtn.addEventListener('click', () => this.shareResult());
+        this.elements.craveBtn.addEventListener('click', () => this.enterCrisisMode());
+        this.elements.exitCrisis.addEventListener('click', () => this.exitCrisisMode());
 
         // Load saved state if available
         const savedData = localStorage.getItem('lifeData');
@@ -114,7 +126,82 @@ class LifeCountdown {
             this.interval = setInterval(() => this.tick(), 31);
 
             this.displayDailyReflection();
+            this.renderLifeMap(dob, lifeExpectancyYears);
         }, 500); // Sync with CSS animation duration
+    }
+
+    renderLifeMap(dob, lifeExpectancy) {
+        this.elements.lifeMapGrid.innerHTML = '';
+        const now = new Date();
+        const totalWeeks = Math.floor(lifeExpectancy * 52);
+        const livedWeeks = Math.floor((now - dob) / (1000 * 60 * 60 * 24 * 7));
+
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < totalWeeks; i++) {
+            const square = document.createElement('div');
+            square.className = `map-square ${i < livedWeeks ? 'past' : 'future'}`;
+            fragment.appendChild(square);
+        }
+        this.elements.lifeMapGrid.appendChild(fragment);
+
+        setTimeout(() => {
+            this.elements.lifeMapContainer.classList.remove('opacity-0');
+        }, 1500);
+    }
+
+    enterCrisisMode() {
+        this.elements.crisisMode.classList.remove('hidden');
+        this.startCrisisTimer(900); // 15 Minutes
+        this.startBreathingCycle();
+    }
+
+    exitCrisisMode() {
+        this.elements.crisisMode.classList.add('hidden');
+        clearInterval(this.crisisInterval);
+        clearTimeout(this.breathingTimeout);
+        this.elements.breathingCircle.className = 'w-32 h-32 border-2 border-white rounded-full flex items-center justify-center mb-12';
+    }
+
+    startCrisisTimer(seconds) {
+        let timeLeft = seconds;
+        const updateTimer = () => {
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            this.elements.crisisTimer.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            if (timeLeft <= 0) {
+                clearInterval(this.crisisInterval);
+                this.exitCrisisMode();
+            }
+            timeLeft--;
+        };
+        updateTimer();
+        this.crisisInterval = setInterval(updateTimer, 1000);
+    }
+
+    startBreathingCycle() {
+        const cycle = () => {
+            // Inhale
+            this.elements.breathingText.textContent = "Inhale";
+            this.elements.breathingCircle.className = 'w-32 h-32 border-2 border-white rounded-full flex items-center justify-center mb-12 inhale';
+
+            this.breathingTimeout = setTimeout(() => {
+                // Hold
+                this.elements.breathingText.textContent = "Hold";
+
+                this.breathingTimeout = setTimeout(() => {
+                    // Exhale
+                    this.elements.breathingText.textContent = "Exhale";
+                    this.elements.breathingCircle.classList.remove('inhale');
+                    this.elements.breathingCircle.classList.add('exhale');
+
+                    this.breathingTimeout = setTimeout(() => {
+                        this.elements.breathingCircle.classList.remove('exhale');
+                        cycle();
+                    }, 6000);
+                }, 2000);
+            }, 4000);
+        };
+        cycle();
     }
 
     displayDailyReflection() {
