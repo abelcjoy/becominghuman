@@ -131,7 +131,7 @@ class LifeCountdown {
 
             this.displayDailyReflection();
             this.startRecaptureSession();
-        }, 500); // Sync with CSS animation duration
+        }, 500);
     }
 
     startRecaptureSession() {

@@ -118,8 +118,11 @@
     <main id="countdown-step"
         class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
 
-        <!-- Soul Rank Label        <div class="mb-12 flex flex-col items-center">
-            <span id="soul-rank" class="text-[10px] uppercase tracking-[0.8em] text-white font-black mb-2 px-4 py-1 border border-white">The Pure Presence</span>
+        <!-- Soul Rank Label -->
+        <div class="mb-12 flex flex-col items-center">
+            <span id="soul-rank"
+                class="text-[10px] uppercase tracking-[0.8em] text-white font-black mb-2 px-4 py-1 border border-white">The
+                Pure Presence</span>
             <span class="text-[8px] uppercase tracking-[0.4em] text-white/40">Status: Sovereign</span>
         </div>
 
@@ -134,116 +137,104 @@
                 the baseline of human consciousness...</p>
         </div>
 
-        <div class="mb-8 text-center">
-            <p class="text-[12px] uppercase tracking-[0.6em] text-white font-black">Biological Capital Remaining</p>
-        </div>
-
-        <!-- Conscious Energy Bar (Gamification) -->
-        <div class="w-full max-w-md h-1 bg-white/10 rounded-full mb-12 overflow-hidden border border-white/5">
-            <div id="life-progress-bar" class="h-full bg-white transition-all duration-1000 shadow-[0_0_20px_white]"
-                style="width: 0%"></div>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full mb-20">
-            <div class="stat-block group">
-                <div id="c-years"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                    00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Years</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-days"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                    00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Days</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-hours"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                    00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Hours</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-minutes"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                    00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Minutes</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-seconds"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
-                    00</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Seconds</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-milliseconds"
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-white/60 blur-[1px]">
-                    000</div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">
-                    Milliseconds</div>
-            </div>
-        </div>
-
-        <div id="explanation-text" class="mt-16 text-gray-400 font-light text-xs md:text-sm max-w-xl text-center px-4">
-            <p class="mb-2 uppercase tracking-wider text-gray-300">How it works</p>
-            <p>Total Life Expectancy (Country Data) - Time Spent Sleeping = <span
-                    class="text-white font-medium">Conscious Time</span></p>
-        </div>
-
-        <!-- Biological Capital Assets (Reframed Units) -->
-        <div class="w-full max-w-4xl p-8 border-2 border-white bg-black mb-24 relative overflow-hidden">
-            <!-- Scanline Effect -->
-            <div
-                class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20">
+        <div class="dashboard-container flex flex-col items-center w-full">
+            <div class="mb-4 text-center">
+                <p class="text-[12px] uppercase tracking-[0.6em] text-white font-black">Biological Capital Remaining</p>
             </div>
 
-            <div class="flex flex-col md:flex-row justify-between items-center gap-12">
-                <div class="text-center md:text-left flex-1">
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Attention Equity
-                        (Est.)</h4>
-                    <div class="text-4xl font-stoic text-white tracking-widest">$<span id="attention-equity">0</span>
+            <!-- Conscious Energy Bar -->
+            <div class="w-full max-w-md h-1 bg-white/10 rounded-full mb-8 overflow-hidden border border-white/5">
+                <div id="life-progress-bar" class="h-full bg-white transition-all duration-1000 shadow-[0_0_20px_white]"
+                    style="width: 0%"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-6 md:gap-16 w-full mb-12">
+                <div class="stat-block group">
+                    <div id="c-years"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
                     </div>
-                    <p class="text-[8px] uppercase tracking-widest text-white/30 mt-2 font-mono">Based on $450k Lifetime
-                        Market Value</p>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Years</div>
                 </div>
-
-                <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
-
-                <div class="text-center md:text-left flex-1">
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Daily Burn Rate</h4>
-                    <div class="text-4xl font-stoic text-red-500 tracking-widest">-$<span id="burn-rate">0</span></div>
-                    <p class="text-[8px] uppercase tracking-widest text-red-500/40 mt-2 font-mono">Lost to High-Dopamine
-                        Compulsion</p>
+                <div class="stat-block group">
+                    <div id="c-days"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Days</div>
                 </div>
-
-                <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
-
-                <div class="text-center flex-1">
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Live Recapture
-                        Session</h4>
-                    <div class="text-3xl font-mono text-green-500 font-bold tracking-tighter" id="recapture-timer">
-                        00:00:00</div>
-                    <p class="text-[8px] uppercase tracking-widest text-green-500/40 mt-2 font-mono">Stay focused to
-                        reclaim value</p>
+                <div class="stat-block group">
+                    <div id="c-hours"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Hours</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-minutes"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Minutes</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-seconds"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Seconds</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-milliseconds"
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-white/60 blur-[1px]">000
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Milliseconds</div>
                 </div>
             </div>
+
+            <!-- Biological Capital Assets -->
+            <div class="w-full max-w-4xl p-8 terminal-box mb-12 relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20">
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+                    <div class="text-center md:text-left flex-1">
+                        <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Attention Equity
+                            (Est.)</h4>
+                        <div class="text-4xl font-stoic text-white tracking-widest">$<span
+                                id="attention-equity">0</span></div>
+                        <p class="text-[8px] uppercase tracking-widest text-white/30 mt-2 font-mono">Based on $450k
+                            Lifetime Market Value</p>
+                    </div>
+
+                    <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
+
+                    <div class="text-center md:text-left flex-1">
+                        <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Daily Burn Rate
+                        </h4>
+                        <div class="text-4xl font-stoic text-red-500 tracking-widest">-$<span id="burn-rate">0</span>
+                        </div>
+                        <p class="text-[8px] uppercase tracking-widest text-red-500/40 mt-2 font-mono">Lost to
+                            High-Dopamine Compulsion</p>
+                    </div>
+
+                    <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
+
+                    <div class="text-center flex-1">
+                        <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Live Recapture
+                            Session</h4>
+                        <div class="text-3xl font-mono text-recapture font-bold tracking-tighter" id="recapture-timer">
+                            00:00:00</div>
+                        <p class="text-[8px] uppercase tracking-widest text-green-500/40 mt-2 font-mono">Stay focused to
+                            reclaim value</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 text-center">
+                <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
+                </p>
+                <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
+            </div>
         </div>
-
-        <div class="mb-20 text-center">
-            <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active</p>
-            <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
-        </div>
-
-
-
-        <!-- Command Center (Genius Simple Action Bar) -->
-        <div
-            class="mt-24 w-full max-w-2xl bg-white p-1 flex flex-col md:flex-row items-stretch justify-between gap-1 shadow-[0_0_100px_rgba(255,255,255,0.2)]">
+        <div class="mt-24 w-full max-w-2xl bg-white p-1 flex flex-col md:flex-row items-stretch justify-between gap-1
+                shadow-[0_0_100px_rgba(255,255,255,0.2)]">
             <button id="crave-btn"
                 class="flex-1 px-8 py-6 bg-black text-white font-black uppercase tracking-[0.5em] text-[11px] hover:bg-red-700 transition-all duration-300 border-2 border-transparent hover:border-white">
                 Crave Override

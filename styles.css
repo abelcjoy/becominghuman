@@ -17,10 +17,9 @@
 body {
     background: #000;
     color: #fff;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Terminal', monospace;
     overflow-x: hidden;
     min-height: 100vh;
-    animation: focusPulse 10s ease-in-out infinite;
 }
 
 body::before {
@@ -79,6 +78,35 @@ body::before {
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     font-weight: 700;
     letter-spacing: -0.05em;
+    font-family: 'Terminal', monospace;
+}
+
+.terminal-box {
+    border: 3px solid #fff;
+    background: #000;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.05);
+}
+
+.text-recapture {
+    color: #4ade80;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+.dashboard-container {
+    gap: 2rem !important;
 }
 
 .stat-block:hover .stat-number {
