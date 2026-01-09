@@ -31,10 +31,16 @@ class LifeCountdown {
             breathingCircle: document.getElementById('breathing-circle'),
             breathingText: document.getElementById('breathing-text'),
             crisisTimer: document.getElementById('crisis-timer'),
-            exitCrisis: document.getElementById('exit-crisis')
+            exitCrisis: document.getElementById('exit-crisis'),
+            attentionEquity: document.getElementById('attention-equity'),
+            burnRate: document.getElementById('burn-rate'),
+            recaptureTimer: document.getElementById('recapture-timer'),
+            globalSovereigns: document.getElementById('global-sovereigns')
         };
         this.crisisInterval = null;
         this.breathingTimeout = null;
+        this.recaptureStartTime = null;
+        this.recaptureInterval = null;
         this.init();
     }
 
@@ -124,7 +130,26 @@ class LifeCountdown {
             this.interval = setInterval(() => this.tick(), 31);
 
             this.displayDailyReflection();
+            this.startRecaptureSession();
         }, 500); // Sync with CSS animation duration
+    }
+
+    startRecaptureSession() {
+        this.recaptureStartTime = Date.now();
+        this.recaptureInterval = setInterval(() => {
+            const elapsed = Date.now() - this.recaptureStartTime;
+            const h = Math.floor(elapsed / 3600000);
+            const m = Math.floor((elapsed % 3600000) / 60000);
+            const s = Math.floor((elapsed % 60000) / 1000);
+            this.elements.recaptureTimer.textContent = `${this.f(h)}:${this.f(m)}:${this.f(s)}`;
+
+            // Pulse Global Sovereigns
+            if (Math.random() > 0.95) {
+                const count = parseInt(this.elements.globalSovereigns.textContent.replace(',', ''));
+                const newCount = count + (Math.random() > 0.5 ? 1 : -1);
+                this.elements.globalSovereigns.textContent = newCount.toLocaleString();
+            }
+        }, 1000);
     }
 
 
@@ -222,7 +247,7 @@ class LifeCountdown {
 
         if (totalRemainingMs <= 0) {
             this.render(0, 0, 0, 0, 0, 0);
-            clearInterval(this.interval);
+            if (this.interval) clearInterval(this.interval);
             return;
         }
 
@@ -236,37 +261,32 @@ class LifeCountdown {
         const seconds = Math.floor((consciousMs % (1000 * 60)) / 1000);
         const ms = Math.floor(consciousMs % 1000);
 
-        // Update Progress Bar (Percentage of life remaining)
-        // Assume max life is 100 for percentage purposes
+        // Update Progress Bar
         const percentage = Math.min(100, (consciousMs / (1000 * 60 * 60 * 24 * 365 * 100)) * 100);
-        this.elements.progressBar.style.width = `${percentage}%`;
+        if (this.elements.progressBar) this.elements.progressBar.style.width = `${percentage}%`;
 
+        this.updateBiologicalCapital(consciousMs);
         this.updateSoulRank(years);
-        this.updateExperientialUnits(consciousMs);
         this.render(years, days, hours, minutes, seconds, ms);
     }
 
-    updateExperientialUnits(ms) {
-        const days = ms / (1000 * 60 * 60 * 24);
-        const years = days / 365;
+    updateBiologicalCapital(ms) {
+        // Market Value: $450,000 for full lifespan (~75 years)
+        const totalConsciousHoursRemaining = ms / (1000 * 60 * 60);
+        const equity = totalConsciousHoursRemaining * 25;
+        if (this.elements.attentionEquity) this.elements.attentionEquity.textContent = Math.floor(equity).toLocaleString();
 
-        // Calculations
-        const sunsets = Math.floor(days);
-        const fullMoons = Math.floor(days / 29.53);
-        const summers = Math.floor(years);
-        const books = Math.floor(years * 6); // Assuming 1 book every 2 months
-
-        this.elements.unitSunsets.textContent = sunsets.toLocaleString();
-        this.elements.unitMoons.textContent = fullMoons.toLocaleString();
-        this.elements.unitSummers.textContent = summers.toLocaleString();
-        this.elements.unitBooks.textContent = books.toLocaleString();
+        const dailyBurn = 3 * 25;
+        if (this.elements.burnRate) this.elements.burnRate.textContent = dailyBurn.toFixed(2);
     }
+
+    f(n) { return n.toString().padStart(2, '0'); }
 
     shareResult() {
         const years = this.elements.yearsEl.textContent;
         const days = this.elements.daysEl.textContent;
 
-        const text = `I have exactly ${years} Years and ${days} Days of conscious life left. This is my map of existence. Calculate yours: https://clarityforhumans.com\n\n#MementoMori #ClarityForHumans`;
+        const text = `I have exactly ${years} Years and ${days} Days of conscious life left. This is my biological capital. Recapture yours: https://clarityforhumans.com\n\n#MementoMori #ClarityForHumans`;
 
         if (navigator.share) {
             navigator.share({
@@ -286,15 +306,13 @@ class LifeCountdown {
     }
 
     render(y, d, h, m, s, ms) {
-        // Helper to format with leading zeros
-        const f = (n) => n.toString().padStart(2, '0');
         const fms = (n) => n.toString().padStart(3, '0');
 
-        this.elements.yearsEl.textContent = f(y);
-        this.elements.daysEl.textContent = f(d);
-        this.elements.hoursEl.textContent = f(h);
-        this.elements.minutesEl.textContent = f(m);
-        this.elements.secondsEl.textContent = f(s);
+        this.elements.yearsEl.textContent = this.f(y);
+        this.elements.daysEl.textContent = this.f(d);
+        this.elements.hoursEl.textContent = this.f(h);
+        this.elements.minutesEl.textContent = this.f(m);
+        this.elements.secondsEl.textContent = this.f(s);
         this.elements.millisecondsEl.textContent = fms(ms);
     }
 }
@@ -302,7 +320,6 @@ class LifeCountdown {
 document.addEventListener('DOMContentLoaded', () => {
     new LifeCountdown();
 
-    // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js').then(reg => {

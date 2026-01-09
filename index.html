@@ -118,33 +118,33 @@
     <main id="countdown-step"
         class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
 
-        <!-- Soul Rank Label (Gamification) -->
-        <div id="soul-rank" class="mb-4 text-[10px] uppercase tracking-[0.4em] text-stone-300 font-bold font-stoic">
+        <!-- Soul Rank Label        <div class="mb-12 flex flex-col items-center">
+            <span id="soul-rank" class="text-[10px] uppercase tracking-[0.8em] text-white font-black mb-2 px-4 py-1 border border-white">The Pure Presence</span>
+            <span class="text-[8px] uppercase tracking-[0.4em] text-white/40">Status: Sovereign</span>
         </div>
 
         <!-- Daily Reflection (Retention Engine) -->
         <div id="daily-reflection" class="mb-12 max-w-lg text-center opacity-0 transition-opacity duration-1000">
-            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white mb-3 font-mono font-bold">Daily Protocol</h4>
+            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white mb-3 font-mono font-bold">Protocol: Daily
+                Recapture</h4>
             <h3 id="reflection-title"
                 class="text-lg font-bold text-white uppercase tracking-widest mb-2 border-b-2 border-white pb-2 inline-block">
-                The
-                Architecture of Silence</h3>
+                The Architecture of Silence</h3>
             <p id="reflection-content" class="text-[12px] leading-relaxed text-white font-medium italic mt-4">Refining
-                the
-                baseline of human consciousness...</p>
+                the baseline of human consciousness...</p>
         </div>
 
-        <p class="text-[12px] uppercase tracking-[0.6em] text-white mb-8 font-['Cinzel'] font-black">
-            Conscious Time Remaining</p>
+        <div class="mb-8 text-center">
+            <p class="text-[12px] uppercase tracking-[0.6em] text-white font-black">Biological Capital Remaining</p>
+        </div>
 
         <!-- Conscious Energy Bar (Gamification) -->
-        <div class="w-full max-w-md h-1 bg-stone-900 rounded-full mb-12 overflow-hidden border border-stone-800/30">
-            <div id="life-progress-bar"
-                class="h-full bg-gradient-to-r from-stone-800 via-stone-400 to-stone-800 transition-all duration-1000 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+        <div class="w-full max-w-md h-1 bg-white/10 rounded-full mb-12 overflow-hidden border border-white/5">
+            <div id="life-progress-bar" class="h-full bg-white transition-all duration-1000 shadow-[0_0_20px_white]"
                 style="width: 0%"></div>
         </div>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-6 md:gap-16 w-full mb-20">
             <div class="stat-block group">
                 <div id="c-years"
                     class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">
@@ -195,30 +195,48 @@
                     class="text-white font-medium">Conscious Time</span></p>
         </div>
 
-        <!-- Experiential Units (Creative Masterstroke) -->
-        <div class="mt-20 w-full max-w-4xl border-t border-stone-800 pt-16 mb-20">
-            <h3 class="text-stone-400 text-[10px] uppercase tracking-[0.4em] mb-12 font-stoic font-bold">Experiential
-                Remaining
-            </h3>
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="flex flex-col items-center">
-                    <span id="unit-sunsets" class="text-2xl text-white font-mono tracking-tighter">0000</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Sunsets</span>
+        <!-- Biological Capital Assets (Reframed Units) -->
+        <div class="w-full max-w-4xl p-8 border-2 border-white bg-black mb-24 relative overflow-hidden">
+            <!-- Scanline Effect -->
+            <div
+                class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none opacity-20">
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center gap-12">
+                <div class="text-center md:text-left flex-1">
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Attention Equity
+                        (Est.)</h4>
+                    <div class="text-4xl font-stoic text-white tracking-widest">$<span id="attention-equity">0</span>
+                    </div>
+                    <p class="text-[8px] uppercase tracking-widest text-white/30 mt-2 font-mono">Based on $450k Lifetime
+                        Market Value</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <span id="unit-moons" class="text-2xl text-white font-mono tracking-tighter">000</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Full Moons</span>
+
+                <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
+
+                <div class="text-center md:text-left flex-1">
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Daily Burn Rate</h4>
+                    <div class="text-4xl font-stoic text-red-500 tracking-widest">-$<span id="burn-rate">0</span></div>
+                    <p class="text-[8px] uppercase tracking-widest text-red-500/40 mt-2 font-mono">Lost to High-Dopamine
+                        Compulsion</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <span id="unit-summers" class="text-2xl text-white font-mono tracking-tighter">00</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Summers</span>
-                </div>
-                <div class="flex flex-col items-center">
-                    <span id="unit-books" class="text-2xl text-white font-mono tracking-tighter">00</span>
-                    <span class="text-[9px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Books to
-                        Read</span>
+
+                <div class="h-16 w-[2px] bg-white/20 hidden md:block"></div>
+
+                <div class="text-center flex-1">
+                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-2 font-mono">Live Recapture
+                        Session</h4>
+                    <div class="text-3xl font-mono text-green-500 font-bold tracking-tighter" id="recapture-timer">
+                        00:00:00</div>
+                    <p class="text-[8px] uppercase tracking-widest text-green-500/40 mt-2 font-mono">Stay focused to
+                        reclaim value</p>
                 </div>
             </div>
+        </div>
+
+        <div class="mb-20 text-center">
+            <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active</p>
+            <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
         </div>
 
 
