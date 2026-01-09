@@ -1,10 +1,10 @@
 /* Premium Dark Theme Overrides */
 
 body {
-    /* Premium Forest/Zen Green Gradient */
-    background: linear-gradient(to bottom, #064e3b 0%, #065f46 40%, #10b981 100%);
+    /* Premium Twilight Gold Gradient */
+    background: linear-gradient(to bottom, #0f172a 0%, #1e1b4b 50%, #78350f 100%);
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
 }
 
 @keyframes gradientShift {
@@ -54,7 +54,7 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #064e3b inset !important;
+    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
     -webkit-text-fill-color: white !important;
 }
 
