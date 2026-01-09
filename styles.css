@@ -187,6 +187,7 @@ select:focus {
     padding: 20px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
 }
 
 .map-square {
@@ -199,7 +200,8 @@ select:focus {
     background:
         linear-gradient(45deg, transparent 47%, #fff 50%, transparent 53%),
         linear-gradient(-45deg, transparent 47%, #fff 50%, transparent 53%);
-    opacity: 0.3;
+    opacity: 0.5;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.8));
 }
 
 .map-square.future {
