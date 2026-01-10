@@ -5,6 +5,7 @@ import { DigitalAtrophy } from './atrophy.js';
 import { LifeGrid } from './lifegrid.js';
 import { UI } from './ui.js';
 import { toast } from './toast.js';
+import { KeyboardShortcuts } from './keyboard.js';
 
 class LifeCountdown {
     constructor() {
@@ -56,6 +57,9 @@ class LifeCountdown {
         this.pocketTime = 0;
         this.biologicalAge = 0;
         this.equityMultiplier = 1.0;
+        this.lastFrameTime = Date.now();
+        this.animationFrame = null;
+        this.previousStats = { years: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
         this.init();
     }
 
@@ -68,10 +72,18 @@ class LifeCountdown {
         this.elements.craveBtn.addEventListener('click', () => this.enterCrisisMode());
         this.elements.exitCrisis.addEventListener('click', () => this.exitCrisisMode());
 
+        // Initialize keyboard shortcuts
+        this.keyboard = new KeyboardShortcuts(this);
+
         // Load saved state if available
-        const savedData = localStorage.getItem('lifeData');
-        if (savedData) {
-            this.startCountdown(JSON.parse(savedData));
+        try {
+            const savedData = localStorage.getItem('lifeData');
+            if (savedData) {
+                this.startCountdown(JSON.parse(savedData));
+            }
+        } catch (error) {
+            console.error('Error loading saved data:', error);
+            toast.error('Failed to load saved data. Starting fresh.');
         }
     }
 
@@ -117,7 +129,16 @@ class LifeCountdown {
                 return;
             }
 
-            localStorage.setItem('lifeData', JSON.stringify({ dob, country, sleepHours }));
+            try {
+                localStorage.setItem('lifeData', JSON.stringify({ dob, country, sleepHours }));
+            } catch (error) {
+                if (error.name === 'QuotaExceededError') {
+                    toast.error('Storage quota exceeded. Please clear some data.');
+                } else {
+                    toast.error('Failed to save data: ' + error.message);
+                }
+                console.error('localStorage error:', error);
+            }
         }
 
         const lifeExpectancyYears = lifeExpectancyData[country] || 72.6;
@@ -141,9 +162,15 @@ class LifeCountdown {
             this.elements.countdownStep.classList.remove('hidden');
             this.elements.countdownStep.classList.add('view-enter');
 
+            // Stop any existing intervals
             if (this.interval) clearInterval(this.interval);
-            this.tick();
-            this.interval = setInterval(() => this.tick(), 31);
+            if (this.recaptureInterval) clearInterval(this.recaptureInterval);
+            if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+
+            // Start unified game loop
+            this.startGameLoop();
+
+            toast.success('Reality initialized. Your countdown begins now.');
 
             this.displayDailyReflection();
             this.startRecaptureSession();
@@ -313,6 +340,48 @@ class LifeCountdown {
         const div = document.createElement('div');
         div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
         this.elements.simLog.prepend(div);
+    }
+
+    // Unified Game Loop - consolidates all intervals for better performance
+    startGameLoop() {
+        this.recaptureStartTime = Date.now();
+        this.lastRecaptureUpdate = Date.now();
+
+        const gameLoop = () => {
+            const now = Date.now();
+            const deltaTime = now - this.lastFrameTime;
+
+            // Main countdown tick (~30fps)
+            if (deltaTime >= 31) {
+                this.tick();
+                this.lastFrameTime = now;
+            }
+
+            // Recapture timer update (1fps)
+            if (now - this.lastRecaptureUpdate >= 1000) {
+                this.updateRecaptureTimer();
+                this.lastRecaptureUpdate = now;
+            }
+
+            this.animationFrame = requestAnimationFrame(gameLoop);
+        };
+
+        gameLoop();
+    }
+
+    updateRecaptureTimer() {
+        const elapsed = Date.now() - this.recaptureStartTime;
+        const h = Math.floor(elapsed / 3600000);
+        const m = Math.floor((elapsed % 3600000) / 60000);
+        const s = Math.floor((elapsed % 60000) / 1000);
+        this.elements.recaptureTimer.textContent = `${this.f(h)}:${this.f(m)}:${this.f(s)}`;
+
+        // Pulse Global Sovereigns
+        if (Math.random() > 0.95) {
+            const count = parseInt(this.elements.globalSovereigns.textContent.replace(',', ''));
+            const newCount = count + (Math.random() > 0.5 ? 1 : -1);
+            this.elements.globalSovereigns.textContent = newCount.toLocaleString();
+        }
     }
 
     startRecaptureSession() {
