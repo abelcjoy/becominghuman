@@ -33,9 +33,9 @@ class LifeCountdown {
             progressBar: document.getElementById('life-progress-bar'),
             soulRank: document.getElementById('soul-rank'),
             unitSunsets: document.getElementById('unit-sunsets'),
-            unitMoons: document.getElementById('unit-moons'),
             unitSummers: document.getElementById('unit-summers'),
             unitBooks: document.getElementById('unit-books'),
+            unitMeals: document.getElementById('unit-meals'),
             dailyReflection: document.getElementById('daily-reflection'),
             reflectionTitle: document.getElementById('reflection-title'),
             reflectionContent: document.getElementById('reflection-content'),
@@ -688,6 +688,12 @@ https://clarityforhumans.com
         this.elements.minutesEl.textContent = this.f(m);
         this.elements.secondsEl.textContent = this.f(s);
         this.elements.millisecondsEl.textContent = fms(ms);
+
+        // Update Perspective Units
+        if (this.elements.unitSunsets) this.elements.unitSunsets.textContent = (d + (y * 365)).toLocaleString();
+        if (this.elements.unitSummers) this.elements.unitSummers.textContent = y;
+        if (this.elements.unitBooks) this.elements.unitBooks.textContent = (y * 5).toLocaleString(); // 5 books/year
+        if (this.elements.unitMeals) this.elements.unitMeals.textContent = ((d + (y * 365)) * 3).toLocaleString();
 
         // Update previous stats
         this.previousStats = { years: y, days: d, hours: h, minutes: m, seconds: s };
