@@ -173,32 +173,39 @@ class LifeCountdown {
         this.ui.showLoading("Constructing Existence...");
 
         setTimeout(() => {
-            this.elements.setupStep.classList.add('hidden');
-            this.elements.setupStep.classList.remove('view-exit');
+            try {
+                this.elements.setupStep.classList.add('hidden');
+                this.elements.setupStep.classList.remove('view-exit');
 
-            this.elements.countdownStep.classList.remove('hidden');
-            this.elements.countdownStep.classList.add('view-enter');
+                this.elements.countdownStep.classList.remove('hidden');
+                this.elements.countdownStep.classList.add('view-enter');
 
-            // Stop any existing intervals
-            if (this.interval) clearInterval(this.interval);
-            if (this.recaptureInterval) clearInterval(this.recaptureInterval);
-            if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+                // Stop any existing intervals
+                if (this.interval) clearInterval(this.interval);
+                if (this.recaptureInterval) clearInterval(this.recaptureInterval);
+                if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
 
-            // Start unified game loop
-            this.startGameLoop();
+                // Start unified game loop
+                this.startGameLoop();
 
-            toast.success('Reality initialized. Your countdown begins now.');
+                this.displayDailyReflection();
+                this.startRecaptureSession();
 
-            this.displayDailyReflection();
-            this.startRecaptureSession();
-            this.initProjection(dob);
-            this.initAtrophy();
-            this.initLifeGrid(dob);
+                // Initialize modules safely
+                try { this.initProjection(dob); } catch (e) { console.error('Projection Error', e); }
+                try { this.initAtrophy(); } catch (e) { console.error('Atrophy Error', e); }
+                try { this.initLifeGrid(dob); } catch (e) { console.error('LifeGrid Error', e); }
 
-            // Initialize life chart
-            this.initLifeChart(dob, country);
+                // Initialize life chart
+                try { this.initLifeChart(dob, country); } catch (e) { console.error('LifeChart Error', e); }
 
-            this.ui.hideLoading();
+                toast.success('Reality initialized. Your countdown begins now.');
+            } catch (error) {
+                console.error("Initialization Critical Error:", error);
+                toast.error("Reality Glitch: " + error.message);
+            } finally {
+                this.ui.hideLoading();
+            }
         }, 1500);
     }
 

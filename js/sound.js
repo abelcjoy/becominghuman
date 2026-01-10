@@ -18,19 +18,23 @@ export class SoundManager {
         return () => {
             if (!this.enabled) return;
 
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
 
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
 
-            oscillator.frequency.value = frequency;
-            oscillator.type = type;
-            gainNode.gain.value = volume;
+                oscillator.frequency.value = frequency;
+                oscillator.type = type;
+                gainNode.gain.value = volume;
 
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + duration);
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + duration);
+            } catch (e) {
+                console.warn('Audio play failed', e);
+            }
         };
     }
 
@@ -40,19 +44,23 @@ export class SoundManager {
 
             frequencies.forEach((freq, index) => {
                 setTimeout(() => {
-                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
+                    try {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
 
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
 
-                    oscillator.frequency.value = freq;
-                    oscillator.type = 'sine';
-                    gainNode.gain.value = volume;
+                        oscillator.frequency.value = freq;
+                        oscillator.type = 'sine';
+                        gainNode.gain.value = volume;
 
-                    oscillator.start(audioContext.currentTime);
-                    oscillator.stop(audioContext.currentTime + 0.1);
+                        oscillator.start(audioContext.currentTime);
+                        oscillator.stop(audioContext.currentTime + 0.1);
+                    } catch (e) {
+                        console.warn('Audio play failed', e);
+                    }
                 }, index * 100);
             });
         };
