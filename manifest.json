@@ -1,11 +1,19 @@
 {
-  "name": "Clarity For Humans",
+  "name": "Clarity For Humans | Life Countdown & Time Management",
   "short_name": "Clarity",
-  "description": "A neurobiological tool for managing time and surviving digital compulsion.",
+  "description": "Free life expectancy calculator and time management tool. Track your conscious hours, manage relationships, and overcome digital addiction with science-based neurobiology protocols.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#000000",
   "theme_color": "#000000",
+  "categories": [
+    "productivity",
+    "lifestyle",
+    "health",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "favicon.svg",
@@ -18,6 +26,32 @@
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Crisis Mode",
+      "short_name": "Crisis",
+      "description": "Enter 15-minute crisis override mode",
+      "url": "/?crisis=true",
+      "icons": [
+        {
+          "src": "favicon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Protocol",
+      "short_name": "Protocol",
+      "description": "View neurobiological optimization protocols",
+      "url": "/?protocol=true",
+      "icons": [
+        {
+          "src": "favicon.svg",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }

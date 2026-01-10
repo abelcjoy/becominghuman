@@ -6,6 +6,7 @@ import { LifeGrid } from './lifegrid.js';
 import { UI } from './ui.js';
 import { toast } from './toast.js';
 import { KeyboardShortcuts } from './keyboard.js';
+import { PWAInstaller } from './pwa.js';
 
 class LifeCountdown {
     constructor() {
@@ -542,28 +543,64 @@ class LifeCountdown {
     shareResult() {
         const years = this.elements.yearsEl.textContent;
         const days = this.elements.daysEl.textContent;
+        const hours = this.elements.hoursEl.textContent;
+        const equity = this.elements.attentionEquity?.textContent || '0';
 
-        const text = `I have exactly ${years} Years and ${days} Days of conscious life left. This is my biological capital. Recapture yours: https://clarityforhumans.com\n\n#MementoMori #ClarityForHumans`;
+        // Create formatted message
+        const text = `⏳ CLARITY FOR HUMANS
+
+🔴 BIOLOGICAL CAPITAL REMAINING:
+   ${years} Years, ${days} Days, ${hours} Hours
+
+💰 ATTENTION EQUITY: $${equity}
+
+This is not motivation. This is biological maintenance.
+
+Recapture your consciousness:
+https://clarityforhumans.com
+
+#MementoMori #ClarityForHumans #TimeAwareness`;
 
         if (navigator.share) {
             navigator.share({
-                title: 'Clarity For Humans',
+                title: 'Clarity For Humans | Life Countdown',
                 text: text,
                 url: 'https://clarityforhumans.com'
-            }).catch(console.error);
-        } else {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = this.elements.shareBtn.textContent;
-                this.elements.shareBtn.textContent = "Copied to Clipboard";
-                setTimeout(() => {
-                    this.elements.shareBtn.textContent = originalText;
-                }, 2000);
+            }).then(() => {
+                toast.success('Shared successfully! Spread awareness.');
+            }).catch((error) => {
+                if (error.name !== 'AbortError') {
+                    console.error('Share failed:', error);
+                    this.fallbackCopy(text);
+                }
             });
+        } else {
+            this.fallbackCopy(text);
         }
+    }
+
+    fallbackCopy(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            toast.success('✅ Copied to clipboard! Paste anywhere to share.');
+            this.elements.shareBtn.textContent = "✓ Copied";
+            setTimeout(() => {
+                this.elements.shareBtn.textContent = "Share Result";
+            }, 2000);
+        }).catch((err) => {
+            console.error('Clipboard failed:', err);
+            toast.error('Failed to copy. Please select and copy manually.');
+        });
     }
 
     render(y, d, h, m, s, ms) {
         const fms = (n) => n.toString().padStart(3, '0');
+
+        // Animate stat changes
+        this.animateStat(this.elements.yearsEl, this.previousStats.years, y);
+        this.animateStat(this.elements.daysEl, this.previousStats.days, d);
+        this.animateStat(this.elements.hoursEl, this.previousStats.hours, h);
+        this.animateStat(this.elements.minutesEl, this.previousStats.minutes, m);
+        this.animateStat(this.elements.secondsEl, this.previousStats.seconds, s);
 
         this.elements.yearsEl.textContent = this.f(y);
         this.elements.daysEl.textContent = this.f(d);
@@ -571,11 +608,33 @@ class LifeCountdown {
         this.elements.minutesEl.textContent = this.f(m);
         this.elements.secondsEl.textContent = this.f(s);
         this.elements.millisecondsEl.textContent = fms(ms);
+
+        // Update previous stats
+        this.previousStats = { years: y, days: d, hours: h, minutes: m, seconds: s };
+    }
+
+    animateStat(element, oldValue, newValue) {
+        if (!element) return;
+
+        if (newValue > oldValue) {
+            // Stat increased (time remaining decreased - bad)
+            element.classList.remove('stat-increase');
+            element.classList.add('stat-decrease');
+            setTimeout(() => element.classList.remove('stat-decrease'), 400);
+        } else if (newValue < oldValue) {
+            // Stat decreased (shouldn't happen in countdown, but handle it)
+            element.classList.remove('stat-decrease');
+            element.classList.add('stat-increase');
+            setTimeout(() => element.classList.remove('stat-increase'), 400);
+        }
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     window.app = new LifeCountdown();
+
+    // Initialize PWA installer
+    window.pwaInstaller = new PWAInstaller();
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
