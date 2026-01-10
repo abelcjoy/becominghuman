@@ -85,6 +85,43 @@ export class ProjectionEngine {
         };
     }
 
+    generateReport() {
+        const futureYear = this.state.futureDate.getFullYear();
+        const yearsJump = futureYear - new Date().getFullYear();
+        if (yearsJump <= 0) return null;
+
+        let sadCount = 0;
+        let urgenyCount = 0; // Relationships with < 20% time left
+        const lines = [];
+
+        this.state.relationships.forEach(rel => {
+            const data = this.calculateRemainingTime(rel);
+            if (data.status === 'deceased') {
+                sadCount++;
+                lines.push(`• The window for <span class="text-white font-bold">${rel.name}</span> will likely have closed.`);
+            } else if (data.percentageLeft < 20) {
+                urgenyCount++;
+                lines.push(`• You will reach the <span class="text-red-400">Tail End</span> of your time with <span class="text-white font-bold">${rel.name}</span> (${data.percentageLeft.toFixed(0)}% remains).`);
+            } else {
+                lines.push(`• You will have <span class="text-green-400">${data.eventsRemainingFromFuture}</span> projected interactions left with <span class="text-white font-bold">${rel.name}</span>.`);
+            }
+        });
+
+        if (lines.length === 0) return null;
+
+        let summary = `In <span class="text-white font-bold text-xl">${futureYear}</span>, you will be traveling through a different world. `;
+
+        if (sadCount > 0) {
+            summary += `It is a world where <span class="text-red-400 font-bold">${sadCount}</span> of your anchored connections may no longer be physically present. `;
+        } else if (urgenyCount > 0) {
+            summary += `It is a world defined by <span class="text-yellow-400">scarcity</span>. Your key relationships will be in their final chapters. `;
+        } else {
+            summary += `The path ahead is still open, but the cost of inaction increases every day. `;
+        }
+
+        return { intro: summary, details: lines };
+    }
+
     render() {
         // This will be called by App to update the DOM
         const container = document.getElementById('projection-results');
@@ -177,6 +214,46 @@ export class ProjectionEngine {
             });
             container.appendChild(grid);
         }
+
+        // 3. Render Reality Report
+        const report = this.generateReport();
+        if (report) {
+            const reportDiv = document.createElement('div');
+            reportDiv.className = "col-span-full mt-8 p-6 border-t border-white/10 animate-fade-in";
+            // Use a slight delay or just CSS animation for effect
+            reportDiv.innerHTML = `
+                <h4 class="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-4 font-mono">Generative Insight</h4>
+                <p class="text-lg font-light text-stone-300 leading-relaxed mb-6 font-stoic opacity-90">
+                    ${report.intro}
+                </p>
+                <ul class="space-y-3 font-mono text-xs text-stone-500">
+                    ${report.details.map(line => `
+                        <li class="flex items-start gap-3">
+                            <span class="text-white/20 mt-1">Example:</span>
+                            <span>${line}</span>
+                        </li>
+                    `).join('').replace(/Example:/g, '→')} 
+                </ul>
+                <button onclick="window.projection.copyReport()" class="mt-4 text-[10px] uppercase tracking-[0.2em] text-white/30 hover:text-white transition-colors flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path> Copy Reality Check</svg>
+                </button>
+            `;
+            container.appendChild(reportDiv);
+        }
+    }
+
+    copyReport() {
+        const report = this.generateReport();
+        if (!report) return;
+        // Strip HTML
+        const intro = report.intro.replace(/<[^>]*>/g, '');
+        const details = report.details.map(d => d.replace(/<[^>]*>/g, '').replace('•', '-'));
+        const text = `EVENT HORIZON PROJECT: ${this.state.futureDate.getFullYear()}\n\n${intro}\n\n${details.join('\n')}\n\nAnalyze your timeline at clarityforhumans.com`;
+
+        navigator.clipboard.writeText(text).then(() => {
+            // Toast would be better, but alert is fine for now
+            alert("Reality Check Copied to Clipboard");
+        }).catch(err => console.error('Failed to copy', err));
     }
 
     saveState() {
