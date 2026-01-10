@@ -12,6 +12,7 @@ import { SoundManager } from './sound.js';
 import { ChartRenderer } from './charts.js';
 import { FocusManager } from './focus.js';
 import { HabitManager } from './habits.js';
+import { ViaNegativa } from './negativa.js';
 
 class LifeCountdown {
     constructor() {
@@ -97,6 +98,9 @@ class LifeCountdown {
         // Initialize Core Visuals Only
         this.chartRenderer = new ChartRenderer();
         try { this.keyboard = new KeyboardShortcuts(this); } catch (e) { console.warn('Shortcuts disabled'); }
+
+        // Initialize Novelty (Via Negativa)
+        window.negativa = new ViaNegativa();
 
         // Load saved state (DOB only)
         try {
