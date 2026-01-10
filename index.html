@@ -423,7 +423,36 @@
                 </div>
             </div>
 
-            <div class="mb-12 text-center">
+            <!-- LIFE VISUALIZATION CHART -->
+            <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
+                <div class="text-center mb-12">
+                    <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Life Timeline
+                    </h2>
+                    <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Visual Representation of Your Existence
+                    </p>
+                </div>
+
+                <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
+                    <canvas id="life-progress-chart" class="w-full" style="height: 200px;"></canvas>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Lived</div>
+                        <div id="time-lived-percent" class="text-2xl font-stoic text-green-500">0%</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Remaining</div>
+                        <div id="time-remaining-percent" class="text-2xl font-stoic text-white">100%</div>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-lg">
+                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Weeks Left</div>
+                        <div id="weeks-remaining" class="text-2xl font-stoic text-red-500">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-12 text-center mt-12">
                 <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
                 </p>
                 <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>

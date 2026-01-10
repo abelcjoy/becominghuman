@@ -22,44 +22,47 @@ npx http-server -p 8000
 
 ## ✨ Features
 
-### 1. **Death Calculator (The Foundation)**
-- Calculates your remaining conscious time based on Date of Birth, Country Statistics, and Sleep Habits.
-- Real-time countdown showing:
-  - Years, Days, Hours remaining
-  - Biological Capital (Attention Equity)
-  - Daily Burn Rate
+### 1. **Death Calculator ( The Foundation )**
+- Calculates remaining conscious based on DOB, country, and sleep habits.
+- **New**: Visual feedback animations when time ticks away.
+- **New**: Life Progress Chart visualizing your timeline.
 
 ### 2. **The Time Machine (Projection Engine)**
-An interactive "Event Horizon" that lets you slide into the future to see what remains.
+- Slide into the future to see relationships age.
+- Anchors parents, partners, and friends to visualize "visits remaining" (Actuarial Grief).
+- **Update**: Mobile-optimized slider and responsive grid.
 
-#### **Core Mechanics**
-- **Time Slider**: Physically slide forward to 2030, 2040, 2050...
-- **Relationship Anchoring**: Add key people (Parents, Partner, Friends) and your visit frequency.
-- **Actuarial Grief Calculation**: The engine calculates exactly how many visits you have left with them.
-- **Visual Feedback**:
-  - See loved ones age in real-time as you slide the year.
-  - Watch the "Remaining Events" counter drop.
-  - Cards turn red/grayscale when a person reaches their statistical limit.
+### 3. **Digital Atrophy Audit**
+- Calculate total screen time wasted over a lifetime.
+- Visualize years lost to scrolling vs. creating.
 
-#### **Why This Exists**
-To move beyond "Gamification" (Fake jobs, fake stats) to **Reality Projection**. It answers the question: *"If I continue living as I am today, what will my world look like in 10 years?"*
+### 4. **Neurobiological Protocols**
+- **Crisis Override**: 15-minute physiological sigh breathing tool.
+- **PWA Support**: Installable app with offline support.
+- **Sound Manager**: Subtle audio feedback (Click, Milestone, Tick).
 
-### 3. **Crisis Mode - "Crave Override"**
-A 15-minute guided breathing exercise featuring:
-- Physiological sigh protocol
-- Visual breathing circle animation
-- Crisis containment timer
+### 5. **Data Sovereignty (New!)**
+- **Save/Load System**: Export your life data to JSON.
+- **Privacy First**: All data stored locally or in your exported file.
+- **Keyboard Shortcuts**: Power user controls (Press `?` to view).
 
-### 4. **Daily Reflections**
-19 rotating neuroscience-based protocols for mental clarity and dopamine baseline restoration.
+---
 
-## 🧠 Philosophy
+## ⌨️ Keyboard Shortcuts
 
-This tool is inspired by **Memento Mori** and **The Tail End** concept. By visualizing the finite nature of your conscious hours and relationships, you can:
+| Key | Action |
+|-----|--------|
+| **SPACE** | Pause/Resume Countdown |
+| **E** | Export Data |
+| **I** | Import Data |
+| **M** | Toggle Sound |
+| **S** | Share Result |
+| **C** | Enter Crisis Mode |
+| **P** | Toggle Protocol |
+| **R** | Reset Everything |
+| **ESC** | Close Modals |
 
-- Prioritize what truly matters.
-- Understand that "2 visits a year" means you might only have 10 visits left *total*.
-- Make intentional decisions to increase frequency or quality of connection.
+---
 
 ## 🔧 Technical Details
 
@@ -70,39 +73,36 @@ cfh/
 ├── styles.css          # Premium dark terminal styling
 ├── js/
 │   ├── app.js          # Main application logic
-│   ├── projection.js   # Time Machine & Event Horizon Engine
-│   ├── data.js         # Life expectancy data
-│   └── reflections.js  # Neuroscience protocols
-├── manifest.json       # PWA manifest
-├── sw.js               # Service worker
-└── favicon.svg         # Icon
+│   ├── charts.js       # [NEW] Canvas visualization engine
+│   ├── save.js         # [NEW] Export/Import manager
+│   ├── sound.js        # [NEW] Web Audio API manager
+│   ├── toast.js        # [NEW] Notification system
+│   ├── pwa.js          # [NEW] Install prompt manager
+│   ├── projection.js   # Time Machine engine
+│   ├── keyboard.js     # Shortcut manager
+│   └── ...
 ```
 
-### Technologies
-- Vanilla JavaScript (ES6 Modules)
-- Tailwind CSS + Custom CSS Variables
-- Local Storage for persistence (Saves your anchored relationships)
-- Service Worker for offline support
-
-## 🎨 Design Philosophy
-
-- **Terminal Aesthetics**: Monospace fonts, minimal colors, high contrast
-- **The Event Horizon**: A dedicated visual space for projecting future reality
-- **Premium Feel**: Glassmorphism, smooth slider interactions
+### New in v2.0
+- **Progressive Web App (PWA)**: Installable on iOS/Android/Desktop.
+- **Canvas Visualization**: Custom chart engine for battery-efficient rendering.
+- **Unified Game Loop**: `requestAnimationFrame` for 60fps performance using <1% CPU.
+- **Accessibility**: WCAG AA compliant with ARIA labels and focus states.
 
 ## 📊 Metrics Tracked
 
 - **Conscious Time Remaining**: The master clock.
-- **Event Horizon**: Your future timeline.
-- **Relationship "Credits"**: The quantifiable number of interactions remaining with loved ones.
+- **Attention Equity**: Your time converted to dollar value ($25/hr).
+- **Life Timeline**: Visual progress bar of lived vs. expected time.
+- **Relationship "Credits"**: Visits remaining with loved ones.
 
 ## 🙏 Credits
 
 Created as a **#BecomingHuman** original project.
 
 Inspired by:
-- Stoic philosophy (Marcus Aurelius, Seneca)
-- "The Tail End" (Tim Urban / Wait But Why)
+- Stoic philosophy (Memento Mori)
+- "The Tail End" (Tim Urban)
 - Neuroscience research (Andrew Huberman)
 
 ## 📝 License

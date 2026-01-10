@@ -9,6 +9,7 @@ import { KeyboardShortcuts } from './keyboard.js';
 import { PWAInstaller } from './pwa.js';
 import { SaveManager } from './save.js';
 import { SoundManager } from './sound.js';
+import { ChartRenderer } from './charts.js';
 
 class LifeCountdown {
     constructor() {
@@ -83,6 +84,7 @@ class LifeCountdown {
         // Initialize save manager and sound manager
         this.saveManager = new SaveManager(this);
         this.soundManager = new SoundManager();
+        this.chartRenderer = new ChartRenderer();
 
         // Load saved state if available
         try {
@@ -187,8 +189,30 @@ class LifeCountdown {
             this.initAtrophy();
             this.initLifeGrid(dob);
 
+            // Initialize life chart
+            this.initLifeChart(dob, country);
+
             this.ui.hideLoading();
         }, 1500);
+    }
+
+    initLifeChart(dob, country) {
+        const currentAge = (new Date() - new Date(dob)) / (1000 * 60 * 60 * 24 * 365.25);
+        const lifeExpectancy = lifeExpectancyData[country] || 72.6;
+
+        this.chartRenderer.createLifeProgressChart('life-progress-chart', {
+            currentAge: currentAge,
+            lifeExpectancy: lifeExpectancy
+        });
+
+        // Update stat cards
+        const livedPercent = ((currentAge / lifeExpectancy) * 100).toFixed(1);
+        const remainingPercent = (100 - livedPercent).toFixed(1);
+        const weeksRemaining = Math.floor((lifeExpectancy - currentAge) * 52);
+
+        document.getElementById('time-lived-percent').textContent = livedPercent + '%';
+        document.getElementById('time-remaining-percent').textContent = remainingPercent + '%';
+        document.getElementById('weeks-remaining').textContent = weeksRemaining.toLocaleString();
     }
 
     initProjection(dob) {
