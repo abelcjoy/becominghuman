@@ -649,3 +649,60 @@ button:disabled:hover {
     animation: breathRhythm 8s ease-in-out infinite;
     will-change: transform, opacity;
 }
+
+/* ========================================
+   VOID MODE (ZEN)
+   ======================================== */
+body.void-state {
+    background-color: #000 !important;
+    overflow-y: hidden;
+    /* Lock scroll */
+}
+
+/* Hide Distractions */
+body.void-state header,
+body.void-state #soul-rank,
+body.void-state #daily-reflection,
+body.void-state #via-negativa-section,
+body.void-state #create-wallpaper-btn,
+body.void-state .border-t,
+body.void-state #projection-results,
+body.void-state #sim-hub,
+body.void-state .terminal-box {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+}
+
+/* Hide Perspective Units (Grid without animation) */
+body.void-state .grid:not(.animate-breath) {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+}
+
+/* Void Button State */
+body.void-state #void-mode-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    opacity: 0.2;
+    background: transparent;
+    border: none;
+    font-size: 12px;
+}
+
+body.void-state #void-mode-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Center the Numbers */
+body.void-state #countdown-step {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 0 !important;
+}

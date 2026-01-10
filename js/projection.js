@@ -98,12 +98,12 @@ export class ProjectionEngine {
             const data = this.calculateRemainingTime(rel);
             if (data.status === 'deceased') {
                 sadCount++;
-                lines.push(`• The window for <span class="text-white font-bold">${rel.name}</span> will likely have closed.`);
+                lines.push(`• The window for <span class="text-white font-bold">${this.escape(rel.name)}</span> will likely have closed.`);
             } else if (data.percentageLeft < 20) {
                 urgenyCount++;
-                lines.push(`• You will reach the <span class="text-red-400">Tail End</span> of your time with <span class="text-white font-bold">${rel.name}</span> (${data.percentageLeft.toFixed(0)}% remains).`);
+                lines.push(`• You will reach the <span class="text-red-400">Tail End</span> of your time with <span class="text-white font-bold">${this.escape(rel.name)}</span> (${data.percentageLeft.toFixed(0)}% remains).`);
             } else {
-                lines.push(`• You will have <span class="text-green-400">${data.eventsRemainingFromFuture}</span> projected interactions left with <span class="text-white font-bold">${rel.name}</span>.`);
+                lines.push(`• You will have <span class="text-green-400">${data.eventsRemainingFromFuture}</span> projected interactions left with <span class="text-white font-bold">${this.escape(rel.name)}</span>.`);
             }
         });
 
@@ -184,8 +184,8 @@ export class ProjectionEngine {
                     <div class="p-6 border ${cardClass} rounded-lg backdrop-blur-sm transition-all duration-500">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h3 class="text-lg font-bold text-white">${data.name}</h3>
-                                <p class="text-xs uppercase tracking-wider text-stone-500">${rel.relation}</p>
+                                <h3 class="text-lg font-bold text-white">${this.escape(data.name)}</h3>
+                                <p class="text-xs uppercase tracking-wider text-stone-500">${this.escape(rel.relation)}</p>
                             </div>
                             <button onclick="window.projection.removeRelationship('${rel.id}')" class="text-stone-600 hover:text-red-500 transition-colors">×</button>
                         </div>
@@ -265,5 +265,12 @@ export class ProjectionEngine {
         if (saved) {
             this.state.relationships = JSON.parse(saved);
         }
+    }
+
+    escape(str) {
+        if (!str) return '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
     }
 }

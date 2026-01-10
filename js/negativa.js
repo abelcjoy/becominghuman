@@ -77,13 +77,19 @@ export class ViaNegativa {
             this.items.forEach(item => {
                 const li = document.createElement('li');
                 li.className = 'flex justify-between items-center bg-black/40 border border-white/5 rounded p-3 animate-fade-in group hover:border-white/20 transition-colors';
-                li.innerHTML = `
-                    <span class="text-stone-300 font-mono text-sm line-through decoration-white/30 decoration-2">${item.text}</span>
-                    <button class="text-stone-600 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 px-2"
-                        onclick="window.negativa.removeItem(${item.id})">
-                        ×
-                    </button>
-                `;
+
+                // Safe text node creation
+                const span = document.createElement('span');
+                span.className = 'text-stone-300 font-mono text-sm line-through decoration-white/30 decoration-2';
+                span.textContent = item.text;
+
+                const btn = document.createElement('button');
+                btn.className = 'text-stone-600 hover:text-red-500 transition-colors opacity-0 group-hover:opacity-100 px-2';
+                btn.textContent = '×';
+                btn.onclick = () => window.negativa.removeItem(item.id);
+
+                li.appendChild(span);
+                li.appendChild(btn);
                 this.list.appendChild(li);
             });
         }

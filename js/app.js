@@ -15,6 +15,7 @@ import { HabitManager } from './habits.js';
 import { ViaNegativa } from './negativa.js';
 import { WallpaperGenerator } from './wallpaper.js';
 import { SubliminalAxioms } from './axioms.js';
+import { VoidMode } from './void.js';
 
 class LifeCountdown {
     constructor() {
@@ -105,6 +106,7 @@ class LifeCountdown {
         window.negativa = new ViaNegativa();
         window.wallpaper = new WallpaperGenerator(this);
         new SubliminalAxioms();
+        new VoidMode();
 
         // Load saved state (DOB only)
         try {
