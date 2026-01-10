@@ -515,16 +515,20 @@
             <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
         </div>
         </div> <!-- End Dashboard Container -->
-        <div
-            class="mt-24 w-full max-w-3xl bg-white p-1 grid grid-cols-1 gap-1 shadow-[0_0_100px_rgba(255,255,255,0.2)]">
+        <div class="mt-24 w-full max-w-3xl">
             <button id="crave-btn"
-                class="px-4 py-8 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-900 transition-all duration-300 border-2 border-transparent hover:border-white"
+                class="w-full px-4 py-8 bg-red-900/20 text-red-500 font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-900 hover:text-white transition-all duration-300 border border-red-900/50 hover:border-red-500 backdrop-blur-md shadow-[0_0_30px_rgba(255,0,0,0.1)]"
                 aria-label="Enter crisis override mode">
                 ⚠️ Crisis Override
             </button>
         </div>
 
         <div class="mt-8 flex items-center justify-center gap-4">
+            <button id="create-wallpaper-btn"
+                class="px-6 py-3 bg-white/10 text-white text-[10px] uppercase tracking-[0.4em] hover:bg-white/20 transition-all duration-300 border border-white/20 rounded"
+                aria-label="Create Memento Mori Wallpaper">
+                📱 Wallpaper
+            </button>
             <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
                 class="px-6 py-3 bg-white/10 text-white text-[10px] uppercase tracking-[0.4em] hover:bg-white/20 transition-all duration-300 border border-white/20 rounded"
                 aria-label="View neurobiological protocols">

@@ -13,6 +13,7 @@ import { ChartRenderer } from './charts.js';
 import { FocusManager } from './focus.js';
 import { HabitManager } from './habits.js';
 import { ViaNegativa } from './negativa.js';
+import { WallpaperGenerator } from './wallpaper.js';
 
 class LifeCountdown {
     constructor() {
@@ -101,6 +102,7 @@ class LifeCountdown {
 
         // Initialize Novelty (Via Negativa)
         window.negativa = new ViaNegativa();
+        window.wallpaper = new WallpaperGenerator(this);
 
         // Load saved state (DOB only)
         try {
