@@ -11,6 +11,7 @@ export class KeyboardShortcuts {
             'p': () => this.toggleProtocol(),
             's': () => this.share(),
             'c': () => this.enterCrisis(),
+            'f': () => this.focus(),
             '?': () => this.showHelp(),
             'Escape': () => this.closeModals(),
             ' ': () => this.pause(),
@@ -107,10 +108,17 @@ export class KeyboardShortcuts {
         }
     }
 
+    focus() {
+        if (this.app && this.app.focusManager) {
+            this.app.focusManager.startSession();
+        }
+    }
+
     showHelp() {
         const shortcuts = [
             { key: '?', action: 'Show this help' },
             { key: 'SPACE', action: 'Pause/Resume' },
+            { key: 'F', action: 'Focus Mode' },
             { key: 'E', action: 'Export data' },
             { key: 'I', action: 'Import data' },
             { key: 'M', action: 'Toggle sound' },

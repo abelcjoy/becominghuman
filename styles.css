@@ -479,8 +479,12 @@ button:focus:not(:focus-visible) {
 }
 
 /* ========================================
-   ANIMATIONS
+   ANIMATIONS & FOCUS
    ======================================== */
+
+.focus-mode-active {
+    overflow: hidden;
+}
 
 .animate-fade-in {
     animation: fadeIn 1.5s ease-out forwards;

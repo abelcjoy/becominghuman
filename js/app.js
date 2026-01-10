@@ -10,6 +10,7 @@ import { PWAInstaller } from './pwa.js';
 import { SaveManager } from './save.js';
 import { SoundManager } from './sound.js';
 import { ChartRenderer } from './charts.js';
+import { FocusManager } from './focus.js';
 
 class LifeCountdown {
     constructor() {
@@ -85,6 +86,9 @@ class LifeCountdown {
         this.saveManager = new SaveManager(this);
         this.soundManager = new SoundManager();
         this.chartRenderer = new ChartRenderer();
+        this.focusManager = new FocusManager(this);
+
+        // Load saved state if available
 
         // Load saved state if available
         try {
