@@ -63,6 +63,7 @@ body {
 /* Time Slider Styling */
 input[type=range] {
     -webkit-appearance: none;
+    appearance: none;
     background: transparent;
 }
 
