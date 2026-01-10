@@ -81,14 +81,9 @@ class LifeCountdown {
     init() {
         this.populateCountries();
 
-        // --- Core Event Listeners with Safety Checks ---
+        // --- Core Event Listeners ---
         if (this.elements.startButton) {
             this.elements.startButton.addEventListener('click', () => this.startCountdown());
-        }
-
-        // Share (Secondary)
-        if (this.elements.shareBtn) {
-            this.elements.shareBtn.addEventListener('click', () => this.shareResult());
         }
 
         // Crisis Mode
@@ -99,39 +94,11 @@ class LifeCountdown {
             this.elements.exitCrisis.addEventListener('click', () => this.exitCrisisMode());
         }
 
-        // Initialize Managers FIRST (so they are ready for interactions)
-        this.saveManager = new SaveManager(this);
-        this.soundManager = new SoundManager();
+        // Initialize Core Visuals Only
         this.chartRenderer = new ChartRenderer();
-        try { this.habitManager = new HabitManager(this); } catch (e) { console.error('HabitManager Init Error', e); }
-        this.focusManager = new FocusManager(this);
-        this.keyboard = new KeyboardShortcuts(this);
+        try { this.keyboard = new KeyboardShortcuts(this); } catch (e) { console.warn('Shortcuts disabled'); }
 
-        // --- New Control Panel Listeners ---
-        if (this.elements.pauseBtn) {
-            this.elements.pauseBtn.addEventListener('click', () => this.togglePause());
-        }
-
-        if (this.elements.focusBtn) {
-            this.elements.focusBtn.addEventListener('click', () => this.focusManager.startSession());
-        }
-
-        if (this.elements.soundBtn) {
-            this.elements.soundBtn.addEventListener('click', () => {
-                this.soundManager.toggle();
-                this.elements.soundBtn.textContent = this.soundManager.isEnabled() ? '🔊 Sound' : '🔇 Sound';
-            });
-        }
-
-        if (this.elements.exportBtn) {
-            this.elements.exportBtn.addEventListener('click', () => this.saveManager.exportData());
-        }
-
-        if (this.elements.importBtn) {
-            this.elements.importBtn.addEventListener('click', () => this.saveManager.showImportDialog());
-        }
-
-        // Load saved state if available
+        // Load saved state (DOB only)
         try {
             const savedData = localStorage.getItem('lifeData');
             if (savedData) {

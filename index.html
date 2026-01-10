@@ -454,52 +454,7 @@
             </div>
         </div>
 
-        <!-- HABIT & GAMIFICATION DASHBOARD -->
-        <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Sovereignty
-                    Protocol
-                </h2>
-                <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Consistency Architecture</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Rank Card -->
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">🏆</div>
-                    <div class="relative z-10">
-                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Current Rank</div>
-                        <div id="user-rank" class="text-2xl font-stoic text-amber-400 mb-4">Sleepwalker</div>
-
-                        <div class="w-full bg-black/50 h-2 rounded-full overflow-hidden">
-                            <div id="xp-progress-bar" class="h-full bg-amber-500 transition-all duration-1000"
-                                style="width: 0%"></div>
-                        </div>
-                        <div class="flex justify-between mt-2 text-[9px] text-stone-500 font-mono">
-                            <span>XP Progress</span>
-                            <span id="next-rank-xp">0 / 100 XP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Streak Card -->
-                <div class="p-6 bg-white/5 border border-white/10 rounded-xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl">🔥</div>
-                    <div class="relative z-10">
-                        <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Consistency Streak</div>
-                        <div id="streak-counter" class="text-4xl font-stoic text-white">0 Days</div>
-                        <p class="mt-2 text-[10px] text-stone-500">Log in daily to maintain momentum.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Heatmap -->
-            <div class="mt-6 p-6 bg-black/40 border border-white/10 rounded-xl">
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-4 text-center">30-Day Activity Map
-                </div>
-                <canvas id="activity-heatmap" class="w-full" style="height: 120px;"></canvas>
-            </div>
-        </div>
+        <!-- Dashboard Removed for Simplicity -->
 
         <div class="mb-12 text-center mt-12">
             <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
@@ -507,47 +462,16 @@
             <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
         </div>
         </div> <!-- End Dashboard Container -->
-        <div class="mt-24 w-full max-w-3xl bg-white p-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1
-                shadow-[0_0_100px_rgba(255,255,255,0.2)]">
-            <button id="pause-btn" onclick="window.app.togglePause()"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-yellow-600 transition-all duration-300 border-2 border-transparent hover:border-white"
-                aria-label="Pause or resume countdown">
-                ⏸️ Pause
-            </button>
-            <button id="focus-btn" onclick="window.app.focusManager.startSession()"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-cyan-600 transition-all duration-300 border-2 border-transparent hover:border-white"
-                aria-label="Start deep work focus session">
-                🎯 Focus
-            </button>
-            <button id="sound-btn"
-                onclick="window.app.soundManager.toggle(); this.textContent = window.app.soundManager.isEnabled() ? '🔊 Sound' : '🔇 Sound'"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-purple-700 transition-all duration-300 border-2 border-transparent hover:border-white"
-                aria-label="Toggle sound effects">
-                🔇 Sound
-            </button>
-            <button id="export-btn" onclick="window.app.saveManager.exportData()"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-green-700 transition-all duration-300 border-2 border-transparent hover:border-white"
-                aria-label="Export your data">
-                💾 Export
-            </button>
-            <button id="import-btn" onclick="window.app.saveManager.showImportDialog()"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-blue-700 transition-all duration-300 border-2 border-transparent hover:border-white"
-                aria-label="Import your data">
-                📁 Import
-            </button>
+        <div
+            class="mt-24 w-full max-w-3xl bg-white p-1 grid grid-cols-1 gap-1 shadow-[0_0_100px_rgba(255,255,255,0.2)]">
             <button id="crave-btn"
-                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-700 transition-all duration-300 border-2 border-transparent hover:border-white"
+                class="px-4 py-8 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-900 transition-all duration-300 border-2 border-transparent hover:border-white"
                 aria-label="Enter crisis override mode">
-                ⚠️ Crisis
+                ⚠️ Crisis Override
             </button>
         </div>
 
         <div class="mt-8 flex items-center justify-center gap-4">
-            <button id="share-btn-secondary" onclick="window.app.shareResult()"
-                class="px-6 py-3 bg-white/10 text-white text-[10px] uppercase tracking-[0.4em] hover:bg-white/20 transition-all duration-300 border border-white/20 rounded"
-                aria-label="Share your results">
-                🔗 Share Result
-            </button>
             <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
                 class="px-6 py-3 bg-white/10 text-white text-[10px] uppercase tracking-[0.4em] hover:bg-white/20 transition-all duration-300 border border-white/20 rounded"
                 aria-label="View neurobiological protocols">
