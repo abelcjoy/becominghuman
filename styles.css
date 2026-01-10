@@ -650,6 +650,10 @@ button:disabled:hover {
     will-change: transform, opacity;
 }
 
+.animate-breath:hover {
+    animation: none;
+}
+
 /* ========================================
    VOID MODE (ZEN)
    ======================================== */
@@ -674,11 +678,32 @@ body.void-state .terminal-box {
     transition: opacity 1.5s ease;
 }
 
+/* Global Cursor Styling for Precision Feel */
+body {
+    cursor: crosshair;
+}
+
 /* Hide Perspective Units (Grid without animation) */
 body.void-state .grid:not(.animate-breath) {
     opacity: 0 !important;
     pointer-events: none;
     transition: opacity 1.5s ease;
+}
+
+.void-hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
+}
+
+/* Focus Visualizer */
+#focus-visualizer {
+    z-index: 0;
+}
+
+#focus-overlay>div.relative {
+    z-index: 10;
+    /* Ensure timer text is above canvas */
 }
 
 /* Void Button State */
@@ -705,4 +730,41 @@ body.void-state #countdown-step {
     justify-content: center;
     min-height: 100vh;
     padding-top: 0 !important;
+}
+
+/* ========================================
+   REALITY GLITCH
+   ======================================== */
+@keyframes realityGlitchAnim {
+    0% {
+        text-shadow: 2px 0 rgba(255, 0, 0, 0.5), -2px 0 rgba(0, 255, 255, 0.5);
+        transform: translate(0);
+    }
+
+    25% {
+        text-shadow: -2px 0 rgba(255, 0, 0, 0.5), 2px 0 rgba(0, 255, 255, 0.5);
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        text-shadow: 2px 0 rgba(255, 0, 0, 0.5), -2px 0 rgba(0, 255, 255, 0.5);
+        transform: translate(-1px, -2px);
+    }
+
+    75% {
+        text-shadow: -2px 0 rgba(255, 0, 0, 0.5), 2px 0 rgba(0, 255, 255, 0.5);
+        transform: translate(0);
+    }
+
+    100% {
+        text-shadow: none;
+        transform: translate(0);
+    }
+}
+
+.reality-glitch {
+    animation: realityGlitchAnim 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #fff;
+    opacity: 0.8 !important;
+    /* Slight dim */
 }

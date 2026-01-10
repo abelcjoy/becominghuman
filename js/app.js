@@ -15,7 +15,12 @@ import { HabitManager } from './habits.js';
 import { ViaNegativa } from './negativa.js';
 import { WallpaperGenerator } from './wallpaper.js';
 import { SubliminalAxioms } from './axioms.js';
+import { MirrorEffect } from './mirror.js';
+import { ParticleSystem } from './particles.js';
 import { VoidMode } from './void.js';
+import { TextScramble } from './textfx.js';
+import { HolographicTilt } from './holo.js';
+import { RealityGlitch } from './glitch.js';
 
 class LifeCountdown {
     constructor() {
@@ -107,6 +112,37 @@ class LifeCountdown {
         window.wallpaper = new WallpaperGenerator(this);
         new SubliminalAxioms();
         new VoidMode();
+        new ParticleSystem();
+        new MirrorEffect();
+
+        // Initialize Managers
+        this.soundManager = new SoundManager();
+        this.habitManager = new HabitManager(this);
+        this.focusManager = new FocusManager(this);
+
+        // Text FX
+        document.querySelectorAll('.stat-number').forEach(el => {
+            const fx = new TextScramble(el);
+            el.addEventListener('mouseenter', () => {
+                fx.scramble();
+                this.soundManager?.play('tick');
+            });
+        });
+
+        // 3D Tilt Effect
+        const statsGrid = document.querySelector('.animate-breath'); // The main stats grid
+        if (statsGrid) new HolographicTilt(statsGrid);
+
+        // Reality Glitch
+        new RealityGlitch();
+
+        // Bind Focus Button
+        if (this.elements.focusBtn) {
+            this.elements.focusBtn.addEventListener('click', () => {
+                // Default 25m session
+                this.focusManager.startSession(25);
+            });
+        }
 
         // Load saved state (DOB only)
         try {
@@ -148,6 +184,15 @@ class LifeCountdown {
 
         if (data) {
             ({ dob, country, sleepHours } = data);
+
+            // Validate loaded data
+            const dobDate = new Date(dob);
+            if (isNaN(dobDate.getTime()) || !country) {
+                console.warn('Corrupted save data detected');
+                localStorage.removeItem('lifeData');
+                if (window.toast) toast.error('Saved data corrupted. Please re-enter details.');
+                return;
+            }
         } else {
             dob = new Date(this.elements.dobInput.value);
             country = this.elements.countrySelect.value;

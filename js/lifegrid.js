@@ -17,21 +17,41 @@ export class LifeGrid {
 
         this.ctx = this.canvas.getContext('2d');
 
+        // Animation props
+        this.pulse = 0;
+        this.isHovering = false;
+        this.animationFrame = null;
+
         // Handle resizing
         this.resize();
         window.addEventListener('resize', () => {
             this.resize();
-            this.draw();
         });
 
         // Interactive tooltip
-        this.canvas.addEventListener('mousemove', (e) => this.handleHover(e));
-        this.canvas.addEventListener('mouseleave', () => {
-            this.app.ui.hideTooltip(); // Assuming UI has this, or I'll implement local logic
-            this.draw(); // Redraw to clear highlight
+        this.canvas.addEventListener('mousemove', (e) => {
+            this.handleHover(e);
+            this.isHovering = true;
         });
 
-        this.draw();
+        this.canvas.addEventListener('mouseleave', () => {
+            const info = document.getElementById('grid-info');
+            if (info) info.innerText = 'Hover to inspect time';
+            this.isHovering = false;
+        });
+
+        this.startAnimation();
+    }
+
+    startAnimation() {
+        if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+
+        const loop = () => {
+            this.pulse = (Math.sin(Date.now() / 200) + 1) / 2; // 0 to 1 oscillation
+            this.draw();
+            this.animationFrame = requestAnimationFrame(loop);
+        };
+        loop();
     }
 
     resize() {
@@ -60,8 +80,6 @@ export class LifeGrid {
         const diffTime = Math.abs(now - this.dob);
         const weeksLived = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
 
-        this.ctx.fillStyle = '#000000'; // Default
-
         for (let year = 0; year < this.totalYears; year++) {
             for (let week = 0; week < this.weeksPerYear; week++) {
                 const absoluteWeekIndex = (year * 52) + week;
@@ -71,19 +89,39 @@ export class LifeGrid {
                 // Color Logic
                 if (absoluteWeekIndex < weeksLived) {
                     // Past
-                    this.ctx.fillStyle = '#ffffff'; // White for lived
-                    this.ctx.globalAlpha = 1.0;
-                } else if (absoluteWeekIndex === weeksLived) {
-                    // Current Week
-                    this.ctx.fillStyle = '#ef4444'; // Red pulse
-                    this.ctx.globalAlpha = 1.0;
-                } else {
-                    // Future
-                    this.ctx.fillStyle = '#ffffff';
-                    this.ctx.globalAlpha = 0.1; // Faint future
-                }
+                    // Subtle "Memory Flicker": occasionally dim a random square for a frame
+                    const isFlickering = Math.random() > 0.9995;
+                    this.ctx.fillStyle = isFlickering ? '#aaaaaa' : '#ffffff';
+                    this.ctx.globalAlpha = isFlickering ? 0.7 : 1.0;
+                    this.ctx.fillRect(x, y, boxSize, boxSize);
 
-                this.ctx.fillRect(x, y, boxSize, boxSize);
+                } else if (absoluteWeekIndex === weeksLived) {
+                    // Current Week - LIVING PULSE
+                    this.ctx.fillStyle = '#ef4444';
+
+                    // Pulse Scale & Opacity
+                    const pulseScale = 1 + (this.pulse * 0.3); // 1.0 to 1.3
+                    const offset = (boxSize * pulseScale - boxSize) / 2;
+
+                    this.ctx.globalAlpha = 0.6 + (this.pulse * 0.4); // 0.6 to 1.0
+                    this.ctx.fillRect(x - offset, y - offset, boxSize * pulseScale, boxSize * pulseScale);
+
+                    // Glow Effect
+                    this.ctx.shadowBlur = 10 * this.pulse;
+                    this.ctx.shadowColor = 'red';
+                    this.ctx.fillRect(x, y, boxSize, boxSize); // Draw solid core
+                    this.ctx.shadowBlur = 0; // Reset
+
+                } else {
+                    // Future - Quantum Probabilistic Shimmer
+                    this.ctx.fillStyle = '#ffffff';
+
+                    // Creates a wave that moves across the grid representing uncertainty
+                    const shimmer = (Math.sin((Date.now() / 500) + (absoluteWeekIndex / 100)) + 1) / 2;
+
+                    this.ctx.globalAlpha = 0.05 + (shimmer * 0.08); // Vary between 0.05 and 0.13
+                    this.ctx.fillRect(x, y, boxSize, boxSize);
+                }
             }
         }
     }
@@ -93,8 +131,6 @@ export class LifeGrid {
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
 
-        // Reverse map coordinate to week
-        // (Similar logic to draw dimensioning)
         const boxWidth = (this.width - 20) / this.weeksPerYear;
         const boxHeight = (this.height - 20) / this.totalYears;
         const boxSize = Math.min(boxWidth, boxHeight) * 0.8;
@@ -104,18 +140,24 @@ export class LifeGrid {
         const yearIdx = Math.floor((mouseY - 10) / (boxSize + gap));
 
         if (weekIdx >= 0 && weekIdx < 52 && yearIdx >= 0 && yearIdx < this.totalYears) {
-            // Valid hover
             const age = yearIdx;
-
-            // Calculate date of that box
             const boxDate = new Date(this.dob);
             boxDate.setDate(boxDate.getDate() + ((yearIdx * 52) + weekIdx) * 7);
 
-            // Show Tooltip logic here (I'll stick to simple title updates or custom overlay)
-            // For now, let's update a DOM element if I create one
+            // Highlight hover
+            const x = 10 + (weekIdx * (boxSize + gap));
+            const y = 10 + (yearIdx * (boxSize + gap));
+
+            this.ctx.strokeStyle = '#3b82f6'; // Blue highlight
+            this.ctx.lineWidth = 1;
+            this.ctx.globalAlpha = 1.0;
+            this.ctx.strokeRect(x - 1, y - 1, boxSize + 2, boxSize + 2);
+
             const info = document.getElementById('grid-info');
             if (info) {
-                info.innerText = `Age ${age} | ${boxDate.toLocaleDateString()}`;
+                const isPast = boxDate < new Date();
+                const status = isPast ? 'Lived' : 'Remaining';
+                info.innerText = `Age ${age} | ${boxDate.toLocaleDateString()} (${status})`;
             }
         }
     }

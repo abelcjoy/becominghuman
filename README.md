@@ -35,7 +35,7 @@ npx http-server -p 8000
 ### 3. **The Focus Engine (Deep Work Protocol)**
 - **Immersive Focus Overlay**: Distraction-free black interface with massive timer.
 - **Attention Equity**: Earn virtual capital ($25/hr) for every minute focused.
-- **Audio Soundscapes**: Integrated sound manager for flow state.
+- **Audio Soundscapes (Binaural Beats)**: Generative 40Hz Gamma waves for neural entrainment.
 
 ### 4. **Sovereignty Protocol (Gamification)**
 - **Streak Tracking**: Build consistency with daily check-ins (GitHub-style heatmap).

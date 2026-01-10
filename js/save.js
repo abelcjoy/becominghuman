@@ -107,6 +107,10 @@ export class SaveManager {
             return 0;
         }
         const elapsed = new Date() - new Date(firstVisit);
+        if (isNaN(elapsed)) {
+            localStorage.setItem('firstVisit', new Date().toISOString());
+            return 0;
+        }
         return Math.floor(elapsed / 1000 / 60); // minutes
     }
 

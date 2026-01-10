@@ -45,6 +45,14 @@ Then open `http://localhost:8000`.
 
 ---
 
+### **Issue 8: Stats show "NaN" or "NaN%"**
+**Cause**: Corrupted local storage data (usually the Date of Birth).
+**Solution**:
+1. The app should automatically detect this and ask you to re-enter data.
+2. If it persists, scroll to the bottom and click "**Reset Reality**" to clear the cache.
+
+---
+
 ### **Issue 7: Want to reset everything**
 **Solution**:
 1. Scroll to bottom
