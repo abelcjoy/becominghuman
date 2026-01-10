@@ -16,6 +16,14 @@ export class SaveManager {
                 dob: localStorage.getItem('lifeData'),
                 relationships: localStorage.getItem('relationships') || '[]',
                 preferences: localStorage.getItem('preferences') || '{}',
+                // New Data (Round 6/7)
+                activityLog: localStorage.getItem('activityLog') || '{}',
+                currentStreak: localStorage.getItem('currentStreak') || '0',
+                totalXP: localStorage.getItem('totalXP') || '0',
+                totalFocusSessions: localStorage.getItem('totalFocusSessions') || '0',
+                totalFocusMinutes: localStorage.getItem('totalFocusMinutes') || '0',
+                soundEnabled: localStorage.getItem('soundEnabled') || 'true',
+
                 stats: {
                     totalTimeViewed: this.calculateTotalTime(),
                     firstVisit: localStorage.getItem('firstVisit') || new Date().toISOString()
@@ -50,15 +58,17 @@ export class SaveManager {
                     }
 
                     // Restore data
-                    if (data.userData.dob) {
-                        localStorage.setItem('lifeData', data.userData.dob);
-                    }
-                    if (data.userData.relationships) {
-                        localStorage.setItem('relationships', data.userData.relationships);
-                    }
-                    if (data.userData.preferences) {
-                        localStorage.setItem('preferences', data.userData.preferences);
-                    }
+                    if (data.userData.dob) localStorage.setItem('lifeData', data.userData.dob);
+                    if (data.userData.relationships) localStorage.setItem('relationships', data.userData.relationships);
+                    if (data.userData.preferences) localStorage.setItem('preferences', data.userData.preferences);
+
+                    // Restore New Data (Round 6/7)
+                    if (data.userData.activityLog) localStorage.setItem('activityLog', data.userData.activityLog);
+                    if (data.userData.currentStreak) localStorage.setItem('currentStreak', data.userData.currentStreak);
+                    if (data.userData.totalXP) localStorage.setItem('totalXP', data.userData.totalXP);
+                    if (data.userData.totalFocusSessions) localStorage.setItem('totalFocusSessions', data.userData.totalFocusSessions);
+                    if (data.userData.totalFocusMinutes) localStorage.setItem('totalFocusMinutes', data.userData.totalFocusMinutes);
+                    if (data.userData.soundEnabled) localStorage.setItem('soundEnabled', data.userData.soundEnabled);
 
                     if (window.toast) {
                         toast.success('✅ Data imported! Reloading page...');
