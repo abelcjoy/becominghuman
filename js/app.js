@@ -1,6 +1,6 @@
 import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
-import { LifeSimulator } from './simulator.js';
+import { ProjectionEngine } from './projection.js';
 import { UI } from './ui.js';
 
 class LifeCountdown {
@@ -144,22 +144,53 @@ class LifeCountdown {
 
             this.displayDailyReflection();
             this.startRecaptureSession();
-            this.initSimulator(dob);
+            this.initProjection(dob);
 
             this.ui.hideLoading();
         }, 1500);
     }
 
-    initSimulator(dob) {
+    initProjection(dob) {
         this.elements.simHub.classList.remove('hidden');
 
-        // Initialize the life simulator engine
-        if (!window.simulator) {
-            window.simulator = new LifeSimulator(this);
+        if (!window.projection) {
+            window.projection = new ProjectionEngine(this);
         }
 
-        this.updateSimState(dob);
-        this.renderSimMarket();
+        window.projection.render();
+
+        const slider = document.getElementById('time-slider');
+        const display = document.getElementById('slider-year-display');
+
+        if (slider && display) {
+            slider.addEventListener('input', (e) => {
+                display.innerText = e.target.value;
+                window.projection.setFutureDate(new Date(e.target.value, 0, 1));
+            });
+        }
+    }
+
+    addConnection() {
+        const name = document.getElementById('rel-name').value;
+        const role = document.getElementById('rel-role').value;
+        const age = document.getElementById('rel-age').value;
+        const freq = document.getElementById('rel-freq').value;
+
+        if (!name || !age || !freq) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        window.projection.addRelationship({
+            name,
+            relation: role,
+            age,
+            frequency: freq
+        });
+
+        document.getElementById('rel-name').value = '';
+        document.getElementById('rel-age').value = '';
+        document.getElementById('rel-freq').value = '';
     }
 
     updateSimState(dob) {
