@@ -626,3 +626,26 @@ button:disabled:hover {
         justify-content: center;
     }
 }
+
+/* ========================================
+   THE LAST BREATH ANIMATION
+   ======================================== */
+@keyframes breathRhythm {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: scale(1.02);
+        opacity: 1;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+}
+
+.animate-breath {
+    animation: breathRhythm 8s ease-in-out infinite;
+    will-change: transform, opacity;
+}

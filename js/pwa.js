@@ -7,6 +7,7 @@ export class PWAInstaller {
     constructor() {
         this.deferredPrompt = null;
         this.installButton = null;
+        window.pwaInstaller = this; // Expose globally
         this.init();
     }
 
@@ -15,7 +16,7 @@ export class PWAInstaller {
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             this.deferredPrompt = e;
-            this.showInstallButton();
+            // this.showInstallButton(); // Wait for app to trigger this manually
         });
 
         // Listen for app installed

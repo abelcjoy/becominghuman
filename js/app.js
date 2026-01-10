@@ -213,6 +213,9 @@ class LifeCountdown {
                 try { this.initLifeChart(dob, country); } catch (e) { console.error('LifeChart Error', e); }
 
                 toast.success('Reality initialized. Your countdown begins now.');
+
+                // Trigger PWA Install Prompt (if deferred)
+                if (window.pwaInstaller) window.pwaInstaller.showInstallButton();
             } catch (error) {
                 console.error("Initialization Critical Error:", error);
                 toast.error("Reality Glitch: " + error.message);
