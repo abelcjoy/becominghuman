@@ -16,7 +16,13 @@ export class PWAInstaller {
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             this.deferredPrompt = e;
-            // this.showInstallButton(); // Wait for app to trigger this manually
+
+            // Check if app is already initialized (Countdown visible)
+            // This handles the case where the event fires AFTER the user has already clicked start
+            const countdownStep = document.getElementById('countdown-step');
+            if (countdownStep && !countdownStep.classList.contains('hidden')) {
+                this.showInstallButton();
+            }
         });
 
         // Listen for app installed
