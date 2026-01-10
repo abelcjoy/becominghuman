@@ -189,4 +189,58 @@ export class ChartRenderer {
             this.ctx.fill();
         });
     }
+    createActivityHeatmap(canvasId, data) {
+        this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
+
+        this.ctx = this.canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const rect = this.canvas.getBoundingClientRect();
+
+        this.canvas.width = rect.width * dpr;
+        this.canvas.height = rect.height * dpr;
+        this.ctx.scale(dpr, dpr);
+
+        this.canvas.style.width = rect.width + 'px';
+        this.canvas.style.height = rect.height + 'px';
+
+        const width = this.canvas.width / dpr;
+        const height = this.canvas.height / dpr;
+
+        this.ctx.clearRect(0, 0, width, height);
+
+        // Draw 30 days grid (6 cols x 5 rows)
+        const cols = 6;
+        const rows = 5;
+        const cellSize = Math.min((width - 40) / cols, (height - 40) / rows);
+        const padding = 5;
+        const offsetX = (width - (cols * cellSize)) / 2;
+        const offsetY = (height - (rows * cellSize)) / 2;
+
+        data.forEach((day, index) => {
+            const col = index % cols;
+            const row = Math.floor(index / cols);
+            const x = offsetX + col * cellSize;
+            const y = offsetY + row * cellSize;
+
+            // Intensity based on focus minutes (0-120m)
+            const intensity = Math.min(1, day.focusMinutes / 60);
+
+            this.ctx.fillStyle = intensity > 0
+                ? `rgba(16, 185, 129, ${0.2 + intensity * 0.8})` // Green scales
+                : 'rgba(255, 255, 255, 0.05)'; // Empty
+
+            // Rounded rect
+            this.ctx.beginPath();
+            this.ctx.roundRect(x + padding, y + padding, cellSize - padding * 2, cellSize - padding * 2, 4);
+            this.ctx.fill();
+
+            // Date text (optional, small)
+            if (index === 29) { // Today marker
+                this.ctx.strokeStyle = '#fff';
+                this.ctx.lineWidth = 1;
+                this.ctx.stroke();
+            }
+        });
+    }
 }

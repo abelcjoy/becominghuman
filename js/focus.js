@@ -73,6 +73,11 @@ export class FocusManager {
         // Calculate Equity Earned (Assume $25/hr value)
         const equityEarned = (minutesCompleted / 60) * 25;
 
+        // Log to Habit Manager
+        if (this.app.habitManager) {
+            this.app.habitManager.logActivity('focus', minutesCompleted);
+        }
+
         // Sound
         if (this.app.soundManager) {
             this.app.soundManager.play('achievement');

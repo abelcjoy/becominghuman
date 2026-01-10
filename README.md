@@ -32,19 +32,28 @@ npx http-server -p 8000
 - Anchors parents, partners, and friends to visualize "visits remaining" (Actuarial Grief).
 - **Update**: Mobile-optimized slider and responsive grid.
 
-### 3. **Digital Atrophy Audit**
+### 3. **The Focus Engine (Deep Work Protocol)**
+- **Immersive Focus Overlay**: Distraction-free black interface with massive timer.
+- **Attention Equity**: Earn virtual capital ($25/hr) for every minute focused.
+- **Audio Soundscapes**: Integrated sound manager for flow state.
+
+### 4. **Sovereignty Protocol (Gamification)**
+- **Streak Tracking**: Build consistency with daily check-ins (GitHub-style heatmap).
+- **Rank System**: Evolve from "Sleepwalker" to "Time Sovereign" by earning XP.
+- **Activity Log**: visualize your discipline over the last 30 days.
+
+### 5. **Digital Atrophy Audit**
 - Calculate total screen time wasted over a lifetime.
 - Visualize years lost to scrolling vs. creating.
 
-### 4. **Neurobiological Protocols**
+### 6. **Neurobiological Protocols**
 - **Crisis Override**: 15-minute physiological sigh breathing tool.
-- **PWA Support**: Installable app with offline support.
 - **Sound Manager**: Subtle audio feedback (Click, Milestone, Tick).
 
-### 5. **Data Sovereignty (New!)**
+### 7. **Data Sovereignty**
 - **Save/Load System**: Export your life data to JSON.
-- **Privacy First**: All data stored locally or in your exported file.
-- **Keyboard Shortcuts**: Power user controls (Press `?` to view).
+- **Privacy First**: All data stored locally.
+- **Keyboard Shortcuts**: Power user controls (Press `?`).
 
 ---
 

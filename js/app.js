@@ -11,6 +11,7 @@ import { SaveManager } from './save.js';
 import { SoundManager } from './sound.js';
 import { ChartRenderer } from './charts.js';
 import { FocusManager } from './focus.js';
+import { HabitManager } from './habits.js';
 
 class LifeCountdown {
     constructor() {
@@ -86,6 +87,7 @@ class LifeCountdown {
         this.saveManager = new SaveManager(this);
         this.soundManager = new SoundManager();
         this.chartRenderer = new ChartRenderer();
+        this.habitManager = new HabitManager(this); // Init before FocusManager to log stats
         this.focusManager = new FocusManager(this);
 
         // Load saved state if available
@@ -217,6 +219,10 @@ class LifeCountdown {
         document.getElementById('time-lived-percent').textContent = livedPercent + '%';
         document.getElementById('time-remaining-percent').textContent = remainingPercent + '%';
         document.getElementById('weeks-remaining').textContent = weeksRemaining.toLocaleString();
+    }
+
+    renderHeatmap(data) {
+        this.chartRenderer.createActivityHeatmap('activity-heatmap', data);
     }
 
     initProjection(dob) {
