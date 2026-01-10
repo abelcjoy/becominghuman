@@ -130,7 +130,7 @@ export class ProjectionEngine {
         container.innerHTML = '';
 
         // 1. Render YOU
-        const myDob = new Date(this.app.elements.dobInput.value);
+        const myDob = this.app.dob || new Date(this.app.elements.dobInput.value || Date.now());
         const myAgeToday = (new Date() - myDob) / (1000 * 60 * 60 * 24 * 365.25);
         const yearsProjected = (this.state.futureDate - new Date()) / (1000 * 60 * 60 * 24 * 365.25);
         const myAgeFuture = myAgeToday + yearsProjected;

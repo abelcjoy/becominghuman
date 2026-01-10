@@ -172,6 +172,7 @@ class LifeCountdown {
         deathDate.setDate(deathDate.getDate() + (fractionalYear * 365));
 
         this.targetDate = deathDate;
+        this.dob = dob; // Store for other modules
         this.sleepRatio = (24 - sleepHours) / 24;
 
         // Cinematic Transition
