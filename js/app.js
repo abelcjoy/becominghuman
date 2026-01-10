@@ -21,6 +21,7 @@ import { VoidMode } from './void.js';
 import { TextScramble } from './textfx.js';
 import { HolographicTilt } from './holo.js';
 import { RealityGlitch } from './glitch.js';
+import { TemporalEchoes } from './trails.js';
 
 class LifeCountdown {
     constructor() {
@@ -135,6 +136,9 @@ class LifeCountdown {
 
         // Reality Glitch
         new RealityGlitch();
+
+        // Temporal Echoes
+        new TemporalEchoes();
 
         // Bind Focus Button
         if (this.elements.focusBtn) {

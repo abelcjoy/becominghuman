@@ -29,6 +29,7 @@ export class VoidMode {
             'create-wallpaper-btn',
             'life-progress-chart',
             'entropy-canvas',
+            'echo-canvas',
             'mirror-btn',
             'focus-btn',
             'protocol-modal-btn' // Assuming protocol button has an ID or we need to add one. Let's use class selector logic instead if ID missing? The list supports IDs or selectors.
