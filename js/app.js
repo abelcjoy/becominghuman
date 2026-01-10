@@ -165,6 +165,12 @@ class LifeCountdown {
         if (slider && display) {
             slider.addEventListener('input', (e) => {
                 display.innerText = e.target.value;
+
+                // Add tactile pulse effect
+                display.classList.remove('animate-pulse-fast');
+                void display.offsetWidth; // Trigger reflow
+                display.classList.add('animate-pulse-fast');
+
                 window.projection.setFutureDate(new Date(e.target.value, 0, 1));
             });
         }

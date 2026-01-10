@@ -95,3 +95,26 @@ input[type=range]::-webkit-slider-runnable-track {
     background: #333;
     border-radius: 2px;
 }
+
+/* Micro-interaction animations */
+@keyframes pulseFast {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        color: #fff;
+    }
+
+    100% {
+        transform: scale(1);
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+
+.animate-pulse-fast {
+    animation: pulseFast 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
