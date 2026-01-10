@@ -1,6 +1,7 @@
 import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
 import { ProjectionEngine } from './projection.js';
+import { DigitalAtrophy } from './atrophy.js';
 import { UI } from './ui.js';
 
 class LifeCountdown {
@@ -145,6 +146,7 @@ class LifeCountdown {
             this.displayDailyReflection();
             this.startRecaptureSession();
             this.initProjection(dob);
+            this.initAtrophy();
 
             this.ui.hideLoading();
         }, 1500);
@@ -174,6 +176,32 @@ class LifeCountdown {
                 window.projection.setFutureDate(new Date(e.target.value, 0, 1));
             });
         }
+    }
+
+    initAtrophy() {
+        if (!window.atrophy) {
+            window.atrophy = new DigitalAtrophy(this);
+            window.atrophy.init();
+        }
+        window.atrophy.render();
+
+        const config = [
+            { id: 'atrophy-phone', state: 'phoneHours', display: 'phone-val' },
+            { id: 'atrophy-desktop', state: 'desktopHours', display: 'desktop-val' },
+            { id: 'atrophy-sleep', state: 'sleepHours', display: 'sleep-val' }
+        ];
+
+        config.forEach(c => {
+            const el = document.getElementById(c.id);
+            if (el) {
+                el.addEventListener('input', (e) => {
+                    const val = parseFloat(e.target.value);
+                    document.getElementById(c.display).innerText = val + 'h';
+                    window.atrophy.state[c.state] = val;
+                    window.atrophy.render();
+                });
+            }
+        });
     }
 
     addConnection() {
