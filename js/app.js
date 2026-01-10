@@ -7,6 +7,8 @@ import { UI } from './ui.js';
 import { toast } from './toast.js';
 import { KeyboardShortcuts } from './keyboard.js';
 import { PWAInstaller } from './pwa.js';
+import { SaveManager } from './save.js';
+import { SoundManager } from './sound.js';
 
 class LifeCountdown {
     constructor() {
@@ -61,6 +63,8 @@ class LifeCountdown {
         this.lastFrameTime = Date.now();
         this.animationFrame = null;
         this.previousStats = { years: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+        this.isPaused = false;
+        this.pausedTime = 0;
         this.init();
     }
 
@@ -75,6 +79,10 @@ class LifeCountdown {
 
         // Initialize keyboard shortcuts
         this.keyboard = new KeyboardShortcuts(this);
+
+        // Initialize save manager and sound manager
+        this.saveManager = new SaveManager(this);
+        this.soundManager = new SoundManager();
 
         // Load saved state if available
         try {
@@ -349,6 +357,12 @@ class LifeCountdown {
         this.lastRecaptureUpdate = Date.now();
 
         const gameLoop = () => {
+            // Skip updates if paused
+            if (this.isPaused) {
+                this.animationFrame = requestAnimationFrame(gameLoop);
+                return;
+            }
+
             const now = Date.now();
             const deltaTime = now - this.lastFrameTime;
 
@@ -368,6 +382,25 @@ class LifeCountdown {
         };
 
         gameLoop();
+    }
+
+    togglePause() {
+        this.isPaused = !this.isPaused;
+
+        if (this.isPaused) {
+            this.pausedTime = Date.now();
+            toast.info('⏸️ Countdown paused');
+            this.soundManager?.play('click');
+        } else {
+            // Adjust timers for paused duration
+            const pauseDuration = Date.now() - this.pausedTime;
+            this.recaptureStartTime += pauseDuration;
+            this.lastRecaptureUpdate += pauseDuration;
+            toast.success('▶️ Countdown resumed');
+            this.soundManager?.play('click');
+        }
+
+        return this.isPaused;
     }
 
     updateRecaptureTimer() {

@@ -12,7 +12,11 @@ export class KeyboardShortcuts {
             's': () => this.share(),
             'c': () => this.enterCrisis(),
             '?': () => this.showHelp(),
-            'Escape': () => this.closeModals()
+            'Escape': () => this.closeModals(),
+            ' ': () => this.pause(),
+            'e': () => this.export(),
+            'i': () => this.import(),
+            'm': () => this.toggleSound()
         };
         this.init();
     }
@@ -79,13 +83,41 @@ export class KeyboardShortcuts {
         }
     }
 
+    pause() {
+        if (this.app && this.app.togglePause) {
+            this.app.togglePause();
+        }
+    }
+
+    export() {
+        if (this.app && this.app.saveManager) {
+            this.app.saveManager.exportData();
+        }
+    }
+
+    import() {
+        if (this.app && this.app.saveManager) {
+            this.app.saveManager.showImportDialog();
+        }
+    }
+
+    toggleSound() {
+        if (this.app && this.app.soundManager) {
+            this.app.soundManager.toggle();
+        }
+    }
+
     showHelp() {
         const shortcuts = [
             { key: '?', action: 'Show this help' },
-            { key: 'R', action: 'Reset everything' },
-            { key: 'P', action: 'Toggle Protocol' },
+            { key: 'SPACE', action: 'Pause/Resume' },
+            { key: 'E', action: 'Export data' },
+            { key: 'I', action: 'Import data' },
+            { key: 'M', action: 'Toggle sound' },
             { key: 'S', action: 'Share result' },
+            { key: 'P', action: 'Toggle Protocol' },
             { key: 'C', action: 'Crisis mode' },
+            { key: 'R', action: 'Reset everything' },
             { key: 'ESC', action: 'Close modals' }
         ];
 
@@ -102,8 +134,8 @@ export class KeyboardShortcuts {
         `;
 
         if (window.toast) {
-            const toastEl = toast.info(helpHTML, 8000);
-            toastEl.querySelector('.text-sm').remove(); // Remove default message, keep HTML
+            const toastEl = toast.info(helpHTML, 10000);
+            toastEl.querySelector('.text-sm')?.remove(); // Remove default message, keep HTML
         }
     }
 }

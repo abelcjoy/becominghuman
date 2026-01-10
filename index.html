@@ -429,19 +429,46 @@
                 <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
             </div>
         </div> <!-- End Dashboard Container -->
-        <div class="mt-24 w-full max-w-2xl bg-white p-1 flex flex-col md:flex-row items-stretch justify-between gap-1
+        <div class="mt-24 w-full max-w-3xl bg-white p-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1
                 shadow-[0_0_100px_rgba(255,255,255,0.2)]">
+            <button id="pause-btn" onclick="window.app.togglePause()"
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-yellow-600 transition-all duration-300 border-2 border-transparent hover:border-white"
+                aria-label="Pause or resume countdown">
+                ⏸️ Pause
+            </button>
+            <button id="export-btn" onclick="window.app.saveManager.exportData()"
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-green-700 transition-all duration-300 border-2 border-transparent hover:border-white"
+                aria-label="Export your data">
+                💾 Export
+            </button>
+            <button id="import-btn" onclick="window.app.saveManager.showImportDialog()"
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-blue-700 transition-all duration-300 border-2 border-transparent hover:border-white"
+                aria-label="Import your data">
+                📁 Import
+            </button>
+            <button id="sound-btn"
+                onclick="window.app.soundManager.toggle(); this.textContent = window.app.soundManager.isEnabled() ? '🔊 Sound' : '🔇 Sound'"
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-purple-700 transition-all duration-300 border-2 border-transparent hover:border-white"
+                aria-label="Toggle sound effects">
+                🔇 Sound
+            </button>
             <button id="crave-btn"
-                class="flex-1 px-8 py-6 bg-black text-white font-black uppercase tracking-[0.5em] text-[11px] hover:bg-red-700 transition-all duration-300 border-2 border-transparent hover:border-white">
-                Crave Override
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-700 transition-all duration-300 border-2 border-transparent hover:border-white"
+                aria-label="Enter crisis override mode">
+                ⚠️ Crisis
             </button>
             <button id="share-btn"
-                class="flex-1 px-8 py-6 bg-black text-white font-black uppercase tracking-[0.5em] text-[11px] hover:bg-white hover:text-black transition-all duration-300 border-2 border-transparent hover:border-black">
-                Share Result
+                class="px-4 py-6 bg-black text-white font-black uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all duration-300 border-2 border-transparent hover:border-black"
+                aria-label="Share your results">
+                🔗 Share
             </button>
+        </div>
+
+        <div class="mt-8 flex items-center justify-center gap-4">
             <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
-                class="flex-1 px-8 py-6 bg-black text-white font-black uppercase tracking-[0.5em] text-[11px] hover:bg-white hover:text-black transition-all duration-300 border-2 border-transparent hover:border-black">
-                The Protocol
+                class="px-6 py-3 bg-white/10 text-white text-[10px] uppercase tracking-[0.4em] hover:bg-white/20 transition-all duration-300 border border-white/20 rounded"
+                aria-label="View neurobiological protocols">
+                📖 The Protocol
             </button>
         </div>
 
