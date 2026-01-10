@@ -2,7 +2,9 @@ import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
 import { ProjectionEngine } from './projection.js';
 import { DigitalAtrophy } from './atrophy.js';
+import { LifeGrid } from './lifegrid.js';
 import { UI } from './ui.js';
+import { toast } from './toast.js';
 
 class LifeCountdown {
     constructor() {
@@ -107,11 +109,11 @@ class LifeCountdown {
             sleepHours = parseFloat(this.elements.sleepInput.value) || 0;
 
             if (isNaN(dob.getTime())) {
-                this.ui.toast("Please enter a valid Date of Birth", "error");
+                toast.error("Please enter a valid Date of Birth");
                 return;
             }
             if (!country) {
-                this.ui.toast("Please select your country", "error");
+                toast.error("Please select your country");
                 return;
             }
 
@@ -147,6 +149,7 @@ class LifeCountdown {
             this.startRecaptureSession();
             this.initProjection(dob);
             this.initAtrophy();
+            this.initLifeGrid(dob);
 
             this.ui.hideLoading();
         }, 1500);
@@ -204,6 +207,13 @@ class LifeCountdown {
         });
     }
 
+    initLifeGrid(dob) {
+        if (!window.lifeGrid) {
+            window.lifeGrid = new LifeGrid(this);
+        }
+        window.lifeGrid.init(dob);
+    }
+
     addConnection() {
         const name = document.getElementById('rel-name').value;
         const role = document.getElementById('rel-role').value;
@@ -211,7 +221,7 @@ class LifeCountdown {
         const freq = document.getElementById('rel-freq').value;
 
         if (!name || !age || !freq) {
-            alert("Please fill in all fields.");
+            toast.error("Please fill in all fields (Name, Age, and Visit Frequency)");
             return;
         }
 
@@ -225,6 +235,8 @@ class LifeCountdown {
         document.getElementById('rel-name').value = '';
         document.getElementById('rel-age').value = '';
         document.getElementById('rel-freq').value = '';
+
+        toast.success(`${name} has been anchored to your timeline`);
     }
 
     updateSimState(dob) {

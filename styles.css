@@ -119,3 +119,400 @@ input[type=range]::-webkit-slider-runnable-track {
 .animate-pulse-fast {
     animation: pulseFast 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ========================================
+   TOAST NOTIFICATIONS
+   ======================================== */
+
+.toast {
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-hide {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+@keyframes toastSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes toastSlideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* ========================================
+   LOADING OVERLAY
+   ======================================== */
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: opacity 0.3s ease;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-text {
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-family: 'JetBrains Mono', monospace;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* ========================================
+   TOOLTIPS
+   ======================================== */
+
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    font-size: 11px;
+    white-space: nowrap;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    animation: tooltipFadeIn 0.2s ease forwards;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.95);
+    z-index: 99;
+    opacity: 0;
+    animation: tooltipFadeIn 0.2s ease forwards;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* ========================================
+   VISUAL FEEDBACK ANIMATIONS
+   ======================================== */
+
+@keyframes statIncrease {
+    0% {
+        transform: scale(1);
+        color: inherit;
+    }
+
+    50% {
+        transform: scale(1.15);
+        color: #10b981;
+        text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+    }
+
+    100% {
+        transform: scale(1);
+        color: inherit;
+    }
+}
+
+@keyframes statDecrease {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes achievementGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    }
+}
+
+.stat-increase {
+    animation: statIncrease 0.4s ease-out;
+}
+
+.stat-decrease {
+    animation: statDecrease 0.3s ease-out;
+    color: #ef4444;
+}
+
+.achievement-unlock {
+    animation: achievementGlow 1.5s ease-in-out;
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+   ======================================== */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+    .stat-block {
+        padding: 1rem;
+    }
+
+    #c-years,
+    #c-days,
+    #c-hours,
+    #c-minutes,
+    #c-seconds {
+        font-size: 3rem !important;
+    }
+
+    .terminal-box {
+        padding: 1.5rem !important;
+    }
+
+    /* Stack grids vertically */
+    .grid.grid-cols-2,
+    .grid.grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Increase touch targets */
+    button,
+    input,
+    select {
+        min-height: 44px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+    :root {
+        font-size: 14px;
+    }
+
+    /* Further reduce stat sizes */
+    #c-years,
+    #c-days,
+    #c-hours,
+    #c-minutes,
+    #c-seconds {
+        font-size: 2.5rem !important;
+    }
+
+    /* Hide milliseconds on mobile */
+    #c-milliseconds {
+        display: none;
+    }
+
+    /* Make modals full screen on mobile */
+    .glass-panel {
+        max-width: 100% !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+    }
+
+    /* Adjust toast position */
+    #toast-container {
+        top: 1rem !important;
+        right: 1rem !important;
+        left: 1rem !important;
+    }
+
+    .toast>div {
+        min-width: auto !important;
+        max-width: 100% !important;
+    }
+
+    /* Stack relationship grid */
+    #projection-results {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 375px) {
+
+    #c-years,
+    #c-days,
+    #c-hours,
+    #c-minutes,
+    #c-seconds {
+        font-size: 2rem !important;
+    }
+
+    .terminal-box {
+        padding: 1rem !important;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* Focus indicators */
+*:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+button:focus,
+input:focus,
+select:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* High contrast for buttons */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    filter: grayscale(0.6);
+}
+
+button:disabled:hover {
+    transform: none !important;
+}
+
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ========================================
+   PERFORMANCE IMPROVEMENTS
+   ======================================== */
+
+/* Use GPU acceleration for animations */
+.stat-number,
+.toast,
+.spinner {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Scrollbar hiding utility */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

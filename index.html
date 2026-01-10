@@ -85,7 +85,7 @@
                 <label
                     class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Date
                     of Birth</label>
-                <input type="date" id="dob"
+                <input type="date" id="dob" aria-label="Date of Birth" required
                     class="w-full bg-black border border-white/20 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white">
             </div>
 
@@ -93,7 +93,7 @@
                 <label
                     class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Location
                     (Life Expectancy)</label>
-                <select id="country"
+                <select id="country" aria-label="Select your country" required
                     class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-white">
                     <!-- Populated by JS -->
                 </select>
@@ -103,11 +103,11 @@
                 <label
                     class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Daily
                     Sleep (Hours)</label>
-                <input type="number" id="sleep" min="0" max="24" step="0.5" value="8"
+                <input type="number" id="sleep" min="0" max="24" step="0.5" value="8" aria-label="Daily sleep hours"
                     class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white focus:outline-none focus:ring-1 focus:ring-white">
             </div>
 
-            <button id="start-btn"
+            <button id="start-btn" aria-label="Initialize life countdown sequence"
                 class="w-full mt-8 bg-white text-black hover:bg-stone-200 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
                 Initialize Sequence
             </button>
@@ -281,13 +281,13 @@
                             <div class="md:col-span-4">
                                 <label
                                     class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Name</label>
-                                <input type="text" id="rel-name" placeholder="e.g. Mom"
+                                <input type="text" id="rel-name" placeholder="e.g. Mom" aria-label="Person's name"
                                     class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
                             </div>
                             <div class="md:col-span-2">
                                 <label
                                     class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Role</label>
-                                <select id="rel-role"
+                                <select id="rel-role" aria-label="Person's role in your life"
                                     class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded appearance-none">
                                     <option value="parent">Parent</option>
                                     <option value="partner">Partner</option>
@@ -298,18 +298,19 @@
                             <div class="md:col-span-2">
                                 <label class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Age
                                     Now</label>
-                                <input type="number" id="rel-age" placeholder="55"
+                                <input type="number" id="rel-age" placeholder="55" aria-label="Person's current age"
                                     class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
                             </div>
                             <div class="md:col-span-2">
                                 <label
                                     class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Visits/Year</label>
-                                <input type="number" id="rel-freq" placeholder="2"
+                                <input type="number" id="rel-freq" placeholder="2" aria-label="Visit frequency per year"
                                     class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded"
                                     title="How many times do you see them per year?">
                             </div>
                             <div class="md:col-span-2">
                                 <button onclick="window.app.addConnection()"
+                                    aria-label="Anchor this person to your timeline"
                                     class="w-full h-[46px] bg-white text-black font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-stone-200 transition-colors rounded shadow-lg shadow-white/10">
                                     Anchor
                                 </button>
@@ -384,6 +385,40 @@
 
 
 
+
+                    <!-- MEMENTO MORI GRID -->
+                    <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
+                        <div class="text-center mb-12">
+                            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">The
+                                Life Grid</h2>
+                            <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Every Week of Your Existence
+                            </p>
+                        </div>
+
+                        <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
+                            <div
+                                class="flex justify-between items-center mb-4 text-[10px] uppercase tracking-widest text-stone-500 font-mono">
+                                <span>Birth</span>
+                                <span id="grid-info" class="text-white">Hover to inspect time</span>
+                                <span>Death (90)</span>
+                            </div>
+                            <div class="w-full overflow-hidden">
+                                <canvas id="life-grid-canvas" class="w-full cursor-crosshair"></canvas>
+                            </div>
+                            <div
+                                class="mt-4 flex gap-6 justify-center text-[10px] uppercase tracking-widest text-stone-600">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-white"></div> Lived
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-red-500 animate-pulse"></div> Now
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-white/10"></div> Remaining
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
