@@ -1,6 +1,5 @@
 /**
- * Omni Tools - Clean & Working
- * 85 fully functional tools
+ * 🎉 Omni Tools - 100 FULLY FUNCTIONAL TOOLS! 🎉
  * 
  * BATCH 1 (30 tools):
  * - 10 Original tools
@@ -24,6 +23,11 @@
  * - 5 Productivity (Pomodoro, Notepad, Todo List, Writing Goal, Reading Time)
  * - 5 Network/Web (IP Info, User Agent, DNS Lookup, Port Info, HTTP Status)
  * - 5 Specialized (Binary Text, Morse Code, Roman Numerals, Emoji Picker, Letter Frequency)
+ * 
+ * BATCH 5 (15 tools) - THE FINAL MILESTONE:
+ * - Password Strength, Password Generator, Lorem Ipsum, CSV to JSON, JSON Formatter
+ * - Slug Generator, Credit Card Validator, IBAN Validator, Color Palette, Image to Data URL
+ * - Cron Expression, Universal Unit Converter, Text Case, Word Scrambler, Dice Roller
  */
 
 class OmniTools {
@@ -741,6 +745,127 @@ class OmniTools {
                 icon: "🔤",
                 category: "Text",
                 render: () => this.renderLetterCounter()
+            },
+            // === FINAL BATCH - MISCELLANEOUS TOOLS (15) ===
+            passwordStrength: {
+                name: "Password Strength",
+                searchTerms: "password strength checker security test",
+                description: "Check password strength",
+                icon: "🔒",
+                category: "Utility",
+                render: () => this.renderPasswordStrength()
+            },
+            passwordGenerator: {
+                name: "Password Generator",
+                searchTerms: "password generator random secure create",
+                description: "Generate secure passwords",
+                icon: "🔑",
+                category: "Utility",
+                render: () => this.renderPasswordGenerator()
+            },
+            loremIpsum: {
+                name: "Lorem Ipsum Generator",
+                searchTerms: "lorem ipsum placeholder text generator",
+                description: "Generate placeholder text",
+                icon: "📄",
+                category: "Text",
+                render: () => this.renderLoremIpsum()
+            },
+            csvToJson: {
+                name: "CSV to JSON",
+                searchTerms: "csv json convert parser data",
+                description: "Convert CSV to JSON",
+                icon: "📊",
+                category: "Developer",
+                render: () => this.renderCSVToJSON()
+            },
+            jsonFormatter: {
+                name: "JSON Formatter",
+                searchTerms: "json formatter beautify pretty print",
+                description: "Format and validate JSON",
+                icon: "{ }",
+                category: "Developer",
+                render: () => this.renderJSONFormatter()
+            },
+            slugGenerator: {
+                name: "Slug Generator",
+                searchTerms: "slug url generator seo friendly",
+                description: "Generate URL-friendly slugs",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderSlugGenerator()
+            },
+            creditCard: {
+                name: "Credit Card Validator",
+                searchTerms: "credit card validator luhn check",
+                description: "Validate credit card numbers",
+                icon: "💳",
+                category: "Utility",
+                render: () => this.renderCreditCard()
+            },
+            ibanValidator: {
+                name: "IBAN Validator",
+                searchTerms: "iban validator bank account international",
+                description: "Validate IBAN numbers",
+                icon: "🏦",
+                category: "Finance",
+                render: () => this.renderIBANValidator()
+            },
+            colorPalette: {
+                name: "Color Palette Generator",
+                searchTerms: "color palette generator scheme harmony",
+                description: "Generate color palettes",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorPalette()
+            },
+            imageToDataURL: {
+                name: "Image to Data URL",
+                searchTerms: "image data url base64 convert",
+                description: "Convert image to Data URL",
+                icon: "🖼️",
+                category: "Developer",
+                render: () => this.renderImageToDataURL()
+            },
+            cronExpression: {
+                name: "Cron Expression Helper",
+                searchTerms: "cron expression scheduler helper",
+                description: "Build cron expressions",
+                icon: "⏰",
+                category: "Developer",
+                render: () => this.renderCronExpression()
+            },
+            unitConverter: {
+                name: "Universal Unit Converter",
+                searchTerms: "unit converter universal all measurement",
+                description: "Convert various units",
+                icon: "🔄",
+                category: "Converter",
+                render: () => this.renderUnitConverter()
+            },
+            textCase: {
+                name: "Text Case Converter",
+                searchTerms: "text case upper lower title camel snake",
+                description: "Convert text case styles",
+                icon: "Aa",
+                category: "Text",
+                render: () => this.renderTextCase()
+            },
+            wordScrambler: {
+                name: "Word Scrambler",
+                searchTerms: "word scrambler shuffle anagram game",
+                description: "Scramble words and text",
+                icon: "🔀",
+                category: "Utility",
+                render: () => this.renderWordScrambler()
+            },
+            diceRoller: {
+                name: "Dice Roller",
+                searchTerms: "dice roller random d20 d6 game",
+                description: "Roll virtual dice",
+                icon: "🎲",
+                category: "Utility",
+                render: () => this.renderDiceRoller()
             }
         };
     }
@@ -4381,6 +4506,612 @@ class OmniTools {
                     `).join('')}
                 </div>
             `;
+        };
+    }
+
+    // === FINAL BATCH RENDERERS (15 TOOLS TO REACH 100!) ===
+
+    renderPasswordStrength() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Password Strength Checker</h2>
+            <input type="password" id="pwd-input" placeholder="Enter password to test">
+            <button id="toggle-pwd" style="margin-top: 10px;">👁️ Show/Hide</button>
+            <div class="result" id="pwd-strength" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('toggle-pwd').onclick = () => {
+            const input = document.getElementById('pwd-input');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        };
+
+        document.getElementById('pwd-input').addEventListener('input', (e) => {
+            const pwd = e.target.value;
+            let score = 0;
+            const checks = {
+                length: pwd.length >= 8,
+                upper: /[A-Z]/.test(pwd),
+                lower: /[a-z]/.test(pwd),
+                number: /[0-9]/.test(pwd),
+                special: /[^A-Za-z0-9]/.test(pwd)
+            };
+
+            score = Object.values(checks).filter(Boolean).length;
+            const strength = ['Very Weak', 'Weak', 'Fair', 'Good', 'Strong', 'Very Strong'][score];
+            const colors = ['#f00', '#f60', '#fa0', '#9f0', '#0f0', '#0f0'];
+
+            document.getElementById('pwd-strength').innerHTML = `
+                <div style="font-size: 32px; font-weight: bold; color: ${colors[score]}; margin-bottom: 20px;">
+                    ${strength}
+                </div>
+                <div style="margin-bottom: 10px;">
+                    ${checks.length ? '✅' : '❌'} At least 8 characters
+                </div>
+                <div style="margin-bottom: 10px;">
+                    ${checks.upper ? '✅' : '❌'} Uppercase letter
+                </div>
+                <div style="margin-bottom: 10px;">
+                    ${checks.lower ? '✅' : '❌'} Lowercase letter
+                </div>
+                <div style="margin-bottom: 10px;">
+                    ${checks.number ? '✅' : '❌'} Number
+                </div>
+                <div>
+                    ${checks.special ? '✅' : '❌'} Special character
+                </div>
+            `;
+        });
+    }
+
+    renderPasswordGenerator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Password Generator</h2>
+            <input type="number" id="pwd-length" placeholder="Length" value="16" min="4" max="64">
+            <div style="margin: 15px 0;">
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="pwd-upper" checked> Uppercase (A-Z)
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="pwd-lower" checked> Lowercase (a-z)
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="pwd-numbers" checked> Numbers (0-9)
+                </label>
+                <label style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="pwd-special" checked> Special (!@#$%)
+                </label>
+            </div>
+            <button id="gen-pwd">Generate Password</button>
+            <div class="result" id="pwd-output" style="font-family: monospace; font-size: 20px; cursor: pointer; word-break: break-all;" title="Click to copy"></div>
+        `;
+
+        document.getElementById('gen-pwd').onclick = () => {
+            const length = parseInt(document.getElementById('pwd-length').value);
+            let chars = '';
+            if (document.getElementById('pwd-upper').checked) chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (document.getElementById('pwd-lower').checked) chars += 'abcdefghijklmnopqrstuvwxyz';
+            if (document.getElementById('pwd-numbers').checked) chars += '0123456789';
+            if (document.getElementById('pwd-special').checked) chars += '!@#$%^&*()_+-=[]{}|;:,.<>?';
+
+            if (!chars) {
+                alert('Select at least one character type');
+                return;
+            }
+
+            let password = '';
+            for (let i = 0; i < length; i++) {
+                password += chars[Math.floor(Math.random() * chars.length)];
+            }
+
+            const output = document.getElementById('pwd-output');
+            output.textContent = password;
+            output.onclick = () => {
+                navigator.clipboard.writeText(password);
+                output.style.borderColor = '#0f0';
+                setTimeout(() => output.style.borderColor = '#333', 1000);
+            };
+        };
+    }
+
+    renderLoremIpsum() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Lorem Ipsum Generator</h2>
+            <input type="number" id="lorem-count" placeholder="Number of paragraphs" value="3" min="1" max="20">
+            <button id="gen-lorem">Generate</button>
+            <div class="result" id="lorem-output" style="text-align: left; white-space: pre-wrap;"></div>
+        `;
+
+        const lorem = [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+            "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+            "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.",
+            "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+            "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur."
+        ];
+
+        document.getElementById('gen-lorem').onclick = () => {
+            const count = parseInt(document.getElementById('lorem-count').value);
+            let text = '';
+            for (let i = 0; i < count; i++) {
+                text += lorem[Math.floor(Math.random() * lorem.length)] + '\n\n';
+            }
+            document.getElementById('lorem-output').textContent = text.trim();
+        };
+    }
+
+    renderCSVToJSON() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSV to JSON Converter</h2>
+            <textarea id="csv-input" rows="8" placeholder="Paste CSV here (first row as headers)..."></textarea>
+            <button id="convert-csv">Convert to JSON</button>
+            <div class="result" id="json-output" style="text-align: left; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 400px; overflow-y: auto;"></div>
+        `;
+
+        document.getElementById('convert-csv').onclick = () => {
+            const csv = document.getElementById('csv-input').value.trim();
+            if (!csv) {
+                alert('Please enter CSV data');
+                return;
+            }
+
+            try {
+                const lines = csv.split('\n');
+                const headers = lines[0].split(',').map(h => h.trim());
+                const result = [];
+
+                for (let i = 1; i < lines.length; i++) {
+                    if (!lines[i].trim()) continue;
+                    const values = lines[i].split(',').map(v => v.trim());
+                    const obj = {};
+                    headers.forEach((header, index) => {
+                        obj[header] = values[index] || '';
+                    });
+                    result.push(obj);
+                }
+
+                document.getElementById('json-output').textContent = JSON.stringify(result, null, 2);
+            } catch (e) {
+                document.getElementById('json-output').textContent = 'Error: ' + e.message;
+            }
+        };
+    }
+
+    renderJSONFormatter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JSON Formatter & Validator</h2>
+            <textarea id="json-input" rows="10" placeholder="Paste JSON here..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="format-json">Format</button>
+                <button id="minify-json">Minify</button>
+            </div>
+            <div class="result" id="json-result" style="text-align: left; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 400px; overflow-y: auto;"></div>
+        `;
+
+        document.getElementById('format-json').onclick = () => {
+            try {
+                const json = JSON.parse(document.getElementById('json-input').value);
+                document.getElementById('json-result').textContent = JSON.stringify(json, null, 2);
+                document.getElementById('json-result').style.color = '#0f0';
+            } catch (e) {
+                document.getElementById('json-result').textContent = 'Error: ' + e.message;
+                document.getElementById('json-result').style.color = '#f00';
+            }
+        };
+
+        document.getElementById('minify-json').onclick = () => {
+            try {
+                const json = JSON.parse(document.getElementById('json-input').value);
+                document.getElementById('json-result').textContent = JSON.stringify(json);
+                document.getElementById('json-result').style.color = '#0f0';
+            } catch (e) {
+                document.getElementById('json-result').textContent = 'Error: ' + e.message;
+                document.getElementById('json-result').style.color = '#f00';
+            }
+        };
+    }
+
+    renderSlugGenerator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">URL Slug Generator</h2>
+            <input type="text" id="slug-input" placeholder="Enter text to slugify">
+            <div class="result" id="slug-output" style="font-family: monospace; font-size: 20px; cursor: pointer;" title="Click to copy"></div>
+        `;
+
+        document.getElementById('slug-input').addEventListener('input', (e) => {
+            const slug = e.target.value
+                .toLowerCase()
+                .trim()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/[\s_-]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+
+            const output = document.getElementById('slug-output');
+            output.textContent = slug || 'your-slug-here';
+            output.onclick = () => {
+                if (slug) {
+                    navigator.clipboard.writeText(slug);
+                    output.style.borderColor = '#0f0';
+                    setTimeout(() => output.style.borderColor = '#333', 1000);
+                }
+            };
+        });
+    }
+
+    renderCreditCard() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Credit Card Validator (Luhn Algorithm)</h2>
+            <input type="text" id="cc-input" placeholder="Enter card number" maxlength="19">
+            <div class="result" id="cc-output"></div>
+        `;
+
+        document.getElementById('cc-input').addEventListener('input', (e) => {
+            const value = e.target.value.replace(/\D/g, '');
+
+            // Luhn algorithm
+            let sum = 0;
+            let isEven = false;
+            for (let i = value.length - 1; i >= 0; i--) {
+                let digit = parseInt(value[i]);
+                if (isEven) {
+                    digit *= 2;
+                    if (digit > 9) digit -= 9;
+                }
+                sum += digit;
+                isEven = !isEven;
+            }
+
+            const isValid = sum % 10 === 0 && value.length >= 13;
+            const output = document.getElementById('cc-output');
+
+            if (value.length === 0) {
+                output.innerHTML = '';
+            } else {
+                output.innerHTML = `
+                    <div style="font-size: 32px; font-weight: bold; color: ${isValid ? '#0f0' : '#f00'};">
+                        ${isValid ? '✅ Valid' : '❌ Invalid'}
+                    </div>
+                    <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                        Note: This only validates the format, not if the card is active
+                    </div>
+                `;
+            }
+        });
+    }
+
+    renderIBANValidator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IBAN Validator</h2>
+            <input type="text" id="iban-input" placeholder="Enter IBAN (e.g., GB82WEST12345698765432)">
+            <div class="result" id="iban-output"></div>
+        `;
+
+        document.getElementById('iban-input').addEventListener('input', (e) => {
+            const iban = e.target.value.replace(/\s/g, '').toUpperCase();
+
+            if (iban.length === 0) {
+                document.getElementById('iban-output').innerHTML = '';
+                return;
+            }
+
+            // Basic IBAN validation (simplified)
+            const isValidLength = iban.length >= 15 && iban.length <= 34;
+            const isValidFormat = /^[A-Z]{2}[0-9]{2}[A-Z0-9]+$/.test(iban);
+            const isValid = isValidLength && isValidFormat;
+
+            document.getElementById('iban-output').innerHTML = `
+                <div style="font-size: 32px; font-weight: bold; color: ${isValid ? '#0f0' : '#f00'};">
+                    ${isValid ? '✅ Valid Format' : '❌ Invalid Format'}
+                </div>
+                <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                    Country: ${iban.substring(0, 2)}<br>
+                    Check Digits: ${iban.substring(2, 4)}
+                </div>
+            `;
+        });
+    }
+
+    renderColorPalette() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Palette Generator</h2>
+            <button id="gen-palette">Generate Random Palette</button>
+            <div class="result" id="palette-output" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px;"></div>
+        `;
+
+        const generateColor = () => {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+        };
+
+        document.getElementById('gen-palette').onclick = () => {
+            let html = '';
+            for (let i = 0; i < 5; i++) {
+                const color = generateColor();
+                html += `
+                    <div style="background: ${color}; height: 120px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: end; padding: 10px; cursor: pointer;"
+                         onclick="navigator.clipboard.writeText('${color}'); this.style.transform='scale(1.05)'; setTimeout(() => this.style.transform='scale(1)', 200);"
+                         title="Click to copy">
+                        <div style="background: rgba(0,0,0,0.7); padding: 5px 10px; border-radius: 4px; font-size: 12px;">
+                            ${color}
+                        </div>
+                    </div>
+                `;
+            }
+            document.getElementById('palette-output').innerHTML = html;
+        };
+    }
+
+    renderImageToDataURL() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Image to Data URL</h2>
+            <input type="file" id="img-upload" accept="image/*">
+            <div class="result" id="dataurl-output" style="text-align: left; word-break: break-all; font-family: monospace; font-size: 10px; max-height: 300px; overflow-y: auto;"></div>
+        `;
+
+        document.getElementById('img-upload').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const dataURL = event.target.result;
+                document.getElementById('dataurl-output').innerHTML = `
+                    <div style="margin-bottom: 10px;">
+                        <button onclick="navigator.clipboard.writeText('${dataURL}')">Copy to Clipboard</button>
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <strong>Size:</strong> ${(dataURL.length / 1024).toFixed(2)} KB
+                    </div>
+                    <div>${dataURL}</div>
+                `;
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    renderCronExpression() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cron Expression Helper</h2>
+            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px;">
+                <input type="text" id="cron-min" placeholder="Min (0-59)" value="*">
+                <input type="text" id="cron-hour" placeholder="Hour (0-23)" value="*">
+                <input type="text" id="cron-day" placeholder="Day (1-31)" value="*">
+                <input type="text" id="cron-month" placeholder="Month (1-12)" value="*">
+                <input type="text" id="cron-dow" placeholder="DOW (0-6)" value="*">
+            </div>
+            <div class="result" id="cron-output" style="text-align: left;"></div>
+        `;
+
+        const update = () => {
+            const min = document.getElementById('cron-min').value || '*';
+            const hour = document.getElementById('cron-hour').value || '*';
+            const day = document.getElementById('cron-day').value || '*';
+            const month = document.getElementById('cron-month').value || '*';
+            const dow = document.getElementById('cron-dow').value || '*';
+
+            const expression = `${min} ${hour} ${day} ${month} ${dow}`;
+
+            document.getElementById('cron-output').innerHTML = `
+                <div style="font-size: 24px; font-weight: bold; font-family: monospace; margin-bottom: 20px;">
+                    ${expression}
+                </div>
+                <div style="font-size: 12px; color: #666;">
+                    <div>* = any value</div>
+                    <div>, = value list separator</div>
+                    <div>- = range of values</div>
+                    <div>/ = step values</div>
+                </div>
+            `;
+        };
+
+        ['cron-min', 'cron-hour', 'cron-day', 'cron-month', 'cron-dow'].forEach(id => {
+            document.getElementById(id).addEventListener('input', update);
+        });
+
+        update();
+    }
+
+    renderUnitConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Universal Unit Converter</h2>
+            <select id="unit-category" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="length">Length</option>
+                <option value="weight">Weight</option>
+                <option value="temperature">Temperature</option>
+                <option value="speed">Speed</option>
+            </select>
+            <input type="number" id="unit-value" placeholder="Enter value" step="0.01">
+            <select id="unit-from" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;"></select>
+            <select id="unit-to" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;"></select>
+            <div class="result" id="unit-result" style="font-size: 36px; font-weight: bold;"></div>
+        `;
+
+        const units = {
+            length: { m: 1, km: 0.001, cm: 100, mm: 1000, mi: 0.000621371, ft: 3.28084, in: 39.3701 },
+            weight: { kg: 1, g: 1000, mg: 1000000, lb: 2.20462, oz: 35.274 },
+            temperature: { c: 'c', f: 'f', k: 'k' },
+            speed: { mps: 1, kph: 3.6, mph: 2.23694, knots: 1.94384 }
+        };
+
+        const updateUnits = () => {
+            const category = document.getElementById('unit-category').value;
+            const unitList = Object.keys(units[category]);
+
+            const fromSelect = document.getElementById('unit-from');
+            const toSelect = document.getElementById('unit-to');
+
+            fromSelect.innerHTML = unitList.map(u => `<option value="${u}">${u.toUpperCase()}</option>`).join('');
+            toSelect.innerHTML = unitList.map(u => `<option value="${u}">${u.toUpperCase()}</option>`).join('');
+            toSelect.selectedIndex = 1;
+        };
+
+        const convert = () => {
+            const value = parseFloat(document.getElementById('unit-value').value) || 0;
+            const category = document.getElementById('unit-category').value;
+            const from = document.getElementById('unit-from').value;
+            const to = document.getElementById('unit-to').value;
+
+            let result;
+            if (category === 'temperature') {
+                // Temperature conversion logic
+                if (from === 'c' && to === 'f') result = (value * 9 / 5) + 32;
+                else if (from === 'f' && to === 'c') result = (value - 32) * 5 / 9;
+                else if (from === 'c' && to === 'k') result = value + 273.15;
+                else if (from === 'k' && to === 'c') result = value - 273.15;
+                else result = value;
+            } else {
+                const base = value / units[category][from];
+                result = base * units[category][to];
+            }
+
+            document.getElementById('unit-result').textContent = result.toFixed(4);
+        };
+
+        document.getElementById('unit-category').addEventListener('change', () => {
+            updateUnits();
+            convert();
+        });
+        document.getElementById('unit-value').addEventListener('input', convert);
+        document.getElementById('unit-from').addEventListener('change', convert);
+        document.getElementById('unit-to').addEventListener('change', convert);
+
+        updateUnits();
+    }
+
+    renderTextCase() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Case Converter</h2>
+            <textarea id="case-input" rows="6" placeholder="Enter text..."></textarea>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                <button id="case-upper">UPPER</button>
+                <button id="case-lower">lower</button>
+                <button id="case-title">Title Case</button>
+                <button id="case-sentence">Sentence case</button>
+                <button id="case-camel">camelCase</button>
+                <button id="case-snake">snake_case</button>
+            </div>
+            <div class="result" id="case-output" style="min-height: 100px; text-align: left; white-space: pre-wrap;"></div>
+        `;
+
+        const input = document.getElementById('case-input');
+        const output = document.getElementById('case-output');
+
+        document.getElementById('case-upper').onclick = () => {
+            output.textContent = input.value.toUpperCase();
+        };
+
+        document.getElementById('case-lower').onclick = () => {
+            output.textContent = input.value.toLowerCase();
+        };
+
+        document.getElementById('case-title').onclick = () => {
+            output.textContent = input.value.replace(/\w\S*/g, txt =>
+                txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+            );
+        };
+
+        document.getElementById('case-sentence').onclick = () => {
+            output.textContent = input.value.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+        };
+
+        document.getElementById('case-camel').onclick = () => {
+            output.textContent = input.value
+                .toLowerCase()
+                .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+        };
+
+        document.getElementById('case-snake').onclick = () => {
+            output.textContent = input.value
+                .toLowerCase()
+                .replace(/[^a-zA-Z0-9]+/g, '_')
+                .replace(/^_|_$/g, '');
+        };
+    }
+
+    renderWordScrambler() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Word Scrambler</h2>
+            <textarea id="scramble-input" rows="6" placeholder="Enter text to scramble..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="scramble-words">Scramble Words</button>
+                <button id="scramble-letters">Scramble Letters</button>
+            </div>
+            <div class="result" id="scramble-output" style="min-height: 100px; text-align: left; white-space: pre-wrap;"></div>
+        `;
+
+        const shuffle = (str) => {
+            const arr = str.split('');
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr.join('');
+        };
+
+        document.getElementById('scramble-words').onclick = () => {
+            const text = document.getElementById('scramble-input').value;
+            const words = text.split(/\s+/);
+            const scrambled = words.map(word => shuffle(word)).join(' ');
+            document.getElementById('scramble-output').textContent = scrambled;
+        };
+
+        document.getElementById('scramble-letters').onclick = () => {
+            const text = document.getElementById('scramble-input').value;
+            document.getElementById('scramble-output').textContent = shuffle(text);
+        };
+    }
+
+    renderDiceRoller() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dice Roller</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                <button id="roll-d6">Roll D6</button>
+                <button id="roll-d20">Roll D20</button>
+                <button id="roll-d100">Roll D100</button>
+            </div>
+            <input type="number" id="dice-count" placeholder="Number of dice" value="1" min="1" max="10">
+            <input type="number" id="dice-sides" placeholder="Sides per die" value="6" min="2" max="100">
+            <button id="roll-custom">Roll Custom</button>
+            <div class="result" id="dice-output" style="min-height: 150px;">
+                <div style="font-size: 72px; font-weight: bold;" id="dice-result">🎲</div>
+                <div id="dice-details" style="margin-top: 20px; font-size: 14px; color: #666;"></div>
+            </div>
+        `;
+
+        const roll = (sides, count = 1) => {
+            const results = [];
+            for (let i = 0; i < count; i++) {
+                results.push(Math.floor(Math.random() * sides) + 1);
+            }
+            const total = results.reduce((a, b) => a + b, 0);
+
+            document.getElementById('dice-result').textContent = total;
+            document.getElementById('dice-details').textContent =
+                count > 1 ? `Rolls: ${results.join(', ')}` : `Rolled a ${total} on D${sides}`;
+        };
+
+        document.getElementById('roll-d6').onclick = () => roll(6);
+        document.getElementById('roll-d20').onclick = () => roll(20);
+        document.getElementById('roll-d100').onclick = () => roll(100);
+        document.getElementById('roll-custom').onclick = () => {
+            const count = parseInt(document.getElementById('dice-count').value);
+            const sides = parseInt(document.getElementById('dice-sides').value);
+            roll(sides, count);
         };
     }
 }
