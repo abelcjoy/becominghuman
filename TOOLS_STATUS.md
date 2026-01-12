@@ -19,7 +19,7 @@
 - Knitting Needle Size Converter
 - Crochet Hook Size Converter
 - Glue Guide (Material bonding)
-- Resistor Color Band Calculator
+- Yarn Weight Reference (Lace to Bulky)
 - Model Scale Ratio Calculator
 - Cross Stitch Fabric Size Calc
 - Ring Size International Chart

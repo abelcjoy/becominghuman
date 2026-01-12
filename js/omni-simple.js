@@ -21,7 +21,7 @@
  * BATCH 39: UnitConvFood + OvenTemp + ServingsScale + PastaTimer + SteakGuide + EggGuide + RoastTime + CaffeineTrack + PantryCheck + SpaghettiMeasure
  * BATCH 40: MoodTracker + GratitudeLog + Pomodoro + BreatheGuide + HabitCheck + SleepCycles + WaterLog + QuietTimer + ScreenTimeLog + GoalSetter
  * BATCH 41: GpaCalc + LetterGrad + StudySessions + Flashcards + LatinRoots + WorldCapitals + ElementLookup + MathQuiz + PuncStripper + WordFreq
- * BATCH 42: NeedleConv + CrochetConv + GlueGuide + ResistorBands + ModelScale + CrossStitch + RingSize + DrillBit + ScrewRef + PaperSizes
+ * BATCH 42: NeedleConv + CrochetConv + GlueGuide + YarnWeight + ModelScale + CrossStitch + RingSize + DrillBit + ScrewRef + PaperSizes
  */
 
 class OmniTools {
@@ -3803,13 +3803,13 @@ class OmniTools {
                 category: "Hobbies",
                 render: () => this.renderGlueGuide()
             },
-            resistorColor: {
-                name: "Resistor Bands",
-                searchTerms: "resistor color code bands calculator resistance ohm",
-                description: "4-band color reader",
-                icon: "🔋",
+            yarnWeight: {
+                name: "Yarn Weights",
+                searchTerms: "yarn weight categories lace fingering sport worsted bulky",
+                description: "Yarn weight reference",
+                icon: "🧶",
                 category: "Hobbies",
-                render: () => this.renderResistorColor()
+                render: () => this.renderYarnWeight()
             },
             modelScale: {
                 name: "Model Scaler",
@@ -16359,22 +16359,20 @@ Online: ${n.onLine}
         };
     }
 
-    renderResistorColor() {
+    renderYarnWeight() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Resistor Bands</h2>
-            <select id="rb-1" style="background:#8b4513; color:white;"><option value="1">Brown</option><option value="2">Red</option><option value="4">Yellow</option></select>
-            <select id="rb-2" style="background:#000; color:white;"><option value="0">Black</option><option value="5">Green</option></select>
-            <select id="rb-3" style="background:#ffa500;"><option value="10">x10</option><option value="100">x100</option><option value="1000">x1k</option></select>
-            <button id="rb-btn">Calc Ω</button>
-            <div id="rb-res" class="result"></div>
+            <h2 class="tool-title">Yarn Weights</h2>
+            <select id="yw-v">
+                <option>0: Lace (2.0mm)</option>
+                <option>1: Super Fine (2.25-3.25mm)</option>
+                <option>2: Fine (3.25-3.75mm)</option>
+                <option>3: Light (3.75-4.5mm)</option>
+                <option selected>4: Medium (4.5-5.5mm)</option>
+                <option>5: Bulky (5.5-8.0mm)</option>
+            </select>
+            <div id="yw-res" class="result">Worsteds are usually Medium (4)</div>
         `;
-        document.getElementById('rb-btn').onclick = () => {
-            const v1 = document.getElementById('rb-1').value;
-            const v2 = document.getElementById('rb-2').value;
-            const v3 = document.getElementById('rb-3').value;
-            document.getElementById('rb-res').textContent = `${(v1 + v2) * v3} Ω`;
-        };
     }
 
     renderModelScale() {
