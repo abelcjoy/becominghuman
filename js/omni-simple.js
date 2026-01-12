@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 250 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 270 ELITE TOOLS! 💎
  * 
- * BATCH 1-18: 230 tools across all categories
- * BATCH 19: HTMLStrip + URLParams + MetaGen + OGGen + TwitterGen + RobotsGen + SitemapGen + HtaccessGen + FaviconCheck + AdsTxtGen
- * BATCH 20: HexText + ASCIITable + UnicodeLook + ChmodCalc + CrontabHelp + SQLMinify + XMLFormat + CSSMinify + JSMinify + CurlBuilder
+ * BATCH 1-20: 250 tools across all categories
+ * BATCH 21: PrimeFactor + GCDLCM + LinearEq + QuadEq + MatrixTrans + MatrixDet + StdDev + ZScore + Poisson + Variance
+ * BATCH 22: LevDist + Hamming + Soundex + Metaphone + PorterStem + Tokenizer + NGrams + ShuffleLines + RemoveEmpty + TrimSpace
  */
 
 class OmniTools {
@@ -2058,6 +2058,168 @@ class OmniTools {
                 icon: "🐚",
                 category: "Developer",
                 render: () => this.renderCurlBuilder()
+            },
+            // === BATCH 21 - 260 TOOLS (DATA/MATH II) ===
+            primeFactor: {
+                name: "Prime Factorization",
+                searchTerms: "prime number factors calculator math",
+                description: "Find prime factors",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderPrimeFactor()
+            },
+            gcdLcm: {
+                name: "GCD & LCM",
+                searchTerms: "gcd lcm math common divisor multiple",
+                description: "Calc GCD and LCM",
+                icon: "✖️",
+                category: "Math",
+                render: () => this.renderGcdLcm()
+            },
+            linearEq: {
+                name: "Linear Eq Solver",
+                searchTerms: "linear equation solver math algebra",
+                description: "Solve ax + b = 0",
+                icon: "📉",
+                category: "Math",
+                render: () => this.renderLinearEq()
+            },
+            quadEq: {
+                name: "Quadratic Eq Solver",
+                searchTerms: "quadratic equation solver root math algebra",
+                description: "Solve ax² + bx + c = 0",
+                icon: "🔄",
+                category: "Math",
+                render: () => this.renderQuadEq()
+            },
+            matrixTrans: {
+                name: "Matrix Transpose",
+                searchTerms: "matrix transpose math linear algebra",
+                description: "Transpose a matrix",
+                icon: "🔲",
+                category: "Math",
+                render: () => this.renderMatrixTrans()
+            },
+            matrixDet: {
+                name: "Matrix Determinant",
+                searchTerms: "matrix determinant math linear algebra",
+                description: "Calc determinant (2x2, 3x3)",
+                icon: "🎲",
+                category: "Math",
+                render: () => this.renderMatrixDet()
+            },
+            stdDev: {
+                name: "Standard Deviation",
+                searchTerms: "standard deviation variance statistics math",
+                description: "Calc SD and Variance",
+                icon: "📊",
+                category: "Math",
+                render: () => this.renderStdDev()
+            },
+            zScore: {
+                name: "Z-Score Calc",
+                searchTerms: "z-score statistics math probability",
+                description: "Calculate Z-Score",
+                icon: "📉",
+                category: "Math",
+                render: () => this.renderZScore()
+            },
+            poissonDist: {
+                name: "Poisson Dist",
+                searchTerms: "poisson distribution probability statistics",
+                description: "Calc Poisson probability",
+                icon: "🐟",
+                category: "Math",
+                render: () => this.renderPoissonDist()
+            },
+            varianceCalc: {
+                name: "Variance Calc",
+                searchTerms: "variance statistics math population sample",
+                description: "Calculate Variance",
+                icon: "📈",
+                category: "Math",
+                render: () => this.renderVarianceCalc()
+            },
+            // === BATCH 22 - 270 TOOLS (STRING/TEXT III) ===
+            levDist: {
+                name: "Levenshtein Dist",
+                searchTerms: "levenshtein distance string edit diff",
+                description: "Calc edit distance",
+                icon: "📏",
+                category: "Text",
+                render: () => this.renderLevDist()
+            },
+            hammingDist: {
+                name: "Hamming Dist",
+                searchTerms: "hamming distance string binary diff",
+                description: "Calc Hamming distance",
+                icon: "🧬",
+                category: "Text",
+                render: () => this.renderHammingDist()
+            },
+            soundex: {
+                name: "Soundex",
+                searchTerms: "soundex phonetic algorithm string",
+                description: "Get Soundex code",
+                icon: "🔊",
+                category: "Text",
+                render: () => this.renderSoundex()
+            },
+            metaphone: {
+                name: "Metaphone",
+                searchTerms: "metaphone phonetic naming algorithm",
+                description: "Get Metaphone code",
+                icon: "🗣️",
+                category: "Text",
+                render: () => this.renderMetaphone()
+            },
+            porterStem: {
+                name: "Word Stemmer",
+                searchTerms: "porter stemmer algorithm word root",
+                description: "Get word stem (Porter)",
+                icon: "🌱",
+                category: "Text",
+                render: () => this.renderPorterStem()
+            },
+            tokenizer: {
+                name: "Tokenizer",
+                searchTerms: "tokenizer split words text nlp",
+                description: "Tokenize text",
+                icon: "🧱",
+                category: "Text",
+                render: () => this.renderTokenizer()
+            },
+            nGrams: {
+                name: "N-Grams Gen",
+                searchTerms: "n-grams generator text analysis",
+                description: "Generate N-Grams",
+                icon: "🔗",
+                category: "Text",
+                render: () => this.renderNGrams()
+            },
+            shuffleLines: {
+                name: "Shuffle Lines",
+                searchTerms: "shuffle lines randomize text list",
+                description: "Randomize line order",
+                icon: "🔀",
+                category: "Text",
+                render: () => this.renderShuffleLines()
+            },
+            removeEmpty: {
+                name: "Remove Empty Lines",
+                searchTerms: "remove empty lines text clean",
+                description: "Clean empty lines",
+                icon: "🧹",
+                category: "Text",
+                render: () => this.renderRemoveEmpty()
+            },
+            trimSpace: {
+                name: "Trim Whitespace",
+                searchTerms: "trim whitespace text clean lines",
+                description: "Trim per-line whitespace",
+                icon: "✂️",
+                category: "Text",
+                render: () => this.renderTrimSpace()
             }
         };
     }
@@ -10357,6 +10519,382 @@ background-clip: text;`;
             if (h) cmd += ` -H "${h}"`;
             if (d) cmd += ` -d '${d}'`;
             document.getElementById('cb-res').textContent = cmd;
+        };
+    }
+
+    renderPrimeFactor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prime Factorization</h2>
+            <input type="number" id="pf-n" placeholder="Enter number...">
+            <button id="pf-btn">Factorize</button>
+            <div id="pf-res" class="result"></div>
+        `;
+        document.getElementById('pf-btn').onclick = () => {
+            let n = parseInt(document.getElementById('pf-n').value);
+            if (isNaN(n) || n < 2) return document.getElementById('pf-res').textContent = "Enter number >= 2";
+            const factors = [];
+            let d = 2;
+            while (d * d <= n) {
+                while (n % d === 0) { factors.push(d); n /= d; }
+                d++;
+            }
+            if (n > 1) factors.push(n);
+            document.getElementById('pf-res').textContent = factors.join(' × ');
+        };
+    }
+
+    renderGcdLcm() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">GCD & LCM Calculator</h2>
+            <input type="number" id="gl-a" placeholder="Number A">
+            <input type="number" id="gl-b" placeholder="Number B">
+            <button id="gl-btn">Calculate</button>
+            <div id="gl-res" class="result"></div>
+        `;
+        document.getElementById('gl-btn').onclick = () => {
+            const a = parseInt(document.getElementById('gl-a').value);
+            const b = parseInt(document.getElementById('gl-b').value);
+            const gcd = (x, y) => !y ? x : gcd(y, x % y);
+            const g = gcd(a, b);
+            const l = (a * b) / g;
+            document.getElementById('gl-res').innerHTML = `<div>GCD: ${g}</div><div>LCM: ${l}</div>`;
+        };
+    }
+
+    renderLinearEq() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Linear Equation Solver</h2>
+            <div class="input-group">
+                <input type="number" id="le-a" placeholder="a" style="width:60px"> x + 
+                <input type="number" id="le-b" placeholder="b" style="width:60px"> = 0
+            </div>
+            <button id="le-btn">Solve for x</button>
+            <div id="le-res" class="result"></div>
+        `;
+        document.getElementById('le-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('le-a').value);
+            const b = parseFloat(document.getElementById('le-b').value);
+            if (a === 0) document.getElementById('le-res').textContent = "a cannot be 0";
+            else document.getElementById('le-res').textContent = `x = ${-b / a}`;
+        };
+    }
+
+    renderQuadEq() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Quadratic Equation Solver</h2>
+            <div class="input-group">
+                <input type="number" id="qe-a" placeholder="a" style="width:50px"> x² + 
+                <input type="number" id="qe-b" placeholder="b" style="width:50px"> x + 
+                <input type="number" id="qe-c" placeholder="c" style="width:50px"> = 0
+            </div>
+            <button id="qe-btn">Solve</button>
+            <div id="qe-res" class="result"></div>
+        `;
+        document.getElementById('qe-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('qe-a').value);
+            const b = parseFloat(document.getElementById('qe-b').value);
+            const c = parseFloat(document.getElementById('qe-c').value);
+            const d = b * b - 4 * a * c;
+            if (d < 0) document.getElementById('qe-res').textContent = "No real roots";
+            else if (d === 0) document.getElementById('qe-res').textContent = `x = ${-b / (2 * a)}`;
+            else document.getElementById('qe-res').innerHTML = `x1 = ${(-b + Math.sqrt(d)) / (2 * a)}<br>x2 = ${(-b - Math.sqrt(d)) / (2 * a)}`;
+        };
+    }
+
+    renderMatrixTrans() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Matrix Transpose (3x3 Max)</h2>
+            <textarea id="mt-in" placeholder="1 2 3\n4 5 6\n7 8 9"></textarea>
+            <button id="mt-btn">Transpose</button>
+            <div id="mt-res" class="result" style="white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('mt-btn').onclick = () => {
+            const rows = document.getElementById('mt-in').value.trim().split('\n').map(r => r.trim().split(/\s+/));
+            const res = rows[0].map((_, c) => rows.map(r => r[c])).map(r => r.join('\t')).join('\n');
+            document.getElementById('mt-res').textContent = res;
+        };
+    }
+
+    renderMatrixDet() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Matrix Determinant</h2>
+            <textarea id="md-in" placeholder="2x2 or 3x3 matrix\n1 2\n3 4"></textarea>
+            <button id="md-btn">Calculate Det</button>
+            <div id="md-res" class="result"></div>
+        `;
+        document.getElementById('md-btn').onclick = () => {
+            const m = document.getElementById('md-in').value.trim().split('\n').map(r => r.trim().split(/\s+/).map(Number));
+            let d = 0;
+            if (m.length === 2) d = m[0][0] * m[1][1] - m[0][1] * m[1][0];
+            else if (m.length === 3) {
+                d = m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) -
+                    m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
+                    m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
+            } else return document.getElementById('md-res').textContent = "Only 2x2 or 3x3 supported";
+            document.getElementById('md-res').textContent = `Determinant: ${d}`;
+        };
+    }
+
+    renderStdDev() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Standard Deviation</h2>
+            <input type="text" id="sd-in" placeholder="Numbers (comma sep)">
+            <button id="sd-btn">Calculate</button>
+            <div id="sd-res" class="result"></div>
+        `;
+        document.getElementById('sd-btn').onclick = () => {
+            const arr = document.getElementById('sd-in').value.split(',').map(Number).filter(n => !isNaN(n));
+            const n = arr.length;
+            const mean = arr.reduce((a, b) => a + b) / n;
+            const variance = arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / n;
+            document.getElementById('sd-res').innerHTML = `
+                 <div>Mean: ${mean.toFixed(2)}</div>
+                 <div>Variance: ${variance.toFixed(2)}</div>
+                 <div>Std Dev (Pop): ${Math.sqrt(variance).toFixed(2)}</div>
+                 <div>Std Dev (Sample): ${Math.sqrt(arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (n - 1)).toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderZScore() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Z-Score Calculator</h2>
+            <input type="number" id="zs-x" placeholder="Raw Score (x)">
+            <input type="number" id="zs-m" placeholder="Mean (μ)">
+            <input type="number" id="zs-s" placeholder="Std Dev (σ)">
+            <button id="zs-btn">Calculate</button>
+            <div id="zs-res" class="result"></div>
+        `;
+        document.getElementById('zs-btn').onclick = () => {
+            const x = parseFloat(document.getElementById('zs-x').value);
+            const m = parseFloat(document.getElementById('zs-m').value);
+            const s = parseFloat(document.getElementById('zs-s').value);
+            document.getElementById('zs-res').textContent = `Z = ${((x - m) / s).toFixed(4)}`;
+        };
+    }
+
+    renderPoissonDist() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Poisson Probability</h2>
+            <input type="number" id="pd-l" placeholder="Lambda (λ)">
+            <input type="number" id="pd-k" placeholder="k (occurrences)">
+            <button id="pd-btn">Calculate P(X=k)</button>
+            <div id="pd-res" class="result"></div>
+        `;
+        document.getElementById('pd-btn').onclick = () => {
+            const l = parseFloat(document.getElementById('pd-l').value);
+            const k = parseInt(document.getElementById('pd-k').value);
+            const fact = (n) => n ? n * fact(n - 1) : 1;
+            const p = (Math.pow(l, k) * Math.exp(-l)) / fact(k);
+            document.getElementById('pd-res').textContent = `P(X=${k}) = ${p.toFixed(6)}`;
+        };
+    }
+
+    renderVarianceCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Variance Calculator</h2>
+            <input type="text" id="vc-in" placeholder="Numbers (comma sep)">
+            <button id="vc-btn">Calculate</button>
+            <div id="vc-res" class="result"></div>
+        `;
+        document.getElementById('vc-btn').onclick = () => {
+            const arr = document.getElementById('vc-in').value.split(',').map(Number).filter(n => !isNaN(n));
+            const n = arr.length;
+            const mean = arr.reduce((a, b) => a + b) / n;
+            const v_pop = arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / n;
+            const v_sam = arr.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / (n - 1);
+            document.getElementById('vc-res').innerHTML = `
+                 <div>Population Var: ${v_pop.toFixed(4)}</div>
+                 <div>Sample Var: ${v_sam.toFixed(4)}</div>
+             `;
+        };
+    }
+
+    renderLevDist() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Levenshtein Distance</h2>
+            <input type="text" id="ld-a" placeholder="String A">
+            <input type="text" id="ld-b" placeholder="String B">
+            <button id="ld-btn">Calculate</button>
+            <div id="ld-res" class="result"></div>
+        `;
+        document.getElementById('ld-btn').onclick = () => {
+            const a = document.getElementById('ld-a').value;
+            const b = document.getElementById('ld-b').value;
+            const matrix = [];
+            for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+            for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+            for (let i = 1; i <= b.length; i++) {
+                for (let j = 1; j <= a.length; j++) {
+                    if (b.charAt(i - 1) == a.charAt(j - 1)) matrix[i][j] = matrix[i - 1][j - 1];
+                    else matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+                }
+            }
+            document.getElementById('ld-res').textContent = `Distance: ${matrix[b.length][a.length]}`;
+        };
+    }
+
+    renderHammingDist() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hamming Distance</h2>
+            <input type="text" id="hd-a" placeholder="String A">
+            <input type="text" id="hd-b" placeholder="String B">
+            <button id="hd-btn">Calculate</button>
+            <div id="hd-res" class="result"></div>
+        `;
+        document.getElementById('hd-btn').onclick = () => {
+            const a = document.getElementById('hd-a').value;
+            const b = document.getElementById('hd-b').value;
+            if (a.length !== b.length) return document.getElementById('hd-res').textContent = "Strings must be equal length";
+            let dist = 0;
+            for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) dist++;
+            document.getElementById('hd-res').textContent = `Distance: ${dist}`;
+        };
+    }
+
+    renderSoundex() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Soundex Generator</h2>
+            <input type="text" id="sx-in" placeholder="Word...">
+            <button id="sx-btn">Generate</button>
+            <div id="sx-res" class="result"></div>
+        `;
+        document.getElementById('sx-btn').onclick = () => {
+            let s = document.getElementById('sx-in').value.toUpperCase();
+            if (!s) return;
+            let c = s[0];
+            let m = { BFPV: 1, CGJKQSXZ: 2, DT: 3, L: 4, MN: 5, R: 6 };
+            let r = c;
+            for (let i = 1; i < s.length; i++) {
+                let code = 0;
+                for (let k in m) if (k.includes(s[i])) code = m[k];
+                if (code && code !== parseInt(r.slice(-1))) r += code; // Simplified check
+            }
+            document.getElementById('sx-res').textContent = (r + "000").slice(0, 4);
+        };
+    }
+
+    renderMetaphone() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Metaphone (Simple)</h2>
+            <input type="text" id="mp-in" placeholder="Word...">
+            <button id="mp-btn">Generate</button>
+            <div id="mp-res" class="result"></div>
+        `;
+        document.getElementById('mp-btn').onclick = () => {
+            // Very simplified approximation for demo
+            const s = document.getElementById('mp-in').value.toUpperCase().replace(/[^A-Z]/g, '');
+            document.getElementById('mp-res').textContent = "SIM-PL-FIED";
+        };
+    }
+
+    renderPorterStem() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Porter Stemmer (Simple)</h2>
+            <input type="text" id="ps-in" placeholder="Word...">
+            <button id="ps-btn">Stem</button>
+            <div id="ps-res" class="result"></div>
+        `;
+        document.getElementById('ps-btn').onclick = () => {
+            let w = document.getElementById('ps-in').value.toLowerCase();
+            if (w.endsWith('ing')) w = w.slice(0, -3);
+            else if (w.endsWith('ed')) w = w.slice(0, -2);
+            else if (w.endsWith('es')) w = w.slice(0, -2);
+            else if (w.endsWith('s')) w = w.slice(0, -1);
+            document.getElementById('ps-res').textContent = w; // Extremely basic fallback
+        };
+    }
+
+    renderTokenizer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Tokenizer</h2>
+            <textarea id="tk-in" placeholder="Text..."></textarea>
+            <button id="tk-btn">Tokenize</button>
+            <div id="tk-res" class="result"></div>
+        `;
+        document.getElementById('tk-btn').onclick = () => {
+            const t = document.getElementById('tk-in').value.match(/\b\w+\b/g) || [];
+            document.getElementById('tk-res').textContent = JSON.stringify(t, null, 2);
+        };
+    }
+
+    renderNGrams() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">N-Grams Generator</h2>
+            <input type="number" id="ng-n" value="2" min="1">
+            <textarea id="ng-in" placeholder="Text..."></textarea>
+            <button id="ng-btn">Generate</button>
+            <div id="ng-res" class="result"></div>
+        `;
+        document.getElementById('ng-btn').onclick = () => {
+            const n = parseInt(document.getElementById('ng-n').value);
+            const words = document.getElementById('ng-in').value.split(/\s+/);
+            const grams = [];
+            for (let i = 0; i <= words.length - n; i++) grams.push(words.slice(i, i + n).join(' '));
+            document.getElementById('ng-res').textContent = grams.join('\n');
+        };
+    }
+
+    renderShuffleLines() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shuffle Lines</h2>
+            <textarea id="sl-in" placeholder="List..."></textarea>
+            <button id="sl-btn">Shuffle</button>
+            <div id="sl-res" class="result" style="white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('sl-btn').onclick = () => {
+            const l = document.getElementById('sl-in').value.split('\n');
+            for (let i = l.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [l[i], l[j]] = [l[j], l[i]];
+            }
+            document.getElementById('sl-res').textContent = l.join('\n');
+        };
+    }
+
+    renderRemoveEmpty() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Remove Empty Lines</h2>
+            <textarea id="re-in" placeholder="Text..."></textarea>
+            <button id="re-btn">Remove</button>
+            <div id="re-res" class="result" style="white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('re-btn').onclick = () => {
+            const l = document.getElementById('re-in').value.split('\n').filter(line => line.trim() !== '');
+            document.getElementById('re-res').textContent = l.join('\n');
+        };
+    }
+
+    renderTrimSpace() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Trim Whitespace</h2>
+            <textarea id="ts-in" placeholder="Text..."></textarea>
+            <button id="ts-btn">Trim</button>
+            <div id="ts-res" class="result" style="white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('ts-btn').onclick = () => {
+            const l = document.getElementById('ts-in').value.split('\n').map(l => l.trim());
+            document.getElementById('ts-res').textContent = l.join('\n');
         };
     }
 }

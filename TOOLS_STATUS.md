@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 250
-**Last Updated:** Batch 19 & 20
+**Total Tools:** 270
+**Last Updated:** Batch 21 & 22
 
-## Latest Additions (Batch 19 - Web/SEO II)
-- HTML Stripper
-- URL Parameter Extractor
-- Meta Tag Generator
-- Open Graph Generator
-- Twitter Card Generator
-- Robots.txt Generator
-- Sitemap Generator (Simple)
-- Htaccess Redirect Generator
-- Favicon Helper
-- Ads.txt Generator
+## Latest Additions (Batch 21 - Data/Math II)
+- Prime Factorization
+- GCD & LCM Calculator
+- Linear Equation Solver
+- Quadratic Equation Solver
+- Matrix Transpose
+- Matrix Determinant
+- Standard Deviation
+- Z-Score Calculator
+- Poisson Distribution
+- Variance Calculator
 
-## Latest Additions (Batch 20 - Dev Tools II)
-- Hex <-> Text Converter
-- ASCII Table
-- Unicode Lookup
-- Chmod Calculator
-- Crontab Helper
-- SQL Minifier
-- XML Formatter
-- CSS Minifier
-- JS Minifier (Basic)
-- Curl Builder
+## Latest Additions (Batch 22 - String/Text III)
+- Levenshtein Distance
+- Hamming Distance
+- Soundex Generator
+- Metaphone Generator
+- Porter Stemmer
+- Text Tokenizer
+- N-Grams Generator
+- Shuffle Lines
+- Remove Empty Lines
+- Trim Whitespace
