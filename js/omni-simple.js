@@ -8900,107 +8900,106 @@ background-clip: text;`;
             `;
         };
     }
-}
 
-renderCircleCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderCircleCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Circle Calculator</h2>
             <input type="number" id="cc-r" placeholder="Radius">
             <button id="cc-btn">Calculate</button>
             <div class="result" id="cc-res"></div>
         `;
-    document.getElementById('cc-btn').onclick = () => {
-        const r = parseFloat(document.getElementById('cc-r').value);
-        document.getElementById('cc-res').innerHTML = `
+        document.getElementById('cc-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('cc-r').value);
+            document.getElementById('cc-res').innerHTML = `
                  <div>Area: ${(Math.PI * r * r).toFixed(2)}</div>
                  <div>Circumference: ${(2 * Math.PI * r).toFixed(2)}</div>
                  <div>Diameter: ${(2 * r).toFixed(2)}</div>
              `;
-    };
-}
+        };
+    }
 
-renderSphereCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderSphereCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Sphere Calculator</h2>
             <input type="number" id="sp-r" placeholder="Radius">
             <button id="sp-btn">Calculate</button>
             <div class="result" id="sp-res"></div>
         `;
-    document.getElementById('sp-btn').onclick = () => {
-        const r = parseFloat(document.getElementById('sp-r').value);
-        document.getElementById('sp-res').innerHTML = `
+        document.getElementById('sp-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('sp-r').value);
+            document.getElementById('sp-res').innerHTML = `
                  <div>Volume: ${((4 / 3) * Math.PI * Math.pow(r, 3)).toFixed(2)}</div>
                  <div>Surface Area: ${(4 * Math.PI * r * r).toFixed(2)}</div>
              `;
-    };
-}
+        };
+    }
 
-renderCylinderCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderCylinderCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Cylinder Calculator</h2>
             <input type="number" id="cy-r" placeholder="Radius">
             <input type="number" id="cy-h" placeholder="Height">
             <button id="cy-btn">Calculate</button>
             <div class="result" id="cy-res"></div>
         `;
-    document.getElementById('cy-btn').onclick = () => {
-        const r = parseFloat(document.getElementById('cy-r').value);
-        const h = parseFloat(document.getElementById('cy-h').value);
-        const vol = Math.PI * r * r * h;
-        const area = 2 * Math.PI * r * (r + h);
-        document.getElementById('cy-res').innerHTML = `
+        document.getElementById('cy-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('cy-r').value);
+            const h = parseFloat(document.getElementById('cy-h').value);
+            const vol = Math.PI * r * r * h;
+            const area = 2 * Math.PI * r * (r + h);
+            document.getElementById('cy-res').innerHTML = `
                  <div>Volume: ${vol.toFixed(2)}</div>
                  <div>Surface Area: ${area.toFixed(2)}</div>
              `;
-    };
-}
+        };
+    }
 
-renderConeCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderConeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Cone Calculator</h2>
             <input type="number" id="co-r" placeholder="Radius">
             <input type="number" id="co-h" placeholder="Height">
             <button id="co-btn">Calculate</button>
             <div class="result" id="co-res"></div>
         `;
-    document.getElementById('co-btn').onclick = () => {
-        const r = parseFloat(document.getElementById('co-r').value);
-        const h = parseFloat(document.getElementById('co-h').value);
-        const s = Math.sqrt(r * r + h * h);
-        const vol = Math.PI * r * r * (h / 3);
-        const area = Math.PI * r * (r + s);
-        document.getElementById('co-res').innerHTML = `
+        document.getElementById('co-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('co-r').value);
+            const h = parseFloat(document.getElementById('co-h').value);
+            const s = Math.sqrt(r * r + h * h);
+            const vol = Math.PI * r * r * (h / 3);
+            const area = Math.PI * r * (r + s);
+            document.getElementById('co-res').innerHTML = `
                  <div>Volume: ${vol.toFixed(2)}</div>
                  <div>Surface Area: ${area.toFixed(2)}</div>
                  <div>Slant Height: ${s.toFixed(2)}</div>
              `;
-    };
-}
+        };
+    }
 
-renderPythagorean() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderPythagorean() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Pythagorean Calculator</h2>
             <input type="number" id="pt-a" placeholder="Leg A">
             <input type="number" id="pt-b" placeholder="Leg B">
             <button id="pt-btn">Calculate Hypotenuse</button>
             <div class="result" id="pt-res"></div>
         `;
-    document.getElementById('pt-btn').onclick = () => {
-        const a = parseFloat(document.getElementById('pt-a').value);
-        const b = parseFloat(document.getElementById('pt-b').value);
-        const c = Math.sqrt(a * a + b * b);
-        document.getElementById('pt-res').textContent = `Hypotenuse (c): ${c.toFixed(2)}`;
-    };
-}
+        document.getElementById('pt-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('pt-a').value);
+            const b = parseFloat(document.getElementById('pt-b').value);
+            const c = Math.sqrt(a * a + b * b);
+            document.getElementById('pt-res').textContent = `Hypotenuse (c): ${c.toFixed(2)}`;
+        };
+    }
 
-renderTriangleArea() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderTriangleArea() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Triangle Area (Heron's)</h2>
             <input type="number" id="ta-a" placeholder="Side A">
             <input type="number" id="ta-b" placeholder="Side B">
@@ -9008,19 +9007,19 @@ renderTriangleArea() {
             <button id="ta-btn">Calculate</button>
             <div class="result" id="ta-res"></div>
         `;
-    document.getElementById('ta-btn').onclick = () => {
-        const a = parseFloat(document.getElementById('ta-a').value);
-        const b = parseFloat(document.getElementById('ta-b').value);
-        const c = parseFloat(document.getElementById('ta-c').value);
-        const s = (a + b + c) / 2;
-        const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
-        document.getElementById('ta-res').textContent = isNaN(area) ? "Invalid Triangle" : `Area: ${area.toFixed(2)}`;
-    };
-}
+        document.getElementById('ta-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('ta-a').value);
+            const b = parseFloat(document.getElementById('ta-b').value);
+            const c = parseFloat(document.getElementById('ta-c').value);
+            const s = (a + b + c) / 2;
+            const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+            document.getElementById('ta-res').textContent = isNaN(area) ? "Invalid Triangle" : `Area: ${area.toFixed(2)}`;
+        };
+    }
 
-renderSlopeCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderSlopeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Slope Calculator</h2>
             <div style="display:flex; gap:10px; margin-bottom:10px;">
                 <input type="number" id="sl-x1" placeholder="X1">
@@ -9033,19 +9032,19 @@ renderSlopeCalc() {
             <button id="sl-btn">Calculate</button>
             <div class="result" id="sl-res"></div>
         `;
-    document.getElementById('sl-btn').onclick = () => {
-        const x1 = parseFloat(document.getElementById('sl-x1').value);
-        const y1 = parseFloat(document.getElementById('sl-y1').value);
-        const x2 = parseFloat(document.getElementById('sl-x2').value);
-        const y2 = parseFloat(document.getElementById('sl-y2').value);
-        const m = (y2 - y1) / (x2 - x1);
-        document.getElementById('sl-res').textContent = `Slope (m): ${m.toFixed(4)}`;
-    };
-}
+        document.getElementById('sl-btn').onclick = () => {
+            const x1 = parseFloat(document.getElementById('sl-x1').value);
+            const y1 = parseFloat(document.getElementById('sl-y1').value);
+            const x2 = parseFloat(document.getElementById('sl-x2').value);
+            const y2 = parseFloat(document.getElementById('sl-y2').value);
+            const m = (y2 - y1) / (x2 - x1);
+            document.getElementById('sl-res').textContent = `Slope (m): ${m.toFixed(4)}`;
+        };
+    }
 
-renderMidpointCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderMidpointCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Midpoint Calculator</h2>
             <div style="display:flex; gap:10px; margin-bottom:10px;">
                 <input type="number" id="mp-x1" placeholder="X1">
@@ -9058,20 +9057,20 @@ renderMidpointCalc() {
             <button id="mp-btn">Calculate</button>
             <div class="result" id="mp-res"></div>
         `;
-    document.getElementById('mp-btn').onclick = () => {
-        const x1 = parseFloat(document.getElementById('mp-x1').value);
-        const y1 = parseFloat(document.getElementById('mp-y1').value);
-        const x2 = parseFloat(document.getElementById('mp-x2').value);
-        const y2 = parseFloat(document.getElementById('mp-y2').value);
-        const xm = (x1 + x2) / 2;
-        const ym = (y1 + y2) / 2;
-        document.getElementById('mp-res').textContent = `Midpoint: (${xm}, ${ym})`;
-    };
-}
+        document.getElementById('mp-btn').onclick = () => {
+            const x1 = parseFloat(document.getElementById('mp-x1').value);
+            const y1 = parseFloat(document.getElementById('mp-y1').value);
+            const x2 = parseFloat(document.getElementById('mp-x2').value);
+            const y2 = parseFloat(document.getElementById('mp-y2').value);
+            const xm = (x1 + x2) / 2;
+            const ym = (y1 + y2) / 2;
+            document.getElementById('mp-res').textContent = `Midpoint: (${xm}, ${ym})`;
+        };
+    }
 
-renderDistCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderDistCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Distance Calculator (2D)</h2>
             <div style="display:flex; gap:10px; margin-bottom:10px;">
                 <input type="number" id="dst-x1" placeholder="X1">
@@ -9084,32 +9083,32 @@ renderDistCalc() {
             <button id="dst-btn">Calculate</button>
             <div class="result" id="dst-res"></div>
         `;
-    document.getElementById('dst-btn').onclick = () => {
-        const x1 = parseFloat(document.getElementById('dst-x1').value);
-        const y1 = parseFloat(document.getElementById('dst-y1').value);
-        const x2 = parseFloat(document.getElementById('dst-x2').value);
-        const y2 = parseFloat(document.getElementById('dst-y2').value);
-        const d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        document.getElementById('dst-res').textContent = `Distance: ${d.toFixed(4)}`;
-    };
-}
+        document.getElementById('dst-btn').onclick = () => {
+            const x1 = parseFloat(document.getElementById('dst-x1').value);
+            const y1 = parseFloat(document.getElementById('dst-y1').value);
+            const x2 = parseFloat(document.getElementById('dst-x2').value);
+            const y2 = parseFloat(document.getElementById('dst-y2').value);
+            const d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+            document.getElementById('dst-res').textContent = `Distance: ${d.toFixed(4)}`;
+        };
+    }
 
-renderCubeCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderCubeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Cube Calculator</h2>
             <input type="number" id="cb-s" placeholder="Side Length">
             <button id="cb-btn">Calculate</button>
             <div class="result" id="cb-res"></div>
         `;
-    document.getElementById('cb-btn').onclick = () => {
-        const s = parseFloat(document.getElementById('cb-s').value);
-        document.getElementById('cb-res').innerHTML = `
+        document.getElementById('cb-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('cb-s').value);
+            document.getElementById('cb-res').innerHTML = `
                  <div>Volume: ${(s * s * s).toFixed(2)}</div>
                  <div>Surface Area: ${(6 * s * s).toFixed(2)}</div>
              `;
-    };
-}
+        };
+    }
 }
 
 // Initialize
