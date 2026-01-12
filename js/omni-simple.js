@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 560 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 580 ELITE TOOLS! 💎
  * 
- * BATCH 48: JsonToYaml + CssSpecificity + HtmlEntityRef + ScreenRes + MetaPreview + RobotsGen + FlexboxRef + GridRef + Base64Size + SitemapGen
- * BATCH 49: CustCAC + MarginMarkup + HourlySalary + InvoiceCalc + Timeline + TaskMatrix + RetentionRate + MiniCRM + ExpenseLog + CustLTV
  * BATCH 50: DataRange + ZScore + Variance + Outliers + Sampler + ProbAB + FreqDist + CorrelRef + PctRank + WeightedAvg
  * BATCH 51: HandleCheck + HashtagGen + WifiQr + QrFormats + AppStore + ProtocolLinks + PrivacyGen + TermsGen + FaviconRef + WcagGuide
+ * BATCH 52: CriticalCss + TTFB + Latency + BWvsTP + PortScan + DnsRef + SslVisual + RateLimit + CacheRef + GzipEst
+ * BATCH 53: GroceryTot + EggTimes + LaundryCare + CookingSubs + RoomTemp + CoffeeRatio + TeaSteeper + IceGen + Checklist + NoteSelf
  */
 
 class OmniTools {
@@ -4570,6 +4570,168 @@ class OmniTools {
                 icon: "👁️",
                 category: "Design",
                 render: () => this.renderColorAccessibility()
+            },
+            // === BATCH 52 - 570 TOOLS (DEV & PERFORMANCE) ===
+            criticalCssGuide: {
+                name: "Critical CSS",
+                searchTerms: "critical css performance web vitals rendering",
+                description: "Above-the-fold guide",
+                icon: "⚡",
+                category: "Developer",
+                render: () => this.renderCriticalCssGuide()
+            },
+            ttfbExplanation: {
+                name: "TTFB Info",
+                searchTerms: "ttfb time to first byte performance latency",
+                description: "Server response guide",
+                icon: "⏱️",
+                category: "Developer",
+                render: () => this.renderTtfbExplanation()
+            },
+            latencyCalc: {
+                name: "Latency Calc",
+                searchTerms: "latency calculator ping round trip network",
+                description: "RTT to distance estimator",
+                icon: "📡",
+                category: "Developer",
+                render: () => this.renderLatencyCalc()
+            },
+            bandwidthThroughput: {
+                name: "Bandwidth vs TP",
+                searchTerms: "bandwidth throughput difference network performance",
+                description: "Capacity vs Actual speed",
+                icon: "🚦",
+                category: "Developer",
+                render: () => this.renderBandwidthThroughput()
+            },
+            portScannerGuide: {
+                name: "Port Scan Guide",
+                searchTerms: "port scanner security network common ports",
+                description: "Commonly scanned ports",
+                icon: "🛡️",
+                category: "Developer",
+                render: () => this.renderPortScannerGuide()
+            },
+            dnsRecordTypes: {
+                name: "DNS Records",
+                searchTerms: "dns record types a cname mx txt aaaa",
+                description: "DNS field reference",
+                icon: "🌍",
+                category: "Developer",
+                render: () => this.renderDnsRecordTypes()
+            },
+            sslHandshakeVisual: {
+                name: "SSL Handshake",
+                searchTerms: "ssl tls handshake protocol security visual",
+                description: "How HTTPS connects",
+                icon: "🔐",
+                category: "Developer",
+                render: () => this.renderSslHandshakeVisual()
+            },
+            apiRateLimit: {
+                name: "API Rate Calc",
+                searchTerms: "api rate limit calculator requests per minute",
+                description: "Throttle threshold calc",
+                icon: "🛑",
+                category: "Developer",
+                render: () => this.renderApiRateLimit()
+            },
+            cacheControlRef: {
+                name: "Cache Headers",
+                searchTerms: "cache-control headers reference browser caching",
+                description: "Max-age, No-cache guide",
+                icon: "💾",
+                category: "Developer",
+                render: () => this.renderCacheControlRef()
+            },
+            gzipCompression: {
+                name: "Gzip Estimator",
+                searchTerms: "gzip compression ratio estimate file size",
+                description: "Text compression savings",
+                icon: "🗜️",
+                category: "Developer",
+                render: () => this.renderGzipCompression()
+            },
+            // === BATCH 53 - 580 TOOLS (DAILY HACKS) ===
+            groceryTotaler: {
+                name: "Grocery Total",
+                searchTerms: "grocery list totaler shopping cart budget",
+                description: "Quick cart summer",
+                icon: "🛒",
+                category: "Utility",
+                render: () => this.renderGroceryTotaler()
+            },
+            eggTimerRef: {
+                name: "Egg Times",
+                searchTerms: "egg timer boiling guide soft hard medium",
+                description: "Boil time reference",
+                icon: "🥚",
+                category: "Utility",
+                render: () => this.renderEggTimerRef()
+            },
+            laundrySymbols: {
+                name: "Laundry Care",
+                searchTerms: "laundry care symbols washing drying labels",
+                description: "Tag icon reference",
+                icon: "👕",
+                category: "Utility",
+                render: () => this.renderLaundrySymbols()
+            },
+            cookingSubs: {
+                name: "Cooking Subs",
+                searchTerms: "cooking substitute oil butter eggs baking",
+                description: "Ingredient replacement",
+                icon: "🍳",
+                category: "Utility",
+                render: () => this.renderCookingSubs()
+            },
+            roomTempGuide: {
+                name: "Room Temp Info",
+                searchTerms: "room temperature guide energy saving comfort",
+                description: "Ideal indoor temps",
+                icon: "🌡️",
+                category: "Utility",
+                render: () => this.renderRoomTempGuide()
+            },
+            coffeeRatio: {
+                name: "Coffee Ratio",
+                searchTerms: "coffee water ratio calculator brew strength",
+                description: "Golden ratio calculator",
+                icon: "☕",
+                category: "Utility",
+                render: () => this.renderCoffeeRatio()
+            },
+            teaSteepTimes: {
+                name: "Tea Steeper",
+                searchTerms: "tea steep times green black herbal oolong",
+                description: "Ideal brew durations",
+                icon: "🍵",
+                category: "Utility",
+                render: () => this.renderTeaSteepTimes()
+            },
+            emergencyContactGen: {
+                name: "ICE Card Gen",
+                searchTerms: "emergency contact card generator ice info",
+                description: "Quick emergency data",
+                icon: "🆘",
+                category: "Utility",
+                render: () => this.renderEmergencyContactGen()
+            },
+            simpleChecklist: {
+                name: "Min Checklist",
+                searchTerms: "simple checklist todo task list quick",
+                description: "Disposable task list",
+                icon: "📝",
+                category: "Utility",
+                render: () => this.renderSimpleChecklist()
+            },
+            noteToSelf: {
+                name: "Note to Self",
+                searchTerms: "note to self quick memo scratchpad browser",
+                description: "Session-based memo",
+                icon: "📌",
+                category: "Utility",
+                render: () => this.renderNoteToSelf()
             }
         };
     }
@@ -18542,6 +18704,275 @@ Online: ${n.onLine}
                 <b>AAA (Small Text)</b>: 7:1<br>
                 <b>AAA (Large Text)</b>: 4.5:1
             </div>
+        `;
+    }
+
+    renderCriticalCssGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Critical CSS Info</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>Critical CSS:</b> The minimal CSS needed to render the above-the-fold content.<br><br>
+                <b>Optimization:</b> Inline critical CSS in &lt;head&gt; and defer remaining styles to avoid render-blocking.
+            </div>
+        `;
+    }
+
+    renderTtfbExplanation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TTFB Guide</h2>
+            <p style="font-size:0.8em; text-align:left;">
+                <b>Time To First Byte (TTFB):</b> The duration from request to first byte received by the browser.<br><br>
+                <b>Ideal:</b> Under 200ms.<br>
+                <b>Causes of high TTFB:</b> Slow DB queries, server load, or lack of caching.
+            </p>
+        `;
+    }
+
+    renderLatencyCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Latency Calc</h2>
+            Ping (ms): <input type="number" id="lc-p" value="100" style="width:50px">
+            <div id="lc-res" class="result">Est. Distance: 10,000 km</div>
+            <p style="font-size:0.65em;">Estimates one-way fiber distance (speed of light in glass ≈ 200,000 km/s).</p>
+        `;
+        document.getElementById('lc-p').oninput = (e) => {
+            const ms = e.target.value;
+            const dist = (ms / 1000) * 200000 / 2;
+            const res = document.getElementById('lc-res');
+            if (res) res.textContent = `Est. Distance: ${dist.toLocaleString()} km`;
+        };
+    }
+
+    renderBandwidthThroughput() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BW vs Throughput</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Bandwidth:</b> Theoretical maximum capacity (e.g., 1Gbps pipe).<br><br>
+                <b>Throughput:</b> Actual speed of successful data transfer (e.g., 800Mbps due to overhead/errors).
+            </div>
+        `;
+    }
+
+    renderPortScannerGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Port Scan Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>21:</b> FTP<br>
+                <b>22:</b> SSH<br>
+                <b>80, 443:</b> HTTP/S<br>
+                <b>3389:</b> RDP<br>
+                <b>5432, 3306:</b> DBs (PG, MySQL)
+            </div>
+        `;
+    }
+
+    renderDnsRecordTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DNS Records</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>A:</b> IPv4 Address<br>
+                <b>AAAA:</b> IPv6 Address<br>
+                <b>CNAME:</b> Alias to another domain<br>
+                <b>MX:</b> Mail servers<br>
+                <b>TXT:</b> Text data (SPF, DKIM)
+            </div>
+        `;
+    }
+
+    renderSslHandshakeVisual() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SSL Handshake</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. Client Hello (Cipher suites)<br>
+                2. Server Hello (Cert + PubKey)<br>
+                3. Key Exchange (Premaster secret)<br>
+                4. Encryption Finished (Symmetric keys set)
+            </div>
+        `;
+    }
+
+    renderApiRateLimit() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rate Limit Calc</h2>
+            RPM: <input type="number" id="rl-r" value="60" style="width:50px">
+            <div id="rl-res" class="result">Threshold: 1 req/sec</div>
+        `;
+        document.getElementById('rl-r').oninput = (e) => {
+            const rpm = e.target.value;
+            const res = document.getElementById('rl-res');
+            if (res) res.textContent = `Threshold: ${(rpm / 60).toFixed(2)} req/sec`;
+        };
+    }
+
+    renderCacheControlRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cache Headers</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>max-age:</b> Duration in seconds.<br>
+                <b>no-cache:</b> Must revalidate with server.<br>
+                <b>no-store:</b> Do not cache at all.<br>
+                <b>public/private:</b> Shared vs browser-only.
+            </div>
+        `;
+    }
+
+    renderGzipCompression() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gzip Estimator</h2>
+            Original (KB): <input type="number" id="gz-in" value="100" style="width:60px">
+            <div id="gz-res" class="result">Est: 30 KB</div>
+            <p style="font-size:0.65em;">Text usually compresses by 70-80%.</p>
+        `;
+        document.getElementById('gz-in').oninput = (e) => {
+            const res = document.getElementById('gz-res');
+            if (res) res.textContent = `Est: ${Math.ceil(e.target.value * 0.3)} KB`;
+        };
+    }
+
+    renderGroceryTotaler() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Grocery Total</h2>
+            Price ($): <input type="number" id="gt-p" value="0" style="width:50px">
+            <button id="gt-add">Add</button>
+            <div id="gt-res" class="result">Total: $0</div>
+        `;
+        let t = 0;
+        document.getElementById('gt-add').onclick = () => {
+            t += parseFloat(document.getElementById('gt-p').value) || 0;
+            const res = document.getElementById('gt-res');
+            if (res) res.textContent = `Total: $${t.toFixed(2)}`;
+        };
+    }
+
+    renderEggTimerRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Egg Boiling</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Soft:</b> 6 mins (Runny yolk)<br>
+                <b>Medium:</b> 8 mins (Jammy yolk)<br>
+                <b>Hard:</b> 10-12 mins (Solid yolk)
+            </div>
+        `;
+    }
+
+    renderLaundrySymbols() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Laundry Care</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Bucket:</b> Machine wash<br>
+                <b>Triangle:</b> Bleaching<br>
+                <b>Square:</b> Drying<br>
+                <b>Iron:</b> Ironing<br>
+                <b>Circle:</b> Dry clean
+            </div>
+        `;
+    }
+
+    renderCookingSubs() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cooking Subs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>1 Egg:</b> 1/4 cup Applesauce<br>
+                <b>1 cup Butter:</b> 3/4 cup Oil<br>
+                <b>1 tsp Baking Powder:</b> 1/4 tsp Soda + 1/2 tsp Cream of Tartar
+            </div>
+        `;
+    }
+
+    renderRoomTempGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Room Temps</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Ideal:</b> 18-21°C (64-70°F)<br>
+                <b>Sleep:</b> 16-18°C (61-64°F)<br>
+                <b>Infants:</b> 20-22°C (68-72°F)
+            </div>
+        `;
+    }
+
+    renderCoffeeRatio() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Coffee Ratio</h2>
+            Grams of Coffee: <input type="number" id="cf-g" value="20" style="width:50px">
+            <div id="cf-res" class="result">Water: 320g</div>
+            <p style="font-size:0.65em;">Golden Ratio 1:16 (Strength: Balanced).</p>
+        `;
+        document.getElementById('cf-g').oninput = (e) => {
+            const res = document.getElementById('cf-res');
+            if (res) res.textContent = `Water: ${e.target.value * 16}g`;
+        };
+    }
+
+    renderTeaSteepTimes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tea Steeper</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Green:</b> 2-3 mins (175°F)<br>
+                <b>Black:</b> 3-5 mins (212°F)<br>
+                <b>Herbal:</b> 5-7 mins (212°F)
+            </div>
+        `;
+    }
+
+    renderEmergencyContactGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ICE Info</h2>
+            Name: <input type="text" id="ice-n" placeholder="Name"><br>
+            Phone: <input type="text" id="ice-p" placeholder="555-0199">
+            <div style="background:#fff2f2; border:1px dashed #f00; padding:5px; margin-top:5px; font-size:0.6em;">
+                In Case of Emergency: <span id="ice-rn">Name</span> | <span id="ice-rp">Phone</span>
+            </div>
+        `;
+        const update = () => {
+            const rn = document.getElementById('ice-rn');
+            const rp = document.getElementById('ice-rp');
+            if (rn) rn.textContent = document.getElementById('ice-n').value || "Name";
+            if (rp) rp.textContent = document.getElementById('ice-p').value || "Phone";
+        };
+        document.getElementById('ice-n').oninput = update;
+        document.getElementById('ice-p').oninput = update;
+    }
+
+    renderSimpleChecklist() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Min Checklist</h2>
+            <input type="text" id="cl-in" placeholder="+ Add Item">
+            <div id="cl-list" style="font-size:0.7em; text-align:left; margin-top:5px;"></div>
+        `;
+        document.getElementById('cl-in').onkeydown = (e) => {
+            if (e.key === 'Enter' && e.target.value) {
+                const list = document.getElementById('cl-list');
+                if (list) list.innerHTML += `<div><input type="checkbox"> ${e.target.value}</div>`;
+                e.target.value = '';
+            }
+        };
+    }
+
+    renderNoteToSelf() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Note to Self</h2>
+            <textarea id="ns-in" style="height:80px; font-size:0.8em;"></textarea>
+            <p style="font-size:0.6em;">Transient scratchpad (cleared on refresh).</p>
         `;
     }
 }
