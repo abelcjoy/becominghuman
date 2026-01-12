@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 330 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 350 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -8,6 +8,8 @@
  * BATCH 26: JWTDecoder + Rot13 + Caesar + Vigenere + Atbash + Bacon + RailFence + Columnar + Playfair + A1Z26 Cipher
  * BATCH 27: DnaRna + RevComp + AminoAcid + MolMass + PhCalc + Molarity + HalfLife + BoylesLaw + CharlesLaw + AvogadroLaw
  * BATCH 28: TextEmoji + EmojiText + Zalgo + UpsideDown + Bubble + Square + Mirror + Glitch + Vaporwave + LeetSpeak
+ * BATCH 29: CircleCalc + SphereCalc + CylinderCalc + ConeCalc + Pythagoras + PrimeVisual + Fibonacci + Pascal + ArithProg + GeoProg
+ * BATCH 30: JsonMinify + JsonValidate + CssPretty + HtmlPretty + SqlFormat + JwtGen + KeyCode + BrowserInfo + MimeLookup + GitCheat
  */
 
 class OmniTools {
@@ -2710,6 +2712,168 @@ class OmniTools {
                 icon: "🔢",
                 category: "Security",
                 render: () => this.renderA1z26Cipher()
+            },
+            // === BATCH 29 - 340 TOOLS (MATH IV - GEOMETRY) ===
+            circleCalc: {
+                name: "Circle Calc",
+                searchTerms: "circle area circumference radius diameter",
+                description: "Calc Area & Circumference",
+                icon: "⭕",
+                category: "Math",
+                render: () => this.renderCircleCalc()
+            },
+            sphereCalc: {
+                name: "Sphere Calc",
+                searchTerms: "sphere volume surface area radius",
+                description: "Calc Vol & Surface Area",
+                icon: "🔮",
+                category: "Math",
+                render: () => this.renderSphereCalc()
+            },
+            cylinderCalc: {
+                name: "Cylinder Calc",
+                searchTerms: "cylinder volume surface area height radius",
+                description: "Calc Vol & Surface Area",
+                icon: "🛢️",
+                category: "Math",
+                render: () => this.renderCylinderCalc()
+            },
+            coneCalc: {
+                name: "Cone Calc",
+                searchTerms: "cone volume surface area height radius",
+                description: "Calc Vol & Surface Area",
+                icon: "🍦",
+                category: "Math",
+                render: () => this.renderConeCalc()
+            },
+            pythagoreanTriple: {
+                name: "Pythagorean Check",
+                searchTerms: "pythagorean triple check triangle right",
+                description: "Check if a,b,c is triple",
+                icon: "📐",
+                category: "Math",
+                render: () => this.renderPythagoreanTriple()
+            },
+            primeCheckVisual: {
+                name: "Prime Visualizer",
+                searchTerms: "prime number check visual factors",
+                description: "Check Prime visually",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderPrimeCheckVisual()
+            },
+            fibonacciGen: {
+                name: "Fibonacci Gen",
+                searchTerms: "fibonacci sequence generator math",
+                description: "Generate Fibonacci Seq",
+                icon: "🐚",
+                category: "Math",
+                render: () => this.renderFibonacciGen()
+            },
+            pascalTriangle: {
+                name: "Pascal's Triangle",
+                searchTerms: "pascal triangle generator math binomial",
+                description: "Generate Pascal's Triangle",
+                icon: "🔺",
+                category: "Math",
+                render: () => this.renderPascalTriangle()
+            },
+            arithProgression: {
+                name: "Arithmetic Prog.",
+                searchTerms: "arithmetic progression sequence calculator",
+                description: "Calc Nth term & Sum",
+                icon: "➕",
+                category: "Math",
+                render: () => this.renderArithProgression()
+            },
+            geoProgression: {
+                name: "Geometric Prog.",
+                searchTerms: "geometric progression sequence calculator",
+                description: "Calc Nth term & Sum",
+                icon: "✖️",
+                category: "Math",
+                render: () => this.renderGeoProgression()
+            },
+            // === BATCH 30 - 350 TOOLS (DEV III) ===
+            jsonMinify: {
+                name: "JSON Minifier",
+                searchTerms: "json minify compress compact",
+                description: "Minify JSON data",
+                icon: "📦",
+                category: "Developer",
+                render: () => this.renderJsonMinify()
+            },
+            jsonValidate: {
+                name: "JSON Validator",
+                searchTerms: "json validate lint error check",
+                description: "Validate JSON syntax",
+                icon: "✅",
+                category: "Developer",
+                render: () => this.renderJsonValidate()
+            },
+            cssPretty: {
+                name: "CSS Prettifier",
+                searchTerms: "css prettify format beautify",
+                description: "Format CSS code",
+                icon: "🎨",
+                category: "Developer",
+                render: () => this.renderCssPretty()
+            },
+            htmlPretty: {
+                name: "HTML Prettifier",
+                searchTerms: "html prettify format beautify",
+                description: "Format HTML code",
+                icon: "🌐",
+                category: "Developer",
+                render: () => this.renderHtmlPretty()
+            },
+            sqlFormat: {
+                name: "SQL Formatter",
+                searchTerms: "sql format beautify query",
+                description: "Format SQL queries",
+                icon: "🗄️",
+                category: "Developer",
+                render: () => this.renderSqlFormat()
+            },
+            jwtGen: {
+                name: "JWT Generator",
+                searchTerms: "jwt generator create token",
+                description: "Generate simple JWT",
+                icon: "🔑",
+                category: "Developer",
+                render: () => this.renderJwtGen()
+            },
+            keyCode: {
+                name: "JS KeyCode",
+                searchTerms: "javascript keycode event key press",
+                description: "Find JS KeyCodes",
+                icon: "⌨️",
+                category: "Developer",
+                render: () => this.renderKeyCode()
+            },
+            browserInfo: {
+                name: "Browser Info",
+                searchTerms: "browser info navigator details",
+                description: "Show browser details",
+                icon: "🖥️",
+                category: "Developer",
+                render: () => this.renderBrowserInfo()
+            },
+            mimeLookup: {
+                name: "MIME Types",
+                searchTerms: "mime type lookup content type reference",
+                description: "Common MIME types",
+                icon: "📄",
+                category: "Developer",
+                render: () => this.renderMimeLookup()
+            },
+            gitCheat: {
+                name: "Git Cheat Sheet",
+                searchTerms: "git cheat sheet commands reference",
+                description: "Common Git commands",
+                icon: "🌿",
+                category: "Developer",
+                render: () => this.renderGitCheat()
             }
         };
     }
@@ -12496,6 +12660,394 @@ background-clip: text;`;
             const map = { 'a': '4', 'e': '3', 'l': '1', 't': '7', 'o': '0', 's': '5', 'g': '6', 'b': '8' };
             document.getElementById('ls-res').textContent = document.getElementById('ls-in').value.toLowerCase().split('').map(c => map[c] || c).join('');
         };
+    }
+
+
+    renderCircleCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Circle Calculator</h2>
+            <input type="number" id="cir-r" placeholder="Radius (r)">
+            <button id="cir-btn">Calculate</button>
+            <div id="cir-res" class="result"></div>
+        `;
+        document.getElementById('cir-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('cir-r').value);
+            const a = Math.PI * r * r;
+            const c = 2 * Math.PI * r;
+            document.getElementById('cir-res').innerHTML = `Area: ${a.toFixed(2)}<br>Circumference: ${c.toFixed(2)}`;
+        };
+    }
+
+    renderSphereCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sphere Calculator</h2>
+            <input type="number" id="sph-r" placeholder="Radius (r)">
+            <button id="sph-btn">Calculate</button>
+            <div id="sph-res" class="result"></div>
+        `;
+        document.getElementById('sph-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('sph-r').value);
+            const v = (4 / 3) * Math.PI * Math.pow(r, 3);
+            const sa = 4 * Math.PI * Math.pow(r, 2);
+            document.getElementById('sph-res').innerHTML = `Volume: ${v.toFixed(2)}<br>Surface Area: ${sa.toFixed(2)}`;
+        };
+    }
+
+    renderCylinderCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cylinder Calculator</h2>
+            <input type="number" id="cyl-r" placeholder="Radius (r)">
+            <input type="number" id="cyl-h" placeholder="Height (h)">
+            <button id="cyl-btn">Calculate</button>
+            <div id="cyl-res" class="result"></div>
+        `;
+        document.getElementById('cyl-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('cyl-r').value);
+            const h = parseFloat(document.getElementById('cyl-h').value);
+            const v = Math.PI * r * r * h;
+            const sa = (2 * Math.PI * r * h) + (2 * Math.PI * r * r);
+            document.getElementById('cyl-res').innerHTML = `Volume: ${v.toFixed(2)}<br>Total Surface Area: ${sa.toFixed(2)}`;
+        };
+    }
+
+    renderConeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cone Calculator</h2>
+            <input type="number" id="con-r" placeholder="Radius (r)">
+            <input type="number" id="con-h" placeholder="Height (h)">
+            <button id="con-btn">Calculate</button>
+            <div id="con-res" class="result"></div>
+        `;
+        document.getElementById('con-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('con-r').value);
+            const h = parseFloat(document.getElementById('con-h').value);
+            const s = Math.sqrt(r * r + h * h);
+            const v = Math.PI * r * r * (h / 3);
+            const sa = Math.PI * r * (r + s);
+            document.getElementById('con-res').innerHTML = `Volume: ${v.toFixed(2)}<br>Total Surface Area: ${sa.toFixed(2)}`;
+        };
+    }
+
+    renderPythagoreanTriple() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pythagorean Triple Check</h2>
+            <input type="number" id="pt-a" placeholder="a">
+            <input type="number" id="pt-b" placeholder="b">
+            <input type="number" id="pt-c" placeholder="c">
+            <button id="pt-btn">Check</button>
+            <div id="pt-res" class="result"></div>
+        `;
+        document.getElementById('pt-btn').onclick = () => {
+            let a = parseFloat(document.getElementById('pt-a').value);
+            let b = parseFloat(document.getElementById('pt-b').value);
+            let c = parseFloat(document.getElementById('pt-c').value);
+            [a, b, c] = [a, b, c].sort((x, y) => x - y);
+            const isTriple = Math.abs((a * a + b * b) - c * c) < 0.0001;
+            document.getElementById('pt-res').textContent = isTriple ? "Yes, it is a Pythagorean Triple!" : "No, it is not.";
+        };
+    }
+
+    renderPrimeCheckVisual() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prime Visualizer</h2>
+            <input type="number" id="pv-n" placeholder="Number (max 1000)">
+            <button id="pv-btn">Visualize</button>
+            <div id="pv-res" class="result" style="display:flex; flex-wrap:wrap; gap:2px;"></div>
+        `;
+        document.getElementById('pv-btn').onclick = () => {
+            const n = parseInt(document.getElementById('pv-n').value);
+            const res = document.getElementById('pv-res');
+            res.innerHTML = "";
+            if (n > 1000) { res.textContent = "Too large for visualizer"; return; }
+            for (let i = 0; i < n; i++) {
+                const dot = document.createElement('div');
+                dot.style.width = '10px'; dot.style.height = '10px';
+                dot.style.backgroundColor = '#3498db';
+                res.appendChild(dot);
+            }
+            const isPrime = n > 1 && Array.from({ length: Math.floor(Math.sqrt(n)) - 1 }, (_, i) => i + 2).every(i => n % i !== 0);
+            const txt = document.createElement('div');
+            txt.style.width = '100%';
+            txt.textContent = isPrime ? `${n} is Prime!` : `${n} is Composite.`;
+            res.prepend(txt);
+        };
+    }
+
+    renderFibonacciGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fibonacci Generator</h2>
+            <input type="number" id="fb-n" placeholder="Count (max 100)">
+            <button id="fb-btn">Generate</button>
+            <div id="fb-res" class="result"></div>
+        `;
+        document.getElementById('fb-btn').onclick = () => {
+            const n = Math.min(100, parseInt(document.getElementById('fb-n').value));
+            let fib = [0, 1];
+            for (let i = 2; i < n; i++) fib[i] = fib[i - 1] + fib[i - 2];
+            document.getElementById('fb-res').textContent = fib.slice(0, n).join(', ');
+        };
+    }
+
+    renderPascalTriangle() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pascal's Triangle</h2>
+            <input type="number" id="pas-ra" placeholder="Rows (max 20)">
+            <button id="pas-btn">Generate</button>
+            <div id="pas-res" class="result" style="white-space:pre; text-align:center;"></div>
+        `;
+        document.getElementById('pas-btn').onclick = () => {
+            const rows = Math.min(20, parseInt(document.getElementById('pas-ra').value));
+            let res = [];
+            for (let i = 0; i < rows; i++) {
+                let row = [1];
+                for (let j = 1; j < i; j++) row.push(res[i - 1][j - 1] + res[i - 1][j]);
+                if (i > 0) row.push(1);
+                res.push(row);
+            }
+            document.getElementById('pas-res').textContent = res.map(r => r.join(' ')).join('\n');
+        };
+    }
+
+    renderArithProgression() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Arithmetic Progression</h2>
+            a1: <input type="number" id="ap-a" style="width:60px">
+            d: <input type="number" id="ap-d" style="width:60px">
+            n: <input type="number" id="ap-n" style="width:60px">
+            <button id="ap-btn">Calc</button>
+            <div id="ap-res" class="result"></div>
+        `;
+        document.getElementById('ap-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('ap-a').value);
+            const d = parseFloat(document.getElementById('ap-d').value);
+            const n = parseInt(document.getElementById('ap-n').value);
+            const an = a + (n - 1) * d;
+            const sn = (n / 2) * (2 * a + (n - 1) * d);
+            document.getElementById('ap-res').innerHTML = `nth Term: ${an}<br>Sum (Sn): ${sn}`;
+        };
+    }
+
+    renderGeoProgression() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Geometric Progression</h2>
+            a1: <input type="number" id="gp-a" style="width:60px">
+            r: <input type="number" id="gp-r" style="width:60px">
+            n: <input type="number" id="gp-n" style="width:60px">
+            <button id="gp-btn">Calc</button>
+            <div id="gp-res" class="result"></div>
+        `;
+        document.getElementById('gp-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('gp-a').value);
+            const r = parseFloat(document.getElementById('gp-r').value);
+            const n = parseInt(document.getElementById('gp-n').value);
+            const an = a * Math.pow(r, n - 1);
+            const sn = r === 1 ? a * n : a * (1 - Math.pow(r, n)) / (1 - r);
+            document.getElementById('gp-res').innerHTML = `nth Term: ${an}<br>Sum (Sn): ${sn}`;
+        };
+    }
+
+    renderJsonMinify() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JSON Minifier</h2>
+            <textarea id="jm-in" placeholder="Paste JSON..."></textarea>
+            <button id="jm-btn">Minify</button>
+            <textarea id="jm-out" readonly></textarea>
+        `;
+        document.getElementById('jm-btn').onclick = () => {
+            try {
+                const j = JSON.parse(document.getElementById('jm-in').value);
+                document.getElementById('jm-out').value = JSON.stringify(j);
+            } catch (e) { document.getElementById('jm-out').value = "Invalid JSON: " + e.message; }
+        };
+    }
+
+    renderJsonValidate() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JSON Validator</h2>
+            <textarea id="jv-in" placeholder="Paste JSON..."></textarea>
+            <button id="jv-btn">Validate</button>
+            <div id="jv-res" class="result"></div>
+        `;
+        document.getElementById('jv-btn').onclick = () => {
+            try {
+                JSON.parse(document.getElementById('jv-in').value);
+                document.getElementById('jv-res').textContent = "Valid JSON ✅";
+                document.getElementById('jv-res').style.color = "green";
+            } catch (e) {
+                document.getElementById('jv-res').textContent = "Invalid: " + e.message;
+                document.getElementById('jv-res').style.color = "red";
+            }
+        };
+    }
+
+    renderCssPretty() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Prettifier</h2>
+            <textarea id="cp-in" placeholder="Paste CSS..."></textarea>
+            <button id="cp-btn">Prettify</button>
+            <textarea id="cp-out" readonly></textarea>
+        `;
+        document.getElementById('cp-btn').onclick = () => {
+            let css = document.getElementById('cp-in').value;
+            css = css.replace(/\{/g, " {\n  ").replace(/\;/g, ";\n  ").replace(/\}/g, "\n}\n");
+            document.getElementById('cp-out').value = css;
+        };
+    }
+
+    renderHtmlPretty() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTML Prettifier (Simple)</h2>
+            <textarea id="hp-in" placeholder="Paste HTML..."></textarea>
+            <button id="hp-btn">Prettify</button>
+            <textarea id="hp-out" readonly></textarea>
+        `;
+        document.getElementById('hp-btn').onclick = () => {
+            // Very simple indentation
+            let html = document.getElementById('hp-in').value;
+            let pad = 0;
+            html = html.replace(/>/g, '>\n').replace(/</g, '\n<').split('\n').map(line => {
+                line = line.trim();
+                if (!line) return null;
+                if (line.match(/^<\//)) pad -= 2;
+                const s = ' '.repeat(Math.max(0, pad)) + line;
+                if (line.match(/^<[^/]/) && !line.match(/\/>$/) && !line.match(/^<(br|hr|img|input|meta|link)/)) pad += 2;
+                return s;
+            }).filter(x => x).join('\n');
+            document.getElementById('hp-out').value = html;
+        };
+    }
+
+    renderSqlFormat() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Formatter (Simple)</h2>
+            <textarea id="sf-in" placeholder="SELECT * FROM..."></textarea>
+            <button id="sf-btn">Format</button>
+            <textarea id="sf-out" readonly></textarea>
+        `;
+        document.getElementById('sf-btn').onclick = () => {
+            let sql = document.getElementById('sf-in').value;
+            const kw = ["SELECT", "FROM", "WHERE", "AND", "OR", "ORDER BY", "GROUP BY", "INSERT INTO", "VALUES", "UPDATE", "SET", "DELETE"];
+            kw.forEach(k => {
+                const re = new RegExp(`\\b${k}\\b`, 'gi');
+                sql = sql.replace(re, `\n${k}`);
+            });
+            document.getElementById('sf-out').value = sql.trim();
+        };
+    }
+
+    renderJwtGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JWT Generator (Unsigned)</h2>
+            <textarea id="jg-p" placeholder='{"sub":"123","name":"John Doe"}'></textarea>
+            <button id="jg-btn">Generate</button>
+            <div id="jg-res" class="result" style="word-break:break-all;"></div>
+        `;
+        document.getElementById('jg-btn').onclick = () => {
+            try {
+                const h = btoa(JSON.stringify({ alg: "HS256", typ: "JWT" }));
+                const p = btoa(JSON.stringify(JSON.parse(document.getElementById('jg-p').value)));
+                document.getElementById('jg-res').textContent = `${h}.${p}.(signature_omitted)`;
+            } catch (e) { document.getElementById('jg-res').textContent = "Invalid JSON Payload"; }
+        };
+    }
+
+    renderKeyCode() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+             <h2 class="tool-title">JS KeyCode Finder</h2>
+             <div style="font-size:2em; text-align:center; padding:20px; border:2px dashed #ccc;">
+                 Press any key here
+             </div>
+             <div id="kc-res" class="result" style="text-align:center;"></div>
+         `;
+        // Note: Accessing the div directly for events
+        const div = content.querySelector('div');
+        div.tabIndex = 0; // Make focusable
+        div.focus();
+        div.onkeydown = (e) => {
+            e.preventDefault();
+            document.getElementById('kc-res').innerHTML = `
+                 Key: <b>${e.key}</b><br>
+                 Code: <b>${e.code}</b><br>
+                 Which/KeyCode: <b>${e.keyCode}</b>
+             `;
+        };
+    }
+
+    renderBrowserInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Browser Info</h2>
+            <div id="bi-res" class="result" style="white-space:pre-wrap;"></div>
+        `;
+        const n = navigator;
+        document.getElementById('bi-res').textContent = `
+App Name: ${n.appName}
+App Version: ${n.appVersion}
+Platform: ${n.platform}
+Language: ${n.language}
+User Agent: ${n.userAgent}
+Cookies Enabled: ${n.cookieEnabled}
+Online: ${n.onLine}
+        `.trim();
+    }
+
+    renderMimeLookup() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MIME Types</h2>
+            <input type="text" id="ml-in" placeholder="Ext (e.g. .json) or Type">
+            <button id="ml-btn">Search</button>
+            <div id="ml-res" class="result"></div>
+        `;
+        document.getElementById('ml-btn').onclick = () => {
+            const db = {
+                '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json',
+                '.png': 'image/png', '.jpg': 'image/jpeg', '.gif': 'image/gif', '.svg': 'image/svg+xml',
+                '.pdf': 'application/pdf', '.zip': 'application/zip', '.mp3': 'audio/mpeg', '.mp4': 'video/mp4'
+            };
+            const q = document.getElementById('ml-in').value.toLowerCase();
+            // Simple lookup
+            let res = db[q] || Object.entries(db).find(x => x[1].includes(q))?.join(': ') || "Not found in basic list";
+            document.getElementById('ml-res').textContent = res;
+        };
+    }
+
+    renderGitCheat() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Cheat Sheet</h2>
+            <ul style="text-align:left; list-style:none; padding:0;">
+                <li><b>git init</b> - Start repo</li>
+                <li><b>git clone [url]</b> - Clone repo</li>
+                <li><b>git status</b> - Check status</li>
+                <li><b>git add .</b> - Stage all</li>
+                <li><b>git commit -m "msg"</b> - Commit</li>
+                <li><b>git push</b> - Push to remote</li>
+                <li><b>git pull</b> - Pull from remote</li>
+                <li><b>git branch</b> - List branches</li>
+                <li><b>git checkout -b [br]</b> - New branch</li>
+                <li><b>git merge [br]</b> - Merge branch</li>
+                <li><b>git log</b> - Show history</li>
+                <li><b>git diff</b> - Show changes</li>
+            </ul>
+        `;
     }
 }
 
