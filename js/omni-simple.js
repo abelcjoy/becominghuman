@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 600 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 620 ELITE TOOLS! 💎
  * 
- * BATCH 52: CriticalCss + TTFB + Latency + BWvsTP + PortScan + DnsRef + SslVisual + RateLimit + CacheRef + GzipEst
- * BATCH 53: GroceryTot + EggTimes + LaundryCare + CookingSubs + RoomTemp + CoffeeRatio + TeaSteeper + IceGen + Checklist + NoteSelf
  * BATCH 54: PwStrength + CommonPws + 2FA + VpnTypes + Encryption + HashVsEnc + Salting + SocialEng + Phishing + CsrfInfo
  * BATCH 55: SemanticHtml + MetaTags + OGtags + RobotsMeta + SitemapVsRobots + JsonLd + SvgVsCanvas + AriaGuide + CspGuide + CorsInfo
+ * BATCH 56: AiModels + PromptEng + TokenEst + NnLayers + TrainVsInfer + AiBias + Hallucination + VectorDb + Rlhf + FineTune
+ * BATCH 57: WebWorkers + ServiceWorkers + StorageTypes + IndexedDb + FetchApi + GeoApi + ClipApi + InteractionObs + MutationObs + DeviceMotion
  */
 
 class OmniTools {
@@ -4894,6 +4894,168 @@ class OmniTools {
                 icon: "↔️",
                 category: "Developer",
                 render: () => this.renderCorsExplanation()
+            },
+            // === BATCH 56 - 610 TOOLS (AI & MACHINE LEARNING) ===
+            aiModelsRef: {
+                name: "AI Models Ref",
+                searchTerms: "ai models reference llm cnn rnn deep learning machine",
+                description: "LLM vs CNN vs RNN",
+                icon: "🤖",
+                category: "Developer",
+                render: () => this.renderAiModelsRef()
+            },
+            promptEngineering: {
+                name: "Prompt Eng",
+                searchTerms: "prompt engineering guide zero-shot few-shot chain of thought",
+                description: "Strategy guide",
+                icon: "✍️",
+                category: "Developer",
+                render: () => this.renderPromptEngineering()
+            },
+            tokenEstimator: {
+                name: "Token Est",
+                searchTerms: "token estimator char to token ratio gpt llm",
+                description: "Word to token ratio",
+                icon: "🔢",
+                category: "Developer",
+                render: () => this.renderTokenEstimator()
+            },
+            neuralNetworkVisual: {
+                name: "NN Layers",
+                searchTerms: "neural network layers explanation input hidden output",
+                description: "Layering guide",
+                icon: "🧠",
+                category: "Developer",
+                render: () => this.renderNeuralNetworkVisual()
+            },
+            trainingVsInference: {
+                name: "Train vs Infer",
+                searchTerms: "training vs inference difference ai ml performance",
+                description: "The AI lifecycle",
+                icon: "🔄",
+                category: "Developer",
+                render: () => this.renderTrainingVsInference()
+            },
+            biasInAi: {
+                name: "AI Bias Ref",
+                searchTerms: "bias in ai ethics fairness machine learning pitfalls",
+                description: "Fairness guide",
+                icon: "⚖️",
+                category: "Developer",
+                render: () => this.renderBiasInAi()
+            },
+            hallucinationInfo: {
+                name: "Hallucinations",
+                searchTerms: "ai hallucinations facts accuracy validation llm",
+                description: "Detection & fix guide",
+                icon: "🌀",
+                category: "Developer",
+                render: () => this.renderHallucinationInfo()
+            },
+            vectorDbGuide: {
+                name: "Vector DBs",
+                searchTerms: "vector database guide pinecone milvus embeddings semantic search",
+                description: "Storage for RAG",
+                icon: "📍",
+                category: "Developer",
+                render: () => this.renderVectorDbGuide()
+            },
+            rlhfExplanation: {
+                name: "RLHF Info",
+                searchTerms: "rlhf reinforcement learning human feedback ai training",
+                description: "Feedback loop guide",
+                icon: "👍",
+                category: "Developer",
+                render: () => this.renderRlhfExplanation()
+            },
+            fineTuningInfo: {
+                name: "Fine-Tuning",
+                searchTerms: "fine-tuning ai models customization rag vs finetune",
+                description: "Deep customization info",
+                icon: "🔧",
+                category: "Developer",
+                render: () => this.renderFineTuningInfo()
+            },
+            // === BATCH 57 - 620 TOOLS (ADVANCED JS / WEB API) ===
+            webWorkers: {
+                name: "Web Workers",
+                searchTerms: "web workers multi-threading background tasks javascript api",
+                description: "Threading guide",
+                icon: "🧵",
+                category: "Developer",
+                render: () => this.renderWebWorkers()
+            },
+            serviceWorkers: {
+                name: "Service Workers",
+                searchTerms: "service workers pwa fetch sync push notifications browser-api",
+                description: "Offline app guide",
+                icon: "🔌",
+                category: "Developer",
+                render: () => this.renderServiceWorkers()
+            },
+            storageComparison: {
+                name: "Storage Types",
+                searchTerms: "localstorage vs sessionstorage comparison web-storage browser persistence",
+                description: "Storage reference",
+                icon: "🗄️",
+                category: "Developer",
+                render: () => this.renderStorageComparison()
+            },
+            indexedDbRef: {
+                name: "IndexedDB",
+                searchTerms: "indexeddb reference nosql browser storage large data api",
+                description: "Browser DB guide",
+                icon: "💾",
+                category: "Developer",
+                render: () => this.renderIndexedDbRef()
+            },
+            fetchApiGuide: {
+                name: "Fetch API",
+                searchTerms: "fetch api guide async await ajax network requests",
+                description: "Network usage guide",
+                icon: "🌐",
+                category: "Developer",
+                render: () => this.renderFetchApiGuide()
+            },
+            geolocationApi: {
+                name: "Geolocation",
+                searchTerms: "geolocation api coordinates latitude longitude browser-api",
+                description: "User coords guide",
+                icon: "📍",
+                category: "Developer",
+                render: () => this.renderGeolocationApi()
+            },
+            clipboardApi: {
+                name: "Clipboard API",
+                searchTerms: "clipboard api copy paste programmatic access browser-api",
+                description: "Read/Write guide",
+                icon: "📋",
+                category: "Developer",
+                render: () => this.renderClipboardApi()
+            },
+            intersectionObserver: {
+                name: "Intersection",
+                searchTerms: "intersection observer lazy loading scroll tracking browser-api",
+                description: "Scroll events guide",
+                icon: "👁️",
+                category: "Developer",
+                render: () => this.renderIntersectionObserver()
+            },
+            mutationObserver: {
+                name: "Mutation Obs",
+                searchTerms: "mutation observer track dom changes elements javascript-api",
+                description: "DOM tracking guide",
+                icon: "🧬",
+                category: "Developer",
+                render: () => this.renderMutationObserver()
+            },
+            deviceOrientation: {
+                name: "Device Motion",
+                searchTerms: "device orientation accelerometer gyroscope motion browser-api",
+                description: "Motion sensing guide",
+                icon: "📱",
+                category: "Developer",
+                render: () => this.renderDeviceOrientation()
             }
         };
     }
@@ -19372,6 +19534,218 @@ Online: ${n.onLine}
             <h2 class="tool-title">CORS Info</h2>
             <div style="font-size:0.75em; text-align:left;">
                 <b>CORS:</b> Browser security that prevents scripts from reading data from another origin unless allowed by headers.
+            </div>
+        `;
+    }
+
+
+    renderAiModelsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AI Models Ref</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>LLM:</b> Large Language Model (Text generation).<br>
+                <b>CNN:</b> Convolutional Neural Network (Image/Vision).<br>
+                <b>RNN:</b> Recurrent Neural Network (Sequence/Speech).
+            </div>
+        `;
+    }
+
+    renderPromptEngineering() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prompt Eng</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Zero-shot:</b> No examples given.<br>
+                <b>Few-shot:</b> Providing a few examples.<br>
+                <b>CoT (Chain of Thought):</b> Asking the AI to explain its reasoning step-by-step.
+            </div>
+        `;
+    }
+
+    renderTokenEstimator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Token Est</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Rule of thumb:</b> 1 token ≈ 4 characters or 0.75 words.<br><br>
+                1,000 tokens ≈ 750 words.
+            </div>
+        `;
+    }
+
+    renderNeuralNetworkVisual() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">NN Layers</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Input Layer:</b> Receives raw data.<br>
+                <b>Hidden Layers:</b> Process data through weights and biases.<br>
+                <b>Output Layer:</b> Provides final prediction/result.
+            </div>
+        `;
+    }
+
+    renderTrainingVsInference() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Train vs Infer</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Training:</b> Computing weights from data (Heavy workload).<br><br>
+                <b>Inference:</b> Using trained weights to predict on new data (Light workload).
+            </div>
+        `;
+    }
+
+    renderBiasInAi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AI Bias Ref</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Algorithmic Bias:</b> Systematic errors in an ML system due to faulty assumptions or biased training data.
+            </div>
+        `;
+    }
+
+    renderHallucinationInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hallucinations</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Hallucination:</b> When an AI confidently generates false or factually incorrect information.<br><br>
+                <b>Fix:</b> Use RAG or grounding.
+            </div>
+        `;
+    }
+
+    renderVectorDbGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vector DBs</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Vector DB:</b> Stores data as embeddings (mathematical vectors) to enable fast similarity search.
+            </div>
+        `;
+    }
+
+    renderRlhfExplanation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RLHF Info</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>RLHF:</b> Training models using human rankings of outputs to align with human preferences.
+            </div>
+        `;
+    }
+
+    renderFineTuningInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fine-Tuning</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Fine-tuning:</b> Updating a pre-trained model on a specific dataset to adapt its knowledge to a specific domain.
+            </div>
+        `;
+    }
+
+    renderWebWorkers() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Workers</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Worker:</b> A background script that runs in a separate thread, allowing UI to remain responsive during heavy calc.
+            </div>
+        `;
+    }
+
+    renderServiceWorkers() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Service Workers</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Service Worker:</b> Sits between browser and network, enabling offline caching and push notifications.
+            </div>
+        `;
+    }
+
+    renderStorageComparison() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Storage Types</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>LocalStorage:</b> Persistent until deleted (Max 5MB).<br>
+                <b>SessionStorage:</b> Cleared on tab close.<br>
+                <b>Cookies:</b> Sent with requests (Max 4KB).
+            </div>
+        `;
+    }
+
+    renderIndexedDbRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IndexedDB</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>IndexedDB:</b> Browser's built-in NoSQL database for storing large amounts of structured data.
+            </div>
+        `;
+    }
+
+    renderFetchApiGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fetch API</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Fetch:</b> The modern standard for network requests. Standardized promise-based API replacing XHR.
+            </div>
+        `;
+    }
+
+    renderGeolocationApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Geolocation</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>navigator.geolocation:</b> API to request and watch user's physical position (Lat/Long).
+            </div>
+        `;
+    }
+
+    renderClipboardApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Clipboard API</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>navigator.clipboard:</b> Asynchronous programmatic access to read from and write to the system clipboard.
+            </div>
+        `;
+    }
+
+    renderIntersectionObserver() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Intersection</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Observer:</b> Tracks when elements enter or exit the viewport (Ideal for lazy-loading images).
+            </div>
+        `;
+    }
+
+    renderMutationObserver() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mutation Obs</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Observer:</b> Watches for changes made to the DOM tree (attributes, children, text content).
+            </div>
+        `;
+    }
+
+    renderDeviceOrientation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Device Motion</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Events:</b> Access device orientation (Alpha/Beta/Gamma) and motion (Acceleration/Rotation rate) data.
             </div>
         `;
     }
