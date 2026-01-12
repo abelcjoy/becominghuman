@@ -20,7 +20,7 @@
  * BATCH 38: CarbonTrack + WaterFootprint + EnergyBulb + RecycleHelper + PlasticWaste + TreeOffset + EarthDay + CompostGuide + SolarSaving + ConservationRef
  * BATCH 39: UnitConvFood + OvenTemp + ServingsScale + PastaTimer + SteakGuide + EggGuide + RoastTime + CaffeineTrack + PantryCheck + SpaghettiMeasure
  * BATCH 40: MoodTracker + GratitudeLog + Pomodoro + BreatheGuide + HabitCheck + SleepCycles + WaterLog + QuietTimer + ScreenTimeLog + GoalSetter
- * BATCH 41: GpaCalc + LetterGrad + StudySessions + Flashcards + LatinRoots + WorldCapitals + NumToRoman + RomanToNum + CaseConverter + WordFreq
+ * BATCH 41: GpaCalc + LetterGrad + StudySessions + Flashcards + LatinRoots + WorldCapitals + ElementLookup + MathQuiz + PuncStripper + WordFreq
  * BATCH 42: NeedleConv + CrochetConv + GlueGuide + ResistorBands + ModelScale + CrossStitch + RingSize + DrillBit + ScrewRef + PaperSizes
  */
 
@@ -3746,29 +3746,29 @@ class OmniTools {
                 category: "Education",
                 render: () => this.renderWorldCapitals()
             },
-            numToRoman: {
-                name: "Num to Roman",
-                searchTerms: "number to roman numeral converter converter digits",
-                description: "Convert 1-3999",
-                icon: "Ⅰ",
+            chemistryElements: {
+                name: "Element Lookup",
+                searchTerms: "periodic table chemistry elements symbol atoms",
+                description: "Symbol/Name lookup",
+                icon: "🧪",
                 category: "Education",
-                render: () => this.renderNumToRoman()
+                render: () => this.renderChemistryElements()
             },
-            romanToNum: {
-                name: "Roman to Num",
-                searchTerms: "roman numeral to number converter converter digits",
-                description: "Convert to numbers",
-                icon: "Ⅴ",
+            mathQuiz: {
+                name: "Math Quiz",
+                searchTerms: "math quiz mental arithmetic practice basic",
+                description: "Basic arithmetic test",
+                icon: "🧮",
                 category: "Education",
-                render: () => this.renderRomanToNum()
+                render: () => this.renderMathQuiz()
             },
-            caseConverterExtra: {
-                name: "Case Converter",
-                searchTerms: "case converter uppercase lowercase titlecase sentencecase text",
-                description: "Modify text casing",
-                icon: "🔠",
-                category: "Education",
-                render: () => this.renderCaseConverterExtra()
+            punctuationStrip: {
+                name: "Punc Stripper",
+                searchTerms: "strip remove punctuation clean text",
+                description: "Remove all punctuation",
+                icon: "✂️",
+                category: "Text",
+                render: () => this.renderPunctuationStrip()
             },
             wordFrequency: {
                 name: "Word Frequency",
@@ -16229,61 +16229,61 @@ Online: ${n.onLine}
         };
     }
 
-    renderNumToRoman() {
+    renderChemistryElements() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Num to Roman</h2>
-            <input type="number" id="nr-v" value="10">
-            <button id="nr-btn">Convert</button>
-            <div id="nr-res" class="result"></div>
+            <h2 class="tool-title">Element Lookup</h2>
+            <input type="text" id="ce-in" placeholder="Symbol (e.g. Au)">
+            <div id="ce-res" class="result"></div>
         `;
-        document.getElementById('nr-btn').onclick = () => {
-            let num = parseInt(document.getElementById('nr-v').value);
-            const map = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
-            let res = "";
-            for (let i in map) {
-                while (num >= map[i]) { res += i; num -= map[i]; }
-            }
-            document.getElementById('nr-res').textContent = res || "Not valid";
+        const db = { H: "Hydrogen", He: "Helium", Li: "Lithium", C: "Carbon", O: "Oxygen", Au: "Gold", Ag: "Silver", Fe: "Iron", Cu: "Copper" };
+        document.getElementById('ce-in').oninput = (e) => {
+            const sym = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1).toLowerCase();
+            document.getElementById('ce-res').textContent = db[sym] || "Lookup by symbol";
         };
     }
 
-    renderRomanToNum() {
+    renderMathQuiz() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Roman to Num</h2>
-            <input type="text" id="rn-v" value="XIV">
-            <button id="rn-btn">Convert</button>
-            <div id="rn-res" class="result"></div>
+            <h2 class="tool-title">Math Quiz</h2>
+            <div id="mq-q" style="font-size:1.5em; margin:10px;"></div>
+            <input type="number" id="mq-in" style="width:100px">
+            <button id="mq-btn">Check</button>
+            <div id="mq-res" class="result"></div>
         `;
-        document.getElementById('rn-btn').onclick = () => {
-            const r = document.getElementById('rn-v').value.toUpperCase();
-            const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
-            let res = 0;
-            for (let i = 0; i < r.length; i++) {
-                const cur = map[r[i]], next = map[r[i + 1]];
-                if (next > cur) { res += (next - cur); i++; }
-                else res += cur;
-            }
-            document.getElementById('rn-res').textContent = res || "Invalid";
+        let a, b, op, ans;
+        const next = () => {
+            a = Math.floor(Math.random() * 10) + 1;
+            b = Math.floor(Math.random() * 10) + 1;
+            op = Math.random() > 0.5 ? "+" : "*";
+            ans = op === "+" ? a + b : a * b;
+            document.getElementById('mq-q').textContent = `${a} ${op} ${b} = ?`;
+            document.getElementById('mq-in').value = "";
         };
+        document.getElementById('mq-btn').onclick = () => {
+            const val = parseInt(document.getElementById('mq-in').value);
+            if (val === ans) {
+                document.getElementById('mq-res').textContent = "Correct! ✅";
+                setTimeout(next, 1000);
+            } else {
+                document.getElementById('mq-res').textContent = "Try again! ❌";
+            }
+        };
+        next();
     }
 
-    renderCaseConverterExtra() {
+    renderPunctuationStrip() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Case Converter</h2>
-            <textarea id="cc-in" style="width:90%; height:60px;"></textarea><br>
-            <button id="cc-up">UPPER</button>
-            <button id="cc-lo">lower</button>
-            <button id="cc-ti">Title Case</button>
-            <button id="cc-se">Sentence case</button>
+            <h2 class="tool-title">Punc Stripper</h2>
+            <textarea id="ps-in" style="width:90%; height:60px;"></textarea>
+            <button id="ps-btn">Strip Punctuation</button>
         `;
-        const el = document.getElementById('cc-in');
-        document.getElementById('cc-up').onclick = () => el.value = el.value.toUpperCase();
-        document.getElementById('cc-lo').onclick = () => el.value = el.value.toLowerCase();
-        document.getElementById('cc-ti').onclick = () => el.value = el.value.toLowerCase().split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
-        document.getElementById('cc-se').onclick = () => el.value = el.value.toLowerCase().charAt(0).toUpperCase() + el.value.toLowerCase().slice(1);
+        document.getElementById('ps-btn').onclick = () => {
+            const el = document.getElementById('ps-in');
+            el.value = el.value.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+        };
     }
 
     renderWordFrequency() {

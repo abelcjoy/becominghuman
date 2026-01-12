@@ -10,9 +10,9 @@
 - Basic Flashcards Helper
 - Latin Roots Dictionary
 - World Capitals Lookup
-- Number to Roman Numeral
-- Roman Numeral to Number
-- Advanced Case Converter
+- Element Lookup (Periodic Table)
+- Math Quiz (Arithmetic practice)
+- Punctuation Stripper (Text cleaning)
 - Word Frequency Analyzer
 
 ## Latest Additions (Batch 42 - Hobbies II)
