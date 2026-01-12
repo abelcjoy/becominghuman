@@ -24,6 +24,23 @@ class OmniTools {
         });
 
         document.getElementById('back-btn').addEventListener('click', () => this.closeToolView());
+
+        // Privacy Logic
+        const privacyView = document.getElementById('privacy-view');
+        if (privacyView) {
+            const link = document.querySelector('a[href="#privacy"]');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    privacyView.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            document.getElementById('close-privacy-btn').addEventListener('click', () => {
+                privacyView.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
     }
 
     initTools() {
