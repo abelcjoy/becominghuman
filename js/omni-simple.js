@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 410 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 430 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -16,6 +16,8 @@
  * BATCH 34: RPS + Magic8 + Trivia + Jokes + Quotes + Compliments + Decision + Teams + CoinFlip + Usernames
  * BATCH 35: SpeedConv + FreqConv + DataStoreConv + AngleConv + PowerConv + PressureConv + TorqueConv + DensityConv + FlowRateConv + FuelConsConv
  * BATCH 36: PunnettSquare + BmiCalc + BmrCalc + TdeeCalc + BodyFatNavy + IdealWeight + WaterIntake + BacCalc + MacroCalc + PregDueDate
+ * BATCH 37: WorldClock + FlightTime + CoordDist + TzDiff + PackingList + TravelBudget + DialCodes + CurrencyRef + TempGuide + LanguageRef
+ * BATCH 38: CarbonTrack + WaterFootprint + EnergyBulb + RecycleHelper + PlasticWaste + TreeOffset + EarthDay + CompostGuide + SolarSaving + ConservationRef
  */
 
 class OmniTools {
@@ -3366,6 +3368,168 @@ class OmniTools {
                 icon: "👶",
                 category: "Biology",
                 render: () => this.renderPregDueDate()
+            },
+            // === BATCH 37 - 420 TOOLS (TRAVEL & MAPS) ===
+            worldClock: {
+                name: "World Clock",
+                searchTerms: "world clock time zones cities travel",
+                description: "Major cities current time",
+                icon: "🌍",
+                category: "Travel",
+                render: () => this.renderWorldClock()
+            },
+            flightDuration: {
+                name: "Flight Time Est.",
+                searchTerms: "flight duration estimated travel time distance",
+                description: "Distance vs Speed est",
+                icon: "✈️",
+                category: "Travel",
+                render: () => this.renderFlightDuration()
+            },
+            coordDistance: {
+                name: "Coord Distance",
+                searchTerms: "coordinate distance haversine latitude longitude map",
+                description: "Distance between points",
+                icon: "📍",
+                category: "Travel",
+                render: () => this.renderCoordDistance()
+            },
+            tzOffset: {
+                name: "Timezone Diff",
+                searchTerms: "timezone offset difference difference hours",
+                description: "Calc time gap between zones",
+                icon: "🕒",
+                category: "Travel",
+                render: () => this.renderTzOffset()
+            },
+            packingList: {
+                name: "Packing List",
+                searchTerms: "packing checklist travel items essentials",
+                description: "Travel essentials checklist",
+                icon: "🎒",
+                category: "Travel",
+                render: () => this.renderPackingList()
+            },
+            travelBudget: {
+                name: "Travel Budget",
+                searchTerms: "travel budget calculator expenses planner trip",
+                description: "Plan your trip costs",
+                icon: "💰",
+                category: "Travel",
+                render: () => this.renderTravelBudget()
+            },
+            countryCodeRef: {
+                name: "Dialing Codes",
+                searchTerms: "country dialing codes telephone prefix lookup",
+                description: "International prefix lookup",
+                icon: "📞",
+                category: "Travel",
+                render: () => this.renderCountryCodeRef()
+            },
+            currencyRef: {
+                name: "Currency Codes",
+                searchTerms: "currency codes iso symbols exchange reference",
+                description: "ISO Currency Symbols",
+                icon: "💱",
+                category: "Travel",
+                render: () => this.renderCurrencyRef()
+            },
+            tempGuide: {
+                name: "Temp Guide",
+                searchTerms: "temperature conversion celsius fahrenheit chart travel",
+                description: "Quick C to F chart",
+                icon: "🌡️",
+                category: "Travel",
+                render: () => this.renderTempGuide()
+            },
+            languageRef: {
+                name: "Basic Phrases",
+                searchTerms: "language phrases travel greetings hello",
+                description: "Common travel phrases",
+                icon: "🗣️",
+                category: "Travel",
+                render: () => this.renderLanguageRef()
+            },
+            // === BATCH 38 - 430 TOOLS (ENVIRONMENT & SUSTAINABILITY) ===
+            carbonFootprint: {
+                name: "Carbon Tracker",
+                searchTerms: "carbon footprint co2 emissions travel planet",
+                description: "Est. travel emissions",
+                icon: "☁️",
+                category: "Environment",
+                render: () => this.renderCarbonFootprint()
+            },
+            waterFootprint: {
+                name: "Water Footprint",
+                searchTerms: "water footprint usage calculator conservation daily",
+                description: "Daily water usage est.",
+                icon: "🚰",
+                category: "Environment",
+                render: () => this.renderWaterFootprint()
+            },
+            energyBulb: {
+                name: "Light Bulb Savings",
+                searchTerms: "energy savings led incandescent calculator electricity",
+                description: "LED vs Incandescent",
+                icon: "💡",
+                category: "Environment",
+                render: () => this.renderEnergyBulb()
+            },
+            recyclingSearch: {
+                name: "Recycle Helper",
+                searchTerms: "recycling search helper items guide materials",
+                description: "Check if it can be recycled",
+                icon: "♻️",
+                category: "Environment",
+                render: () => this.renderRecyclingSearch()
+            },
+            plasticWaste: {
+                name: "Plastic Waste",
+                searchTerms: "plastic waste calculator pollution environment usage",
+                description: "Yearly plastic waste est.",
+                icon: "🥤",
+                category: "Environment",
+                render: () => this.renderPlasticWaste()
+            },
+            treeOffset: {
+                name: "Tree Offset",
+                searchTerms: "tree offset co2 sequestration planting planet",
+                description: "Trees needed for CO2",
+                icon: "🌳",
+                category: "Environment",
+                render: () => this.renderTreeOffset()
+            },
+            earthDay: {
+                name: "Earth Day",
+                searchTerms: "earth day countdown date anniversary environment",
+                description: "Countdown to April 22",
+                icon: "🌎",
+                category: "Environment",
+                render: () => this.renderEarthDay()
+            },
+            compostGuide: {
+                name: "Compost Guide",
+                searchTerms: "composting guide green brown materials earth",
+                description: "What to compost",
+                icon: "🍂",
+                category: "Environment",
+                render: () => this.renderCompostGuide()
+            },
+            solarSaving: {
+                name: "Solar Savings",
+                searchTerms: "solar energy savings panel calculator potential",
+                description: "Basic solar potential",
+                icon: "☀️",
+                category: "Environment",
+                render: () => this.renderSolarSaving()
+            },
+            animalRef: {
+                name: "Conservation Ref",
+                searchTerms: "animal conservation status endangered species red list",
+                description: "Conservation status key",
+                icon: "🐼",
+                category: "Environment",
+                render: () => this.renderAnimalRef()
             }
         };
     }
@@ -14809,6 +14973,395 @@ Online: ${n.onLine}
             d.setDate(d.getDate() + 280);
             document.getElementById('pd-res').innerHTML = `Due Date: ${d.toDateString()}`;
         };
+    }
+
+    renderWorldClock() {
+        const content = document.getElementById('tool-content');
+        const update = () => {
+            const now = new Date();
+            const zones = [
+                { name: "New York", tz: "America/New_York" },
+                { name: "London", tz: "Europe/London" },
+                { name: "Tokyo", tz: "Asia/Tokyo" },
+                { name: "Dubai", tz: "Asia/Dubai" },
+                { name: "Sydney", tz: "Australia/Sydney" }
+            ];
+            let html = `<h2 class="tool-title">World Clock</h2><div class="result" style="text-align:left; line-height:2;">`;
+            zones.forEach(z => {
+                const time = now.toLocaleTimeString('en-US', { timeZone: z.tz, hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+                html += `<b>${z.name}:</b> ${time}<br>`;
+            });
+            html += `</div>`;
+            content.innerHTML = html;
+        };
+        update();
+        this.clockTimer = setInterval(update, 1000);
+        // Clean up on next render
+        const originalOpen = this.openTool;
+        this.openTool = (id) => { clearInterval(this.clockTimer); this.openTool = originalOpen; originalOpen.call(this, id); };
+    }
+
+    renderFlightDuration() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flight Time Est.</h2>
+            <input type="number" id="fd-d" placeholder="Distance (km)">
+            <input type="number" id="fd-s" value="850" placeholder="Speed (km/h)">
+            <button id="fd-btn">Calc Time</button>
+            <div id="fd-res" class="result"></div>
+        `;
+        document.getElementById('fd-btn').onclick = () => {
+            const d = parseFloat(document.getElementById('fd-d').value);
+            const s = parseFloat(document.getElementById('fd-s').value);
+            const t = d / s;
+            const h = Math.floor(t);
+            const m = Math.round((t - h) * 60);
+            document.getElementById('fd-res').textContent = `Est. Time: ${h}h ${m}m (+ ~30m for takeoff/landing)`;
+        };
+    }
+
+    renderCoordDistance() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Coord Distance</h2>
+            Lat1: <input type="number" id="cd-la1" step="any" style="width:70px"> Lon1: <input type="number" id="cd-lo1" step="any" style="width:70px"><br><br>
+            Lat2: <input type="number" id="cd-la2" step="any" style="width:70px"> Lon2: <input type="number" id="cd-lo2" step="any" style="width:70px"><br><br>
+            <button id="cd-btn">Calc (Haversine)</button>
+            <div id="cd-res" class="result"></div>
+        `;
+        document.getElementById('cd-btn').onclick = () => {
+            const toRad = (v) => v * Math.PI / 180;
+            const la1 = parseFloat(document.getElementById('cd-la1').value);
+            const lo1 = parseFloat(document.getElementById('cd-lo1').value);
+            const la2 = parseFloat(document.getElementById('cd-la2').value);
+            const lo2 = parseFloat(document.getElementById('cd-lo2').value);
+            const R = 6371; // Radius of earth in km
+            const dLat = toRad(la2 - la1);
+            const dLon = toRad(lo2 - lo1);
+            const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(la1)) * Math.cos(toRad(la2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            document.getElementById('cd-res').textContent = `Distance: ${(R * c).toFixed(2)} km`;
+        };
+    }
+
+    renderTzOffset() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Timezone Diff</h2>
+            From UTC: <input type="number" id="tz-f" placeholder="e.g. -5" style="width:60px">
+            To UTC: <input type="number" id="tz-t" placeholder="e.g. +8" style="width:60px">
+            <button id="tz-btn">Compare</button>
+            <div id="tz-res" class="result"></div>
+        `;
+        document.getElementById('tz-btn').onclick = () => {
+            const f = parseFloat(document.getElementById('tz-f').value);
+            const t = parseFloat(document.getElementById('tz-t').value);
+            const diff = t - f;
+            document.getElementById('tz-res').textContent = `Difference: ${diff > 0 ? '+' : ''}${diff} hours`;
+        };
+    }
+
+    renderPackingList() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Packing List</h2>
+            <div style="text-align:left; max-width:250px; margin:auto;">
+                <label><input type="checkbox"> Passport/ID</label><br>
+                <label><input type="checkbox"> Tickets/Bookings</label><br>
+                <label><input type="checkbox"> Phone Charger</label><br>
+                <label><input type="checkbox"> Universal Adapter</label><br>
+                <label><input type="checkbox"> Toiletries</label><br>
+                <label><input type="checkbox"> Medications</label><br>
+                <label><input type="checkbox"> Underwear/Socks</label><br>
+                <label><input type="checkbox"> Currency/Cards</label><br>
+                <label><input type="checkbox"> Rain Jacket/Umbrella</label>
+            </div>
+            <p style="font-size:0.8em; margin-top:10px;">(Check boxes to track)</p>
+        `;
+    }
+
+    renderTravelBudget() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Travel Budget</h2>
+            <input type="number" id="tb-t" placeholder="Transport Total">
+            <input type="number" id="tb-a" placeholder="Accommodation Total">
+            <input type="number" id="tb-f" placeholder="Food/Daily Total">
+            <input type="number" id="tb-m" placeholder="Misc/Tours">
+            <button id="tb-btn">Total Budget</button>
+            <div id="tb-res" class="result"></div>
+        `;
+        document.getElementById('tb-btn').onclick = () => {
+            const vals = ['tb-t', 'tb-a', 'tb-f', 'tb-m'].map(id => parseFloat(document.getElementById(id).value) || 0);
+            const sum = vals.reduce((a, b) => a + b, 0);
+            document.getElementById('tb-res').textContent = `Total Est: $${sum.toLocaleString()}`;
+        };
+    }
+
+    renderCountryCodeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dialing Codes</h2>
+            <input type="text" id="cc-in" placeholder="Search Country...">
+            <div id="cc-res" class="result" style="text-align:left; font-size:0.9em; max-height:200px; overflow:auto;"></div>
+        `;
+        const codes = { "USA": "+1", "UK": "+44", "Germany": "+49", "France": "+33", "India": "+91", "China": "+86", "Japan": "+81", "Australia": "+61", "Brazil": "+55", "UAE": "+971" };
+        const draw = (f = "") => {
+            let h = "";
+            Object.entries(codes).forEach(([c, n]) => {
+                if (c.toLowerCase().includes(f.toLowerCase())) h += `<b>${c}:</b> ${n}<br>`;
+            });
+            document.getElementById('cc-res').innerHTML = h || "Not in database";
+        };
+        document.getElementById('cc-in').oninput = (e) => draw(e.target.value);
+        draw();
+    }
+
+    renderCurrencyRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Currency Codes</h2>
+            <div style="text-align:left; font-size:0.9em;">
+                <b>USD:</b> US Dollar ($)<br>
+                <b>EUR:</b> Euro (€)<br>
+                <b>GBP:</b> British Pound (£)<br>
+                <b>JPY:</b> Japanese Yen (¥)<br>
+                <b>AUD:</b> Australian Dollar ($)<br>
+                <b>CAD:</b> Canadian Dollar ($)<br>
+                <b>CHF:</b> Swiss Franc (Fr)<br>
+                <b>CNY:</b> Chinese Yuan (¥)<br>
+                <b>INR:</b> Indian Rupee (₹)<br>
+                <b>BTC:</b> Bitcoin (₿)
+            </div>
+        `;
+    }
+
+    renderTempGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Temp Guide</h2>
+            <table border="1" style="margin:auto; border-collapse:collapse; width:100px;">
+                <tr><th>°C</th><th>°F</th></tr>
+                <tr><td>0</td><td>32</td></tr>
+                <tr><td>10</td><td>50</td></tr>
+                <tr><td>20</td><td>68</td></tr>
+                <tr><td>25</td><td>77</td></tr>
+                <tr><td>30</td><td>86</td></tr>
+                <tr><td>35</td><td>95</td></tr>
+                <tr><td>40</td><td>104</td></tr>
+            </table>
+        `;
+    }
+
+    renderLanguageRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Basic Phrases</h2>
+            <select id="lr-s">
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="jp">Japanese</option>
+            </select>
+            <div id="lr-res" class="result" style="text-align:left;"></div>
+        `;
+        const data = {
+            es: { h: "Hola", t: "Gracias", p: "Por favor", r: "Donde esta...?" },
+            fr: { h: "Bonjour", t: "Merci", p: "S'il vous plaît", r: "Où est...?" },
+            de: { h: "Hallo", t: "Danke", p: "Bitte", r: "Wo ist...?" },
+            jp: { h: "Konnichiwa", t: "Arigato", p: "Onegaishimasu", r: "Doko desu ka?" }
+        };
+        const draw = () => {
+            const v = data[document.getElementById('lr-s').value];
+            document.getElementById('lr-res').innerHTML = `
+                Hello: <b>${v.h}</b><br>
+                Thanks: <b>${v.t}</b><br>
+                Please: <b>${v.p}</b><br>
+                Where is...?: <b>${v.r}</b>
+            `;
+        };
+        document.getElementById('lr-s').onchange = draw;
+        draw();
+    }
+
+    renderCarbonFootprint() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Carbon Tracker</h2>
+            <input type="number" id="ct-k" placeholder="KM traveled">
+            <select id="ct-m">
+                <option value="0.12">Small Car (0.12 kg/km)</option>
+                <option value="0.2">Large Car (0.20 kg/km)</option>
+                <option value="0.25">Short Flight (0.25 kg/km)</option>
+                <option value="0.15">Long Flight (0.15 kg/km)</option>
+                <option value="0.04">Train (0.04 kg/km)</option>
+            </select>
+            <button id="ct-btn">Calc CO2</button>
+            <div id="ct-res" class="result"></div>
+        `;
+        document.getElementById('ct-btn').onclick = () => {
+            const k = parseFloat(document.getElementById('ct-k').value);
+            const m = parseFloat(document.getElementById('ct-m').value);
+            document.getElementById('ct-res').textContent = `Emissions: ${(k * m).toFixed(2)} kg CO2`;
+        };
+    }
+
+    renderWaterFootprint() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Water Footprint</h2>
+            Showers: <input type="number" id="wf-s" value="1" style="width:50px"><br>
+            Flushes: <input type="number" id="wf-f" value="5" style="width:50px"><br>
+            Laundry: <input type="number" id="wf-l" value="0.5" style="width:50px"> (loads/day)<br>
+            <button id="wf-btn">Daily Usage</button>
+            <div id="wf-res" class="result"></div>
+        `;
+        document.getElementById('wf-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('wf-s').value) * 60; // 60L per shower
+            const f = parseFloat(document.getElementById('wf-f').value) * 9;  // 9L per flush
+            const l = parseFloat(document.getElementById('wf-l').value) * 50; // 50L per load
+            document.getElementById('wf-res').textContent = `Total: ${(s + f + l).toFixed(0)} Liters / day`;
+        };
+    }
+
+    renderEnergyBulb() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Energy Savings</h2>
+            Incandescent: <input type="number" id="eb-i" value="60" style="width:50px"> W<br>
+            LED Equivalent: <input type="number" id="eb-l" value="9" style="width:50px"> W<br>
+            Hours/Day: <input type="number" id="eb-h" value="5" style="width:50px"><br>
+            <button id="eb-btn">Annual Savings</button>
+            <div id="eb-res" class="result"></div>
+        `;
+        document.getElementById('eb-btn').onclick = () => {
+            const i = parseFloat(document.getElementById('eb-i').value);
+            const l = parseFloat(document.getElementById('eb-l').value);
+            const h = parseFloat(document.getElementById('eb-h').value);
+            const kwh = ((i - l) * h * 365) / 1000;
+            document.getElementById('eb-res').textContent = `Savings: ${kwh.toFixed(1)} kWh / year`;
+        };
+    }
+
+    renderRecyclingSearch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Recycle Helper</h2>
+            <input type="text" id="rs-in" placeholder="e.g. Pizza Box">
+            <div id="rs-res" class="result">Try searching...</div>
+        `;
+        const db = {
+            "pizza box": "Only if clean! Greasy parts go to trash/compost.",
+            "plastic bottle": "Yes, usually! Rinse first.",
+            "glass": "Yes! Infinite recyclability.",
+            "paper": "Yes, unless shredded or wet.",
+            "battery": "No! Take to special hazardous waste drop-off.",
+            "light bulb": "Varies. LEDs usually go to hazardous waste.",
+            "can": "Yes! Aluminum and steel."
+        };
+        document.getElementById('rs-in').oninput = (e) => {
+            const q = e.target.value.toLowerCase();
+            document.getElementById('rs-res').textContent = db[q] || "Search for: pizza box, plastic bottle, glass, paper, battery...";
+        };
+    }
+
+    renderPlasticWaste() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Plastic Waste</h2>
+            Bottles/Week: <input type="number" id="pw-b" value="5" style="width:50px"><br>
+            Bags/Week: <input type="number" id="pw-a" value="2" style="width:50px"><br>
+            Wrappers/Day: <input type="number" id="pw-w" value="3" style="width:50px"><br>
+            <button id="pw-btn">Yearly Est.</button>
+            <div id="pw-res" class="result"></div>
+        `;
+        document.getElementById('pw-btn').onclick = () => {
+            const b = parseFloat(document.getElementById('pw-b').value) * 52;
+            const a = parseFloat(document.getElementById('pw-a').value) * 52;
+            const w = parseFloat(document.getElementById('pw-w').value) * 365;
+            document.getElementById('pw-res').textContent = `Total: ${(b + a + w).toLocaleString()} pieces / year`;
+        };
+    }
+
+    renderTreeOffset() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tree Offset</h2>
+            CO2 to offset: <input type="number" id="to-c" placeholder="kg CO2">
+            <button id="to-btn">Trees Needed</button>
+            <div id="to-res" class="result"></div>
+        `;
+        document.getElementById('to-btn').onclick = () => {
+            const c = parseFloat(document.getElementById('to-c').value);
+            // Avg tree absorbs ~22kg/year
+            const trees = Math.ceil(c / 22);
+            document.getElementById('to-res').textContent = `Needs ~${trees} trees to offset per year`;
+        };
+    }
+
+    renderEarthDay() {
+        const content = document.getElementById('tool-content');
+        const draw = () => {
+            const now = new Date();
+            let yr = now.getFullYear();
+            let target = new Date(yr, 3, 22); // April 22
+            if (now > target) target = new Date(yr + 1, 3, 22);
+            const diff = target - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            content.innerHTML = `<h2 class="tool-title">Earth Day</h2><div class="result">${d}d ${h}h until April 22!</div>`;
+        };
+        draw();
+    }
+
+    renderCompostGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Compost Guide</h2>
+            <div style="display:flex; justify-content:space-around; text-align:left; font-size:0.8em;">
+                <div>
+                    <h3 style="color:green;">Greens (Nitrogen)</h3>
+                    <ul><li>Fruit Scraps</li><li>Veggie Peel</li><li>Coffee Grounds</li><li>Grass Clips</li></ul>
+                </div>
+                <div>
+                    <h3 style="color:brown;">Browns (Carbon)</h3>
+                    <ul><li>Dry Leaves</li><li>Cardboard</li><li>Eggshells</li><li>Straw/Hay</li></ul>
+                </div>
+            </div>
+            <p style="color:red; font-size:0.7em;">Avoid: Plastic, Meat, Dairy, Oils</p>
+        `;
+    }
+
+    renderSolarSaving() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Solar Potential</h2>
+            Panel Size (kW): <input type="number" id="ss-s" value="5" style="width:50px"><br>
+            Sun Hours/Day: <input type="number" id="ss-h" value="4.5" style="width:50px"><br>
+            <button id="ss-btn">Daily Gen</button>
+            <div id="ss-res" class="result"></div>
+        `;
+        document.getElementById('ss-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('ss-s').value);
+            const h = parseFloat(document.getElementById('ss-h').value);
+            document.getElementById('ss-res').textContent = `Est. Generation: ${(s * h * 0.75).toFixed(1)} kWh / day (at 75% efficiency)`;
+        };
+    }
+
+    renderAnimalRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Conservation Status</h2>
+            <div style="text-align:left; font-size:0.9em; padding:10px;">
+                <span style="color:red; font-weight:bold;">EX:</span> Extinct<br>
+                <span style="color:#d63384; font-weight:bold;">EW:</span> Extinct in Wild<br>
+                <span style="color:#821111; font-weight:bold;">CR:</span> Critically Endangered<br>
+                <span style="color:#d9534f; font-weight:bold;">EN:</span> Endangered<br>
+                <span style="color:#f0ad4e; font-weight:bold;">VU:</span> Vulnerable<br>
+                <span style="color:#5bc0de; font-weight:bold;">NT:</span> Near Threatened<br>
+                <span style="color:#5cb85c; font-weight:bold;">LC:</span> Least Concern
+            </div>
+        `;
     }
 }
 

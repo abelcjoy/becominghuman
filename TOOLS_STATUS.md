@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 410
-**Last Updated:** Batch 35 & 36 (Converters III / Biology II)
+**Total Tools:** 430
+**Last Updated:** Batch 37 & 38 (Travel / Environment)
 
-## Latest Additions (Batch 35 - Converters III - Misc)
-- Speed Converter
-- Frequency Converter
-- Data Converter (Storage)
-- Angle Converter
-- Power Converter
-- Pressure Converter
-- Torque Converter
-- Density Converter
-- Flow Rate Converter
-- Fuel Converter (Efficiency)
+## Latest Additions (Batch 37 - Travel & Maps)
+- World Clock (Major Cities)
+- Flight Time Estimator
+- Coordinate Distance (Haversine)
+- Timezone Difference
+- Packing Checklist
+- Travel Budget Planner
+- International Dialing Codes
+- Currency Code Reference
+- Temperature Quick Guide
+- Basic Travel Phrases
 
-## Latest Additions (Batch 36 - Biology II - Health & Health)
-- Punnett Square (Genetics)
-- BMI Calculator
-- BMR Calculator
-- TDEE Calculator
-- Body Fat % (Navy)
-- Ideal Weight Calc
-- Water Intake Calc
-- BAC Calculator
-- Macro Calculator
-- Pregnancy Due Date
+## Latest Additions (Batch 38 - Environment & Sustainability)
+- Carbon Footprint Tracker
+- Water Usage Footprint
+- Energy Saving Bulb Calc
+- Recycle Helper (Search)
+- Plastic Waste Estimator
+- Tree Offset Calculator
+- Earth Day Countdown
+- Compost Guide
+- Solar Generation Potential
+- Conservation Status Reference
