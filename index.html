@@ -147,8 +147,60 @@
         <div class="absolute inset-0 bg-black/95 z-10"></div>
     </div>
 
+    <!-- Navigation / Header (Sovereign Branding) -->
+    <header class="fixed top-0 left-0 w-full p-8 flex justify-between items-center z-[150] pointer-events-none">
+        <div class="pointer-events-auto">
+            <h1 class="text-xl font-bold tracking-[0.4em] font-['Cinzel'] text-white">CLARITY<span
+                    class="text-white/20">.Sovereign</span></h1>
+        </div>
+        <div class="pointer-events-auto flex gap-8">
+            <button id="nav-existence"
+                class="text-[10px] uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors">Existence</button>
+            <button id="nav-omni"
+                class="text-[11px] uppercase tracking-[0.4em] text-white border-b border-white pb-1">Omni-Protocol</button>
+        </div>
+    </header>
+
+    <!-- Omni-Protocol Grid View -->
+    <main id="omni-grid-view"
+        class="relative z-10 w-full max-w-7xl px-8 flex flex-col items-center justify-center min-h-screen pt-32 pb-20 overflow-y-auto scrollbar-hide">
+        <div class="text-center mb-16 animate-fade-in">
+            <div class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Omni-Sovereign Utility
+                Suite</div>
+            <h2 class="text-6xl font-black text-white font-['Cinzel'] tracking-tighter mb-4 uppercase">The Protocols
+            </h2>
+            <p class="text-stone-500 max-w-2xl mx-auto font-light leading-relaxed">High-performance, client-side
+                utilities designed for digital sovereignty. No servers. No tracking. Pure efficiency.</p>
+        </div>
+
+        <div id="omni-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 w-full max-w-6xl">
+            <!-- Populated by JS -->
+        </div>
+
+        <!-- AdSense in Grid -->
+        <div
+            class="mt-16 w-full max-w-4xl min-h-[100px] border border-white/5 bg-white/5 flex items-center justify-center">
+            <!-- Placeholder for AdSense inside content -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9639641684797882"
+                data-ad-slot="YOUR_OMNI_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </main>
+
+    <!-- Omni-Protocol Specific Tool View -->
+    <main id="omni-tool-view"
+        class="relative z-10 hidden w-full max-w-5xl px-8 flex flex-col items-center justify-center min-h-screen pt-32 pb-20 overflow-y-auto scrollbar-hide">
+        <button id="close-tool"
+            class="absolute top-32 left-8 text-[10px] uppercase tracking-widest text-white/40 hover:text-white transition-all flex items-center gap-2">
+            <span class="text-xl">←</span> Return to Protocols
+        </button>
+        <div id="tool-content" class="w-full">
+            <!-- Tool rendered here -->
+        </div>
+    </main>
+
     <main id="setup-step"
-        class="relative z-10 w-full max-w-md p-8 bg-black backdrop-blur-xl border border-white/10 rounded-none shadow-2xl transition-all duration-700">
+        class="relative z-10 hidden w-full max-w-md p-8 bg-black backdrop-blur-xl border border-white/10 rounded-none shadow-2xl transition-all duration-700">
         <h1 class="text-4xl font-bold text-center mb-2 tracking-[0.2em] text-white uppercase font-['Cinzel']">Setup
             Reality</h1>
         <p class="text-center text-stone-500 text-sm mb-8 font-light italic">"Waste no more time arguing what a good man

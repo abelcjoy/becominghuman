@@ -87,6 +87,7 @@ import { TapticEngine } from './taptic.js';
 // Biometric Security & Features
 import { LifeEngine } from './engine.js';
 import { IronVault } from './vault.js';
+import { OmniProtocol } from './omni.js';
 
 class LifeCountdown {
     constructor() {
@@ -154,6 +155,7 @@ class LifeCountdown {
         this.vault = new IronVault();
         this.entropyLens = new EntropyLens();
         this.mortalStrand = new MortalStrand(this);
+        this.omni = new OmniProtocol(this);
 
         this.isGhostMode = false;
         this.realTargetDate = null;
@@ -171,6 +173,34 @@ class LifeCountdown {
 
     init() {
         this.populateCountries();
+        this.omni.renderGrid();
+
+        // --- Omni Navigation Logic ---
+        const navExistence = document.getElementById('nav-existence');
+        const navOmni = document.getElementById('nav-omni');
+        const existenceView = document.getElementById('setup-step');
+        const omniView = document.getElementById('omni-grid-view');
+
+        const switchView = (mode) => {
+            if (mode === 'omni') {
+                existenceView.classList.add('hidden');
+                omniView.classList.remove('hidden');
+                navOmni.className = "text-[11px] uppercase tracking-[0.4em] text-white border-b border-white pb-1";
+                navExistence.className = "text-[10px] uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors";
+                this.omni.closeTool(); // Reset tool view if open
+            } else {
+                existenceView.classList.remove('hidden');
+                omniView.classList.add('hidden');
+                navExistence.className = "text-[11px] uppercase tracking-[0.4em] text-white border-b border-white pb-1";
+                navOmni.className = "text-[10px] uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors";
+            }
+            if (this.soundManager) this.soundManager.play('click');
+        };
+
+        navExistence?.addEventListener('click', () => switchView('existence'));
+        navOmni?.addEventListener('click', () => switchView('omni'));
+
+        document.getElementById('close-tool')?.addEventListener('click', () => this.omni.closeTool());
 
         // --- Core Event Listeners ---
         if (this.elements.startButton) {
