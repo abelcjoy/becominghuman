@@ -1,27 +1,10 @@
 /**
- * 💎 Omni Tools - 470 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 500 ELITE TOOLS! 💎
  * 
- * BATCH 1-22: 270 tools across all categories
- * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
- * BATCH 24: BoxShadow + TextShadow + BorderRadius + CssCursor + CssTransform + FlexDemo + GridDemo + FontPair + ColorBlind + ImgFilter
- * BATCH 25: Stopwatch + Countdown + MorseAudio + Metronome + ScreenRuler + AspectRatio + PPI + GoldenRatio + LeapYear + DayOfWeek
- * BATCH 26: JWTDecoder + Rot13 + Caesar + Vigenere + Atbash + Bacon + RailFence + Columnar + Playfair + A1Z26 Cipher
- * BATCH 27: DnaRna + RevComp + AminoAcid + MolMass + PhCalc + Molarity + HalfLife + BoylesLaw + CharlesLaw + AvogadroLaw
- * BATCH 28: TextEmoji + EmojiText + Zalgo + UpsideDown + Bubble + Square + Mirror + Glitch + Vaporwave + LeetSpeak
- * BATCH 29: CircleCalc + SphereCalc + CylinderCalc + ConeCalc + Pythagoras + PrimeVisual + Fibonacci + Pascal + ArithProg + GeoProg
- * BATCH 30: JsonMinify + JsonValidate + CssPretty + HtmlPretty + SqlFormat + JwtGen + KeyCode + BrowserInfo + MimeLookup + GitCheat
- * BATCH 31: BpmTapper + NoteFreq + ToneGen + ScaleView + IntervalTrain + ChordBuild + DelayCalc + AudioDur + SemiTrans + HzToNote
- * BATCH 32: CoulombsLaw + SnellsLaw + CritAngle + WaveVel + Doppler + MagForce + Pendulum + EscapeVel + GravForce + PhotonEnergy
- * BATCH 33: CAGR + RuleOf72 + NetWorth + DTI + Markup + SimpleInterest + Commission + Margin + RentalYield + CashFlow
- * BATCH 34: RPS + Magic8 + Trivia + Jokes + Quotes + Compliments + Decision + Teams + CoinFlip + Usernames
- * BATCH 35: SpeedConv + FreqConv + DataStoreConv + AngleConv + PowerConv + PressureConv + TorqueConv + DensityConv + FlowRateConv + FuelConsConv
- * BATCH 36: PunnettSquare + BmiCalc + BmrCalc + TdeeCalc + BodyFatNavy + IdealWeight + WaterIntake + BacCalc + MacroCalc + PregDueDate
- * BATCH 37: WorldClock + FlightTime + CoordDist + TzDiff + PackingList + TravelBudget + DialCodes + CurrencyRef + TempGuide + LanguageRef
- * BATCH 38: CarbonTrack + WaterFootprint + EnergyBulb + RecycleHelper + PlasticWaste + TreeOffset + EarthDay + CompostGuide + SolarSaving + ConservationRef
- * BATCH 39: UnitConvFood + OvenTemp + ServingsScale + PastaTimer + SteakGuide + EggGuide + RoastTime + CaffeineTrack + PantryCheck + SpaghettiMeasure
- * BATCH 40: MoodTracker + GratitudeLog + Pomodoro + BreatheGuide + HabitCheck + SleepCycles + WaterLog + QuietTimer + ScreenTimeLog + GoalSetter
- * BATCH 41: GpaCalc + LetterGrad + StudySessions + Flashcards + LatinRoots + WorldCapitals + ElementLookup + MathQuiz + PuncStripper + WordFreq
- * BATCH 42: NeedleConv + CrochetConv + GlueGuide + YarnWeight + ModelScale + CrossStitch + RingSize + DrillBit + ScrewRef + PaperSizes
+ * BATCH 1-42: 470 tools across all categories
+ * BATCH 43: ScrabbleScore + DiceRoll + TruthTable + LogicGates + ChessNotation + CardShuffler + HangmanHint + TowerSteps + Riddles + TicTacToe
+ * BATCH 44: MoonPhase + SunTimes + WindChill + HeatIndex + BeaufortScale + CloudGuide + StarChart + PlantWaterer + HikingPace + SurvivalCheck
+ * BATCH 45: NATOPhonetic + BrailleRef + ASLAlphabet + SolarDist + PetAge + LifeChapters + DecisionMatrix + BubbleWrap + Milestone500 + RandomActivity
  */
 
 class OmniTools {
@@ -3858,6 +3841,249 @@ class OmniTools {
                 icon: "📄",
                 category: "Hobbies",
                 render: () => this.renderPaperSizes()
+            },
+            // === BATCH 43 - 480 TOOLS (GAMES & LOGIC) ===
+            scrabbleScore: {
+                name: "Scrabble Score",
+                searchTerms: "scrabble word score points letters practice",
+                description: "Calc word points",
+                icon: "🔠",
+                category: "Games",
+                render: () => this.renderScrabbleScore()
+            },
+            diceRoll: {
+                name: "Dice Roller",
+                searchTerms: "dice roll multi roller d6 d20 random",
+                description: "Roll multi-sided dice",
+                icon: "🎲",
+                category: "Games",
+                render: () => this.renderDiceRoll()
+            },
+            truthTable: {
+                name: "Truth Table",
+                searchTerms: "truth table logic boolean basic generator",
+                description: "Basic p/q truth table",
+                icon: "🔳",
+                category: "Games",
+                render: () => this.renderTruthTable()
+            },
+            logicGatesRef: {
+                name: "Logic Gates",
+                searchTerms: "logic gates and or not nand nor symbol reference",
+                description: "Basic gate reference",
+                icon: "🔌",
+                category: "Games",
+                render: () => this.renderLogicGatesRef()
+            },
+            chessNotation: {
+                name: "Chess Notation",
+                searchTerms: "chess notation reference algebraic coordinate",
+                description: "Algebraic notation guide",
+                icon: "♟️",
+                category: "Games",
+                render: () => this.renderChessNotation()
+            },
+            cardDeck: {
+                name: "Card Shuffler",
+                searchTerms: "card deck shuffler random pick deal",
+                description: "Shuffle a 52-card deck",
+                icon: "🃏",
+                category: "Games",
+                render: () => this.renderCardDeck()
+            },
+            hangmanLe: {
+                name: "Hangman Hint",
+                searchTerms: "hangman letter suggester hint strategy",
+                description: "Letter frequency hints",
+                icon: "🪢",
+                category: "Games",
+                render: () => this.renderHangmanLe()
+            },
+            towerSteps: {
+                name: "Tower of Hanoi",
+                searchTerms: "tower of hanoi puzzle steps moves solver",
+                description: "Min moves calculator",
+                icon: "🗼",
+                category: "Games",
+                render: () => this.renderTowerSteps()
+            },
+            riddlesBasic: {
+                name: "Daily Riddles",
+                searchTerms: "random riddles fun practice brain teasers",
+                description: "Get a random riddle",
+                icon: "❓",
+                category: "Games",
+                render: () => this.renderRiddles()
+            },
+            ticTacToeStrat: {
+                name: "TicTacToe Strat",
+                searchTerms: "tic tac toe strategy wins draws perfection",
+                description: "Optimal move guide",
+                icon: "❌",
+                category: "Games",
+                render: () => this.renderTicTacToeStrat()
+            },
+            // === BATCH 44 - 490 TOOLS (NATURE) ===
+            moonPhase: {
+                name: "Moon Phase",
+                searchTerms: "moon phase current date appearance lunar",
+                description: "Current moon phase est.",
+                icon: "🌑",
+                category: "Nature",
+                render: () => this.renderMoonPhase()
+            },
+            sunTimes: {
+                name: "Sun Times",
+                searchTerms: "sunrise sunset calculator logic theory",
+                description: "Basic day length calc",
+                icon: "🌅",
+                category: "Nature",
+                render: () => this.renderSunTimes()
+            },
+            windChill: {
+                name: "Wind Chill",
+                searchTerms: "wind chill calculator feel like temperature",
+                description: "Calc perceived cold",
+                icon: "🌬️",
+                category: "Nature",
+                render: () => this.renderWindChill()
+            },
+            heatIndex: {
+                name: "Heat Index",
+                searchTerms: "heat index calculator humidity temperature feel",
+                description: "Calc perceived heat",
+                icon: "🔥",
+                category: "Nature",
+                render: () => this.renderHeatIndex()
+            },
+            beaufortScale: {
+                name: "Beaufort Scale",
+                searchTerms: "beaufort scale wind speed sea state",
+                description: "Wind intensity guide",
+                icon: "🚩",
+                category: "Nature",
+                render: () => this.renderBeaufortScale()
+            },
+            cloudGuide: {
+                name: "Cloud Guide",
+                searchTerms: "cloud types cumulus stratus cirrus guide",
+                description: "Common cloud identification",
+                icon: "☁️",
+                category: "Nature",
+                render: () => this.renderCloudGuide()
+            },
+            starTextChart: {
+                name: "Star Chart",
+                searchTerms: "star chart constellations text basic map",
+                description: "Basic seasonal constellations",
+                icon: "✨",
+                category: "Nature",
+                render: () => this.renderStarTextChart()
+            },
+            plantWaterLog: {
+                name: "Plant Waterer",
+                searchTerms: "plant watering log tracker reminder",
+                description: "Last watered tracker",
+                icon: "🪴",
+                category: "Nature",
+                render: () => this.renderPlantWaterLog()
+            },
+            hikingPace: {
+                name: "Hiking Pace",
+                searchTerms: "hiking pace estimator naismith rule time distance",
+                description: "Naismith's Rule calc",
+                icon: "🥾",
+                category: "Nature",
+                render: () => this.renderHikingPace()
+            },
+            survivalCheck: {
+                name: "Survival Kit",
+                searchTerms: "survival kit checklist emergency prep items",
+                description: "Basic 72h kit list",
+                icon: "⛺",
+                category: "Nature",
+                render: () => this.renderSurvivalCheck()
+            },
+            // === BATCH 45 - 500 TOOLS (THE FINAL MILESTONE) ===
+            phoneticAlpha: {
+                name: "NATO Phonetic",
+                searchTerms: "nato phonetic alphabet alpha bravo codes",
+                description: "Alpha Bravo Charlie...",
+                icon: "📻",
+                category: "Utility",
+                render: () => this.renderPhoneticAlpha()
+            },
+            brailleAlpha: {
+                name: "Braille Ref",
+                searchTerms: "braille alphabet dots reference reading",
+                description: "Braille letter patterns",
+                icon: "⠃",
+                category: "Utility",
+                render: () => this.renderBrailleAlpha()
+            },
+            aslAlpha: {
+                name: "ASL Alphabet",
+                searchTerms: "asl sign language alphabet hand signs",
+                description: "Sign language letters",
+                icon: "🤟",
+                category: "Utility",
+                render: () => this.renderAslAlpha()
+            },
+            solarDistance: {
+                name: "Solar Distances",
+                searchTerms: "solar system distances planets sun km au",
+                description: "Planet distance data",
+                icon: "🪐",
+                category: "Science",
+                render: () => this.renderSolarDistance()
+            },
+            petAgeCalc: {
+                name: "Pet Age Calc",
+                searchTerms: "pet age dog cat human years conversion",
+                description: "Animal to human years",
+                icon: "🐾",
+                category: "Utility",
+                render: () => this.renderPetAgeCalc()
+            },
+            lifeChapters: {
+                name: "Life Chapters",
+                searchTerms: "life chapters estimator age stages growth",
+                description: "Stages of life (est.)",
+                icon: "🌱",
+                category: "Self-Improvement",
+                render: () => this.renderLifeChapters()
+            },
+            decisionMatrix: {
+                name: "Decision Matrix",
+                searchTerms: "decision matrix weighted choice selection grid",
+                description: "Weighted factor analyst",
+                icon: "📊",
+                category: "Productivity",
+                render: () => this.renderDecisionMatrix()
+            },
+            bubbleWrap: {
+                name: "Bubble Wrap",
+                searchTerms: "bubble wrap pop fun stress relief game",
+                description: "Virtual popping fun",
+                icon: "🫧",
+                category: "Fun",
+                render: () => this.renderBubbleWrap()
+            },
+            milestone500: {
+                name: "500 Tool Badge",
+                searchTerms: "500 tools milestone celebration badge achievement",
+                description: "A historic milestone!",
+                icon: "🏆",
+                category: "Fun",
+                render: () => this.renderMilestone500()
+            },
+            randomActivity: {
+                name: "Random Activity",
+                searchTerms: "random activity boredom buster generator fun things",
+                description: "Stop being bored!",
+                icon: "✨",
+                category: "Fun",
+                render: () => this.renderRandomActivity()
             }
         };
     }
@@ -16468,6 +16694,486 @@ Online: ${n.onLine}
             </select>
             <div id="ps-res" class="result">Dimensions in mm</div>
         `;
+    }
+    renderScrabbleScore() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scrabble Score</h2>
+            <input type="text" id="ss-in" placeholder="Enter word..." style="text-transform:uppercase;">
+            <div id="ss-res" class="result">Score: 0</div>
+            <p style="font-size:0.7em;">Standard rules. No bonuses.</p>
+        `;
+        const val = { A: 1, E: 1, I: 1, O: 1, U: 1, L: 1, N: 1, R: 1, S: 1, T: 1, D: 2, G: 2, B: 3, C: 3, M: 3, P: 3, F: 4, H: 4, V: 4, W: 4, Y: 4, K: 5, J: 8, X: 8, Q: 10, Z: 10 };
+        document.getElementById('ss-in').oninput = (e) => {
+            const w = e.target.value.toUpperCase();
+            let s = 0;
+            for (let char of w) s += val[char] || 0;
+            document.getElementById('ss-res').textContent = `Score: ${s}`;
+        };
+    }
+
+    renderDiceRoll() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dice Roller</h2>
+            Sides: <select id="dr-s"><option value="6">D6</option><option value="20">D20</option><option value="12">D12</option><option value="100">D100</option></select>
+            Count: <input type="number" id="dr-c" value="1" style="width:40px">
+            <button id="dr-btn">Roll</button>
+            <div id="dr-res" class="result"></div>
+        `;
+        document.getElementById('dr-btn').onclick = () => {
+            const s = parseInt(document.getElementById('dr-s').value);
+            const c = parseInt(document.getElementById('dr-c').value) || 1;
+            let res = [];
+            for (let i = 0; i < c; i++) res.push(Math.floor(Math.random() * s) + 1);
+            document.getElementById('dr-res').textContent = res.join(', ') + (c > 1 ? ` (Sum: ${res.reduce((a, b) => a + b)})` : "");
+        };
+    }
+
+    renderTruthTable() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Truth Table (p, q)</h2>
+            <select id="tt-op"><option value="AND">AND (&)</option><option value="OR">OR (|)</option><option value="XOR">XOR (^)</option></select>
+            <div id="tt-res" class="result" style="font-family:monospace; font-size:0.9em; text-align:left; display:inline-block;"></div>
+        `;
+        const draw = () => {
+            const op = document.getElementById('tt-op').value;
+            let h = "P | Q | Res<br>----------<br>";
+            [true, false].forEach(p => {
+                [true, false].forEach(q => {
+                    let r = op === "AND" ? p && q : op === "OR" ? p || q : p ^ q;
+                    h += `${p ? 1 : 0} | ${q ? 1 : 0} | ${r ? 1 : 0}<br>`;
+                });
+            });
+            document.getElementById('tt-res').innerHTML = h;
+        };
+        document.getElementById('tt-op').onchange = draw;
+        draw();
+    }
+
+    renderLogicGatesRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Logic Gates</h2>
+            <div style="text-align:left; font-size:0.8em; margin:10px;">
+                <b>AND</b>: 1 if both inputs are 1<br>
+                <b>OR</b>: 1 if either input is 1<br>
+                <b>NOT</b>: Inverts input (0->1, 1->0)<br>
+                <b>NAND</b>: 0 only if both inputs are 1<br>
+                <b>NOR</b>: 1 only if both inputs are 0<br>
+                <b>XOR</b>: 1 if inputs are different
+            </div>
+        `;
+    }
+
+    renderChessNotation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Chess Notation</h2>
+            <div style="text-align:left; font-size:0.8em;">
+                <b>K</b>: King | <b>Q</b>: Queen | <b>R</b>: Rook<br>
+                <b>B</b>: Bishop | <b>N</b>: Knight<br>
+                <b>x</b>: Capture | <b>+</b>: Check | <b>#</b>: Mate<br>
+                <b>0-0</b>: Kingside | <b>0-0-0</b>: Queenside<br>
+                <b>!</b>: Strong | <b>?</b>: Mistake
+            </div>
+        `;
+    }
+
+    renderCardDeck() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Card Shuffler</h2>
+            <button id="cd-btn">Shuffle & Pick 5</button>
+            <div id="cd-res" class="result" style="font-size:1.5em;"></div>
+        `;
+        const suits = ["♠", "♥", "♦", "♣"];
+        const ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+        document.getElementById('cd-btn').onclick = () => {
+            let deck = [];
+            suits.forEach(s => ranks.forEach(r => deck.push(r + s)));
+            for (let i = deck.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [deck[i], deck[j]] = [deck[j], deck[i]];
+            }
+            document.getElementById('cd-res').textContent = deck.slice(0, 5).join(' ');
+        };
+    }
+
+    renderHangmanLe() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hangman Hints</h2>
+            <p>Recommended letters in order of frequency:</p>
+            <div id="hl-res" class="result">ETAOIN SHRDLU</div>
+            <small>Vowels first, then common consonants.</small>
+        `;
+    }
+
+    renderTowerSteps() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tower of Hanoi</h2>
+            Disks: <input type="number" id="th-v" value="3" min="1" max="10">
+            <button id="th-btn">Calc Moves</button>
+            <div id="th-res" class="result"></div>
+        `;
+        document.getElementById('th-btn').onclick = () => {
+            const v = parseInt(document.getElementById('th-v').value);
+            document.getElementById('th-res').textContent = `Minimum moves: ${Math.pow(2, v) - 1}`;
+        };
+    }
+
+    renderRiddles() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Daily Riddle</h2>
+            <div id="rd-q" style="font-weight:bold; margin-bottom:10px;">Click for riddle!</div>
+            <button id="rd-ans-btn" style="display:none;">Show Answer</button>
+            <div id="rd-a" class="result" style="display:none; color:green;"></div>
+            <button id="rd-next">New Riddle</button>
+        `;
+        const rs = [
+            { q: "What has keys but no locks?", a: "A piano" },
+            { q: "What has to be broken before you can use it?", a: "An egg" },
+            { q: "I’m tall when I’m young, and I’m short when I’m old. What am I?", a: "A candle" },
+            { q: "What month of the year has 28 days?", a: "All of them" },
+            { q: "What is full of holes but still holds water?", a: "A sponge" }
+        ];
+        document.getElementById('rd-next').onclick = () => {
+            const r = rs[Math.floor(Math.random() * rs.length)];
+            document.getElementById('rd-q').textContent = r.q;
+            document.getElementById('rd-a').textContent = r.a;
+            document.getElementById('rd-a').style.display = 'none';
+            document.getElementById('rd-ans-btn').style.display = 'inline-block';
+        };
+        document.getElementById('rd-ans-btn').onclick = () => {
+            document.getElementById('rd-a').style.display = 'block';
+            document.getElementById('rd-ans-btn').style.display = 'none';
+        };
+    }
+
+    renderTicTacToeStrat() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TicTacToe Tips</h2>
+            <div style="text-align:left; font-size:0.8em;">
+                1. <b>Corners First</b>: Start in a corner.<br>
+                2. <b>Block</b>: If opponent has 2 in a row, block.<br>
+                3. <b>Fork</b>: Create 2 ways to win.<br>
+                4. <b>Center</b>: If you can't get a corner, get the center.<br>
+                5. <b>Perfect Game</b>: If both play perfectly, it's a draw.
+            </div>
+        `;
+    }
+
+    renderMoonPhase() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Moon Phase</h2>
+            <div style="font-size:3em; margin:10px;" id="mp-icon">🌑</div>
+            <div id="mp-res" class="result">New Moon (Est.)</div>
+            <small>Approximation based on date.</small>
+        `;
+        const phases = ["🌑 New", "🌒 Waxing Crescent", "🌓 First Quarter", "🌔 Waxing Gibbous", "🌕 Full", "🌖 Waning Gibbous", "🌗 Last Quarter", "🌘 Waning Crescent"];
+        const d = new Date().getTime() / 86400000;
+        const phase = Math.floor((d - 0.2) % 29.53 / (29.53 / 8));
+        document.getElementById('mp-res').textContent = phases[phase] || phases[0];
+    }
+
+    renderSunTimes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Day Length</h2>
+            Latitude (approx): <input type="number" id="st-lat" value="40" style="width:50px">
+            <button id="st-btn">Estimate</button>
+            <div id="st-res" class="result"></div>
+        `;
+        document.getElementById('st-btn').onclick = () => {
+            const lat = parseFloat(document.getElementById('st-lat').value);
+            const h = 12 + 4 * Math.sin(lat * Math.PI / 180); // ultra-simple approx
+            document.getElementById('st-res').textContent = `Est. Day Length: ${h.toFixed(1)} hours`;
+        };
+    }
+
+    renderWindChill() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wind Chill</h2>
+            Temp (°C): <input type="number" id="wc-t" value="0" style="width:50px"><br>
+            Wind (km/h): <input type="number" id="wc-w" value="15" style="width:50px">
+            <button id="wc-btn">Calc</button>
+            <div id="wc-res" class="result"></div>
+        `;
+        document.getElementById('wc-btn').onclick = () => {
+            const t = parseFloat(document.getElementById('wc-t').value);
+            const w = parseFloat(document.getElementById('wc-w').value);
+            if (t > 10 || w < 4.8) {
+                document.getElementById('wc-res').textContent = "Wind chill not valid above 10°C";
+                return;
+            }
+            const res = 13.12 + 0.6215 * t - 11.37 * Math.pow(w, 0.16) + 0.3965 * t * Math.pow(w, 0.16);
+            document.getElementById('wc-res').textContent = `Feels like: ${res.toFixed(1)}°C`;
+        };
+    }
+
+    renderHeatIndex() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Heat Index</h2>
+            Temp (°C): <input type="number" id="hi-t" value="30" style="width:50px"><br>
+            Humidity (%): <input type="number" id="hi-h" value="70" style="width:50px">
+            <button id="hi-btn">Calc</button>
+            <div id="hi-res" class="result"></div>
+        `;
+        document.getElementById('hi-btn').onclick = () => {
+            const t = parseFloat(document.getElementById('hi-t').value);
+            const h = parseFloat(document.getElementById('hi-h').value);
+            const res = t + 0.5555 * (6.11 * Math.exp(5417.753 * (1 / 273.16 - 1 / (273.15 + t))) * (h / 100) - 10);
+            document.getElementById('hi-res').textContent = `Feels like: ${res.toFixed(1)}°C`;
+        };
+    }
+
+    renderBeaufortScale() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Beaufort Scale</h2>
+            <select id="bs-v">
+                <option value="0">0: Calm</option>
+                <option value="1">1: Light Air</option>
+                <option value="5">5: Fresh Breeze</option>
+                <option value="10">10: Storm</option>
+                <option value="12">12: Hurricane</option>
+            </select>
+            <div id="bs-res" class="result">Sea: Mirror-like</div>
+        `;
+        const db = { 0: "Mirror-like", 1: "Ripples", 5: "Moderate waves", 10: "High waves, white", 12: "Air filled with foam" };
+        document.getElementById('bs-v').onchange = (e) => {
+            document.getElementById('bs-res').textContent = `Sea state: ${db[e.target.value]}`;
+        };
+    }
+
+    renderCloudGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cloud Guide</h2>
+            <select id="cg-v">
+                <option>Cirrus (High, wispy)</option>
+                <option>Cumulus (Fluffy, white)</option>
+                <option>Stratus (Flat, gray)</option>
+                <option>Cumulonimbus (Giant, storm)</option>
+            </select>
+            <div id="cg-res" class="result">Usually fair weather</div>
+        `;
+    }
+
+    renderStarTextChart() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Seasonal Stars</h2>
+            <select id="sc-v">
+                <option>Spring: Leo, Virgo</option>
+                <option>Summer: Lyra, Cygnus</option>
+                <option>Autumn: Pegasus, Cassiopeia</option>
+                <option>Winter: Orion, Taurus</option>
+            </select>
+            <div id="sc-res" class="result">Look for Orion's Belt</div>
+        `;
+    }
+
+    renderPlantWaterLog() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Plant Waterer</h2>
+            <div id="pw-list"></div>
+            <button id="pw-add">+ Water Today</button>
+            <p style="font-size:0.7em;">Basic list of recent waters.</p>
+        `;
+        const draw = () => {
+            const dates = JSON.parse(localStorage.getItem('plant_waters') || "[]");
+            document.getElementById('pw-list').innerHTML = dates.slice(0, 3).map(d => `<div>${new Date(d).toLocaleDateString()}</div>`).join('') || "No logs";
+        };
+        document.getElementById('pw-add').onclick = () => {
+            const dates = JSON.parse(localStorage.getItem('plant_waters') || "[]");
+            dates.unshift(Date.now());
+            localStorage.setItem('plant_waters', JSON.stringify(dates));
+            draw();
+        };
+        draw();
+    }
+
+    renderHikingPace() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hiking Pace</h2>
+            Distance (km): <input type="number" id="hp-d" value="5" style="width:50px"><br>
+            Ascent (m): <input type="number" id="hp-a" value="200" style="width:50px">
+            <button id="hp-btn">Calc Time</button>
+            <div id="hp-res" class="result"></div>
+        `;
+        document.getElementById('hp-btn').onclick = () => {
+            const d = parseFloat(document.getElementById('hp-d').value);
+            const a = parseFloat(document.getElementById('hp-a').value);
+            const time = (d / 5) * 60 + (a / 600) * 60; // Naismith (5km/h + 1h per 600m)
+            document.getElementById('hp-res').textContent = `Estimated: ${time.toFixed(0)} mins`;
+        };
+    }
+
+    renderPhoneticAlpha() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">NATO Phonetic</h2>
+            <input type="text" id="pa-in" placeholder="Type a letter..." maxlength="1">
+            <div id="pa-res" class="result">A = ALPHA</div>
+        `;
+        const map = { A: "Alpha", B: "Bravo", C: "Charlie", D: "Delta", E: "Echo", F: "Foxtrot", G: "Golf", H: "Hotel", I: "India", J: "Juliett", K: "Kilo", L: "Lima", M: "Mike", N: "November", O: "Oscar", P: "Papa", Q: "Quebec", R: "Romeo", S: "Sierra", T: "Tango", U: "Uniform", V: "Victor", W: "Whiskey", X: "X-ray", Y: "Yankee", Z: "Zulu" };
+        document.getElementById('pa-in').oninput = (e) => {
+            const v = e.target.value.toUpperCase();
+            document.getElementById('pa-res').textContent = v ? `${v} = ${map[v] || "?"}` : "Type a letter...";
+        };
+    }
+
+    renderBrailleAlpha() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Braille Ref</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                A: ⠁ | B: ⠃ | C: ⠉ | D: ⠙<br>
+                E: ⠑ | F: ⠋ | G: ⠛ | H: ⠓<br>
+                I: ⠊ | J: ⠚ | K: ⠅ | L: ⠇<br>
+                M: ⠍ | N: ⠝ | O: ⠕ | P: ⠏
+            </div>
+        `;
+    }
+
+    renderAslAlpha() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ASL Alphabet</h2>
+            <div style="font-size:0.7em;">Sign language uses hand shapes for A-Z.</div>
+            <div id="asl-res" style="font-size:2em; margin:10px;">🤟 [ASL]</div>
+            <small>Visual learning recommended!</small>
+        `;
+    }
+
+    renderSolarDistance() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Solar Distances</h2>
+            <select id="sd-v">
+                <option value="57.9">Mercury (57.9m km)</option>
+                <option value="108.2">Venus (108.2m km)</option>
+                <option value="149.6">Earth (149.6m km)</option>
+                <option value="227.9">Mars (227.9m km)</option>
+                <option value="778.6">Jupiter (778.6m km)</option>
+            </select>
+            <div id="sd-res" class="result">Earth is 1 AU</div>
+        `;
+        document.getElementById('sd-v').onchange = (e) => {
+            const v = parseFloat(e.target.value);
+            document.getElementById('sd-res').textContent = `${(v / 149.6).toFixed(2)} AU from Sun`;
+        };
+    }
+
+    renderPetAgeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pet Age Calc</h2>
+            Type: <select id="pa-t"><option value="7">Dog</option><option value="6">Cat</option></select>
+            Age: <input type="number" id="pa-v" value="1" style="width:40px">
+            <button id="pa-btn">To Human Years</button>
+            <div id="pa-res" class="result"></div>
+        `;
+        document.getElementById('pa-btn').onclick = () => {
+            const t = parseInt(document.getElementById('pa-t').value);
+            const v = parseInt(document.getElementById('pa-v').value);
+            document.getElementById('pa-res').textContent = `Human Age: approx ${v * t} years`;
+        };
+    }
+
+    renderLifeChapters() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Life Chapters</h2>
+            Age: <input type="number" id="lc-v" value="25" style="width:50px">
+            <div id="lc-res" class="result">Early Adulthood</div>
+        `;
+        const get = (a) => a < 13 ? "Childhood" : a < 20 ? "Adolescence" : a < 40 ? "Early Adulthood" : a < 60 ? "Middle Adulthood" : "Late Adulthood";
+        document.getElementById('lc-v').oninput = (e) => {
+            document.getElementById('lc-res').textContent = get(parseInt(e.target.value));
+        };
+    }
+
+    renderDecisionMatrix() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Decision Matrix</h2>
+            Option: <input type="text" id="dm-o" value="Buy Laptop">
+            Importance (1-10): <input type="number" id="dm-i" value="8" style="width:40px">
+            Score (1-10): <input type="number" id="dm-s" value="7" style="width:40px">
+            <button id="dm-btn">Rate</button>
+            <div id="dm-res" class="result"></div>
+        `;
+        document.getElementById('dm-btn').onclick = () => {
+            const i = parseInt(document.getElementById('dm-i').value);
+            const s = parseInt(document.getElementById('dm-s').value);
+            document.getElementById('dm-res').textContent = `Score: ${i * s} / 100`;
+        };
+    }
+
+    renderBubbleWrap() {
+        const content = document.getElementById('tool-content');
+        content.classList.add('bubble-wrap-view');
+        content.innerHTML = `
+            <h2 class="tool-title">Bubble Wrap</h2>
+            <div id="bw-grid" style="display:grid; grid-template-columns:repeat(5, 1fr); gap:10px; padding:10px;"></div>
+            <button id="bw-reset">Reset</button>
+        `;
+        const draw = () => {
+            const grid = document.getElementById('bw-grid');
+            grid.innerHTML = '';
+            for (let i = 0; i < 20; i++) {
+                const b = document.createElement('div');
+                b.style.cssText = "width:40px; height:40px; background:#add8e6; border-radius:50%; cursor:pointer; box-shadow:inset -2px -2px 5px rgba(0,0,0,0.2);";
+                b.onclick = () => {
+                    b.style.background = "#ddd";
+                    b.style.boxShadow = "none";
+                    b.onclick = null;
+                };
+                grid.appendChild(b);
+            }
+        };
+        document.getElementById('bw-reset').onclick = draw;
+        draw();
+    }
+
+    renderMilestone500() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">500 TOOLS!</h2>
+            <div style="font-size:4em; margin:20px;">🏆</div>
+            <p>Congratulations! We have reached a historic milestone of <b>500 functional tools</b> in a single suite.</p>
+            <div style="font-family:serif; font-style:italic; margin-top:10px;">"Complexity is handled, simplicity is delivered."</div>
+        `;
+    }
+
+    renderRandomActivity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random Activity</h2>
+            <div id="ra-res" class="result" style="font-weight:bold;">Click to be inspired!</div>
+            <button id="ra-btn">Surprise Me</button>
+        `;
+        const acts = [
+            "Write a poem in 5 minutes", "Go for a walk without a phone",
+            "Learn to count to 10 in a new language", "Sketch the view from your window",
+            "Drink a glass of water, slowly", "Clean one drawer perfectly",
+            "Call an old friend", "Meditate for 2 minutes"
+        ];
+        document.getElementById('ra-btn').onclick = () => {
+            document.getElementById('ra-res').textContent = acts[Math.floor(Math.random() * acts.length)];
+        };
     }
 }
 
