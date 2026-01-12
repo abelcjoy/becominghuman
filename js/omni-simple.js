@@ -1,8 +1,8 @@
 /**
- * 💎 Omni Tools - 120 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 130 ELITE TOOLS! 💎
  * 
- * BATCH 1-6: 110 tools across all categories
- * BATCH 7 (10 tools): Base64 + URL + JWT + Color Blindness + TTS + Invoice + Age + Hash + Typing + Gradient
+ * BATCH 1-7: 120 tools across all categories
+ * BATCH 8: Aspect Ratio + Pixels/REM + Chmod + CSV/Markdown + URL + GCD/LCM + Prime + Vigenère + ROT13 + Palindrome
  */
 
 class OmniTools {
@@ -1003,6 +1003,87 @@ class OmniTools {
                 icon: "🌈",
                 category: "Design",
                 render: () => this.renderGradientText()
+            },
+            // === BATCH 8 - 130 TOOLS ===
+            aspectRatio: {
+                name: "Aspect Ratio Calculator",
+                searchTerms: "aspect ratio screen dimensions calculator",
+                description: "Calculate aspect ratios",
+                icon: "🖥️",
+                category: "Design",
+                render: () => this.renderAspectRatio()
+            },
+            pixelRem: {
+                name: "Pixels ↔ REM Converter",
+                searchTerms: "pixels rem converter css units web",
+                description: "Convert px to rem and vice versa",
+                icon: "📏",
+                category: "Developer",
+                render: () => this.renderPixelRem()
+            },
+            chmod: {
+                name: "Chmod Generator",
+                searchTerms: "chmod permissions unix linux calculator",
+                description: "Linux file permissions generator",
+                icon: "🐧",
+                category: "Developer",
+                render: () => this.renderChmod()
+            },
+            csvMarkdown: {
+                name: "CSV to Markdown",
+                searchTerms: "csv markdown table converter",
+                description: "Convert CSV to Markdown table",
+                icon: "📋",
+                category: "Developer",
+                render: () => this.renderCsvMarkdown()
+            },
+            urlParser: {
+                name: "URL Parser",
+                searchTerms: "url parser query params hostname",
+                description: "Parse URL components",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderUrlParser()
+            },
+            gcdLcm: {
+                name: "GCD & LCM Calculator",
+                searchTerms: "gcd lcm math common divisor multiple",
+                description: "Calculate GCD and LCM",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderGcdLcm()
+            },
+            primeFactors: {
+                name: "Prime Factorization",
+                searchTerms: "prime factors math factorization number",
+                description: "Find prime factors of a number",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderPrimeFactors()
+            },
+            vigenere: {
+                name: "Vigenère Cipher",
+                searchTerms: "vigenere cipher encrypt decrypt secret",
+                description: "Vigenère Polyalphabetic Cipher",
+                icon: "🔐",
+                category: "Security",
+                render: () => this.renderVigenere()
+            },
+            rot13: {
+                name: "ROT13 Cipher",
+                searchTerms: "rot13 cipher secret text encrypt",
+                description: "Simple ROT13 substitution",
+                icon: "🔄",
+                category: "Text",
+                render: () => this.renderRot13()
+            },
+            palindrome: {
+                name: "Palindrome Checker",
+                searchTerms: "palindrome check text reverse word",
+                description: "Check if text is palindrome",
+                icon: "🔁",
+                category: "Text",
+                render: () => this.renderPalindrome()
             }
         };
     }
@@ -6213,6 +6294,293 @@ background-clip: text;`;
         document.getElementById('grad-text-color1').addEventListener('input', update);
         document.getElementById('grad-text-color2').addEventListener('input', update);
         update();
+    }
+
+    renderAspectRatio() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Aspect Ratio Calculator</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <label>Width</label>
+                    <input type="number" id="ar-w" placeholder="1920">
+                </div>
+                <div>
+                    <label>Height</label>
+                    <input type="number" id="ar-h" placeholder="1080">
+                </div>
+            </div>
+            <button id="ar-calc">Calculate Ratio</button>
+            <div class="result" id="ar-result"></div>
+        `;
+        document.getElementById('ar-calc').onclick = () => {
+            const w = parseInt(document.getElementById('ar-w').value);
+            const h = parseInt(document.getElementById('ar-h').value);
+            if (!w || !h) return;
+            const gcd = (a, b) => b ? gcd(b, a % b) : a;
+            const d = gcd(w, h);
+            const ratio = `${w / d}:${h / d}`;
+            document.getElementById('ar-result').innerHTML = `
+                <div style="font-size: 32px; font-weight: bold;">${ratio}</div>
+                <div style="color: #888;">Decimal: ${(w / h).toFixed(2)}</div>
+            `;
+        };
+    }
+
+    renderPixelRem() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pixels ↔ REM Converter</h2>
+            <div style="margin-bottom: 20px;">Base Size: <input type="number" id="base-size" value="16" style="width: 80px; display: inline-block;"> px</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <label>Pixels (px)</label>
+                    <input type="number" id="px-input" placeholder="16">
+                </div>
+                <div>
+                    <label>REM</label>
+                    <input type="number" id="rem-input" placeholder="1">
+                </div>
+            </div>
+        `;
+        const base = document.getElementById('base-size');
+        const px = document.getElementById('px-input');
+        const rem = document.getElementById('rem-input');
+        const update = (source) => {
+            const b = parseFloat(base.value) || 16;
+            if (source === 'px') {
+                rem.value = (parseFloat(px.value) / b).toFixed(4).replace(/\.0+$/, '');
+            } else {
+                px.value = (parseFloat(rem.value) * b).toFixed(0);
+            }
+        };
+        px.addEventListener('input', () => update('px'));
+        rem.addEventListener('input', () => update('rem'));
+        base.addEventListener('input', () => update('px'));
+    }
+
+    renderChmod() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Chmod Generator</h2>
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                <tr>
+                    <th></th>
+                    <th>Read (4)</th>
+                    <th>Write (2)</th>
+                    <th>Execute (1)</th>
+                </tr>
+                ${['Owner', 'Group', 'Public'].map(t => `
+                    <tr>
+                        <td style="padding: 10px;">${t}</td>
+                        <td style="text-align: center;"><input type="checkbox" data-type="${t}" value="4"></td>
+                        <td style="text-align: center;"><input type="checkbox" data-type="${t}" value="2"></td>
+                        <td style="text-align: center;"><input type="checkbox" data-type="${t}" value="1"></td>
+                    </tr>
+                `).join('')}
+            </table>
+            <div class="result" id="chmod-result" style="font-family: monospace; font-size: 32px;">000</div>
+            <div style="text-align: center; color: #888; font-family: monospace;" id="chmod-text">---------</div>
+        `;
+        const update = () => {
+            let code = '';
+            let text = '';
+            ['Owner', 'Group', 'Public'].forEach(t => {
+                let sum = 0;
+                let r = '-', w = '-', x = '-';
+                document.querySelectorAll(`input[data-type="${t}"]:checked`).forEach(chk => {
+                    const v = parseInt(chk.value);
+                    sum += v;
+                    if (v === 4) r = 'r';
+                    if (v === 2) w = 'w';
+                    if (v === 1) x = 'x';
+                });
+                code += sum;
+                text += r + w + x;
+            });
+            document.getElementById('chmod-result').textContent = code;
+            document.getElementById('chmod-text').textContent = text;
+        };
+        document.querySelectorAll('input[type="checkbox"]').forEach(c => c.addEventListener('change', update));
+    }
+
+    renderCsvMarkdown() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSV to Markdown Table</h2>
+            <textarea id="csv-input" rows="6" placeholder="Paste CSV here..."></textarea>
+            <button id="csv-conv">Convert</button>
+            <textarea id="md-output" rows="6" placeholder="Markdown will appear here..." readonly></textarea>
+        `;
+        document.getElementById('csv-conv').onclick = () => {
+            const csv = document.getElementById('csv-input').value.trim();
+            if (!csv) return;
+            const rows = csv.split('\n');
+            if (rows.length === 0) return;
+            const header = rows[0].split(',').map(c => c.trim());
+            let md = '| ' + header.join(' | ') + ' |\n';
+            md += '| ' + header.map(() => '---').join(' | ') + ' |\n';
+            for (let i = 1; i < rows.length; i++) {
+                md += '| ' + rows[i].split(',').map(c => c.trim()).join(' | ') + ' |\n';
+            }
+            document.getElementById('md-output').value = md;
+        };
+    }
+
+    renderUrlParser() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">URL Parser</h2>
+            <input type="text" id="url-input" placeholder="https://example.com/path?query=1">
+            <div class="result" id="url-result" style="text-align: left; display: none;"></div>
+        `;
+        document.getElementById('url-input').addEventListener('input', (e) => {
+            try {
+                const url = new URL(e.target.value);
+                const result = document.getElementById('url-result');
+                result.style.display = 'block';
+                let params = '';
+                url.searchParams.forEach((v, k) => params += `<div><span style="color: #888;">${k}:</span> ${v}</div>`);
+                result.innerHTML = `
+                    <div style="margin-bottom: 5px;"><strong>Protocol:</strong> ${url.protocol}</div>
+                    <div style="margin-bottom: 5px;"><strong>Host:</strong> ${url.hostname}</div>
+                    <div style="margin-bottom: 5px;"><strong>Path:</strong> ${url.pathname}</div>
+                    ${params ? `<div style="margin-top: 10px; border-top: 1px solid #333; paddingTop: 10px;"><strong>Params:</strong>${params}</div>` : ''}
+                `;
+            } catch {
+                document.getElementById('url-result').style.display = 'none';
+            }
+        });
+    }
+
+    renderGcdLcm() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">GCD & LCM Calculator</h2>
+            <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 20px;">
+                <input type="number" id="gcd-a" placeholder="Number A">
+                <input type="number" id="gcd-b" placeholder="Number B">
+            </div>
+            <div class="result">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <div style="font-size: 12px; color: #666;">GCD (Greatest Common Divisor)</div>
+                        <div style="font-size: 24px; font-weight: bold;" id="res-gcd">-</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 12px; color: #666;">LCM (Least Common Multiple)</div>
+                        <div style="font-size: 24px; font-weight: bold;" id="res-lcm">-</div>
+                    </div>
+                </div>
+            </div>
+        `;
+        const calc = () => {
+            const a = parseInt(document.getElementById('gcd-a').value);
+            const b = parseInt(document.getElementById('gcd-b').value);
+            if (!a || !b) return;
+            const gcd = (x, y) => y ? gcd(y, x % y) : x;
+            const g = gcd(a, b);
+            const l = (a * b) / g;
+            document.getElementById('res-gcd').textContent = g;
+            document.getElementById('res-lcm').textContent = l;
+        };
+        document.getElementById('gcd-a').addEventListener('input', calc);
+        document.getElementById('gcd-b').addEventListener('input', calc);
+    }
+
+    renderPrimeFactors() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prime Factorization</h2>
+            <input type="number" id="prime-input" placeholder="Enter a number (e.g., 100)">
+            <div class="result" id="prime-result"></div>
+        `;
+        document.getElementById('prime-input').addEventListener('input', (e) => {
+            const n = parseInt(e.target.value);
+            if (!n || n < 2) {
+                document.getElementById('prime-result').textContent = 'Enter number > 1';
+                return;
+            }
+            let d = 2;
+            let temp = n;
+            const factors = [];
+            while (d * d <= temp) {
+                while (temp % d === 0) {
+                    factors.push(d);
+                    temp /= d;
+                }
+                d++;
+            }
+            if (temp > 1) factors.push(temp);
+            document.getElementById('prime-result').textContent = factors.join(' × ');
+        });
+    }
+
+    renderVigenere() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vigenère Cipher</h2>
+            <textarea id="vig-text" rows="4" placeholder="Message"></textarea>
+            <input type="text" id="vig-key" placeholder="Key (e.g., SECRET)">
+            <div style="margin: 10px 0;">
+                <button id="vig-enc">Encrypt</button>
+                <button id="vig-dec">Decrypt</button>
+            </div>
+            <textarea id="vig-out" rows="4" readonly placeholder="Result"></textarea>
+        `;
+        const crypt = (enc) => {
+            const text = document.getElementById('vig-text').value.toUpperCase().replace(/[^A-Z]/g, '');
+            const key = document.getElementById('vig-key').value.toUpperCase().replace(/[^A-Z]/g, '');
+            if (!text || !key) return;
+            let res = '';
+            for (let i = 0, j = 0; i < text.length; i++) {
+                const c = text.charCodeAt(i);
+                const k = key.charCodeAt(j % key.length);
+                const shift = enc ? (c + k - 130) % 26 : (c - k + 26) % 26;
+                res += String.fromCharCode(shift + 65);
+                j++;
+            }
+            document.getElementById('vig-out').value = res;
+        };
+        document.getElementById('vig-enc').onclick = () => crypt(true);
+        document.getElementById('vig-dec').onclick = () => crypt(false);
+    }
+
+    renderRot13() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ROT13 Cipher</h2>
+            <textarea id="rot-in" rows="5" placeholder="Type text here..."></textarea>
+            <div class="result" id="rot-out" style="text-align: left; white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('rot-in').addEventListener('input', (e) => {
+            document.getElementById('rot-out').textContent = e.target.value.replace(/[a-zA-Z]/g, (c) => {
+                const base = c <= 'Z' ? 65 : 97;
+                return String.fromCharCode(base + (c.charCodeAt(0) - base + 13) % 26);
+            });
+        });
+    }
+
+    renderPalindrome() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Palindrome Checker</h2>
+            <input type="text" id="pal-in" placeholder="racecar">
+            <div class="result" id="pal-res"></div>
+        `;
+        document.getElementById('pal-in').addEventListener('input', (e) => {
+            const raw = e.target.value.toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (!raw) {
+                document.getElementById('pal-res').textContent = '...';
+                return;
+            }
+            const rev = raw.split('').reverse().join('');
+            const isPal = raw === rev;
+            document.getElementById('pal-res').innerHTML = `
+                <div style="font-size: 24px;">${isPal ? '✅ YES' : '❌ NO'}</div>
+                <div style="color: #888; margin-top: 10px;">${rev}</div>
+            `;
+        });
     }
 }
 
