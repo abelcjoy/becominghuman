@@ -173,6 +173,17 @@
                 utilities designed for digital sovereignty. No servers. No tracking. Pure efficiency.</p>
         </div>
 
+        <!-- Tool Search Interface -->
+        <div class="w-full max-w-6xl mb-12 relative z-20 group">
+            <input type="text" id="omni-search" placeholder="Search Protocols (e.g. 'Binary', 'Calculator', 'CSS')..."
+                class="w-full bg-white/5 border border-white/10 rounded-full px-8 py-4 text-white font-mono placeholder:text-stone-600 focus:border-white focus:outline-none focus:bg-white/10 transition-all text-sm tracking-widest">
+            <div
+                class="absolute right-6 top-1/2 -translate-y-1/2 text-stone-600 group-focus-within:text-white transition-colors">
+                <span class="text-xs uppercase tracking-widest mr-4 hidden md:inline">Protocol Search</span>
+                <span>⚡</span>
+            </div>
+        </div>
+
         <div id="omni-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 w-full max-w-6xl">
             <!-- Populated by JS -->
         </div>
@@ -196,6 +207,13 @@
         </button>
         <div id="tool-content" class="w-full">
             <!-- Tool rendered here -->
+        </div>
+        <!-- AdSense in Tool View -->
+        <div
+            class="mt-12 w-full max-w-2xl min-h-[100px] border border-white/5 bg-white/5 flex items-center justify-center opacity-50">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9639641684797882"
+                data-ad-slot="YOUR_TOOL_SLOT" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
     </main>
 
