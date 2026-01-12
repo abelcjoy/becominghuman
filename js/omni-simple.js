@@ -1,6 +1,6 @@
 /**
- * Omni Tools - Simplified & Optimized
- * Clean, fast, accessible
+ * Omni Tools - Clean & Working
+ * 10 fully functional tools
  */
 
 class OmniTools {
@@ -11,10 +11,8 @@ class OmniTools {
     }
 
     init() {
-        // Render initial grid
         this.renderGrid();
 
-        // Search handler with debounce
         const search = document.getElementById('search');
         let timeout;
         search.addEventListener('input', (e) => {
@@ -22,13 +20,11 @@ class OmniTools {
             timeout = setTimeout(() => this.renderGrid(e.target.value), 150);
         });
 
-        // Back button
         document.getElementById('back-btn').addEventListener('click', () => this.closeToolView());
     }
 
     initTools() {
         return {
-            // TEXT TOOLS
             wordCounter: {
                 name: "Word Counter",
                 searchTerms: "word count character letter text",
@@ -36,6 +32,22 @@ class OmniTools {
                 icon: "📝",
                 category: "Text",
                 render: () => this.renderWordCounter()
+            },
+            calculator: {
+                name: "Calculator",
+                searchTerms: "calc math calculate percentage percent",
+                description: "Basic calculator and percentage calculations",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderCalculator()
+            },
+            bmi: {
+                name: "BMI Calculator",
+                searchTerms: "bmi body mass index health weight",
+                description: "Calculate your Body Mass Index",
+                icon: "⚖️",
+                category: "Health",
+                render: () => this.renderBMI()
             },
             caseConverter: {
                 name: "Case Converter",
@@ -45,126 +57,6 @@ class OmniTools {
                 category: "Text",
                 render: () => this.renderCaseConverter()
             },
-            markdown: {
-                name: "Markdown Preview",
-                searchTerms: "markdown preview md",
-                description: "Preview markdown formatting",
-                icon: "📄",
-                category: "Text",
-                render: () => this.renderMarkdown()
-            },
-            textDiff: {
-                name: "Text Diff Checker",
-                searchTerms: "text diff compare difference",
-                description: "Compare two texts and find differences",
-                icon: "🔍",
-                category: "Text",
-                render: () => this.renderTextDiff()
-            },
-            loremIpsum: {
-                name: "Lorem Ipsum Generator",
-                searchTerms: "lorem ipsum placeholder text dummy",
-                description: "Generate placeholder text",
-                icon: "📋",
-                category: "Text",
-                render: () => this.renderLoremIpsum()
-            },
-
-            // MATH & CALCULATORS
-            calculator: {
-                name: "Calculator",
-                searchTerms: "calc math calculate percentage percent",
-                description: "Basic calculator and percentage calculations",
-                icon: "🔢",
-                category: "Math",
-                render: () => this.renderCalculator()
-            },
-            tipCalculator: {
-                name: "Tip Calculator",
-                searchTerms: "tip gratuity restaurant bill",
-                description: "Calculate tips and split bills",
-                icon: "💰",
-                category: "Finance",
-                render: () => this.renderTipCalculator()
-            },
-            loanCalculator: {
-                name: "Loan Calculator",
-                searchTerms: "loan mortgage emi payment",
-                description: "Calculate loan payments and interest",
-                icon: "🏦",
-                category: "Finance",
-                render: () => this.renderLoanCalculator()
-            },
-            ageCalculator: {
-                name: "Age Calculator",
-                searchTerms: "age birthday years old",
-                description: "Calculate age from date of birth",
-                icon: "🎂",
-                category: "Utility",
-                render: () => this.renderAgeCalculator()
-            },
-            dateCalculator: {
-                name: "Date Calculator",
-                searchTerms: "date days between difference",
-                description: "Calculate days between dates",
-                icon: "📅",
-                category: "Utility",
-                render: () => this.renderDateCalculator()
-            },
-
-            // HEALTH & FITNESS
-            bmi: {
-                name: "BMI Calculator",
-                searchTerms: "bmi body mass index health weight",
-                description: "Calculate your Body Mass Index",
-                icon: "⚖️",
-                category: "Health",
-                render: () => this.renderBMI()
-            },
-            calorieCalculator: {
-                name: "Calorie Calculator",
-                searchTerms: "calorie tdee bmr metabolism",
-                description: "Calculate daily calorie needs",
-                icon: "🍎",
-                category: "Health",
-                render: () => this.renderCalorieCalculator()
-            },
-
-            // CONVERTERS
-            unitConverter: {
-                name: "Unit Converter",
-                searchTerms: "unit convert length weight temperature",
-                description: "Convert between different units",
-                icon: "📏",
-                category: "Converter",
-                render: () => this.renderUnitConverter()
-            },
-            currencyConverter: {
-                name: "Currency Converter",
-                searchTerms: "currency money exchange rate",
-                description: "Convert between currencies",
-                icon: "💱",
-                category: "Converter",
-                render: () => this.renderCurrencyConverter()
-            },
-            temperatureConverter: {
-                name: "Temperature Converter",
-                searchTerms: "temperature celsius fahrenheit kelvin",
-                description: "Convert between temperature units",
-                icon: "🌡️",
-                category: "Converter",
-                render: () => this.renderTemperatureConverter()
-            },
-            timeZoneConverter: {
-                name: "Time Zone Converter",
-                searchTerms: "timezone time zone convert",
-                description: "Convert time between time zones",
-                icon: "🌍",
-                category: "Converter",
-                render: () => this.renderTimeZoneConverter()
-            },
-
-            // SECURITY & ENCRYPTION
             passwordGenerator: {
                 name: "Password Generator",
                 searchTerms: "password generator random secure",
@@ -173,24 +65,14 @@ class OmniTools {
                 category: "Security",
                 render: () => this.renderPasswordGenerator()
             },
-            passwordStrength: {
-                name: "Password Strength Checker",
-                searchTerms: "password strength security check",
-                description: "Check password strength",
-                icon: "🛡️",
-                category: "Security",
-                render: () => this.renderPasswordStrength()
+            colorPicker: {
+                name: "Color Picker",
+                searchTerms: "color picker hex rgb palette",
+                description: "Pick and convert colors between formats",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorPicker()
             },
-            hashGenerator: {
-                name: "Hash Generator",
-                searchTerms: "hash md5 sha256 checksum",
-                description: "Generate MD5, SHA-1, SHA-256 hashes",
-                icon: "🔒",
-                category: "Security",
-                render: () => this.renderHashGenerator()
-            },
-
-            // DEVELOPER TOOLS
             base64: {
                 name: "Base64 Encoder",
                 searchTerms: "base64 encode decode convert",
@@ -215,151 +97,13 @@ class OmniTools {
                 category: "Developer",
                 render: () => this.renderURLEncoder()
             },
-            htmlEncoder: {
-                name: "HTML Encoder",
-                searchTerms: "html encode decode entities",
-                description: "Encode and decode HTML entities",
-                icon: "📰",
-                category: "Developer",
-                render: () => this.renderHTMLEncoder()
-            },
-            regexTester: {
-                name: "Regex Tester",
-                searchTerms: "regex regular expression test",
-                description: "Test regular expressions",
-                icon: "🔤",
-                category: "Developer",
-                render: () => this.renderRegexTester()
-            },
-            uuidGenerator: {
-                name: "UUID Generator",
-                searchTerms: "uuid guid generator unique",
-                description: "Generate UUIDs/GUIDs",
-                icon: "🆔",
-                category: "Developer",
-                render: () => this.renderUUIDGenerator()
-            },
-
-            // DESIGN TOOLS
-            colorPicker: {
-                name: "Color Picker",
-                searchTerms: "color picker hex rgb palette",
-                description: "Pick and convert colors between formats",
-                icon: "🎨",
-                category: "Design",
-                render: () => this.renderColorPicker()
-            },
-            gradientGenerator: {
-                name: "Gradient Generator",
-                searchTerms: "gradient css color",
-                description: "Generate CSS gradients",
-                icon: "🌈",
-                category: "Design",
-                render: () => this.renderGradientGenerator()
-            },
-            imageResizer: {
-                name: "Image Resizer",
-                searchTerms: "image resize scale compress",
-                description: "Resize and compress images",
-                icon: "🖼️",
-                category: "Design",
-                render: () => this.renderImageResizer()
-            },
-
-            // RANDOM GENERATORS
-            randomNumber: {
-                name: "Random Number Generator",
-                searchTerms: "random number generator",
-                description: "Generate random numbers",
-                icon: "🎲",
-                category: "Generator",
-                render: () => this.renderRandomNumber()
-            },
-            randomName: {
-                name: "Random Name Generator",
-                searchTerms: "random name generator fake",
-                description: "Generate random names",
-                icon: "👤",
-                category: "Generator",
-                render: () => this.renderRandomName()
-            },
-            qrCode: {
-                name: "QR Code Generator",
-                searchTerms: "qr code generator barcode",
-                description: "Generate QR codes",
-                icon: "📱",
-                category: "Generator",
-                render: () => this.renderQRCode()
-            },
-
-            // UTILITY TOOLS
-            stopwatch: {
-                name: "Stopwatch",
-                searchTerms: "stopwatch timer time",
-                description: "Simple stopwatch timer",
-                icon: "⏱️",
-                category: "Utility",
-                render: () => this.renderStopwatch()
-            },
-            countdown: {
-                name: "Countdown Timer",
-                searchTerms: "countdown timer alarm",
-                description: "Set a countdown timer",
-                icon: "⏰",
-                category: "Utility",
-                render: () => this.renderCountdown()
-            },
-            notepad: {
-                name: "Quick Notepad",
-                searchTerms: "notepad notes text editor",
-                description: "Quick notepad with auto-save",
-                icon: "📓",
-                category: "Utility",
-                render: () => this.renderNotepad()
-            },
-            todoList: {
-                name: "Todo List",
-                searchTerms: "todo list tasks checklist",
-                description: "Simple todo list",
-                icon: "✅",
-                category: "Utility",
-                render: () => this.renderTodoList()
-            },
-
-            // SEO & WEB
-            metaTagGenerator: {
-                name: "Meta Tag Generator",
-                searchTerms: "meta tags seo og twitter",
-                description: "Generate SEO meta tags",
-                icon: "🏷️",
-                category: "SEO",
-                render: () => this.renderMetaTagGenerator()
-            },
-            slugGenerator: {
-                name: "URL Slug Generator",
-                searchTerms: "slug url seo permalink",
-                description: "Generate URL-friendly slugs",
-                icon: "🔗",
-                category: "SEO",
-                render: () => this.renderSlugGenerator()
-            },
-
-            // DATA & FILES
-            csvToJson: {
-                name: "CSV to JSON Converter",
-                searchTerms: "csv json convert data",
-                description: "Convert CSV to JSON format",
-                icon: "📊",
-                category: "Data",
-                render: () => this.renderCSVToJSON()
-            },
-            fileHashChecker: {
-                name: "File Hash Checker",
-                searchTerms: "file hash checksum verify",
-                description: "Calculate file checksums",
-                icon: "📁",
-                category: "Utility",
-                render: () => this.renderFileHashChecker()
+            markdown: {
+                name: "Markdown Preview",
+                searchTerms: "markdown preview md",
+                description: "Preview markdown formatting",
+                icon: "📄",
+                category: "Text",
+                render: () => this.renderMarkdown()
             }
         };
     }
@@ -372,7 +116,6 @@ class OmniTools {
         let count = 0;
 
         Object.entries(this.tools).forEach(([id, tool]) => {
-            // Search logic
             if (f) {
                 const searchable = `${tool.name} ${tool.searchTerms} ${tool.description} ${tool.category}`.toLowerCase();
                 if (!searchable.includes(f)) return;
