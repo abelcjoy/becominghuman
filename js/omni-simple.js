@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 580 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 600 ELITE TOOLS! 💎
  * 
- * BATCH 50: DataRange + ZScore + Variance + Outliers + Sampler + ProbAB + FreqDist + CorrelRef + PctRank + WeightedAvg
- * BATCH 51: HandleCheck + HashtagGen + WifiQr + QrFormats + AppStore + ProtocolLinks + PrivacyGen + TermsGen + FaviconRef + WcagGuide
  * BATCH 52: CriticalCss + TTFB + Latency + BWvsTP + PortScan + DnsRef + SslVisual + RateLimit + CacheRef + GzipEst
  * BATCH 53: GroceryTot + EggTimes + LaundryCare + CookingSubs + RoomTemp + CoffeeRatio + TeaSteeper + IceGen + Checklist + NoteSelf
+ * BATCH 54: PwStrength + CommonPws + 2FA + VpnTypes + Encryption + HashVsEnc + Salting + SocialEng + Phishing + CsrfInfo
+ * BATCH 55: SemanticHtml + MetaTags + OGtags + RobotsMeta + SitemapVsRobots + JsonLd + SvgVsCanvas + AriaGuide + CspGuide + CorsInfo
  */
 
 class OmniTools {
@@ -4732,6 +4732,168 @@ class OmniTools {
                 icon: "📌",
                 category: "Utility",
                 render: () => this.renderNoteToSelf()
+            },
+            // === BATCH 54 - 590 TOOLS (SECURITY & PRIVACY) ===
+            pwStrengthGuide: {
+                name: "PW Strength",
+                searchTerms: "password strength guide entropy security complexity",
+                description: "Password safety guide",
+                icon: "🔒",
+                category: "Security",
+                render: () => this.renderPwStrengthGuide()
+            },
+            commonPasswords: {
+                name: "Common PWs",
+                searchTerms: "common passwords list leaked security 123456",
+                description: "What to avoid",
+                icon: "🚫",
+                category: "Security",
+                render: () => this.renderCommonPasswords()
+            },
+            twoFactorAuth: {
+                name: "2FA Info",
+                searchTerms: "2fa two factor authentication mfa security totp",
+                description: "Auth method guide",
+                icon: "📱",
+                category: "Security",
+                render: () => this.renderTwoFactorAuth()
+            },
+            vpnTypes: {
+                name: "VPN Types",
+                searchTerms: "vpn types guide virtual private network privacy",
+                description: "Tunneling protocols",
+                icon: "🌐",
+                category: "Security",
+                render: () => this.renderVpnTypes()
+            },
+            encryptionRef: {
+                name: "Encryption Ref",
+                searchTerms: "encryption methods aes rsa pgp symmetric asymmetric",
+                description: "Cipher reference",
+                icon: "🔑",
+                category: "Security",
+                render: () => this.renderEncryptionRef()
+            },
+            hashVsEncrypt: {
+                name: "Hash vs Encrypt",
+                searchTerms: "hashing vs encryption difference security one-way",
+                description: "Concept comparison",
+                icon: "⚖️",
+                category: "Security",
+                render: () => this.renderHashVsEncrypt()
+            },
+            saltingExplanation: {
+                name: "Salting Info",
+                searchTerms: "salting passwords hashing security database",
+                description: "Defeating rainbow tables",
+                icon: "🧂",
+                category: "Security",
+                render: () => this.renderSaltingExplanation()
+            },
+            socialEngineering: {
+                name: "Social Eng Guide",
+                searchTerms: "social engineering phishing pretexting security baiting",
+                description: "Human hacking guide",
+                icon: "🎭",
+                category: "Security",
+                render: () => this.renderSocialEngineering()
+            },
+            phishingRef: {
+                name: "Phishing Guide",
+                searchTerms: "phishing scam detection security email safety",
+                description: "Red flag checklist",
+                icon: "🎣",
+                category: "Security",
+                render: () => this.renderPhishingRef()
+            },
+            csrfProtection: {
+                name: "CSRF Info",
+                searchTerms: "csrf cross site request forgery security protection",
+                description: "Web security guide",
+                icon: "🍪",
+                category: "Security",
+                render: () => this.renderCsrfProtection()
+            },
+            // === BATCH 55 - 600 TOOLS (STANDARDS & COMPLIANCE) ===
+            semanticHtml: {
+                name: "Semantic HTML",
+                searchTerms: "semantic html elements accessibility seo structure",
+                description: "Tag usage reference",
+                icon: "🏗️",
+                category: "Developer",
+                render: () => this.renderSemanticHtml()
+            },
+            essentialMeta: {
+                name: "Meta Tags",
+                searchTerms: "essential meta tags seo viewport description charset",
+                description: "Head tag reference",
+                icon: "🏷️",
+                category: "Developer",
+                render: () => this.renderEssentialMeta()
+            },
+            openGraphTags: {
+                name: "OG Tags",
+                searchTerms: "open graph tags social media preview facebook twitter",
+                description: "Social sharing guide",
+                icon: "📊",
+                category: "Developer",
+                render: () => this.renderOpenGraphTags()
+            },
+            robotsMeta: {
+                name: "Robots Meta",
+                searchTerms: "robots meta tag noindex nofollow seo indexing",
+                description: "Crawler directives",
+                icon: "🤖",
+                category: "Developer",
+                render: () => this.renderRobotsMeta()
+            },
+            sitemapVsRobots: {
+                name: "Sitemap/Robots",
+                searchTerms: "sitemap vs robots.txt difference seo indexing",
+                description: "SEO file comparison",
+                icon: "📂",
+                category: "Developer",
+                render: () => this.renderSitemapVsRobots()
+            },
+            jsonLdTypes: {
+                name: "JSON-LD Types",
+                searchTerms: "json-ld schema markup types web-standards seo",
+                description: "Structured data guide",
+                icon: "💎",
+                category: "Developer",
+                render: () => this.renderJsonLdTypes()
+            },
+            svgVsCanvas: {
+                name: "SVG vs Canvas",
+                searchTerms: "svg vs canvas difference graphics web-api",
+                description: "Graphics API guide",
+                icon: "🎨",
+                category: "Developer",
+                render: () => this.renderSvgVsCanvas()
+            },
+            webAccessibility: {
+                name: "ARIA Guide",
+                searchTerms: "web accessibility aria roles labels compliance",
+                description: "Accessibility basics",
+                icon: "♿",
+                category: "Developer",
+                render: () => this.renderWebAccessibility()
+            },
+            contentSecurityPolicy: {
+                name: "CSP Guide",
+                searchTerms: "content security policy security headers xss protection",
+                description: "Security header guide",
+                icon: "📁",
+                category: "Developer",
+                render: () => this.renderContentSecurityPolicy()
+            },
+            corsExplanation: {
+                name: "CORS Info",
+                searchTerms: "cors cross origin resource sharing web-api security",
+                description: "Access control guide",
+                icon: "↔️",
+                category: "Developer",
+                render: () => this.renderCorsExplanation()
             }
         };
     }
@@ -18973,6 +19135,244 @@ Online: ${n.onLine}
             <h2 class="tool-title">Note to Self</h2>
             <textarea id="ns-in" style="height:80px; font-size:0.8em;"></textarea>
             <p style="font-size:0.6em;">Transient scratchpad (cleared on refresh).</p>
+        `;
+    }
+
+    renderPwStrengthGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PW Strength</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Weak:</b> 123456, password, qwerty<br>
+                <b>Fair:</b> Hunter2, Sunshine123<br>
+                <b>Strong:</b> correct-horse-battery-staple<br>
+                <b>Entropy:</b> Longer is better than complex.
+            </div>
+        `;
+    }
+
+    renderCommonPasswords() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Common PWs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. 123456<br>
+                2. admin<br>
+                3. password<br>
+                4. guest<br>
+                5. 12345678
+                <p style="color:red; font-size:0.8em;">Never use these!</p>
+            </div>
+        `;
+    }
+
+    renderTwoFactorAuth() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">2FA Info</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Something you know:</b> Password<br>
+                <b>Something you have:</b> Phone (SMS/TOTP)<br>
+                <b>Something you are:</b> Fingerprint/FaceID
+            </div>
+        `;
+    }
+
+    renderVpnTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">VPN Types</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>WireGuard:</b> Modern, fast, secure.<br>
+                <b>OpenVPN:</b> Robust, highly configurable.<br>
+                <b>IKEv2:</b> Great for mobile stability.<br>
+                <b>L2TP:</b> Older, often paired with IPsec.
+            </div>
+        `;
+    }
+
+    renderEncryptionRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Encryption Ref</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>AES:</b> Symmetric (Same key for lock/unlock).<br>
+                <b>RSA:</b> Asymmetric (Public key/Private key).<br>
+                <b>PGP:</b> Used for email encryption.
+            </div>
+        `;
+    }
+
+    renderHashVsEncrypt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hash vs Encrypt</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Hashing:</b> One-way. Cannot be undone (e.g. Passwords).<br><br>
+                <b>Encryption:</b> Two-way. Can be decrypted with a key (e.g. Messages).
+            </div>
+        `;
+    }
+
+    renderSaltingExplanation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Salting Info</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Salt:</b> Random data added to a password before hashing.<br><br>
+                <b>Purpose:</b> Makes identical passwords have unique hashes.
+            </div>
+        `;
+    }
+
+    renderSocialEngineering() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Social Eng</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Pretexting:</b> Creating a fake scenario.<br>
+                <b>Tailgating:</b> Following someone into a secure area.<br>
+                <b>Baiting:</b> Leaving an infected USB drive.
+            </div>
+        `;
+    }
+
+    renderPhishingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Phishing Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                - Check the sender's actual email address.<br>
+                - Look for urgent, threatening language.<br>
+                - Hover over links to see real URL.<br>
+                - Grammar/Spelling errors.
+            </div>
+        `;
+    }
+
+    renderCsrfProtection() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSRF Info</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>CSRF:</b> Forcing a user to execute actions on a web app where they are authenticated.<br><br>
+                <b>Protection:</b> Use Anti-CSRF tokens.
+            </div>
+        `;
+    }
+
+    renderSemanticHtml() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Semantic tags</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                &lt;main&gt;, &lt;article&gt;, &lt;section&gt;,<br>
+                &lt;nav&gt;, &lt;aside&gt;, &lt;header&gt;,<br>
+                &lt;footer&gt;, &lt;figure&gt;
+            </div>
+        `;
+    }
+
+    renderEssentialMeta() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Meta Tags</h2>
+            <div style="font-size:0.6em; text-align:left;">
+                &lt;meta charset="UTF-8"&gt;<br>
+                &lt;meta name="viewport" content="..."&gt;<br>
+                &lt;meta name="description" content="..."&gt;
+            </div>
+        `;
+    }
+
+    renderOpenGraphTags() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">OG Tags Ref</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                og:title, og:description,<br>
+                og:image, og:url, og:type
+            </div>
+        `;
+    }
+
+    renderRobotsMeta() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Robots Meta</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                index, noindex,<br>
+                follow, nofollow,<br>
+                noarchive, nosnippet
+            </div>
+        `;
+    }
+
+    renderSitemapVsRobots() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SEO Basics</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Sitemap:</b> List for crawlers (Tell them what exists).<br><br>
+                <b>Robots.txt:</b> Rules for crawlers (Tell them where NOT to go).
+            </div>
+        `;
+    }
+
+    renderJsonLdTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JSON-LD Types</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Organization, Person, Product,<br>
+                Event, Review, Recipe,<br>
+                FAQPage, LocalBusiness
+            </div>
+        `;
+    }
+
+    renderSvgVsCanvas() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SVG vs Canvas</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>SVG:</b> Vector-based, DOM-element, CSS/JS support.<br><br>
+                <b>Canvas:</b> Pixel-based, single element, better for high-frequency updates.
+            </div>
+        `;
+    }
+
+    renderWebAccessibility() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ARIA Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                aria-label, aria-hidden,<br>
+                role="button", role="alert",<br>
+                tabindex="0"
+            </div>
+        `;
+    }
+
+    renderContentSecurityPolicy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSP Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>default-src:</b> Fallback policy.<br>
+                <b>script-src:</b> Allowed JS sources.<br>
+                <b>img-src:</b> Allowed image sources.
+            </div>
+        `;
+    }
+
+    renderCorsExplanation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CORS Info</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>CORS:</b> Browser security that prevents scripts from reading data from another origin unless allowed by headers.
+            </div>
         `;
     }
 }
