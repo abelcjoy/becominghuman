@@ -110,809 +110,815 @@
     <link rel="apple-touch-icon" href="favicon.svg">
 </head>
 
-<!-- Mortal Strand (The 1-Pixel Timeline) -->
-<div id="mortal-strand" class="fixed top-0 left-0 w-full h-[1px] z-[200] bg-white/5 overflow-hidden">
-    <div id="strand-dot"
-        class="absolute top-0 left-0 h-full w-[2px] bg-white shadow-[0_0_10px_white] transition-all duration-300"></div>
-</div>
+<body class="bg-black text-white h-screen w-screen overflow-hidden flex items-center justify-center font-sans">
 
-<!-- Living UI Frame (Focus Pulse) -->
-<div id="living-ui" class="fixed inset-0 z-0 pointer-events-none transition-transform duration-[4000ms] ease-in-out">
-</div>
-
-<!-- Ethereal Grain Overlay -->
-<div
-    class="fixed inset-[0] w-[200%] h-[200%] -left-[50%] -top-[50%] pointer-events-none z-[100] opacity-[0.05] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] animate-grain">
-</div>
-
-<!-- Cinematic Background (Rotating Moon) -->
-<div class="fixed inset-0 z-0 overflow-hidden">
-    <video autoplay muted loop playsinline
-        class="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-60 mix-blend-screen scale-110 blur-[1px]">
-        <source
-            src="https://player.vimeo.com/external/370331493.sd.mp4?s=7b0cd5ad2a53647f1b2dd0e0477e579737524576&profile_id=139&oauth2_token_id=57447761"
-            type="video/mp4">
-    </video>
-    <!-- Dark Overlay for Readability -->
-    <div class="absolute inset-0 bg-black/95 z-10"></div>
-</div>
-
-<main id="setup-step"
-    class="relative z-10 w-full max-w-md p-8 bg-black backdrop-blur-xl border border-white/10 rounded-none shadow-2xl transition-all duration-700">
-    <h1 class="text-4xl font-bold text-center mb-2 tracking-[0.2em] text-white uppercase font-['Cinzel']">Setup
-        Reality</h1>
-    <p class="text-center text-stone-500 text-sm mb-8 font-light italic">"Waste no more time arguing what a good man
-        should be. Be one."</p>
-
-    <div class="space-y-6">
-        <div class="group">
-            <label
-                class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Date
-                of Birth</label>
-            <input type="date" id="dob" aria-label="Date of Birth" required
-                class="w-full bg-black border border-white/20 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white">
-        </div>
-
-        <div class="group">
-            <label
-                class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Location
-                (Life Expectancy)</label>
-            <select id="country" aria-label="Select your country" required
-                class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-white">
-                <!-- Populated by JS -->
-            </select>
-        </div>
-
-        <div class="group">
-            <label
-                class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Daily
-                Sleep (Hours)</label>
-            <input type="number" id="sleep" min="0" max="24" step="0.5" value="8" aria-label="Daily sleep hours"
-                class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white focus:outline-none focus:ring-1 focus:ring-white">
-        </div>
-
-        <button id="start-btn" aria-label="Initialize life countdown sequence"
-            class="w-full mt-8 bg-white text-black hover:bg-stone-200 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-            Initialize Sequence
-        </button>
-    </div>
-</main>
-
-<!-- Countdown Step -->
-<main id="countdown-step"
-    class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
-
-    <!-- Soul Rank Label -->
-    <div class="mb-12 flex flex-col items-center">
-        <span id="soul-rank"
-            class="text-[10px] uppercase tracking-[0.8em] text-white font-black mb-2 px-4 py-1 border border-white">The
-            Pure Presence</span>
-        <span class="text-[8px] uppercase tracking-[0.4em] text-white/40">Status: Sovereign</span>
-    </div>
-
-    <!-- Daily Reflection (Retention Engine) -->
-    <div id="daily-reflection" class="mb-12 max-w-lg text-center opacity-0 transition-opacity duration-1000">
-        <h4 class="text-[10px] uppercase tracking-[0.5em] text-white mb-3 font-mono font-bold">Protocol: Daily
-            Recapture</h4>
-        <h3 id="reflection-title"
-            class="text-lg font-bold text-white uppercase tracking-widest mb-2 border-b-2 border-white pb-2 inline-block">
-            The Architecture of Silence</h3>
-        <p id="reflection-content" class="text-[12px] leading-relaxed text-white font-medium italic mt-4">Refining
-            the baseline of human consciousness...</p>
-    </div>
-
-    <div class="dashboard-container flex flex-col items-center w-full">
-        <div class="mb-4 text-center">
-            <p class="text-[12px] uppercase tracking-[0.6em] text-white font-black">Biological Capital Remaining</p>
-        </div>
-
-        <!-- Conscious Energy Bar -->
-        <div class="w-full max-w-md h-1 bg-white/10 rounded-full mb-8 overflow-hidden border border-white/5">
-            <div id="life-progress-bar" class="h-full bg-white transition-all duration-1000 shadow-[0_0_20px_white]"
-                style="width: 0%"></div>
-        </div>
-
-        <div
-            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-6 md:gap-16 w-full mb-12 animate-breath">
-            <div class="stat-block group">
-                <div id="c-years"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Years</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-days"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Days</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-hours"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Hours</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-minutes"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Minutes</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-seconds"
-                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Seconds</div>
-            </div>
-            <div class="stat-block group">
-                <div id="c-milliseconds"
-                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-white/60 blur-[1px]">000
-                </div>
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Milliseconds</div>
-            </div>
-        </div>
-
-        <!-- Perspective Units (Mobile Optimized) -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mb-12">
-            <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
-                <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Sunsets</div>
-                <div id="unit-sunsets" class="text-xl font-stoic text-white">0</div>
-            </div>
-            <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
-                <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Summers</div>
-                <div id="unit-summers" class="text-xl font-stoic text-white">0</div>
-            </div>
-            <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
-                <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Books</div>
-                <div id="unit-books" class="text-xl font-stoic text-white">0</div>
-            </div>
-            <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
-                <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Meals</div>
-                <div id="unit-meals" class="text-xl font-stoic text-white">0</div>
-            </div>
-        </div>
-
-        <!-- Biological Capital Assets Removed per user request for cleanliness -->
-        <!-- Replaced with a cleaner spacer or nothing -->
-
-        <!-- Life Simulator: The Chronos Protocol -->
-        <div id="sim-hub" class="w-full max-w-6xl p-8 terminal-box mb-12 relative overflow-hidden hidden">
-            <div class="flex flex-col gap-8">
-                <!-- THE TIME MACHINE UI -->
-
-                <!-- Header -->
-                <div class="text-center border-b border-white/10 pb-12">
-                    <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-4 font-mono">The Event
-                        Horizon</h4>
-                    <h2 class="text-4xl md:text-5xl font-['Cinzel'] text-white tracking-wide">Project Your Reality
-                    </h2>
-                    <p class="text-stone-500 text-sm mt-4 italic max-w-xl mx-auto leading-relaxed">"Time is a river,
-                        a violent rolling torrent. Slide forward to see what remains downstream."</p>
-                </div>
-
-                <!-- The Time Slider Control Panel -->
-                <div class="p-8 bg-zinc-900/50 rounded-xl border border-white/10 shadow-2xl backdrop-blur-md">
-                    <div class="flex justify-between items-end mb-8">
-                        <div>
-                            <label class="text-xs uppercase tracking-[0.2em] text-stone-400 font-bold">Time
-                                Travel</label>
-                            <div class="text-stone-600 text-[10px] mt-1">SLIDE TO VISIT THE FUTURE</div>
-                        </div>
-                        <span id="slider-year-display"
-                            class="text-6xl font-['JetBrains_Mono'] font-bold text-white tracking-tighter transition-all duration-200">2026</span>
-                    </div>
-
-                    <div class="relative w-full h-12 flex items-center">
-                        <input type="range" id="time-slider" min="2026" max="2080" value="2026"
-                            class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white hover:accent-stone-200 transition-all z-20 relative">
-                        <!-- Visual Decoration -->
-                        <div class="absolute top-1/2 left-0 w-full h-px bg-white/10 z-0"></div>
-                        <div class="absolute top-1/2 left-[0%] w-px h-4 bg-white/30 z-0"></div>
-                        <div class="absolute top-1/2 left-[25%] w-px h-2 bg-white/10 z-0"></div>
-                        <div class="absolute top-1/2 left-[50%] w-px h-2 bg-white/10 z-0"></div>
-                        <div class="absolute top-1/2 left-[75%] w-px h-2 bg-white/10 z-0"></div>
-                        <div class="absolute top-1/2 left-[100%] w-px h-4 bg-white/30 z-0"></div>
-                    </div>
-
-                    <div
-                        class="flex justify-between mt-4 text-[10px] text-stone-500 font-mono tracking-widest uppercase">
-                        <span>NOW</span>
-                        <span>THE END</span>
-                    </div>
-                </div>
-
-                <!-- Add Connection Form -->
-                <div class="bg-black/40 p-6 border border-white/10 rounded-lg">
-                    <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-6 font-mono">Anchor A
-                        Connection</h5>
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-                        <div class="md:col-span-4">
-                            <label class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Name</label>
-                            <input type="text" id="rel-name" placeholder="e.g. Mom" aria-label="Person's name"
-                                class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Role</label>
-                            <select id="rel-role" aria-label="Person's role in your life"
-                                class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded appearance-none">
-                                <option value="parent">Parent</option>
-                                <option value="partner">Partner</option>
-                                <option value="child">Child</option>
-                                <option value="friend">Friend</option>
-                            </select>
-                        </div>
-                        <div class="md:col-span-2">
-                            <label class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Age
-                                Now</label>
-                            <input type="number" id="rel-age" placeholder="55" aria-label="Person's current age"
-                                class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
-                        </div>
-                        <div class="md:col-span-2">
-                            <label
-                                class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Visits/Year</label>
-                            <input type="number" id="rel-freq" placeholder="2" aria-label="Visit frequency per year"
-                                class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded"
-                                title="How many times do you see them per year?">
-                        </div>
-                        <div class="md:col-span-2">
-                            <button onclick="window.app.addConnection()"
-                                aria-label="Anchor this person to your timeline"
-                                class="w-full h-[46px] bg-white text-black font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-stone-200 transition-colors rounded shadow-lg shadow-white/10">
-                                Anchor
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Projection Results Grid -->
-                <div id="projection-results"
-                    class="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[200px] transition-all duration-500">
-                    <!-- Filled by JS -->
-                    <div class="col-span-full text-center py-12 border-2 border-dashed border-white/5 rounded-xl">
-                        <p class="text-stone-600 italic">No connections anchored yet.<br>Add someone above to
-                            project your shared timeline.</p>
-                    </div>
-                </div>
-
-                <!-- DIGITAL ATROPHY AUDIT -->
-                <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
-                    <div class="text-center mb-12">
-                        <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">The
-                            Algorithm Tax</h2>
-                        <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Quantify Your Digital Servitude
-                        </p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <!-- Controls -->
-                        <div class="space-y-8 p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm">
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <label class="text-[10px] uppercase tracking-widest text-stone-400">Phone Screen
-                                        Time</label>
-                                    <span id="phone-val" class="text-white font-mono">4h</span>
-                                </div>
-                                <input type="range" id="atrophy-phone" min="0" max="12" step="0.5" value="4"
-                                    class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <label class="text-[10px] uppercase tracking-widest text-stone-400">Desktop/TV
-                                        Time</label>
-                                    <span id="desktop-val" class="text-white font-mono">2h</span>
-                                </div>
-                                <input type="range" id="atrophy-desktop" min="0" max="12" step="0.5" value="2"
-                                    class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
-                            </div>
-                            <div>
-                                <div class="flex justify-between mb-2">
-                                    <label class="text-[10px] uppercase tracking-widest text-stone-400">Daily
-                                        Sleep</label>
-                                    <span id="sleep-val" class="text-white font-mono">8h</span>
-                                </div>
-                                <input type="range" id="atrophy-sleep" min="4" max="12" step="0.5" value="8"
-                                    class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
-                            </div>
-                        </div>
-
-                        <!-- Result Container -->
-                        <div id="atrophy-result"
-                            class="flex flex-col justify-center bg-black/20 rounded-xl p-6 border border-white/5">
-                            <!-- JS Injected -->
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-                <!-- MEMENTO MORI GRID -->
-                <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
-                    <div class="text-center mb-12">
-                        <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">The
-                            Life Grid</h2>
-                        <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Every Week of Your Existence
-                        </p>
-                    </div>
-
-                    <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
-                        <div
-                            class="flex justify-between items-center mb-4 text-[10px] uppercase tracking-widest text-stone-500 font-mono">
-                            <span>Birth</span>
-                            <span id="grid-info" class="text-white">Hover to inspect time</span>
-                            <span>Death (90)</span>
-                        </div>
-                        <div class="w-full overflow-hidden">
-                            <canvas id="life-grid-canvas" class="w-full cursor-crosshair"></canvas>
-                        </div>
-                        <!-- Legal / Policy Disclaimer -->
-                        <div
-                            class="mt-12 text-center max-w-2xl mx-auto opacity-30 text-[8px] font-mono leading-relaxed px-4">
-                            <p>DISCLAIMER: The calculations provided by Clarity For Humans are estimates based on
-                                WHO data and user inputs.
-                                This tool is for philosophical and educational purposes only. It does not constitute
-                                medical advice, diagnosis,
-                                or professional psychological counseling. Data is processed locally on your device;
-                                we do not store personal biometric information.</p>
-                        </div>
-
-                        <footer class="mt-8 text-center opacity-50 text-[10px] uppercase tracking-widest pb-8">
-                            <p>&copy; <span id="copyright-year">2025</span> Clarity For Humans. <span
-                                    class="hidden md:inline">Memento Mori.</span></p>
-                        </footer>
-                        <div
-                            class="mt-4 flex gap-6 justify-center text-[10px] uppercase tracking-widest text-stone-600">
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 bg-white"></div> Lived
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 bg-red-500 animate-pulse"></div> Now
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="w-3 h-3 bg-white/10"></div> Remaining
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <!-- VIA NEGATIVA (Novel Feature) -->
-    <div id="via-negativa-section" class="w-full max-w-4xl border-t border-white/10 pt-12 mb-12 animate-fade-in">
-        <div class="text-center mb-8">
-            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Via Negativa</h2>
-            <p class="text-stone-400 text-xs uppercase tracking-[0.2em]">The Art of Subtraction</p>
-        </div>
-
-        <div class="w-full p-6 bg-zinc-900/80 border border-white/10 rounded-xl backdrop-blur-md">
-            <div class="flex flex-col md:flex-row gap-4 mb-8">
-                <input type="text" id="negativa-input"
-                    placeholder="What burden will you drop? (e.g. Envy, Processed Sugar)"
-                    class="flex-1 bg-black/50 border border-white/20 rounded-lg p-4 text-white text-sm focus:border-white outline-none transition-colors font-mono">
-                <button id="add-negativa-btn"
-                    class="px-8 py-4 bg-white text-black font-bold uppercase text-[10px] tracking-widest hover:bg-stone-200 rounded-lg transition-transform hover:scale-[1.02]">
-                    Cast Away
-                </button>
-            </div>
-
-            <ul id="negativa-list" class="space-y-3 mb-6">
-                <!-- Items injected via JS -->
-            </ul>
-
-            <div class="flex justify-center items-center gap-2 opacity-50">
-                <span class="text-[10px] uppercase tracking-widest text-stone-500">Psychological Weight
-                    Lifted:</span>
-                <span id="weight-lifted" class="text-lg font-mono text-white">0</span>
-                <span class="text-[10px] text-stone-500">kg</span>
-            </div>
+    <!-- Mortal Strand (The 1-Pixel Timeline) -->
+    <div id="mortal-strand" class="fixed top-0 left-0 w-full h-[1px] z-[200] bg-white/5 overflow-hidden">
+        <div id="strand-dot"
+            class="absolute top-0 left-0 h-full w-[2px] bg-white shadow-[0_0_10px_white] transition-all duration-300">
         </div>
     </div>
 
-    <!-- THE CODEX OF CLARITY (Content for AdSense/SEO/Authority) -->
-    <div class="w-full max-w-5xl border-t border-white/10 pt-12 mb-12 animate-fade-in">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide scramble-target">The
-                Codex of Clarity</h2>
-            <p class="text-stone-400 text-xs uppercase tracking-[0.2em] scramble-target">The Triad of Intentional
-                Existence</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Column 1: Philosophy -->
-            <div
-                class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
-                <h3
-                    class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-teal-400 transition-colors scramble-target">
-                    I. Memento Mori</h3>
-                <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
-                    To deny death is to deny the defining characteristic of life. The Stoics did not view mortality
-                    as a curse, but as a lens through which clarity is achieved. When the timeline is visible,
-                    urgency is born. This tool is not designed to induce anxiety, but to destroy procrastination. By
-                    quantifying your remaining conscious hours, we strip away the illusion of infinite time.
-                </p>
-            </div>
-
-            <!-- Column 2: Neuroscience -->
-            <div
-                class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
-                <h3
-                    class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-purple-400 transition-colors">
-                    II. Neuro-Equity</h3>
-                <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
-                    Attention is your only non-renewable currency. Modern algorithmic feeds are engineered to
-                    bankrupt this currency by hijacking the dopaminergic reward system. "Digital Atrophy" creates a
-                    measurable physiological cost: thinned prefrontal cortex gray matter and reduced executive
-                    function. We provide the metrics to audit your own consumption and reclaim cognitive
-                    sovereignty.
-                </p>
-            </div>
-
-            <!-- Column 3: Mathematics -->
-            <div
-                class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
-                <h3
-                    class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-orange-400 transition-colors">
-                    III. The Math of Now</h3>
-                <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
-                    We spend approximately 26 years sleeping and 11 years working. The "Pocket Time"—the time
-                    available for passion, connection, and creation—is shockingly scarce. Our algorithm uses WHO
-                    global health data and your specific sleep variables to calculate the precise "Conscious
-                    Remaining Value" (CRV). This is the only number that truly matters.
-                </p>
-            </div>
-        </div>
-
-        <div class="mt-8 text-center">
-            <!-- Responsible Ad Space (Clean/Minimal) -->
-            <div
-                class="w-full h-[90px] bg-white/5 rounded border border-white/5 flex items-center justify-center overflow-hidden">
-                <span class="text-[9px] uppercase tracking-widest text-stone-600">Sponsor of Time</span>
-                <!-- AdSense Slot would go here -->
-            </div>
-        </div>
+    <!-- Living UI Frame (Focus Pulse) -->
+    <div id="living-ui"
+        class="fixed inset-0 z-0 pointer-events-none transition-transform duration-[4000ms] ease-in-out">
     </div>
 
-    <!-- LIFE VISUALIZATION CHART -->
-    <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in w-full max-w-4xl">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Life Timeline
-            </h2>
-            <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Visual Representation of Your Existence
-            </p>
-        </div>
-
-        <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
-            <canvas id="life-progress-chart" class="w-full" style="height: 200px;"></canvas>
-        </div>
-
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
-            <div class="p-4 bg-white/5 rounded-lg">
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Lived</div>
-                <div id="time-lived-percent" class="text-2xl font-stoic text-green-500">0%</div>
-            </div>
-            <div class="p-4 bg-white/5 rounded-lg">
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Remaining</div>
-                <div id="time-remaining-percent" class="text-2xl font-stoic text-white">100%</div>
-            </div>
-            <div class="p-4 bg-white/5 rounded-lg">
-                <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Weeks Left</div>
-                <div id="weeks-remaining" class="text-2xl font-stoic text-red-500">0</div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-    <!-- Dashboard Removed for Simplicity -->
-
-    <div class="mb-12 text-center mt-12">
-        <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
-        </p>
-        <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
-    </div>
-    </div> <!-- End Dashboard Container -->
-    <div class="mt-24 w-full max-w-3xl">
-        <button id="crave-btn"
-            class="w-full px-4 py-8 bg-red-900/20 text-red-500 font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-900 hover:text-white transition-all duration-300 border border-red-900/50 hover:border-red-500 backdrop-blur-md shadow-[0_0_30px_rgba(255,0,0,0.1)]"
-            aria-label="Enter crisis override mode">
-            ⚠️ Crisis Override
-        </button>
-    </div>
-
-    <!-- Sovereign Menu (Omni-Control) -->
-    <div class="fixed bottom-8 right-8 z-[150]">
-        <button id="sovereign-toggle"
-            class="w-16 h-16 bg-white text-black rounded-full shadow-[0_0_50px_rgba(255,255,255,0.2)] flex items-center justify-center transition-all duration-700 hover:scale-110 active:scale-95 group overflow-hidden relative">
-            <div class="absolute inset-0 bg-white/20 animate-ping opacity-20"></div>
-            <span id="sovereign-icon"
-                class="text-2xl transition-transform duration-700 group-hover:rotate-180 relative z-10">✧</span>
-        </button>
-        <div id="sovereign-menu"
-            class="absolute bottom-24 right-0 flex flex-col items-end gap-3 pointer-events-none opacity-0 translate-y-10 transition-all duration-700">
-            <button id="void-mode-btn"
-                class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">⬛
-                Void <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
-            <button id="create-wallpaper-btn"
-                class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">📱
-                Wallpaper <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
-            <button id="focus-btn"
-                class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">🎯
-                Focus <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
-            <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
-                class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">📖
-                Protocol <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
-            <button onclick="localStorage.clear(); location.reload();"
-                class="menu-item group px-8 py-3 bg-red-950/20 text-red-500 text-[10px] uppercase tracking-[0.5em] border border-red-500/10 rounded-full hover:bg-red-500 hover:text-white transition-all backdrop-blur-xl">💀
-                Reset <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
-        </div>
-    </div>
-
-    <div class="mt-12 pb-12 flex flex-col items-center space-y-6">
-        <button onclick="localStorage.clear(); location.reload();"
-            class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-[0.5em] font-bold">
-            Reset Reality
-        </button>
-        <div class="flex space-x-8 text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">
-            <button onclick="document.getElementById('policy-modal').classList.remove('hidden')"
-                class="hover:text-white footer-link">Policy</button>
-
-            <!-- Security Badge -->
-            <div
-                class="flex items-center gap-2 text-[8px] text-emerald-500/80 border border-emerald-500/30 px-2 py-1 rounded bg-emerald-500/5">
-                <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
-                SECURE VAULT
-            </div>
-
-            <div class="h-4 w-[1px] bg-white/20"></div>
-
-            <button onclick="document.getElementById('about-modal').classList.remove('hidden')"
-                class="hover:text-white">About</button>
-        </div>
-    </div>
-</main>
-
-<!-- Policy Modal -->
-<div id="policy-modal"
-    class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <!-- Ethereal Grain Overlay -->
     <div
-        class="glass-panel max-w-2xl w-full p-8 rounded-2xl max-h-[80vh] overflow-y-auto text-sm text-gray-300 transition-all duration-300">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-light text-white uppercase tracking-widest">Privacy Policy</h2>
-            <button onclick="document.getElementById('policy-modal').classList.add('hidden')"
-                class="text-gray-500 hover:text-white">&times;</button>
-        </div>
-        <div class="space-y-4">
-            <p>This Privacy Policy describes how your personal information is collected, used, and shared when you
-                visit clarityforhumans.com.</p>
-            <h3 class="text-white">Information We Collect</h3>
-            <p>We do not collect personal identification info. Data entered (DOB, Sleep) is stored ONLY in your
-                browser's local storage and never sent to our servers.</p>
-            <h3 class="text-white">AdSense & DoubleClick Cookie</h3>
-            <p>Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of advertising
-                cookies enables it and its partners to serve ads to our users based on their visit to our sites
-                and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Ads
-                Settings.</p>
-            <h3 class="text-white">Contact</h3>
-            <p>For any questions regarding this policy, you may contact us at clarityforhumanscfh@gmail.com.</p>
-        </div>
+        class="fixed inset-[0] w-[200%] h-[200%] -left-[50%] -top-[50%] pointer-events-none z-[100] opacity-[0.05] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')] animate-grain">
     </div>
-</div>
 
-<!-- About Modal -->
-<div id="about-modal"
-    class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="glass-panel max-w-lg w-full p-8 rounded-2xl text-center transition-all duration-300">
-        <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-light text-white uppercase tracking-widest">About</h2>
-            <button onclick="document.getElementById('about-modal').classList.add('hidden')"
-                class="text-gray-500 hover:text-white">&times;</button>
-        </div>
-        <h2 class="text-xl font-light text-white uppercase tracking-widest mb-4 font-stoic">Life Expectancy Analysis
-        </h2>
-        <div class="text-left text-stone-400 space-y-4 text-xs">
-            <p>Understanding your <strong>Life Expectancy</strong> is the first step toward intentional living. Our
-                calculator uses global health statistics to provide an estimate of your remaining time based on your
-                country of residence.</p>
-            <p><strong>What is Conscious Time?</strong> Unlike a standard age calculator, we subtract the hours you
-                spend sleeping. Since the average human spends 1/3 of their life asleep, your "conscious" time is
-                significantly less than your total biological time.</p>
-            <p><strong>Stoic Perspective:</strong> In the tradition of <em>Memento Mori</em>, this tool helps focus
-                the mind on the present. By visualizing the finite nature of our hours, we can better prioritize
-                what truly matters.</p>
-            <p>Our algorithm pulls from World Health Organization (WHO) data to ensure statistical accuracy in every
-                calculation.</p>
-        </div>
-        <p class="mt-6 text-[10px] text-stone-600 uppercase tracking-widest">A #BecomingHuman Original Project</p>
+    <!-- Cinematic Background (Rotating Moon) -->
+    <div class="fixed inset-0 z-0 overflow-hidden">
+        <video autoplay muted loop playsinline
+            class="absolute top-1/2 left-1/2 min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-60 mix-blend-screen scale-110 blur-[1px]">
+            <source
+                src="https://player.vimeo.com/external/370331493.sd.mp4?s=7b0cd5ad2a53647f1b2dd0e0477e579737524576&profile_id=139&oauth2_token_id=57447761"
+                type="video/mp4">
+        </video>
+        <!-- Dark Overlay for Readability -->
+        <div class="absolute inset-0 bg-black/95 z-10"></div>
     </div>
-</div>
 
-<!-- The Protocol Modal (Science-Based Addictions/Brain) -->
-<div id="protocol-modal"
-    class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-2xl">
-    <div
-        class="glass-panel max-w-2xl w-full p-10 rounded-none border border-white/10 overflow-y-auto max-h-[90vh] scrollbar-hide">
-        <div class="flex justify-between items-center mb-12">
-            <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] font-stoic">Neurobiological
-                Optimization Protocol</h2>
-            <button onclick="document.getElementById('protocol-modal').classList.add('hidden')"
-                class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
-        </div>
+    <main id="setup-step"
+        class="relative z-10 w-full max-w-md p-8 bg-black backdrop-blur-xl border border-white/10 rounded-none shadow-2xl transition-all duration-700">
+        <h1 class="text-4xl font-bold text-center mb-2 tracking-[0.2em] text-white uppercase font-['Cinzel']">Setup
+            Reality</h1>
+        <p class="text-center text-stone-500 text-sm mb-8 font-light italic">"Waste no more time arguing what a good man
+            should be. Be one."</p>
 
-        <div class="space-y-16">
-            <!-- Dopamine Section -->
-            <section>
-                <h3
-                    class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
-                    01. Baseline Dopamine Restoration</h3>
-                <div class="text-stone-300 text-xs leading-relaxed space-y-4">
-                    <p>To overcome addiction, you must manage your <span class="text-white">Dopamine
-                            Baseline</span>. Spikes from substances or digital feeds cause an equal and opposite
-                        "crash" below baseline, creating cravings.</p>
-                    <ul class="list-none space-y-2 border-l border-white/10 pl-4">
-                        <li>• <span class="text-white font-medium">Digital Fasting:</span> Zero scrolling for the
-                            first 90 minutes of your day.</li>
-                        <li>• <span class="text-white font-medium">Delay Gratification:</span> Never combine two
-                            high-dopamine activities (e.g., eating + watching).</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Parasympathetic Section -->
-            <section>
-                <h3
-                    class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
-                    02. Parasympathetic Override</h3>
-                <div class="text-stone-300 text-xs leading-relaxed space-y-4">
-                    <p>Anxiety and cravings are Sympathetic (Fight or Flight) responses. You can manually override
-                        this through the <span class="text-white">Vagus Nerve</span>.</p>
-                    <ul class="list-none space-y-2 border-l border-white/10 pl-4">
-                        <li>• <span class="text-white font-medium">The Physiological Sigh:</span> Double inhale
-                            through nose, followed by a long, slow exhale through mouth. Repeat 3 times.</li>
-                        <li>• <span class="text-white font-medium">Thermogenic Reset:</span> 30 seconds of cold
-                            water exposure to trigger a natural dopamine release.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Circadian/Light Section -->
-            <section>
-                <h3
-                    class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
-                    03. Circadian Precision</h3>
-                <div class="text-stone-300 text-xs leading-relaxed space-y-4">
-                    <p>View sunlight within 30 minutes of waking. This triggers <span class="text-white">Cortisol
-                            release</span> and sets a timer for Melatonin, regulating the brain's internal rhythm.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Specialized Protocols -->
-            <div class="pt-8 border-t border-white/10">
-                <h2 class="text-[9px] font-bold text-gray-500 uppercase tracking-[0.6em] mb-12 text-center">Specific
-                    Neutralization Modules</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-                    <!-- Scrolling/Social -->
-                    <section>
-                        <h4
-                            class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
-                            A. Digital Compulsion</h4>
-                        <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
-                            <p><span class="text-white font-medium">The Gray Mode Hack:</span> Set your device to
-                                grayscale. This removes the 'variable reward' of color, slashing interest by 40%.
-                            </p>
-                            <p><span class="text-white font-medium">Friction Layering:</span> Delete apps, use only
-                                browser versions. Increased 'click friction' prevents limbic hijacking.</p>
-                        </div>
-                    </section>
-
-                    <!-- Porn/High Arousal -->
-                    <section>
-                        <h4
-                            class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
-                            B. High-Arousal Loops</h4>
-                        <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
-                            <p><span class="text-white font-medium">Environmental Cleansing:</span> Cues are stored
-                                in space. Never use your device in the same place you sleep or relax.</p>
-                            <p><span class="text-white font-medium">The 15-Min Wave:</span> Cravings are temporary
-                                neural spikes lasting ~15 mins. Use the 'Physiological Sigh' to survive the wave.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- Sugar/Dopamine Foods -->
-                    <section>
-                        <h4
-                            class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
-                            C. Chemical Reward</h4>
-                        <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
-                            <p><span class="text-white font-medium">Glucose Blunting:</span> 1 tbsp vinegar or lemon
-                                juice before meals blunts the insulin spike and subsequent brain crash.</p>
-                            <p><span class="text-white font-medium">Protein Priming:</span> High protein intake at
-                                breakfast stabilized dopamine levels for the next 12 hours.</p>
-                        </div>
-                    </section>
-
-                    <!-- Alcohol/Nicotine -->
-                    <section>
-                        <h4
-                            class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
-                            D. Substance Baseline</h4>
-                        <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
-                            <p><span class="text-white font-medium">The 72-Hour Reset:</span> It takes 3 days for
-                                primary withdrawal cues to weaken. Survival of the first 72 hours is the biological
-                                goal.</p>
-                            <p><span class="text-white font-medium">The Context Shift:</span> Cravings often trigger
-                                at specific times/places. Change your physical environment for those specific hour
-                                windows.</p>
-                        </div>
-                    </section>
-                </div>
+        <div class="space-y-6">
+            <div class="group">
+                <label
+                    class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Date
+                    of Birth</label>
+                <input type="date" id="dob" aria-label="Date of Birth" required
+                    class="w-full bg-black border border-white/20 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-white">
             </div>
-        </div>
 
-        <p class="mt-20 text-center text-[8px] text-stone-400 uppercase tracking-widest font-mono">This is not
-            motivation. This is biological maintenance.</p>
-    </div>
-</div>
+            <div class="group">
+                <label
+                    class="block text-[10px] uppercase tracking-widest text-stone-300 mb-2 group-focus-within:text-white transition-colors font-bold">Location
+                    (Life Expectancy)</label>
+                <select id="country" aria-label="Select your country" required
+                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white appearance-none focus:outline-none focus:ring-1 focus:ring-white">
+                    <!-- Populated by JS -->
+                </select>
+            </div>
 
-<!-- Crisis Mode Overlay (Neuro-Shield) -->
-<div id="crisis-mode"
-    class="fixed inset-0 z-[200] hidden bg-black flex flex-col items-center justify-center p-8 transition-all duration-1000">
-    <div id="breathing-circle"
-        class="w-32 h-32 border-2 border-white rounded-full flex items-center justify-center mb-12">
-        <span id="breathing-text" class="text-[10px] uppercase tracking-[0.5em] text-white">Inhale</span>
-    </div>
-    <div class="max-w-md text-center">
-        <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] mb-4">Crisis Containment</h2>
-        <p id="crisis-instruction" class="text-[11px] text-stone-400 italic">Survival is a 900-second wave. Breathe
-            with the circle.</p>
-        <div class="mt-12 text-2xl font-mono text-white tracking-widest" id="crisis-timer">15:00</div>
-    </div>
-    <button id="exit-crisis"
-        class="mt-20 text-[9px] uppercase tracking-widest text-stone-600 hover:text-white transition-colors">Abort
-        Override</button>
-</div>
+            <div class="group">
+                <label
+                    class="block text-xs uppercase tracking-widest text-gray-400 mb-2 group-focus-within:text-white transition-colors">Daily
+                    Sleep (Hours)</label>
+                <input type="number" id="sleep" min="0" max="24" step="0.5" value="8" aria-label="Daily sleep hours"
+                    class="w-full bg-zinc-800/80 border border-gray-600 focus:border-white rounded-lg px-4 py-3 text-xl font-light transition-colors text-white focus:outline-none focus:ring-1 focus:ring-white">
+            </div>
 
-<!-- Focus Mode Overlay -->
-<div id="focus-overlay"
-    class="hidden fixed inset-0 z-50 bg-black flex-col items-center justify-center text-white transition-opacity duration-500">
-    <!-- Background Ambient Effect -->
-    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-black pointer-events-none"></div>
-
-    <div class="relative z-10 text-center">
-        <div class="mb-4 text-xs font-mono tracking-[0.5em] text-blue-400 uppercase animate-pulse">Deep Work
-            Protocol</div>
-
-        <div id="focus-timer-display"
-            class="text-[12rem] leading-none font-bold font-stoic tracking-tighter tabular-nums text-white">
-            25:00
-        </div>
-
-        <div class="mt-12 flex gap-6 justify-center">
-            <button onclick="window.app.focusManager.cancelSession()"
-                class="px-8 py-4 border border-white/20 hover:bg-white/10 rounded-full text-xs uppercase tracking-[0.2em] transition-all">
-                Abort
+            <button id="start-btn" aria-label="Initialize life countdown sequence"
+                class="w-full mt-8 bg-white text-black hover:bg-stone-200 font-medium py-4 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                Initialize Sequence
             </button>
         </div>
-    </div>
+    </main>
 
-    <!-- Progress Bar -->
-    <div class="absolute bottom-0 left-0 w-full h-1 bg-white/10">
-        <div id="focus-progress-bar" class="h-full bg-blue-500 transition-all duration-1000" style="width: 0%">
+    <!-- Countdown Step -->
+    <main id="countdown-step"
+        class="relative z-10 hidden text-center w-full max-w-5xl px-4 flex flex-col items-center justify-start h-full overflow-y-auto py-20 scrollbar-hide">
+
+        <!-- Soul Rank Label -->
+        <div class="mb-12 flex flex-col items-center">
+            <span id="soul-rank"
+                class="text-[10px] uppercase tracking-[0.8em] text-white font-black mb-2 px-4 py-1 border border-white">The
+                Pure Presence</span>
+            <span class="text-[8px] uppercase tracking-[0.4em] text-white/40">Status: Sovereign</span>
+        </div>
+
+        <!-- Daily Reflection (Retention Engine) -->
+        <div id="daily-reflection" class="mb-12 max-w-lg text-center opacity-0 transition-opacity duration-1000">
+            <h4 class="text-[10px] uppercase tracking-[0.5em] text-white mb-3 font-mono font-bold">Protocol: Daily
+                Recapture</h4>
+            <h3 id="reflection-title"
+                class="text-lg font-bold text-white uppercase tracking-widest mb-2 border-b-2 border-white pb-2 inline-block">
+                The Architecture of Silence</h3>
+            <p id="reflection-content" class="text-[12px] leading-relaxed text-white font-medium italic mt-4">Refining
+                the baseline of human consciousness...</p>
+        </div>
+
+        <div class="dashboard-container flex flex-col items-center w-full">
+            <div class="mb-4 text-center">
+                <p class="text-[12px] uppercase tracking-[0.6em] text-white font-black">Biological Capital Remaining</p>
+            </div>
+
+            <!-- Conscious Energy Bar -->
+            <div class="w-full max-w-md h-1 bg-white/10 rounded-full mb-8 overflow-hidden border border-white/5">
+                <div id="life-progress-bar" class="h-full bg-white transition-all duration-1000 shadow-[0_0_20px_white]"
+                    style="width: 0%"></div>
+            </div>
+
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-6 md:gap-16 w-full mb-12 animate-breath">
+                <div class="stat-block group">
+                    <div id="c-years"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Years</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-days"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Days</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-hours"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Hours</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-minutes"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Minutes</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-seconds"
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-stoic stat-number tracking-tighter">00
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Seconds</div>
+                </div>
+                <div class="stat-block group">
+                    <div id="c-milliseconds"
+                        class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-stoic text-white/60 blur-[1px]">000
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mt-2 font-bold">Milliseconds</div>
+                </div>
+            </div>
+
+            <!-- Perspective Units (Mobile Optimized) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-4xl mb-12">
+                <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Sunsets</div>
+                    <div id="unit-sunsets" class="text-xl font-stoic text-white">0</div>
+                </div>
+                <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Summers</div>
+                    <div id="unit-summers" class="text-xl font-stoic text-white">0</div>
+                </div>
+                <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Books</div>
+                    <div id="unit-books" class="text-xl font-stoic text-white">0</div>
+                </div>
+                <div class="p-4 bg-zinc-900/80 border border-white/20 rounded-lg text-center backdrop-blur-md">
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 mb-1 font-bold">Meals</div>
+                    <div id="unit-meals" class="text-xl font-stoic text-white">0</div>
+                </div>
+            </div>
+
+            <!-- Biological Capital Assets Removed per user request for cleanliness -->
+            <!-- Replaced with a cleaner spacer or nothing -->
+
+            <!-- Life Simulator: The Chronos Protocol -->
+            <div id="sim-hub" class="w-full max-w-6xl p-8 terminal-box mb-12 relative overflow-hidden hidden">
+                <div class="flex flex-col gap-8">
+                    <!-- THE TIME MACHINE UI -->
+
+                    <!-- Header -->
+                    <div class="text-center border-b border-white/10 pb-12">
+                        <h4 class="text-[10px] uppercase tracking-[0.5em] text-white/50 mb-4 font-mono">The Event
+                            Horizon</h4>
+                        <h2 class="text-4xl md:text-5xl font-['Cinzel'] text-white tracking-wide">Project Your Reality
+                        </h2>
+                        <p class="text-stone-500 text-sm mt-4 italic max-w-xl mx-auto leading-relaxed">"Time is a river,
+                            a violent rolling torrent. Slide forward to see what remains downstream."</p>
+                    </div>
+
+                    <!-- The Time Slider Control Panel -->
+                    <div class="p-8 bg-zinc-900/50 rounded-xl border border-white/10 shadow-2xl backdrop-blur-md">
+                        <div class="flex justify-between items-end mb-8">
+                            <div>
+                                <label class="text-xs uppercase tracking-[0.2em] text-stone-400 font-bold">Time
+                                    Travel</label>
+                                <div class="text-stone-600 text-[10px] mt-1">SLIDE TO VISIT THE FUTURE</div>
+                            </div>
+                            <span id="slider-year-display"
+                                class="text-6xl font-['JetBrains_Mono'] font-bold text-white tracking-tighter transition-all duration-200">2026</span>
+                        </div>
+
+                        <div class="relative w-full h-12 flex items-center">
+                            <input type="range" id="time-slider" min="2026" max="2080" value="2026"
+                                class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white hover:accent-stone-200 transition-all z-20 relative">
+                            <!-- Visual Decoration -->
+                            <div class="absolute top-1/2 left-0 w-full h-px bg-white/10 z-0"></div>
+                            <div class="absolute top-1/2 left-[0%] w-px h-4 bg-white/30 z-0"></div>
+                            <div class="absolute top-1/2 left-[25%] w-px h-2 bg-white/10 z-0"></div>
+                            <div class="absolute top-1/2 left-[50%] w-px h-2 bg-white/10 z-0"></div>
+                            <div class="absolute top-1/2 left-[75%] w-px h-2 bg-white/10 z-0"></div>
+                            <div class="absolute top-1/2 left-[100%] w-px h-4 bg-white/30 z-0"></div>
+                        </div>
+
+                        <div
+                            class="flex justify-between mt-4 text-[10px] text-stone-500 font-mono tracking-widest uppercase">
+                            <span>NOW</span>
+                            <span>THE END</span>
+                        </div>
+                    </div>
+
+                    <!-- Add Connection Form -->
+                    <div class="bg-black/40 p-6 border border-white/10 rounded-lg">
+                        <h5 class="text-[10px] uppercase tracking-[0.3em] text-white/30 mb-6 font-mono">Anchor A
+                            Connection</h5>
+                        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+                            <div class="md:col-span-4">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Name</label>
+                                <input type="text" id="rel-name" placeholder="e.g. Mom" aria-label="Person's name"
+                                    class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Role</label>
+                                <select id="rel-role" aria-label="Person's role in your life"
+                                    class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded appearance-none">
+                                    <option value="parent">Parent</option>
+                                    <option value="partner">Partner</option>
+                                    <option value="child">Child</option>
+                                    <option value="friend">Friend</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Age
+                                    Now</label>
+                                <input type="number" id="rel-age" placeholder="55" aria-label="Person's current age"
+                                    class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label
+                                    class="block text-[10px] uppercase tracking-widest text-stone-500 mb-2">Visits/Year</label>
+                                <input type="number" id="rel-freq" placeholder="2" aria-label="Visit frequency per year"
+                                    class="w-full bg-zinc-900 border border-zinc-800 text-white text-sm p-3 focus:border-white outline-none transition-colors rounded"
+                                    title="How many times do you see them per year?">
+                            </div>
+                            <div class="md:col-span-2">
+                                <button onclick="window.app.addConnection()"
+                                    aria-label="Anchor this person to your timeline"
+                                    class="w-full h-[46px] bg-white text-black font-bold uppercase text-[10px] tracking-[0.2em] hover:bg-stone-200 transition-colors rounded shadow-lg shadow-white/10">
+                                    Anchor
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projection Results Grid -->
+                    <div id="projection-results"
+                        class="grid grid-cols-1 md:grid-cols-2 gap-6 min-h-[200px] transition-all duration-500">
+                        <!-- Filled by JS -->
+                        <div class="col-span-full text-center py-12 border-2 border-dashed border-white/5 rounded-xl">
+                            <p class="text-stone-600 italic">No connections anchored yet.<br>Add someone above to
+                                project your shared timeline.</p>
+                        </div>
+                    </div>
+
+                    <!-- DIGITAL ATROPHY AUDIT -->
+                    <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
+                        <div class="text-center mb-12">
+                            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">The
+                                Algorithm Tax</h2>
+                            <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Quantify Your Digital Servitude
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <!-- Controls -->
+                            <div class="space-y-8 p-6 bg-white/5 border border-white/10 rounded-xl backdrop-blur-sm">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-[10px] uppercase tracking-widest text-stone-400">Phone Screen
+                                            Time</label>
+                                        <span id="phone-val" class="text-white font-mono">4h</span>
+                                    </div>
+                                    <input type="range" id="atrophy-phone" min="0" max="12" step="0.5" value="4"
+                                        class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-[10px] uppercase tracking-widest text-stone-400">Desktop/TV
+                                            Time</label>
+                                        <span id="desktop-val" class="text-white font-mono">2h</span>
+                                    </div>
+                                    <input type="range" id="atrophy-desktop" min="0" max="12" step="0.5" value="2"
+                                        class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
+                                </div>
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <label class="text-[10px] uppercase tracking-widest text-stone-400">Daily
+                                            Sleep</label>
+                                        <span id="sleep-val" class="text-white font-mono">8h</span>
+                                    </div>
+                                    <input type="range" id="atrophy-sleep" min="4" max="12" step="0.5" value="8"
+                                        class="w-full h-1 bg-stone-800 rounded-lg appearance-none cursor-pointer accent-white">
+                                </div>
+                            </div>
+
+                            <!-- Result Container -->
+                            <div id="atrophy-result"
+                                class="flex flex-col justify-center bg-black/20 rounded-xl p-6 border border-white/5">
+                                <!-- JS Injected -->
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                    <!-- MEMENTO MORI GRID -->
+                    <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in">
+                        <div class="text-center mb-12">
+                            <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">The
+                                Life Grid</h2>
+                            <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Every Week of Your Existence
+                            </p>
+                        </div>
+
+                        <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
+                            <div
+                                class="flex justify-between items-center mb-4 text-[10px] uppercase tracking-widest text-stone-500 font-mono">
+                                <span>Birth</span>
+                                <span id="grid-info" class="text-white">Hover to inspect time</span>
+                                <span>Death (90)</span>
+                            </div>
+                            <div class="w-full overflow-hidden">
+                                <canvas id="life-grid-canvas" class="w-full cursor-crosshair"></canvas>
+                            </div>
+                            <!-- Legal / Policy Disclaimer -->
+                            <div
+                                class="mt-12 text-center max-w-2xl mx-auto opacity-30 text-[8px] font-mono leading-relaxed px-4">
+                                <p>DISCLAIMER: The calculations provided by Clarity For Humans are estimates based on
+                                    WHO data and user inputs.
+                                    This tool is for philosophical and educational purposes only. It does not constitute
+                                    medical advice, diagnosis,
+                                    or professional psychological counseling. Data is processed locally on your device;
+                                    we do not store personal biometric information.</p>
+                            </div>
+
+                            <footer class="mt-8 text-center opacity-50 text-[10px] uppercase tracking-widest pb-8">
+                                <p>&copy; <span id="copyright-year">2025</span> Clarity For Humans. <span
+                                        class="hidden md:inline">Memento Mori.</span></p>
+                            </footer>
+                            <div
+                                class="mt-4 flex gap-6 justify-center text-[10px] uppercase tracking-widest text-stone-600">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-white"></div> Lived
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-red-500 animate-pulse"></div> Now
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 bg-white/10"></div> Remaining
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- VIA NEGATIVA (Novel Feature) -->
+        <div id="via-negativa-section" class="w-full max-w-4xl border-t border-white/10 pt-12 mb-12 animate-fade-in">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Via Negativa</h2>
+                <p class="text-stone-400 text-xs uppercase tracking-[0.2em]">The Art of Subtraction</p>
+            </div>
+
+            <div class="w-full p-6 bg-zinc-900/80 border border-white/10 rounded-xl backdrop-blur-md">
+                <div class="flex flex-col md:flex-row gap-4 mb-8">
+                    <input type="text" id="negativa-input"
+                        placeholder="What burden will you drop? (e.g. Envy, Processed Sugar)"
+                        class="flex-1 bg-black/50 border border-white/20 rounded-lg p-4 text-white text-sm focus:border-white outline-none transition-colors font-mono">
+                    <button id="add-negativa-btn"
+                        class="px-8 py-4 bg-white text-black font-bold uppercase text-[10px] tracking-widest hover:bg-stone-200 rounded-lg transition-transform hover:scale-[1.02]">
+                        Cast Away
+                    </button>
+                </div>
+
+                <ul id="negativa-list" class="space-y-3 mb-6">
+                    <!-- Items injected via JS -->
+                </ul>
+
+                <div class="flex justify-center items-center gap-2 opacity-50">
+                    <span class="text-[10px] uppercase tracking-widest text-stone-500">Psychological Weight
+                        Lifted:</span>
+                    <span id="weight-lifted" class="text-lg font-mono text-white">0</span>
+                    <span class="text-[10px] text-stone-500">kg</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE CODEX OF CLARITY (Content for AdSense/SEO/Authority) -->
+        <div class="w-full max-w-5xl border-t border-white/10 pt-12 mb-12 animate-fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide scramble-target">The
+                    Codex of Clarity</h2>
+                <p class="text-stone-400 text-xs uppercase tracking-[0.2em] scramble-target">The Triad of Intentional
+                    Existence</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Column 1: Philosophy -->
+                <div
+                    class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
+                    <h3
+                        class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-teal-400 transition-colors scramble-target">
+                        I. Memento Mori</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
+                        To deny death is to deny the defining characteristic of life. The Stoics did not view mortality
+                        as a curse, but as a lens through which clarity is achieved. When the timeline is visible,
+                        urgency is born. This tool is not designed to induce anxiety, but to destroy procrastination. By
+                        quantifying your remaining conscious hours, we strip away the illusion of infinite time.
+                    </p>
+                </div>
+
+                <!-- Column 2: Neuroscience -->
+                <div
+                    class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
+                    <h3
+                        class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-purple-400 transition-colors">
+                        II. Neuro-Equity</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
+                        Attention is your only non-renewable currency. Modern algorithmic feeds are engineered to
+                        bankrupt this currency by hijacking the dopaminergic reward system. "Digital Atrophy" creates a
+                        measurable physiological cost: thinned prefrontal cortex gray matter and reduced executive
+                        function. We provide the metrics to audit your own consumption and reclaim cognitive
+                        sovereignty.
+                    </p>
+                </div>
+
+                <!-- Column 3: Mathematics -->
+                <div
+                    class="p-8 bg-black/40 border border-white/5 rounded-xl hover:border-white/20 transition-all duration-500 group">
+                    <h3
+                        class="text-sm font-bold text-white uppercase tracking-[0.2em] mb-4 group-hover:text-orange-400 transition-colors">
+                        III. The Math of Now</h3>
+                    <p class="text-xs text-stone-400 leading-relaxed font-serif text-justify">
+                        We spend approximately 26 years sleeping and 11 years working. The "Pocket Time"—the time
+                        available for passion, connection, and creation—is shockingly scarce. Our algorithm uses WHO
+                        global health data and your specific sleep variables to calculate the precise "Conscious
+                        Remaining Value" (CRV). This is the only number that truly matters.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <!-- Responsible Ad Space (Clean/Minimal) -->
+                <div
+                    class="w-full h-[90px] bg-white/5 rounded border border-white/5 flex items-center justify-center overflow-hidden">
+                    <span class="text-[9px] uppercase tracking-widest text-stone-600">Sponsor of Time</span>
+                    <!-- AdSense Slot would go here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- LIFE VISUALIZATION CHART -->
+        <div class="border-t border-white/10 pt-12 mt-12 animate-fade-in w-full max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-light text-white mb-2 font-stoic tracking-wide">Life Timeline
+                </h2>
+                <p class="text-stone-500 text-xs uppercase tracking-[0.2em]">Visual Representation of Your Existence
+                </p>
+            </div>
+
+            <div class="p-6 bg-black/40 border border-white/10 rounded-xl">
+                <canvas id="life-progress-chart" class="w-full" style="height: 200px;"></canvas>
+            </div>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                <div class="p-4 bg-white/5 rounded-lg">
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Lived</div>
+                    <div id="time-lived-percent" class="text-2xl font-stoic text-green-500">0%</div>
+                </div>
+                <div class="p-4 bg-white/5 rounded-lg">
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Time Remaining</div>
+                    <div id="time-remaining-percent" class="text-2xl font-stoic text-white">100%</div>
+                </div>
+                <div class="p-4 bg-white/5 rounded-lg">
+                    <div class="text-[10px] uppercase tracking-widest text-stone-400 mb-2">Weeks Left</div>
+                    <div id="weeks-remaining" class="text-2xl font-stoic text-red-500">0</div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Dashboard Removed for Simplicity -->
+
+        <div class="mb-12 text-center mt-12">
+            <p class="text-[10px] uppercase tracking-[0.8em] text-white/40 mb-4 font-mono">Global Sovereigns Active
+            </p>
+            <div class="text-2xl font-stoic text-white"><span id="global-sovereigns">1,242</span></div>
+        </div>
+        </div> <!-- End Dashboard Container -->
+        <div class="mt-24 w-full max-w-3xl">
+            <button id="crave-btn"
+                class="w-full px-4 py-8 bg-red-900/20 text-red-500 font-black uppercase tracking-[0.3em] text-[10px] hover:bg-red-900 hover:text-white transition-all duration-300 border border-red-900/50 hover:border-red-500 backdrop-blur-md shadow-[0_0_30px_rgba(255,0,0,0.1)]"
+                aria-label="Enter crisis override mode">
+                ⚠️ Crisis Override
+            </button>
+        </div>
+
+        <!-- Sovereign Menu (Omni-Control) -->
+        <div class="fixed bottom-8 right-8 z-[150]">
+            <button id="sovereign-toggle"
+                class="w-16 h-16 bg-white text-black rounded-full shadow-[0_0_50px_rgba(255,255,255,0.2)] flex items-center justify-center transition-all duration-700 hover:scale-110 active:scale-95 group overflow-hidden relative">
+                <div class="absolute inset-0 bg-white/20 animate-ping opacity-20"></div>
+                <span id="sovereign-icon"
+                    class="text-2xl transition-transform duration-700 group-hover:rotate-180 relative z-10">✧</span>
+            </button>
+            <div id="sovereign-menu"
+                class="absolute bottom-24 right-0 flex flex-col items-end gap-3 pointer-events-none opacity-0 translate-y-10 transition-all duration-700">
+                <button id="void-mode-btn"
+                    class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">⬛
+                    Void <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
+                <button id="create-wallpaper-btn"
+                    class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">📱
+                    Wallpaper <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
+                <button id="focus-btn"
+                    class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">🎯
+                    Focus <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
+                <button onclick="document.getElementById('protocol-modal').classList.remove('hidden')"
+                    class="menu-item group px-8 py-3 bg-black/90 text-white text-[10px] uppercase tracking-[0.5em] border border-white/10 rounded-full hover:bg-white hover:text-black transition-all backdrop-blur-xl">📖
+                    Protocol <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
+                <button onclick="localStorage.clear(); location.reload();"
+                    class="menu-item group px-8 py-3 bg-red-950/20 text-red-500 text-[10px] uppercase tracking-[0.5em] border border-red-500/10 rounded-full hover:bg-red-500 hover:text-white transition-all backdrop-blur-xl">💀
+                    Reset <span class="opacity-0 group-hover:opacity-100 transition-opacity ml-2">→</span></button>
+            </div>
+        </div>
+
+        <div class="mt-12 pb-12 flex flex-col items-center space-y-6">
+            <button onclick="localStorage.clear(); location.reload();"
+                class="text-[10px] text-white/40 hover:text-white transition-colors uppercase tracking-[0.5em] font-bold">
+                Reset Reality
+            </button>
+            <div class="flex space-x-8 text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold">
+                <button onclick="document.getElementById('policy-modal').classList.remove('hidden')"
+                    class="hover:text-white footer-link">Policy</button>
+
+                <!-- Security Badge -->
+                <div
+                    class="flex items-center gap-2 text-[8px] text-emerald-500/80 border border-emerald-500/30 px-2 py-1 rounded bg-emerald-500/5">
+                    <span class="w-1 h-1 rounded-full bg-emerald-400 animate-pulse"></span>
+                    SECURE VAULT
+                </div>
+
+                <div class="h-4 w-[1px] bg-white/20"></div>
+
+                <button onclick="document.getElementById('about-modal').classList.remove('hidden')"
+                    class="hover:text-white">About</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Policy Modal -->
+    <div id="policy-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div
+            class="glass-panel max-w-2xl w-full p-8 rounded-2xl max-h-[80vh] overflow-y-auto text-sm text-gray-300 transition-all duration-300">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-light text-white uppercase tracking-widest">Privacy Policy</h2>
+                <button onclick="document.getElementById('policy-modal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-white">&times;</button>
+            </div>
+            <div class="space-y-4">
+                <p>This Privacy Policy describes how your personal information is collected, used, and shared when you
+                    visit clarityforhumans.com.</p>
+                <h3 class="text-white">Information We Collect</h3>
+                <p>We do not collect personal identification info. Data entered (DOB, Sleep) is stored ONLY in your
+                    browser's local storage and never sent to our servers.</p>
+                <h3 class="text-white">AdSense & DoubleClick Cookie</h3>
+                <p>Google, as a third-party vendor, uses cookies to serve ads on our site. Google's use of advertising
+                    cookies enables it and its partners to serve ads to our users based on their visit to our sites
+                    and/or other sites on the Internet. Users may opt out of personalized advertising by visiting Ads
+                    Settings.</p>
+                <h3 class="text-white">Contact</h3>
+                <p>For any questions regarding this policy, you may contact us at clarityforhumanscfh@gmail.com.</p>
+            </div>
         </div>
     </div>
-</div>
 
-<script type="module" src="js/app.js"></script>
+    <!-- About Modal -->
+    <div id="about-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+        <div class="glass-panel max-w-lg w-full p-8 rounded-2xl text-center transition-all duration-300">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-light text-white uppercase tracking-widest">About</h2>
+                <button onclick="document.getElementById('about-modal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-white">&times;</button>
+            </div>
+            <h2 class="text-xl font-light text-white uppercase tracking-widest mb-4 font-stoic">Life Expectancy Analysis
+            </h2>
+            <div class="text-left text-stone-400 space-y-4 text-xs">
+                <p>Understanding your <strong>Life Expectancy</strong> is the first step toward intentional living. Our
+                    calculator uses global health statistics to provide an estimate of your remaining time based on your
+                    country of residence.</p>
+                <p><strong>What is Conscious Time?</strong> Unlike a standard age calculator, we subtract the hours you
+                    spend sleeping. Since the average human spends 1/3 of their life asleep, your "conscious" time is
+                    significantly less than your total biological time.</p>
+                <p><strong>Stoic Perspective:</strong> In the tradition of <em>Memento Mori</em>, this tool helps focus
+                    the mind on the present. By visualizing the finite nature of our hours, we can better prioritize
+                    what truly matters.</p>
+                <p>Our algorithm pulls from World Health Organization (WHO) data to ensure statistical accuracy in every
+                    calculation.</p>
+            </div>
+            <p class="mt-6 text-[10px] text-stone-600 uppercase tracking-widest">A #BecomingHuman Original Project</p>
+        </div>
+    </div>
+
+    <!-- The Protocol Modal (Science-Based Addictions/Brain) -->
+    <div id="protocol-modal"
+        class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/95 backdrop-blur-2xl">
+        <div
+            class="glass-panel max-w-2xl w-full p-10 rounded-none border border-white/10 overflow-y-auto max-h-[90vh] scrollbar-hide">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] font-stoic">Neurobiological
+                    Optimization Protocol</h2>
+                <button onclick="document.getElementById('protocol-modal').classList.add('hidden')"
+                    class="text-gray-500 hover:text-white transition-colors text-2xl">&times;</button>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Dopamine Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        01. Baseline Dopamine Restoration</h3>
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
+                        <p>To overcome addiction, you must manage your <span class="text-white">Dopamine
+                                Baseline</span>. Spikes from substances or digital feeds cause an equal and opposite
+                            "crash" below baseline, creating cravings.</p>
+                        <ul class="list-none space-y-2 border-l border-white/10 pl-4">
+                            <li>• <span class="text-white font-medium">Digital Fasting:</span> Zero scrolling for the
+                                first 90 minutes of your day.</li>
+                            <li>• <span class="text-white font-medium">Delay Gratification:</span> Never combine two
+                                high-dopamine activities (e.g., eating + watching).</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Parasympathetic Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        02. Parasympathetic Override</h3>
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
+                        <p>Anxiety and cravings are Sympathetic (Fight or Flight) responses. You can manually override
+                            this through the <span class="text-white">Vagus Nerve</span>.</p>
+                        <ul class="list-none space-y-2 border-l border-white/10 pl-4">
+                            <li>• <span class="text-white font-medium">The Physiological Sigh:</span> Double inhale
+                                through nose, followed by a long, slow exhale through mouth. Repeat 3 times.</li>
+                            <li>• <span class="text-white font-medium">Thermogenic Reset:</span> 30 seconds of cold
+                                water exposure to trigger a natural dopamine release.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Circadian/Light Section -->
+                <section>
+                    <h3
+                        class="text-white text-[10px] uppercase tracking-[0.3em] mb-4 border-b border-white/5 pb-2 font-mono">
+                        03. Circadian Precision</h3>
+                    <div class="text-stone-300 text-xs leading-relaxed space-y-4">
+                        <p>View sunlight within 30 minutes of waking. This triggers <span class="text-white">Cortisol
+                                release</span> and sets a timer for Melatonin, regulating the brain's internal rhythm.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Specialized Protocols -->
+                <div class="pt-8 border-t border-white/10">
+                    <h2 class="text-[9px] font-bold text-gray-500 uppercase tracking-[0.6em] mb-12 text-center">Specific
+                        Neutralization Modules</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+                        <!-- Scrolling/Social -->
+                        <section>
+                            <h4
+                                class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
+                                A. Digital Compulsion</h4>
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
+                                <p><span class="text-white font-medium">The Gray Mode Hack:</span> Set your device to
+                                    grayscale. This removes the 'variable reward' of color, slashing interest by 40%.
+                                </p>
+                                <p><span class="text-white font-medium">Friction Layering:</span> Delete apps, use only
+                                    browser versions. Increased 'click friction' prevents limbic hijacking.</p>
+                            </div>
+                        </section>
+
+                        <!-- Porn/High Arousal -->
+                        <section>
+                            <h4
+                                class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
+                                B. High-Arousal Loops</h4>
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
+                                <p><span class="text-white font-medium">Environmental Cleansing:</span> Cues are stored
+                                    in space. Never use your device in the same place you sleep or relax.</p>
+                                <p><span class="text-white font-medium">The 15-Min Wave:</span> Cravings are temporary
+                                    neural spikes lasting ~15 mins. Use the 'Physiological Sigh' to survive the wave.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Sugar/Dopamine Foods -->
+                        <section>
+                            <h4
+                                class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
+                                C. Chemical Reward</h4>
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
+                                <p><span class="text-white font-medium">Glucose Blunting:</span> 1 tbsp vinegar or lemon
+                                    juice before meals blunts the insulin spike and subsequent brain crash.</p>
+                                <p><span class="text-white font-medium">Protein Priming:</span> High protein intake at
+                                    breakfast stabilized dopamine levels for the next 12 hours.</p>
+                            </div>
+                        </section>
+
+                        <!-- Alcohol/Nicotine -->
+                        <section>
+                            <h4
+                                class="text-white text-[10px] uppercase tracking-widest mb-4 font-bold italic font-mono decoration-stone-500 underline">
+                                D. Substance Baseline</h4>
+                            <div class="text-stone-300 text-[10px] leading-relaxed space-y-2">
+                                <p><span class="text-white font-medium">The 72-Hour Reset:</span> It takes 3 days for
+                                    primary withdrawal cues to weaken. Survival of the first 72 hours is the biological
+                                    goal.</p>
+                                <p><span class="text-white font-medium">The Context Shift:</span> Cravings often trigger
+                                    at specific times/places. Change your physical environment for those specific hour
+                                    windows.</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-20 text-center text-[8px] text-stone-400 uppercase tracking-widest font-mono">This is not
+                motivation. This is biological maintenance.</p>
+        </div>
+    </div>
+
+    <!-- Crisis Mode Overlay (Neuro-Shield) -->
+    <div id="crisis-mode"
+        class="fixed inset-0 z-[200] hidden bg-black flex flex-col items-center justify-center p-8 transition-all duration-1000">
+        <div id="breathing-circle"
+            class="w-32 h-32 border-2 border-white rounded-full flex items-center justify-center mb-12">
+            <span id="breathing-text" class="text-[10px] uppercase tracking-[0.5em] text-white">Inhale</span>
+        </div>
+        <div class="max-w-md text-center">
+            <h2 class="text-xs font-bold text-white uppercase tracking-[0.5em] mb-4">Crisis Containment</h2>
+            <p id="crisis-instruction" class="text-[11px] text-stone-400 italic">Survival is a 900-second wave. Breathe
+                with the circle.</p>
+            <div class="mt-12 text-2xl font-mono text-white tracking-widest" id="crisis-timer">15:00</div>
+        </div>
+        <button id="exit-crisis"
+            class="mt-20 text-[9px] uppercase tracking-widest text-stone-600 hover:text-white transition-colors">Abort
+            Override</button>
+    </div>
+
+    <!-- Focus Mode Overlay -->
+    <div id="focus-overlay"
+        class="hidden fixed inset-0 z-50 bg-black flex-col items-center justify-center text-white transition-opacity duration-500">
+        <!-- Background Ambient Effect -->
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-black pointer-events-none"></div>
+
+        <div class="relative z-10 text-center">
+            <div class="mb-4 text-xs font-mono tracking-[0.5em] text-blue-400 uppercase animate-pulse">Deep Work
+                Protocol</div>
+
+            <div id="focus-timer-display"
+                class="text-[12rem] leading-none font-bold font-stoic tracking-tighter tabular-nums text-white">
+                25:00
+            </div>
+
+            <div class="mt-12 flex gap-6 justify-center">
+                <button onclick="window.app.focusManager.cancelSession()"
+                    class="px-8 py-4 border border-white/20 hover:bg-white/10 rounded-full text-xs uppercase tracking-[0.2em] transition-all">
+                    Abort
+                </button>
+            </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-white/10">
+            <div id="focus-progress-bar" class="h-full bg-blue-500 transition-all duration-1000" style="width: 0%">
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
 </body>
 
 </html>

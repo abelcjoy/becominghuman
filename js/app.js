@@ -446,21 +446,8 @@ class LifeCountdown {
             });
         }
 
-        // Load saved state (DOB only)
-        try {
-            const savedData = this.secureLoad('lifeData');
-            if (savedData) {
-                this.startCountdown(savedData);
-            }
-        } catch (error) {
-            console.error('Error loading saved data:', error);
-            if (window.toast) toast.error('Failed to load saved data. Starting fresh.');
-        }
+        // Saved data loading is now handled in DOMContentLoaded to support async decryption. 
     }
-
-
-
-
 
     populateCountries() {
         const countries = Object.keys(lifeExpectancyData).sort();
@@ -534,7 +521,7 @@ class LifeCountdown {
         deathDate.setFullYear(deathDate.getFullYear() + Math.floor(lifeExpectancyYears));
 
         // Ensure sleepHours is a valid number
-        const safeSleepHours = isNaN(sleepHours) ? 8 : Math.min(24, Math.max(0, safeSleepHours));
+        const safeSleepHours = isNaN(sleepHours) ? 8 : Math.min(24, Math.max(0, sleepHours));
 
         // Add remaining fractional year in days
         const fractionalYear = lifeExpectancyYears % 1;

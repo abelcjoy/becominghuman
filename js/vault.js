@@ -12,6 +12,10 @@ export class IronVault {
     }
 
     async init() {
+        if (!window.crypto || !window.crypto.subtle) {
+            console.warn('Vault: Secure context (HTTPS) required for AES-256. Falling back to obfuscation.');
+            return;
+        }
         this.key = await this.getOrCreateKey();
     }
 
@@ -50,7 +54,12 @@ export class IronVault {
     }
 
     async encrypt(data) {
+        if (!window.crypto || !window.crypto.subtle) {
+            return btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+        }
         if (!this.key) await this.init();
+        if (!this.key) return btoa(JSON.stringify(data)); // Final fallback
+
         const json = JSON.stringify(data);
         const encoder = new TextEncoder();
         const encoded = encoder.encode(json);
@@ -71,7 +80,12 @@ export class IronVault {
     }
 
     async decrypt(base64) {
+        if (!window.crypto || !window.crypto.subtle) {
+            try { return JSON.parse(decodeURIComponent(escape(atob(base64)))); } catch (e) { return null; }
+        }
         if (!this.key) await this.init();
+        if (!this.key) return null;
+
         try {
             const combined = new Uint8Array(
                 atob(base64).split('').map(c => c.charCodeAt(0))
