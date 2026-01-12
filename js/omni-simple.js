@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 270 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 290 ELITE TOOLS! 💎
  * 
- * BATCH 1-20: 250 tools across all categories
- * BATCH 21: PrimeFactor + GCDLCM + LinearEq + QuadEq + MatrixTrans + MatrixDet + StdDev + ZScore + Poisson + Variance
- * BATCH 22: LevDist + Hamming + Soundex + Metaphone + PorterStem + Tokenizer + NGrams + ShuffleLines + RemoveEmpty + TrimSpace
+ * BATCH 1-22: 270 tools across all categories
+ * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
+ * BATCH 24: BoxShadow + TextShadow + BorderRadius + CssCursor + CssTransform + FlexDemo + GridDemo + FontPair + ColorBlind + ImgFilter
  */
 
 class OmniTools {
@@ -2220,6 +2220,168 @@ class OmniTools {
                 icon: "✂️",
                 category: "Text",
                 render: () => this.renderTrimSpace()
+            },
+            // === BATCH 23 - 280 TOOLS (PHYSICS/SCIENCE II) ===
+            kinEnergy: {
+                name: "Kinetic Energy",
+                searchTerms: "kinetic energy physics joules mass velocity",
+                description: "Calc Kinetic Energy",
+                icon: "⚡",
+                category: "Science",
+                render: () => this.renderKinEnergy()
+            },
+            potEnergy: {
+                name: "Potential Energy",
+                searchTerms: "potential energy physics joules height gravity",
+                description: "Calc Potential Energy",
+                icon: "🏔️",
+                category: "Science",
+                render: () => this.renderPotEnergy()
+            },
+            momentumCalc: {
+                name: "Momentum",
+                searchTerms: "momentum physics mass velocity collision",
+                description: "Calc Momentum (p=mv)",
+                icon: "🏎️",
+                category: "Science",
+                render: () => this.renderMomentumCalc()
+            },
+            ohmLaw: {
+                name: "Ohm's Law",
+                searchTerms: "ohm's law physics electrical voltage current resistance",
+                description: "Calc V, I, or R",
+                icon: "🔌",
+                category: "Science",
+                render: () => this.renderOhmLaw()
+            },
+            resistorColor: {
+                name: "Resistor Colors",
+                searchTerms: "resistor color code calculator",
+                description: "4/5 Band Code to Value",
+                icon: "🌈",
+                category: "Science",
+                render: () => this.renderResistorColor()
+            },
+            capacitanceCalc: {
+                name: "Capacitance",
+                searchTerms: "capacitance physics electric electronic farad",
+                description: "Calc C=Q/V",
+                icon: "🔋",
+                category: "Science",
+                render: () => this.renderCapacitanceCalc()
+            },
+            inductanceCalc: {
+                name: "Inductance",
+                searchTerms: "inductance physics magnetic coil henry",
+                description: "Calc Inductance basics",
+                icon: "🌀",
+                category: "Science",
+                render: () => this.renderInductanceCalc()
+            },
+            freqPeriod: {
+                name: "Freq <-> Period",
+                searchTerms: "frequency period physics hertz time",
+                description: "Convert Freq & Period",
+                icon: "〰️",
+                category: "Science",
+                render: () => this.renderFreqPeriod()
+            },
+            accelCalc: {
+                name: "Acceleration",
+                searchTerms: "acceleration physics velocity time motion",
+                description: "Calc Acceleration",
+                icon: "🚀",
+                category: "Science",
+                render: () => this.renderAccelCalc()
+            },
+            newtonSecond: {
+                name: "Newton's 2nd Law",
+                searchTerms: "newton second law force mass acceleration",
+                description: "Calc F=ma",
+                icon: "🍎",
+                category: "Science",
+                render: () => this.renderNewtonSecond()
+            },
+            // === BATCH 24 - 290 TOOLS (WEB/DESIGN II) ===
+            boxShadow: {
+                name: "Box Shadow Gen",
+                searchTerms: "box shadow css generator design",
+                description: "Generate CSS Box Shadow",
+                icon: "📦",
+                category: "Design",
+                render: () => this.renderBoxShadow()
+            },
+            textShadow: {
+                name: "Text Shadow Gen",
+                searchTerms: "text shadow css generator design",
+                description: "Generate CSS Text Shadow",
+                icon: "🅰️",
+                category: "Design",
+                render: () => this.renderTextShadow()
+            },
+            borderRadius: {
+                name: "Border Radius",
+                searchTerms: "border radius css generator design rounded",
+                description: "Generate Border Radius",
+                icon: "🔲",
+                category: "Design",
+                render: () => this.renderBorderRadius()
+            },
+            cssCursor: {
+                name: "CSS Cursor",
+                searchTerms: "css cursor mouse pointer demo",
+                description: "View CSS Cursors",
+                icon: "🖱️",
+                category: "Design",
+                render: () => this.renderCssCursor()
+            },
+            cssTransform: {
+                name: "CSS Transform",
+                searchTerms: "css transform rotate scale skew demo",
+                description: "CSS 2D Transform Demo",
+                icon: "🔄",
+                category: "Design",
+                render: () => this.renderCssTransform()
+            },
+            flexDemo: {
+                name: "Flexbox Demo",
+                searchTerms: "flexbox css layout demo generator",
+                description: "Simple Flexbox Playground",
+                icon: "🍱",
+                category: "Design",
+                render: () => this.renderFlexDemo()
+            },
+            gridDemo: {
+                name: "CSS Grid Demo",
+                searchTerms: "css grid layout demo generator",
+                description: "Simple Grid Playground",
+                icon: "▦",
+                category: "Design",
+                render: () => this.renderGridDemo()
+            },
+            fontPair: {
+                name: "Font Pairing",
+                searchTerms: "font pairing typography design google fonts",
+                description: "View Font Combinations",
+                icon: "✒️",
+                category: "Design",
+                render: () => this.renderFontPair()
+            },
+            colorBlind: {
+                name: "Colorblind Sim",
+                searchTerms: "colorblind simulator accessibility vision",
+                description: "Simulate Color Blindness",
+                icon: "👁️",
+                category: "Design",
+                render: () => this.renderColorBlind()
+            },
+            imgFilter: {
+                name: "CSS Filters",
+                searchTerms: "css filter image edit blur grayscale",
+                description: "CSS Image Filter Gen",
+                icon: "📷",
+                category: "Design",
+                render: () => this.renderImgFilter()
             }
         };
     }
@@ -10896,6 +11058,362 @@ background-clip: text;`;
             const l = document.getElementById('ts-in').value.split('\n').map(l => l.trim());
             document.getElementById('ts-res').textContent = l.join('\n');
         };
+    }
+
+    renderKinEnergy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Kinetic Energy Calculator</h2>
+            <input type="number" id="ke-m" placeholder="Mass (kg)">
+            <input type="number" id="ke-v" placeholder="Velocity (m/s)">
+            <button id="ke-btn">Calculate</button>
+            <div id="ke-res" class="result"></div>
+        `;
+        document.getElementById('ke-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('ke-m').value);
+            const v = parseFloat(document.getElementById('ke-v').value);
+            const e = 0.5 * m * v * v;
+            document.getElementById('ke-res').textContent = `${e.toFixed(2)} Joules`;
+        };
+    }
+
+    renderPotEnergy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Potential Energy Calculator</h2>
+            <input type="number" id="pe-m" placeholder="Mass (kg)">
+            <input type="number" id="pe-h" placeholder="Height (m)">
+            <input type="number" id="pe-g" placeholder="Gravity (m/s²)" value="9.8">
+            <button id="pe-btn">Calculate</button>
+            <div id="pe-res" class="result"></div>
+        `;
+        document.getElementById('pe-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('pe-m').value);
+            const h = parseFloat(document.getElementById('pe-h').value);
+            const g = parseFloat(document.getElementById('pe-g').value);
+            const e = m * g * h;
+            document.getElementById('pe-res').textContent = `${e.toFixed(2)} Joules`;
+        };
+    }
+
+    renderMomentumCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Momentum Calculator</h2>
+            <input type="number" id="mo-m" placeholder="Mass (kg)">
+            <input type="number" id="mo-v" placeholder="Velocity (m/s)">
+            <button id="mo-btn">Calculate</button>
+            <div id="mo-res" class="result"></div>
+        `;
+        document.getElementById('mo-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('mo-m').value);
+            const v = parseFloat(document.getElementById('mo-v').value);
+            const p = m * v;
+            document.getElementById('mo-res').textContent = `${p.toFixed(2)} kg·m/s`;
+        };
+    }
+
+    renderOhmLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ohm's Law Calculator</h2>
+            <select id="ol-mode"><option value="v">Calc Voltage (V=IR)</option><option value="i">Calc Current (I=V/R)</option><option value="r">Calc Resistance (R=V/I)</option></select>
+            <input type="number" id="ol-1" placeholder="Val 1">
+            <input type="number" id="ol-2" placeholder="Val 2">
+            <button id="ol-btn">Calculate</button>
+            <div id="ol-res" class="result"></div>
+        `;
+        document.getElementById('ol-btn').onclick = () => {
+            const m = document.getElementById('ol-mode').value;
+            const v1 = parseFloat(document.getElementById('ol-1').value);
+            const v2 = parseFloat(document.getElementById('ol-2').value);
+            let r;
+            if (m === 'v') r = v1 * v2;
+            else if (m === 'i' || m === 'r') r = v1 / v2;
+            document.getElementById('ol-res').textContent = `Result: ${r.toFixed(4)}`;
+        };
+    }
+
+    renderResistorColor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Resistor Color Code</h2>
+            <div style="display:flex; gap:5px; margin-bottom:10px;">
+                <select id="rc-1"><option value="0">Black</option><option value="1">Brown</option><option value="2">Red</option><option value="3">Orange</option><option value="4">Yellow</option><option value="5">Green</option><option value="6">Blue</option><option value="7">Violet</option><option value="8">Grey</option><option value="9">White</option></select>
+                <select id="rc-2"><option value="0">Black</option><option value="1">Brown</option><option value="2">Red</option><option value="3">Orange</option><option value="4">Yellow</option><option value="5">Green</option><option value="6">Blue</option><option value="7">Violet</option><option value="8">Grey</option><option value="9">White</option></select>
+                <select id="rc-3"><option value="1">x1</option><option value="10">x10</option><option value="100">x100</option><option value="1000">x1k</option><option value="10000">x10k</option><option value="100000">x100k</option><option value="1000000">x1M</option></select>
+            </div>
+            <button id="rc-btn">Calculate</button>
+            <div id="rc-res" class="result"></div>
+        `;
+        document.getElementById('rc-btn').onclick = () => {
+            const d1 = document.getElementById('rc-1').value;
+            const d2 = document.getElementById('rc-2').value;
+            const mul = parseInt(document.getElementById('rc-3').value);
+            const val = parseInt(d1 + d2) * mul;
+            document.getElementById('rc-res').textContent = `${val} Ω`;
+        };
+    }
+
+    renderCapacitanceCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Capacitance Calculator</h2>
+            <input type="number" id="cc-q" placeholder="Charge (C)">
+            <input type="number" id="cc-v" placeholder="Voltage (V)">
+            <button id="cc-btn">Calculate C=Q/V</button>
+            <div id="cc-res" class="result"></div>
+        `;
+        document.getElementById('cc-btn').onclick = () => {
+            const q = parseFloat(document.getElementById('cc-q').value);
+            const v = parseFloat(document.getElementById('cc-v').value);
+            document.getElementById('cc-res').textContent = `${(q / v).toExponential(2)} Farads`;
+        };
+    }
+
+    renderInductanceCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Inductance (Solenoid)</h2>
+            <input type="number" id="ic-n" placeholder="Turns (N)">
+            <input type="number" id="ic-a" placeholder="Area (m²)">
+            <input type="number" id="ic-l" placeholder="Length (m)">
+            <button id="ic-btn">Calculate</button>
+            <div id="ic-res" class="result"></div>
+        `;
+        document.getElementById('ic-btn').onclick = () => {
+            const n = parseFloat(document.getElementById('ic-n').value);
+            const a = parseFloat(document.getElementById('ic-a').value);
+            const l = parseFloat(document.getElementById('ic-l').value);
+            const u0 = 1.25663706e-6;
+            const ind = (u0 * n * n * a) / l;
+            document.getElementById('ic-res').textContent = `${ind.toExponential(2)} Henry`;
+        };
+    }
+
+    renderFreqPeriod() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Freq <-> Period</h2>
+            <input type="number" id="fp-v" placeholder="Value">
+            <select id="fp-u"><option value="f">Hz to s</option><option value="p">s to Hz</option></select>
+            <button id="fp-btn">Convert</button>
+            <div id="fp-res" class="result"></div>
+        `;
+        document.getElementById('fp-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('fp-v').value);
+            document.getElementById('fp-res').textContent = `Result: ${(1 / v).toExponential(4)}`;
+        };
+    }
+
+    renderAccelCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Acceleration Calculator</h2>
+            <input type="number" id="ac-v1" placeholder="Initial Vel (m/s)">
+            <input type="number" id="ac-v2" placeholder="Final Vel (m/s)">
+            <input type="number" id="ac-t" placeholder="Time (s)">
+            <button id="ac-btn">Calculate</button>
+            <div id="ac-res" class="result"></div>
+        `;
+        document.getElementById('ac-btn').onclick = () => {
+            const v1 = parseFloat(document.getElementById('ac-v1').value);
+            const v2 = parseFloat(document.getElementById('ac-v2').value);
+            const t = parseFloat(document.getElementById('ac-t').value);
+            document.getElementById('ac-res').textContent = `${((v2 - v1) / t).toFixed(2)} m/s²`;
+        };
+    }
+
+    renderNewtonSecond() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Newton's 2nd Law</h2>
+            <input type="number" id="nl-m" placeholder="Mass (kg)">
+            <input type="number" id="nl-a" placeholder="Accel (m/s²)">
+            <button id="nl-btn">Calculate Force</button>
+            <div id="nl-res" class="result"></div>
+        `;
+        document.getElementById('nl-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('nl-m').value);
+            const a = parseFloat(document.getElementById('nl-a').value);
+            document.getElementById('nl-res').textContent = `${(m * a).toFixed(2)} Newtons`;
+        };
+    }
+
+    renderBoxShadow() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Box Shadow Gen</h2>
+            <div style="margin-bottom:10px;">
+                X: <input type="range" id="bs-x" min="-50" max="50" value="10">
+                Y: <input type="range" id="bs-y" min="-50" max="50" value="10">
+                Blur: <input type="range" id="bs-b" min="0" max="100" value="5">
+            </div>
+            <div id="bs-demo" style="width:100px; height:100px; background:#3498db; margin:20px auto;"></div>
+            <div id="bs-code" class="result" style="font-family:monospace;"></div>
+        `;
+        const update = () => {
+            const x = document.getElementById('bs-x').value;
+            const y = document.getElementById('bs-y').value;
+            const b = document.getElementById('bs-b').value;
+            const style = `${x}px ${y}px ${b}px rgba(0,0,0,0.5)`;
+            document.getElementById('bs-demo').style.boxShadow = style;
+            document.getElementById('bs-code').textContent = `box-shadow: ${style};`;
+        };
+        ['bs-x', 'bs-y', 'bs-b'].forEach(id => document.getElementById(id).oninput = update);
+        update();
+    }
+
+    renderTextShadow() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Shadow Gen</h2>
+            <div style="margin-bottom:10px;">
+                X: <input type="range" id="ts-x" min="-20" max="20" value="2">
+                Y: <input type="range" id="ts-y" min="-20" max="20" value="2">
+                Blur: <input type="range" id="ts-b" min="0" max="20" value="4">
+            </div>
+            <h1 id="ts-demo" style="text-align:center; color:#333;">Preview Text</h1>
+            <div id="ts-code" class="result" style="font-family:monospace;"></div>
+        `;
+        const update = () => {
+            const x = document.getElementById('ts-x').value;
+            const y = document.getElementById('ts-y').value;
+            const b = document.getElementById('ts-b').value;
+            const style = `${x}px ${y}px ${b}px rgba(0,0,0,0.5)`;
+            document.getElementById('ts-demo').style.textShadow = style;
+            document.getElementById('ts-code').textContent = `text-shadow: ${style};`;
+        };
+        ['ts-x', 'ts-y', 'ts-b'].forEach(id => document.getElementById(id).oninput = update);
+        update();
+    }
+
+    renderBorderRadius() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Border Radius Gen</h2>
+            <input type="range" id="br-r" min="0" max="50" value="10" style="width:100%">
+            <div id="br-demo" style="width:100px; height:100px; background:#e74c3c; margin:20px auto; border:2px solid #333;"></div>
+            <div id="br-code" class="result" style="font-family:monospace;"></div>
+        `;
+        document.getElementById('br-r').oninput = (e) => {
+            const v = e.target.value;
+            document.getElementById('br-demo').style.borderRadius = `${v}%`;
+            document.getElementById('br-code').textContent = `border-radius: ${v}%;`;
+        };
+        document.getElementById('br-r').dispatchEvent(new Event('input'));
+    }
+
+    renderCssCursor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Cursor Demo</h2>
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+                ${['pointer', 'move', 'text', 'wait', 'help', 'crosshair', 'not-allowed', 'zoom-in', 'grab'].map(c =>
+            `<div style="cursor:${c}; padding:10px; background:#eee; text-align:center; border:1px solid #ddd;">${c}</div>`
+        ).join('')}
+            </div>
+        `;
+    }
+
+    renderCssTransform() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Transform Demo</h2>
+            <input type="range" id="ct-r" min="0" max="360" value="0"> Rotate
+            <div id="ct-demo" style="width:80px; height:80px; background:#9b59b6; margin:30px auto; display:flex; align-items:center; justify-content:center; color:white;">BOX</div>
+        `;
+        document.getElementById('ct-r').oninput = (e) => {
+            document.getElementById('ct-demo').style.transform = `rotate(${e.target.value}deg)`;
+        };
+    }
+
+    renderFlexDemo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flexbox Playground</h2>
+            <select id="fd-j"><option value="flex-start">Start</option><option value="center">Center</option><option value="flex-end">End</option><option value="space-between">Space Between</option></select>
+            <div id="fd-box" style="display:flex; height:100px; background:#ddd; gap:5px; margin-top:10px;">
+                <div style="width:30px; height:30px; background:red;"></div>
+                <div style="width:30px; height:30px; background:blue;"></div>
+                <div style="width:30px; height:30px; background:green;"></div>
+            </div>
+        `;
+        document.getElementById('fd-j').onchange = (e) => {
+            document.getElementById('fd-box').style.justifyContent = e.target.value;
+        };
+    }
+
+    renderGridDemo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Grid Playground</h2>
+            <button onclick="document.getElementById('gd-box').style.gridTemplateColumns='1fr 1fr'">2 Col</button>
+            <button onclick="document.getElementById('gd-box').style.gridTemplateColumns='1fr 1fr 1fr'">3 Col</button>
+            <div id="gd-box" style="display:grid; grid-template-columns:1fr 1fr; gap:5px; margin-top:10px;">
+                <div style="background:#f1c40f; padding:10px;">1</div>
+                <div style="background:#e67e22; padding:10px;">2</div>
+                <div style="background:#e74c3c; padding:10px;">3</div>
+                <div style="background:#3498db; padding:10px;">4</div>
+            </div>
+        `;
+    }
+
+    renderFontPair() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Font Pairing Ideas</h2>
+            <div style="font-family: 'Helvetica', sans-serif;">
+                <h3>Helvetica & Garamond</h3>
+                <p style="font-family: 'Garamond', serif;">This is an example of a classic pairing.</p>
+            </div>
+            <hr>
+            <div style="font-family: 'Arial', sans-serif;">
+                <h3>Arial & Georgia</h3>
+                <p style="font-family: 'Georgia', serif;">A safe, web-standard bet.</p>
+            </div>
+             <hr>
+            <div style="font-family: 'Verdana', sans-serif;">
+                <h3>Verdana & Courier New</h3>
+                <p style="font-family: 'Courier New', monospace;">Good for technical docs.</p>
+            </div>
+        `;
+    }
+
+    renderColorBlind() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Colorblindness Sim</h2>
+            <div style="display:flex; gap:5px;">
+                <div style="width:50px; height:50px; background:red;"></div>
+                <div style="width:50px; height:50px; background:green;"></div>
+                <div style="width:50px; height:50px; background:blue;"></div>
+            </div>
+            <p>Use browser devtools 'Rendering' tab to simulate accurately. This is just a visual placeholder of colors commonly confused.</p>
+            <div style="margin-top:10px; font-size:0.9em; color:#666;">
+                Red-Green blindness affects ~8% of males.
+            </div>
+        `;
+    }
+
+    renderImgFilter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Filter Gen</h2>
+            <input type="range" id="if-b" min="0" max="10" value="0"> Blur
+            <input type="range" id="if-g" min="0" max="100" value="0"> Grayscale
+            <div id="if-demo" style="width:100%; height:100px; background:url('https://via.placeholder.com/300') center/cover; margin-top:10px;"></div>
+            <div id="if-code" class="result" style="font-family:monospace;"></div>
+        `;
+        const update = () => {
+            const b = document.getElementById('if-b').value;
+            const g = document.getElementById('if-g').value;
+            const f = `blur(${b}px) grayscale(${g}%)`;
+            document.getElementById('if-demo').style.filter = f;
+            document.getElementById('if-code').textContent = `filter: ${f};`;
+        };
+        ['if-b', 'if-g'].forEach(id => document.getElementById(id).oninput = update);
+        update();
     }
 }
 
