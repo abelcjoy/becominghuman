@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 620 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 640 ELITE TOOLS! 💎
  * 
- * BATCH 54: PwStrength + CommonPws + 2FA + VpnTypes + Encryption + HashVsEnc + Salting + SocialEng + Phishing + CsrfInfo
- * BATCH 55: SemanticHtml + MetaTags + OGtags + RobotsMeta + SitemapVsRobots + JsonLd + SvgVsCanvas + AriaGuide + CspGuide + CorsInfo
  * BATCH 56: AiModels + PromptEng + TokenEst + NnLayers + TrainVsInfer + AiBias + Hallucination + VectorDb + Rlhf + FineTune
  * BATCH 57: WebWorkers + ServiceWorkers + StorageTypes + IndexedDb + FetchApi + GeoApi + ClipApi + InteractionObs + MutationObs + DeviceMotion
+ * BATCH 58: CloudModels + Scaling + Serverless + Microservices + ApiGateway + DbSharding + EdgeCompute + ColdStart + EventDriven + SharedResp
+ * BATCH 59: FittsLaw + HicksLaw + Zeigarnik + JakobsLaw + MillersLaw + PeakEnd + Gestalt + SerialPos + VonRestorff + OccamsRazor
  */
 
 class OmniTools {
@@ -5056,6 +5056,168 @@ class OmniTools {
                 icon: "📱",
                 category: "Developer",
                 render: () => this.renderDeviceOrientation()
+            },
+            // === BATCH 58 - 630 TOOLS (CLOUD & ARCHITECTURE) ===
+            cloudServiceTypes: {
+                name: "Cloud Models",
+                searchTerms: "iaas paas saas cloud models comparison infrastructure platform software",
+                description: "IaaS vs Paas vs SaaS",
+                icon: "☁️",
+                category: "Developer",
+                render: () => this.renderCloudServiceTypes()
+            },
+            scalingModels: {
+                name: "Scaling Guide",
+                searchTerms: "vertical horizontal scaling difference cloud performance load",
+                description: "Vertical vs Horizontal",
+                icon: "📈",
+                category: "Developer",
+                render: () => this.renderScalingModels()
+            },
+            serverlessInfo: {
+                name: "Serverless",
+                searchTerms: "serverless computing faas lambda functions cloud architecture",
+                description: "No-server guide",
+                icon: "⚡",
+                category: "Developer",
+                render: () => this.renderServerlessInfo()
+            },
+            microservicesRef: {
+                name: "Microservices",
+                searchTerms: "microservices vs monolith architecture design patterns distributed",
+                description: "Modular architecture",
+                icon: "🧩",
+                category: "Developer",
+                render: () => this.renderMicroservicesRef()
+            },
+            apiGatewayInfo: {
+                name: "API Gateway",
+                searchTerms: "api gateway purpose architecture routing cloud developer",
+                description: "Traffic manager ref",
+                icon: "🚧",
+                category: "Developer",
+                render: () => this.renderApiGatewayInfo()
+            },
+            dbShardingRef: {
+                name: "DB Sharding",
+                searchTerms: "database sharding partitioning scaling horizontal distributed",
+                description: "Data partitioning guide",
+                icon: "🔪",
+                category: "Developer",
+                render: () => this.renderDbShardingRef()
+            },
+            edgeComputing: {
+                name: "Edge Compute",
+                searchTerms: "edge computing latency cdn proximity distributed",
+                description: "Low-latency guide",
+                icon: "🌐",
+                category: "Developer",
+                render: () => this.renderEdgeComputing()
+            },
+            coldStartTime: {
+                name: "Cold Starts",
+                searchTerms: "cold start vs warm serverless lambda performance latency",
+                description: "FaaS latency guide",
+                icon: "❄️",
+                category: "Developer",
+                render: () => this.renderColdStartTime()
+            },
+            eventDrivenArch: {
+                name: "Event-Driven",
+                searchTerms: "event driven architecture pub sub message queue asynchronous",
+                description: "Async pattern ref",
+                icon: "📣",
+                category: "Developer",
+                render: () => this.renderEventDrivenArch()
+            },
+            sharedResponsibility: {
+                name: "Shared Resp.",
+                searchTerms: "shared responsibility model cloud security aws azure",
+                description: "Security ownership guide",
+                icon: "🤝",
+                category: "Developer",
+                render: () => this.renderSharedResponsibility()
+            },
+            // === BATCH 59 - 640 TOOLS (UI/UX PSYCHOLOGY) ===
+            fittsLaw: {
+                name: "Fitts's Law",
+                searchTerms: "fitts law ux psychology design interaction speed accuracy",
+                description: "Target size guide",
+                icon: "🎯",
+                category: "Design",
+                render: () => this.renderFittsLaw()
+            },
+            hicksLaw: {
+                name: "Hick's Law",
+                searchTerms: "hick law ux design decision time complexity",
+                description: "Choice overload guide",
+                icon: "⚖️",
+                category: "Design",
+                render: () => this.renderHicksLaw()
+            },
+            zeigarnikEffect: {
+                name: "Zeigarnik Eff",
+                searchTerms: "zeigarnik effect psychology ux retention completion",
+                description: "Unfinished tasks guide",
+                icon: "⏳",
+                category: "Design",
+                render: () => this.renderZeigarnikEffect()
+            },
+            jakobsLaw: {
+                name: "Jakob's Law",
+                searchTerms: "jakob law ux design familiarity consistency",
+                description: "Expectation guide",
+                icon: "📑",
+                category: "Design",
+                render: () => this.renderJakobsLaw()
+            },
+            millersLaw: {
+                name: "Miller's Law",
+                searchTerms: "miller law ux psychology memory capacity",
+                description: "Magic number 7±2",
+                icon: "📦",
+                category: "Design",
+                render: () => this.renderMillersLaw()
+            },
+            peakEndRule: {
+                name: "Peak-End Rule",
+                searchTerms: "peak end rule psychology experience design memory",
+                description: "Experience rating guide",
+                icon: "🏔️",
+                category: "Design",
+                render: () => this.renderPeakEndRule()
+            },
+            gestaltPrinciples: {
+                name: "Gestalt Principles",
+                searchTerms: "gestalt principles design visual grouping perception",
+                description: "Visual grouping guide",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderGestaltPrinciples()
+            },
+            serialPosition: {
+                name: "Serial Position",
+                searchTerms: "serial position effect primacy recency memory ux",
+                description: "List memory guide",
+                icon: "📊",
+                category: "Design",
+                render: () => this.renderSerialPosition()
+            },
+            vonRestorff: {
+                name: "Von Restorff",
+                searchTerms: "von restorff effect isolation salient distinction ux",
+                description: "Salience guide",
+                icon: "💎",
+                category: "Design",
+                render: () => this.renderVonRestorff()
+            },
+            occamsRazorUx: {
+                name: "Occam's Razor",
+                searchTerms: "occam razor simplicity design ux minimalist",
+                description: "Simplicity guide",
+                icon: "🪒",
+                category: "Design",
+                render: () => this.renderOccamsRazorUx()
             }
         };
     }
@@ -19749,9 +19911,223 @@ Online: ${n.onLine}
             </div>
         `;
     }
+
+    renderCloudServiceTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cloud Models</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>IaaS:</b> Infrastructure (VMs, Storage).<br>
+                <b>PaaS:</b> Platform (App hosting, DBs).<br>
+                <b>SaaS:</b> Software (Gmail, Salesforce).<br><br>
+                <i>IaaS = Pizza ingredients, PaaS = Pizza delivery, SaaS = Eating at the restaurant.</i>
+            </div>
+        `;
+    }
+
+    renderScalingModels() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scaling Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Vertical (Up):</b> Adding more CPU/RAM to a single box.<br><br>
+                <b>Horizontal (Out):</b> Adding more instances (servers) to the pool.
+            </div>
+        `;
+    }
+
+    renderServerlessInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Serverless</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Serverless:</b> Cloud provider manages machine allocation. You only provide code (FaaS - Function as a Service).<br><br>
+                <b>Benefit:</b> Scales to zero, pay only for execution time.
+            </div>
+        `;
+    }
+
+    renderMicroservicesRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Microservices</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Microservices:</b> Breaking an app into small, independent services that communicate over a network.<br><br>
+                <b>Monolith:</b> Single unified unit.
+            </div>
+        `;
+    }
+
+    renderApiGatewayInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">API Gateway</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Gateway:</b> Single entry point for all clients. Handles routing, authentication, and rate limiting for microservices.
+            </div>
+        `;
+    }
+
+    renderDbShardingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DB Sharding</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Sharding:</b> Splitting a large dataset across multiple database instances to improve performance and capacity.
+            </div>
+        `;
+    }
+
+    renderEdgeComputing() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Edge Compute</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Edge:</b> Moving computation closer to the user (e.g. at CDN nodes) to reduce latency and bandwidth usage.
+            </div>
+        `;
+    }
+
+    renderColdStartTime() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cold Starts</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Cold Start:</b> The latency when a serverless function is triggered after being idle (container initialization).<br><br>
+                <b>Warm Start:</b> Reusing an existing initialized container.
+            </div>
+        `;
+    }
+
+    renderEventDrivenArch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Event-Driven</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>EDA:</b> Systems react to events (state changes). Components are decoupled using message brokers or pub/sub.
+            </div>
+        `;
+    }
+
+    renderSharedResponsibility() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shared Resp.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Model:</b> Provider is responsible for security <i>of</i> the cloud. Customer is responsible for security <i>in</i> the cloud.
+            </div>
+        `;
+    }
+
+    renderFittsLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fitts's Law</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Law:</b> Time to acquire a target depends on distance to and size of the target.<br><br>
+                <b>UX Tip:</b> Make important buttons large and close to the user's cursor/thumb.
+            </div>
+        `;
+    }
+
+    renderHicksLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hick's Law</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Law:</b> Time it takes to make a decision increases with the number and complexity of choices.<br><br>
+                <b>UX Tip:</b> Simplify menus and choices to reduce cognitive load.
+            </div>
+        `;
+    }
+
+    renderZeigarnikEffect() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Zeigarnik Eff</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Effect:</b> People remember uncompleted or interrupted tasks better than completed ones.<br><br>
+                <b>UX Tip:</b> Use progress bars to motivate completion.
+            </div>
+        `;
+    }
+
+    renderJakobsLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Jakob's Law</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Law:</b> Users spend most of their time on <i>other</i> sites. They prefer your site to work the same way as others they know.
+            </div>
+        `;
+    }
+
+    renderMillersLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Miller's Law</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Law:</b> The average person can only keep 7 (± 2) items in their working memory.<br><br>
+                <b>UX Tip:</b> Chunk information into smaller groups.
+            </div>
+        `;
+    }
+
+    renderPeakEndRule() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Peak-End Rule</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Rule:</b> People judge an experience largely based on how they felt at its peak and at its end, rather than the average.
+            </div>
+        `;
+    }
+
+    renderGestaltPrinciples() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gestalt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Proximity:</b> Close items are grouped.<br>
+                <b>Similarity:</b> Alike items are grouped.<br>
+                <b>Continuity:</b> Smooth lines are followed.<br>
+                <b>Closure:</b> Incomplete shapes are filled.
+            </div>
+        `;
+    }
+
+    renderSerialPosition() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Serial Pos.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Primacy:</b> First items are remembered well.<br>
+                <b>Recency:</b> Last items are remembered well.<br>
+                <b>UX Tip:</b> Put key info at the start and end of lists.
+            </div>
+        `;
+    }
+
+    renderVonRestorff() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Von Restorff</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Effect:</b> When multiple similar objects are present, the one that differs from the rest is most likely to be remembered.
+            </div>
+        `;
+    }
+
+    renderOccamsRazorUx() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Occam's Razor</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Principle:</b> Among competing hypotheses, the simplest one is usually correct. In UX: Avoid unnecessary complexity.
+            </div>
+        `;
+    }
 }
-
-
 
 // Initialize
 new OmniTools();
