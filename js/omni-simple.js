@@ -9271,104 +9271,104 @@ background-clip: text;`;
              `;
         };
     }
-}
 
-renderWeekNum() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+
+    renderWeekNum() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Week Number Calculator</h2>
             <input type="date" id="wn-d">
             <button id="wn-btn">Get Week Number</button>
             <div class="result" id="wn-res"></div>
         `;
-    document.getElementById('wn-btn').onclick = () => {
-        const d = new Date(document.getElementById('wn-d').value || new Date());
-        const onejan = new Date(d.getFullYear(), 0, 1);
-        const week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
-        document.getElementById('wn-res').textContent = `Week Number: ${week}`;
-    };
-}
+        document.getElementById('wn-btn').onclick = () => {
+            const d = new Date(document.getElementById('wn-d').value || new Date());
+            const onejan = new Date(d.getFullYear(), 0, 1);
+            const week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+            document.getElementById('wn-res').textContent = `Week Number: ${week}`;
+        };
+    }
 
-renderLeapYear() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderLeapYear() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Leap Year Checker</h2>
             <input type="number" id="ly-y" placeholder="Year (e.g. 2024)">
             <button id="ly-btn">Check</button>
             <div class="result" id="ly-res"></div>
         `;
-    document.getElementById('ly-btn').onclick = () => {
-        const y = parseInt(document.getElementById('ly-y').value);
-        const isLeap = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
-        document.getElementById('ly-res').innerHTML = isLeap ?
-            `<span style="color:#2ecc71">${y} is a Leap Year</span>` :
-            `<span style="color:#e74c3c">${y} is not a Leap Year</span>`;
-    };
-}
+        document.getElementById('ly-btn').onclick = () => {
+            const y = parseInt(document.getElementById('ly-y').value);
+            const isLeap = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+            document.getElementById('ly-res').innerHTML = isLeap ?
+                `<span style="color:#2ecc71">${y} is a Leap Year</span>` :
+                `<span style="color:#e74c3c">${y} is not a Leap Year</span>`;
+        };
+    }
 
-renderAgeCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderAgeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Detailed Age Calculator</h2>
             <p>Date of Birth:</p>
             <input type="date" id="ac-d">
             <button id="ac-btn">Calculate Age</button>
             <div class="result" id="ac-res"></div>
         `;
-    document.getElementById('ac-btn').onclick = () => {
-        const dob = new Date(document.getElementById('ac-d').value);
-        const now = new Date();
-        if (isNaN(dob.getTime())) return;
+        document.getElementById('ac-btn').onclick = () => {
+            const dob = new Date(document.getElementById('ac-d').value);
+            const now = new Date();
+            if (isNaN(dob.getTime())) return;
 
-        let y = now.getFullYear() - dob.getFullYear();
-        let m = now.getMonth() - dob.getMonth();
-        let d = now.getDate() - dob.getDate();
+            let y = now.getFullYear() - dob.getFullYear();
+            let m = now.getMonth() - dob.getMonth();
+            let d = now.getDate() - dob.getDate();
 
-        if (m < 0 || (m === 0 && d < 0)) { y--; m += 12; }
-        if (d < 0) {
-            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-            d += prevMonth.getDate();
-            m--;
-        }
+            if (m < 0 || (m === 0 && d < 0)) { y--; m += 12; }
+            if (d < 0) {
+                const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+                d += prevMonth.getDate();
+                m--;
+            }
 
-        const daysOld = Math.floor((now - dob) / (1000 * 60 * 60 * 24));
-        document.getElementById('ac-res').innerHTML = `
+            const daysOld = Math.floor((now - dob) / (1000 * 60 * 60 * 24));
+            document.getElementById('ac-res').innerHTML = `
                  <div>${y} Years, ${m} Months, ${d} Days</div>
                  <div style="font-size:0.8em; margin-top:5px; color:#aaa">Total Days: ${daysOld.toLocaleString()}</div>
              `;
-    };
-}
+        };
+    }
 
-renderTimeDiff() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderTimeDiff() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Time Difference</h2>
             <input type="datetime-local" id="td-1">
             <input type="datetime-local" id="td-2">
             <button id="td-btn">Calculate Difference</button>
             <div class="result" id="td-res"></div>
         `;
-    document.getElementById('td-btn').onclick = () => {
-        const d1 = new Date(document.getElementById('td-1').value);
-        const d2 = new Date(document.getElementById('td-2').value);
-        const diffMs = Math.abs(d2 - d1);
-        const diffSec = Math.floor(diffMs / 1000);
-        const diffMin = Math.floor(diffSec / 60);
-        const diffHr = Math.floor(diffMin / 60);
-        const diffDay = Math.floor(diffHr / 24);
+        document.getElementById('td-btn').onclick = () => {
+            const d1 = new Date(document.getElementById('td-1').value);
+            const d2 = new Date(document.getElementById('td-2').value);
+            const diffMs = Math.abs(d2 - d1);
+            const diffSec = Math.floor(diffMs / 1000);
+            const diffMin = Math.floor(diffSec / 60);
+            const diffHr = Math.floor(diffMin / 60);
+            const diffDay = Math.floor(diffHr / 24);
 
-        document.getElementById('td-res').innerHTML = `
+            document.getElementById('td-res').innerHTML = `
                  <div>Days: ${diffDay}</div>
                  <div>Hours: ${diffHr}</div>
                  <div>Minutes: ${diffMin}</div>
                  <div>Seconds: ${diffSec}</div>
              `;
-    };
-}
+        };
+    }
 
-renderDateAdd() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderDateAdd() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Date Add/Subtract</h2>
             <input type="date" id="da-d">
             <select id="da-op">
@@ -9386,61 +9386,61 @@ renderDateAdd() {
             <button id="da-btn">Calculate</button>
             <div class="result" id="da-res"></div>
         `;
-    document.getElementById('da-btn').onclick = () => {
-        const d = new Date(document.getElementById('da-d').value);
-        const op = document.getElementById('da-op').value;
-        const n = parseInt(document.getElementById('da-n').value);
-        const u = document.getElementById('da-u').value;
+        document.getElementById('da-btn').onclick = () => {
+            const d = new Date(document.getElementById('da-d').value);
+            const op = document.getElementById('da-op').value;
+            const n = parseInt(document.getElementById('da-n').value);
+            const u = document.getElementById('da-u').value;
 
-        if (isNaN(d.getTime())) return;
+            if (isNaN(d.getTime())) return;
 
-        const val = op === 'add' ? n : -n;
+            const val = op === 'add' ? n : -n;
 
-        if (u === 'd') d.setDate(d.getDate() + val);
-        else if (u === 'm') d.setMonth(d.getMonth() + val);
-        else if (u === 'y') d.setFullYear(d.getFullYear() + val);
+            if (u === 'd') d.setDate(d.getDate() + val);
+            else if (u === 'm') d.setMonth(d.getMonth() + val);
+            else if (u === 'y') d.setFullYear(d.getFullYear() + val);
 
-        document.getElementById('da-res').textContent = d.toDateString();
-    };
-}
+            document.getElementById('da-res').textContent = d.toDateString();
+        };
+    }
 
-renderDayOfYear() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderDayOfYear() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Day of Year</h2>
             <input type="date" id="dy-d">
             <button id="dy-btn">Get Day Number</button>
             <div class="result" id="dy-res"></div>
         `;
-    document.getElementById('dy-btn').onclick = () => {
-        const d = new Date(document.getElementById('dy-d').value);
-        const start = new Date(d.getFullYear(), 0, 0);
-        const diff = d - start;
-        const oneDay = 1000 * 60 * 60 * 24;
-        const day = Math.floor(diff / oneDay);
-        document.getElementById('dy-res').textContent = `Day ${day} of ${d.getFullYear()}`;
-    };
-}
+        document.getElementById('dy-btn').onclick = () => {
+            const d = new Date(document.getElementById('dy-d').value);
+            const start = new Date(d.getFullYear(), 0, 0);
+            const diff = d - start;
+            const oneDay = 1000 * 60 * 60 * 24;
+            const day = Math.floor(diff / oneDay);
+            document.getElementById('dy-res').textContent = `Day ${day} of ${d.getFullYear()}`;
+        };
+    }
 
-renderQuarterCalc() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderQuarterCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Quarter Calculator</h2>
             <input type="date" id="qc-d">
             <button id="qc-btn">Get Quarter</button>
             <div class="result" id="qc-res"></div>
         `;
-    document.getElementById('qc-btn').onclick = () => {
-        const d = new Date(document.getElementById('qc-d').value);
-        const m = d.getMonth() + 1;
-        const q = Math.ceil(m / 3);
-        document.getElementById('qc-res').textContent = `Q${q} ${d.getFullYear()}`;
-    };
-}
+        document.getElementById('qc-btn').onclick = () => {
+            const d = new Date(document.getElementById('qc-d').value);
+            const m = d.getMonth() + 1;
+            const q = Math.ceil(m / 3);
+            document.getElementById('qc-res').textContent = `Q${q} ${d.getFullYear()}`;
+        };
+    }
 
-renderUnixConv() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderUnixConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Unix Timestamp Converter</h2>
             <input type="number" id="uc-t" placeholder="Timestamp (seconds)">
             <button id="uc-btn">Convert to Date</button>
@@ -9448,62 +9448,63 @@ renderUnixConv() {
             <button id="uc-now">Get Current Timestamp</button>
             <div class="result" id="uc-res"></div>
         `;
-    document.getElementById('uc-btn').onclick = () => {
-        const t = document.getElementById('uc-t').value;
-        const d = new Date(t * 1000);
-        document.getElementById('uc-res').innerHTML = `
+        document.getElementById('uc-btn').onclick = () => {
+            const t = document.getElementById('uc-t').value;
+            const d = new Date(t * 1000);
+            document.getElementById('uc-res').innerHTML = `
                 <div>UTC: ${d.toUTCString()}</div>
                 <div>Local: ${d.toLocaleString()}</div>
              `;
-    };
-    document.getElementById('uc-now').onclick = () => {
-        const now = Math.floor(Date.now() / 1000);
-        document.getElementById('uc-t').value = now;
-        document.getElementById('uc-res').textContent = `Current Timestamp: ${now}`;
-    };
-}
+        };
+        document.getElementById('uc-now').onclick = () => {
+            const now = Math.floor(Date.now() / 1000);
+            document.getElementById('uc-t').value = now;
+            document.getElementById('uc-res').textContent = `Current Timestamp: ${now}`;
+        };
+    }
 
-renderTimeZone() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderTimeZone() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Time Zone Offset</h2>
             <button id="tz-btn">Get My Local Offset</button>
             <div class="result" id="tz-res"></div>
         `;
-    document.getElementById('tz-btn').onclick = () => {
-        const d = new Date();
-        const n = d.getTimezoneOffset();
-        const h = Math.floor(Math.abs(n) / 60);
-        const m = Math.abs(n) % 60;
-        const sign = n > 0 ? '-' : '+'; // Inverted common logic
-        const region = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        document.getElementById('tz-res').innerHTML = `
+        document.getElementById('tz-btn').onclick = () => {
+            const d = new Date();
+            const n = d.getTimezoneOffset();
+            const h = Math.floor(Math.abs(n) / 60);
+            const m = Math.abs(n) % 60;
+            const sign = n > 0 ? '-' : '+'; // Inverted common logic
+            const region = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById('tz-res').innerHTML = `
                  <div>Region: ${region}</div>
                  <div>Offset: UTC${sign}${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}</div>
              `;
-    };
-}
+        };
+    }
 
-renderWorkDays() {
-    const content = document.getElementById('tool-content');
-    content.innerHTML = `
+    renderWorkDays() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
             <h2 class="tool-title">Work Days Calculator</h2>
             <input type="date" id="wd-s" placeholder="Start">
             <input type="date" id="wd-e" placeholder="End">
             <button id="wd-btn">Calculate</button>
             <div class="result" id="wd-res"></div>
         `;
-    document.getElementById('wd-btn').onclick = () => {
-        const s = new Date(document.getElementById('wd-s').value);
-        const e = new Date(document.getElementById('wd-e').value);
-        let count = 0;
-        let cur = new Date(s);
-        while (cur <= e) {
-            const day = cur.getDay();
-            if (day !== 0 && day !== 6) count++;
-            cur.setDate(cur.getDate() + 1);
-        }
-        document.getElementById('wd-res').textContent = `Work Days: ${count}`;
+        document.getElementById('wd-btn').onclick = () => {
+            const s = new Date(document.getElementById('wd-s').value);
+            const e = new Date(document.getElementById('wd-e').value);
+            let count = 0;
+            let cur = new Date(s);
+            while (cur <= e) {
+                const day = cur.getDay();
+                if (day !== 0 && day !== 6) count++;
+                cur.setDate(cur.getDate() + 1);
+            }
+            document.getElementById('wd-res').textContent = `Work Days: ${count}`;
+        };
     }
 
     renderPressConv() {
