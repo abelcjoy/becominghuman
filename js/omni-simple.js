@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 350 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 370 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -10,6 +10,8 @@
  * BATCH 28: TextEmoji + EmojiText + Zalgo + UpsideDown + Bubble + Square + Mirror + Glitch + Vaporwave + LeetSpeak
  * BATCH 29: CircleCalc + SphereCalc + CylinderCalc + ConeCalc + Pythagoras + PrimeVisual + Fibonacci + Pascal + ArithProg + GeoProg
  * BATCH 30: JsonMinify + JsonValidate + CssPretty + HtmlPretty + SqlFormat + JwtGen + KeyCode + BrowserInfo + MimeLookup + GitCheat
+ * BATCH 31: BpmTapper + NoteFreq + ToneGen + ScaleView + IntervalTrain + ChordBuild + DelayCalc + AudioDur + SemiTrans + HzToNote
+ * BATCH 32: CoulombsLaw + SnellsLaw + CritAngle + WaveVel + Doppler + MagForce + Pendulum + EscapeVel + GravForce + PhotonEnergy
  */
 
 class OmniTools {
@@ -2874,6 +2876,168 @@ class OmniTools {
                 icon: "🌿",
                 category: "Developer",
                 render: () => this.renderGitCheat()
+            },
+            // === BATCH 31 - 360 TOOLS (AUDIO/MUSIC) ===
+            bpmTapper: {
+                name: "BPM Tapper",
+                searchTerms: "bpm tap beats per minute tempo music",
+                description: "Tap to find BPM",
+                icon: "🥁",
+                category: "Audio",
+                render: () => this.renderBpmTapper()
+            },
+            noteFreq: {
+                name: "Note Frequencies",
+                searchTerms: "note frequency hz pitch chart music",
+                description: "Musical note frequencies",
+                icon: "🎵",
+                category: "Audio",
+                render: () => this.renderNoteFreq()
+            },
+            toneGen: {
+                name: "Tone Generator",
+                searchTerms: "tone generator frequency pitch hertz sound",
+                description: "Generate Sine/Square tones",
+                icon: "🔊",
+                category: "Audio",
+                render: () => this.renderToneGen()
+            },
+            scaleView: {
+                name: "Scale Viewer",
+                searchTerms: "scale viewer music theory major minor",
+                description: "View musical scales",
+                icon: "🎹",
+                category: "Audio",
+                render: () => this.renderScaleView()
+            },
+            intervalTrain: {
+                name: "Interval Calc",
+                searchTerms: "interval calculator music theory semitones",
+                description: "Distance between notes",
+                icon: "📏",
+                category: "Audio",
+                render: () => this.renderIntervalTrain()
+            },
+            chordBuild: {
+                name: "Chord Info",
+                searchTerms: "chord builder music theory triad",
+                description: "Simple Chord Notes",
+                icon: "🎼",
+                category: "Audio",
+                render: () => this.renderChordBuild()
+            },
+            delayCalc: {
+                name: "Delay Calculator",
+                searchTerms: "delay calculator milliseconds bpm music production",
+                description: "BPM to Milliseconds",
+                icon: "⏱️",
+                category: "Audio",
+                render: () => this.renderDelayCalc()
+            },
+            audioDur: {
+                name: "Audio Duration",
+                searchTerms: "audio duration file size bitrate calculator",
+                description: "Est. Audio File Size",
+                icon: "💾",
+                category: "Audio",
+                render: () => this.renderAudioDur()
+            },
+            semitoneTrans: {
+                name: "Transposer",
+                searchTerms: "transpose semitone music key shift",
+                description: "Transpose notes",
+                icon: "🔄",
+                category: "Audio",
+                render: () => this.renderSemitoneTrans()
+            },
+            freqToNote: {
+                name: "Hz to Note",
+                searchTerms: "hz frequency to note pitch converter",
+                description: "Convert Hz to Note",
+                icon: "🎶",
+                category: "Audio",
+                render: () => this.renderFreqToNote()
+            },
+            // === BATCH 32 - 370 TOOLS (PHYSICS III) ===
+            coulombsLaw: {
+                name: "Coulomb's Law",
+                searchTerms: "coulomb law electric force charge physics",
+                description: "Calc Electric Force",
+                icon: "⚡",
+                category: "Physics",
+                render: () => this.renderCoulombsLaw()
+            },
+            snellsLaw: {
+                name: "Snell's Law",
+                searchTerms: "snell law refraction index angle physics",
+                description: "Refraction Calculator",
+                icon: "🌈",
+                category: "Physics",
+                render: () => this.renderSnellsLaw()
+            },
+            criticalAngle: {
+                name: "Critical Angle",
+                searchTerms: "critical angle refraction physics optics",
+                description: "Calc Critical Angle",
+                icon: "📐",
+                category: "Physics",
+                render: () => this.renderCriticalAngle()
+            },
+            waveVelocity: {
+                name: "Wave Velocity",
+                searchTerms: "wave velocity frequency wavelength physics",
+                description: "v = f * lambda",
+                icon: "🌊",
+                category: "Physics",
+                render: () => this.renderWaveVelocity()
+            },
+            dopplerEffect: {
+                name: "Doppler Effect",
+                searchTerms: "doppler effect sound frequency velocity physics",
+                description: "Calc Frequency Shift",
+                icon: "🚑",
+                category: "Physics",
+                render: () => this.renderDopplerEffect()
+            },
+            magneticForce: {
+                name: "Magnetic Force",
+                searchTerms: "magnetic force lorentz charge velocity field",
+                description: "F = qvB sin(theta)",
+                icon: "🧲",
+                category: "Physics",
+                render: () => this.renderMagneticForce()
+            },
+            pendulumPeriod: {
+                name: "Pendulum Period",
+                searchTerms: "pendulum period time length gravity physics",
+                description: "Simple Pendulum Calc",
+                icon: "⏰",
+                category: "Physics",
+                render: () => this.renderPendulumPeriod()
+            },
+            escapeVelocity: {
+                name: "Escape Velocity",
+                searchTerms: "escape velocity gravity planet mass radius",
+                description: "Calc Escape Velocity",
+                icon: "🚀",
+                category: "Physics",
+                render: () => this.renderEscapeVelocity()
+            },
+            gravForce: {
+                name: "Gravity Force",
+                searchTerms: "gravitational force newton mass distance",
+                description: "F = G*m1*m2/r^2",
+                icon: "🪐",
+                category: "Physics",
+                render: () => this.renderGravForce()
+            },
+            photonEnergy: {
+                name: "Photon Energy",
+                searchTerms: "photon energy planck constant frequency wavelength",
+                description: "E = hf or E = hc/lambda",
+                icon: "💡",
+                category: "Physics",
+                render: () => this.renderPhotonEnergy()
             }
         };
     }
@@ -13048,6 +13212,408 @@ Online: ${n.onLine}
                 <li><b>git diff</b> - Show changes</li>
             </ul>
         `;
+    }
+
+
+    renderBpmTapper() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BPM Tapper</h2>
+            <button id="bpm-tap" style="width:100px; height:100px; border-radius:50%; font-size:24px;">TAP</button>
+            <div id="bpm-res" class="result">0 BPM</div>
+            <button id="bpm-reset">Reset</button>
+        `;
+        let taps = [];
+        document.getElementById('bpm-tap').onclick = () => {
+            const now = Date.now();
+            if (taps.length > 0 && now - taps[taps.length - 1] > 2000) taps = []; // Reset if idle
+            taps.push(now);
+            if (taps.length > 1) {
+                const diffs = [];
+                for (let i = 1; i < taps.length; i++) diffs.push(taps[i] - taps[i - 1]);
+                const avg = diffs.reduce((a, b) => a + b) / diffs.length;
+                const bpm = Math.round(60000 / avg);
+                document.getElementById('bpm-res').textContent = `${bpm} BPM`;
+            }
+        };
+        document.getElementById('bpm-reset').onclick = () => { taps = []; document.getElementById('bpm-res').textContent = "0 BPM"; };
+    }
+
+    renderNoteFreq() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Note Frequencies</h2>
+            <input type="text" id="nf-in" placeholder="Note (e.g. A4)">
+            <button id="nf-btn">Find Hz</button>
+            <div id="nf-res" class="result"></div>
+        `;
+        document.getElementById('nf-btn').onclick = () => {
+            const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            const s = document.getElementById('nf-in').value.toUpperCase();
+            const oct = parseInt(s.slice(-1));
+            const note = s.slice(0, -1);
+            const semi = notes.indexOf(note);
+            if (semi === -1 || isNaN(oct)) { document.getElementById('nf-res').textContent = "Invalid Note"; return; }
+            const a4 = 440;
+            // A4 is index 9 in oct 4. Distance in semitones:
+            // (oct - 4) * 12 + (semi - 9)
+            const diff = (oct - 4) * 12 + (semi - 9);
+            const freq = a4 * Math.pow(2, diff / 12);
+            document.getElementById('nf-res').textContent = `${freq.toFixed(2)} Hz`;
+        };
+    }
+
+    renderToneGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tone Generator</h2>
+            <input type="number" id="tg-hz" value="440" placeholder="Hz">
+            <select id="tg-type"><option>sine</option><option>square</option><option>sawtooth</option></select>
+            <button id="tg-play">Play (1s)</button>
+        `;
+        document.getElementById('tg-play').onclick = () => {
+            const ctx = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = ctx.createOscillator();
+            osc.className = 'osc'; // Tag for safety if we store it
+            osc.type = document.getElementById('tg-type').value;
+            osc.frequency.value = parseFloat(document.getElementById('tg-hz').value);
+            osc.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 1);
+        };
+    }
+
+    renderScaleView() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scale Viewer</h2>
+            <select id="sv-root">
+                <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+                <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option>
+                <option>A#</option><option>B</option>
+            </select>
+            <select id="sv-type"><option value="maj">Major</option><option value="min">Minor</option></select>
+            <button id="sv-btn">Show</button>
+            <div id="sv-res" class="result"></div>
+        `;
+        document.getElementById('sv-btn').onclick = () => {
+            const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            const r = document.getElementById('sv-root').value;
+            const t = document.getElementById('sv-type').value;
+            let idx = notes.indexOf(r);
+            const pat = t === 'maj' ? [2, 2, 1, 2, 2, 2, 1] : [2, 1, 2, 2, 1, 2, 2];
+            let sc = [r];
+            for (let s of pat) {
+                idx = (idx + s) % 12;
+                sc.push(notes[idx]);
+            }
+            document.getElementById('sv-res').textContent = sc.join(" - ");
+        };
+    }
+
+    renderIntervalTrain() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Interval Calculator</h2>
+            <input type="number" id="iv-s" placeholder="Semitones">
+            <button id="iv-btn">Name It</button>
+            <div id="iv-res" class="result"></div>
+        `;
+        document.getElementById('iv-btn').onclick = () => {
+            const s = parseInt(document.getElementById('iv-s').value);
+            const n = ["Unison", "Minor 2nd", "Major 2nd", "Minor 3rd", "Major 3rd", "Perfect 4th", "Tritone", "Perfect 5th", "Minor 6th", "Major 6th", "Minor 7th", "Major 7th", "Octave"];
+            document.getElementById('iv-res').textContent = n[Math.abs(s) % 13] || "Compound Interval";
+        };
+    }
+
+    renderChordBuild() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Chord Info</h2>
+            <select id="cb-root">
+                <option>C</option><option>C#</option><option>D</option><option>D#</option><option>E</option>
+                <option>F</option><option>F#</option><option>G</option><option>G#</option><option>A</option>
+                <option>A#</option><option>B</option>
+            </select>
+            <select id="cb-type"><option value="maj">Major</option><option value="min">Minor</option><option value="dim">Dim</option></select>
+            <button id="cb-btn">Build</button>
+            <div id="cb-res" class="result"></div>
+        `;
+        document.getElementById('cb-btn').onclick = () => {
+            const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            const r = document.getElementById('cb-root').value;
+            const type = document.getElementById('cb-type').value;
+            let i = notes.indexOf(r);
+            let c = [r];
+            if (type === 'maj') { c.push(notes[(i + 4) % 12]); c.push(notes[(i + 7) % 12]); }
+            if (type === 'min') { c.push(notes[(i + 3) % 12]); c.push(notes[(i + 7) % 12]); }
+            if (type === 'dim') { c.push(notes[(i + 3) % 12]); c.push(notes[(i + 6) % 12]); }
+            document.getElementById('cb-res').textContent = c.join(" - ");
+        };
+    }
+
+    renderDelayCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Delay Calculator</h2>
+            <input type="number" id="dc-bpm" placeholder="BPM">
+            <button id="dc-btn">Calc Milliseconds</button>
+            <div id="dc-res" class="result"></div>
+        `;
+        document.getElementById('dc-btn').onclick = () => {
+            const b = parseFloat(document.getElementById('dc-bpm').value);
+            const ms = 60000 / b;
+            document.getElementById('dc-res').innerHTML = `
+                1/4: ${ms.toFixed(0)} ms<br>
+                1/8: ${(ms / 2).toFixed(0)} ms<br>
+                1/16: ${(ms / 4).toFixed(0)} ms
+            `;
+        };
+    }
+
+    renderAudioDur() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Audio Duration Est.</h2>
+            <input type="number" id="ad-sz" placeholder="Size (MB)">
+            <input type="number" id="ad-br" value="128" placeholder="Bitrate (kbps)">
+            <button id="ad-btn">Calc Time</button>
+            <div id="ad-res" class="result"></div>
+        `;
+        document.getElementById('ad-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('ad-sz').value) * 8 * 1024 * 1024; // bits
+            const br = parseFloat(document.getElementById('ad-br').value) * 1000;
+            const sec = s / br;
+            const m = Math.floor(sec / 60);
+            const rs = Math.round(sec % 60);
+            document.getElementById('ad-res').textContent = `${m}m ${rs}s`;
+        };
+    }
+
+    renderSemitoneTrans() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Transposer</h2>
+            <input type="text" id="st-n" placeholder="Note (e.g. C)">
+            <input type="number" id="st-s" placeholder="Semitones (+/-)">
+            <button id="st-btn">Transpose</button>
+            <div id="st-res" class="result"></div>
+        `;
+        document.getElementById('st-btn').onclick = () => {
+            const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            const n = document.getElementById('st-n').value.toUpperCase();
+            const s = parseInt(document.getElementById('st-s').value);
+            let idx = notes.indexOf(n);
+            if (idx === -1) { document.getElementById('st-res').textContent = "Invalid Note"; return; }
+            idx = (idx + s) % 12;
+            if (idx < 0) idx += 12;
+            document.getElementById('st-res').textContent = notes[idx];
+        };
+    }
+
+    renderFreqToNote() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hz to Note</h2>
+            <input type="number" id="fn-hz" placeholder="Hz">
+            <button id="fn-btn">Find Note</button>
+            <div id="fn-res" class="result"></div>
+        `;
+        document.getElementById('fn-btn').onclick = () => {
+            const hz = parseFloat(document.getElementById('fn-hz').value);
+            if (!hz) return;
+            const A4 = 440;
+            const C0 = A4 * Math.pow(2, -4.75);
+            const h = Math.round(12 * Math.log2(hz / C0));
+            const oct = Math.floor(h / 12);
+            const n = h % 12;
+            const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+            document.getElementById('fn-res').textContent = notes[n] + oct;
+        };
+    }
+
+    renderCoulombsLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Coulomb's Law</h2>
+            q1: <input type="number" id="cl-q1" style="width:60px"> C
+            q2: <input type="number" id="cl-q2" style="width:60px"> C
+            r: <input type="number" id="cl-r" style="width:60px"> m
+            <button id="cl-btn2">Calc Force</button>
+            <div id="cl-res2" class="result"></div>
+        `;
+        document.getElementById('cl-btn2').onclick = () => {
+            const k = 8.99e9;
+            const q1 = parseFloat(document.getElementById('cl-q1').value);
+            const q2 = parseFloat(document.getElementById('cl-q2').value);
+            const r = parseFloat(document.getElementById('cl-r').value);
+            document.getElementById('cl-res2').textContent = `F: ${(k * Math.abs(q1 * q2) / (r * r)).toExponential(2)} N`;
+        };
+    }
+
+    renderSnellsLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Snell's Law</h2>
+            n1: <input type="number" id="sl-n1" style="width:60px">
+            θ1: <input type="number" id="sl-t1" style="width:60px">°
+            n2: <input type="number" id="sl-n2" style="width:60px">
+            <button id="sl-btn">Calc θ2</button>
+            <div id="sl-res" class="result"></div>
+        `;
+        document.getElementById('sl-btn').onclick = () => {
+            const n1 = parseFloat(document.getElementById('sl-n1').value);
+            const t1 = parseFloat(document.getElementById('sl-t1').value) * Math.PI / 180;
+            const n2 = parseFloat(document.getElementById('sl-n2').value);
+            const sinT2 = (n1 * Math.sin(t1)) / n2;
+            if (sinT2 > 1) document.getElementById('sl-res').textContent = "Total Internal Reflection";
+            else document.getElementById('sl-res').textContent = `θ2: ${(Math.asin(sinT2) * 180 / Math.PI).toFixed(2)}°`;
+        };
+    }
+
+    renderCriticalAngle() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Critical Angle</h2>
+            n1: <input type="number" id="ca-n1" style="width:60px"> (Dense)
+            n2: <input type="number" id="ca-n2" style="width:60px"> (Less Dense)
+            <button id="ca-btn">Calc</button>
+            <div id="ca-res" class="result"></div>
+        `;
+        document.getElementById('ca-btn').onclick = () => {
+            const n1 = parseFloat(document.getElementById('ca-n1').value);
+            const n2 = parseFloat(document.getElementById('ca-n2').value);
+            if (n2 >= n1) document.getElementById('ca-res').textContent = "n1 must be > n2";
+            else document.getElementById('ca-res').textContent = `θc: ${(Math.asin(n2 / n1) * 180 / Math.PI).toFixed(2)}°`;
+        };
+    }
+
+    renderWaveVelocity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wave Velocity</h2>
+            f: <input type="number" id="wv-f" style="width:60px"> Hz
+            λ: <input type="number" id="wv-l" style="width:60px"> m
+            <button id="wv-btn">Calc v</button>
+            <div id="wv-res" class="result"></div>
+        `;
+        document.getElementById('wv-btn').onclick = () => {
+            const f = parseFloat(document.getElementById('wv-f').value);
+            const l = parseFloat(document.getElementById('wv-l').value);
+            document.getElementById('wv-res').textContent = `v: ${(f * l).toFixed(2)} m/s`;
+        };
+    }
+
+    renderDopplerEffect() {
+        const content = document.getElementById('tool-content');
+        // Simple case: Source moving towards stationary observer
+        content.innerHTML = `
+            <h2 class="tool-title">Doppler Effect (Source Moving)</h2>
+            f0: <input type="number" id="de-f0"> Hz
+            v (source): <input type="number" id="de-v"> m/s
+            <button id="de-btn">Calc f</button>
+            <div style="font-size:0.8em">Vsound = 343 m/s</div>
+            <div id="de-res" class="result"></div>
+        `;
+        document.getElementById('de-btn').onclick = () => {
+            const f0 = parseFloat(document.getElementById('de-f0').value);
+            const v = parseFloat(document.getElementById('de-v').value);
+            const c = 343;
+            // Moving towards: f = f0 * (c / (c - v))
+            // Moving away: f = f0 * (c / (c + v))
+            // Let's assume towards for simplicity or negative for away
+            document.getElementById('de-res').innerHTML = `Towards: ${(f0 * (c / (c - v))).toFixed(2)} Hz<br>Away: ${(f0 * (c / (c + v))).toFixed(2)} Hz`;
+        };
+    }
+
+    renderMagneticForce() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Magnetic Force</h2>
+            q: <input type="number" id="mf-q" style="width:50px"> v: <input type="number" id="mf-v" style="width:50px">
+            B: <input type="number" id="mf-b" style="width:50px"> θ: <input type="number" id="mf-t" value="90" style="width:50px">
+            <button id="mf-btn">Calc</button>
+            <div id="mf-res" class="result"></div>
+        `;
+        document.getElementById('mf-btn').onclick = () => {
+            const q = parseFloat(document.getElementById('mf-q').value);
+            const v = parseFloat(document.getElementById('mf-v').value);
+            const b = parseFloat(document.getElementById('mf-b').value);
+            const t = parseFloat(document.getElementById('mf-t').value) * Math.PI / 180;
+            document.getElementById('mf-res').textContent = `F: ${(q * v * b * Math.sin(t)).toExponential(2)} N`;
+        };
+    }
+
+    renderPendulumPeriod() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pendulum Period</h2>
+            L: <input type="number" id="pp-l" placeholder="Length (m)">
+            <button id="pp-btn">Calc T</button>
+            <div id="pp-res" class="result"></div>
+        `;
+        document.getElementById('pp-btn').onclick = () => {
+            const l = parseFloat(document.getElementById('pp-l').value);
+            const g = 9.81;
+            document.getElementById('pp-res').textContent = `T: ${(2 * Math.PI * Math.sqrt(l / g)).toFixed(2)} s`;
+        };
+    }
+
+    renderEscapeVelocity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Escape Velocity</h2>
+            M: <input type="number" id="ev-m" placeholder="Mass (kg)">
+            r: <input type="number" id="ev-r" placeholder="Radius (m)">
+            <button id="ev-btn">Calc v</button>
+            <div id="ev-res" class="result"></div>
+        `;
+        document.getElementById('ev-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('ev-m').value);
+            const r = parseFloat(document.getElementById('ev-r').value);
+            const G = 6.674e-11;
+            document.getElementById('ev-res').textContent = `v: ${(Math.sqrt(2 * G * m / r)).toFixed(2)} m/s`;
+        };
+    }
+
+    renderGravForce() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gravitational Force</h2>
+            m1: <input type="number" id="gf-m1" style="width:50px"> m2: <input type="number" id="gf-m2" style="width:50px">
+            r: <input type="number" id="gf-r" style="width:50px">
+            <button id="gf-btn">Calc F</button>
+            <div id="gf-res" class="result"></div>
+        `;
+        document.getElementById('gf-btn').onclick = () => {
+            const m1 = parseFloat(document.getElementById('gf-m1').value);
+            const m2 = parseFloat(document.getElementById('gf-m2').value);
+            const r = parseFloat(document.getElementById('gf-r').value);
+            const G = 6.674e-11;
+            document.getElementById('gf-res').textContent = `F: ${(G * m1 * m2 / (r * r)).toExponential(2)} N`;
+        };
+    }
+
+    renderPhotonEnergy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Photon Energy</h2>
+            f: <input type="number" id="pe-f" placeholder="Hz (optional)"> or
+            λ: <input type="number" id="pe-l" placeholder="m (optional)">
+            <button id="pe-btn">Calc E</button>
+            <div id="pe-res" class="result"></div>
+        `;
+        document.getElementById('pe-btn').onclick = () => {
+            const h = 6.626e-34;
+            const f = parseFloat(document.getElementById('pe-f').value);
+            if (f) {
+                document.getElementById('pe-res').textContent = `E: ${(h * f).toExponential(2)} J`;
+            } else {
+                const l = parseFloat(document.getElementById('pe-l').value);
+                const c = 3e8;
+                document.getElementById('pe-res').textContent = `E: ${(h * c / l).toExponential(2)} J`;
+            }
+        };
     }
 }
 

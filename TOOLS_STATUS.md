@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 350
-**Last Updated:** Batch 29 & 30 - 350 MILESTONE REACHED!
+**Total Tools:** 370
+**Last Updated:** Batch 31 & 32 - 370 MILESTONE REACHED!
 
-## Latest Additions (Batch 29 - Math IV - Geometry & Sequences)
-- Circle Calculator
-- Sphere Calculator
-- Cylinder Calculator
-- Cone Calculator
-- Pythagorean Triple Checker
-- Prime Number Visualizer
-- Fibonacci Generator
-- Pascal's Triangle Generator
-- Arithmetic Progression Calc
-- Geometric Progression Calc
+## Latest Additions (Batch 31 - Audio/Music)
+- BPM Tapper
+- Note Frequency Chart
+- Tone Generator
+- Scale Viewer
+- Interval Calculator
+- Chord Info
+- Delay Calculator
+- Audio Duration Est.
+- Semitone Transposer
+- Hz to Note Converter
 
-## Latest Additions (Batch 30 - Developer III)
-- JSON Minifier
-- JSON Validator
-- CSS Prettifier
-- HTML Prettifier
-- SQL Formatter
-- JWT Generator (Simple)
-- JS KeyCode Finder
-- Browser Information
-- MIME Type Lookup
-- Git Cheat Sheet Ref
+## Latest Additions (Batch 32 - Physics III - Waves/Electromagnetism)
+- Coulomb's Law
+- Snell's Law
+- Critical Angle
+- Wave Velocity
+- Doppler Effect
+- Magnetic Force
+- Pendulum Period
+- Escape Velocity
+- Gravitational Force
+- Photon Energy
