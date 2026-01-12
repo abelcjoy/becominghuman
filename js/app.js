@@ -1,3 +1,7 @@
+// 🛡️ GUARDIAN AXIOM: Always verify exports before importing. Maintain class structure.
+// Register all visual modules as Hooks in the LifeEngine (js/engine.js).
+// All biometric data MUST be encrypted via IronVault (js/vault.js) before storage.
+
 import { lifeExpectancyData } from './data.js';
 import { dailyReflections } from './reflections.js';
 import { ProjectionEngine } from './projection.js';
@@ -54,10 +58,9 @@ import { ConnectionSentinel } from './sentinel.js';
 import { LegacySky } from './legacy.js';
 import { SolarDial } from './dial.js';
 import { CitationEngine } from './citation.js';
-import { MortalStrand } from './strand.js';
 import { FocusShield } from './shield.js';
 import { ChronoSync } from './sync.js';
-import { EntropyEngine } from './entropy.js';
+import { EntropyLens } from './entropy.js';
 import { VoltaicInterface } from './voltaic.js';
 import { HorizonLine } from './horizon.js';
 import { QuantumEntanglement } from './entanglement.js';
@@ -81,10 +84,9 @@ import { ResonantTypography } from './typography.js';
 import { BioSyncInterface } from './biosync.js';
 import { EncryptionVeil } from './veil.js';
 import { TapticEngine } from './taptic.js';
+// Biometric Security & Features
 import { LifeEngine } from './engine.js';
 import { IronVault } from './vault.js';
-import { EntropyLens } from './entropy.js';
-import { MortalStrand } from './strand.js';
 
 class LifeCountdown {
     constructor() {
@@ -351,7 +353,7 @@ class LifeCountdown {
         new CitationEngine();
 
         // The Mortal Strand (Global Progress Line)
-        new MortalStrand();
+        // Handled in constructor as this.mortalStrand
 
         // Focus Shield (Idle Dimming)
         new FocusShield();
@@ -360,7 +362,7 @@ class LifeCountdown {
         new ChronoSync();
 
         // Visual Age Texturing (Entropy)
-        new EntropyEngine();
+        // Handled in constructor as this.entropyLens
 
         // Bio-Digital Energy Sync (Battery)
         new VoltaicInterface();
