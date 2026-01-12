@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 390 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 410 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -14,6 +14,8 @@
  * BATCH 32: CoulombsLaw + SnellsLaw + CritAngle + WaveVel + Doppler + MagForce + Pendulum + EscapeVel + GravForce + PhotonEnergy
  * BATCH 33: CAGR + RuleOf72 + NetWorth + DTI + Markup + SimpleInterest + Commission + Margin + RentalYield + CashFlow
  * BATCH 34: RPS + Magic8 + Trivia + Jokes + Quotes + Compliments + Decision + Teams + CoinFlip + Usernames
+ * BATCH 35: SpeedConv + FreqConv + DataStoreConv + AngleConv + PowerConv + PressureConv + TorqueConv + DensityConv + FlowRateConv + FuelConsConv
+ * BATCH 36: PunnettSquare + BmiCalc + BmrCalc + TdeeCalc + BodyFatNavy + IdealWeight + WaterIntake + BacCalc + MacroCalc + PregDueDate
  */
 
 class OmniTools {
@@ -3202,6 +3204,168 @@ class OmniTools {
                 icon: "👤",
                 category: "Fun",
                 render: () => this.renderUsernameGen()
+            },
+            // === BATCH 35 - 400 TOOLS (CONVERTERS III) ===
+            speedConv: {
+                name: "Speed Converter",
+                searchTerms: "speed converter kmh mph knots velocity",
+                description: "Convert speeds",
+                icon: "🏎️",
+                category: "Converters",
+                render: () => this.renderSpeedConv()
+            },
+            freqConv: {
+                name: "Freq Converter",
+                searchTerms: "frequency converter hz khz mhz ghz",
+                description: "Convert frequencies",
+                icon: "📶",
+                category: "Converters",
+                render: () => this.renderFreqConv()
+            },
+            dataStoreConv: {
+                name: "Data Converter",
+                searchTerms: "data storage converter mb gb tb bytes",
+                description: "Convert data sizes",
+                icon: "💾",
+                category: "Converters",
+                render: () => this.renderDataStoreConv()
+            },
+            angleConv: {
+                name: "Angle Converter",
+                searchTerms: "angle converter degrees radians gradian",
+                description: "Convert angles",
+                icon: "📐",
+                category: "Converters",
+                render: () => this.renderAngleConv()
+            },
+            powerConv: {
+                name: "Power Converter",
+                searchTerms: "power converter watts kw hp btuh",
+                description: "Convert power units",
+                icon: "💪",
+                category: "Converters",
+                render: () => this.renderPowerConv()
+            },
+            pressureConv: {
+                name: "Pressure Conv",
+                searchTerms: "pressure converter bar psi atm pa",
+                description: "Convert pressure",
+                icon: "🌬️",
+                category: "Converters",
+                render: () => this.renderPressureConv()
+            },
+            torqueConv: {
+                name: "Torque Converter",
+                searchTerms: "torque converter nm lbft kgm",
+                description: "Convert torque",
+                icon: "🔧",
+                category: "Converters",
+                render: () => this.renderTorqueConv()
+            },
+            densityConv: {
+                name: "Density Converter",
+                searchTerms: "density converter kgm3 lbft3",
+                description: "Convert density",
+                icon: "🧊",
+                category: "Converters",
+                render: () => this.renderDensityConv()
+            },
+            flowRateConv: {
+                name: "Flow Rate Conv",
+                searchTerms: "flow rate converter lpm gpm",
+                description: "Convert flow rates",
+                icon: "🚿",
+                category: "Converters",
+                render: () => this.renderFlowRateConv()
+            },
+            fuelConsumpConv: {
+                name: "Fuel Converter",
+                searchTerms: "fuel consumption converter l100km mpg",
+                description: "Convert fuel efficiency",
+                icon: "⛽",
+                category: "Converters",
+                render: () => this.renderFuelConsumpConv()
+            },
+            // === BATCH 36 - 410 TOOLS (BIOLOGY II - HEALTH) ===
+            punnettSquare: {
+                name: "Punnett Square",
+                searchTerms: "punnett square genetics trait heredity",
+                description: "Genetics probability",
+                icon: "🧬",
+                category: "Biology",
+                render: () => this.renderPunnettSquare()
+            },
+            bmiCalc: {
+                name: "BMI Calculator",
+                searchTerms: "bmi body mass index health weight",
+                description: "Calc Body Mass Index",
+                icon: "⚖️",
+                category: "Biology",
+                render: () => this.renderBmiCalc()
+            },
+            bmrCalc: {
+                name: "BMR Calculator",
+                searchTerms: "bmr basal metabolic rate calories health",
+                description: "Calc BMR (Calories)",
+                icon: "🔥",
+                category: "Biology",
+                render: () => this.renderBmrCalc()
+            },
+            tdeeCalc: {
+                name: "TDEE Calculator",
+                searchTerms: "tdee total daily energy expenditure calories health",
+                description: "Maintenance Calories",
+                icon: "🏃",
+                category: "Biology",
+                render: () => this.renderTdeeCalc()
+            },
+            bodyFatNavy: {
+                name: "Body Fat %",
+                searchTerms: "body fat percentage navy method health",
+                description: "Est. Body Fat %",
+                icon: "📏",
+                category: "Biology",
+                render: () => this.renderBodyFatNavy()
+            },
+            idealWeight: {
+                name: "Ideal Weight",
+                searchTerms: "ideal weight calculator bmi health",
+                description: "Target Body Weight",
+                icon: "🎯",
+                category: "Biology",
+                render: () => this.renderIdealWeight()
+            },
+            waterIntake: {
+                name: "Water Intake",
+                searchTerms: "water intake calculator hydration health",
+                description: "Daily hydration goal",
+                icon: "💧",
+                category: "Biology",
+                render: () => this.renderWaterIntake()
+            },
+            bacCalc: {
+                name: "BAC Calculator",
+                searchTerms: "blood alcohol content bac calculator sobriety",
+                description: "Estimated BAC %",
+                icon: "🍺",
+                category: "Biology",
+                render: () => this.renderBacCalc()
+            },
+            macroCalc: {
+                name: "Macro Calculator",
+                searchTerms: "macros protein fat carbs health nutrition",
+                description: "Calc health targets",
+                icon: "🥗",
+                category: "Biology",
+                render: () => this.renderMacroCalc()
+            },
+            pregDueDate: {
+                name: "Pregnancy Due",
+                searchTerms: "pregnancy due date calculator baby",
+                description: "Est. Delivery Date",
+                icon: "👶",
+                category: "Biology",
+                render: () => this.renderPregDueDate()
             }
         };
     }
@@ -14149,6 +14313,501 @@ Online: ${n.onLine}
             const p = adj[Math.floor(Math.random() * adj.length)];
             const s = Math.floor(Math.random() * 1000);
             document.getElementById('ug-res').textContent = `${p}${base}${s}`;
+        };
+    }
+
+
+    renderSpeedConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Speed Converter</h2>
+            <input type="number" id="sc-v" placeholder="Value">
+            <select id="sc-u">
+                <option value="kmh">km/h</option>
+                <option value="mph">mph</option>
+                <option value="ms">m/s</option>
+                <option value="kts">knots</option>
+            </select>
+            <button id="sc-btn">Convert</button>
+            <div id="sc-res" class="result"></div>
+        `;
+        document.getElementById('sc-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('sc-v').value);
+            let u = document.getElementById('sc-u').value;
+            let kmh;
+            if (u === 'kmh') kmh = v;
+            else if (u === 'mph') kmh = v * 1.60934;
+            else if (u === 'ms') kmh = v * 3.6;
+            else if (u === 'kts') kmh = v * 1.852;
+            document.getElementById('sc-res').innerHTML = `
+                km/h: ${kmh.toFixed(2)}<br>
+                mph: ${(kmh / 1.60934).toFixed(2)}<br>
+                m/s: ${(kmh / 3.6).toFixed(2)}<br>
+                knots: ${(kmh / 1.852).toFixed(2)}
+            `;
+        };
+    }
+
+    renderFreqConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Frequency Converter</h2>
+            <input type="number" id="fc-v" placeholder="Value">
+            <select id="fc-u">
+                <option value="hz">Hz</option>
+                <option value="khz">kHz</option>
+                <option value="mhz">MHz</option>
+                <option value="ghz">GHz</option>
+            </select>
+            <button id="fc-btn">Convert</button>
+            <div id="fc-res" class="result"></div>
+        `;
+        document.getElementById('fc-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('fc-v').value);
+            let u = document.getElementById('fc-u').value;
+            let hz;
+            if (u === 'hz') hz = v;
+            else if (u === 'khz') hz = v * 1e3;
+            else if (u === 'mhz') hz = v * 1e6;
+            else if (u === 'ghz') hz = v * 1e9;
+            document.getElementById('fc-res').innerHTML = `
+                Hz: ${hz.toExponential(2)}<br>
+                kHz: ${(hz / 1e3).toExponential(2)}<br>
+                MHz: ${(hz / 1e6).toExponential(2)}<br>
+                GHz: ${(hz / 1e9).toExponential(2)}
+            `;
+        };
+    }
+
+    renderDataStoreConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Converter</h2>
+            <input type="number" id="ds-v" placeholder="Value">
+            <select id="ds-u">
+                <option value="b">Bytes</option>
+                <option value="kb">KB</option>
+                <option value="mb">MB</option>
+                <option value="gb">GB</option>
+                <option value="tb">TB</option>
+            </select>
+            <button id="ds-btn">Convert</button>
+            <div id="ds-res" class="result"></div>
+        `;
+        document.getElementById('ds-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('ds-v').value);
+            let u = document.getElementById('ds-u').value;
+            let b;
+            if (u === 'b') b = v;
+            else if (u === 'kb') b = v * 1024;
+            else if (u === 'mb') b = v * 1024 * 1024;
+            else if (u === 'gb') b = v * 1024 * 1024 * 1024;
+            else if (u === 'tb') b = v * 1024 * 1024 * 1024 * 1024;
+            document.getElementById('ds-res').innerHTML = `
+                KB: ${(b / 1024).toFixed(2)}<br>
+                MB: ${(b / (1024 * 1024)).toFixed(2)}<br>
+                GB: ${(b / (1024 * 1024 * 1024)).toFixed(2)}<br>
+                TB: ${(b / (1024 * 1024 * 1024 * 1024)).toFixed(4)}
+            `;
+        };
+    }
+
+    renderAngleConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Angle Converter</h2>
+            <input type="number" id="ac-v" placeholder="Value">
+            <select id="ac-u">
+                <option value="deg">Degrees</option>
+                <option value="rad">Radians</option>
+                <option value="grad">Gradian</option>
+            </select>
+            <button id="ac-btn">Convert</button>
+            <div id="ac-res" class="result"></div>
+        `;
+        document.getElementById('ac-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('ac-v').value);
+            let u = document.getElementById('ac-u').value;
+            let deg;
+            if (u === 'deg') deg = v;
+            else if (u === 'rad') deg = v * (180 / Math.PI);
+            else if (u === 'grad') deg = v * 0.9;
+            document.getElementById('ac-res').innerHTML = `
+                Degrees: ${deg.toFixed(2)}°<br>
+                Radians: ${(deg * (Math.PI / 180)).toFixed(4)} rad<br>
+                Gradian: ${(deg / 0.9).toFixed(2)} grad
+            `;
+        };
+    }
+
+    renderPowerConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Power Converter</h2>
+            <input type="number" id="pc-v" placeholder="Value">
+            <select id="pc-u">
+                <option value="w">Watts</option>
+                <option value="kw">kW</option>
+                <option value="hp">hp (Mechanical)</option>
+                <option value="btu">BTU/hr</option>
+            </select>
+            <button id="pc-btn">Convert</button>
+            <div id="pc-res" class="result"></div>
+        `;
+        document.getElementById('pc-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('pc-v').value);
+            let u = document.getElementById('pc-u').value;
+            let w;
+            if (u === 'w') w = v;
+            else if (u === 'kw') w = v * 1000;
+            else if (u === 'hp') w = v * 745.7;
+            else if (u === 'btu') w = v * 0.293071;
+            document.getElementById('pc-res').innerHTML = `
+                Watts: ${w.toFixed(2)}<br>
+                kW: ${(w / 1000).toFixed(4)}<br>
+                hp: ${(w / 745.7).toFixed(4)}<br>
+                BTU/hr: ${(w / 0.293071).toFixed(2)}
+            `;
+        };
+    }
+
+    renderPressureConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pressure Converter</h2>
+            <input type="number" id="pr-v" placeholder="Value">
+            <select id="pr-u">
+                <option value="pa">Pascal (Pa)</option>
+                <option value="bar">Bar</option>
+                <option value="atm">Atmosphere</option>
+                <option value="psi">psi</option>
+            </select>
+            <button id="pr-btn">Convert</button>
+            <div id="pr-res" class="result"></div>
+        `;
+        document.getElementById('pr-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('pr-v').value);
+            let u = document.getElementById('pr-u').value;
+            let pa;
+            if (u === 'pa') pa = v;
+            else if (u === 'bar') pa = v * 100000;
+            else if (u === 'atm') pa = v * 101325;
+            else if (u === 'psi') pa = v * 6894.76;
+            document.getElementById('pr-res').innerHTML = `
+                Pa: ${pa.toExponential(2)}<br>
+                Bar: ${(pa / 100000).toFixed(4)}<br>
+                Atm: ${(pa / 101325).toFixed(4)}<br>
+                psi: ${(pa / 6894.76).toFixed(2)}
+            `;
+        };
+    }
+
+    renderTorqueConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Torque Converter</h2>
+            <input type="number" id="tq-v" placeholder="Value">
+            <select id="tq-u">
+                <option value="nm">N·m</option>
+                <option value="lbft">lb·ft</option>
+                <option value="kgm">kg·m</option>
+            </select>
+            <button id="tq-btn">Convert</button>
+            <div id="tq-res" class="result"></div>
+        `;
+        document.getElementById('tq-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('tq-v').value);
+            let u = document.getElementById('tq-u').value;
+            let nm;
+            if (u === 'nm') nm = v;
+            else if (u === 'lbft') nm = v * 1.35582;
+            else if (u === 'kgm') nm = v * 9.80665;
+            document.getElementById('tq-res').innerHTML = `
+                N·m: ${nm.toFixed(2)}<br>
+                lb·ft: ${(nm / 1.35582).toFixed(2)}<br>
+                kg·m: ${(nm / 9.80665).toFixed(2)}
+            `;
+        };
+    }
+
+    renderDensityConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Density Converter</h2>
+            <input type="number" id="dn-v" placeholder="Value">
+            <select id="dn-u">
+                <option value="kgm3">kg/m³</option>
+                <option value="lbft3">lb/ft³</option>
+                <option value="gcm3">g/cm³</option>
+            </select>
+            <button id="dn-btn">Convert</button>
+            <div id="dn-res" class="result"></div>
+        `;
+        document.getElementById('dn-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('dn-v').value);
+            let u = document.getElementById('dn-u').value;
+            let kgm3;
+            if (u === 'kgm3') kgm3 = v;
+            else if (u === 'lbft3') kgm3 = v * 16.0185;
+            else if (u === 'gcm3') kgm3 = v * 1000;
+            document.getElementById('dn-res').innerHTML = `
+                kg/m³: ${kgm3.toFixed(2)}<br>
+                lb/ft³: ${(kgm3 / 16.0185).toFixed(2)}<br>
+                g/cm³: ${(kgm3 / 1000).toFixed(4)}
+            `;
+        };
+    }
+
+    renderFlowRateConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flow Rate Conv</h2>
+            <input type="number" id="fr-v" placeholder="Value">
+            <select id="fr-u">
+                <option value="lpm">L/min</option>
+                <option value="gpm">gal/min</option>
+                <option value="m3h">m³/h</option>
+            </select>
+            <button id="fr-btn">Convert</button>
+            <div id="fr-res" class="result"></div>
+        `;
+        document.getElementById('fr-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('fr-v').value);
+            let u = document.getElementById('fr-u').value;
+            let lpm;
+            if (u === 'lpm') lpm = v;
+            else if (u === 'gpm') lpm = v * 3.78541;
+            else if (u === 'm3h') lpm = v * 16.6667;
+            document.getElementById('fr-res').innerHTML = `
+                L/min: ${lpm.toFixed(2)}<br>
+                gal/min: ${(lpm / 3.78541).toFixed(2)}<br>
+                m³/h: ${(lpm / 16.6667).toFixed(2)}
+            `;
+        };
+    }
+
+    renderFuelConsumpConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fuel Converter</h2>
+            <input type="number" id="fl-v" placeholder="Value">
+            <select id="fl-u">
+                <option value="l100">L/100km</option>
+                <option value="mpg">mpg (US)</option>
+            </select>
+            <button id="fl-btn">Convert</button>
+            <div id="fl-res" class="result"></div>
+        `;
+        document.getElementById('fl-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('fl-v').value);
+            let u = document.getElementById('fl-u').value;
+            if (u === 'l100') {
+                let mpg = 235.215 / v;
+                document.getElementById('fl-res').innerHTML = `mpg (US): ${mpg.toFixed(2)}`;
+            } else {
+                let l100 = 235.215 / v;
+                document.getElementById('fl-res').innerHTML = `L/100km: ${l100.toFixed(2)}`;
+            }
+        };
+    }
+
+    renderPunnettSquare() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Punnett Square</h2>
+            Parent 1: <input type="text" id="ps-p1" placeholder="e.g. Aa" maxlength="2" style="width:50px">
+            Parent 2: <input type="text" id="ps-p2" placeholder="e.g. aa" maxlength="2" style="width:50px">
+            <button id="ps-btn">Gen</button>
+            <div id="ps-res" class="result"></div>
+        `;
+        document.getElementById('ps-btn').onclick = () => {
+            let p1 = document.getElementById('ps-p1').value;
+            let p2 = document.getElementById('ps-p2').value;
+            if (p1.length !== 2 || p2.length !== 2) return;
+            let s = `<table border="1" style="margin:auto; border-collapse:collapse;">
+                <tr><td></td><td>${p2[0]}</td><td>${p2[1]}</td></tr>
+                <tr><td>${p1[0]}</td><td>${p1[0] + p2[0]}</td><td>${p1[0] + p2[1]}</td></tr>
+                <tr><td>${p1[1]}</td><td>${p1[1] + p2[0]}</td><td>${p1[1] + p2[1]}</td></tr>
+            </table>`;
+            document.getElementById('ps-res').innerHTML = s;
+        };
+    }
+
+    renderBmiCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BMI Calculator</h2>
+            <input type="number" id="bmi-w" placeholder="Weight (kg)">
+            <input type="number" id="bmi-h" placeholder="Height (cm)">
+            <button id="bmi-btn">Calc</button>
+            <div id="bmi-res" class="result"></div>
+        `;
+        document.getElementById('bmi-btn').onclick = () => {
+            let w = parseFloat(document.getElementById('bmi-w').value);
+            let h = parseFloat(document.getElementById('bmi-h').value) / 100;
+            let bmi = w / (h * h);
+            let msg = bmi < 18.5 ? "Underweight" : bmi < 25 ? "Normal" : bmi < 30 ? "Overweight" : "Obese";
+            document.getElementById('bmi-res').innerHTML = `BMI: ${bmi.toFixed(1)} (${msg})`;
+        };
+    }
+
+    renderBmrCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BMR Calculator</h2>
+            <select id="bmr-g"><option value="m">Male</option><option value="f">Female</option></select>
+            <input type="number" id="bmr-w" placeholder="Weight (kg)">
+            <input type="number" id="bmr-h" placeholder="Height (cm)">
+            <input type="number" id="bmr-a" placeholder="Age">
+            <button id="bmr-btn">Calc</button>
+            <div id="bmr-res" class="result"></div>
+        `;
+        document.getElementById('bmr-btn').onclick = () => {
+            let g = document.getElementById('bmr-g').value;
+            let w = parseFloat(document.getElementById('bmr-w').value);
+            let h = parseFloat(document.getElementById('bmr-h').value);
+            let a = parseFloat(document.getElementById('bmr-a').value);
+            let bmr = g === 'm' ? 10 * w + 6.25 * h - 5 * a + 5 : 10 * w + 6.25 * h - 5 * a - 161;
+            document.getElementById('bmr-res').innerHTML = `BMR: ${bmr.toFixed(0)} kcal/day`;
+        };
+    }
+
+    renderTdeeCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TDEE Calculator</h2>
+            <input type="number" id="td-bmr" placeholder="BMR kcal">
+            <select id="td-act">
+                <option value="1.2">Sedentary</option>
+                <option value="1.375">Lightly Active</option>
+                <option value="1.55">Moderately Active</option>
+                <option value="1.725">Very Active</option>
+                <option value="1.9">Extra Active</option>
+            </select>
+            <button id="td-btn">Calc</button>
+            <div id="td-res" class="result"></div>
+        `;
+        document.getElementById('td-btn').onclick = () => {
+            let bmr = parseFloat(document.getElementById('td-bmr').value);
+            let act = parseFloat(document.getElementById('td-act').value);
+            document.getElementById('td-res').innerHTML = `TDEE: ${(bmr * act).toFixed(0)} kcal/day`;
+        };
+    }
+
+    renderBodyFatNavy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Body Fat % (Navy)</h2>
+            <select id="bf-g"><option value="m">Male</option><option value="f">Female</option></select>
+            <input type="number" id="bf-h" placeholder="Height (cm)">
+            <input type="number" id="bf-n" placeholder="Neck (cm)">
+            <input type="number" id="bf-w" placeholder="Waist (cm)">
+            <input type="number" id="bf-hp" placeholder="Hips (cm) - Female only">
+            <button id="bf-btn">Calc</button>
+            <div id="bf-res" class="result"></div>
+        `;
+        document.getElementById('bf-btn').onclick = () => {
+            let g = document.getElementById('bf-g').value;
+            let h = parseFloat(document.getElementById('bf-h').value);
+            let n = parseFloat(document.getElementById('bf-n').value);
+            let w = parseFloat(document.getElementById('bf-w').value);
+            let fat;
+            if (g === 'm') {
+                fat = 495 / (1.0324 - 0.19077 * Math.log10(w - n) + 0.15456 * Math.log10(h)) - 450;
+            } else {
+                let hp = parseFloat(document.getElementById('bf-hp').value);
+                fat = 495 / (1.29579 - 0.35004 * Math.log10(w + hp - n) + 0.22100 * Math.log10(h)) - 450;
+            }
+            document.getElementById('bf-res').innerHTML = `Body Fat: ${fat.toFixed(1)}%`;
+        };
+    }
+
+    renderIdealWeight() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ideal Weight</h2>
+            <select id="iw-g"><option value="m">Male</option><option value="f">Female</option></select>
+            <input type="number" id="iw-h" placeholder="Height (cm)">
+            <button id="iw-btn">Calc</button>
+            <div id="iw-res" class="result"></div>
+        `;
+        document.getElementById('iw-btn').onclick = () => {
+            let g = document.getElementById('iw-g').value;
+            let h = parseFloat(document.getElementById('iw-h').value);
+            let weight;
+            if (g === 'm') weight = 50 + 0.9 * (h - 152.4);
+            else weight = 45.5 + 0.9 * (h - 152.4);
+            document.getElementById('iw-res').innerHTML = `Ideal Weight: ${weight.toFixed(1)} kg`;
+        };
+    }
+
+    renderWaterIntake() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Water Intake</h2>
+            <input type="number" id="wi-w" placeholder="Weight (kg)">
+            <select id="wi-a"><option value="0.03">Low Activity</option><option value="0.04">Active</option></select>
+            <button id="wi-btn">Calc</button>
+            <div id="wi-res" class="result"></div>
+        `;
+        document.getElementById('wi-btn').onclick = () => {
+            let w = parseFloat(document.getElementById('wi-w').value);
+            let a = parseFloat(document.getElementById('wi-a').value);
+            document.getElementById('wi-res').innerHTML = `Daily Goal: ${(w * a).toFixed(1)} Liters`;
+        };
+    }
+
+    renderBacCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BAC Calculator</h2>
+            <input type="number" id="ba-d" placeholder="Drinks (Standard)">
+            <input type="number" id="ba-w" placeholder="Weight (kg)">
+            <select id="ba-g"><option value="0.68">Male</option><option value="0.55">Female</option></select>
+            <input type="number" id="ba-t" placeholder="Time since first (hrs)">
+            <button id="ba-btn">Calc</button>
+            <div id="ba-res" class="result"></div>
+        `;
+        document.getElementById('ba-btn').onclick = () => {
+            let d = parseFloat(document.getElementById('ba-d').value) * 14; // grams alcohol
+            let w = parseFloat(document.getElementById('ba-w').value) * 1000; // grams body weight
+            let r = parseFloat(document.getElementById('ba-g').value);
+            let t = parseFloat(document.getElementById('ba-t').value);
+            let bac = (d / (w * r)) * 100 - (t * 0.015);
+            document.getElementById('ba-res').innerHTML = `BAC: ${Math.max(0, bac).toFixed(3)}%`;
+        };
+    }
+
+    renderMacroCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Macro Calculator</h2>
+            <input type="number" id="ma-c" placeholder="Total Calories">
+            <button id="ma-btn">Gen (40/30/30)</button>
+            <div id="ma-res" class="result"></div>
+        `;
+        document.getElementById('ma-btn').onclick = () => {
+            let c = parseFloat(document.getElementById('ma-c').value);
+            document.getElementById('ma-res').innerHTML = `
+                Carbs (40%): ${(c * 0.4 / 4).toFixed(0)}g<br>
+                Protein (30%): ${(c * 0.3 / 4).toFixed(0)}g<br>
+                Fat (30%): ${(c * 0.3 / 9).toFixed(0)}g
+            `;
+        };
+    }
+
+    renderPregDueDate() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pregnancy Due Date</h2>
+            LMP: <input type="date" id="pd-d">
+            <button id="pd-btn">Calc</button>
+            <div id="pd-res" class="result"></div>
+        `;
+        document.getElementById('pd-btn').onclick = () => {
+            let d = new Date(document.getElementById('pd-d').value);
+            d.setDate(d.getDate() + 280);
+            document.getElementById('pd-res').innerHTML = `Due Date: ${d.toDateString()}`;
         };
     }
 }
