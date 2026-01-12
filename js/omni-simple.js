@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 520 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 540 ELITE TOOLS! 💎
  * 
  * BATCH 1-42: 470 tools across all categories
- * BATCH 43-45: 30 tools (Games, Nature, Milestone)
- * BATCH 46: SyllableCount + RhymeFinder + HaikuHelper + FictionPrompts + CharGen + PlotTwist + DialogueStart + SettingGen + Alliteration + WritingMood
- * BATCH 47: PaintCalc + FlooringCalc + WallpaperCalc + LumensWatts + WireGauge + Safety + FenceCalc + ConcreteCalc + BrickCalc + DrillSpeed
+ * BATCH 43-47: 50 tools (Games, Nature, Writing, DIY)
+ * BATCH 48: UrlSlugify + HttpStatus + UserAgent + ScreenRes + MetaPreview + RobotsGen + FlexboxRef + GridRef + Base64Size + SitemapGen
+ * BATCH 49: BreakEven + MarginMarkup + HourlySalary + InvoiceCalc + ProjectTime + TaskMatrix + RetentionRate + MiniCRM + ExpenseLog + DiscountCalc
  */
 
 class OmniTools {
@@ -4246,6 +4246,168 @@ class OmniTools {
                 icon: "🌀",
                 category: "DIY",
                 render: () => this.renderDrillSpeedRef()
+            },
+            // === BATCH 48 - 530 TOOLS (WEB & DEV II) ===
+            urlSlugify: {
+                name: "URL Slugify",
+                searchTerms: "url slugify slug generator seo link",
+                description: "Title to URL slug",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderUrlSlugify()
+            },
+            httpStatusRef: {
+                name: "HTTP Status",
+                searchTerms: "http status codes reference error success 404 500 200",
+                description: "Status code cheat sheet",
+                icon: "📡",
+                category: "Developer",
+                render: () => this.renderHttpStatusRef()
+            },
+            userAgentInfo: {
+                name: "User Agent",
+                searchTerms: "user agent parser browser info details",
+                description: "View visitor browser data",
+                icon: "🕵️",
+                category: "Developer",
+                render: () => this.renderUserAgentInfo()
+            },
+            screenResInfo: {
+                name: "Screen Res",
+                searchTerms: "screen resolution viewport size window dimensions",
+                description: "Live screen dimensions",
+                icon: "🖥️",
+                category: "Developer",
+                render: () => this.renderScreenResInfo()
+            },
+            metaPreview: {
+                name: "Meta Preview",
+                searchTerms: "meta tag preview seo google social snippet",
+                description: "Google search snippet",
+                icon: "🔍",
+                category: "Developer",
+                render: () => this.renderMetaPreview()
+            },
+            robotsGen: {
+                name: "Robots.txt Gen",
+                searchTerms: "robots.txt generator seo file crawler",
+                description: "Basic robots.txt helper",
+                icon: "🤖",
+                category: "Developer",
+                render: () => this.renderRobotsGen()
+            },
+            flexboxQuickRef: {
+                name: "Flexbox Ref",
+                searchTerms: "css flexbox reference cheat sheet visual",
+                description: "Flex layout properties",
+                icon: "📦",
+                category: "Developer",
+                render: () => this.renderFlexboxQuickRef()
+            },
+            cssGridRef: {
+                name: "CSS Grid Ref",
+                searchTerms: "css grid reference cheat sheet visual",
+                description: "Grid layout properties",
+                icon: "🔳",
+                category: "Developer",
+                render: () => this.renderCssGridRef()
+            },
+            base64SizeEst: {
+                name: "Base64 Size",
+                searchTerms: "base64 size estimator encode bloat binary",
+                description: "Estimate encoding bloat",
+                icon: "⚖️",
+                category: "Developer",
+                render: () => this.renderBase64SizeEst()
+            },
+            sitemapGen: {
+                name: "Sitemap Gen",
+                searchTerms: "sitemap xml generator seo helper",
+                description: "Basic XML structure",
+                icon: "🗺️",
+                category: "Developer",
+                render: () => this.renderSitemapGen()
+            },
+            // === BATCH 49 - 540 TOOLS (BUSINESS II) ===
+            breakEvenCalc: {
+                name: "Break Even",
+                searchTerms: "break even calculator profit bridge business",
+                description: "Identify survival point",
+                icon: "⚖️",
+                category: "Business",
+                render: () => this.renderBreakEvenCalc()
+            },
+            marginMarkup: {
+                name: "Margin vs Markup",
+                searchTerms: "margin markup calculator profit cost price",
+                description: "Compare price metrics",
+                icon: "📈",
+                category: "Business",
+                render: () => this.renderMarginMarkup()
+            },
+            hourlySalary: {
+                name: "Hourly/Salary",
+                searchTerms: "hourly to salary converter pay wages period",
+                description: "Pay period conversion",
+                icon: "💸",
+                category: "Business",
+                render: () => this.renderHourlySalary()
+            },
+            invoiceTotal: {
+                name: "Invoice Calc",
+                searchTerms: "invoice totaler tax calculator subtotal billing",
+                description: "Add items + tax",
+                icon: "🧾",
+                category: "Business",
+                render: () => this.renderInvoiceTotal()
+            },
+            projectTime: {
+                name: "Project Time",
+                searchTerms: "project timeline days between dates phase",
+                description: "Days between phases",
+                icon: "📅",
+                category: "Business",
+                render: () => this.renderProjectTime()
+            },
+            taskMatrix: {
+                name: "Priority Matrix",
+                searchTerms: "eisenhower matrix task priority urgent important",
+                description: "Eisenhower quadrant",
+                icon: "🎯",
+                category: "Business",
+                render: () => this.renderTaskMatrix()
+            },
+            retentionRate: {
+                name: "Retention Rate",
+                searchTerms: "customer retention rate loyalty churn business",
+                description: "Calc loyalty metric",
+                icon: "🤝",
+                category: "Business",
+                render: () => this.renderRetentionRate()
+            },
+            simpleCrm: {
+                name: "Mini CRM",
+                searchTerms: "crm contact notes client manager business",
+                description: "Simple contact store",
+                icon: "📇",
+                category: "Business",
+                render: () => this.renderSimpleCrm()
+            },
+            expenseTrack: {
+                name: "Expense Log",
+                searchTerms: "expense tracker spending budget log business",
+                description: "Track minor costs",
+                icon: "📉",
+                category: "Business",
+                render: () => this.renderExpenseTrack()
+            },
+            discountCalc: {
+                name: "Discount Calc",
+                searchTerms: "discount calculator sale price percent off",
+                description: "Calc final sale price",
+                icon: "🏷️",
+                category: "Business",
+                render: () => this.renderDiscountCalc()
             }
         };
     }
@@ -17636,6 +17798,343 @@ Online: ${n.onLine}
                 <small>*Use coolant for metal!</small>
             </div>
         `;
+    }
+    renderUrlSlugify() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">URL Slugify</h2>
+            <input type="text" id="us-in" placeholder="Enter title...">
+            <div id="us-res" class="result">result-slug-here</div>
+        `;
+        document.getElementById('us-in').oninput = (e) => {
+            const val = e.target.value.toLowerCase().trim()
+                .replace(/[^\w ]+/g, '')
+                .replace(/ +/g, '-');
+            document.getElementById('us-res').textContent = val || "result-slug-here";
+        };
+    }
+
+    renderHttpStatusRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTTP Status</h2>
+            <select id="hs-v">
+                <option value="200: OK (Success)">200</option>
+                <option value="301: Moved Permanently">301</option>
+                <option value="400: Bad Request">400</option>
+                <option value="401: Unauthorized">401</option>
+                <option value="403: Forbidden">403</option>
+                <option value="404: Not Found">404</option>
+                <option value="500: Internal Server Error">500</option>
+                <option value="503: Service Unavailable">503</option>
+            </select>
+            <div id="hs-res" class="result">200: OK (Success)</div>
+        `;
+        document.getElementById('hs-v').onchange = (e) => {
+            document.getElementById('hs-res').textContent = e.target.value;
+        };
+    }
+
+    renderUserAgentInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">User Agent</h2>
+            <div style="font-size:0.7em; word-break:break-all; background:#eee; padding:10px; border-radius:5px;">
+                ${navigator.userAgent}
+            </div>
+            <p style="font-size:0.7em; margin-top:10px;">Platform: ${navigator.platform}</p>
+        `;
+    }
+
+    renderScreenResInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Screen Res</h2>
+            <div id="sr-res" class="result"></div>
+            <p style="font-size:0.7em;">Live viewport updates on resize.</p>
+        `;
+        const update = () => {
+            document.getElementById('sr-res').innerHTML = `
+                Screen: ${screen.width}x${screen.height}<br>
+                Viewport: ${window.innerWidth}x${window.innerHeight}
+            `;
+        };
+        window.addEventListener('resize', update);
+        update();
+        // Cleanup on re-render is handled by outer logic if exists, 
+        // but here we just append.
+    }
+
+    renderMetaPreview() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Meta Preview</h2>
+            Title: <input type="text" id="mp-t" value="Omni Tools - 540 in 1"><br>
+            Desc: <input type="text" id="mp-d" value="The ultimate collection of functional tools."><br>
+            <div style="text-align:left; border:1px solid #ddd; padding:10px; margin-top:10px; background:#fff;">
+                <div id="mp-res-t" style="color:#1a0dab; font-size:1.2em; cursor:pointer;"></div>
+                <div style="color:#006621; font-size:0.9em;">https://omnitools.example.com</div>
+                <div id="mp-res-d" style="color:#545454; font-size:0.9em;"></div>
+            </div>
+        `;
+        const update = () => {
+            document.getElementById('mp-res-t').textContent = document.getElementById('mp-t').value;
+            document.getElementById('mp-res-d').textContent = document.getElementById('mp-d').value;
+        };
+        document.getElementById('mp-t').oninput = update;
+        document.getElementById('mp-d').oninput = update;
+        update();
+    }
+
+    renderRobotsGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Robots.txt Gen</h2>
+            Allow All? <input type="checkbox" id="rg-a" checked><br>
+            <textarea id="rg-res" readonly style="height:60px; font-family:monospace; font-size:0.8em; margin-top:10px;"></textarea>
+        `;
+        const update = () => {
+            const all = document.getElementById('rg-a').checked;
+            document.getElementById('rg-res').value = `User-agent: *\nDisallow: ${all ? "" : "/"}`;
+        };
+        document.getElementById('rg-a').onchange = update;
+        update();
+    }
+
+    renderFlexboxQuickRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flexbox Ref</h2>
+            <div style="text-align:left; font-size:0.8em;">
+                <b>flex-direction</b>: row | column<br>
+                <b>justify-content</b>: center | flex-start | flex-end | space-between<br>
+                <b>align-items</b>: center | stretch | flex-start<br>
+                <b>flex-wrap</b>: wrap | nowrap
+            </div>
+        `;
+    }
+
+    renderCssGridRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Grid Ref</h2>
+            <div style="text-align:left; font-size:0.8em;">
+                <b>display</b>: grid<br>
+                <b>grid-template-columns</b>: repeat(3, 1fr)<br>
+                <b>gap</b>: 10px<br>
+                <b>grid-area</b>: name
+            </div>
+        `;
+    }
+
+    renderBase64SizeEst() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Base64 Size</h2>
+            Binary Size (KB): <input type="number" id="bs-in" value="100" style="width:60px">
+            <div id="bs-res" class="result">Est. Base64: 133 KB</div>
+            <p style="font-size:0.75em;">Base64 adds ~33% overhead.</p>
+        `;
+        document.getElementById('bs-in').oninput = (e) => {
+            const n = parseFloat(e.target.value) || 0;
+            document.getElementById('bs-res').textContent = `Est. Base64: ${Math.ceil(n * 1.33)} KB`;
+        };
+    }
+
+    renderSitemapGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sitemap Gen</h2>
+            URL: <input type="text" id="sg-u" value="https://mysite.com">
+            <textarea id="sg-res" readonly style="height:80px; font-family:monospace; font-size:0.7em; margin-top:10px;"></textarea>
+        `;
+        document.getElementById('sg-u').oninput = (e) => {
+            const u = e.target.value;
+            document.getElementById('sg-res').value = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n <url>\n  <loc>${u}</loc>\n </url>\n</urlset>`;
+        };
+        document.getElementById('sg-u').oninput({ target: { value: 'https://mysite.com' } });
+    }
+
+    renderBreakEvenCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Break Even</h2>
+            Fixed Costs ($): <input type="number" id="be-f" value="1000" style="width:60px"><br>
+            Price per Unit ($): <input type="number" id="be-p" value="50" style="width:60px"><br>
+            Variable Cost ($): <input type="number" id="be-v" value="20" style="width:60px">
+            <button id="be-btn">Calc Units</button>
+            <div id="be-res" class="result"></div>
+        `;
+        document.getElementById('be-btn').onclick = () => {
+            const f = parseFloat(document.getElementById('be-f').value);
+            const p = parseFloat(document.getElementById('be-p').value);
+            const v = parseFloat(document.getElementById('be-v').value);
+            const sub = p - v;
+            document.getElementById('be-res').textContent = sub > 0 ? `Units to Profit: ${Math.ceil(f / sub)}` : "Price must be > Var Cost";
+        };
+    }
+
+    renderMarginMarkup() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Margin vs Markup</h2>
+            Cost ($): <input type="number" id="mm-c" value="100" style="width:60px"><br>
+            Price ($): <input type="number" id="mm-p" value="150" style="width:60px">
+            <div id="mm-res" class="result" style="text-align:left; font-size:0.9em;"></div>
+        `;
+        const update = () => {
+            const c = parseFloat(document.getElementById('mm-c').value);
+            const p = parseFloat(document.getElementById('mm-p').value);
+            const markup = ((p - c) / c) * 100;
+            const margin = ((p - c) / p) * 100;
+            document.getElementById('mm-res').innerHTML = `Markup: ${markup.toFixed(1)}%<br>Margin: ${margin.toFixed(1)}%`;
+        };
+        document.getElementById('mm-c').oninput = update;
+        document.getElementById('mm-p').oninput = update;
+        update();
+    }
+
+    renderHourlySalary() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hourly/Salary</h2>
+            Hourly Rate ($): <input type="number" id="hs-h" value="25" style="width:60px">
+            <div id="hs-res" class="result"></div>
+            <p style="font-size:0.7em;">Based on 40h/week, 52 weeks.</p>
+        `;
+        document.getElementById('hs-h').oninput = (e) => {
+            const h = parseFloat(e.target.value) || 0;
+            document.getElementById('hs-res').textContent = `Annual: $${(h * 40 * 52).toLocaleString()}`;
+        };
+        document.getElementById('hs-h').oninput({ target: { value: '25' } });
+    }
+
+    renderInvoiceTotal() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Invoice Calc</h2>
+            Subtotal ($): <input type="number" id="it-s" value="500" style="width:60px"><br>
+            Tax Rate (%): <input type="number" id="it-t" value="8" style="width:40px">
+            <div id="it-res" class="result">Total: $540.00</div>
+        `;
+        const update = () => {
+            const s = parseFloat(document.getElementById('it-s').value) || 0;
+            const t = parseFloat(document.getElementById('it-t').value) || 0;
+            document.getElementById('it-res').textContent = `Total: $${(s * (1 + t / 100)).toFixed(2)}`;
+        };
+        document.getElementById('it-s').oninput = update;
+        document.getElementById('it-t').oninput = update;
+    }
+
+    renderProjectTime() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Project Time</h2>
+            Start: <input type="date" id="pt-s"><br>
+            End: <input type="date" id="pt-e">
+            <div id="pt-res" class="result">Select dates</div>
+        `;
+        const update = () => {
+            const s = new Date(document.getElementById('pt-s').value);
+            const e = new Date(document.getElementById('pt-e').value);
+            if (s && e && !isNaN(s) && !isNaN(e)) {
+                const diff = Math.ceil((e - s) / (1000 * 60 * 60 * 24));
+                document.getElementById('pt-res').textContent = `${diff} days`;
+            }
+        };
+        document.getElementById('pt-s').onchange = update;
+        document.getElementById('pt-e').onchange = update;
+    }
+
+    renderTaskMatrix() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Priority Matrix</h2>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.6em;">
+                <div style="background:#ffcccc; padding:5px;"><b>Urgent/Imp</b><br>DO IT NOW</div>
+                <div style="background:#ccffcc; padding:5px;"><b>Not Urgent/Imp</b><br>SCHEDULE</div>
+                <div style="background:#fff3cd; padding:5px;"><b>Urgent/Not Imp</b><br>DELEGATE</div>
+                <div style="background:#f8f9fa; border:1px solid #ddd; padding:5px;"><b>Not Urgent/Not Imp</b><br>ELIMINATE</div>
+            </div>
+        `;
+    }
+
+    renderRetentionRate() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Retention Rate</h2>
+            End Count: <input type="number" id="rr-e" value="100" style="width:50px"><br>
+            New Users: <input type="number" id="rr-n" value="10" style="width:50px"><br>
+            Start Count: <input type="number" id="rr-s" value="95" style="width:50px">
+            <div id="rr-res" class="result"></div>
+        `;
+        const update = () => {
+            const e = parseInt(document.getElementById('rr-e').value);
+            const n = parseInt(document.getElementById('rr-n').value);
+            const s = parseInt(document.getElementById('rr-s').value);
+            const rate = ((e - n) / s) * 100;
+            document.getElementById('rr-res').textContent = `Rate: ${rate.toFixed(1)}%`;
+        };
+        document.getElementById('rr-e').oninput = update;
+        document.getElementById('rr-n').oninput = update;
+        document.getElementById('rr-s').oninput = update;
+        update();
+    }
+
+    renderSimpleCrm() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mini CRM</h2>
+            Name: <input type="text" id="cr-n" placeholder="John Doe"><br>
+            Note: <input type="text" id="cr-nt" placeholder="Met at conference">
+            <button id="cr-btn">Add Record</button>
+            <div id="cr-res" style="font-size:0.7em; margin-top:10px; max-height:80px; overflow-y:auto;"></div>
+        `;
+        document.getElementById('cr-btn').onclick = () => {
+            const name = document.getElementById('cr-n').value;
+            const note = document.getElementById('cr-nt').value;
+            if (!name) return;
+            const div = document.createElement('div');
+            div.textContent = `${name}: ${note}`;
+            div.style.borderBottom = "1px solid #eee";
+            document.getElementById('cr-res').prepend(div);
+        };
+    }
+
+    renderExpenseTrack() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Expense Log</h2>
+            Item: <input type="text" id="ex-i" value="Coffee" style="width:80px">
+            Cost: <input type="number" id="ex-c" value="5" style="width:40px">
+            <button id="ex-btn">Add</button>
+            <div id="ex-res" class="result">Total: $0</div>
+        `;
+        let total = 0;
+        document.getElementById('ex-btn').onclick = () => {
+            total += parseFloat(document.getElementById('ex-c').value) || 0;
+            document.getElementById('ex-res').textContent = `Total: $${total.toFixed(2)}`;
+        };
+    }
+
+    renderDiscountCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Discount Calc</h2>
+            Original ($): <input type="number" id="dc-o" value="80" style="width:60px"><br>
+            Discount (%): <input type="number" id="dc-d" value="25" style="width:40px">
+            <div id="dc-res" class="result">Sale Price: $60.00</div>
+            <small id="dc-sav">Saved: $20.00</small>
+        `;
+        const update = () => {
+            const o = parseFloat(document.getElementById('dc-o').value) || 0;
+            const d = parseFloat(document.getElementById('dc-d').value) || 0;
+            const sav = o * (d / 100);
+            document.getElementById('dc-res').textContent = `Sale Price: $${(o - sav).toFixed(2)}`;
+            document.getElementById('dc-sav').textContent = `Saved: $${sav.toFixed(2)}`;
+        };
+        document.getElementById('dc-o').oninput = update;
+        document.getElementById('dc-d').oninput = update;
     }
 }
 
