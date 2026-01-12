@@ -1,16 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 130
-**Last Updated:** Batch 8 (10 misc/dev/math tools)
+**Total Tools:** 150
+**Last Updated:** Batch 10 (Web/Dev/Design)
 
-## Latest Additions
-- Aspect Ratio Calculator
-- Pixels ↔ REM Converter
-- Chmod Generator
-- CSV to Markdown
-- URL Parser
-- GCD & LCM Calculator
-- Prime Factorization
-- Vigenère Cipher
-- ROT13 Cipher
-- Palindrome Checker
+## Latest Additions (Batch 9 - Science/Calc)
+- Ohm's Law Calculator
+- Resistor Color Codes
+- Kinetic Energy
+- Power Converter
+- Freq ↔ Period
+- Force Converter
+- Torque Converter
+- Density Calculator
+- Acceleration Calculator
+- Velocity Converter
+
+## Latest Additions (Batch 10 - Web/Dev)
+- Meta Tag Generator
+- .htaccess Redirect
+- Robots.txt Generator
+- Open Graph Generator
+- Twitter Card Generator
+- Curl Command Builder
+- Symbolic Chmod Converter
+- CSS Box Shadow
+- CSS Border Radius
+- CSS Filter Generator

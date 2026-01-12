@@ -1,8 +1,9 @@
 /**
- * 💎 Omni Tools - 130 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 150 ELITE TOOLS! 💎
  * 
- * BATCH 1-7: 120 tools across all categories
- * BATCH 8: Aspect Ratio + Pixels/REM + Chmod + CSV/Markdown + URL + GCD/LCM + Prime + Vigenère + ROT13 + Palindrome
+ * BATCH 1-8: 130 tools across all categories
+ * BATCH 9: Ohm's Law + Resistor + Kinetic + Power + Freq + Force + Torque + Density + Acceleration + Velocity
+ * BATCH 10: Meta + Htaccess + Robots + OpenGraph + Twitter + Curl + SymChmod + Shadow + Radius + Filter
  */
 
 class OmniTools {
@@ -1084,6 +1085,168 @@ class OmniTools {
                 icon: "🔁",
                 category: "Text",
                 render: () => this.renderPalindrome()
+            },
+            // === BATCH 9 - 140 TOOLS (SCIENCE) ===
+            ohmsLaw: {
+                name: "Ohm's Law Calculator",
+                searchTerms: "ohms law voltage current resistance power",
+                description: "Calculate V, I, R, P",
+                icon: "⚡",
+                category: "Science",
+                render: () => this.renderOhmsLaw()
+            },
+            resistorColor: {
+                name: "Resistor Color Codes",
+                searchTerms: "resistor color code calculator bands",
+                description: "4-band resistor calculator",
+                icon: "🌈",
+                category: "Science",
+                render: () => this.renderResistorColor()
+            },
+            kineticEnergy: {
+                name: "Kinetic Energy",
+                searchTerms: "kinetic energy physics joules mass velocity",
+                description: "Calculate kinetic energy",
+                icon: "⚛️",
+                category: "Science",
+                render: () => this.renderKineticEnergy()
+            },
+            powerConverter: {
+                name: "Power Converter",
+                searchTerms: "power watts hp horsepower kw convert",
+                description: "Convert power units",
+                icon: "🔋",
+                category: "Converter",
+                render: () => this.renderPowerConverter()
+            },
+            freqPeriod: {
+                name: "Freq ↔ Period",
+                searchTerms: "frequency period hertz seconds convert",
+                description: "Convert frequency and period",
+                icon: "〰️",
+                category: "Science",
+                render: () => this.renderFreqPeriod()
+            },
+            forceConverter: {
+                name: "Force Converter",
+                searchTerms: "force newtons dynes pound-force convert",
+                description: "Convert force units",
+                icon: "💪",
+                category: "Converter",
+                render: () => this.renderForceConverter()
+            },
+            torqueConverter: {
+                name: "Torque Converter",
+                searchTerms: "torque newton meter foot pound convert",
+                description: "Convert torque units",
+                icon: "🔧",
+                category: "Converter",
+                render: () => this.renderTorqueConverter()
+            },
+            densityCalc: {
+                name: "Density Calculator",
+                searchTerms: "density mass volume calculator physics",
+                description: "Calculate density/mass/volume",
+                icon: "🧱",
+                category: "Science",
+                render: () => this.renderDensityCalc()
+            },
+            accelerationCalc: {
+                name: "Acceleration Calculator",
+                searchTerms: "acceleration velocity time physics",
+                description: "Calculate acceleration",
+                icon: "🚀",
+                category: "Science",
+                render: () => this.renderAccelerationCalc()
+            },
+            velocityConverter: {
+                name: "Velocity Converter",
+                searchTerms: "velocity speed km/h mph m/s knots",
+                description: "Convert velocity units",
+                icon: "🏎️",
+                category: "Converter",
+                render: () => this.renderVelocityConverter()
+            },
+            // === BATCH 10 - 150 TOOLS (WEB/DEV) ===
+            metaTags: {
+                name: "Meta Tag Generator",
+                searchTerms: "meta tags seo title description generator",
+                description: "Generate SEO meta tags",
+                icon: "🏷️",
+                category: "Web",
+                render: () => this.renderMetaTags()
+            },
+            htaccessGen: {
+                name: ".htaccess Redirect",
+                searchTerms: "htaccess redirect 301 generator apache",
+                description: "Generate 301 redirects",
+                icon: "⚙️",
+                category: "Web",
+                render: () => this.renderHtaccessGen()
+            },
+            robotsGen: {
+                name: "Robots.txt Generator",
+                searchTerms: "robots txt generator seo crawler",
+                description: "Create robots.txt file",
+                icon: "🤖",
+                category: "Web",
+                render: () => this.renderRobotsGen()
+            },
+            openGraph: {
+                name: "Open Graph Generator",
+                searchTerms: "open graph og meta tags social media",
+                description: "Generate Open Graph tags",
+                icon: "👍",
+                category: "Web",
+                render: () => this.renderOpenGraph()
+            },
+            twitterCard: {
+                name: "Twitter Card Generator",
+                searchTerms: "twitter card meta tags generator social",
+                description: "Generate Twitter Cards",
+                icon: "🐦",
+                category: "Web",
+                render: () => this.renderTwitterCard()
+            },
+            curlBuilder: {
+                name: "Curl Command Builder",
+                searchTerms: "curl command builder http request cli",
+                description: "Build curl commands",
+                icon: "💻",
+                category: "Developer",
+                render: () => this.renderCurlBuilder()
+            },
+            chmodSym: {
+                name: "Symbolic Chmod",
+                searchTerms: "chmod symbolic numeric converter permissions",
+                description: "Convert rwx to 755",
+                icon: "🐧",
+                category: "Developer",
+                render: () => this.renderChmodSym()
+            },
+            boxShadow: {
+                name: "CSS Box Shadow",
+                searchTerms: "css box shadow generator design",
+                description: "Generate box-shadow CSS",
+                icon: "👻",
+                category: "Design",
+                render: () => this.renderBoxShadow()
+            },
+            borderRadius: {
+                name: "CSS Border Radius",
+                searchTerms: "css border radius generator design rounded",
+                description: "Generate border-radius CSS",
+                icon: "⭕",
+                category: "Design",
+                render: () => this.renderBorderRadius()
+            },
+            cssFilter: {
+                name: "CSS Filter Generator",
+                searchTerms: "css filter blur contrast brightness saturate",
+                description: "Generate CSS filters",
+                icon: "📷",
+                category: "Design",
+                render: () => this.renderCssFilter()
             }
         };
     }
@@ -6581,6 +6744,487 @@ background-clip: text;`;
                 <div style="color: #888; margin-top: 10px;">${rev}</div>
             `;
         });
+    }
+
+    renderOhmsLaw() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ohm's Law Calculator</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
+                <input type="number" id="ohm-v" placeholder="Voltage (V)">
+                <input type="number" id="ohm-i" placeholder="Current (A)">
+                <input type="number" id="ohm-r" placeholder="Resistance (Ω)">
+                <input type="number" id="ohm-p" placeholder="Power (W)">
+            </div>
+            <button id="ohm-calc" style="margin-top: 20px; width: 100%;">Calculate</button>
+            <div style="margin-top: 20px; color: #888; font-size: 14px;">Enter any two values to calculate the others.</div>
+        `;
+
+        document.getElementById('ohm-calc').onclick = () => {
+            const vIn = document.getElementById('ohm-v');
+            const iIn = document.getElementById('ohm-i');
+            const rIn = document.getElementById('ohm-r');
+            const pIn = document.getElementById('ohm-p');
+
+            let v = parseFloat(vIn.value);
+            let i = parseFloat(iIn.value);
+            let r = parseFloat(rIn.value);
+            let p = parseFloat(pIn.value);
+
+            if (!isNaN(v) && !isNaN(i)) { r = v / i; p = v * i; }
+            else if (!isNaN(v) && !isNaN(r)) { i = v / r; p = (v * v) / r; }
+            else if (!isNaN(v) && !isNaN(p)) { i = p / v; r = (v * v) / p; }
+            else if (!isNaN(i) && !isNaN(r)) { v = i * r; p = i * i * r; }
+            else if (!isNaN(i) && !isNaN(p)) { v = p / i; r = p / (i * i); }
+            else if (!isNaN(p) && !isNaN(r)) { v = Math.sqrt(p * r); i = Math.sqrt(p / r); }
+
+            if (!isNaN(v)) vIn.value = v.toFixed(4);
+            if (!isNaN(i)) iIn.value = i.toFixed(4);
+            if (!isNaN(r)) rIn.value = r.toFixed(4);
+            if (!isNaN(p)) pIn.value = p.toFixed(4);
+        };
+    }
+
+    renderResistorColor() {
+        const content = document.getElementById('tool-content');
+        const colors = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white'];
+        content.innerHTML = `
+            <h2 class="tool-title">Resistor Color Code (4-Band)</h2>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                ${[1, 2, 3, 4].map(i => `
+                    <select id="res-b${i}" style="flex: 1; background: #222;">
+                        ${colors.map((c, idx) => `<option value="${idx}" style="background:${c};color:${c === 'black' ? 'white' : 'black'}">${c.toUpperCase()}</option>`).join('')}
+                        ${i === 3 ? `<option value="-1" style="background:gold;color:black">GOLD (0.1)</option><option value="-2" style="background:silver;color:black">SILVER (0.01)</option>` : ''}
+                        ${i === 4 ? `<option value="5" style="background:gold;color:black">GOLD 5%</option><option value="10" style="background:silver;color:black">SILVER 10%</option>` : ''}
+                    </select>
+                `).join('')}
+            </div>
+            <div class="result" id="res-val"></div>
+        `;
+        const calc = () => {
+            const b1 = parseInt(document.getElementById('res-b1').value);
+            const b2 = parseInt(document.getElementById('res-b2').value);
+            const b3 = parseFloat(document.getElementById('res-b3').value);
+            const b4 = document.getElementById('res-b4').value;
+
+            let mult = Math.pow(10, b3);
+            if (b3 === -1) mult = 0.1;
+            if (b3 === -2) mult = 0.01;
+
+            const base = (b1 * 10) + b2;
+            const res = base * mult;
+
+            let tol = '20%';
+            if (b4 === '5') tol = '5%';
+            if (b4 === '10') tol = '10%';
+
+            let format = res + ' Ω';
+            if (res >= 1000) format = (res / 1000).toFixed(2) + ' kΩ';
+            if (res >= 1000000) format = (res / 1000000).toFixed(2) + ' MΩ';
+
+            document.getElementById('res-val').innerHTML = `
+                <div style="font-size: 32px; font-weight: bold;">${format}</div>
+                <div style="color: #888;">Tolerance: ±${tol}</div>
+            `;
+        };
+        [1, 2, 3, 4].forEach(i => document.getElementById(`res-b${i}`).addEventListener('change', calc));
+        calc();
+    }
+
+    renderKineticEnergy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Kinetic Energy Calculator</h2>
+            <label>Mass (kg)</label>
+            <input type="number" id="ke-m" placeholder="Mass">
+            <label>Velocity (m/s)</label>
+            <input type="number" id="ke-v" placeholder="Velocity">
+            <div class="result" id="ke-res">0 Joules</div>
+        `;
+        const calc = () => {
+            const m = parseFloat(document.getElementById('ke-m').value) || 0;
+            const v = parseFloat(document.getElementById('ke-v').value) || 0;
+            const ke = 0.5 * m * v * v;
+            document.getElementById('ke-res').textContent = ke.toFixed(2) + ' Joules';
+        };
+        document.getElementById('ke-m').addEventListener('input', calc);
+        document.getElementById('ke-v').addEventListener('input', calc);
+    }
+
+    renderPowerConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Power Converter</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div><label>Watts (W)</label><input type="number" id="p-w"></div>
+                <div><label>Kilowatts (kW)</label><input type="number" id="p-kw"></div>
+                <div><label>Horsepower (hp)</label><input type="number" id="p-hp"></div>
+            </div>
+        `;
+        const w = document.getElementById('p-w');
+        const kw = document.getElementById('p-kw');
+        const hp = document.getElementById('p-hp');
+
+        const update = (src) => {
+            let val = 0;
+            if (src === w) val = parseFloat(w.value);
+            if (src === kw) val = parseFloat(kw.value) * 1000;
+            if (src === hp) val = parseFloat(hp.value) * 745.7;
+
+            if (isNaN(val)) return;
+
+            if (src !== w) w.value = val.toFixed(2);
+            if (src !== kw) kw.value = (val / 1000).toFixed(4);
+            if (src !== hp) hp.value = (val / 745.7).toFixed(4);
+        };
+
+        w.addEventListener('input', () => update(w));
+        kw.addEventListener('input', () => update(kw));
+        hp.addEventListener('input', () => update(hp));
+    }
+
+    renderFreqPeriod() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Frequency ↔ Period</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div><label>Frequency (Hz)</label><input type="number" id="fp-f"></div>
+                <div><label>Period (ms)</label><input type="number" id="fp-p"></div>
+            </div>
+        `;
+        const f = document.getElementById('fp-f');
+        const p = document.getElementById('fp-p');
+        f.addEventListener('input', () => {
+            const v = parseFloat(f.value);
+            if (v) p.value = (1000 / v).toFixed(4);
+        });
+        p.addEventListener('input', () => {
+            const v = parseFloat(p.value);
+            if (v) f.value = (1000 / v).toFixed(4);
+        });
+    }
+
+    renderForceConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+             <h2 class="tool-title">Force Converter</h2>
+             <div style="margin-bottom: 10px"><label>Newtons (N)</label><input type="number" id="fc-n"></div>
+             <div style="margin-bottom: 10px"><label>Pound-force (lbf)</label><input type="number" id="fc-lb"></div>
+        `;
+        const n = document.getElementById('fc-n');
+        const lb = document.getElementById('fc-lb');
+        n.addEventListener('input', () => lb.value = (parseFloat(n.value) * 0.224809).toFixed(4));
+        lb.addEventListener('input', () => n.value = (parseFloat(lb.value) / 0.224809).toFixed(4));
+    }
+
+    renderTorqueConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+             <h2 class="tool-title">Torque Converter</h2>
+             <div style="margin-bottom: 10px"><label>Newton Meter (Nm)</label><input type="number" id="tc-nm"></div>
+             <div style="margin-bottom: 10px"><label>Foot Pound (ft-lb)</label><input type="number" id="tc-ft"></div>
+        `;
+        const nm = document.getElementById('tc-nm');
+        const ft = document.getElementById('tc-ft');
+        nm.addEventListener('input', () => ft.value = (parseFloat(nm.value) * 0.737562).toFixed(4));
+        ft.addEventListener('input', () => nm.value = (parseFloat(ft.value) / 0.737562).toFixed(4));
+    }
+
+    renderDensityCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Density Calculator (ρ = m/V)</h2>
+            <input type="number" id="dc-m" placeholder="Mass (kg)">
+            <input type="number" id="dc-v" placeholder="Volume (m³)">
+            <button id="dc-calc">Calculate Density</button>
+            <div class="result" id="dc-res"></div>
+        `;
+        document.getElementById('dc-calc').onclick = () => {
+            const m = parseFloat(document.getElementById('dc-m').value);
+            const v = parseFloat(document.getElementById('dc-v').value);
+            if (m && v) document.getElementById('dc-res').textContent = (m / v).toFixed(4) + ' kg/m³';
+        };
+    }
+
+    renderAccelerationCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Acceleration (a = Δv/t)</h2>
+            <input type="number" id="ac-v1" placeholder="Initial Velocity (m/s)">
+            <input type="number" id="ac-v2" placeholder="Final Velocity (m/s)">
+            <input type="number" id="ac-t" placeholder="Time (s)">
+            <button id="ac-calc">Calculate</button>
+            <div class="result" id="ac-res"></div>
+        `;
+        document.getElementById('ac-calc').onclick = () => {
+            const v1 = parseFloat(document.getElementById('ac-v1').value);
+            const v2 = parseFloat(document.getElementById('ac-v2').value);
+            const t = parseFloat(document.getElementById('ac-t').value);
+            if (!isNaN(v1) && !isNaN(v2) && t) {
+                document.getElementById('ac-res').textContent = ((v2 - v1) / t).toFixed(4) + ' m/s²';
+            }
+        };
+    }
+
+    renderVelocityConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Velocity Converter</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <div><label>m/s</label><input type="number" id="vc-ms"></div>
+                <div><label>km/h</label><input type="number" id="vc-kmh"></div>
+                <div><label>mph</label><input type="number" id="vc-mph"></div>
+                <div><label>knots</label><input type="number" id="vc-kn"></div>
+            </div>
+        `;
+        const ms = document.getElementById('vc-ms');
+        const kmh = document.getElementById('vc-kmh');
+        const mph = document.getElementById('vc-mph');
+        const kn = document.getElementById('vc-kn');
+
+        const upd = (val) => {
+            if (isNaN(val)) return;
+            ms.value = val;
+            kmh.value = (val * 3.6).toFixed(2);
+            mph.value = (val * 2.23694).toFixed(2);
+            kn.value = (val * 1.94384).toFixed(2);
+        };
+
+        ms.addEventListener('input', () => upd(parseFloat(ms.value)));
+        kmh.addEventListener('input', () => upd(parseFloat(kmh.value) / 3.6));
+        mph.addEventListener('input', () => upd(parseFloat(mph.value) / 2.23694));
+        kn.addEventListener('input', () => upd(parseFloat(kn.value) / 1.94384));
+    }
+
+    renderMetaTags() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Meta Tag Generator</h2>
+            <input type="text" id="mt-title" placeholder="Site Title">
+            <input type="text" id="mt-desc" placeholder="Site Description">
+            <input type="text" id="mt-keys" placeholder="Keywords (comma separated)">
+            <input type="text" id="mt-auth" placeholder="Author">
+            <button id="mt-gen">Generate</button>
+            <textarea id="mt-out" rows="6" readonly></textarea>
+        `;
+        document.getElementById('mt-gen').onclick = () => {
+            const t = document.getElementById('mt-title').value;
+            const d = document.getElementById('mt-desc').value;
+            const k = document.getElementById('mt-keys').value;
+            const a = document.getElementById('mt-auth').value;
+            document.getElementById('mt-out').value =
+                `<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${t}</title>
+<meta name="description" content="${d}">
+<meta name="keywords" content="${k}">
+<meta name="author" content="${a}">`;
+        };
+    }
+
+    renderHtaccessGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">.htaccess Redirect Generator</h2>
+            <input type="text" id="ht-old" placeholder="Old Path (e.g., /old-page.html)">
+            <input type="text" id="ht-new" placeholder="New URL (e.g., https://site.com/new)">
+            <button id="ht-gen">Generate 301</button>
+            <div class="result" id="ht-out" style="font-family:monospace; text-align:left;"></div>
+        `;
+        document.getElementById('ht-gen').onclick = () => {
+            const o = document.getElementById('ht-old').value;
+            const n = document.getElementById('ht-new').value;
+            document.getElementById('ht-out').textContent = `Redirect 301 ${o} ${n}`;
+        };
+    }
+
+    renderRobotsGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Robots.txt Generator</h2>
+            <div style="margin-bottom: 10px;">
+                <label>Default Access:</label>
+                <select id="rb-acc"><option value="Allow">Allow All</option><option value="Disallow">Disallow All</option></select>
+            </div>
+            <textarea id="rb-dis" rows="4" placeholder="Disallowed paths (one per line)"></textarea>
+            <button id="rb-gen">Generate</button>
+            <textarea id="rb-out" rows="6" readonly style="margin-top: 20px;"></textarea>
+        `;
+        document.getElementById('rb-gen').onclick = () => {
+            let out = 'User-agent: *\n';
+            const acc = document.getElementById('rb-acc').value;
+            if (acc === 'Disallow') out += 'Disallow: /\n';
+            else {
+                const lines = document.getElementById('rb-dis').value.split('\n');
+                lines.forEach(l => { if (l.trim()) out += `Disallow: ${l.trim()}\n`; });
+            }
+            document.getElementById('rb-out').value = out;
+        };
+    }
+
+    renderOpenGraph() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Open Graph Generator</h2>
+            <input type="text" id="og-title" placeholder="Title">
+            <input type="text" id="og-type" placeholder="Type (e.g., website)">
+            <input type="text" id="og-url" placeholder="URL">
+            <input type="text" id="og-img" placeholder="Image URL">
+            <input type="text" id="og-desc" placeholder="Description">
+            <button id="og-gen">Generate</button>
+            <textarea id="og-out" rows="6" readonly></textarea>
+        `;
+        document.getElementById('og-gen').onclick = () => {
+            const t = document.getElementById('og-title').value;
+            const type = document.getElementById('og-type').value;
+            const u = document.getElementById('og-url').value;
+            const i = document.getElementById('og-img').value;
+            const d = document.getElementById('og-desc').value;
+            document.getElementById('og-out').value =
+                `<meta property="og:title" content="${t}" />
+<meta property="og:type" content="${type}" />
+<meta property="og:url" content="${u}" />
+<meta property="og:image" content="${i}" />
+<meta property="og:description" content="${d}" />`;
+        };
+    }
+
+    renderTwitterCard() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Twitter Card Generator</h2>
+            <input type="text" id="tw-title" placeholder="Title">
+            <input type="text" id="tw-desc" placeholder="Description">
+            <input type="text" id="tw-img" placeholder="Image URL">
+            <button id="tw-gen">Generate</button>
+            <textarea id="tw-out" rows="6" readonly></textarea>
+        `;
+        document.getElementById('tw-gen').onclick = () => {
+            const t = document.getElementById('tw-title').value;
+            const d = document.getElementById('tw-desc').value;
+            const i = document.getElementById('tw-img').value;
+            document.getElementById('tw-out').value =
+                `<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${t}">
+<meta name="twitter:description" content="${d}">
+<meta name="twitter:image" content="${i}">`;
+        };
+    }
+
+    renderCurlBuilder() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Curl Command Builder</h2>
+            <input type="text" id="cl-url" placeholder="URL">
+            <select id="cl-method" style="margin-bottom: 10px;">
+                <option value="GET">GET</option><option value="POST">POST</option><option value="PUT">PUT</option><option value="DELETE">DELETE</option>
+            </select>
+            <textarea id="cl-data" rows="3" placeholder="JSON Data (for POST/PUT)"></textarea>
+            <input type="text" id="cl-auth" placeholder="Bearer Token (optional)">
+            <button id="cl-gen">Build Command</button>
+            <textarea id="cl-out" rows="4" readonly></textarea>
+        `;
+        document.getElementById('cl-gen').onclick = () => {
+            const u = document.getElementById('cl-url').value;
+            const m = document.getElementById('cl-method').value;
+            const d = document.getElementById('cl-data').value;
+            const a = document.getElementById('cl-auth').value;
+            let cmd = `curl -X ${m} "${u}"`;
+            if (a) cmd += ` -H "Authorization: Bearer ${a}"`;
+            if (d && (m === 'POST' || m === 'PUT')) {
+                cmd += ` -H "Content-Type: application/json" -d '${d}'`;
+            }
+            document.getElementById('cl-out').value = cmd;
+        };
+    }
+
+    renderChmodSym() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Symbolic Chmod Converter</h2>
+            <input type="text" id="sy-in" placeholder="e.g. rwxr-xr-x">
+            <div class="result" id="sy-out"></div>
+        `;
+        document.getElementById('sy-in').addEventListener('input', (e) => {
+            const s = e.target.value;
+            if (s.length !== 9) {
+                document.getElementById('sy-out').textContent = 'Invalid length';
+                return;
+            }
+            const map = { 'r': 4, 'w': 2, 'x': 1, '-': 0 };
+            let res = '';
+            for (let i = 0; i < 3; i++) {
+                let sum = 0;
+                for (let j = 0; j < 3; j++) {
+                    sum += map[s[i * 3 + j]] || 0;
+                }
+                res += sum;
+            }
+            document.getElementById('sy-out').textContent = res;
+        });
+    }
+
+    renderBoxShadow() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Box Shadow</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <label>H-Offset <input type="range" id="bs-h" min="-50" max="50" value="10"></label>
+                <label>V-Offset <input type="range" id="bs-v" min="-50" max="50" value="10"></label>
+                <label>Blur <input type="range" id="bs-b" min="0" max="100" value="5"></label>
+                <label>Spread <input type="range" id="bs-s" min="-50" max="50" value="0"></label>
+                <label>Color <input type="color" id="bs-c" value="#000000"></label>
+            </div>
+            <div id="bs-preview" style="width: 100px; height: 100px; background: white; margin: 20px auto; border: 1px solid #333;"></div>
+            <div class="result" id="bs-code"></div>
+        `;
+        const update = () => {
+            const h = document.getElementById('bs-h').value + 'px';
+            const v = document.getElementById('bs-v').value + 'px';
+            const b = document.getElementById('bs-b').value + 'px';
+            const s = document.getElementById('bs-s').value + 'px';
+            const c = document.getElementById('bs-c').value;
+            const css = `${h} ${v} ${b} ${s} ${c}`;
+            document.getElementById('bs-preview').style.boxShadow = css;
+            document.getElementById('bs-code').textContent = `box-shadow: ${css};`;
+        };
+        ['bs-h', 'bs-v', 'bs-b', 'bs-s', 'bs-c'].forEach(id => document.getElementById(id).addEventListener('input', update));
+        update();
+    }
+
+    renderBorderRadius() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Border Radius</h2>
+            <input type="range" id="br-r" min="0" max="50" value="10" style="width: 100%;">
+            <div id="br-preview" style="width: 100px; height: 100px; background: white; margin: 20px auto; border: 1px solid #333;"></div>
+            <div class="result" id="br-code"></div>
+        `;
+        document.getElementById('br-r').addEventListener('input', (e) => {
+            const v = e.target.value + 'px';
+            document.getElementById('br-preview').style.borderRadius = v;
+            document.getElementById('br-code').textContent = `border-radius: ${v};`;
+        });
+    }
+
+    renderCssFilter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Filter Generator</h2>
+            <label>Blur <input type="range" id="cf-b" min="0" max="20" value="0"></label>
+            <label>Grayscale <input type="range" id="cf-g" min="0" max="100" value="0"></label>
+            <div id="cf-preview" style="width: 100px; height: 100px; background: linear-gradient(45deg, red, blue); margin: 20px auto;"></div>
+            <div class="result" id="cf-code"></div>
+        `;
+        const upd = () => {
+            const b = document.getElementById('cf-b').value + 'px';
+            const g = document.getElementById('cf-g').value + '%';
+            const val = `blur(${b}) grayscale(${g})`;
+            document.getElementById('cf-preview').style.filter = val;
+            document.getElementById('cf-code').textContent = `filter: ${val};`;
+        };
+        ['cf-b', 'cf-g'].forEach(id => document.getElementById(id).addEventListener('input', upd));
+        upd();
     }
 }
 
