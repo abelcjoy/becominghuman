@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 540 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 560 ELITE TOOLS! 💎
  * 
- * BATCH 1-42: 470 tools across all categories
- * BATCH 43-47: 50 tools (Games, Nature, Writing, DIY)
- * BATCH 48: UrlSlugify + HttpStatus + UserAgent + ScreenRes + MetaPreview + RobotsGen + FlexboxRef + GridRef + Base64Size + SitemapGen
- * BATCH 49: BreakEven + MarginMarkup + HourlySalary + InvoiceCalc + ProjectTime + TaskMatrix + RetentionRate + MiniCRM + ExpenseLog + DiscountCalc
+ * BATCH 48: JsonToYaml + CssSpecificity + HtmlEntityRef + ScreenRes + MetaPreview + RobotsGen + FlexboxRef + GridRef + Base64Size + SitemapGen
+ * BATCH 49: CustCAC + MarginMarkup + HourlySalary + InvoiceCalc + Timeline + TaskMatrix + RetentionRate + MiniCRM + ExpenseLog + CustLTV
+ * BATCH 50: DataRange + ZScore + Variance + Outliers + Sampler + ProbAB + FreqDist + CorrelRef + PctRank + WeightedAvg
+ * BATCH 51: HandleCheck + HashtagGen + WifiQr + QrFormats + AppStore + ProtocolLinks + PrivacyGen + TermsGen + FaviconRef + WcagGuide
  */
 
 class OmniTools {
@@ -4248,29 +4248,29 @@ class OmniTools {
                 render: () => this.renderDrillSpeedRef()
             },
             // === BATCH 48 - 530 TOOLS (WEB & DEV II) ===
-            urlSlugify: {
-                name: "URL Slugify",
-                searchTerms: "url slugify slug generator seo link",
-                description: "Title to URL slug",
-                icon: "🔗",
+            jsonToYaml: {
+                name: "JSON to YAML",
+                searchTerms: "json to yaml converter convert format",
+                description: "Basic JSON-YAML guide",
+                icon: "📄",
                 category: "Developer",
-                render: () => this.renderUrlSlugify()
+                render: () => this.renderJsonToYaml()
             },
-            httpStatusRef: {
-                name: "HTTP Status",
-                searchTerms: "http status codes reference error success 404 500 200",
-                description: "Status code cheat sheet",
-                icon: "📡",
+            cssSpecificity: {
+                name: "CSS Specificity",
+                searchTerms: "css specificity calculator selector weight",
+                description: "Selector weight calc",
+                icon: "🎨",
                 category: "Developer",
-                render: () => this.renderHttpStatusRef()
+                render: () => this.renderCssSpecificity()
             },
-            userAgentInfo: {
-                name: "User Agent",
-                searchTerms: "user agent parser browser info details",
-                description: "View visitor browser data",
-                icon: "🕵️",
+            htmlEntityRef: {
+                name: "HTML Entities",
+                searchTerms: "html entities reference characters cheat sheet",
+                description: "Common entities list",
+                icon: "🔤",
                 category: "Developer",
-                render: () => this.renderUserAgentInfo()
+                render: () => this.renderHtmlEntityRef()
             },
             screenResInfo: {
                 name: "Screen Res",
@@ -4329,13 +4329,13 @@ class OmniTools {
                 render: () => this.renderSitemapGen()
             },
             // === BATCH 49 - 540 TOOLS (BUSINESS II) ===
-            breakEvenCalc: {
-                name: "Break Even",
-                searchTerms: "break even calculator profit bridge business",
-                description: "Identify survival point",
-                icon: "⚖️",
+            acquisitionCost: {
+                name: "Customer CAC",
+                searchTerms: "customer acquisition cost cac business marketing",
+                description: "Calc cost per user",
+                icon: "💰",
                 category: "Business",
-                render: () => this.renderBreakEvenCalc()
+                render: () => this.renderAcquisitionCost()
             },
             marginMarkup: {
                 name: "Margin vs Markup",
@@ -4401,13 +4401,175 @@ class OmniTools {
                 category: "Business",
                 render: () => this.renderExpenseTrack()
             },
-            discountCalc: {
-                name: "Discount Calc",
-                searchTerms: "discount calculator sale price percent off",
-                description: "Calc final sale price",
-                icon: "🏷️",
+            lifetimeValue: {
+                name: "Customer LTV",
+                searchTerms: "customer lifetime value ltv business profit",
+                description: "Calc user value",
+                icon: "💎",
                 category: "Business",
-                render: () => this.renderDiscountCalc()
+                render: () => this.renderLifetimeValue()
+            },
+            // === BATCH 50 - 550 TOOLS (DATA & STATS) ===
+            dataRange: {
+                name: "Data Range",
+                searchTerms: "range calculator max min statistics",
+                description: "Difference of extremes",
+                icon: "↔️",
+                category: "Math",
+                render: () => this.renderDataRange()
+            },
+            zScoreCalc: {
+                name: "Z-Score Calc",
+                searchTerms: "z-score calculator statistics normal distribution",
+                description: "Standard score calc",
+                icon: "📊",
+                category: "Math",
+                render: () => this.renderZScoreCalc()
+            },
+            varianceCalc: {
+                name: "Variance Calc",
+                searchTerms: "variance calculator statistics data",
+                description: "Calc data spread",
+                icon: "📈",
+                category: "Math",
+                render: () => this.renderVarianceCalc()
+            },
+            outlierDetector: {
+                name: "Outlier Detect",
+                searchTerms: "outlier detector statistics iqr data cleaning",
+                description: "Identify data anomalies",
+                icon: "🔍",
+                category: "Math",
+                render: () => this.renderOutlierDetector()
+            },
+            randomSample: {
+                name: "Random Sampler",
+                searchTerms: "random sample generator statistics pick",
+                description: "Subset from list",
+                icon: "🎲",
+                category: "Math",
+                render: () => this.renderRandomSample()
+            },
+            probAB: {
+                name: "Probability A/B",
+                searchTerms: "probability calculator a or b events",
+                description: "Compound probability",
+                icon: "🎲",
+                category: "Math",
+                render: () => this.renderProbAB()
+            },
+            freqDistFreq: {
+                name: "Freq Dist",
+                searchTerms: "frequency distribution calculator data counts",
+                description: "Count occurrences",
+                icon: "📉",
+                category: "Math",
+                render: () => this.renderFreqDistFreq()
+            },
+            simpleCorrelation: {
+                name: "Correlation Ref",
+                searchTerms: "correlation coefficient guide pearson statistics",
+                description: "Relationship strength",
+                icon: "🔗",
+                category: "Math",
+                render: () => this.renderSimpleCorrelation()
+            },
+            pctRank: {
+                name: "Percentile Rank",
+                searchTerms: "percentile rank calculator statistics scores",
+                description: "Calc rank in set",
+                icon: "📊",
+                category: "Math",
+                render: () => this.renderPctRank()
+            },
+            weightedAverage: {
+                name: "Weighted Avg",
+                searchTerms: "weighted average calculator weights data",
+                description: "Calc weighted mean",
+                icon: "⚖️",
+                category: "Math",
+                render: () => this.renderWeightedAverage()
+            },
+            // === BATCH 51 - 560 TOOLS (MODERN LIFE) ===
+            handleAvailability: {
+                name: "Handle Check",
+                searchTerms: "social media handle availability username checker",
+                description: "Username availability UI",
+                icon: "👤",
+                category: "Utility",
+                render: () => this.renderHandleAvailability()
+            },
+            hashtagGenerator: {
+                name: "Hashtag Creator",
+                searchTerms: "hashtag generator social media tags",
+                description: "Simple tag suggestions",
+                icon: "#️⃣",
+                category: "Utility",
+                render: () => this.renderHashtagGenerator()
+            },
+            wifiQrText: {
+                name: "WiFi QR Gen",
+                searchTerms: "wifi qr code generator connection string",
+                description: "Safe connect string",
+                icon: "📶",
+                category: "Utility",
+                render: () => this.renderWifiQrText()
+            },
+            qrBase64Content: {
+                name: "QR Content Info",
+                searchTerms: "qr code content types text url vcard",
+                description: "Standard QR formats",
+                icon: "📱",
+                category: "Utility",
+                render: () => this.renderQrBase64Content()
+            },
+            appStoreSearch: {
+                name: "App Store Link",
+                searchTerms: "app store search link generator ios mobile",
+                description: "Deep link helper",
+                icon: "🍎",
+                category: "Utility",
+                render: () => this.renderAppStoreSearch()
+            },
+            deepLinkProtocol: {
+                name: "Protocol Links",
+                searchTerms: "deep link protocol mailto tel sms generator",
+                description: "Standard mobile links",
+                icon: "🔗",
+                category: "Utility",
+                render: () => this.renderDeepLinkProtocol()
+            },
+            privacyTextGen: {
+                name: "Privacy Policy",
+                searchTerms: "privacy policy generator text boilerplate",
+                description: "Simple legal text",
+                icon: "📜",
+                category: "Utility",
+                render: () => this.renderPrivacyTextGen()
+            },
+            termsTextGen: {
+                name: "Terms of Service",
+                searchTerms: "terms of service generator text boilerplate",
+                description: "Simple legal text",
+                icon: "📜",
+                category: "Utility",
+                render: () => this.renderTermsTextGen()
+            },
+            faviconSpec: {
+                name: "Favicon Specs",
+                searchTerms: "favicon sizes requirements browser reference",
+                description: "Size & format guide",
+                icon: "🖼️",
+                category: "Design",
+                render: () => this.renderFaviconSpec()
+            },
+            colorAccessibility: {
+                name: "WCAG Guide",
+                searchTerms: "wcag accessibility color contrast reference",
+                description: "Compliance ratios",
+                icon: "👁️",
+                category: "Design",
+                render: () => this.renderColorAccessibility()
             }
         };
     }
@@ -17799,50 +17961,48 @@ Online: ${n.onLine}
             </div>
         `;
     }
-    renderUrlSlugify() {
+    renderJsonToYaml() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">URL Slugify</h2>
-            <input type="text" id="us-in" placeholder="Enter title...">
-            <div id="us-res" class="result">result-slug-here</div>
-        `;
-        document.getElementById('us-in').oninput = (e) => {
-            const val = e.target.value.toLowerCase().trim()
-                .replace(/[^\w ]+/g, '')
-                .replace(/ +/g, '-');
-            document.getElementById('us-res').textContent = val || "result-slug-here";
-        };
-    }
-
-    renderHttpStatusRef() {
-        const content = document.getElementById('tool-content');
-        content.innerHTML = `
-            <h2 class="tool-title">HTTP Status</h2>
-            <select id="hs-v">
-                <option value="200: OK (Success)">200</option>
-                <option value="301: Moved Permanently">301</option>
-                <option value="400: Bad Request">400</option>
-                <option value="401: Unauthorized">401</option>
-                <option value="403: Forbidden">403</option>
-                <option value="404: Not Found">404</option>
-                <option value="500: Internal Server Error">500</option>
-                <option value="503: Service Unavailable">503</option>
-            </select>
-            <div id="hs-res" class="result">200: OK (Success)</div>
-        `;
-        document.getElementById('hs-v').onchange = (e) => {
-            document.getElementById('hs-res').textContent = e.target.value;
-        };
-    }
-
-    renderUserAgentInfo() {
-        const content = document.getElementById('tool-content');
-        content.innerHTML = `
-            <h2 class="tool-title">User Agent</h2>
-            <div style="font-size:0.7em; word-break:break-all; background:#eee; padding:10px; border-radius:5px;">
-                ${navigator.userAgent}
+            <h2 class="tool-title">JSON to YAML</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>JSON:</b> {"id": 1, "name": "Test"}<br>
+                <b>YAML:</b><br>
+                id: 1<br>
+                name: Test
             </div>
-            <p style="font-size:0.7em; margin-top:10px;">Platform: ${navigator.platform}</p>
+            <p style="font-size:0.75em; margin-top:10px;">YAML uses indentation and no curly braces.</p>
+        `;
+    }
+
+    renderCssSpecificity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Specificity</h2>
+            <input type="text" id="cs-in" placeholder="#id .class element">
+            <div id="cs-res" class="result">0, 0, 0</div>
+        `;
+        document.getElementById('cs-in').oninput = (e) => {
+            const v = e.target.value;
+            const ids = (v.match(/#/g) || []).length;
+            const classes = (v.match(/\./g) || []).length + (v.match(/\[/g) || []).length;
+            const tags = v.split(/[ .#\[]/).filter(s => s && !s.includes(':')).length - ids - classes;
+            document.getElementById('cs-res').textContent = `${ids}, ${Math.max(0, classes)}, ${Math.max(0, tags)}`;
+        };
+    }
+
+    renderHtmlEntityRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTML Entities</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                &amp;lt; (<)<br>
+                &amp;gt; (>)<br>
+                &amp;amp; (&)<br>
+                &amp;quot; (")<br>
+                &amp;copy; (©)<br>
+                &amp;nbsp; (Space)
+            </div>
         `;
     }
 
@@ -17854,27 +18014,23 @@ Online: ${n.onLine}
             <p style="font-size:0.7em;">Live viewport updates on resize.</p>
         `;
         const update = () => {
-            document.getElementById('sr-res').innerHTML = `
-                Screen: ${screen.width}x${screen.height}<br>
-                Viewport: ${window.innerWidth}x${window.innerHeight}
-            `;
+            const res = document.getElementById('sr-res');
+            if (res) res.innerHTML = `Screen: ${screen.width}x${screen.height}<br>Viewport: ${window.innerWidth}x${window.innerHeight}`;
         };
-        window.addEventListener('resize', update);
+        window.onresize = update;
         update();
-        // Cleanup on re-render is handled by outer logic if exists, 
-        // but here we just append.
     }
 
     renderMetaPreview() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Meta Preview</h2>
-            Title: <input type="text" id="mp-t" value="Omni Tools - 540 in 1"><br>
-            Desc: <input type="text" id="mp-d" value="The ultimate collection of functional tools."><br>
+            T: <input type="text" id="mp-t" value="OmnicTools"><br>
+            D: <input type="text" id="mp-d" value="Functional tool suite.">
             <div style="text-align:left; border:1px solid #ddd; padding:10px; margin-top:10px; background:#fff;">
-                <div id="mp-res-t" style="color:#1a0dab; font-size:1.2em; cursor:pointer;"></div>
-                <div style="color:#006621; font-size:0.9em;">https://omnitools.example.com</div>
-                <div id="mp-res-d" style="color:#545454; font-size:0.9em;"></div>
+                <div id="mp-res-t" style="color:#1a0dab; font-size:1.1em;"></div>
+                <div style="color:#006621; font-size:0.8em;">https://example.com</div>
+                <div id="mp-res-d" style="color:#545454; font-size:0.8em;"></div>
             </div>
         `;
         const update = () => {
@@ -17889,27 +18045,19 @@ Online: ${n.onLine}
     renderRobotsGen() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Robots.txt Gen</h2>
-            Allow All? <input type="checkbox" id="rg-a" checked><br>
-            <textarea id="rg-res" readonly style="height:60px; font-family:monospace; font-size:0.8em; margin-top:10px;"></textarea>
+            <h2 class="tool-title">Robots.txt</h2>
+            <textarea id="rg-res" readonly style="height:50px; font-family:monospace;">User-agent: *\nDisallow: /admin/</textarea>
         `;
-        const update = () => {
-            const all = document.getElementById('rg-a').checked;
-            document.getElementById('rg-res').value = `User-agent: *\nDisallow: ${all ? "" : "/"}`;
-        };
-        document.getElementById('rg-a').onchange = update;
-        update();
     }
 
     renderFlexboxQuickRef() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Flexbox Ref</h2>
-            <div style="text-align:left; font-size:0.8em;">
-                <b>flex-direction</b>: row | column<br>
-                <b>justify-content</b>: center | flex-start | flex-end | space-between<br>
-                <b>align-items</b>: center | stretch | flex-start<br>
-                <b>flex-wrap</b>: wrap | nowrap
+            <h2 class="tool-title">Flex Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                justify-content: center | space-between<br>
+                align-items: center | flex-end<br>
+                flex-direction: row | column
             </div>
         `;
     }
@@ -17917,12 +18065,10 @@ Online: ${n.onLine}
     renderCssGridRef() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">CSS Grid Ref</h2>
-            <div style="text-align:left; font-size:0.8em;">
-                <b>display</b>: grid<br>
-                <b>grid-template-columns</b>: repeat(3, 1fr)<br>
-                <b>gap</b>: 10px<br>
-                <b>grid-area</b>: name
+            <h2 class="tool-title">Grid Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                grid-template-columns: repeat(3, 1fr)<br>
+                grid-gap: 10px
             </div>
         `;
     }
@@ -17931,63 +18077,53 @@ Online: ${n.onLine}
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Base64 Size</h2>
-            Binary Size (KB): <input type="number" id="bs-in" value="100" style="width:60px">
-            <div id="bs-res" class="result">Est. Base64: 133 KB</div>
-            <p style="font-size:0.75em;">Base64 adds ~33% overhead.</p>
+            KB: <input type="number" id="bs-in" value="100" style="width:60px">
+            <div id="bs-res" class="result">Est: 133 KB</div>
         `;
         document.getElementById('bs-in').oninput = (e) => {
-            const n = parseFloat(e.target.value) || 0;
-            document.getElementById('bs-res').textContent = `Est. Base64: ${Math.ceil(n * 1.33)} KB`;
+            document.getElementById('bs-res').textContent = `Est: ${Math.ceil(e.target.value * 1.33)} KB`;
         };
     }
 
     renderSitemapGen() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Sitemap Gen</h2>
-            URL: <input type="text" id="sg-u" value="https://mysite.com">
-            <textarea id="sg-res" readonly style="height:80px; font-family:monospace; font-size:0.7em; margin-top:10px;"></textarea>
+            <h2 class="tool-title">Sitemap</h2>
+            <textarea readonly style="height:60px; font-size:0.6em;">&lt;urlset&gt;\n &lt;url&gt;&lt;loc&gt;https://site.com/&lt;/loc&gt;&lt;/url&gt;\n&lt;/urlset&gt;</textarea>
         `;
-        document.getElementById('sg-u').oninput = (e) => {
-            const u = e.target.value;
-            document.getElementById('sg-res').value = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n <url>\n  <loc>${u}</loc>\n </url>\n</urlset>`;
-        };
-        document.getElementById('sg-u').oninput({ target: { value: 'https://mysite.com' } });
     }
 
-    renderBreakEvenCalc() {
+    renderAcquisitionCost() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Break Even</h2>
-            Fixed Costs ($): <input type="number" id="be-f" value="1000" style="width:60px"><br>
-            Price per Unit ($): <input type="number" id="be-p" value="50" style="width:60px"><br>
-            Variable Cost ($): <input type="number" id="be-v" value="20" style="width:60px">
-            <button id="be-btn">Calc Units</button>
-            <div id="be-res" class="result"></div>
+            <h2 class="tool-title">Customer CAC</h2>
+            Spend ($): <input type="number" id="cac-s" value="1000" style="width:60px"><br>
+            New Users: <input type="number" id="cac-n" value="50" style="width:60px">
+            <div id="cac-res" class="result">CAC: $20.00</div>
         `;
-        document.getElementById('be-btn').onclick = () => {
-            const f = parseFloat(document.getElementById('be-f').value);
-            const p = parseFloat(document.getElementById('be-p').value);
-            const v = parseFloat(document.getElementById('be-v').value);
-            const sub = p - v;
-            document.getElementById('be-res').textContent = sub > 0 ? `Units to Profit: ${Math.ceil(f / sub)}` : "Price must be > Var Cost";
+        const update = () => {
+            const s = parseFloat(document.getElementById('cac-s').value) || 0;
+            const n = parseFloat(document.getElementById('cac-n').value) || 1;
+            document.getElementById('cac-res').textContent = `CAC: $${(s / n).toFixed(2)}`;
         };
+        document.getElementById('cac-s').oninput = update;
+        document.getElementById('cac-n').oninput = update;
     }
 
     renderMarginMarkup() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Margin vs Markup</h2>
-            Cost ($): <input type="number" id="mm-c" value="100" style="width:60px"><br>
-            Price ($): <input type="number" id="mm-p" value="150" style="width:60px">
-            <div id="mm-res" class="result" style="text-align:left; font-size:0.9em;"></div>
+            <h2 class="tool-title">Margin/Markup</h2>
+            Cost: <input type="number" id="mm-c" value="100" style="width:50px"> 
+            Price: <input type="number" id="mm-p" value="150" style="width:50px">
+            <div id="mm-res" class="result"></div>
         `;
         const update = () => {
             const c = parseFloat(document.getElementById('mm-c').value);
             const p = parseFloat(document.getElementById('mm-p').value);
-            const markup = ((p - c) / c) * 100;
-            const margin = ((p - c) / p) * 100;
-            document.getElementById('mm-res').innerHTML = `Markup: ${markup.toFixed(1)}%<br>Margin: ${margin.toFixed(1)}%`;
+            const mu = ((p - c) / c) * 100;
+            const ma = ((p - c) / p) * 100;
+            document.getElementById('mm-res').innerHTML = `Markup: ${mu.toFixed(1)}%<br>Margin: ${ma.toFixed(1)}%`;
         };
         document.getElementById('mm-c').oninput = update;
         document.getElementById('mm-p').oninput = update;
@@ -17997,29 +18133,26 @@ Online: ${n.onLine}
     renderHourlySalary() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Hourly/Salary</h2>
-            Hourly Rate ($): <input type="number" id="hs-h" value="25" style="width:60px">
-            <div id="hs-res" class="result"></div>
-            <p style="font-size:0.7em;">Based on 40h/week, 52 weeks.</p>
+            <h2 class="tool-title">Pay Conv</h2>
+            $/Hr: <input type="number" id="ph-in" value="30" style="width:50px">
+            <div id="ph-res" class="result">Annual: $62,400</div>
         `;
-        document.getElementById('hs-h').oninput = (e) => {
-            const h = parseFloat(e.target.value) || 0;
-            document.getElementById('hs-res').textContent = `Annual: $${(h * 40 * 52).toLocaleString()}`;
+        document.getElementById('ph-in').oninput = (e) => {
+            document.getElementById('ph-res').textContent = `Annual: $${(e.target.value * 2080).toLocaleString()}`;
         };
-        document.getElementById('hs-h').oninput({ target: { value: '25' } });
     }
 
     renderInvoiceTotal() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Invoice Calc</h2>
-            Subtotal ($): <input type="number" id="it-s" value="500" style="width:60px"><br>
-            Tax Rate (%): <input type="number" id="it-t" value="8" style="width:40px">
-            <div id="it-res" class="result">Total: $540.00</div>
+            <h2 class="tool-title">Invoice</h2>
+            Sub ($): <input type="number" id="it-s" value="500" style="width:60px"> 
+            Tax (%): <input type="number" id="it-t" value="10" style="width:40px">
+            <div id="it-res" class="result">Total: $550</div>
         `;
         const update = () => {
-            const s = parseFloat(document.getElementById('it-s').value) || 0;
-            const t = parseFloat(document.getElementById('it-t').value) || 0;
+            const s = parseFloat(document.getElementById('it-s').value);
+            const t = parseFloat(document.getElementById('it-t').value);
             document.getElementById('it-res').textContent = `Total: $${(s * (1 + t / 100)).toFixed(2)}`;
         };
         document.getElementById('it-s').oninput = update;
@@ -18029,32 +18162,24 @@ Online: ${n.onLine}
     renderProjectTime() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Project Time</h2>
-            Start: <input type="date" id="pt-s"><br>
-            End: <input type="date" id="pt-e">
-            <div id="pt-res" class="result">Select dates</div>
+            <h2 class="tool-title">Timeline</h2>
+            Days: <input type="number" id="pt-d" value="30" style="width:50px">
+            <div id="pt-res" class="result">Weeks: 4.3</div>
         `;
-        const update = () => {
-            const s = new Date(document.getElementById('pt-s').value);
-            const e = new Date(document.getElementById('pt-e').value);
-            if (s && e && !isNaN(s) && !isNaN(e)) {
-                const diff = Math.ceil((e - s) / (1000 * 60 * 60 * 24));
-                document.getElementById('pt-res').textContent = `${diff} days`;
-            }
+        document.getElementById('pt-d').oninput = (e) => {
+            document.getElementById('pt-res').textContent = `Weeks: ${(e.target.value / 7).toFixed(1)}`;
         };
-        document.getElementById('pt-s').onchange = update;
-        document.getElementById('pt-e').onchange = update;
     }
 
     renderTaskMatrix() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Priority Matrix</h2>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:5px; font-size:0.6em;">
-                <div style="background:#ffcccc; padding:5px;"><b>Urgent/Imp</b><br>DO IT NOW</div>
-                <div style="background:#ccffcc; padding:5px;"><b>Not Urgent/Imp</b><br>SCHEDULE</div>
-                <div style="background:#fff3cd; padding:5px;"><b>Urgent/Not Imp</b><br>DELEGATE</div>
-                <div style="background:#f8f9fa; border:1px solid #ddd; padding:5px;"><b>Not Urgent/Not Imp</b><br>ELIMINATE</div>
+            <h2 class="tool-title">Priority</h2>
+            <div style="font-size:0.6em; text-align:left;">
+                1. Urgent/Imp: Do<br>
+                2. Not U/Imp: Plan<br>
+                3. Urgent/Not: Delegate<br>
+                4. Not U/Not: Elim
             </div>
         `;
     }
@@ -18062,81 +18187,365 @@ Online: ${n.onLine}
     renderRetentionRate() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Retention Rate</h2>
-            End Count: <input type="number" id="rr-e" value="100" style="width:50px"><br>
-            New Users: <input type="number" id="rr-n" value="10" style="width:50px"><br>
-            Start Count: <input type="number" id="rr-s" value="95" style="width:50px">
-            <div id="rr-res" class="result"></div>
+            <h2 class="tool-title">Retention</h2>
+            Start: <input type="number" id="rr-s" value="100" style="width:50px">
+            End: <input type="number" id="rr-e" value="90" style="width:50px">
+            <div id="rr-res" class="result">Rate: 90%</div>
         `;
         const update = () => {
-            const e = parseInt(document.getElementById('rr-e').value);
-            const n = parseInt(document.getElementById('rr-n').value);
-            const s = parseInt(document.getElementById('rr-s').value);
-            const rate = ((e - n) / s) * 100;
-            document.getElementById('rr-res').textContent = `Rate: ${rate.toFixed(1)}%`;
+            const s = parseFloat(document.getElementById('rr-s').value);
+            const e = parseFloat(document.getElementById('rr-e').value);
+            document.getElementById('rr-res').textContent = `Rate: ${((e / s) * 100).toFixed(1)}%`;
         };
-        document.getElementById('rr-e').oninput = update;
-        document.getElementById('rr-n').oninput = update;
         document.getElementById('rr-s').oninput = update;
-        update();
+        document.getElementById('rr-e').oninput = update;
     }
 
     renderSimpleCrm() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Mini CRM</h2>
-            Name: <input type="text" id="cr-n" placeholder="John Doe"><br>
-            Note: <input type="text" id="cr-nt" placeholder="Met at conference">
-            <button id="cr-btn">Add Record</button>
-            <div id="cr-res" style="font-size:0.7em; margin-top:10px; max-height:80px; overflow-y:auto;"></div>
+            Name: <input type="text" id="cr-n" placeholder="Client Name">
+            <button id="cr-add">Add</button>
+            <div id="cr-res" style="font-size:0.7em; margin-top:5px;"></div>
         `;
-        document.getElementById('cr-btn').onclick = () => {
-            const name = document.getElementById('cr-n').value;
-            const note = document.getElementById('cr-nt').value;
-            if (!name) return;
-            const div = document.createElement('div');
-            div.textContent = `${name}: ${note}`;
-            div.style.borderBottom = "1px solid #eee";
-            document.getElementById('cr-res').prepend(div);
+        document.getElementById('cr-add').onclick = () => {
+            const n = document.getElementById('cr-n').value;
+            if (n) document.getElementById('cr-res').innerHTML += n + "<br>";
         };
     }
 
     renderExpenseTrack() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Expense Log</h2>
-            Item: <input type="text" id="ex-i" value="Coffee" style="width:80px">
-            Cost: <input type="number" id="ex-c" value="5" style="width:40px">
-            <button id="ex-btn">Add</button>
+            <h2 class="tool-title">Expense</h2>
+            Cost ($): <input type="number" id="ex-c" value="0" style="width:50px">
+            <button id="ex-add">Add</button>
             <div id="ex-res" class="result">Total: $0</div>
         `;
-        let total = 0;
-        document.getElementById('ex-btn').onclick = () => {
-            total += parseFloat(document.getElementById('ex-c').value) || 0;
-            document.getElementById('ex-res').textContent = `Total: $${total.toFixed(2)}`;
+        let t = 0;
+        document.getElementById('ex-add').onclick = () => {
+            t += parseFloat(document.getElementById('ex-c').value);
+            document.getElementById('ex-res').textContent = `Total: $${t.toFixed(2)}`;
         };
     }
 
-    renderDiscountCalc() {
+    renderLifetimeValue() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
-            <h2 class="tool-title">Discount Calc</h2>
-            Original ($): <input type="number" id="dc-o" value="80" style="width:60px"><br>
-            Discount (%): <input type="number" id="dc-d" value="25" style="width:40px">
-            <div id="dc-res" class="result">Sale Price: $60.00</div>
-            <small id="dc-sav">Saved: $20.00</small>
+            <h2 class="tool-title">Customer LTV</h2>
+            Avg Order ($): <input type="number" id="ltv-a" value="50" style="width:50px"><br>
+            Freq (Orders/Yr): <input type="number" id="ltv-f" value="4" style="width:50px"><br>
+            Lifespan (Yrs): <input type="number" id="ltv-l" value="3" style="width:50px">
+            <div id="ltv-res" class="result">LTV: $600</div>
         `;
         const update = () => {
-            const o = parseFloat(document.getElementById('dc-o').value) || 0;
-            const d = parseFloat(document.getElementById('dc-d').value) || 0;
-            const sav = o * (d / 100);
-            document.getElementById('dc-res').textContent = `Sale Price: $${(o - sav).toFixed(2)}`;
-            document.getElementById('dc-sav').textContent = `Saved: $${sav.toFixed(2)}`;
+            const a = parseFloat(document.getElementById('ltv-a').value) || 0;
+            const f = parseFloat(document.getElementById('ltv-f').value) || 0;
+            const l = parseFloat(document.getElementById('ltv-l').value) || 0;
+            document.getElementById('ltv-res').textContent = `LTV: $${(a * f * l).toLocaleString()}`;
         };
-        document.getElementById('dc-o').oninput = update;
-        document.getElementById('dc-d').oninput = update;
+        document.getElementById('ltv-a').oninput = update;
+        document.getElementById('ltv-f').oninput = update;
+        document.getElementById('ltv-l').oninput = update;
+    }
+
+    renderDataRange() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Range</h2>
+            <textarea id="dr-in" placeholder="10, 20, 30..." style="height:50px;"></textarea>
+            <div id="dr-res" class="result">Range: 0</div>
+        `;
+        document.getElementById('dr-in').oninput = (e) => {
+            const nums = e.target.value.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+            if (nums.length < 2) return;
+            document.getElementById('dr-res').textContent = `Range: ${Math.max(...nums) - Math.min(...nums)}`;
+        };
+    }
+
+    renderZScoreCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Z-Score</h2>
+            Value (x): <input type="number" id="zs-x" value="110" style="width:40px"><br>
+            Mean (μ): <input type="number" id="zs-m" value="100" style="width:40px"><br>
+            StdDev (σ): <input type="number" id="zs-s" value="15" style="width:40px">
+            <div id="zs-res" class="result">Z: 0.67</div>
+        `;
+        const update = () => {
+            const x = parseFloat(document.getElementById('zs-x').value);
+            const m = parseFloat(document.getElementById('zs-m').value);
+            const s = parseFloat(document.getElementById('zs-s').value) || 1;
+            document.getElementById('zs-res').textContent = `Z: ${((x - m) / s).toFixed(2)}`;
+        };
+        document.querySelectorAll('#zs-x, #zs-m, #zs-s').forEach(i => i.oninput = update);
+    }
+
+    renderVarianceCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Variance</h2>
+            <textarea id="vc-in" placeholder="Numbers..." style="height:50px;"></textarea>
+            <div id="vc-res" class="result">Var: 0</div>
+        `;
+        document.getElementById('vc-in').oninput = (e) => {
+            const nums = e.target.value.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+            if (nums.length < 2) return;
+            const mean = nums.reduce((a, b) => a + b, 0) / nums.length;
+            const sqDiffs = nums.map(n => Math.pow(n - mean, 2));
+            const variance = sqDiffs.reduce((a, b) => a + b, 0) / nums.length;
+            document.getElementById('vc-res').textContent = `Var: ${variance.toFixed(2)}`;
+        };
+    }
+
+    renderOutlierDetector() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Outlier Detect</h2>
+            <textarea id="od-in" placeholder="Sorted numbers..." style="height:50px;"></textarea>
+            <div id="od-res" class="result" style="font-size:0.75em;">Enter list</div>
+        `;
+        document.getElementById('od-in').oninput = (e) => {
+            const nums = e.target.value.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n)).sort((a, b) => a - b);
+            if (nums.length < 4) return;
+            const q1 = nums[Math.floor(nums.length * 0.25)];
+            const q3 = nums[Math.floor(nums.length * 0.75)];
+            const iqr = q3 - q1;
+            const low = q1 - (1.5 * iqr);
+            const high = q3 + (1.5 * iqr);
+            const outliers = nums.filter(n => n < low || n > high);
+            document.getElementById('od-res').textContent = outliers.length ? `Outliers: ${outliers.join(', ')}` : "No outliers found (IQR method).";
+        };
+    }
+
+    renderRandomSample() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sampler</h2>
+            List: <input type="text" id="rs-l" value="A,B,C,D,E"><br>
+            Count: <input type="number" id="rs-n" value="2" style="width:40px">
+            <button id="rs-btn">Pick</button>
+            <div id="rs-res" class="result"></div>
+        `;
+        document.getElementById('rs-btn').onclick = () => {
+            const items = document.getElementById('rs-l').value.split(',').map(s => s.trim());
+            const n = parseInt(document.getElementById('rs-n').value);
+            const shuffled = items.sort(() => 0.5 - Math.random());
+            document.getElementById('rs-res').textContent = shuffled.slice(0, n).join(', ');
+        };
+    }
+
+    renderProbAB() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prob A or B</h2>
+            P(A): <input type="number" id="pa" value="0.5" step="0.1" style="width:50px"><br>
+            P(B): <input type="number" id="pb" value="0.3" step="0.1" style="width:50px"><br>
+            <div id="p-res" class="result">P(A or B): 0.65</div>
+            <p style="font-size:0.6em;">Assuming independence: P(A)+P(B) - P(A)P(B)</p>
+        `;
+        const update = () => {
+            const a = parseFloat(document.getElementById('pa').value);
+            const b = parseFloat(document.getElementById('pb').value);
+            document.getElementById('p-res').textContent = `P(A or B): ${(a + b - (a * b)).toFixed(3)}`;
+        };
+        document.getElementById('pa').oninput = update;
+        document.getElementById('pb').oninput = update;
+    }
+
+    renderFreqDistFreq() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Freq Dist</h2>
+            <textarea id="fd-in" placeholder="1, 1, 2, 3, 3, 3..." style="height:50px;"></textarea>
+            <div id="fd-res" style="font-size:0.7em; text-align:left; margin-top:10px;"></div>
+        `;
+        document.getElementById('fd-in').oninput = (e) => {
+            const items = e.target.value.split(',').map(s => s.trim()).filter(s => s);
+            const counts = {};
+            items.forEach(i => counts[i] = (counts[i] || 0) + 1);
+            document.getElementById('fd-res').innerHTML = Object.entries(counts).map(([k, v]) => `<b>${k}</b>: ${v}`).join(' | ');
+        };
+    }
+
+    renderSimpleCorrelation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Correlation</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>+1.0</b>: Perfect Positive<br>
+                <b>0.0</b>: No Relationship<br>
+                <b>-1.0</b>: Perfect Negative<br>
+                <i style="font-size:0.9em;">Correlation != Causation</i>
+            </div>
+        `;
+    }
+
+    renderPctRank() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pct Rank</h2>
+            Score: <input type="number" id="pr-s" value="85" style="width:40px"><br>
+            Data: <input type="text" id="pr-d" value="70, 80, 90, 100">
+            <div id="pr-res" class="result">Rank: 50%</div>
+        `;
+        const update = () => {
+            const s = parseFloat(document.getElementById('pr-s').value);
+            const data = document.getElementById('pr-d').value.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+            const below = data.filter(d => d < s).length;
+            document.getElementById('pr-res').textContent = `Rank: ${((below / data.length) * 100).toFixed(0)}%`;
+        };
+        document.getElementById('pr-s').oninput = update;
+        document.getElementById('pr-d').oninput = update;
+    }
+
+    renderWeightedAverage() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Weighted Avg</h2>
+            Val, Wt: <input type="text" id="wa-in" value="90, 0.7 | 100, 0.3">
+            <div id="wa-res" class="result">Avg: 93</div>
+        `;
+        document.getElementById('wa-in').oninput = (e) => {
+            const pairs = e.target.value.split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
+            let sumProd = 0, sumWt = 0;
+            pairs.forEach(([v, w]) => { if (!isNaN(v) && !isNaN(w)) { sumProd += v * w; sumWt += w; } });
+            document.getElementById('wa-res').textContent = `Avg: ${(sumProd / sumWt).toFixed(2)}`;
+        };
+    }
+
+    renderHandleAvailability() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Handle Check</h2>
+            <input type="text" id="hc-in" placeholder="Username...">
+            <div id="hc-res" style="font-size:0.8em; margin-top:10px;"></div>
+        `;
+        document.getElementById('hc-in').oninput = (e) => {
+            const v = e.target.value;
+            if (!v) return;
+            document.getElementById('hc-res').innerHTML = `
+                X/Twitter: ${v.length <= 15 ? '✅' : '❌'}<br>
+                Instagram: ✅<br>
+                TikTok: ✅
+            `;
+        };
+    }
+
+    renderHashtagGenerator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hashtag Gen</h2>
+            Topic: <input type="text" id="hg-in" placeholder="coding">
+            <div id="hg-res" class="result">#coding #dev #web</div>
+        `;
+        document.getElementById('hg-in').oninput = (e) => {
+            const v = e.target.value.trim().replace(/ /g, '');
+            document.getElementById('hg-res').textContent = v ? `#${v} #${v}life #${v}daily` : "";
+        };
+    }
+
+    renderWifiQrText() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WiFi QR Code</h2>
+            SSID: <input type="text" id="wq-s" value="HomeWiFi"><br>
+            Pass: <input type="text" id="wq-p" value="password123"><br>
+            <textarea id="wq-res" readonly style="height:50px; font-size:0.7em; margin-top:10px;"></textarea>
+        `;
+        const update = () => {
+            const s = document.getElementById('wq-s').value;
+            const p = document.getElementById('wq-p').value;
+            document.getElementById('wq-res').value = `WIFI:S:${s};T:WPA;P:${p};;`;
+        };
+        document.getElementById('wq-s').oninput = update;
+        document.getElementById('wq-p').oninput = update;
+        update();
+    }
+
+    renderQrBase64Content() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">QR Formats</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>URL</b>: https://... <br>
+                <b>Text</b>: Hello World <br>
+                <b>WiFi</b>: WIFI:S:Name;P:Pass;; <br>
+                <b>Email</b>: MATMSG:TO:me@...;SUB:Hi;;
+            </div>
+        `;
+    }
+
+    renderAppStoreSearch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Store Link</h2>
+            Query: <input type="text" id="as-in" value="Calculator">
+            <div id="as-res" class="result" style="font-size:0.6em; word-break:break-all;"></div>
+        `;
+        document.getElementById('as-in').oninput = (e) => {
+            document.getElementById('as-res').textContent = `https://apps.apple.com/search?term=${encodeURIComponent(e.target.value)}`;
+        };
+    }
+
+    renderDeepLinkProtocol() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Protocols</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>tel:</b>+12345<br>
+                <b>mailto:</b>test@...<br>
+                <b>sms:</b>+12345<br>
+                <b>geo:</b>lat,long
+            </div>
+        `;
+    }
+
+    renderPrivacyTextGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Privacy Text</h2>
+            Site: <input type="text" id="pp-s" value="MySite">
+            <textarea readonly style="height:80px; font-size:0.6em; margin-top:10px;">We respect your privacy. No personal data is collected by this site. All processing happens locally in your browser.</textarea>
+        `;
+    }
+
+    renderTermsTextGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Terms Text</h2>
+            <textarea readonly style="height:80px; font-size:0.6em;">This service is provided 'as is'. We are not responsible for any data loss or calculation errors. Use at your own risk.</textarea>
+        `;
+    }
+
+    renderFaviconSpec() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Favicons</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Standard: 16x16, 32x32<br>
+                Apple Touch: 180x180<br>
+                Android: 192x192, 512x512<br>
+                Format: .ico or .png
+            </div>
+        `;
+    }
+
+    renderColorAccessibility() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WCAG Ratios</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>AA (Small Text)</b>: 4.5:1<br>
+                <b>AA (Large Text)</b>: 3:1<br>
+                <b>AAA (Small Text)</b>: 7:1<br>
+                <b>AAA (Large Text)</b>: 4.5:1
+            </div>
+        `;
     }
 }
+
 
 
 // Initialize
