@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 190
-**Last Updated:** Batch 14 (Random/String)
+**Total Tools:** 210
+**Last Updated:** Batch 16 (Geometry)
 
-## Latest Additions (Batch 13 - Statistics/Math)
-- Mean/Median/Mode
-- Standard Deviation & Variance
-- Permutations (nPr)
-- Combinations (nCr)
-- Z-Score Calculator
-- Confidence Interval
-- Margin of Error
-- Poisson Distribution
-- Geometric Mean
-- Harmonic Mean
+## Latest Additions (Batch 15 - Financial)
+- ROI Calculator
+- Break-Even Point
+- Markup Calculator
+- Margin Calculator
+- VAT/Sales Tax Calculator
+- Discount Calculator
+- CPM Calculator
+- Simple Loan Calculator
+- Compound Interest
+- Salary to Hourly Converter
 
-## Latest Additions (Batch 14 - Random/String)
-- Random List Picker
-- List Shuffler
-- Random Date Generator
-- Random Time Generator
-- Random MAC Address
-- Random IPv4 Address
-- String Reverser
-- Text Repeater
-- Text Truncator
-- Line Numberer
+## Latest Additions (Batch 16 - Geometry)
+- Circle Calculator
+- Sphere Calculator
+- Cylinder Calculator
+- Cone Calculator
+- Pythagorean Theorem
+- Triangle Area (Heron's)
+- Slope Calculator
+- Midpoint Calculator
+- Distance Calculator
+- Cube Calculator

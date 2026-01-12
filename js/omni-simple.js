@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 190 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 210 ELITE TOOLS! 💎
  * 
- * BATCH 1-12: 170 tools across all categories
- * BATCH 13: Mean/Med/Mode + StdDev + Permutations + Combinations + Z-Score + ConfInt + MarginErr + Poisson + GeoMean + HarMean
- * BATCH 14: List Picker + Shuffler + RandDate + RandTime + RandMAC + RandIP + StrRev + TextRepeat + TextTrunc + LineEnum
+ * BATCH 1-14: 190 tools across all categories
+ * BATCH 15: ROI + BreakEven + Markup + Margin + VAT + Discount + CPM + Loan + CompoundInt + SalaryConv
+ * BATCH 16: Circle + Sphere + Cylinder + Cone + Pythagorean + Triangle + Slope + Midpoint + Distance + Cube
  */
 
 class OmniTools {
@@ -1588,6 +1588,168 @@ class OmniTools {
                 icon: "🔢",
                 category: "Text",
                 render: () => this.renderLineEnum()
+            },
+            // === BATCH 15 - 200 TOOLS (FINANCIAL) ===
+            roiCalc: {
+                name: "ROI Calculator",
+                searchTerms: "roi return on investment finance money",
+                description: "Calculate Return on Investment",
+                icon: "💰",
+                category: "Finance",
+                render: () => this.renderRoiCalc()
+            },
+            breakEven: {
+                name: "Break-Even Point",
+                searchTerms: "break even point finance business cost revenue",
+                description: "Calculate break-even units",
+                icon: "⚖️",
+                category: "Finance",
+                render: () => this.renderBreakEven()
+            },
+            marginCalc: {
+                name: "Margin Calculator",
+                searchTerms: "margin profit gross revenue cost",
+                description: "Calculate profit margin",
+                icon: "📈",
+                category: "Finance",
+                render: () => this.renderMarginCalc()
+            },
+            markupCalc: {
+                name: "Markup Calculator",
+                searchTerms: "markup cost price profit",
+                description: "Calculate price markup",
+                icon: "🏷️",
+                category: "Finance",
+                render: () => this.renderMarkupCalc()
+            },
+            vatCalc: {
+                name: "VAT/Sales Tax",
+                searchTerms: "vat sales tax gst calculator",
+                description: "Add or remove tax",
+                icon: "🧾",
+                category: "Finance",
+                render: () => this.renderVatCalc()
+            },
+            discountCalc: {
+                name: "Discount Calculator",
+                searchTerms: "discount sale price off percent",
+                description: "Calculate sale price",
+                icon: "🛍️",
+                category: "Finance",
+                render: () => this.renderDiscountCalc()
+            },
+            cpmCalc: {
+                name: "CPM Calculator",
+                searchTerms: "cpm cost per mille advertising marketing",
+                description: "Calculate Ad Cost Per 1000",
+                icon: "📢",
+                category: "Finance",
+                render: () => this.renderCpmCalc()
+            },
+            loanCalc: {
+                name: "Use Loan Calculator",
+                searchTerms: "loan mortgage payment interest",
+                description: "Calculate simple loan payment",
+                icon: "🏦",
+                category: "Finance",
+                render: () => this.renderLoanCalc()
+            },
+            compInt: {
+                name: "Compound Interest",
+                searchTerms: "compound interest savings investment growth",
+                description: "Calculate compound growth",
+                icon: "🌲",
+                category: "Finance",
+                render: () => this.renderCompInt()
+            },
+            salaryConv: {
+                name: "Salary to Hourly",
+                searchTerms: "salary hourly wage pay converter",
+                description: "Convert annual salary to hourly",
+                icon: "💵",
+                category: "Finance",
+                render: () => this.renderSalaryConv()
+            },
+            // === BATCH 16 - 210 TOOLS (GEOMETRY) ===
+            circleCalc: {
+                name: "Circle Calculator",
+                searchTerms: "circle area circumference radius diameter geometry",
+                description: "Calc area and circumference",
+                icon: "⭕",
+                category: "Math",
+                render: () => this.renderCircleCalc()
+            },
+            sphereCalc: {
+                name: "Sphere Calculator",
+                searchTerms: "sphere volume surface area radius geometry",
+                description: "Calc volume and surface",
+                icon: "🔮",
+                category: "Math",
+                render: () => this.renderSphereCalc()
+            },
+            cylinderCalc: {
+                name: "Cylinder Calculator",
+                searchTerms: "cylinder volume surface area height radius geometry",
+                description: "Calc volume and surface",
+                icon: "🛢️",
+                category: "Math",
+                render: () => this.renderCylinderCalc()
+            },
+            coneCalc: {
+                name: "Cone Calculator",
+                searchTerms: "cone volume surface area height radius geometry",
+                description: "Calc volume and surface",
+                icon: "🍦",
+                category: "Math",
+                render: () => this.renderConeCalc()
+            },
+            pythagorean: {
+                name: "Pythagorean Calc",
+                searchTerms: "pythagorean theorem triangle hypotenuse leg geometry",
+                description: "Calculate right triangle side",
+                icon: "📐",
+                category: "Math",
+                render: () => this.renderPythagorean()
+            },
+            triangleArea: {
+                name: "Triangle Area",
+                searchTerms: "triangle area herons formula side geometry",
+                description: "Calc area from 3 sides",
+                icon: "🔺",
+                category: "Math",
+                render: () => this.renderTriangleArea()
+            },
+            slopeCalc: {
+                name: "Slope Calculator",
+                searchTerms: "slope gradient line points geometry",
+                description: "Calc slope between points",
+                icon: "🏔️",
+                category: "Math",
+                render: () => this.renderSlopeCalc()
+            },
+            midpointCalc: {
+                name: "Midpoint Calculator",
+                searchTerms: "midpoint middle line points geometry",
+                description: "Calc midpoint of line",
+                icon: "📍",
+                category: "Math",
+                render: () => this.renderMidpointCalc()
+            },
+            distCalc: {
+                name: "Distance Calculator",
+                searchTerms: "distance points 2d geometry length",
+                description: "Calc distance between points",
+                icon: "📏",
+                category: "Math",
+                render: () => this.renderDistCalc()
+            },
+            cubeCalc: {
+                name: "Cube Calculator",
+                searchTerms: "cube volume surface area side geometry",
+                description: "Calc volume and surface",
+                icon: "🧊",
+                category: "Math",
+                render: () => this.renderCubeCalc()
             }
         };
     }
@@ -8511,6 +8673,443 @@ background-clip: text;`;
             document.getElementById('le-out').value = lines.map((l, i) => `${i + 1}. ${l}`).join('\n');
         };
     }
+
+    renderRoiCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ROI Calculator</h2>
+            <input type="number" id="roi-inv" placeholder="Invested Amount">
+            <input type="number" id="roi-ret" placeholder="Returned Amount">
+            <button id="roi-btn">Calculate</button>
+            <div class="result" id="roi-res"></div>
+        `;
+        document.getElementById('roi-btn').onclick = () => {
+            const i = parseFloat(document.getElementById('roi-inv').value);
+            const r = parseFloat(document.getElementById('roi-ret').value);
+            const roi = ((r - i) / i) * 100;
+            document.getElementById('roi-res').innerHTML = `
+                <div>Gain/Loss: ${r - i}</div>
+                <div style="font-weight:bold; color:${roi >= 0 ? 'lime' : 'red'}">ROI: ${roi.toFixed(2)}%</div>
+             `;
+        };
+    }
+
+    renderBreakEven() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Break-Even Point</h2>
+            <input type="number" id="be-fc" placeholder="Fixed Costs">
+            <input type="number" id="be-vc" placeholder="Variable Cost per Unit">
+            <input type="number" id="be-p" placeholder="Price per Unit">
+            <button id="be-btn">Calculate</button>
+            <div class="result" id="be-res"></div>
+        `;
+        document.getElementById('be-btn').onclick = () => {
+            const fc = parseFloat(document.getElementById('be-fc').value);
+            const vc = parseFloat(document.getElementById('be-vc').value);
+            const p = parseFloat(document.getElementById('be-p').value);
+            const units = fc / (p - vc);
+            const rev = units * p;
+            document.getElementById('be-res').innerHTML = `
+                <div>Break-Even Units: ${Math.ceil(units)}</div>
+                <div>Break-Even Revenue: $${rev.toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderMarginCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Profit Margin Calculator</h2>
+            <input type="number" id="mc-c" placeholder="Cost">
+            <input type="number" id="mc-r" placeholder="Revenue">
+            <button id="mc-btn">Calculate</button>
+            <div class="result" id="mc-res"></div>
+        `;
+        document.getElementById('mc-btn').onclick = () => {
+            const c = parseFloat(document.getElementById('mc-c').value);
+            const r = parseFloat(document.getElementById('mc-r').value);
+            const m = ((r - c) / r) * 100;
+            const p = r - c;
+            document.getElementById('mc-res').innerHTML = `
+                 <div>Profit: $${p.toFixed(2)}</div>
+                 <div>Margin: ${m.toFixed(2)}%</div>
+             `;
+        };
+    }
+
+    renderMarkupCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Markup Calculator</h2>
+            <input type="number" id="mu-c" placeholder="Cost">
+            <input type="number" id="mu-m" placeholder="Markup %">
+            <button id="mu-btn">Calculate</button>
+            <div class="result" id="mu-res"></div>
+        `;
+        document.getElementById('mu-btn').onclick = () => {
+            const c = parseFloat(document.getElementById('mu-c').value);
+            const m = parseFloat(document.getElementById('mu-m').value);
+            const p = c * (1 + m / 100);
+            const prof = p - c;
+            document.getElementById('mu-res').innerHTML = `
+                 <div>Sales Price: $${p.toFixed(2)}</div>
+                 <div>Profit: $${prof.toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderVatCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">VAT / Sales Tax</h2>
+            <input type="number" id="vc-a" placeholder="Amount">
+            <input type="number" id="vc-r" placeholder="Tax Rate %">
+            <div style="display:flex; gap:10px; justify-content:center; margin-top:10px;">
+                <button id="vc-add">Add Tax</button>
+                <button id="vc-sub">Remove Tax</button>
+            </div>
+            <div class="result" id="vc-res"></div>
+        `;
+        const calc = (mode) => {
+            const a = parseFloat(document.getElementById('vc-a').value);
+            const r = parseFloat(document.getElementById('vc-r').value);
+            let net, tax, gross;
+            if (mode === 'add') {
+                net = a;
+                tax = a * (r / 100);
+                gross = a + tax;
+            } else {
+                gross = a;
+                net = a / (1 + r / 100);
+                tax = gross - net;
+            }
+            document.getElementById('vc-res').innerHTML = `
+                 <div>Net: ${net.toFixed(2)}</div>
+                 <div>Tax: ${tax.toFixed(2)}</div>
+                 <div>Gross: ${gross.toFixed(2)}</div>
+             `;
+        };
+        document.getElementById('vc-add').onclick = () => calc('add');
+        document.getElementById('vc-sub').onclick = () => calc('sub');
+    }
+
+    renderDiscountCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Discount Calculator</h2>
+            <input type="number" id="dc-p" placeholder="Original Price">
+            <input type="number" id="dc-d" placeholder="Discount %">
+            <button id="dc-btn">Calculate</button>
+            <div class="result" id="dc-res"></div>
+        `;
+        document.getElementById('dc-btn').onclick = () => {
+            const p = parseFloat(document.getElementById('dc-p').value);
+            const d = parseFloat(document.getElementById('dc-d').value);
+            const saved = p * (d / 100);
+            const final = p - saved;
+            document.getElementById('dc-res').innerHTML = `
+                 <div>You Save: $${saved.toFixed(2)}</div>
+                 <div>Final Price: $${final.toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderCpmCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CPM Calculator</h2>
+            <input type="number" id="cm-c" placeholder="Total Cost">
+            <input type="number" id="cm-i" placeholder="Impressions">
+            <button id="cm-btn">Calculate CPM</button>
+            <div class="result" id="cm-res"></div>
+        `;
+        document.getElementById('cm-btn').onclick = () => {
+            const c = parseFloat(document.getElementById('cm-c').value);
+            const i = parseFloat(document.getElementById('cm-i').value);
+            const cpm = (c / i) * 1000;
+            document.getElementById('cm-res').textContent = `CPM: $${cpm.toFixed(2)}`;
+        };
+    }
+
+    renderLoanCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Simple Loan Calculator</h2>
+            <input type="number" id="lc-a" placeholder="Loan Amount">
+            <input type="number" id="lc-r" placeholder="Interest Rate % (Annual)">
+            <input type="number" id="lc-t" placeholder="Term (Years)">
+            <button id="lc-btn">Calculate</button>
+            <div class="result" id="lc-res"></div>
+        `;
+        document.getElementById('lc-btn').onclick = () => {
+            const p = parseFloat(document.getElementById('lc-a').value);
+            const r = parseFloat(document.getElementById('lc-r').value) / 100 / 12;
+            const n = parseFloat(document.getElementById('lc-t').value) * 12;
+            const m = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+            const total = m * n;
+            document.getElementById('lc-res').innerHTML = `
+                 <div>Monthly Pay: $${m.toFixed(2)}</div>
+                 <div>Total Cost: $${total.toFixed(2)}</div>
+                 <div>Interest: $${(total - p).toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderCompInt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Compound Interest</h2>
+            <input type="number" id="ci-p" placeholder="Principal Amount">
+            <input type="number" id="ci-r" placeholder="Interest Rate %">
+            <input type="number" id="ci-t" placeholder="Time (Years)">
+            <input type="number" id="ci-n" placeholder="Compounding/Year (12=monthly)" value="12">
+            <button id="ci-btn">Calculate</button>
+            <div class="result" id="ci-res"></div>
+        `;
+        document.getElementById('ci-btn').onclick = () => {
+            const p = parseFloat(document.getElementById('ci-p').value);
+            const r = parseFloat(document.getElementById('ci-r').value) / 100;
+            const t = parseFloat(document.getElementById('ci-t').value);
+            const n = parseFloat(document.getElementById('ci-n').value);
+            const a = p * Math.pow((1 + r / n), n * t);
+            document.getElementById('ci-res').innerHTML = `
+                 <div>Future Value: $${a.toFixed(2)}</div>
+                 <div>Interest Earned: $${(a - p).toFixed(2)}</div>
+             `;
+        };
+    }
+
+    renderSalaryConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Salary to Hourly</h2>
+            <input type="number" id="sc-s" placeholder="Annual Salary">
+            <input type="number" id="sc-h" placeholder="Hours/Week (def 40)" value="40">
+            <button id="sc-btn">Convert</button>
+            <div class="result" id="sc-res"></div>
+        `;
+        document.getElementById('sc-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('sc-s').value);
+            const h = parseFloat(document.getElementById('sc-h').value) || 40;
+            const hourly = s / (52 * h);
+            document.getElementById('sc-res').innerHTML = `
+                <div>Hourly: $${hourly.toFixed(2)}</div>
+                <div>Weekly: $${(s / 52).toFixed(2)}</div>
+                <div>Monthly: $${(s / 12).toFixed(2)}</div>
+            `;
+        };
+    }
+}
+
+renderCircleCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Circle Calculator</h2>
+            <input type="number" id="cc-r" placeholder="Radius">
+            <button id="cc-btn">Calculate</button>
+            <div class="result" id="cc-res"></div>
+        `;
+    document.getElementById('cc-btn').onclick = () => {
+        const r = parseFloat(document.getElementById('cc-r').value);
+        document.getElementById('cc-res').innerHTML = `
+                 <div>Area: ${(Math.PI * r * r).toFixed(2)}</div>
+                 <div>Circumference: ${(2 * Math.PI * r).toFixed(2)}</div>
+                 <div>Diameter: ${(2 * r).toFixed(2)}</div>
+             `;
+    };
+}
+
+renderSphereCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Sphere Calculator</h2>
+            <input type="number" id="sp-r" placeholder="Radius">
+            <button id="sp-btn">Calculate</button>
+            <div class="result" id="sp-res"></div>
+        `;
+    document.getElementById('sp-btn').onclick = () => {
+        const r = parseFloat(document.getElementById('sp-r').value);
+        document.getElementById('sp-res').innerHTML = `
+                 <div>Volume: ${((4 / 3) * Math.PI * Math.pow(r, 3)).toFixed(2)}</div>
+                 <div>Surface Area: ${(4 * Math.PI * r * r).toFixed(2)}</div>
+             `;
+    };
+}
+
+renderCylinderCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Cylinder Calculator</h2>
+            <input type="number" id="cy-r" placeholder="Radius">
+            <input type="number" id="cy-h" placeholder="Height">
+            <button id="cy-btn">Calculate</button>
+            <div class="result" id="cy-res"></div>
+        `;
+    document.getElementById('cy-btn').onclick = () => {
+        const r = parseFloat(document.getElementById('cy-r').value);
+        const h = parseFloat(document.getElementById('cy-h').value);
+        const vol = Math.PI * r * r * h;
+        const area = 2 * Math.PI * r * (r + h);
+        document.getElementById('cy-res').innerHTML = `
+                 <div>Volume: ${vol.toFixed(2)}</div>
+                 <div>Surface Area: ${area.toFixed(2)}</div>
+             `;
+    };
+}
+
+renderConeCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Cone Calculator</h2>
+            <input type="number" id="co-r" placeholder="Radius">
+            <input type="number" id="co-h" placeholder="Height">
+            <button id="co-btn">Calculate</button>
+            <div class="result" id="co-res"></div>
+        `;
+    document.getElementById('co-btn').onclick = () => {
+        const r = parseFloat(document.getElementById('co-r').value);
+        const h = parseFloat(document.getElementById('co-h').value);
+        const s = Math.sqrt(r * r + h * h);
+        const vol = Math.PI * r * r * (h / 3);
+        const area = Math.PI * r * (r + s);
+        document.getElementById('co-res').innerHTML = `
+                 <div>Volume: ${vol.toFixed(2)}</div>
+                 <div>Surface Area: ${area.toFixed(2)}</div>
+                 <div>Slant Height: ${s.toFixed(2)}</div>
+             `;
+    };
+}
+
+renderPythagorean() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Pythagorean Calculator</h2>
+            <input type="number" id="pt-a" placeholder="Leg A">
+            <input type="number" id="pt-b" placeholder="Leg B">
+            <button id="pt-btn">Calculate Hypotenuse</button>
+            <div class="result" id="pt-res"></div>
+        `;
+    document.getElementById('pt-btn').onclick = () => {
+        const a = parseFloat(document.getElementById('pt-a').value);
+        const b = parseFloat(document.getElementById('pt-b').value);
+        const c = Math.sqrt(a * a + b * b);
+        document.getElementById('pt-res').textContent = `Hypotenuse (c): ${c.toFixed(2)}`;
+    };
+}
+
+renderTriangleArea() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Triangle Area (Heron's)</h2>
+            <input type="number" id="ta-a" placeholder="Side A">
+            <input type="number" id="ta-b" placeholder="Side B">
+            <input type="number" id="ta-c" placeholder="Side C">
+            <button id="ta-btn">Calculate</button>
+            <div class="result" id="ta-res"></div>
+        `;
+    document.getElementById('ta-btn').onclick = () => {
+        const a = parseFloat(document.getElementById('ta-a').value);
+        const b = parseFloat(document.getElementById('ta-b').value);
+        const c = parseFloat(document.getElementById('ta-c').value);
+        const s = (a + b + c) / 2;
+        const area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+        document.getElementById('ta-res').textContent = isNaN(area) ? "Invalid Triangle" : `Area: ${area.toFixed(2)}`;
+    };
+}
+
+renderSlopeCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Slope Calculator</h2>
+            <div style="display:flex; gap:10px; margin-bottom:10px;">
+                <input type="number" id="sl-x1" placeholder="X1">
+                <input type="number" id="sl-y1" placeholder="Y1">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <input type="number" id="sl-x2" placeholder="X2">
+                <input type="number" id="sl-y2" placeholder="Y2">
+            </div>
+            <button id="sl-btn">Calculate</button>
+            <div class="result" id="sl-res"></div>
+        `;
+    document.getElementById('sl-btn').onclick = () => {
+        const x1 = parseFloat(document.getElementById('sl-x1').value);
+        const y1 = parseFloat(document.getElementById('sl-y1').value);
+        const x2 = parseFloat(document.getElementById('sl-x2').value);
+        const y2 = parseFloat(document.getElementById('sl-y2').value);
+        const m = (y2 - y1) / (x2 - x1);
+        document.getElementById('sl-res').textContent = `Slope (m): ${m.toFixed(4)}`;
+    };
+}
+
+renderMidpointCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Midpoint Calculator</h2>
+            <div style="display:flex; gap:10px; margin-bottom:10px;">
+                <input type="number" id="mp-x1" placeholder="X1">
+                <input type="number" id="mp-y1" placeholder="Y1">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <input type="number" id="mp-x2" placeholder="X2">
+                <input type="number" id="mp-y2" placeholder="Y2">
+            </div>
+            <button id="mp-btn">Calculate</button>
+            <div class="result" id="mp-res"></div>
+        `;
+    document.getElementById('mp-btn').onclick = () => {
+        const x1 = parseFloat(document.getElementById('mp-x1').value);
+        const y1 = parseFloat(document.getElementById('mp-y1').value);
+        const x2 = parseFloat(document.getElementById('mp-x2').value);
+        const y2 = parseFloat(document.getElementById('mp-y2').value);
+        const xm = (x1 + x2) / 2;
+        const ym = (y1 + y2) / 2;
+        document.getElementById('mp-res').textContent = `Midpoint: (${xm}, ${ym})`;
+    };
+}
+
+renderDistCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Distance Calculator (2D)</h2>
+            <div style="display:flex; gap:10px; margin-bottom:10px;">
+                <input type="number" id="dst-x1" placeholder="X1">
+                <input type="number" id="dst-y1" placeholder="Y1">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <input type="number" id="dst-x2" placeholder="X2">
+                <input type="number" id="dst-y2" placeholder="Y2">
+            </div>
+            <button id="dst-btn">Calculate</button>
+            <div class="result" id="dst-res"></div>
+        `;
+    document.getElementById('dst-btn').onclick = () => {
+        const x1 = parseFloat(document.getElementById('dst-x1').value);
+        const y1 = parseFloat(document.getElementById('dst-y1').value);
+        const x2 = parseFloat(document.getElementById('dst-x2').value);
+        const y2 = parseFloat(document.getElementById('dst-y2').value);
+        const d = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        document.getElementById('dst-res').textContent = `Distance: ${d.toFixed(4)}`;
+    };
+}
+
+renderCubeCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Cube Calculator</h2>
+            <input type="number" id="cb-s" placeholder="Side Length">
+            <button id="cb-btn">Calculate</button>
+            <div class="result" id="cb-res"></div>
+        `;
+    document.getElementById('cb-btn').onclick = () => {
+        const s = parseFloat(document.getElementById('cb-s').value);
+        document.getElementById('cb-res').innerHTML = `
+                 <div>Volume: ${(s * s * s).toFixed(2)}</div>
+                 <div>Surface Area: ${(6 * s * s).toFixed(2)}</div>
+             `;
+    };
+}
 }
 
 // Initialize
