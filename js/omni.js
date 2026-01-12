@@ -2085,21 +2085,18 @@ export class OmniProtocol {
             if (!matches) return;
 
             const card = document.createElement('div');
-            // Enhanced Card Classes for Visibility on Mobile
-            card.className = "group relative p-6 bg-zinc-900/40 border border-white/10 hover:border-white transition-all duration-300 cursor-pointer overflow-hidden rounded-xl animate-fade-in";
+            card.className = "p-4 bg-black border border-gray-800 hover:border-white rounded-lg cursor-pointer transition-all";
             card.onclick = () => this.openTool(id);
 
             card.innerHTML = `
-                <div class="protocol-icon absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity text-2xl md:text-3xl">${tool.icon}</div>
-                <div class="relative z-10">
-                    <div class="text-[10px] uppercase tracking-[0.2em] text-stone-500 mb-2 font-mono">${tool.category}</div>
-                    <h3 class="text-lg font-bold text-white mb-2 font-['Cinzel'] tracking-tight">${tool.name}</h3>
-                    <p class="text-xs text-stone-400 font-light leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">${tool.description}</p>
-                    <div class="flex items-center gap-2 text-[9px] uppercase tracking-widest text-white/20 group-hover:text-white transition-colors">
-                        <span>Execute</span>
-                        <span class="transform group-hover:translate-x-1 transition-transform">→</span>
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <div class="text-xs text-gray-500 uppercase mb-1">${tool.category}</div>
+                        <h3 class="text-lg font-semibold text-white">${tool.name}</h3>
                     </div>
+                    <span class="text-2xl">${tool.icon}</span>
                 </div>
+                <p class="text-sm text-gray-400">${tool.description}</p>
             `;
             container.appendChild(card);
         });
