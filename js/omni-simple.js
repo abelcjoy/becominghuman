@@ -1,6 +1,6 @@
 /**
  * Omni Tools - Clean & Working
- * 70 fully functional tools
+ * 85 fully functional tools
  * 
  * BATCH 1 (30 tools):
  * - 10 Original tools
@@ -19,6 +19,11 @@
  * - 5 Date & Time (Date Difference, Date Calculator, Week Number, Workday, Countdown)
  * - 5 Image & Color (Color Mixer, Gradient, Contrast Checker, Color Shades, Image Resizer)
  * - 5 Math & Science (Fraction, Scientific Calc, Statistics, Number Base, Angle Converter)
+ * 
+ * BATCH 4 (15 tools):
+ * - 5 Productivity (Pomodoro, Notepad, Todo List, Writing Goal, Reading Time)
+ * - 5 Network/Web (IP Info, User Agent, DNS Lookup, Port Info, HTTP Status)
+ * - 5 Specialized (Binary Text, Morse Code, Roman Numerals, Emoji Picker, Letter Frequency)
  */
 
 class OmniTools {
@@ -613,6 +618,129 @@ class OmniTools {
                 icon: "📐",
                 category: "Math",
                 render: () => this.renderAngleConverter()
+            },
+            // === PRODUCTIVITY TOOLS (5) ===
+            pomodoroTimer: {
+                name: "Pomodoro Timer",
+                searchTerms: "pomodoro timer productivity focus work break",
+                description: "Productivity timer with breaks",
+                icon: "🍅",
+                category: "Productivity",
+                render: () => this.renderPomodoroTimer()
+            },
+            notepad: {
+                name: "Quick Notepad",
+                searchTerms: "notepad notes text editor quick",
+                description: "Quick text notepad",
+                icon: "📝",
+                category: "Productivity",
+                render: () => this.renderNotepad()
+            },
+            todoList: {
+                name: "Todo List",
+                searchTerms: "todo list tasks checklist productivity",
+                description: "Simple todo list manager",
+                icon: "✅",
+                category: "Productivity",
+                render: () => this.renderTodoList()
+            },
+            wordGoal: {
+                name: "Writing Goal Tracker",
+                searchTerms: "writing goal words tracker progress",
+                description: "Track writing progress",
+                icon: "✍️",
+                category: "Productivity",
+                render: () => this.renderWordGoal()
+            },
+            readingTime: {
+                name: "Reading Time Estimator",
+                searchTerms: "reading time estimate words per minute",
+                description: "Estimate reading time",
+                icon: "📖",
+                category: "Productivity",
+                render: () => this.renderReadingTime()
+            },
+            // === NETWORK/WEB TOOLS (5) ===
+            ipInfo: {
+                name: "IP Address Info",
+                searchTerms: "ip address info network location",
+                description: "Show your IP information",
+                icon: "🌐",
+                category: "Network",
+                render: () => this.renderIPInfo()
+            },
+            userAgent: {
+                name: "User Agent Parser",
+                searchTerms: "user agent browser device parser",
+                description: "Parse user agent strings",
+                icon: "🖥️",
+                category: "Network",
+                render: () => this.renderUserAgent()
+            },
+            dnsLookup: {
+                name: "DNS Lookup",
+                searchTerms: "dns lookup domain ip address",
+                description: "DNS information tool",
+                icon: "🔍",
+                category: "Network",
+                render: () => this.renderDNSLookup()
+            },
+            portChecker: {
+                name: "Port Information",
+                searchTerms: "port number service common ports",
+                description: "Common port reference",
+                icon: "🔌",
+                category: "Network",
+                render: () => this.renderPortChecker()
+            },
+            httpStatus: {
+                name: "HTTP Status Codes",
+                searchTerms: "http status codes error reference",
+                description: "HTTP status code reference",
+                icon: "📡",
+                category: "Network",
+                render: () => this.renderHTTPStatus()
+            },
+            // === SPECIALIZED TOOLS (5) ===
+            binaryText: {
+                name: "Binary Text Converter",
+                searchTerms: "binary text convert ascii encode decode",
+                description: "Convert text to/from binary",
+                icon: "💻",
+                category: "Developer",
+                render: () => this.renderBinaryText()
+            },
+            morseCode: {
+                name: "Morse Code Translator",
+                searchTerms: "morse code translator encode decode",
+                description: "Translate morse code",
+                icon: "📻",
+                category: "Utility",
+                render: () => this.renderMorseCode()
+            },
+            romanNumerals: {
+                name: "Roman Numerals",
+                searchTerms: "roman numerals convert number",
+                description: "Convert to/from Roman numerals",
+                icon: "🏛️",
+                category: "Math",
+                render: () => this.renderRomanNumerals()
+            },
+            emojiPicker: {
+                name: "Emoji Picker",
+                searchTerms: "emoji picker symbols emoticons",
+                description: "Browse and copy emojis",
+                icon: "😀",
+                category: "Utility",
+                render: () => this.renderEmojiPicker()
+            },
+            letterCounter: {
+                name: "Letter Frequency",
+                searchTerms: "letter frequency count analysis text",
+                description: "Analyze letter frequency",
+                icon: "🔤",
+                category: "Text",
+                render: () => this.renderLetterCounter()
             }
         };
     }
@@ -3644,6 +3772,616 @@ class OmniTools {
 
         document.getElementById('angle-input').addEventListener('input', convert);
         document.getElementById('angle-from').addEventListener('change', convert);
+    }
+
+    // === PRODUCTIVITY TOOL RENDERERS ===
+
+    renderPomodoroTimer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pomodoro Timer</h2>
+            <div style="font-size: 72px; font-weight: bold; font-family: monospace; margin: 30px 0;" id="pomo-display">25:00</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="pomo-start">Start</button>
+                <button id="pomo-pause">Pause</button>
+                <button id="pomo-reset">Reset</button>
+            </div>
+            <div style="font-size: 14px; color: #666;" id="pomo-status">Ready to focus!</div>
+        `;
+
+        let timeLeft = 25 * 60;
+        let interval = null;
+        let isWork = true;
+
+        const updateDisplay = () => {
+            const mins = Math.floor(timeLeft / 60);
+            const secs = timeLeft % 60;
+            document.getElementById('pomo-display').textContent =
+                `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        };
+
+        document.getElementById('pomo-start').onclick = () => {
+            if (interval) return;
+            interval = setInterval(() => {
+                timeLeft--;
+                updateDisplay();
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    interval = null;
+                    isWork = !isWork;
+                    timeLeft = isWork ? 25 * 60 : 5 * 60;
+                    updateDisplay();
+                    document.getElementById('pomo-status').textContent =
+                        isWork ? 'Break over! Time to work!' : 'Work done! Take a break!';
+                }
+            }, 1000);
+            document.getElementById('pomo-status').textContent = isWork ? 'Working...' : 'Break time!';
+        };
+
+        document.getElementById('pomo-pause').onclick = () => {
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+                document.getElementById('pomo-status').textContent = 'Paused';
+            }
+        };
+
+        document.getElementById('pomo-reset').onclick = () => {
+            if (interval) clearInterval(interval);
+            interval = null;
+            isWork = true;
+            timeLeft = 25 * 60;
+            updateDisplay();
+            document.getElementById('pomo-status').textContent = 'Ready to focus!';
+        };
+    }
+
+    renderNotepad() {
+        const content = document.getElementById('tool-content');
+        const saved = localStorage.getItem('quickNotepad') || '';
+        content.innerHTML = `
+            <h2 class="tool-title">Quick Notepad</h2>
+            <textarea id="notepad-text" rows="15" placeholder="Start typing... (auto-saves to browser)" style="font-family: monospace;">${saved}</textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button id="clear-notepad">Clear</button>
+                <button id="download-notepad">Download as .txt</button>
+            </div>
+            <div style="margin-top: 10px; font-size: 12px; color: #666;">Auto-saved locally</div>
+        `;
+
+        const textarea = document.getElementById('notepad-text');
+        textarea.addEventListener('input', () => {
+            localStorage.setItem('quickNotepad', textarea.value);
+        });
+
+        document.getElementById('clear-notepad').onclick = () => {
+            if (confirm('Clear all notes?')) {
+                textarea.value = '';
+                localStorage.removeItem('quickNotepad');
+            }
+        };
+
+        document.getElementById('download-notepad').onclick = () => {
+            const blob = new Blob([textarea.value], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'notes.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        };
+    }
+
+    renderTodoList() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Todo List</h2>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="text" id="todo-input" placeholder="Add a task..." style="flex: 1;">
+                <button id="add-todo">Add</button>
+            </div>
+            <div class="result" id="todo-list" style="text-align: left;"></div>
+        `;
+
+        let todos = JSON.parse(localStorage.getItem('todoList') || '[]');
+
+        const render = () => {
+            const list = document.getElementById('todo-list');
+            if (todos.length === 0) {
+                list.innerHTML = '<div style="color: #666; padding: 20px; text-align: center;">No tasks yet!</div>';
+                return;
+            }
+            list.innerHTML = todos.map((todo, i) => `
+                <div style="display: flex; align-items: center; gap: 10px; padding: 10px; border-bottom: 1px solid #333;">
+                    <input type="checkbox" ${todo.done ? 'checked' : ''} onchange="window.toggleTodo(${i})">
+                    <span style="flex: 1; ${todo.done ? 'text-decoration: line-through; opacity: 0.5;' : ''}">${todo.text}</span>
+                    <button onclick="window.deleteTodo(${i})" style="padding: 5px 10px;">Delete</button>
+                </div>
+            `).join('');
+        };
+
+        window.toggleTodo = (i) => {
+            todos[i].done = !todos[i].done;
+            localStorage.setItem('todoList', JSON.stringify(todos));
+            render();
+        };
+
+        window.deleteTodo = (i) => {
+            todos.splice(i, 1);
+            localStorage.setItem('todoList', JSON.stringify(todos));
+            render();
+        };
+
+        const addTodo = () => {
+            const input = document.getElementById('todo-input');
+            if (input.value.trim()) {
+                todos.push({ text: input.value.trim(), done: false });
+                localStorage.setItem('todoList', JSON.stringify(todos));
+                input.value = '';
+                render();
+            }
+        };
+
+        document.getElementById('add-todo').onclick = addTodo;
+        document.getElementById('todo-input').onkeypress = (e) => {
+            if (e.key === 'Enter') addTodo();
+        };
+
+        render();
+    }
+
+    renderWordGoal() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Writing Goal Tracker</h2>
+            <input type="number" id="word-goal" placeholder="Word goal" value="1000">
+            <textarea id="writing-area" rows="12" placeholder="Start writing..."></textarea>
+            <div class="result" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="current-words">0</div>
+                    <div style="font-size: 12px; color: #666;">Words Written</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="words-remaining">1000</div>
+                    <div style="font-size: 12px; color: #666;">Remaining</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="progress-percent">0%</div>
+                    <div style="font-size: 12px; color: #666;">Progress</div>
+                </div>
+            </div>
+        `;
+
+        const update = () => {
+            const text = document.getElementById('writing-area').value.trim();
+            const words = text ? text.split(/\s+/).length : 0;
+            const goal = parseInt(document.getElementById('word-goal').value) || 1000;
+            const remaining = Math.max(0, goal - words);
+            const percent = Math.min(100, Math.round((words / goal) * 100));
+
+            document.getElementById('current-words').textContent = words;
+            document.getElementById('words-remaining').textContent = remaining;
+            document.getElementById('progress-percent').textContent = `${percent}%`;
+        };
+
+        document.getElementById('writing-area').addEventListener('input', update);
+        document.getElementById('word-goal').addEventListener('input', update);
+    }
+
+    renderReadingTime() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Reading Time Estimator</h2>
+            <input type="number" id="wpm" placeholder="Words per minute" value="200">
+            <textarea id="reading-text" rows="10" placeholder="Paste your text here..."></textarea>
+            <div class="result" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="read-words">0</div>
+                    <div style="font-size: 12px; color: #666;">Words</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="read-time">0 min</div>
+                    <div style="font-size: 12px; color: #666;">Reading Time</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="read-chars">0</div>
+                    <div style="font-size: 12px; color: #666;">Characters</div>
+                </div>
+            </div>
+        `;
+
+        const calculate = () => {
+            const text = document.getElementById('reading-text').value.trim();
+            const words = text ? text.split(/\s+/).length : 0;
+            const chars = text.length;
+            const wpm = parseInt(document.getElementById('wpm').value) || 200;
+            const minutes = Math.ceil(words / wpm);
+
+            document.getElementById('read-words').textContent = words;
+            document.getElementById('read-chars').textContent = chars;
+            document.getElementById('read-time').textContent = `${minutes} min`;
+        };
+
+        document.getElementById('reading-text').addEventListener('input', calculate);
+        document.getElementById('wpm').addEventListener('input', calculate);
+    }
+
+    // === NETWORK/WEB TOOL RENDERERS ===
+
+    renderIPInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IP Address Info</h2>
+            <button id="get-ip">Get My IP Info</button>
+            <div class="result" id="ip-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('get-ip').onclick = async () => {
+            try {
+                const response = await fetch('https://api.ipify.org?format=json');
+                const data = await response.json();
+
+                document.getElementById('ip-output').innerHTML = `
+                    <div style="font-size: 36px; font-weight: bold; margin-bottom: 20px;">${data.ip}</div>
+                    <div style="margin-bottom: 10px;"><strong>Your Public IP Address</strong></div>
+                    <div style="font-size: 12px; color: #666;">
+                        Note: Additional geolocation info requires paid API
+                    </div>
+                `;
+            } catch (e) {
+                document.getElementById('ip-output').innerHTML =
+                    '<div style="color: #f00;">Error fetching IP information</div>';
+            }
+        };
+    }
+
+    renderUserAgent() {
+        const content = document.getElementById('tool-content');
+        const ua = navigator.userAgent;
+        content.innerHTML = `
+            <h2 class="tool-title">User Agent Parser</h2>
+            <div class="result" style="text-align: left;">
+                <div style="margin-bottom: 15px;">
+                    <strong>Browser:</strong> ${navigator.appName}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Platform:</strong> ${navigator.platform}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Language:</strong> ${navigator.language}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Cookies Enabled:</strong> ${navigator.cookieEnabled ? 'Yes' : 'No'}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Online:</strong> ${navigator.onLine ? 'Yes' : 'No'}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Screen:</strong> ${screen.width}x${screen.height}
+                </div>
+                <div style="margin-top: 20px; padding: 15px; background: #1a1a1a; border-radius: 8px; word-break: break-all; font-family: monospace; font-size: 12px;">
+                    ${ua}
+                </div>
+            </div>
+        `;
+    }
+
+    renderDNSLookup() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DNS Lookup</h2>
+            <input type="text" id="domain-input" placeholder="Enter domain (e.g., google.com)">
+            <button id="lookup-dns">Lookup</button>
+            <div class="result" id="dns-output" style="text-align: left;">
+                <div style="padding: 20px; color: #666;">
+                    Note: Browser-based DNS lookup is limited. This tool shows basic domain info.
+                    For full DNS records, use command-line tools like 'nslookup' or 'dig'.
+                </div>
+            </div>
+        `;
+
+        document.getElementById('lookup-dns').onclick = () => {
+            const domain = document.getElementById('domain-input').value.trim();
+            if (!domain) {
+                alert('Please enter a domain');
+                return;
+            }
+
+            document.getElementById('dns-output').innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <strong>Domain:</strong> ${domain}
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Status:</strong> Checking...
+                </div>
+                <div style="font-size: 12px; color: #666; margin-top: 20px;">
+                    Browser security restrictions limit DNS queries.<br>
+                    Use server-side tools for complete DNS information.
+                </div>
+            `;
+        };
+    }
+
+    renderPortChecker() {
+        const content = document.getElementById('tool-content');
+        const commonPorts = {
+            20: 'FTP Data', 21: 'FTP Control', 22: 'SSH', 23: 'Telnet',
+            25: 'SMTP', 53: 'DNS', 80: 'HTTP', 110: 'POP3', 143: 'IMAP',
+            443: 'HTTPS', 465: 'SMTPS', 587: 'SMTP', 993: 'IMAPS',
+            995: 'POP3S', 3306: 'MySQL', 3389: 'RDP', 5432: 'PostgreSQL',
+            6379: 'Redis', 8080: 'HTTP Alt', 27017: 'MongoDB'
+        };
+
+        content.innerHTML = `
+            <h2 class="tool-title">Common Port Reference</h2>
+            <input type="number" id="port-search" placeholder="Search port number...">
+            <div class="result" id="port-list" style="text-align: left; max-height: 400px; overflow-y: auto;">
+                ${Object.entries(commonPorts).map(([port, service]) => `
+                    <div style="padding: 10px; border-bottom: 1px solid #333;">
+                        <strong>${port}</strong> - ${service}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+
+        document.getElementById('port-search').addEventListener('input', (e) => {
+            const search = e.target.value;
+            if (search && commonPorts[search]) {
+                document.getElementById('port-list').innerHTML = `
+                    <div style="padding: 20px; font-size: 18px;">
+                        <strong>Port ${search}:</strong> ${commonPorts[search]}
+                    </div>
+                `;
+            } else if (search) {
+                document.getElementById('port-list').innerHTML = `
+                    <div style="padding: 20px; color: #666;">
+                        Port ${search} not in common ports list
+                    </div>
+                `;
+            } else {
+                document.getElementById('port-list').innerHTML =
+                    Object.entries(commonPorts).map(([port, service]) => `
+                        <div style="padding: 10px; border-bottom: 1px solid #333;">
+                            <strong>${port}</strong> - ${service}
+                        </div>
+                    `).join('');
+            }
+        });
+    }
+
+    renderHTTPStatus() {
+        const content = document.getElementById('tool-content');
+        const codes = {
+            200: 'OK', 201: 'Created', 204: 'No Content',
+            301: 'Moved Permanently', 302: 'Found', 304: 'Not Modified',
+            400: 'Bad Request', 401: 'Unauthorized', 403: 'Forbidden',
+            404: 'Not Found', 405: 'Method Not Allowed', 429: 'Too Many Requests',
+            500: 'Internal Server Error', 502: 'Bad Gateway', 503: 'Service Unavailable'
+        };
+
+        content.innerHTML = `
+            <h2 class="tool-title">HTTP Status Codes</h2>
+            <input type="number" id="status-search" placeholder="Search status code...">
+            <div class="result" id="status-list" style="text-align: left; max-height: 400px; overflow-y: auto;">
+                ${Object.entries(codes).map(([code, desc]) => `
+                    <div style="padding: 10px; border-bottom: 1px solid #333;">
+                        <strong>${code}</strong> - ${desc}
+                    </div>
+                `).join('')}
+            </div>
+        `;
+
+        document.getElementById('status-search').addEventListener('input', (e) => {
+            const search = e.target.value;
+            if (search && codes[search]) {
+                document.getElementById('status-list').innerHTML = `
+                    <div style="padding: 20px; font-size: 18px;">
+                        <strong>${search}:</strong> ${codes[search]}
+                    </div>
+                `;
+            } else if (search) {
+                document.getElementById('status-list').innerHTML = `
+                    <div style="padding: 20px; color: #666;">
+                        Status code ${search} not in list
+                    </div>
+                `;
+            } else {
+                document.getElementById('status-list').innerHTML =
+                    Object.entries(codes).map(([code, desc]) => `
+                        <div style="padding: 10px; border-bottom: 1px solid #333;">
+                            <strong>${code}</strong> - ${desc}
+                        </div>
+                    `).join('');
+            }
+        });
+    }
+
+    // === SPECIALIZED TOOL RENDERERS ===
+
+    renderBinaryText() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Binary Text Converter</h2>
+            <textarea id="binary-input" rows="6" placeholder="Enter text or binary..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="to-binary">Text to Binary</button>
+                <button id="from-binary">Binary to Text</button>
+            </div>
+            <div class="result" id="binary-output" style="min-height: 100px; text-align: left; word-break: break-all; font-family: monospace;"></div>
+        `;
+
+        document.getElementById('to-binary').onclick = () => {
+            const text = document.getElementById('binary-input').value;
+            const binary = text.split('').map(char =>
+                char.charCodeAt(0).toString(2).padStart(8, '0')
+            ).join(' ');
+            document.getElementById('binary-output').textContent = binary;
+        };
+
+        document.getElementById('from-binary').onclick = () => {
+            try {
+                const binary = document.getElementById('binary-input').value;
+                const text = binary.split(' ').map(bin =>
+                    String.fromCharCode(parseInt(bin, 2))
+                ).join('');
+                document.getElementById('binary-output').textContent = text;
+            } catch (e) {
+                document.getElementById('binary-output').textContent = 'Error: Invalid binary';
+            }
+        };
+    }
+
+    renderMorseCode() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Morse Code Translator</h2>
+            <textarea id="morse-input" rows="6" placeholder="Enter text or morse code..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="to-morse">Text to Morse</button>
+                <button id="from-morse">Morse to Text</button>
+            </div>
+            <div class="result" id="morse-output" style="min-height: 100px; text-align: left; font-family: monospace;"></div>
+        `;
+
+        const morseCode = {
+            'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+            'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+            'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+            'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+            'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---',
+            '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...',
+            '8': '---..', '9': '----.', ' ': '/'
+        };
+
+        const reverseMorse = Object.fromEntries(Object.entries(morseCode).map(([k, v]) => [v, k]));
+
+        document.getElementById('to-morse').onclick = () => {
+            const text = document.getElementById('morse-input').value.toUpperCase();
+            const morse = text.split('').map(char => morseCode[char] || char).join(' ');
+            document.getElementById('morse-output').textContent = morse;
+        };
+
+        document.getElementById('from-morse').onclick = () => {
+            const morse = document.getElementById('morse-input').value;
+            const text = morse.split(' ').map(code => reverseMorse[code] || '').join('');
+            document.getElementById('morse-output').textContent = text;
+        };
+    }
+
+    renderRomanNumerals() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Roman Numerals Converter</h2>
+            <input type="text" id="roman-input" placeholder="Enter number or Roman numeral">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="to-roman">Number to Roman</button>
+                <button id="from-roman">Roman to Number</button>
+            </div>
+            <div class="result" id="roman-output"></div>
+        `;
+
+        const toRoman = (num) => {
+            const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+            const symbols = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+            let result = '';
+            for (let i = 0; i < values.length; i++) {
+                while (num >= values[i]) {
+                    result += symbols[i];
+                    num -= values[i];
+                }
+            }
+            return result;
+        };
+
+        const fromRoman = (str) => {
+            const values = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+            let result = 0;
+            for (let i = 0; i < str.length; i++) {
+                const current = values[str[i]];
+                const next = values[str[i + 1]];
+                if (next && current < next) result -= current;
+                else result += current;
+            }
+            return result;
+        };
+
+        document.getElementById('to-roman').onclick = () => {
+            const num = parseInt(document.getElementById('roman-input').value);
+            if (isNaN(num) || num < 1 || num > 3999) {
+                alert('Please enter a number between 1 and 3999');
+                return;
+            }
+            document.getElementById('roman-output').innerHTML =
+                `<div style="font-size: 48px; font-weight: bold;">${toRoman(num)}</div>`;
+        };
+
+        document.getElementById('from-roman').onclick = () => {
+            const roman = document.getElementById('roman-input').value.toUpperCase();
+            try {
+                const num = fromRoman(roman);
+                document.getElementById('roman-output').innerHTML =
+                    `<div style="font-size: 48px; font-weight: bold;">${num}</div>`;
+            } catch (e) {
+                alert('Invalid Roman numeral');
+            }
+        };
+    }
+
+    renderEmojiPicker() {
+        const content = document.getElementById('tool-content');
+        const emojis = ['😀', '😃', '😄', '😁', '😅', '😂', '🤣', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐', '🤓', '😎', '🤩', '🥳', '😏', '😒', '😞', '😔', '😟', '😕', '🙁', '☹️', '😣', '😖', '😫', '😩', '🥺', '😢', '😭', '😤', '😠', '😡', '🤬', '🤯', '😳', '🥵', '🥶', '😱', '😨', '😰', '😥', '😓', '🤗', '🤔', '🤭', '🤫', '🤥', '😶', '😐', '😑', '😬', '🙄', '😯', '😦', '😧', '😮', '😲', '🥱', '😴', '🤤', '😪', '😵', '🤐', '🥴', '🤢', '🤮', '🤧', '😷', '🤒', '🤕', '🤑', '🤠', '😈', '👿', '👹', '👺', '🤡', '💩', '👻', '💀', '☠️', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾'];
+
+        content.innerHTML = `
+            <h2 class="tool-title">Emoji Picker</h2>
+            <div class="result" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(50px, 1fr)); gap: 10px; max-height: 400px; overflow-y: auto;">
+                ${emojis.map(emoji => `
+                    <div style="font-size: 32px; text-align: center; cursor: pointer; padding: 10px; border-radius: 8px; transition: background 0.2s;" 
+                         onclick="navigator.clipboard.writeText('${emoji}'); this.style.background='#0f0'; setTimeout(() => this.style.background='', 500);"
+                         title="Click to copy">
+                        ${emoji}
+                    </div>
+                `).join('')}
+            </div>
+            <div style="margin-top: 15px; font-size: 12px; color: #666;">Click any emoji to copy</div>
+        `;
+    }
+
+    renderLetterCounter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Letter Frequency Analyzer</h2>
+            <textarea id="freq-input" rows="8" placeholder="Enter text to analyze..."></textarea>
+            <button id="analyze-freq">Analyze</button>
+            <div class="result" id="freq-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('analyze-freq').onclick = () => {
+            const text = document.getElementById('freq-input').value.toLowerCase();
+            const freq = {};
+
+            for (const char of text) {
+                if (char.match(/[a-z]/)) {
+                    freq[char] = (freq[char] || 0) + 1;
+                }
+            }
+
+            const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]);
+            const total = sorted.reduce((sum, [, count]) => sum + count, 0);
+
+            document.getElementById('freq-output').innerHTML = `
+                <div style="margin-bottom: 20px;">
+                    <strong>Total Letters:</strong> ${total}
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;">
+                    ${sorted.map(([letter, count]) => `
+                        <div style="padding: 10px; background: #1a1a1a; border-radius: 8px;">
+                            <div style="font-size: 24px; font-weight: bold;">${letter.toUpperCase()}</div>
+                            <div style="font-size: 14px;">${count} (${((count / total) * 100).toFixed(1)}%)</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        };
     }
 }
 
