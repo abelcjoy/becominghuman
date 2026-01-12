@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 450 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 470 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -20,6 +20,8 @@
  * BATCH 38: CarbonTrack + WaterFootprint + EnergyBulb + RecycleHelper + PlasticWaste + TreeOffset + EarthDay + CompostGuide + SolarSaving + ConservationRef
  * BATCH 39: UnitConvFood + OvenTemp + ServingsScale + PastaTimer + SteakGuide + EggGuide + RoastTime + CaffeineTrack + PantryCheck + SpaghettiMeasure
  * BATCH 40: MoodTracker + GratitudeLog + Pomodoro + BreatheGuide + HabitCheck + SleepCycles + WaterLog + QuietTimer + ScreenTimeLog + GoalSetter
+ * BATCH 41: GpaCalc + LetterGrad + StudySessions + Flashcards + LatinRoots + WorldCapitals + NumToRoman + RomanToNum + CaseConverter + WordFreq
+ * BATCH 42: NeedleConv + CrochetConv + GlueGuide + ResistorBands + ModelScale + CrossStitch + RingSize + DrillBit + ScrewRef + PaperSizes
  */
 
 class OmniTools {
@@ -3694,6 +3696,168 @@ class OmniTools {
                 icon: "🎯",
                 category: "Self-Improvement",
                 render: () => this.renderGoalSMART()
+            },
+            // === BATCH 41 - 460 TOOLS (EDUCATION II) ===
+            gpaCalc: {
+                name: "GPA Calculator",
+                searchTerms: "gpa calculator grade point average score",
+                description: "Calc 4.0 scale GPA",
+                icon: "🎓",
+                category: "Education",
+                render: () => this.renderGpaCalc()
+            },
+            letterGradSearch: {
+                name: "Letter Grade",
+                searchTerms: "letter grade percentage scale score converter",
+                description: "Percentage to Letter",
+                icon: "🅰️",
+                category: "Education",
+                render: () => this.renderLetterGradSearch()
+            },
+            studyPlanner: {
+                name: "Study Sessions",
+                searchTerms: "study session planner blocks time productivity",
+                description: "Plan focus blocks",
+                icon: "📚",
+                category: "Education",
+                render: () => this.renderStudyPlanner()
+            },
+            flashcardsBasic: {
+                name: "Flashcards",
+                searchTerms: "flashcards basic study tool memory quiz",
+                description: "Simple study helper",
+                icon: "🃏",
+                category: "Education",
+                render: () => this.renderFlashcardsBasic()
+            },
+            latinRoots: {
+                name: "Latin Roots",
+                searchTerms: "latin roots etymology prefixes suffixes meaning dictionary",
+                description: "Common root words",
+                icon: "🏛️",
+                category: "Education",
+                render: () => this.renderLatinRoots()
+            },
+            worldCapitals: {
+                name: "World Capitals",
+                searchTerms: "world capitals country city geography lookup",
+                description: "Country/Capital lookup",
+                icon: "🗺️",
+                category: "Education",
+                render: () => this.renderWorldCapitals()
+            },
+            numToRoman: {
+                name: "Num to Roman",
+                searchTerms: "number to roman numeral converter converter digits",
+                description: "Convert 1-3999",
+                icon: "Ⅰ",
+                category: "Education",
+                render: () => this.renderNumToRoman()
+            },
+            romanToNum: {
+                name: "Roman to Num",
+                searchTerms: "roman numeral to number converter converter digits",
+                description: "Convert to numbers",
+                icon: "Ⅴ",
+                category: "Education",
+                render: () => this.renderRomanToNum()
+            },
+            caseConverterExtra: {
+                name: "Case Converter",
+                searchTerms: "case converter uppercase lowercase titlecase sentencecase text",
+                description: "Modify text casing",
+                icon: "🔠",
+                category: "Education",
+                render: () => this.renderCaseConverterExtra()
+            },
+            wordFrequency: {
+                name: "Word Frequency",
+                searchTerms: "word frequency counter top words text analysis",
+                description: "Most common words",
+                icon: "📊",
+                category: "Education",
+                render: () => this.renderWordFrequency()
+            },
+            // === BATCH 42 - 470 TOOLS (HOBBIES II) ===
+            needleConv: {
+                name: "Needle Converter",
+                searchTerms: "knitting needle converter sizes mm us uk",
+                description: "Convert needle sizes",
+                icon: "🧶",
+                category: "Hobbies",
+                render: () => this.renderNeedleConv()
+            },
+            crochetConv: {
+                name: "Crochet Converter",
+                searchTerms: "crochet hook converter sizes mm us uk",
+                description: "Convert hook sizes",
+                icon: "🧶",
+                category: "Hobbies",
+                render: () => this.renderCrochetConv()
+            },
+            glueGuide: {
+                name: "The Glue Guide",
+                searchTerms: "glue guide materials plastic wood metal glass bond",
+                description: "What sticks to what?",
+                icon: "🧴",
+                category: "Hobbies",
+                render: () => this.renderGlueGuide()
+            },
+            resistorColor: {
+                name: "Resistor Bands",
+                searchTerms: "resistor color code bands calculator resistance ohm",
+                description: "4-band color reader",
+                icon: "🔋",
+                category: "Hobbies",
+                render: () => this.renderResistorColor()
+            },
+            modelScale: {
+                name: "Model Scaler",
+                searchTerms: "model scale calculator ratio miniature hobby",
+                description: "Scale model ratios",
+                icon: "🚜",
+                category: "Hobbies",
+                render: () => this.renderModelScale()
+            },
+            crossStitchSize: {
+                name: "Cross Stitch Calc",
+                searchTerms: "cross stitch fabric size calculator count aida",
+                description: "Calc fabric dimensions",
+                icon: "🧵",
+                category: "Hobbies",
+                render: () => this.renderCrossStitchSize()
+            },
+            ringSizeChart: {
+                name: "Ring Size Conv",
+                searchTerms: "ring size converter chart diameter us uk eu mm",
+                description: "International sizes",
+                icon: "💍",
+                category: "Hobbies",
+                render: () => this.renderRingSizeChart()
+            },
+            drillBitConv: {
+                name: "Drill Bit Conv",
+                searchTerms: "drill bit size converter fractional metric decimal mm",
+                description: "Fractional to Metric",
+                icon: "🔩",
+                category: "Hobbies",
+                render: () => this.renderDrillBitConv()
+            },
+            screwRef: {
+                name: "Screw Size Ref",
+                searchTerms: "screw size reference gauge diameter pilot hole",
+                description: "Screw thread gauge",
+                icon: "🔩",
+                category: "Hobbies",
+                render: () => this.renderScrewRef()
+            },
+            paperSizes: {
+                name: "Paper Sizes",
+                searchTerms: "paper size reference a4 a3 a5 dimensions mm inch",
+                description: "A-series dimensions",
+                icon: "📄",
+                category: "Hobbies",
+                render: () => this.renderPaperSizes()
             }
         };
     }
@@ -15933,6 +16097,378 @@ Online: ${n.onLine}
             <input type="text" placeholder="Relevant (Why?)" style="width:80%"><br>
             <input type="text" placeholder="Time-bound (When?)" style="width:80%"><br>
             <p style="font-size:0.7em; margin-top:10px;">SMART goals are 70% more likely to be achieved.</p>
+        `;
+    }
+
+    renderGpaCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">GPA Calculator</h2>
+            <div id="gpa-rows">
+                <div class="gpa-row" style="margin-bottom:5px;">
+                    Grade: <select class="gpa-g">
+                        <option value="4.0">A</option><option value="3.0">B</option>
+                        <option value="2.0">C</option><option value="1.0">D</option>
+                        <option value="0.0">F</option>
+                    </select>
+                    Credits: <input type="number" class="gpa-c" value="3" style="width:40px">
+                </div>
+            </div>
+            <button id="gpa-add">+ Add Course</button>
+            <button id="gpa-btn">Calc GPA</button>
+            <div id="gpa-res" class="result"></div>
+        `;
+        document.getElementById('gpa-add').onclick = () => {
+            const row = document.querySelector('.gpa-row').cloneNode(true);
+            document.getElementById('gpa-rows').appendChild(row);
+        };
+        document.getElementById('gpa-btn').onclick = () => {
+            const gs = document.querySelectorAll('.gpa-g');
+            const cs = document.querySelectorAll('.gpa-c');
+            let tP = 0, tC = 0;
+            gs.forEach((g, i) => {
+                const p = parseFloat(g.value);
+                const c = parseFloat(cs[i].value) || 0;
+                tP += p * c;
+                tC += c;
+            });
+            document.getElementById('gpa-res').textContent = `GPA: ${tC ? (tP / tC).toFixed(2) : "0.00"}`;
+        };
+    }
+
+    renderLetterGradSearch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Letter Grade</h2>
+            Score (%): <input type="number" id="lg-v" placeholder="e.g. 85">
+            <button id="lg-btn">Check</button>
+            <div id="lg-res" class="result"></div>
+        `;
+        document.getElementById('lg-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('lg-v').value);
+            let g = v >= 90 ? "A" : v >= 80 ? "B" : v >= 70 ? "C" : v >= 60 ? "D" : "F";
+            document.getElementById('lg-res').textContent = `Grade: ${g}`;
+        };
+    }
+
+    renderStudyPlanner() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Study Sessions</h2>
+            Total Minutes: <input type="number" id="sp-v" value="120" style="width:60px">
+            <button id="sp-btn">Plan Blocks</button>
+            <div id="sp-res" class="result"></div>
+        `;
+        document.getElementById('sp-btn').onclick = () => {
+            const v = parseInt(document.getElementById('sp-v').value);
+            const sessions = Math.floor(v / 30); // 25 work + 5 break
+            document.getElementById('sp-res').innerHTML = `
+                Strategy: <b>${sessions} Sessions</b><br>
+                - ${sessions} x 25m Focus<br>
+                - ${sessions - 1} x 5m Break<br>
+                - Final ${v - (sessions * 30)}m Review
+             `;
+        };
+    }
+
+    renderFlashcardsBasic() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flashcards</h2>
+            <div id="fc-card" style="width:200px; height:120px; border:2px solid #ccc; margin:20px auto; cursor:pointer; display:flex; align-items:center; justify-content:center; perspective:1000px;">
+                <div id="fc-inner" style="font-weight:bold; font-size:1.2em;">Question?</div>
+            </div>
+            <p>Click to flip</p>
+            <button id="fc-next">Next Card</button>
+        `;
+        const qs = [
+            { q: "Mitochondria?", a: "Powerhouse of cell" },
+            { q: "H2O?", a: "Water" },
+            { q: "Speed of light?", a: "299,792,458 m/s" },
+            { q: "Pi (3 chars)?", a: "3.14" }
+        ];
+        let cur = 0, flip = false;
+        const draw = () => {
+            document.getElementById('fc-inner').textContent = flip ? qs[cur].a : qs[cur].q;
+            document.getElementById('fc-inner').style.color = flip ? 'green' : 'black';
+        };
+        document.getElementById('fc-card').onclick = () => { flip = !flip; draw(); };
+        document.getElementById('fc-next').onclick = () => { cur = (cur + 1) % qs.length; flip = false; draw(); };
+    }
+
+    renderLatinRoots() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Latin Roots</h2>
+            <input type="text" id="lr-in" placeholder="Search prefix/root...">
+            <div id="lr-res" class="result" style="text-align:left; font-size:0.9em; max-height:200px; overflow:auto;"></div>
+        `;
+        const r = { "anti": "against", "aqua": "water", "audi": "hear", "bene": "good", "bio": "life", "chron": "time", "dict": "say", "graph": "write", "jur": "law", "logy": "study of" };
+        const draw = (f = "") => {
+            let h = "";
+            Object.entries(r).forEach(([k, v]) => {
+                if (k.includes(f.toLowerCase())) h += `<b>${k}-</b> : ${v}<br>`;
+            });
+            document.getElementById('lr-res').innerHTML = h;
+        };
+        document.getElementById('lr-in').oninput = (e) => draw(e.target.value);
+        draw();
+    }
+
+    renderWorldCapitals() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">World Capitals</h2>
+            <input type="text" id="wc-in" placeholder="Country...">
+            <div id="wc-res" class="result"></div>
+        `;
+        const db = { "France": "Paris", "Germany": "Berlin", "Japan": "Tokyo", "Brazil": "Brasilia", "Canada": "Ottawa", "Italy": "Rome", "Australia": "Canberra", "India": "New Delhi" };
+        document.getElementById('wc-in').oninput = (e) => {
+            const q = e.target.value;
+            document.getElementById('wc-res').textContent = db[q] || "Enter name (exact)";
+        };
+    }
+
+    renderNumToRoman() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Num to Roman</h2>
+            <input type="number" id="nr-v" value="10">
+            <button id="nr-btn">Convert</button>
+            <div id="nr-res" class="result"></div>
+        `;
+        document.getElementById('nr-btn').onclick = () => {
+            let num = parseInt(document.getElementById('nr-v').value);
+            const map = { M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1 };
+            let res = "";
+            for (let i in map) {
+                while (num >= map[i]) { res += i; num -= map[i]; }
+            }
+            document.getElementById('nr-res').textContent = res || "Not valid";
+        };
+    }
+
+    renderRomanToNum() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Roman to Num</h2>
+            <input type="text" id="rn-v" value="XIV">
+            <button id="rn-btn">Convert</button>
+            <div id="rn-res" class="result"></div>
+        `;
+        document.getElementById('rn-btn').onclick = () => {
+            const r = document.getElementById('rn-v').value.toUpperCase();
+            const map = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+            let res = 0;
+            for (let i = 0; i < r.length; i++) {
+                const cur = map[r[i]], next = map[r[i + 1]];
+                if (next > cur) { res += (next - cur); i++; }
+                else res += cur;
+            }
+            document.getElementById('rn-res').textContent = res || "Invalid";
+        };
+    }
+
+    renderCaseConverterExtra() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Case Converter</h2>
+            <textarea id="cc-in" style="width:90%; height:60px;"></textarea><br>
+            <button id="cc-up">UPPER</button>
+            <button id="cc-lo">lower</button>
+            <button id="cc-ti">Title Case</button>
+            <button id="cc-se">Sentence case</button>
+        `;
+        const el = document.getElementById('cc-in');
+        document.getElementById('cc-up').onclick = () => el.value = el.value.toUpperCase();
+        document.getElementById('cc-lo').onclick = () => el.value = el.value.toLowerCase();
+        document.getElementById('cc-ti').onclick = () => el.value = el.value.toLowerCase().split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
+        document.getElementById('cc-se').onclick = () => el.value = el.value.toLowerCase().charAt(0).toUpperCase() + el.value.toLowerCase().slice(1);
+    }
+
+    renderWordFrequency() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Word Frequency</h2>
+            <textarea id="wf-in" style="width:90%; height:60px;"></textarea>
+            <button id="wf-btn">Analyze</button>
+            <div id="wf-res" class="result" style="text-align:left; font-size:0.8em;"></div>
+        `;
+        document.getElementById('wf-btn').onclick = () => {
+            const words = document.getElementById('wf-in').value.toLowerCase().match(/\b\w+\b/g) || [];
+            const counts = {};
+            words.forEach(w => counts[w] = (counts[w] || 0) + 1);
+            const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+            document.getElementById('wf-res').innerHTML = sorted.map(e => `<b>${e[0]}</b>: ${e[1]}`).join('<br>');
+        };
+    }
+
+    renderNeedleConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Needle Size</h2>
+            <select id="nc-in">
+                <option value="2.0">2.0 mm (US 0)</option>
+                <option value="3.25">3.25 mm (US 3)</option>
+                <option value="4.0">4.0 mm (US 6)</option>
+                <option value="5.0">5.0 mm (US 8)</option>
+                <option value="6.0">6.0 mm (US 10)</option>
+            </select>
+            <div id="nc-res" class="result">Select to see equivalents</div>
+        `;
+        document.getElementById('nc-in').onchange = (e) => {
+            const v = e.target.value;
+            document.getElementById('nc-res').textContent = `Metric: ${v}mm | US: ${v == 4.0 ? 6 : v == 5.0 ? 8 : "?"}`;
+        };
+    }
+
+    renderCrochetConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Crochet Hook</h2>
+            <select id="ch-in">
+                <option value="2.25">2.25 mm (US B/1)</option>
+                <option value="3.5">3.5 mm (US E/4)</option>
+                <option value="4.25">4.25 mm (US G/6)</option>
+                <option value="5.0">5.0 mm (US H/8)</option>
+                <option value="6.0">6.0 mm (US J/10)</option>
+            </select>
+            <div id="ch-res" class="result">Select size</div>
+        `;
+        document.getElementById('ch-in').onchange = (e) => {
+            const v = e.target.value;
+            document.getElementById('ch-res').textContent = `Metric: ${v}mm | US Hook: ${v == 5.0 ? "H/8" : "?"}`;
+        };
+    }
+
+    renderGlueGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Glue Guide</h2>
+            A: <select id="gg-a"><option>Wood</option><option>Plastic</option><option>Metal</option></select>
+            + B: <select id="gg-b"><option>Wood</option><option>Plastic</option><option>Metal</option></select>
+            <button id="gg-btn">Best Glue?</button>
+            <div id="gg-res" class="result"></div>
+        `;
+        document.getElementById('gg-btn').onclick = () => {
+            const a = document.getElementById('gg-a').value, b = document.getElementById('gg-b').value;
+            let res = "Universal Adhesive";
+            if (a === "Wood" && b === "Wood") res = "PVA (Wood Glue)";
+            if (a === "Metal" || b === "Metal") res = "Epoxy or Cyanoacrylate";
+            document.getElementById('gg-res').textContent = `Recommended: ${res}`;
+        };
+    }
+
+    renderResistorColor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Resistor Bands</h2>
+            <select id="rb-1" style="background:#8b4513; color:white;"><option value="1">Brown</option><option value="2">Red</option><option value="4">Yellow</option></select>
+            <select id="rb-2" style="background:#000; color:white;"><option value="0">Black</option><option value="5">Green</option></select>
+            <select id="rb-3" style="background:#ffa500;"><option value="10">x10</option><option value="100">x100</option><option value="1000">x1k</option></select>
+            <button id="rb-btn">Calc Ω</button>
+            <div id="rb-res" class="result"></div>
+        `;
+        document.getElementById('rb-btn').onclick = () => {
+            const v1 = document.getElementById('rb-1').value;
+            const v2 = document.getElementById('rb-2').value;
+            const v3 = document.getElementById('rb-3').value;
+            document.getElementById('rb-res').textContent = `${(v1 + v2) * v3} Ω`;
+        };
+    }
+
+    renderModelScale() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Model Scaler</h2>
+            Real Size (cm): <input type="number" id="ms-v" value="100">
+            Scale: 1/<input type="number" id="ms-s" value="24" style="width:50px">
+            <button id="ms-btn">Calc Model</button>
+            <div id="ms-res" class="result"></div>
+        `;
+        document.getElementById('ms-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('ms-v').value);
+            const s = parseFloat(document.getElementById('ms-s').value);
+            document.getElementById('ms-res').textContent = `Model Size: ${(v / s).toFixed(2)} cm`;
+        };
+    }
+
+    renderCrossStitchSize() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cross Stitch</h2>
+            Stitches: <input type="number" id="cs-w" value="100"> x <input type="number" id="cs-h" value="140" style="width:50px"><br>
+            Aida Count: <input type="number" id="cs-c" value="14" style="width:50px"> (holes/inch)
+            <button id="cs-btn">Calc Fabric</button>
+            <div id="cs-res" class="result"></div>
+        `;
+        document.getElementById('cs-btn').onclick = () => {
+            const w = parseInt(document.getElementById('cs-w').value);
+            const h = parseInt(document.getElementById('cs-h').value);
+            const c = parseInt(document.getElementById('cs-c').value);
+            document.getElementById('cs-res').innerHTML = `Size: ${(w / c).toFixed(1)}" x ${(h / c).toFixed(1)}"<br><small>Add 2-3" border extra!</small>`;
+        };
+    }
+
+    renderRingSizeChart() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ring Sizes</h2>
+            Inside Diam (mm): <input type="number" id="rs-v" value="16.5" step="0.1">
+            <div id="rs-res" class="result">US Size: 6</div>
+        `;
+        document.getElementById('rs-v').oninput = (e) => {
+            const d = parseFloat(e.target.value);
+            document.getElementById('rs-res').textContent = `US Approx: ${d < 15 ? "?" : Math.round((d - 14.3) / 0.8 + 3)}`;
+        };
+    }
+
+    renderDrillBitConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Drill Bit Conv</h2>
+            Fraction: <select id="db-f">
+                <option value="1.59">1/16"</option>
+                <option value="3.18">1/8"</option>
+                <option value="4.76">3/16"</option>
+                <option value="6.35">1/4"</option>
+            </select>
+            <div id="db-res" class="result">Metric: 1.59 mm</div>
+        `;
+        document.getElementById('db-f').onchange = (e) => {
+            document.getElementById('db-res').textContent = `Metric: ${e.target.value} mm`;
+        };
+    }
+
+    renderScrewRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Screw Size</h2>
+            <select id="sr-v">
+                <option value='0.112"'>#4 (2.8mm)</option>
+                <option value='0.138"'>#6 (3.5mm)</option>
+                <option value='0.164"'>#8 (4.2mm)</option>
+                <option value='0.190"'>#10 (4.8mm)</option>
+            </select>
+            <div id="sr-res" class="result">Diameter: 0.112"</div>
+        `;
+        document.getElementById('sr-v').onchange = (e) => {
+            document.getElementById('sr-res').textContent = `Diameter: ${e.target.value}`;
+        };
+    }
+
+    renderPaperSizes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Paper Sizes</h2>
+            <select id="ps-v">
+                <option>A0 : 841 x 1189</option>
+                <option>A1 : 594 x 841</option>
+                <option>A2 : 420 x 594</option>
+                <option selected>A4 : 210 x 297</option>
+                <option>A5 : 148 x 210</option>
+            </select>
+            <div id="ps-res" class="result">Dimensions in mm</div>
         `;
     }
 }
