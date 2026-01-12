@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 370
-**Last Updated:** Batch 31 & 32 - 370 MILESTONE REACHED!
+**Total Tools:** 390
+**Last Updated:** Batch 33 & 34 (Finance II / Fun III)
 
-## Latest Additions (Batch 31 - Audio/Music)
-- BPM Tapper
-- Note Frequency Chart
-- Tone Generator
-- Scale Viewer
-- Interval Calculator
-- Chord Info
-- Delay Calculator
-- Audio Duration Est.
-- Semitone Transposer
-- Hz to Note Converter
+## Latest Additions (Batch 33 - Finance II)
+- CAGR Calculator
+- Rule of 72
+- Net Worth Calc
+- Debt to Income
+- Markup Calc
+- Simple Interest
+- Commission Calc
+- Gross Margin
+- Rental Yield
+- Cash Flow
 
-## Latest Additions (Batch 32 - Physics III - Waves/Electromagnetism)
-- Coulomb's Law
-- Snell's Law
-- Critical Angle
-- Wave Velocity
-- Doppler Effect
-- Magnetic Force
-- Pendulum Period
-- Escape Velocity
-- Gravitational Force
-- Photon Energy
+## Latest Additions (Batch 34 - Fun III)
+- Rock Paper Scissors (AI)
+- Magic 8 Ball
+- Trivia Generator (Mock)
+- Joke Generator
+- Quote Generator
+- Compliment Generator
+- Decision Maker
+- Team Generator
+- Coin Flip (Text/Visual)
+- Username Generator

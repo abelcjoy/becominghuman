@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 370 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 390 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -12,6 +12,8 @@
  * BATCH 30: JsonMinify + JsonValidate + CssPretty + HtmlPretty + SqlFormat + JwtGen + KeyCode + BrowserInfo + MimeLookup + GitCheat
  * BATCH 31: BpmTapper + NoteFreq + ToneGen + ScaleView + IntervalTrain + ChordBuild + DelayCalc + AudioDur + SemiTrans + HzToNote
  * BATCH 32: CoulombsLaw + SnellsLaw + CritAngle + WaveVel + Doppler + MagForce + Pendulum + EscapeVel + GravForce + PhotonEnergy
+ * BATCH 33: CAGR + RuleOf72 + NetWorth + DTI + Markup + SimpleInterest + Commission + Margin + RentalYield + CashFlow
+ * BATCH 34: RPS + Magic8 + Trivia + Jokes + Quotes + Compliments + Decision + Teams + CoinFlip + Usernames
  */
 
 class OmniTools {
@@ -3038,6 +3040,168 @@ class OmniTools {
                 icon: "💡",
                 category: "Physics",
                 render: () => this.renderPhotonEnergy()
+            },
+            // === BATCH 33 - 380 TOOLS (FINANCE II) ===
+            cagrCalc: {
+                name: "CAGR Calculator",
+                searchTerms: "cagr compound annual growth rate invest",
+                description: "Calc Annual Growth Rate",
+                icon: "📈",
+                category: "Finance",
+                render: () => this.renderCagrCalc()
+            },
+            ruleOf72: {
+                name: "Rule of 72",
+                searchTerms: "rule of 72 doubling time investment interest",
+                description: "Years to double money",
+                icon: "2️⃣",
+                category: "Finance",
+                render: () => this.renderRuleOf72()
+            },
+            netWorth: {
+                name: "Net Worth",
+                searchTerms: "net worth assets liabilities calc",
+                description: "Assets - Liabilities",
+                icon: "🏛️",
+                category: "Finance",
+                render: () => this.renderNetWorth()
+            },
+            debtToIncome: {
+                name: "Debt to Income",
+                searchTerms: "debt to income ratio dti loan mortgage",
+                description: "Calc DTI Ratio",
+                icon: "💳",
+                category: "Finance",
+                render: () => this.renderDebtToIncome()
+            },
+            markupCalc: {
+                name: "Markup Calculator",
+                searchTerms: "markup cost price profit percentage",
+                description: "Cost to Sales Price",
+                icon: "🏷️",
+                category: "Finance",
+                render: () => this.renderMarkupCalc()
+            },
+            simpleInterest: {
+                name: "Simple Interest",
+                searchTerms: "simple interest loan investment calc",
+                description: "Interest = P * r * t",
+                icon: "🏦",
+                category: "Finance",
+                render: () => this.renderSimpleInterest()
+            },
+            commissionCalc: {
+                name: "Commission Calc",
+                searchTerms: "commission sales percentage profit",
+                description: "Calc Sales Commission",
+                icon: "🤝",
+                category: "Finance",
+                render: () => this.renderCommissionCalc()
+            },
+            marginCalc2: {
+                name: "Margin Calculator",
+                searchTerms: "margin profit revenue cost calc",
+                description: "Calc Gross Margin %",
+                icon: "📊",
+                category: "Finance",
+                render: () => this.renderMarginCalc2()
+            },
+            rentalYield: {
+                name: "Rental Yield",
+                searchTerms: "rental yield property investment real estate",
+                description: "Gross/Net Rental Yield",
+                icon: "🏠",
+                category: "Finance",
+                render: () => this.renderRentalYield()
+            },
+            cashFlow: {
+                name: "Cash Flow",
+                searchTerms: "cash flow income expense budget description",
+                description: "Monthly Cash Flow",
+                icon: "💸",
+                category: "Finance",
+                render: () => this.renderCashFlow()
+            },
+            // === BATCH 34 - 390 TOOLS (FUN III) ===
+            rockPaperScissors: {
+                name: "Rock Paper Scissors",
+                searchTerms: "rock paper scissors game play random",
+                description: "Play against AI",
+                icon: "✂️",
+                category: "Fun",
+                render: () => this.renderRockPaperScissors()
+            },
+            magic8Ball: {
+                name: "Magic 8 Ball",
+                searchTerms: "magic 8 ball fortune teller random answer",
+                description: "Ask a Question",
+                icon: "🎱",
+                category: "Fun",
+                render: () => this.renderMagic8Ball()
+            },
+            triviaGen: {
+                name: "Trivia Generator",
+                searchTerms: "trivia question random fun facts",
+                description: "Random Trivia Question",
+                icon: "❓",
+                category: "Fun",
+                render: () => this.renderTriviaGen()
+            },
+            jokeGen: {
+                name: "Joke Generator",
+                searchTerms: "joke funny random humor laugh",
+                description: "Tell me a joke",
+                icon: "🤣",
+                category: "Fun",
+                render: () => this.renderJokeGen()
+            },
+            quoteGen: {
+                name: "Quote Generator",
+                searchTerms: "quote inspiration motivation random",
+                description: "Inspirational Quotes",
+                icon: "💬",
+                category: "Fun",
+                render: () => this.renderQuoteGen()
+            },
+            complimentGen: {
+                name: "Compliment Gen",
+                searchTerms: "compliment nice praise random kindness",
+                description: "Get a Compliment",
+                icon: "💖",
+                category: "Fun",
+                render: () => this.renderComplimentGen()
+            },
+            decisionMaker: {
+                name: "Decision Maker",
+                searchTerms: "decision maker yes no maybe help choose",
+                description: "Yes/No Helper",
+                icon: "🤔",
+                category: "Fun",
+                render: () => this.renderDecisionMaker()
+            },
+            teamGen: {
+                name: "Team Generator",
+                searchTerms: "team generator groups shuffle random",
+                description: "Split names into teams",
+                icon: "👥",
+                category: "Fun",
+                render: () => this.renderTeamGen()
+            },
+            coinFlipText: {
+                name: "Coin Flip",
+                searchTerms: "coin flip heads tails random",
+                description: "Heads or Tails?",
+                icon: "🪙",
+                category: "Fun",
+                render: () => this.renderCoinFlipText()
+            },
+            usernameGen: {
+                name: "Username Gen",
+                searchTerms: "username generator handle random profile",
+                description: "Generate Usernames",
+                icon: "👤",
+                category: "Fun",
+                render: () => this.renderUsernameGen()
             }
         };
     }
@@ -13615,7 +13779,380 @@ Online: ${n.onLine}
             }
         };
     }
+
+
+
+    renderCagrCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CAGR Calculator</h2>
+            <input type="number" id="cagr-bv" placeholder="Beginning Value">
+            <input type="number" id="cagr-ev" placeholder="Ending Value">
+            <input type="number" id="cagr-n" placeholder="Years (N)">
+            <button id="cagr-btn">Calc CAGR</button>
+            <div id="cagr-res" class="result"></div>
+        `;
+        document.getElementById('cagr-btn').onclick = () => {
+            const bv = parseFloat(document.getElementById('cagr-bv').value);
+            const ev = parseFloat(document.getElementById('cagr-ev').value);
+            const n = parseFloat(document.getElementById('cagr-n').value);
+            const cagr = Math.pow(ev / bv, 1 / n) - 1;
+            document.getElementById('cagr-res').textContent = `CAGR: ${(cagr * 100).toFixed(2)}%`;
+        };
+    }
+
+    renderRuleOf72() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rule of 72</h2>
+            <input type="number" id="r72-r" placeholder="Interest Rate %">
+            <button id="r72-btn">Calc Years</button>
+            <div id="r72-res" class="result"></div>
+        `;
+        document.getElementById('r72-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('r72-r').value);
+            document.getElementById('r72-res').textContent = `Doubles in ~${(72 / r).toFixed(1)} years`;
+        };
+    }
+
+    renderNetWorth() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Net Worth</h2>
+            <input type="number" id="nw-a" placeholder="Total Assets">
+            <input type="number" id="nw-l" placeholder="Total Liabilities">
+            <button id="nw-btn">Calc</button>
+            <div id="nw-res" class="result"></div>
+        `;
+        document.getElementById('nw-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('nw-a').value);
+            const l = parseFloat(document.getElementById('nw-l').value);
+            document.getElementById('nw-res').textContent = `Net Worth: $${(a - l).toLocaleString()}`;
+        };
+    }
+
+    renderDebtToIncome() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Debt to Income (DTI)</h2>
+            <input type="number" id="dti-md" placeholder="Monthly Debt">
+            <input type="number" id="dti-gi" placeholder="Gross Monthly Income">
+            <button id="dti-btn">Calc DTI</button>
+            <div id="dti-res" class="result"></div>
+        `;
+        document.getElementById('dti-btn').onclick = () => {
+            const d = parseFloat(document.getElementById('dti-md').value);
+            const i = parseFloat(document.getElementById('dti-gi').value);
+            document.getElementById('dti-res').textContent = `DTI Ratio: ${((d / i) * 100).toFixed(2)}%`;
+        };
+    }
+
+    renderMarkupCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Markup Calculator</h2>
+            <input type="number" id="mu-c" placeholder="Cost">
+            <input type="number" id="mu-m" placeholder="Markup %">
+            <button id="mu-btn">Calc Price</button>
+            <div id="mu-res" class="result"></div>
+        `;
+        document.getElementById('mu-btn').onclick = () => {
+            const c = parseFloat(document.getElementById('mu-c').value);
+            const m = parseFloat(document.getElementById('mu-m').value);
+            const p = c * (1 + m / 100);
+            document.getElementById('mu-res').textContent = `Sale Price: $${p.toFixed(2)}`;
+        };
+    }
+
+    renderSimpleInterest() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Simple Interest</h2>
+            <input type="number" id="si-p" placeholder="Principal">
+            <input type="number" id="si-r" placeholder="Rate %">
+            <input type="number" id="si-t" placeholder="Time (Years)">
+            <button id="si-btn">Calc Interest</button>
+            <div id="si-res" class="result"></div>
+        `;
+        document.getElementById('si-btn').onclick = () => {
+            const p = parseFloat(document.getElementById('si-p').value);
+            const r = parseFloat(document.getElementById('si-r').value);
+            const t = parseFloat(document.getElementById('si-t').value);
+            document.getElementById('si-res').innerHTML = `Interest: $${(p * r * t / 100).toFixed(2)}<br>Total: $${(p + p * r * t / 100).toFixed(2)}`;
+        };
+    }
+
+    renderCommissionCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Commission Calc</h2>
+            <input type="number" id="cc-sp" placeholder="Sale Price">
+            <input type="number" id="cc-r" placeholder="Commission %">
+            <button id="cc-btn">Calc Commission</button>
+            <div id="cc-res" class="result"></div>
+        `;
+        document.getElementById('cc-btn').onclick = () => {
+            const s = parseFloat(document.getElementById('cc-sp').value);
+            const r = parseFloat(document.getElementById('cc-r').value);
+            document.getElementById('cc-res').textContent = `Commission: $${(s * r / 100).toFixed(2)}`;
+        };
+    }
+
+    renderMarginCalc2() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gross Margin</h2>
+            <input type="number" id="mc2-r" placeholder="Revenue">
+            <input type="number" id="mc2-c" placeholder="COGS">
+            <button id="mc2-btn">Calc Margin</button>
+            <div id="mc2-res" class="result"></div>
+        `;
+        document.getElementById('mc2-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('mc2-r').value);
+            const c = parseFloat(document.getElementById('mc2-c').value);
+            const m = ((r - c) / r) * 100;
+            document.getElementById('mc2-res').textContent = `Margin: ${m.toFixed(2)}% | Profit: $${(r - c).toFixed(2)}`;
+        };
+    }
+
+    renderRentalYield() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rental Yield</h2>
+            <input type="number" id="ry-mr" placeholder="Monthly Rent">
+            <input type="number" id="ry-pp" placeholder="Property Price">
+            <button id="ry-btn">Calc Yield</button>
+            <div id="ry-res" class="result"></div>
+        `;
+        document.getElementById('ry-btn').onclick = () => {
+            const r = parseFloat(document.getElementById('ry-mr').value) * 12;
+            const p = parseFloat(document.getElementById('ry-pp').value);
+            document.getElementById('ry-res').textContent = `Gross Yield: ${((r / p) * 100).toFixed(2)}%`;
+        };
+    }
+
+    renderCashFlow() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cash Flow</h2>
+            <input type="number" id="cf-i" placeholder="Total Income">
+            <input type="number" id="cf-e" placeholder="Total Expenses">
+            <button id="cf-btn">Calc Flow</button>
+            <div id="cf-res" class="result"></div>
+        `;
+        document.getElementById('cf-btn').onclick = () => {
+            const i = parseFloat(document.getElementById('cf-i').value);
+            const e = parseFloat(document.getElementById('cf-e').value);
+            const f = i - e;
+            const color = f >= 0 ? 'green' : 'red';
+            document.getElementById('cf-res').innerHTML = `Cash Flow: <span style="color:${color}">$${f.toFixed(2)}</span>`;
+        };
+    }
+
+    renderRockPaperScissors() {
+        const content = document.getElementById('tool-content');
+        content.style.textAlign = 'center';
+        content.innerHTML = `
+            <h2 class="tool-title">Rock Paper Scissors</h2>
+            <div style="font-size:3em; margin:20px;">
+                <button id="rps-r" style="font-size:0.5em">🪨</button>
+                <button id="rps-p" style="font-size:0.5em">📄</button>
+                <button id="rps-s" style="font-size:0.5em">✂️</button>
+            </div>
+            <div id="rps-res" class="result" style="font-size:1.5em">Choose!</div>
+        `;
+        const play = (u) => {
+            const m = ['🪨', '📄', '✂️'];
+            const c = Math.floor(Math.random() * 3);
+            const r = (u === c) ? "Tie!" :
+                (u === 0 && c === 2) || (u === 1 && c === 0) || (u === 2 && c === 1) ? "You Win!" : "Bot Wins!";
+            document.getElementById('rps-res').innerHTML = `You: ${m[u]} vs Bot: ${m[c]}<br><b>${r}</b>`;
+        };
+        document.getElementById('rps-r').onclick = () => play(0);
+        document.getElementById('rps-p').onclick = () => play(1);
+        document.getElementById('rps-s').onclick = () => play(2);
+    }
+
+    renderMagic8Ball() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Magic 8 Ball</h2>
+            <input type="text" placeholder="Ask a question...">
+            <button id="m8-btn">Shake</button>
+            <div id="m8-res" class="result" style="font-size:1.5em; color:purple;"></div>
+        `;
+        document.getElementById('m8-btn').onclick = () => {
+            const a = ["Yes", "No", "Maybe", "Ask later", "Unlikely", "Definitely", "Cannot predict now", "Outlook good", "Very doubtful", "Signs point to yes"];
+            document.getElementById('m8-res').textContent = "🎱 " + a[Math.floor(Math.random() * a.length)];
+        };
+    }
+
+    renderTriviaGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Trivia Generator</h2>
+            <button id="tg-btn">New Question</button>
+            <div id="tg-q" style="margin:10px; font-weight:bold;"></div>
+            <div id="tg-a" class="result" style="display:none; color:green;"></div>
+            <button id="tg-show" style="display:none">Show Answer</button>
+        `;
+        const qs = [
+            { q: "Capital of Australia?", a: "Canberra" },
+            { q: "Chemical symbol for Gold?", a: "Au" },
+            { q: "Smallest planet?", a: "Mercury" },
+            { q: "Valar Morghulis means?", a: "All men must die" },
+            { q: "Binary for 5?", a: "101" },
+            { q: "Fastest land animal?", a: "Cheetah" },
+            { q: "Hardest natural substance?", a: "Diamond" }
+        ];
+        document.getElementById('tg-btn').onclick = () => {
+            const item = qs[Math.floor(Math.random() * qs.length)];
+            document.getElementById('tg-q').textContent = item.q;
+            document.getElementById('tg-a').textContent = item.a;
+            document.getElementById('tg-a').style.display = 'none';
+            document.getElementById('tg-show').style.display = 'inline-block';
+        };
+        document.getElementById('tg-show').onclick = () => document.getElementById('tg-a').style.display = 'block';
+    }
+
+    renderJokeGen() {
+        const content = document.getElementById('tool-content');
+        content.style.textAlign = 'center';
+        content.innerHTML = `
+            <h2 class="tool-title">Joke Generator</h2>
+            <button id="jg-btn">Tell me a joke</button>
+            <div id="jg-res" class="result" style="white-space:pre-wrap;"></div>
+        `;
+        const jokes = [
+            "Why do programmers prefer dark mode?\nBecause light attracts bugs.",
+            "How many programmers does it take to change a light bulb?\nNone, that's a hardware problem.",
+            "I tell you a UDP joke, but you might not get it.",
+            "A SQL query walks into a bar, walks up to two tables and asks...\n'Can I join you?'",
+            "Why was the JavaScript developer sad?\nBecause he didn't know how to 'null' his feelings."
+        ];
+        document.getElementById('jg-btn').onclick = () => {
+            document.getElementById('jg-res').textContent = jokes[Math.floor(Math.random() * jokes.length)];
+        };
+    }
+
+    renderQuoteGen() {
+        const content = document.getElementById('tool-content');
+        content.style.textAlign = 'center';
+        content.innerHTML = `
+            <h2 class="tool-title">Quote Generator</h2>
+            <button id="qg-btn">Inspire Me</button>
+            <blockquote id="qg-res" class="result" style="font-style:italic;"></blockquote>
+        `;
+        const q = [
+            "The only way to do great work is to love what you do. - Steve Jobs",
+            "Be the change that you wish to see in the world. - Gandhi",
+            "Stay hungry, stay foolish. - Stewart Brand",
+            "Simplicity is the ultimate sophistication. - Da Vinci",
+            "Code is poetry. - Unknown"
+        ];
+        document.getElementById('qg-btn').onclick = () => {
+            document.getElementById('qg-res').textContent = q[Math.floor(Math.random() * q.length)];
+        };
+    }
+
+    renderComplimentGen() {
+        const content = document.getElementById('tool-content');
+        content.style.textAlign = 'center';
+        content.innerHTML = `
+            <h2 class="tool-title">Compliment Gen</h2>
+            <button id="cg-btn">Compliment Me</button>
+            <div id="cg-res" class="result" style="color:#d63384; font-size:1.2em;"></div>
+        `;
+        const c = [
+            "You're doing great!",
+            "You have a great smile.",
+            "You're a smart cookie.",
+            "You are enough.",
+            "Your code is clean.",
+            "You bring out the best in other people."
+        ];
+        document.getElementById('cg-btn').onclick = () => {
+            document.getElementById('cg-res').textContent = c[Math.floor(Math.random() * c.length)];
+        };
+    }
+
+    renderDecisionMaker() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Decision Maker</h2>
+            <input type="text" placeholder="Should I...">
+            <button id="dm-btn">Decide</button>
+            <div id="dm-res" class="result"></div>
+        `;
+        document.getElementById('dm-btn').onclick = () => {
+            const r = Math.random();
+            const msg = r > 0.8 ? "Absolutely Yes! 🚀" :
+                r > 0.6 ? "Yes, go for it." :
+                    r > 0.4 ? "Maybe, think about it." :
+                        r > 0.2 ? "Probably not." : "Definitely No. 🛑";
+            document.getElementById('dm-res').textContent = msg;
+        };
+    }
+
+    renderTeamGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Team Generator</h2>
+            <textarea id="tg-names" placeholder="Names (comma separated)"></textarea>
+            <input type="number" id="tg-n" placeholder="Number of Teams">
+            <button id="tg-btn2">Generate Teams</button>
+            <div id="tg-res2" class="result"></div>
+        `;
+        document.getElementById('tg-btn2').onclick = () => {
+            const names = document.getElementById('tg-names').value.split(',').map(n => n.trim()).filter(n => n);
+            const n = parseInt(document.getElementById('tg-n').value);
+            if (!names.length || !n) return;
+            // Shuffle
+            for (let i = names.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [names[i], names[j]] = [names[j], names[i]];
+            }
+            const teams = Array.from({ length: n }, () => []);
+            names.forEach((name, i) => teams[i % n].push(name));
+            document.getElementById('tg-res2').innerHTML = teams.map((t, i) => `<b>Team ${i + 1}:</b> ${t.join(', ')}`).join('<br>');
+        };
+    }
+
+    renderCoinFlipText() {
+        const content = document.getElementById('tool-content');
+        content.style.textAlign = 'center';
+        content.innerHTML = `
+            <h2 class="tool-title">Coin Flip</h2>
+            <button id="cf-btn2" style="font-size:2em; padding:20px;">FLIP</button>
+            <div id="cf-res2" class="result" style="font-size:2em;"></div>
+        `;
+        document.getElementById('cf-btn2').onclick = () => {
+            document.getElementById('cf-res2').textContent = "Flipping...";
+            setTimeout(() => {
+                document.getElementById('cf-res2').textContent = Math.random() > 0.5 ? "HEADS 🦅" : "TAILS 🪙";
+            }, 500);
+        };
+    }
+
+    renderUsernameGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Username Generator</h2>
+            <input type="text" id="ug-in" placeholder="Base word (optional)">
+            <button id="ug-btn">Generate</button>
+            <div id="ug-res" class="result"></div>
+        `;
+        document.getElementById('ug-btn').onclick = () => {
+            const adj = ["Cool", "Happy", "Tech", "Cyber", "Neo", "Pixel", "Mega", "Micro", "Nano", "Hyper"];
+            const noun = ["Coder", "Ninja", "User", "Bot", "Surfer", "Geek", "Wizard", "Titan", "Phantom", "Glitch"];
+            const base = document.getElementById('ug-in').value || noun[Math.floor(Math.random() * noun.length)];
+            const p = adj[Math.floor(Math.random() * adj.length)];
+            const s = Math.floor(Math.random() * 1000);
+            document.getElementById('ug-res').textContent = `${p}${base}${s}`;
+        };
+    }
 }
+
 
 // Initialize
 new OmniTools();
