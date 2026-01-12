@@ -1,6 +1,6 @@
 /**
  * Omni Tools - Clean & Working
- * 50 fully functional tools
+ * 70 fully functional tools
  * 
  * BATCH 1 (30 tools):
  * - 10 Original tools
@@ -13,6 +13,12 @@
  * - 5 Finance Tools (ROI, Profit Margin, Break-Even, Savings Goal, Inflation)
  * - 5 Utility Tools (QR Generator, Random Picker, List Randomizer, Number Generator, Counter/Timer)
  * - 5 More Converters (Data Size, Area, Volume, Pressure, Energy)
+ * 
+ * BATCH 3 (20 tools):
+ * - 5 Health & Fitness (Calorie, Macro, Water Intake, Body Fat, Ideal Weight)
+ * - 5 Date & Time (Date Difference, Date Calculator, Week Number, Workday, Countdown)
+ * - 5 Image & Color (Color Mixer, Gradient, Contrast Checker, Color Shades, Image Resizer)
+ * - 5 Math & Science (Fraction, Scientific Calc, Statistics, Number Base, Angle Converter)
  */
 
 class OmniTools {
@@ -443,6 +449,170 @@ class OmniTools {
                 icon: "⚡",
                 category: "Converter",
                 render: () => this.renderEnergyConverter()
+            },
+            // === HEALTH & FITNESS TOOLS (5) ===
+            calorieCalculator: {
+                name: "Calorie Calculator",
+                searchTerms: "calorie bmr tdee daily energy expenditure",
+                description: "Calculate daily calorie needs",
+                icon: "🍎",
+                category: "Health",
+                render: () => this.renderCalorieCalculator()
+            },
+            macroCalculator: {
+                name: "Macro Calculator",
+                searchTerms: "macro protein carbs fat nutrition diet",
+                description: "Calculate macronutrient ratios",
+                icon: "🥗",
+                category: "Health",
+                render: () => this.renderMacroCalculator()
+            },
+            waterIntake: {
+                name: "Water Intake",
+                searchTerms: "water hydration intake daily recommended",
+                description: "Calculate daily water needs",
+                icon: "💧",
+                category: "Health",
+                render: () => this.renderWaterIntake()
+            },
+            bodyFat: {
+                name: "Body Fat Calculator",
+                searchTerms: "body fat percentage lean mass calculator",
+                description: "Estimate body fat percentage",
+                icon: "📊",
+                category: "Health",
+                render: () => this.renderBodyFat()
+            },
+            idealWeight: {
+                name: "Ideal Weight",
+                searchTerms: "ideal weight healthy bmi target",
+                description: "Calculate ideal body weight",
+                icon: "⚖️",
+                category: "Health",
+                render: () => this.renderIdealWeight()
+            },
+            // === DATE & TIME TOOLS (5) ===
+            dateDifference: {
+                name: "Date Difference",
+                searchTerms: "date difference calculator days between",
+                description: "Calculate days between dates",
+                icon: "📅",
+                category: "Date & Time",
+                render: () => this.renderDateDifference()
+            },
+            dateAdd: {
+                name: "Date Calculator",
+                searchTerms: "date add subtract calculator future past",
+                description: "Add/subtract days from date",
+                icon: "📆",
+                category: "Date & Time",
+                render: () => this.renderDateAdd()
+            },
+            weekNumber: {
+                name: "Week Number",
+                searchTerms: "week number year calendar iso",
+                description: "Get week number of year",
+                icon: "📋",
+                category: "Date & Time",
+                render: () => this.renderWeekNumber()
+            },
+            workdayCalculator: {
+                name: "Workday Calculator",
+                searchTerms: "workday business days calculator exclude weekends",
+                description: "Calculate business days",
+                icon: "💼",
+                category: "Date & Time",
+                render: () => this.renderWorkdayCalculator()
+            },
+            timeUntil: {
+                name: "Countdown Timer",
+                searchTerms: "countdown timer time until event",
+                description: "Time until a specific date",
+                icon: "⏳",
+                category: "Date & Time",
+                render: () => this.renderTimeUntil()
+            },
+            // === IMAGE & COLOR TOOLS (5) ===
+            colorMixer: {
+                name: "Color Mixer",
+                searchTerms: "color mixer blend combine rgb",
+                description: "Mix two colors together",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorMixer()
+            },
+            gradientGenerator: {
+                name: "Gradient Generator",
+                searchTerms: "gradient generator css linear color",
+                description: "Create CSS gradients",
+                icon: "🌈",
+                category: "Design",
+                render: () => this.renderGradientGenerator()
+            },
+            contrastChecker: {
+                name: "Contrast Checker",
+                searchTerms: "contrast checker accessibility wcag color",
+                description: "Check color contrast ratio",
+                icon: "👁️",
+                category: "Design",
+                render: () => this.renderContrastChecker()
+            },
+            colorShades: {
+                name: "Color Shades",
+                searchTerms: "color shades tints palette generator",
+                description: "Generate color shades/tints",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorShades()
+            },
+            imageResizer: {
+                name: "Image Size Calculator",
+                searchTerms: "image resize calculator aspect ratio dimensions",
+                description: "Calculate image dimensions",
+                icon: "🖼️",
+                category: "Design",
+                render: () => this.renderImageResizer()
+            },
+            // === MATH & SCIENCE TOOLS (5) ===
+            fractionCalculator: {
+                name: "Fraction Calculator",
+                searchTerms: "fraction calculator add subtract multiply divide",
+                description: "Calculate with fractions",
+                icon: "➗",
+                category: "Math",
+                render: () => this.renderFractionCalculator()
+            },
+            scientificCalculator: {
+                name: "Scientific Calculator",
+                searchTerms: "scientific calculator math functions sqrt log",
+                description: "Advanced math calculations",
+                icon: "🔬",
+                category: "Math",
+                render: () => this.renderScientificCalculator()
+            },
+            statisticsCalculator: {
+                name: "Statistics Calculator",
+                searchTerms: "statistics mean median mode average std dev",
+                description: "Calculate statistics",
+                icon: "📊",
+                category: "Math",
+                render: () => this.renderStatisticsCalculator()
+            },
+            numberBase: {
+                name: "Number Base Converter",
+                searchTerms: "number base binary hex decimal octal convert",
+                description: "Convert number bases",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderNumberBase()
+            },
+            unitCircle: {
+                name: "Angle Converter",
+                searchTerms: "angle degrees radians convert trigonometry",
+                description: "Convert angle units",
+                icon: "📐",
+                category: "Math",
+                render: () => this.renderAngleConverter()
             }
         };
     }
@@ -2593,6 +2763,887 @@ class OmniTools {
 
         document.getElementById('energy-input').addEventListener('input', convert);
         document.getElementById('energy-from').addEventListener('change', convert);
+    }
+
+    // === HEALTH & FITNESS TOOL RENDERERS ===
+
+    renderCalorieCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Calorie Calculator</h2>
+            <select id="gender" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="number" id="age-cal" placeholder="Age" min="15" max="100">
+            <input type="number" id="weight-cal" placeholder="Weight (kg)" step="0.1">
+            <input type="number" id="height-cal" placeholder="Height (cm)" step="0.1">
+            <select id="activity" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="1.2">Sedentary (little/no exercise)</option>
+                <option value="1.375">Lightly active (1-3 days/week)</option>
+                <option value="1.55">Moderately active (3-5 days/week)</option>
+                <option value="1.725">Very active (6-7 days/week)</option>
+                <option value="1.9">Extremely active (athlete)</option>
+            </select>
+            <button id="calc-calories">Calculate</button>
+            <div class="result" id="calorie-output" style="display: none; text-align: left;"></div>
+        `;
+
+        document.getElementById('calc-calories').onclick = () => {
+            const gender = document.getElementById('gender').value;
+            const age = parseInt(document.getElementById('age-cal').value);
+            const weight = parseFloat(document.getElementById('weight-cal').value);
+            const height = parseFloat(document.getElementById('height-cal').value);
+            const activity = parseFloat(document.getElementById('activity').value);
+
+            if (!age || !weight || !height) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            // Mifflin-St Jeor Equation
+            let bmr;
+            if (gender === 'male') {
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+            }
+
+            const tdee = bmr * activity;
+            const maintain = Math.round(tdee);
+            const lose = Math.round(tdee - 500);
+            const gain = Math.round(tdee + 500);
+
+            const output = document.getElementById('calorie-output');
+            output.style.display = 'block';
+            output.innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <strong>BMR:</strong> ${Math.round(bmr)} calories/day
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Maintain weight:</strong> ${maintain} calories/day
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Lose weight:</strong> ${lose} calories/day
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Gain weight:</strong> ${gain} calories/day
+                </div>
+            `;
+        };
+    }
+
+    renderMacroCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Macro Calculator</h2>
+            <input type="number" id="total-calories" placeholder="Total Daily Calories" step="100">
+            <select id="diet-type" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="balanced">Balanced (30/40/30)</option>
+                <option value="lowcarb">Low Carb (40/30/30)</option>
+                <option value="highprotein">High Protein (40/30/30)</option>
+                <option value="keto">Keto (70/25/5)</option>
+            </select>
+            <div class="result" id="macro-output" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div>
+                    <div style="font-size: 14px; color: #666;">PROTEIN</div>
+                    <div style="font-size: 28px; font-weight: bold;" id="protein">0g</div>
+                    <div style="font-size: 12px; color: #666;" id="protein-cal">0 cal</div>
+                </div>
+                <div>
+                    <div style="font-size: 14px; color: #666;">CARBS</div>
+                    <div style="font-size: 28px; font-weight: bold;" id="carbs">0g</div>
+                    <div style="font-size: 12px; color: #666;" id="carbs-cal">0 cal</div>
+                </div>
+                <div>
+                    <div style="font-size: 14px; color: #666;">FATS</div>
+                    <div style="font-size: 28px; font-weight: bold;" id="fats">0g</div>
+                    <div style="font-size: 12px; color: #666;" id="fats-cal">0 cal</div>
+                </div>
+            </div>
+        `;
+
+        const calculate = () => {
+            const calories = parseFloat(document.getElementById('total-calories').value) || 0;
+            const diet = document.getElementById('diet-type').value;
+
+            let proteinPercent, carbsPercent, fatsPercent;
+            if (diet === 'balanced') [proteinPercent, carbsPercent, fatsPercent] = [30, 40, 30];
+            else if (diet === 'lowcarb') [proteinPercent, carbsPercent, fatsPercent] = [40, 30, 30];
+            else if (diet === 'highprotein') [proteinPercent, carbsPercent, fatsPercent] = [40, 30, 30];
+            else[proteinPercent, carbsPercent, fatsPercent] = [25, 5, 70];
+
+            const proteinCal = calories * (proteinPercent / 100);
+            const carbsCal = calories * (carbsPercent / 100);
+            const fatsCal = calories * (fatsPercent / 100);
+
+            document.getElementById('protein').textContent = `${Math.round(proteinCal / 4)}g`;
+            document.getElementById('protein-cal').textContent = `${Math.round(proteinCal)} cal`;
+            document.getElementById('carbs').textContent = `${Math.round(carbsCal / 4)}g`;
+            document.getElementById('carbs-cal').textContent = `${Math.round(carbsCal)} cal`;
+            document.getElementById('fats').textContent = `${Math.round(fatsCal / 9)}g`;
+            document.getElementById('fats-cal').textContent = `${Math.round(fatsCal)} cal`;
+        };
+
+        document.getElementById('total-calories').addEventListener('input', calculate);
+        document.getElementById('diet-type').addEventListener('change', calculate);
+    }
+
+    renderWaterIntake() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Water Intake Calculator</h2>
+            <input type="number" id="weight-water" placeholder="Weight (kg)" step="0.1">
+            <input type="number" id="exercise-mins" placeholder="Exercise (minutes/day)" value="0">
+            <button id="calc-water">Calculate</button>
+            <div class="result" id="water-output" style="display: none;">
+                <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="water-amount"></div>
+                <div style="font-size: 14px; color: #666;">Recommended daily water intake</div>
+            </div>
+        `;
+
+        document.getElementById('calc-water').onclick = () => {
+            const weight = parseFloat(document.getElementById('weight-water').value);
+            const exercise = parseInt(document.getElementById('exercise-mins').value) || 0;
+
+            if (!weight) {
+                alert('Please enter your weight');
+                return;
+            }
+
+            const baseWater = weight * 0.033; // liters
+            const exerciseWater = (exercise / 30) * 0.35; // extra liters
+            const total = baseWater + exerciseWater;
+
+            const output = document.getElementById('water-output');
+            output.style.display = 'block';
+            document.getElementById('water-amount').textContent = `${total.toFixed(1)} L`;
+        };
+    }
+
+    renderBodyFat() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Body Fat Calculator (Navy Method)</h2>
+            <select id="gender-bf" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="number" id="height-bf" placeholder="Height (cm)" step="0.1">
+            <input type="number" id="neck-bf" placeholder="Neck circumference (cm)" step="0.1">
+            <input type="number" id="waist-bf" placeholder="Waist circumference (cm)" step="0.1">
+            <input type="number" id="hip-bf" placeholder="Hip circumference (cm) - Female only" step="0.1">
+            <button id="calc-bf">Calculate</button>
+            <div class="result" id="bf-output" style="display: none;"></div>
+        `;
+
+        document.getElementById('calc-bf').onclick = () => {
+            const gender = document.getElementById('gender-bf').value;
+            const height = parseFloat(document.getElementById('height-bf').value);
+            const neck = parseFloat(document.getElementById('neck-bf').value);
+            const waist = parseFloat(document.getElementById('waist-bf').value);
+            const hip = parseFloat(document.getElementById('hip-bf').value);
+
+            if (!height || !neck || !waist || (gender === 'female' && !hip)) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            let bodyFat;
+            if (gender === 'male') {
+                bodyFat = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+            } else {
+                bodyFat = 495 / (1.29579 - 0.35004 * Math.log10(waist + hip - neck) + 0.22100 * Math.log10(height)) - 450;
+            }
+
+            const output = document.getElementById('bf-output');
+            output.style.display = 'block';
+            output.innerHTML = `
+                <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;">${bodyFat.toFixed(1)}%</div>
+                <div style="font-size: 14px; color: #666;">Estimated Body Fat Percentage</div>
+            `;
+        };
+    }
+
+    renderIdealWeight() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ideal Weight Calculator</h2>
+            <select id="gender-iw" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="number" id="height-iw" placeholder="Height (cm)" step="0.1">
+            <button id="calc-iw">Calculate</button>
+            <div class="result" id="iw-output" style="display: none; text-align: left;"></div>
+        `;
+
+        document.getElementById('calc-iw').onclick = () => {
+            const gender = document.getElementById('gender-iw').value;
+            const height = parseFloat(document.getElementById('height-iw').value);
+
+            if (!height) {
+                alert('Please enter height');
+                return;
+            }
+
+            const heightInches = height / 2.54;
+            let robinson, miller, hamwi;
+
+            if (gender === 'male') {
+                robinson = 52 + 1.9 * (heightInches - 60);
+                miller = 56.2 + 1.41 * (heightInches - 60);
+                hamwi = 48 + 2.7 * (heightInches - 60);
+            } else {
+                robinson = 49 + 1.7 * (heightInches - 60);
+                miller = 53.1 + 1.36 * (heightInches - 60);
+                hamwi = 45.5 + 2.2 * (heightInches - 60);
+            }
+
+            const average = (robinson + miller + hamwi) / 3;
+
+            const output = document.getElementById('iw-output');
+            output.style.display = 'block';
+            output.innerHTML = `
+                <div style="font-size: 36px; font-weight: bold; margin-bottom: 20px;">${average.toFixed(1)} kg</div>
+                <div style="margin-bottom: 10px;"><strong>Robinson Formula:</strong> ${robinson.toFixed(1)} kg</div>
+                <div style="margin-bottom: 10px;"><strong>Miller Formula:</strong> ${miller.toFixed(1)} kg</div>
+                <div><strong>Hamwi Formula:</strong> ${hamwi.toFixed(1)} kg</div>
+            `;
+        };
+    }
+
+    // === DATE & TIME TOOL RENDERERS ===
+
+    renderDateDifference() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Date Difference Calculator</h2>
+            <input type="date" id="date-from">
+            <input type="date" id="date-to">
+            <div class="result" id="date-diff-output" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 15px;">
+                <div>
+                    <div style="font-size: 28px; font-weight: bold;" id="diff-days">0</div>
+                    <div style="font-size: 12px; color: #666;">Days</div>
+                </div>
+                <div>
+                    <div style="font-size: 28px; font-weight: bold;" id="diff-weeks">0</div>
+                    <div style="font-size: 12px; color: #666;">Weeks</div>
+                </div>
+                <div>
+                    <div style="font-size: 28px; font-weight: bold;" id="diff-months">0</div>
+                    <div style="font-size: 12px; color: #666;">Months</div>
+                </div>
+                <div>
+                    <div style="font-size: 28px; font-weight: bold;" id="diff-years">0</div>
+                    <div style="font-size: 12px; color: #666;">Years</div>
+                </div>
+            </div>
+        `;
+
+        const calculate = () => {
+            const from = new Date(document.getElementById('date-from').value);
+            const to = new Date(document.getElementById('date-to').value);
+
+            if (!from || !to || isNaN(from) || isNaN(to)) return;
+
+            const diff = Math.abs(to - from);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const weeks = Math.floor(days / 7);
+            const months = Math.floor(days / 30.44);
+            const years = Math.floor(days / 365.25);
+
+            document.getElementById('diff-days').textContent = days;
+            document.getElementById('diff-weeks').textContent = weeks;
+            document.getElementById('diff-months').textContent = months;
+            document.getElementById('diff-years').textContent = years;
+        };
+
+        document.getElementById('date-from').addEventListener('change', calculate);
+        document.getElementById('date-to').addEventListener('change', calculate);
+
+        // Set today's date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date-to').value = today;
+    }
+
+    renderDateAdd() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Date Calculator</h2>
+            <input type="date" id="start-date">
+            <input type="number" id="days-add" placeholder="Days to add/subtract" value="0">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="add-days">Add Days</button>
+                <button id="subtract-days">Subtract Days</button>
+            </div>
+            <div class="result" id="new-date-output"></div>
+        `;
+
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('start-date').value = today;
+
+        document.getElementById('add-days').onclick = () => {
+            const startDate = new Date(document.getElementById('start-date').value);
+            const days = parseInt(document.getElementById('days-add').value) || 0;
+
+            const newDate = new Date(startDate);
+            newDate.setDate(newDate.getDate() + days);
+
+            document.getElementById('new-date-output').innerHTML = `
+                <div style="font-size: 36px; font-weight: bold;">${newDate.toDateString()}</div>
+            `;
+        };
+
+        document.getElementById('subtract-days').onclick = () => {
+            const startDate = new Date(document.getElementById('start-date').value);
+            const days = parseInt(document.getElementById('days-add').value) || 0;
+
+            const newDate = new Date(startDate);
+            newDate.setDate(newDate.getDate() - days);
+
+            document.getElementById('new-date-output').innerHTML = `
+                <div style="font-size: 36px; font-weight: bold;">${newDate.toDateString()}</div>
+            `;
+        };
+    }
+
+    renderWeekNumber() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Week Number Calculator</h2>
+            <input type="date" id="week-date">
+            <button id="calc-week">Get Week Number</button>
+            <div class="result" id="week-output" style="display: none;">
+                <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="week-num"></div>
+                <div style="font-size: 14px; color: #666;">Week of the year</div>
+            </div>
+        `;
+
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('week-date').value = today;
+
+        document.getElementById('calc-week').onclick = () => {
+            const date = new Date(document.getElementById('week-date').value);
+            const firstDay = new Date(date.getFullYear(), 0, 1);
+            const days = Math.floor((date - firstDay) / (24 * 60 * 60 * 1000));
+            const weekNum = Math.ceil((days + firstDay.getDay() + 1) / 7);
+
+            const output = document.getElementById('week-output');
+            output.style.display = 'block';
+            document.getElementById('week-num').textContent = `Week ${weekNum}`;
+        };
+    }
+
+    renderWorkdayCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Workday Calculator</h2>
+            <input type="date" id="work-start">
+            <input type="date" id="work-end">
+            <button id="calc-workdays">Calculate Business Days</button>
+            <div class="result" id="workday-output" style="display: none;">
+                <div style="font-size: 48px; font-weight: bold; margin-bottom: 10px;" id="workdays"></div>
+                <div style="font-size: 14px; color: #666;">Business days (excluding weekends)</div>
+            </div>
+        `;
+
+        document.getElementById('calc-workdays').onclick = () => {
+            const start = new Date(document.getElementById('work-start').value);
+            const end = new Date(document.getElementById('work-end').value);
+
+            if (!start || !end || isNaN(start) || isNaN(end)) {
+                alert('Please select both dates');
+                return;
+            }
+
+            let workdays = 0;
+            const current = new Date(start);
+
+            while (current <= end) {
+                const day = current.getDay();
+                if (day !== 0 && day !== 6) workdays++;
+                current.setDate(current.getDate() + 1);
+            }
+
+            const output = document.getElementById('workday-output');
+            output.style.display = 'block';
+            document.getElementById('workdays').textContent = workdays;
+        };
+    }
+
+    renderTimeUntil() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Countdown Timer</h2>
+            <input type="datetime-local" id="target-datetime">
+            <button id="start-countdown">Start Countdown</button>
+            <div class="result" id="countdown-output" style="font-family: monospace; font-size: 36px; font-weight: bold;"></div>
+        `;
+
+        let interval = null;
+
+        document.getElementById('start-countdown').onclick = () => {
+            const target = new Date(document.getElementById('target-datetime').value);
+
+            if (!target || isNaN(target)) {
+                alert('Please select a date and time');
+                return;
+            }
+
+            if (interval) clearInterval(interval);
+
+            const updateCountdown = () => {
+                const now = new Date();
+                const diff = target - now;
+
+                if (diff <= 0) {
+                    document.getElementById('countdown-output').textContent = 'Time\'s up!';
+                    clearInterval(interval);
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('countdown-output').textContent =
+                    `${days}d ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            };
+
+            updateCountdown();
+            interval = setInterval(updateCountdown, 1000);
+        };
+    }
+
+    // === IMAGE & COLOR TOOL RENDERERS ===
+
+    renderColorMixer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Mixer</h2>
+            <input type="color" id="color1" value="#ff0000" style="width: 48%; height: 60px;">
+            <input type="color" id="color2" value="#0000ff" style="width: 48%; height: 60px;">
+            <div class="result" id="mixed-color" style="height: 100px; margin-top: 20px;"></div>
+            <div style="margin-top: 10px; font-family: monospace;" id="mixed-hex"></div>
+        `;
+
+        const mix = () => {
+            const c1 = document.getElementById('color1').value;
+            const c2 = document.getElementById('color2').value;
+
+            const r1 = parseInt(c1.slice(1, 3), 16);
+            const g1 = parseInt(c1.slice(3, 5), 16);
+            const b1 = parseInt(c1.slice(5, 7), 16);
+
+            const r2 = parseInt(c2.slice(1, 3), 16);
+            const g2 = parseInt(c2.slice(3, 5), 16);
+            const b2 = parseInt(c2.slice(5, 7), 16);
+
+            const r = Math.round((r1 + r2) / 2);
+            const g = Math.round((g1 + g2) / 2);
+            const b = Math.round((b1 + b2) / 2);
+
+            const mixed = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+
+            document.getElementById('mixed-color').style.background = mixed;
+            document.getElementById('mixed-hex').textContent = mixed.toUpperCase();
+        };
+
+        document.getElementById('color1').addEventListener('input', mix);
+        document.getElementById('color2').addEventListener('input', mix);
+        mix();
+    }
+
+    renderGradientGenerator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gradient Generator</h2>
+            <input type="color" id="grad-color1" value="#667eea" style="width: 48%; height: 60px;">
+            <input type="color" id="grad-color2" value="#764ba2" style="width: 48%; height: 60px;">
+            <select id="grad-direction" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="to right">Left to Right</option>
+                <option value="to bottom">Top to Bottom</option>
+                <option value="to bottom right">Diagonal</option>
+                <option value="135deg">45° Diagonal</option>
+            </select>
+            <div class="result" id="gradient-preview" style="height: 150px; margin-bottom: 20px;"></div>
+            <div class="result" style="font-family: monospace; font-size: 12px; text-align: left; word-break: break-all;" id="gradient-css"></div>
+        `;
+
+        const generate = () => {
+            const c1 = document.getElementById('grad-color1').value;
+            const c2 = document.getElementById('grad-color2').value;
+            const dir = document.getElementById('grad-direction').value;
+
+            const gradient = `linear-gradient(${dir}, ${c1}, ${c2})`;
+            document.getElementById('gradient-preview').style.background = gradient;
+            document.getElementById('gradient-css').textContent = `background: ${gradient};`;
+        };
+
+        document.getElementById('grad-color1').addEventListener('input', generate);
+        document.getElementById('grad-color2').addEventListener('input', generate);
+        document.getElementById('grad-direction').addEventListener('change', generate);
+        generate();
+    }
+
+    renderContrastChecker() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Contrast Checker</h2>
+            <input type="color" id="fg-color" value="#000000" style="width: 48%; height: 60px;">
+            <input type="color" id="bg-color" value="#ffffff" style="width: 48%; height: 60px;">
+            <div class="result" id="contrast-preview" style="height: 100px; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold;">
+                Sample Text
+            </div>
+            <div class="result" id="contrast-ratio" style="text-align: left;"></div>
+        `;
+
+        const check = () => {
+            const fg = document.getElementById('fg-color').value;
+            const bg = document.getElementById('bg-color').value;
+
+            document.getElementById('contrast-preview').style.color = fg;
+            document.getElementById('contrast-preview').style.background = bg;
+
+            // Calculate relative luminance
+            const getLuminance = (hex) => {
+                const rgb = [
+                    parseInt(hex.slice(1, 3), 16) / 255,
+                    parseInt(hex.slice(3, 5), 16) / 255,
+                    parseInt(hex.slice(5, 7), 16) / 255
+                ].map(v => v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+                return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+            };
+
+            const l1 = getLuminance(fg);
+            const l2 = getLuminance(bg);
+            const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+
+            const passAA = ratio >= 4.5 ? '✅' : '❌';
+            const passAAA = ratio >= 7 ? '✅' : '❌';
+
+            document.getElementById('contrast-ratio').innerHTML = `
+                <div style="font-size: 36px; font-weight: bold; margin-bottom: 15px;">${ratio.toFixed(2)}:1</div>
+                <div><strong>WCAG AA:</strong> ${passAA} (4.5:1 required)</div>
+                <div><strong>WCAG AAA:</strong> ${passAAA} (7:1 required)</div>
+            `;
+        };
+
+        document.getElementById('fg-color').addEventListener('input', check);
+        document.getElementById('bg-color').addEventListener('input', check);
+        check();
+    }
+
+    renderColorShades() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Shades Generator</h2>
+            <input type="color" id="base-color" value="#3b82f6" style="width: 100%; height: 60px;">
+            <div class="result" id="shades-output" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 20px;"></div>
+        `;
+
+        const generate = () => {
+            const base = document.getElementById('base-color').value;
+            const r = parseInt(base.slice(1, 3), 16);
+            const g = parseInt(base.slice(3, 5), 16);
+            const b = parseInt(base.slice(5, 7), 16);
+
+            let html = '';
+            for (let i = 0; i < 5; i++) {
+                const factor = 1 - (i * 0.2);
+                const nr = Math.round(r * factor);
+                const ng = Math.round(g * factor);
+                const nb = Math.round(b * factor);
+                const shade = `#${nr.toString(16).padStart(2, '0')}${ng.toString(16).padStart(2, '0')}${nb.toString(16).padStart(2, '0')}`;
+
+                html += `<div style="background: ${shade}; height: 80px; border-radius: 8px; display: flex; align-items: end; justify-content: center; padding: 10px; font-size: 10px;">${shade}</div>`;
+            }
+
+            document.getElementById('shades-output').innerHTML = html;
+        };
+
+        document.getElementById('base-color').addEventListener('input', generate);
+        generate();
+    }
+
+    renderImageResizer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Image Size Calculator</h2>
+            <input type="number" id="orig-width" placeholder="Original Width" step="1">
+            <input type="number" id="orig-height" placeholder="Original Height" step="1">
+            <input type="number" id="new-width" placeholder="New Width (leave empty)" step="1">
+            <input type="number" id="new-height" placeholder="New Height (leave empty)" step="1">
+            <div class="result" id="resize-output"></div>
+        `;
+
+        const calculate = () => {
+            const origW = parseFloat(document.getElementById('orig-width').value);
+            const origH = parseFloat(document.getElementById('orig-height').value);
+            const newW = parseFloat(document.getElementById('new-width').value);
+            const newH = parseFloat(document.getElementById('new-height').value);
+
+            if (!origW || !origH) return;
+
+            const aspectRatio = origW / origH;
+            let resultW, resultH;
+
+            if (newW && !newH) {
+                resultW = newW;
+                resultH = newW / aspectRatio;
+            } else if (newH && !newW) {
+                resultH = newH;
+                resultW = newH * aspectRatio;
+            } else if (newW && newH) {
+                resultW = newW;
+                resultH = newH;
+            } else {
+                return;
+            }
+
+            document.getElementById('resize-output').innerHTML = `
+                <div style="font-size: 28px; font-weight: bold;">${Math.round(resultW)} × ${Math.round(resultH)}</div>
+                <div style="font-size: 14px; color: #666; margin-top: 10px;">Aspect Ratio: ${aspectRatio.toFixed(2)}:1</div>
+            `;
+        };
+
+        document.getElementById('orig-width').addEventListener('input', calculate);
+        document.getElementById('orig-height').addEventListener('input', calculate);
+        document.getElementById('new-width').addEventListener('input', calculate);
+        document.getElementById('new-height').addEventListener('input', calculate);
+    }
+
+    // === MATH & SCIENCE TOOL RENDERERS ===
+
+    renderFractionCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fraction Calculator</h2>
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin-bottom: 20px;">
+                <input type="number" id="frac1-num" placeholder="Numerator">
+                <span>/</span>
+                <input type="number" id="frac1-den" placeholder="Denominator">
+            </div>
+            <select id="frac-op" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="+">Add (+)</option>
+                <option value="-">Subtract (-)</option>
+                <option value="*">Multiply (×)</option>
+                <option value="/">Divide (÷)</option>
+            </select>
+            <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: center; margin-bottom: 20px;">
+                <input type="number" id="frac2-num" placeholder="Numerator">
+                <span>/</span>
+                <input type="number" id="frac2-den" placeholder="Denominator">
+            </div>
+            <button id="calc-frac">Calculate</button>
+            <div class="result" id="frac-output"></div>
+        `;
+
+        const gcd = (a, b) => b === 0 ? a : gcd(b, a % b);
+
+        document.getElementById('calc-frac').onclick = () => {
+            const n1 = parseInt(document.getElementById('frac1-num').value);
+            const d1 = parseInt(document.getElementById('frac1-den').value);
+            const n2 = parseInt(document.getElementById('frac2-num').value);
+            const d2 = parseInt(document.getElementById('frac2-den').value);
+            const op = document.getElementById('frac-op').value;
+
+            if (!n1 || !d1 || !n2 || !d2 || d1 === 0 || d2 === 0) {
+                alert('Please enter valid fractions');
+                return;
+            }
+
+            let resultNum, resultDen;
+
+            if (op === '+') {
+                resultNum = n1 * d2 + n2 * d1;
+                resultDen = d1 * d2;
+            } else if (op === '-') {
+                resultNum = n1 * d2 - n2 * d1;
+                resultDen = d1 * d2;
+            } else if (op === '*') {
+                resultNum = n1 * n2;
+                resultDen = d1 * d2;
+            } else {
+                resultNum = n1 * d2;
+                resultDen = d1 * n2;
+            }
+
+            const divisor = gcd(Math.abs(resultNum), Math.abs(resultDen));
+            resultNum /= divisor;
+            resultDen /= divisor;
+
+            document.getElementById('frac-output').innerHTML = `
+                <div style="font-size: 48px; font-weight: bold;">${resultNum} / ${resultDen}</div>
+                <div style="font-size: 18px; color: #666; margin-top: 10px;">= ${(resultNum / resultDen).toFixed(4)}</div>
+            `;
+        };
+    }
+
+    renderScientificCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scientific Calculator</h2>
+            <input type="number" id="sci-input" placeholder="Enter number" step="any">
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                <button id="sqrt">√ Square Root</button>
+                <button id="square">x² Square</button>
+                <button id="cube">x³ Cube</button>
+                <button id="log">log₁₀</button>
+                <button id="ln">ln (natural log)</button>
+                <button id="exp">eˣ</button>
+                <button id="sin">sin</button>
+                <button id="cos">cos</button>
+                <button id="tan">tan</button>
+            </div>
+            <div class="result" id="sci-output"></div>
+        `;
+
+        const calc = (fn, label) => {
+            const val = parseFloat(document.getElementById('sci-input').value);
+            if (isNaN(val)) {
+                alert('Please enter a valid number');
+                return;
+            }
+            const result = fn(val);
+            document.getElementById('sci-output').innerHTML = `
+                <div style="font-size: 14px; color: #666;">${label}</div>
+                <div style="font-size: 36px; font-weight: bold;">${result.toFixed(6)}</div>
+            `;
+        };
+
+        document.getElementById('sqrt').onclick = () => calc(Math.sqrt, '√x');
+        document.getElementById('square').onclick = () => calc(x => x * x, 'x²');
+        document.getElementById('cube').onclick = () => calc(x => x * x * x, 'x³');
+        document.getElementById('log').onclick = () => calc(Math.log10, 'log₁₀(x)');
+        document.getElementById('ln').onclick = () => calc(Math.log, 'ln(x)');
+        document.getElementById('exp').onclick = () => calc(Math.exp, 'eˣ');
+        document.getElementById('sin').onclick = () => calc(x => Math.sin(x * Math.PI / 180), 'sin(x°)');
+        document.getElementById('cos').onclick = () => calc(x => Math.cos(x * Math.PI / 180), 'cos(x°)');
+        document.getElementById('tan').onclick = () => calc(x => Math.tan(x * Math.PI / 180), 'tan(x°)');
+    }
+
+    renderStatisticsCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Statistics Calculator</h2>
+            <textarea id="stats-input" rows="8" placeholder="Enter numbers (one per line or comma-separated)"></textarea>
+            <button id="calc-stats">Calculate Statistics</button>
+            <div class="result" id="stats-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('calc-stats').onclick = () => {
+            const input = document.getElementById('stats-input').value;
+            const numbers = input.split(/[,\n]/).map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
+
+            if (numbers.length === 0) {
+                alert('Please enter valid numbers');
+                return;
+            }
+
+            numbers.sort((a, b) => a - b);
+
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            const mean = sum / numbers.length;
+            const median = numbers.length % 2 === 0
+                ? (numbers[numbers.length / 2 - 1] + numbers[numbers.length / 2]) / 2
+                : numbers[Math.floor(numbers.length / 2)];
+
+            const variance = numbers.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0) / numbers.length;
+            const stdDev = Math.sqrt(variance);
+
+            document.getElementById('stats-output').innerHTML = `
+                <div style="margin-bottom: 10px;"><strong>Count:</strong> ${numbers.length}</div>
+                <div style="margin-bottom: 10px;"><strong>Sum:</strong> ${sum.toFixed(2)}</div>
+                <div style="margin-bottom: 10px;"><strong>Mean:</strong> ${mean.toFixed(2)}</div>
+                <div style="margin-bottom: 10px;"><strong>Median:</strong> ${median.toFixed(2)}</div>
+                <div style="margin-bottom: 10px;"><strong>Std Dev:</strong> ${stdDev.toFixed(2)}</div>
+                <div style="margin-bottom: 10px;"><strong>Min:</strong> ${numbers[0]}</div>
+                <div><strong>Max:</strong> ${numbers[numbers.length - 1]}</div>
+            `;
+        };
+    }
+
+    renderNumberBase() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Number Base Converter</h2>
+            <input type="text" id="base-input" placeholder="Enter number">
+            <select id="base-from" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="10">Decimal (Base 10)</option>
+                <option value="2">Binary (Base 2)</option>
+                <option value="8">Octal (Base 8)</option>
+                <option value="16">Hexadecimal (Base 16)</option>
+            </select>
+            <div class="result" id="base-output" style="text-align: left;"></div>
+        `;
+
+        const convert = () => {
+            const input = document.getElementById('base-input').value.trim();
+            const fromBase = parseInt(document.getElementById('base-from').value);
+
+            if (!input) return;
+
+            try {
+                const decimal = parseInt(input, fromBase);
+                if (isNaN(decimal)) {
+                    document.getElementById('base-output').textContent = 'Invalid input';
+                    return;
+                }
+
+                document.getElementById('base-output').innerHTML = `
+                    <div style="margin-bottom: 10px;"><strong>Decimal:</strong> ${decimal}</div>
+                    <div style="margin-bottom: 10px;"><strong>Binary:</strong> ${decimal.toString(2)}</div>
+                    <div style="margin-bottom: 10px;"><strong>Octal:</strong> ${decimal.toString(8)}</div>
+                    <div><strong>Hexadecimal:</strong> ${decimal.toString(16).toUpperCase()}</div>
+                `;
+            } catch (e) {
+                document.getElementById('base-output').textContent = 'Error converting number';
+            }
+        };
+
+        document.getElementById('base-input').addEventListener('input', convert);
+        document.getElementById('base-from').addEventListener('change', convert);
+    }
+
+    renderAngleConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Angle Converter</h2>
+            <input type="number" id="angle-input" placeholder="Enter angle" step="0.01">
+            <select id="angle-from" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="degrees">Degrees</option>
+                <option value="radians">Radians</option>
+                <option value="gradians">Gradians</option>
+            </select>
+            <div class="result" id="angle-output" style="text-align: left;">
+                <div style="margin-bottom: 10px;"><strong>Degrees:</strong> <span id="degrees">0</span>°</div>
+                <div style="margin-bottom: 10px;"><strong>Radians:</strong> <span id="radians">0</span> rad</div>
+                <div><strong>Gradians:</strong> <span id="gradians">0</span> gon</div>
+            </div>
+        `;
+
+        const convert = () => {
+            const value = parseFloat(document.getElementById('angle-input').value) || 0;
+            const from = document.getElementById('angle-from').value;
+
+            let degrees;
+            if (from === 'degrees') degrees = value;
+            else if (from === 'radians') degrees = value * (180 / Math.PI);
+            else degrees = value * 0.9;
+
+            const radians = degrees * (Math.PI / 180);
+            const gradians = degrees / 0.9;
+
+            document.getElementById('degrees').textContent = degrees.toFixed(4);
+            document.getElementById('radians').textContent = radians.toFixed(4);
+            document.getElementById('gradians').textContent = gradians.toFixed(4);
+        };
+
+        document.getElementById('angle-input').addEventListener('input', convert);
+        document.getElementById('angle-from').addEventListener('change', convert);
     }
 }
 
