@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 170 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 190 ELITE TOOLS! 💎
  * 
- * BATCH 1-10: 150 tools across all categories
- * BATCH 11: Color Mixer + Harmonies + Contrast + Gradient + Shade + ImgColor + HexPMS + CMYK + HSL + ColorBlind
- * BATCH 12: JSON Val + XML Fmt + SQL Min + JS Min + CSS Min + Lorem + Slug + TextDiff + Email Obf + UUID
+ * BATCH 1-12: 170 tools across all categories
+ * BATCH 13: Mean/Med/Mode + StdDev + Permutations + Combinations + Z-Score + ConfInt + MarginErr + Poisson + GeoMean + HarMean
+ * BATCH 14: List Picker + Shuffler + RandDate + RandTime + RandMAC + RandIP + StrRev + TextRepeat + TextTrunc + LineEnum
  */
 
 class OmniTools {
@@ -1426,6 +1426,168 @@ class OmniTools {
                 icon: "🆔",
                 category: "Developer",
                 render: () => this.renderUuidGen()
+            },
+            // === BATCH 13 - 180 TOOLS (STATISTICS) ===
+            meanMedMode: {
+                name: "Mean/Median/Mode",
+                searchTerms: "mean median mode average statistics",
+                description: "Calc central tendencies",
+                icon: "📊",
+                category: "Math",
+                render: () => this.renderMeanMedMode()
+            },
+            stdDev: {
+                name: "Standard Deviation",
+                searchTerms: "standard deviation variance statistics population sample",
+                description: "Calc SD and Variance",
+                icon: "📉",
+                category: "Math",
+                render: () => this.renderStdDev()
+            },
+            permCalc: {
+                name: "Permutations (nPr)",
+                searchTerms: "permutations npr combinatorics math",
+                description: "Calculate ordered subsets",
+                icon: "🔢",
+                category: "Math",
+                render: () => this.renderPermCalc()
+            },
+            combCalc: {
+                name: "Combinations (nCr)",
+                searchTerms: "combinations ncr combinatorics math",
+                description: "Calculate unordered subsets",
+                icon: "🎱",
+                category: "Math",
+                render: () => this.renderCombCalc()
+            },
+            zScore: {
+                name: "Z-Score Calculator",
+                searchTerms: "z-score statistics probability normal distribution",
+                description: "Calculate standard score",
+                icon: "📐",
+                category: "Math",
+                render: () => this.renderZScore()
+            },
+            confInt: {
+                name: "Confidence Interval",
+                searchTerms: "confidence interval statistics mean sample",
+                description: "Calc means confidence info",
+                icon: "🖇️",
+                category: "Math",
+                render: () => this.renderConfInt()
+            },
+            marginErr: {
+                name: "Margin of Error",
+                searchTerms: "margin of error survey statistics",
+                description: "Calculate survey error",
+                icon: "🎯",
+                category: "Math",
+                render: () => this.renderMarginErr()
+            },
+            poissonDist: {
+                name: "Poisson Distribution",
+                searchTerms: "poisson distribution probability statistics",
+                description: "Calc Poisson probability",
+                icon: "🐟",
+                category: "Math",
+                render: () => this.renderPoissonDist()
+            },
+            geoMean: {
+                name: "Geometric Mean",
+                searchTerms: "geometric mean average growth rates",
+                description: "Calculate geometric mean",
+                icon: "✖️",
+                category: "Math",
+                render: () => this.renderGeoMean()
+            },
+            harMean: {
+                name: "Harmonic Mean",
+                searchTerms: "harmonic mean average rates",
+                description: "Calculate harmonic mean",
+                icon: "🎵",
+                category: "Math",
+                render: () => this.renderHarMean()
+            },
+            // === BATCH 14 - 190 TOOLS (RANDOM/STRING) ===
+            listPicker: {
+                name: "Random Picker",
+                searchTerms: "random list picker choice generator",
+                description: "Pick item from list",
+                icon: "🎲",
+                category: "Random",
+                render: () => this.renderListPicker()
+            },
+            listShuffle: {
+                name: "List Shuffler",
+                searchTerms: "list shuffler random sort order",
+                description: "Randomize list order",
+                icon: "🔀",
+                category: "Random",
+                render: () => this.renderListShuffle()
+            },
+            randDate: {
+                name: "Random Date",
+                searchTerms: "random date generator time",
+                description: "Generate random dates",
+                icon: "📅",
+                category: "Random",
+                render: () => this.renderRandDate()
+            },
+            randTime: {
+                name: "Random Time",
+                searchTerms: "random time generator clock",
+                description: "Generate random times",
+                icon: "⌚",
+                category: "Random",
+                render: () => this.renderRandTime()
+            },
+            randMac: {
+                name: "Random MAC",
+                searchTerms: "random mac address generator network",
+                description: "Generate MAC addresses",
+                icon: "💻",
+                category: "Random",
+                render: () => this.renderRandMac()
+            },
+            randIp: {
+                name: "Random IP",
+                searchTerms: "random ip address generator network",
+                description: "Generate IP addresses",
+                icon: "🌐",
+                category: "Random",
+                render: () => this.renderRandIp()
+            },
+            strRev: {
+                name: "String Reverser",
+                searchTerms: "string reverse text backwards",
+                description: "Reverse text characters",
+                icon: "🔙",
+                category: "Text",
+                render: () => this.renderStrRev()
+            },
+            textRepeat: {
+                name: "Text Repeater",
+                searchTerms: "text repeater multiplier spam",
+                description: "Repeat text N times",
+                icon: "🔁",
+                category: "Text",
+                render: () => this.renderTextRepeat()
+            },
+            textTrunc: {
+                name: "Text Truncator",
+                searchTerms: "text truncator limit crop shorten",
+                description: "Truncate text length",
+                icon: "✂️",
+                category: "Text",
+                render: () => this.renderTextTrunc()
+            },
+            lineEnum: {
+                name: "Line Numberer",
+                searchTerms: "line number add text list",
+                description: "Add line numbers to text",
+                icon: "🔢",
+                category: "Text",
+                render: () => this.renderLineEnum()
             }
         };
     }
@@ -7956,6 +8118,398 @@ background-clip: text;`;
         };
         document.getElementById('ug-btn').onclick = gen;
         gen();
+    }
+
+    renderMeanMedMode() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mean / Median / Mode</h2>
+            <input type="text" id="mmm-in" placeholder="Enter numbers separated by commas (e.g. 1, 2, 3, 4, 5)">
+            <button id="mmm-btn">Calculate</button>
+            <div class="result" id="mmm-res"></div>
+        `;
+        document.getElementById('mmm-btn').onclick = () => {
+            const v = document.getElementById('mmm-in').value;
+            const arr = v.split(/[\s,]+/).map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+            if (!arr.length) return;
+
+            // Mean
+            const sum = arr.reduce((a, b) => a + b, 0);
+            const mean = sum / arr.length;
+
+            // Median
+            const mid = Math.floor(arr.length / 2);
+            const med = arr.length % 2 !== 0 ? arr[mid] : (arr[mid - 1] + arr[mid]) / 2;
+
+            // Mode
+            const modeMap = {};
+            let maxEl = arr[0], maxCount = 1;
+            for (let i = 0; i < arr.length; i++) {
+                let el = arr[i];
+                if (modeMap[el] == null) modeMap[el] = 1; else modeMap[el]++;
+                if (modeMap[el] > maxCount) { maxEl = el; maxCount = modeMap[el]; }
+            }
+
+            document.getElementById('mmm-res').innerHTML = `
+                 <div><strong>Mean:</strong> ${mean.toFixed(2)}</div>
+                 <div><strong>Median:</strong> ${med}</div>
+                 <div><strong>Mode:</strong> ${maxCount > 1 ? maxEl : 'None'}</div>
+                 <div><strong>Min:</strong> ${arr[0]}</div>
+                 <div><strong>Max:</strong> ${arr[arr.length - 1]}</div>
+                 <div><strong>Count:</strong> ${arr.length}</div>
+             `;
+        };
+    }
+
+    renderStdDev() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Standard Deviation & Variance</h2>
+            <input type="text" id="sd-in" placeholder="Enter numbers separated by commas">
+            <button id="sd-btn">Calculate</button>
+            <div class="result" id="sd-res"></div>
+        `;
+        document.getElementById('sd-btn').onclick = () => {
+            const arr = document.getElementById('sd-in').value.split(/[\s,]+/).map(Number).filter(n => !isNaN(n));
+            if (arr.length < 2) return;
+            const n = arr.length;
+            const mean = arr.reduce((a, b) => a + b) / n;
+            const dev = arr.map(k => (k - mean) ** 2);
+            const sumDev = dev.reduce((a, b) => a + b);
+
+            const popVar = sumDev / n;
+            const sampVar = sumDev / (n - 1);
+            const popStd = Math.sqrt(popVar);
+            const sampStd = Math.sqrt(sampVar);
+
+            document.getElementById('sd-res').innerHTML = `
+                <div><strong>Sample Std Dev:</strong> ${sampStd.toFixed(4)}</div>
+                <div><strong>Pop. Std Dev:</strong> ${popStd.toFixed(4)}</div>
+                <div><strong>Sample Variance:</strong> ${sampVar.toFixed(4)}</div>
+                <div><strong>Pop. Variance:</strong> ${popVar.toFixed(4)}</div>
+            `;
+        };
+    }
+
+    renderPermCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Permutations (nPr)</h2>
+            <div style="display:flex;gap:10px;justify-content:center;">
+                <input type="number" id="pc-n" placeholder="n (total)" style="width:100px;">
+                <input type="number" id="pc-r" placeholder="r (subset)" style="width:100px;">
+            </div>
+            <button id="pc-btn">Calculate</button>
+            <div class="result" id="pc-res"></div>
+        `;
+        const fact = n => n <= 1 ? 1 : n * fact(n - 1);
+        document.getElementById('pc-btn').onclick = () => {
+            const n = parseInt(document.getElementById('pc-n').value);
+            const r = parseInt(document.getElementById('pc-r').value);
+            if (isNaN(n) || isNaN(r) || r > n) { document.getElementById('pc-res').innerHTML = "Invalid input"; return; }
+            const res = fact(n) / fact(n - r);
+            document.getElementById('pc-res').textContent = res.toLocaleString();
+        };
+    }
+
+    renderCombCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Combinations (nCr)</h2>
+             <div style="display:flex;gap:10px;justify-content:center;">
+                <input type="number" id="cc-n" placeholder="n (total)" style="width:100px;">
+                <input type="number" id="cc-r" placeholder="r (subset)" style="width:100px;">
+            </div>
+            <button id="cc-btn">Calculate</button>
+            <div class="result" id="cc-res"></div>
+        `;
+        const fact = n => n <= 1 ? 1 : n * fact(n - 1);
+        document.getElementById('cc-btn').onclick = () => {
+            const n = parseInt(document.getElementById('cc-n').value);
+            const r = parseInt(document.getElementById('cc-r').value);
+            if (isNaN(n) || isNaN(r) || r > n) { document.getElementById('cc-res').innerHTML = "Invalid input"; return; }
+            const res = fact(n) / (fact(r) * fact(n - r));
+            document.getElementById('cc-res').textContent = res.toLocaleString();
+        };
+    }
+
+    renderZScore() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Z-Score Calculator</h2>
+            <input type="number" id="zs-x" placeholder="Raw Score (x)">
+            <input type="number" id="zs-m" placeholder="Mean (μ)">
+            <input type="number" id="zs-s" placeholder="Std Dev (σ)">
+            <button id="zs-btn">Calculate</button>
+            <div class="result" id="zs-res"></div>
+        `;
+        document.getElementById('zs-btn').onclick = () => {
+            const x = parseFloat(document.getElementById('zs-x').value);
+            const m = parseFloat(document.getElementById('zs-m').value);
+            const s = parseFloat(document.getElementById('zs-s').value);
+            const z = (x - m) / s;
+            document.getElementById('zs-res').textContent = "Z-Score: " + z.toFixed(4);
+        };
+    }
+
+    renderConfInt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Confidence Interval (Mean)</h2>
+            <input type="number" id="ci-m" placeholder="Sample Mean">
+            <input type="number" id="ci-s" placeholder="Sample Std Dev">
+            <input type="number" id="ci-n" placeholder="Sample Size">
+            <select id="ci-l" style="margin-bottom:10px;">
+                <option value="1.645">90%</option>
+                <option value="1.96" selected>95%</option>
+                <option value="2.576">99%</option>
+            </select>
+            <button id="ci-btn">Calculate</button>
+            <div class="result" id="ci-res"></div>
+        `;
+        document.getElementById('ci-btn').onclick = () => {
+            const m = parseFloat(document.getElementById('ci-m').value);
+            const s = parseFloat(document.getElementById('ci-s').value);
+            const n = parseFloat(document.getElementById('ci-n').value);
+            const z = parseFloat(document.getElementById('ci-l').value);
+            const err = z * (s / Math.sqrt(n));
+            document.getElementById('ci-res').innerHTML = `
+                <div><strong>Margin of Error:</strong> ±${err.toFixed(4)}</div>
+                <div><strong>Interval:</strong> [${(m - err).toFixed(4)}, ${(m + err).toFixed(4)}]</div>
+             `;
+        };
+    }
+
+    renderMarginErr() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Margin of Error</h2>
+            <input type="number" id="me-n" placeholder="Sample Size (n)">
+            <input type="number" id="me-p" placeholder="Percentage % (optional, def 50)">
+            <select id="me-c" style="margin-bottom:10px;">
+                <option value="1.645">90% Confidence</option>
+                <option value="1.96" selected>95% Confidence</option>
+                <option value="2.576">99% Confidence</option>
+            </select>
+            <button id="me-btn">Calculate</button>
+            <div class="result" id="me-res"></div>
+        `;
+        document.getElementById('me-btn').onclick = () => {
+            const n = parseFloat(document.getElementById('me-n').value);
+            const p = (document.getElementById('me-p').value || 50) / 100;
+            const z = parseFloat(document.getElementById('me-c').value);
+            const mo = z * Math.sqrt((p * (1 - p)) / n);
+            document.getElementById('me-res').innerHTML = `Margin of Error: ±${(mo * 100).toFixed(2)}%`;
+        };
+    }
+
+    renderPoissonDist() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Poisson Probability</h2>
+            <input type="number" id="pd-k" placeholder="Number of occurrences (k)">
+            <input type="number" id="pd-l" placeholder="Average Rate (λ)">
+            <button id="pd-btn">Calculate</button>
+            <div class="result" id="pd-res"></div>
+        `;
+        const fact = n => n <= 1 ? 1 : n * fact(n - 1);
+        document.getElementById('pd-btn').onclick = () => {
+            const k = parseInt(document.getElementById('pd-k').value);
+            const l = parseFloat(document.getElementById('pd-l').value);
+            const p = (Math.pow(l, k) * Math.exp(-l)) / fact(k);
+            document.getElementById('pd-res').textContent = "P(x=k): " + p.toFixed(6);
+        };
+    }
+
+    renderGeoMean() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Geometric Mean</h2>
+            <input type="text" id="gm-in" placeholder="Enter numbers separated by commas">
+            <button id="gm-btn">Calculate</button>
+            <div class="result" id="gm-res"></div>
+        `;
+        document.getElementById('gm-btn').onclick = () => {
+            const arr = document.getElementById('gm-in').value.split(/[\s,]+/).map(Number).filter(n => !isNaN(n));
+            const prod = arr.reduce((a, b) => a * b, 1);
+            const res = Math.pow(prod, 1 / arr.length);
+            document.getElementById('gm-res').textContent = res.toFixed(4);
+        };
+    }
+
+    renderHarMean() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Harmonic Mean</h2>
+            <input type="text" id="hm-in" placeholder="Enter numbers separated by commas">
+            <button id="hm-btn">Calculate</button>
+            <div class="result" id="hm-res"></div>
+        `;
+        document.getElementById('hm-btn').onclick = () => {
+            const arr = document.getElementById('hm-in').value.split(/[\s,]+/).map(Number).filter(n => !isNaN(n));
+            const sumRec = arr.reduce((a, b) => a + (1 / b), 0);
+            const res = arr.length / sumRec;
+            document.getElementById('hm-res').textContent = res.toFixed(4);
+        };
+    }
+
+    renderListPicker() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random List Picker</h2>
+            <textarea id="lp-in" rows="10" placeholder="Enter items (one per line)"></textarea>
+            <button id="lp-btn">Pick Item</button>
+            <div class="result" id="lp-res"></div>
+        `;
+        document.getElementById('lp-btn').onclick = () => {
+            const items = document.getElementById('lp-in').value.split('\n').filter(i => i.trim());
+            if (!items.length) { document.getElementById('lp-res').textContent = "List empty"; return; }
+            const picked = items[Math.floor(Math.random() * items.length)];
+            document.getElementById('lp-res').textContent = picked;
+        };
+    }
+
+    renderListShuffle() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">List Shuffler</h2>
+            <textarea id="ls-in" rows="10" placeholder="Enter items (one per line)"></textarea>
+            <button id="ls-btn">Shuffle</button>
+            <textarea id="ls-out" rows="10" readonly style="margin-top:20px"></textarea>
+        `;
+        document.getElementById('ls-btn').onclick = () => {
+            const items = document.getElementById('ls-in').value.split('\n').filter(i => i.trim());
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            document.getElementById('ls-out').value = items.join('\n');
+        };
+    }
+
+    renderRandDate() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random Date Generator</h2>
+            <div style="display:flex; gap:10px;">
+                <input type="date" id="rd-s" value="2000-01-01">
+                <input type="date" id="rd-e" value="2030-12-31">
+            </div>
+            <button id="rd-btn">Generate</button>
+            <div class="result" id="rd-res"></div>
+        `;
+        document.getElementById('rd-btn').onclick = () => {
+            const s = new Date(document.getElementById('rd-s').value).getTime();
+            const e = new Date(document.getElementById('rd-e').value).getTime();
+            const r = new Date(s + Math.random() * (e - s));
+            document.getElementById('rd-res').textContent = r.toDateString();
+        };
+    }
+
+    renderRandTime() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random Time Generator</h2>
+            <button id="rt-btn">Generate</button>
+            <div class="result" id="rt-res"></div>
+        `;
+        document.getElementById('rt-btn').onclick = () => {
+            const h = Math.floor(Math.random() * 24).toString().padStart(2, '0');
+            const m = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+            const s = Math.floor(Math.random() * 60).toString().padStart(2, '0');
+            document.getElementById('rt-res').textContent = `${h}:${m}:${s}`;
+        };
+    }
+
+    renderRandMac() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random MAC Address</h2>
+            <button id="rm-btn">Generate</button>
+            <div class="result" id="rm-res"></div>
+        `;
+        document.getElementById('rm-btn').onclick = () => {
+            const hex = "0123456789ABCDEF";
+            let mac = "";
+            for (let i = 0; i < 6; i++) {
+                mac += hex.charAt(Math.floor(Math.random() * 16));
+                mac += hex.charAt(Math.floor(Math.random() * 16));
+                if (i < 5) mac += ":";
+            }
+            document.getElementById('rm-res').textContent = mac;
+        };
+    }
+
+    renderRandIp() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Random IPv4 Address</h2>
+            <button id="ri-btn">Generate</button>
+            <div class="result" id="ri-res"></div>
+        `;
+        document.getElementById('ri-btn').onclick = () => {
+            const ip = Array(4).fill(0).map(() => Math.floor(Math.random() * 256)).join('.');
+            document.getElementById('ri-res').textContent = ip;
+        };
+    }
+
+    renderStrRev() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">String Reverser</h2>
+            <input type="text" id="sr-in" placeholder="Enter text">
+            <div class="result" id="sr-res"></div>
+        `;
+        document.getElementById('sr-in').addEventListener('input', (e) => {
+            document.getElementById('sr-res').textContent = e.target.value.split('').reverse().join('');
+        });
+    }
+
+    renderTextRepeat() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Repeater</h2>
+            <input type="text" id="tr-in" placeholder="Text to repeat">
+            <input type="number" id="tr-n" min="1" max="1000" value="5">
+            <button id="tr-btn">Repeat</button>
+            <textarea id="tr-out" rows="10" readonly style="margin-top:20px;"></textarea>
+        `;
+        document.getElementById('tr-btn').onclick = () => {
+            const t = document.getElementById('tr-in').value;
+            const n = parseInt(document.getElementById('tr-n').value);
+            document.getElementById('tr-out').value = t.repeat(n);
+        };
+    }
+
+    renderTextTrunc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Truncator</h2>
+            <input type="text" id="tt-in" placeholder="Long text here">
+            <input type="number" id="tt-n" min="1" value="20">
+            <div class="result" id="tt-res"></div>
+        `;
+        const upd = () => {
+            const t = document.getElementById('tt-in').value;
+            const n = parseInt(document.getElementById('tt-n').value);
+            if (t.length > n) document.getElementById('tt-res').textContent = t.substring(0, n) + '...';
+            else document.getElementById('tt-res').textContent = t;
+        };
+        ['tt-in', 'tt-n'].forEach(id => document.getElementById(id).addEventListener('input', upd));
+    }
+
+    renderLineEnum() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Line Numberer</h2>
+            <textarea id="le-in" rows="10" placeholder="Paste text here"></textarea>
+            <button id="le-btn">Add Numbers</button>
+            <textarea id="le-out" rows="10" readonly style="margin-top:20px;"></textarea>
+        `;
+        document.getElementById('le-btn').onclick = () => {
+            const lines = document.getElementById('le-in').value.split('\n');
+            document.getElementById('le-out').value = lines.map((l, i) => `${i + 1}. ${l}`).join('\n');
+        };
     }
 }
 

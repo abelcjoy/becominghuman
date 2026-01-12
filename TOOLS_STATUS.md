@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 170
-**Last Updated:** Batch 12 (Developer/Data)
+**Total Tools:** 190
+**Last Updated:** Batch 14 (Random/String)
 
-## Latest Additions (Batch 11 - Color/Design)
-- Color Mixer
-- Color Harmonies
-- Contrast Checker
-- Gradient Generator
-- Shade Generator
-- Image Color Picker
-- Hex to PMS
-- CMYK Converter
-- HSL Converter
-- Color Blindness Sim
+## Latest Additions (Batch 13 - Statistics/Math)
+- Mean/Median/Mode
+- Standard Deviation & Variance
+- Permutations (nPr)
+- Combinations (nCr)
+- Z-Score Calculator
+- Confidence Interval
+- Margin of Error
+- Poisson Distribution
+- Geometric Mean
+- Harmonic Mean
 
-## Latest Additions (Batch 12 - Dev/Data)
-- JSON Validator
-- XML Formatter
-- SQL Minifier
-- JS Minifier
-- CSS Minifier
-- Lorem Ipsum Generator
-- Slug Generator
-- Text Diff Checker
-- Email Obfuscator
-- UUID Generator
+## Latest Additions (Batch 14 - Random/String)
+- Random List Picker
+- List Shuffler
+- Random Date Generator
+- Random Time Generator
+- Random MAC Address
+- Random IPv4 Address
+- String Reverser
+- Text Repeater
+- Text Truncator
+- Line Numberer
