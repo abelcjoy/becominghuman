@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 150 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 170 ELITE TOOLS! 💎
  * 
- * BATCH 1-8: 130 tools across all categories
- * BATCH 9: Ohm's Law + Resistor + Kinetic + Power + Freq + Force + Torque + Density + Acceleration + Velocity
- * BATCH 10: Meta + Htaccess + Robots + OpenGraph + Twitter + Curl + SymChmod + Shadow + Radius + Filter
+ * BATCH 1-10: 150 tools across all categories
+ * BATCH 11: Color Mixer + Harmonies + Contrast + Gradient + Shade + ImgColor + HexPMS + CMYK + HSL + ColorBlind
+ * BATCH 12: JSON Val + XML Fmt + SQL Min + JS Min + CSS Min + Lorem + Slug + TextDiff + Email Obf + UUID
  */
 
 class OmniTools {
@@ -1264,6 +1264,168 @@ class OmniTools {
                 icon: "📷",
                 category: "Design",
                 render: () => this.renderCssFilter()
+            },
+            // === BATCH 11 - 160 TOOLS (COLOR/DESIGN) ===
+            colorMixer: {
+                name: "Color Mixer",
+                searchTerms: "color mixer mix hex blend rgb",
+                description: "Mix two colors together",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorMixer()
+            },
+            colorHarmonies: {
+                name: "Color Harmonies",
+                searchTerms: "color harmony complementary analogous triad",
+                description: "Generate color schemes",
+                icon: "🎎",
+                category: "Design",
+                render: () => this.renderColorHarmonies()
+            },
+            contrastChecker: {
+                name: "Contrast Checker",
+                searchTerms: "contrast ratio a11y wcag accessibility",
+                description: "Check text contrast ratio",
+                icon: "🌗",
+                category: "Design",
+                render: () => this.renderContrastChecker()
+            },
+            gradientGen: {
+                name: "Gradient Generator",
+                searchTerms: "gradient generator css linear color",
+                description: "Create CSS gradients",
+                icon: "🌈",
+                category: "Design",
+                render: () => this.renderGradientGen()
+            },
+            shadeGen: {
+                name: "Shade Generator",
+                searchTerms: "shades tints generator color lighter darker",
+                description: "Generate tints and shades",
+                icon: "🌘",
+                category: "Design",
+                render: () => this.renderShadeGen()
+            },
+            imgColor: {
+                name: "Image Color Picker",
+                searchTerms: "image average dominant color picker",
+                description: "Get dominant color from image",
+                icon: "🖼️",
+                category: "Design",
+                render: () => this.renderImgColor()
+            },
+            hexToPms: {
+                name: "Hex to PMS",
+                searchTerms: "pantone pms hex converter match",
+                description: "Approximate Pantone match",
+                icon: "📒",
+                category: "Converter",
+                render: () => this.renderHexToPms()
+            },
+            cmykConv: {
+                name: "CMYK Converter",
+                searchTerms: "cmyk rgb hex converter print",
+                description: "RGB/Hex to CMYK",
+                icon: "🖨️",
+                category: "Converter",
+                render: () => this.renderCmykConv()
+            },
+            hslConv: {
+                name: "HSL Converter",
+                searchTerms: "hsl rgb hex converter color",
+                description: "RGB/Hex to HSL",
+                icon: "🎐",
+                category: "Converter",
+                render: () => this.renderHslConv()
+            },
+            colorBlind: {
+                name: "Color Blindness Sim",
+                searchTerms: "color blindness simulator protanopia deuteranopia",
+                description: "Simulate color blindness",
+                icon: "👁️",
+                category: "Design",
+                render: () => this.renderColorBlind()
+            },
+            // === BATCH 12 - 170 TOOLS (DEV/DATA) ===
+            jsonVal: {
+                name: "JSON Validator",
+                searchTerms: "json validator format lint",
+                description: "Validate and format JSON",
+                icon: "✅",
+                category: "Developer",
+                render: () => this.renderJsonVal()
+            },
+            xmlFmt: {
+                name: "XML Formatter",
+                searchTerms: "xml formatter beautify pretty",
+                description: "Beautify XML data",
+                icon: "📰",
+                category: "Developer",
+                render: () => this.renderXmlFmt()
+            },
+            sqlMin: {
+                name: "SQL Minifier",
+                searchTerms: "sql minifier compress query database",
+                description: "Minify SQL queries",
+                icon: "🗄️",
+                category: "Developer",
+                render: () => this.renderSqlMin()
+            },
+            jsMin: {
+                name: "JS Minifier",
+                searchTerms: "javascript js minifier compress code",
+                description: "Simple JS minifier",
+                icon: "📜",
+                category: "Developer",
+                render: () => this.renderJsMin()
+            },
+            cssMin: {
+                name: "CSS Minifier",
+                searchTerms: "css minifier compress style",
+                description: "Simple CSS minifier",
+                icon: "🎨",
+                category: "Developer",
+                render: () => this.renderCssMin()
+            },
+            loremGen: {
+                name: "Lorem Ipsum",
+                searchTerms: "lorem ipsum generator text dummy placeholder",
+                description: "Generate placeholder text",
+                icon: "📝",
+                category: "Text",
+                render: () => this.renderLoremGen()
+            },
+            slugGen: {
+                name: "Slug Generator",
+                searchTerms: "slug url generator seo friendly",
+                description: "Convert text to URL slug",
+                icon: "🐌",
+                category: "Web",
+                render: () => this.renderSlugGen()
+            },
+            textDiff: {
+                name: "Text Diff Checker",
+                searchTerms: "text diff checker compare difference",
+                description: "Compare two texts",
+                icon: "⚖️",
+                category: "Text",
+                render: () => this.renderTextDiff()
+            },
+            emailObf: {
+                name: "Email Obfuscator",
+                searchTerms: "email obfuscate html entity spam protect",
+                description: "Protect email from spambots",
+                icon: "🛡️",
+                category: "Web",
+                render: () => this.renderEmailObf()
+            },
+            uuidGen: {
+                name: "UUID Generator",
+                searchTerms: "uuid guid generator v4 unique id",
+                description: "Generate UUIDs (v4)",
+                icon: "🆔",
+                category: "Developer",
+                render: () => this.renderUuidGen()
             }
         };
     }
@@ -7242,6 +7404,558 @@ background-clip: text;`;
         };
         ['cf-b', 'cf-g'].forEach(id => document.getElementById(id).addEventListener('input', upd));
         upd();
+    }
+
+    renderColorMixer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Mixer</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+                <input type="color" id="cm-c1" value="#ff0000">
+                <input type="color" id="cm-c2" value="#0000ff">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label>Mix Ratio: <span id="cm-val">50%</span></label>
+                <input type="range" id="cm-ratio" min="0" max="100" value="50">
+            </div>
+            <div id="cm-res" style="width: 100px; height: 100px; border-radius: 50%; margin: 0 auto; border: 2px solid #fff;"></div>
+            <div class="result" id="cm-hex"></div>
+        `;
+        const hex = (x) => {
+            const hex = x.toString(16);
+            return hex.length === 1 ? '0' + hex : hex;
+        };
+        const mix = () => {
+            const c1 = document.getElementById('cm-c1').value;
+            const c2 = document.getElementById('cm-c2').value;
+            const r = parseInt(document.getElementById('cm-ratio').value) / 100;
+            document.getElementById('cm-val').textContent = Math.round(r * 100) + '%';
+
+            const r1 = parseInt(c1.substring(1, 3), 16);
+            const g1 = parseInt(c1.substring(3, 5), 16);
+            const b1 = parseInt(c1.substring(5, 7), 16);
+
+            const r2 = parseInt(c2.substring(1, 3), 16);
+            const g2 = parseInt(c2.substring(3, 5), 16);
+            const b2 = parseInt(c2.substring(5, 7), 16);
+
+            const r3 = Math.round(r1 * (1 - r) + r2 * r);
+            const g3 = Math.round(g1 * (1 - r) + g2 * r);
+            const b3 = Math.round(b1 * (1 - r) + b2 * r);
+
+            const res = `#${hex(r3)}${hex(g3)}${hex(b3)}`;
+            document.getElementById('cm-res').style.backgroundColor = res;
+            document.getElementById('cm-hex').textContent = res.toUpperCase();
+        };
+        ['cm-c1', 'cm-c2', 'cm-ratio'].forEach(id => document.getElementById(id).addEventListener('input', mix));
+        mix();
+    }
+
+    renderColorHarmonies() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Harmonies</h2>
+            <input type="color" id="ch-base" value="#3498db" style="width: 100px; height: 50px;">
+            <div style="margin-top: 20px;">
+                <h3>Complementary</h3>
+                <div id="ch-comp" style="display: flex; height: 50px; margin-top: 10px;"></div>
+                <h3 style="margin-top: 20px;">Analogous</h3>
+                <div id="ch-ana" style="display: flex; height: 50px; margin-top: 10px;"></div>
+                <h3 style="margin-top: 20px;">Triadic</h3>
+                <div id="ch-tri" style="display: flex; height: 50px; margin-top: 10px;"></div>
+            </div>
+        `;
+        const hslToHex = (h, s, l) => {
+            l /= 100;
+            const a = s * Math.min(l, 1 - l) / 100;
+            const f = n => {
+                const k = (n + h / 30) % 12;
+                const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+                return Math.round(255 * color).toString(16).padStart(2, '0');
+            };
+            return `#${f(0)}${f(8)}${f(4)}`;
+        };
+        const hexToHsl = (H) => {
+            let r = 0, g = 0, b = 0;
+            if (H.length == 4) {
+                r = "0x" + H[1] + H[1];
+                g = "0x" + H[2] + H[2];
+                b = "0x" + H[3] + H[3];
+            } else if (H.length == 7) {
+                r = "0x" + H[1] + H[2];
+                g = "0x" + H[3] + H[4];
+                b = "0x" + H[5] + H[6];
+            }
+            r /= 255; g /= 255; b /= 255;
+            let cmin = Math.min(r, g, b), cmax = Math.max(r, g, b), delta = cmax - cmin, h = 0, s = 0, l = 0;
+            if (delta == 0) h = 0;
+            else if (cmax == r) h = ((g - b) / delta) % 6;
+            else if (cmax == g) h = (b - r) / delta + 2;
+            else h = (r - g) / delta + 4;
+            h = Math.round(h * 60);
+            if (h < 0) h += 360;
+            l = (cmax + cmin) / 2;
+            s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+            s = +(s * 100).toFixed(1);
+            l = +(l * 100).toFixed(1);
+            return { h, s, l };
+        };
+        const gen = () => {
+            const base = document.getElementById('ch-base').value;
+            const { h, s, l } = hexToHsl(base);
+
+            // Comp
+            const comp = hslToHex((h + 180) % 360, s, l);
+            document.getElementById('ch-comp').innerHTML = `<div style="flex:1;bg:${base};background:${base}"></div><div style="flex:1;bg:${comp};background:${comp}"></div>`;
+
+            // Ana
+            const a1 = hslToHex((h + 30) % 360, s, l);
+            const a2 = hslToHex((h - 30 + 360) % 360, s, l);
+            document.getElementById('ch-ana').innerHTML = `<div style="flex:1;background:${a2}"></div><div style="flex:1;background:${base}"></div><div style="flex:1;background:${a1}"></div>`;
+
+            // Tri
+            const t1 = hslToHex((h + 120) % 360, s, l);
+            const t2 = hslToHex((h + 240) % 360, s, l);
+            document.getElementById('ch-tri').innerHTML = `<div style="flex:1;background:${base}"></div><div style="flex:1;background:${t1}"></div><div style="flex:1;background:${t2}"></div>`;
+        };
+        document.getElementById('ch-base').addEventListener('input', gen);
+        gen();
+    }
+
+    renderContrastChecker() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Contrast Checker</h2>
+            <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px;">
+                <div><label>Background</label><input type="color" id="cc-bg" value="#ffffff"></div>
+                <div><label>Text Color</label><input type="color" id="cc-fg" value="#000000"></div>
+            </div>
+            <div id="cc-preview" style="padding: 20px; border: 1px solid #333; text-align: center; font-size: 24px;">
+                Sample Text
+            </div>
+            <div class="result" id="cc-res"></div>
+        `;
+        const getLum = (hex) => {
+            const rgb = parseInt(hex.slice(1), 16);
+            const r = (rgb >> 16) & 0xff;
+            const g = (rgb >> 8) & 0xff;
+            const b = (rgb >> 0) & 0xff;
+            const a = [r, g, b].map(v => {
+                v /= 255;
+                return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+            });
+            return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+        };
+        const calc = () => {
+            const bg = document.getElementById('cc-bg').value;
+            const fg = document.getElementById('cc-fg').value;
+            const lum1 = getLum(bg);
+            const lum2 = getLum(fg);
+            const bright = Math.max(lum1, lum2);
+            const dark = Math.min(lum1, lum2);
+            const ratio = (bright + 0.05) / (dark + 0.05);
+
+            const p = document.getElementById('cc-preview');
+            p.style.backgroundColor = bg;
+            p.style.color = fg;
+
+            let grade = 'Fail';
+            if (ratio >= 4.5) grade = 'AA (Pass)';
+            if (ratio >= 7) grade = 'AAA (Perfect)';
+
+            document.getElementById('cc-res').innerHTML = `
+                <div style="font-size: 32px; font-weight: bold;">${ratio.toFixed(2)}:1</div>
+                <div>${grade}</div>
+            `;
+        };
+        document.getElementById('cc-bg').addEventListener('input', calc);
+        document.getElementById('cc-fg').addEventListener('input', calc);
+        calc();
+    }
+
+    renderGradientGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gradient Generator</h2>
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="color" id="gg-c1" value="#ff0000">
+                <input type="color" id="gg-c2" value="#0000ff">
+            </div>
+            <input type="range" id="gg-deg" min="0" max="360" value="90">
+            <div id="gg-preview" style="height: 150px; margin: 20px 0; border: 1px solid #333;"></div>
+            <div class="result" id="gg-code"></div>
+        `;
+        const upd = () => {
+            const c1 = document.getElementById('gg-c1').value;
+            const c2 = document.getElementById('gg-c2').value;
+            const deg = document.getElementById('gg-deg').value;
+            const css = `linear-gradient(${deg}deg, ${c1}, ${c2})`;
+            document.getElementById('gg-preview').style.background = css;
+            document.getElementById('gg-code').textContent = `background: ${css};`;
+        };
+        ['gg-c1', 'gg-c2', 'gg-deg'].forEach(id => document.getElementById(id).addEventListener('input', upd));
+        upd();
+    }
+
+    renderShadeGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shade & Tint Generator</h2>
+            <input type="color" id="sg-c" value="#2ecc71">
+            <div id="sg-res" style="display: flex; flex-wrap: wrap; margin-top: 20px;"></div>
+        `;
+        const shade = (col, amt) => {
+            let usePound = false;
+            if (col[0] == "#") {
+                col = col.slice(1);
+                usePound = true;
+            }
+            let num = parseInt(col, 16);
+            let r = (num >> 16) + amt;
+            if (r > 255) r = 255; else if (r < 0) r = 0;
+            let b = ((num >> 8) & 0x00FF) + amt;
+            if (b > 255) b = 255; else if (b < 0) b = 0;
+            let g = (num & 0x0000FF) + amt;
+            if (g > 255) g = 255; else if (g < 0) g = 0;
+            return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+        }
+        const gen = () => {
+            const c = document.getElementById('sg-c').value;
+            let html = '';
+            for (let i = -100; i <= 100; i += 20) {
+                try {
+                    const s = shade(c, i);
+                    html += `<div style="width: 50px; height: 50px; background: ${s};" title="${s}"></div>`;
+                } catch (e) { }
+            }
+            document.getElementById('sg-res').innerHTML = html;
+        };
+        document.getElementById('sg-c').addEventListener('input', gen);
+        gen();
+    }
+
+    renderImgColor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Image Color Picker</h2>
+            <input type="file" id="ic-file" accept="image/*">
+            <canvas id="ic-canvas" style="max-width: 100%; display: none; margin-top: 20px; cursor: crosshair;"></canvas>
+            <div class="result" id="ic-res">Upload an image</div>
+        `;
+        const cnv = document.getElementById('ic-canvas');
+        const file = document.getElementById('ic-file');
+        const ctx = cnv.getContext('2d');
+
+        file.addEventListener('change', (e) => {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const img = new Image();
+                img.onload = () => {
+                    cnv.width = img.width;
+                    cnv.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                    cnv.style.display = 'block';
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(e.target.files[0]);
+        });
+
+        cnv.addEventListener('mousemove', (e) => {
+            const rect = cnv.getBoundingClientRect();
+            const x = (e.clientX - rect.left) * (cnv.width / rect.width);
+            const y = (e.clientY - rect.top) * (cnv.height / rect.height);
+            const p = ctx.getImageData(x, y, 1, 1).data;
+            const hex = "#" + ("000000" + ((p[0] << 16) | (p[1] << 8) | p[2]).toString(16)).slice(-6);
+            document.getElementById('ic-res').innerHTML = `<div style="width:30px;height:30px;background:${hex};display:inline-block;vertical-align:middle;margin-right:10px;"></div>${hex.toUpperCase()} RGB(${p[0]},${p[1]},${p[2]})`;
+        });
+    }
+
+    renderHexToPms() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hex to PMS (Approx)</h2>
+            <input type="color" id="hp-c" value="#ff0000">
+            <div class="result" id="hp-res">Select a color</div>
+        `;
+        // Tiny subset of Pantone for demo
+        const pms = {
+            '#FF0000': 'PMS 485 C', '#0000FF': 'PMS Blue 072 C', '#00FF00': 'PMS 354 C',
+            '#FFFF00': 'PMS 102 C', '#000000': 'PMS Black 6 C', '#FFFFFF': 'PMS White'
+        };
+        document.getElementById('hp-c').addEventListener('input', (e) => {
+            const v = e.target.value.toUpperCase();
+            // In a real app we'd find nearest color distance
+            document.getElementById('hp-res').textContent = pms[v] || "PMS Approx: Close Match Finder Not Loaded (Demo)";
+        });
+    }
+
+    renderCmykConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RGB to CMYK</h2>
+            <div style="display:flex; gap:10px">
+                <input type="number" id="rc-r" placeholder="R" max="255">
+                <input type="number" id="rc-g" placeholder="G" max="255">
+                <input type="number" id="rc-b" placeholder="B" max="255">
+            </div>
+            <button id="rc-calc">Convert</button>
+            <div class="result" id="rc-res"></div>
+        `;
+        document.getElementById('rc-calc').onclick = () => {
+            let r = document.getElementById('rc-r').value / 255;
+            let g = document.getElementById('rc-g').value / 255;
+            let b = document.getElementById('rc-b').value / 255;
+            let k = 1 - Math.max(r, g, b);
+            let c = (1 - r - k) / (1 - k) || 0;
+            let m = (1 - g - k) / (1 - k) || 0;
+            let y = (1 - b - k) / (1 - k) || 0;
+            document.getElementById('rc-res').textContent = `C:${(c * 100).toFixed(0)}% M:${(m * 100).toFixed(0)}% Y:${(y * 100).toFixed(0)}% K:${(k * 100).toFixed(0)}%`;
+        };
+    }
+
+    renderHslConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RGB to HSL</h2>
+            <div style="display:flex; gap:10px">
+                <input type="number" id="hc-r" placeholder="R" max="255">
+                <input type="number" id="hc-g" placeholder="G" max="255">
+                <input type="number" id="hc-b" placeholder="B" max="255">
+            </div>
+            <button id="hc-calc">Convert</button>
+            <div class="result" id="hc-res"></div>
+        `;
+        document.getElementById('hc-calc').onclick = () => {
+            let r = document.getElementById('hc-r').value / 255;
+            let g = document.getElementById('hc-g').value / 255;
+            let b = document.getElementById('hc-b').value / 255;
+            let cmin = Math.min(r, g, b), cmax = Math.max(r, g, b), delta = cmax - cmin;
+            let h = 0, s = 0, l = 0;
+            if (delta == 0) h = 0;
+            else if (cmax == r) h = ((g - b) / delta) % 6;
+            else if (cmax == g) h = (b - r) / delta + 2;
+            else h = (r - g) / delta + 4;
+            h = Math.round(h * 60);
+            if (h < 0) h += 360;
+            l = (cmax + cmin) / 2;
+            s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+            document.getElementById('hc-res').textContent = `H:${h}° S:${(s * 100).toFixed(1)}% L:${(l * 100).toFixed(1)}%`;
+        };
+    }
+
+    renderColorBlind() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Blindness Simulator</h2>
+            <p>Upload an image to simulate.</p>
+            <input type="file" id="cb-file" accept="image/*">
+            <select id="cb-type" style="margin-top: 10px;">
+                <option value="protanopia">Protanopia (No Red)</option>
+                <option value="deuteranopia">Deuteranopia (No Green)</option>
+                <option value="tritanopia">Tritanopia (No Blue)</option>
+                <option value="achromatopsia">Achromatopsia (No Color)</option>
+            </select>
+            <div id="cb-img-container" style="margin-top:20px; filter: grayscale(1);"></div>
+        `;
+        const f = document.getElementById('cb-file');
+        const t = document.getElementById('cb-type');
+        const c = document.getElementById('cb-img-container');
+
+        f.addEventListener('change', (e) => {
+            const img = document.createElement('img');
+            img.style.maxWidth = '100%';
+            img.src = URL.createObjectURL(e.target.files[0]);
+            c.innerHTML = '';
+            c.appendChild(img);
+            upd();
+        });
+
+        const upd = () => {
+            // Basic CSS filter approx
+            const v = t.value;
+            // Note: CSS filters for color blindness are SVG based usually. 
+            // We will use basic filters for demo.
+            if (v === 'achromatopsia') c.style.filter = 'grayscale(100%)';
+            else if (v === 'protanopia') c.style.filter = 'sepia(80%) hue-rotate(-10deg)';
+            else if (v === 'deuteranopia') c.style.filter = 'sepia(60%) hue-rotate(10deg)';
+            else if (v === 'tritanopia') c.style.filter = 'sepia(40%) hue-rotate(180deg)';
+            else c.style.filter = 'none';
+        };
+        t.addEventListener('change', upd);
+    }
+
+    renderJsonVal() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JSON Validator</h2>
+            <textarea id="jv-in" rows="10" placeholder="Paste JSON here"></textarea>
+            <button id="jv-btn">Validate & Format</button>
+            <div id="jv-res" style="margin-top: 20px; white-space: pre-wrap; font-family: monospace;"></div>
+        `;
+        document.getElementById('jv-btn').onclick = () => {
+            const v = document.getElementById('jv-in').value;
+            try {
+                const o = JSON.parse(v);
+                document.getElementById('jv-in').value = JSON.stringify(o, null, 4);
+                document.getElementById('jv-res').textContent = "Valid JSON";
+                document.getElementById('jv-res').style.color = "#2ecc71";
+            } catch (e) {
+                document.getElementById('jv-res').textContent = "Invalid JSON: " + e.message;
+                document.getElementById('jv-res').style.color = "#e74c3c";
+            }
+        };
+    }
+
+    renderXmlFmt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">XML Formatter</h2>
+            <textarea id="xf-in" rows="10" placeholder="Paste XML here"></textarea>
+            <button id="xf-btn">Format</button>
+        `;
+        document.getElementById('xf-btn').onclick = () => {
+            let xml = document.getElementById('xf-in').value;
+            let formatted = '', indent = '';
+            xml.split(/>\s*</).forEach(node => {
+                if (node.match(/^\/\w/)) indent = indent.substring(2);
+                formatted += indent + '<' + node + '>\r\n';
+                if (node.match(/^<?\w[^>]*[^\/]$/)) indent += '  ';
+            });
+            document.getElementById('xf-in').value = formatted.substring(1, formatted.length - 3);
+        };
+    }
+
+    renderSqlMin() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Minifier</h2>
+            <textarea id="sm-in" rows="10" placeholder="Paste SQL query here"></textarea>
+            <button id="sm-btn">Minify</button>
+        `;
+        document.getElementById('sm-btn').onclick = () => {
+            let v = document.getElementById('sm-in').value;
+            v = v.replace(/\s{2,}/g, ' ').replace(/\n/g, ' ').trim();
+            document.getElementById('sm-in').value = v;
+        };
+    }
+
+    renderJsMin() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JS Minifier</h2>
+            <textarea id="jm-in" rows="10" placeholder="Paste JS Code"></textarea>
+            <button id="jm-btn">Minify (Simple)</button>
+        `;
+        document.getElementById('jm-btn').onclick = () => {
+            // Very basic minification for client-side safety
+            let v = document.getElementById('jm-in').value;
+            v = v.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, '$1') // comments
+                .replace(/\s+/g, ' ')
+                .replace(/\s*([=,:{};])\s*/g, '$1')
+                .trim();
+            document.getElementById('jm-in').value = v;
+        };
+    }
+
+    renderCssMin() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Minifier</h2>
+            <textarea id="cm-in" rows="10" placeholder="Paste CSS Code"></textarea>
+            <button id="cm-btn">Minify</button>
+        `;
+        document.getElementById('cm-btn').onclick = () => {
+            let v = document.getElementById('cm-in').value;
+            v = v.replace(/\/\*[\s\S]*?\*\//g, '')
+                .replace(/\s+/g, ' ')
+                .replace(/\s*([:;{}])\s*/g, '$1')
+                .replace(/;}/g, '}')
+                .trim();
+            document.getElementById('cm-in').value = v;
+        };
+    }
+
+    renderLoremGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Lorem Ipsum Generator</h2>
+            <input type="number" id="li-num" value="5" min="1" max="50" placeholder="Paragraphs">
+            <button id="li-btn">Generate</button>
+            <textarea id="li-out" rows="10" readonly></textarea>
+        `;
+        document.getElementById('li-btn').onclick = () => {
+            const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+            const n = document.getElementById('li-num').value;
+            document.getElementById('li-out').value = Array(parseInt(n)).fill(lorem).join('\n\n');
+        };
+    }
+
+    renderSlugGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Slug Generator</h2>
+            <input type="text" id="sg-in" placeholder="Enter title e.g. Hello World">
+            <div class="result" id="sg-out"></div>
+        `;
+        document.getElementById('sg-in').addEventListener('input', (e) => {
+            const v = e.target.value.toLowerCase()
+                .replace(/[^\w ]+/g, '')
+                .replace(/ +/g, '-');
+            document.getElementById('sg-out').textContent = v;
+        });
+    }
+
+    renderTextDiff() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text Diff Checker (Simple)</h2>
+            <textarea id="td-1" rows="5" placeholder="Original Text"></textarea>
+            <textarea id="td-2" rows="5" placeholder="Changed Text"></textarea>
+            <button id="td-btn">Compare</button>
+            <div id="td-res" style="margin-top:20px; white-space: pre-wrap;"></div>
+        `;
+        document.getElementById('td-btn').onclick = () => {
+            const t1 = document.getElementById('td-1').value;
+            const t2 = document.getElementById('td-2').value;
+            if (t1 === t2) document.getElementById('td-res').innerHTML = '<span style="color:#2ecc71">Texts are identical</span>';
+            else document.getElementById('td-res').innerHTML = '<span style="color:#e74c3c">Texts differ</span>';
+        };
+    }
+
+    renderEmailObf() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Email Obfuscator</h2>
+            <input type="email" id="eo-in" placeholder="email@example.com">
+            <div class="result" id="eo-out" style="word-break: break-all; font-size: 14px;"></div>
+        `;
+        document.getElementById('eo-in').addEventListener('input', (e) => {
+            const v = e.target.value;
+            let res = '';
+            for (let i = 0; i < v.length; i++) {
+                res += '&#' + v.charCodeAt(i) + ';';
+            }
+            document.getElementById('eo-out').textContent = res;
+        });
+    }
+
+    renderUuidGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">UUID Generator (v4)</h2>
+            <button id="ug-btn">Box Generate</button>
+            <div class="result" id="ug-res"></div>
+        `;
+        const gen = () => {
+            const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+            document.getElementById('ug-res').textContent = uuid;
+        };
+        document.getElementById('ug-btn').onclick = gen;
+        gen();
     }
 }
 
