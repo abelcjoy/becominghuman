@@ -1,12 +1,8 @@
 /**
- * 🚀 Omni Tools - 110 PREMIUM TOOLS! 🚀
+ * 💎 Omni Tools - 120 ELITE TOOLS! 💎
  * 
- * BATCH 1 (30 tools): Original + Calculators + Converters + Text
- * BATCH 2 (20 tools): Developer + Finance + Utility + More Converters
- * BATCH 3 (20 tools): Health + Date/Time + Design + Math/Science
- * BATCH 4 (15 tools): Productivity + Network + Specialized
- * BATCH 5 (15 tools): Password + JSON + Validators + Converters
- * BATCH 6 (10 tools): Markdown + Regex + Color + SQL + Image + Stopwatch + BMI + Currency + Diff + Unicode
+ * BATCH 1-6: 110 tools across all categories
+ * BATCH 7 (10 tools): Base64 + URL + JWT + Color Blindness + TTS + Invoice + Age + Hash + Typing + Gradient
  */
 
 class OmniTools {
@@ -926,6 +922,87 @@ class OmniTools {
                 icon: "🔤",
                 category: "Developer",
                 render: () => this.renderUnicodeExplorer()
+            },
+            // === BATCH 7 - ELITE TOOLS (10) ===
+            base64Tool: {
+                name: "Base64 Encoder/Decoder",
+                searchTerms: "base64 encode decode converter",
+                description: "Encode/decode Base64",
+                icon: "🔐",
+                category: "Developer",
+                render: () => this.renderBase64Tool()
+            },
+            urlEncoder: {
+                name: "URL Encoder/Decoder",
+                searchTerms: "url encode decode uri percent",
+                description: "Encode/decode URLs",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderURLEncoder()
+            },
+            jwtDecoder: {
+                name: "JWT Decoder",
+                searchTerms: "jwt json web token decoder parser",
+                description: "Decode JWT tokens",
+                icon: "🎫",
+                category: "Developer",
+                render: () => this.renderJWTDecoder()
+            },
+            colorBlindness: {
+                name: "Color Blindness Simulator",
+                searchTerms: "color blindness simulator accessibility",
+                description: "Simulate color blindness",
+                icon: "👁️",
+                category: "Design",
+                render: () => this.renderColorBlindness()
+            },
+            textToSpeech: {
+                name: "Text to Speech",
+                searchTerms: "text to speech tts voice read",
+                description: "Convert text to speech",
+                icon: "🔊",
+                category: "Utility",
+                render: () => this.renderTextToSpeech()
+            },
+            invoiceCalculator: {
+                name: "Invoice Calculator",
+                searchTerms: "invoice calculator billing total tax",
+                description: "Calculate invoice totals",
+                icon: "🧾",
+                category: "Finance",
+                render: () => this.renderInvoiceCalculator()
+            },
+            ageInDays: {
+                name: "Age in Days Calculator",
+                searchTerms: "age days hours minutes calculator",
+                description: "Calculate exact age",
+                icon: "📅",
+                category: "Date",
+                render: () => this.renderAgeInDays()
+            },
+            fileHashGenerator: {
+                name: "File Hash Generator",
+                searchTerms: "file hash checksum md5 sha integrity",
+                description: "Generate file hashes",
+                icon: "🔏",
+                category: "Developer",
+                render: () => this.renderFileHashGenerator()
+            },
+            speedTest: {
+                name: "Typing Speed Test",
+                searchTerms: "typing speed test wpm words per minute",
+                description: "Test typing speed",
+                icon: "⌨️",
+                category: "Utility",
+                render: () => this.renderSpeedTest()
+            },
+            gradientText: {
+                name: "Gradient Text Generator",
+                searchTerms: "gradient text css generator color",
+                description: "Create gradient text CSS",
+                icon: "🌈",
+                category: "Design",
+                render: () => this.renderGradientText()
             }
         };
     }
@@ -5661,6 +5738,481 @@ class OmniTools {
 
             document.getElementById('unicode-output').innerHTML = html;
         });
+    }
+
+    // === BATCH 7 - ELITE TOOL RENDERERS ===
+
+    renderBase64Tool() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Base64 Encoder/Decoder</h2>
+            <textarea id="base64-input" rows="8" placeholder="Enter text or Base64..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="encode-base64">Encode to Base64</button>
+                <button id="decode-base64">Decode from Base64</button>
+            </div>
+            <div class="result" id="base64-output" style="min-height: 100px; text-align: left; word-break: break-all; font-family: monospace;"></div>
+        `;
+
+        document.getElementById('encode-base64').onclick = () => {
+            const text = document.getElementById('base64-input').value;
+            const encoded = btoa(unescape(encodeURIComponent(text)));
+            document.getElementById('base64-output').textContent = encoded;
+        };
+
+        document.getElementById('decode-base64').onclick = () => {
+            try {
+                const text = document.getElementById('base64-input').value;
+                const decoded = decodeURIComponent(escape(atob(text)));
+                document.getElementById('base64-output').textContent = decoded;
+            } catch (e) {
+                document.getElementById('base64-output').textContent = 'Error: Invalid Base64 string';
+            }
+        };
+    }
+
+    renderURLEncoder() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">URL Encoder/Decoder</h2>
+            <textarea id="url-input" rows="8" placeholder="Enter URL or encoded URL..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="encode-url">Encode URL</button>
+                <button id="decode-url">Decode URL</button>
+            </div>
+            <div class="result" id="url-output" style="min-height: 100px; text-align: left; word-break: break-all; font-family: monospace;"></div>
+        `;
+
+        document.getElementById('encode-url').onclick = () => {
+            const text = document.getElementById('url-input').value;
+            const encoded = encodeURIComponent(text);
+            document.getElementById('url-output').textContent = encoded;
+        };
+
+        document.getElementById('decode-url').onclick = () => {
+            try {
+                const text = document.getElementById('url-input').value;
+                const decoded = decodeURIComponent(text);
+                document.getElementById('url-output').textContent = decoded;
+            } catch (e) {
+                document.getElementById('url-output').textContent = 'Error: Invalid URL encoding';
+            }
+        };
+    }
+
+    renderJWTDecoder() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JWT Decoder</h2>
+            <textarea id="jwt-input" rows="6" placeholder="Paste JWT token here..."></textarea>
+            <button id="decode-jwt">Decode JWT</button>
+            <div class="result" id="jwt-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('decode-jwt').onclick = () => {
+            try {
+                const jwt = document.getElementById('jwt-input').value.trim();
+                const parts = jwt.split('.');
+
+                if (parts.length !== 3) {
+                    throw new Error('Invalid JWT format');
+                }
+
+                const header = JSON.parse(atob(parts[0]));
+                const payload = JSON.parse(atob(parts[1]));
+
+                document.getElementById('jwt-output').innerHTML = `
+                    <div style="margin-bottom: 20px;">
+                        <h3>Header</h3>
+                        <pre style="background: #1a1a1a; padding: 15px; border-radius: 8px; overflow-x: auto;">${JSON.stringify(header, null, 2)}</pre>
+                    </div>
+                    <div>
+                        <h3>Payload</h3>
+                        <pre style="background: #1a1a1a; padding: 15px; border-radius: 8px; overflow-x: auto;">${JSON.stringify(payload, null, 2)}</pre>
+                    </div>
+                    <div style="margin-top: 15px; font-size: 12px; color: #f60;">
+                        ⚠️ Note: Signature verification not performed
+                    </div>
+                `;
+            } catch (e) {
+                document.getElementById('jwt-output').innerHTML = `<div style="color: #f00;">Error: ${e.message}</div>`;
+            }
+        };
+    }
+
+    renderColorBlindness() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Blindness Simulator</h2>
+            <input type="color" id="cb-color" value="#ff5733" style="width: 100%; height: 80px; margin-bottom: 20px;">
+            <div class="result" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 5px;">Normal</div>
+                    <div id="cb-normal" style="height: 80px; border-radius: 8px;"></div>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 5px;">Protanopia (Red-blind)</div>
+                    <div id="cb-protanopia" style="height: 80px; border-radius: 8px;"></div>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 5px;">Deuteranopia (Green-blind)</div>
+                    <div id="cb-deuteranopia" style="height: 80px; border-radius: 8px;"></div>
+                </div>
+                <div>
+                    <div style="font-size: 14px; margin-bottom: 5px;">Tritanopia (Blue-blind)</div>
+                    <div id="cb-tritanopia" style="height: 80px; border-radius: 8px;"></div>
+                </div>
+            </div>
+        `;
+
+        const simulate = () => {
+            const color = document.getElementById('cb-color').value;
+            document.getElementById('cb-normal').style.background = color;
+
+            // Simplified simulation (not medically accurate, just for demonstration)
+            const r = parseInt(color.slice(1, 3), 16);
+            const g = parseInt(color.slice(3, 5), 16);
+            const b = parseInt(color.slice(5, 7), 16);
+
+            // Protanopia (red-blind)
+            const pR = Math.round(0.567 * r + 0.433 * g);
+            const pG = Math.round(0.558 * r + 0.442 * g);
+            const pB = b;
+            document.getElementById('cb-protanopia').style.background =
+                `rgb(${pR}, ${pG}, ${pB})`;
+
+            // Deuteranopia (green-blind)
+            const dR = Math.round(0.625 * r + 0.375 * g);
+            const dG = Math.round(0.7 * r + 0.3 * g);
+            const dB = b;
+            document.getElementById('cb-deuteranopia').style.background =
+                `rgb(${dR}, ${dG}, ${dB})`;
+
+            // Tritanopia (blue-blind)
+            const tR = r;
+            const tG = Math.round(0.95 * g + 0.05 * b);
+            const tB = Math.round(0.433 * g + 0.567 * b);
+            document.getElementById('cb-tritanopia').style.background =
+                `rgb(${tR}, ${tG}, ${tB})`;
+        };
+
+        document.getElementById('cb-color').addEventListener('input', simulate);
+        simulate();
+    }
+
+    renderTextToSpeech() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Text to Speech</h2>
+            <textarea id="tts-text" rows="8" placeholder="Enter text to speak..."></textarea>
+            <div style="display: grid; grid-template-columns: 1fr auto auto; gap: 10px; margin-bottom: 20px;">
+                <select id="tts-voice" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px;">
+                    <option>Loading voices...</option>
+                </select>
+                <input type="range" id="tts-rate" min="0.5" max="2" step="0.1" value="1" style="width: 150px;">
+                <span id="rate-value">1.0x</span>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                <button id="speak-btn">Speak</button>
+                <button id="stop-btn">Stop</button>
+            </div>
+        `;
+
+        const synth = window.speechSynthesis;
+        const populateVoices = () => {
+            const voices = synth.getVoices();
+            const select = document.getElementById('tts-voice');
+            select.innerHTML = voices.map((voice, i) =>
+                `<option value="${i}">${voice.name} (${voice.lang})</option>`
+            ).join('');
+        };
+
+        populateVoices();
+        if (synth.onvoiceschanged !== undefined) {
+            synth.onvoiceschanged = populateVoices;
+        }
+
+        document.getElementById('tts-rate').addEventListener('input', (e) => {
+            document.getElementById('rate-value').textContent = `${e.target.value}x`;
+        });
+
+        document.getElementById('speak-btn').onclick = () => {
+            const text = document.getElementById('tts-text').value;
+            if (!text) return;
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            const voices = synth.getVoices();
+            const selectedVoice = parseInt(document.getElementById('tts-voice').value);
+            utterance.voice = voices[selectedVoice];
+            utterance.rate = parseFloat(document.getElementById('tts-rate').value);
+
+            synth.speak(utterance);
+        };
+
+        document.getElementById('stop-btn').onclick = () => {
+            synth.cancel();
+        };
+    }
+
+    renderInvoiceCalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Invoice Calculator</h2>
+            <div id="invoice-items"></div>
+            <button id="add-item" style="margin-bottom: 20px;">+ Add Item</button>
+            <div style="margin-bottom: 20px;">
+                <label>Tax Rate (%): </label>
+                <input type="number" id="tax-rate" value="0" min="0" max="100" step="0.1" style="width: 100px;">
+            </div>
+            <div class="result" style="text-align: left;">
+                <div style="margin-bottom: 10px;"><strong>Subtotal:</strong> $<span id="subtotal">0.00</span></div>
+                <div style="margin-bottom: 10px;"><strong>Tax:</strong> $<span id="tax-amount">0.00</span></div>
+                <div style="font-size: 24px; font-weight: bold;"><strong>Total:</strong> $<span id="total">0.00</span></div>
+            </div>
+        `;
+
+        let itemCount = 0;
+
+        const calculate = () => {
+            let subtotal = 0;
+            document.querySelectorAll('.invoice-item').forEach(item => {
+                const qty = parseFloat(item.querySelector('.qty').value) || 0;
+                const price = parseFloat(item.querySelector('.price').value) || 0;
+                subtotal += qty * price;
+            });
+
+            const taxRate = parseFloat(document.getElementById('tax-rate').value) || 0;
+            const tax = subtotal * (taxRate / 100);
+            const total = subtotal + tax;
+
+            document.getElementById('subtotal').textContent = subtotal.toFixed(2);
+            document.getElementById('tax-amount').textContent = tax.toFixed(2);
+            document.getElementById('total').textContent = total.toFixed(2);
+        };
+
+        const addItem = () => {
+            itemCount++;
+            const itemsDiv = document.getElementById('invoice-items');
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'invoice-item';
+            itemDiv.style.cssText = 'display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; margin-bottom: 10px;';
+            itemDiv.innerHTML = `
+                <input type="text" placeholder="Item description" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px;">
+                <input type="number" class="qty" placeholder="Qty" value="1" min="0" step="1" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px;">
+                <input type="number" class="price" placeholder="Price" value="0" min="0" step="0.01" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px;">
+                <button onclick="this.parentElement.remove(); window.invoiceCalc();" style="padding: 12px;">✕</button>
+            `;
+            itemsDiv.appendChild(itemDiv);
+
+            itemDiv.querySelectorAll('input').forEach(input => {
+                input.addEventListener('input', calculate);
+            });
+
+            calculate();
+        };
+
+        window.invoiceCalc = calculate;
+
+        document.getElementById('add-item').onclick = addItem;
+        document.getElementById('tax-rate').addEventListener('input', calculate);
+
+        addItem(); // Add first item
+    }
+
+    renderAgeInDays() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Age in Days Calculator</h2>
+            <input type="date" id="birth-date">
+            <button id="calc-age-days">Calculate</button>
+            <div class="result" id="age-days-output" style="display: none; text-align: left;"></div>
+        `;
+
+        document.getElementById('calc-age-days').onclick = () => {
+            const birthDate = new Date(document.getElementById('birth-date').value);
+            const now = new Date();
+
+            if (!birthDate || isNaN(birthDate)) {
+                alert('Please select a valid date');
+                return;
+            }
+
+            const diff = now - birthDate;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor(diff / (1000 * 60));
+            const seconds = Math.floor(diff / 1000);
+
+            const years = Math.floor(days / 365.25);
+            const months = Math.floor((days % 365.25) / 30.44);
+            const remainingDays = Math.floor((days % 365.25) % 30.44);
+
+            const output = document.getElementById('age-days-output');
+            output.style.display = 'block';
+            output.innerHTML = `
+                <div style="font-size: 48px; font-weight: bold; margin-bottom: 20px;">${days.toLocaleString()} days</div>
+                <div style="margin-bottom: 10px;"><strong>Years:</strong> ${years}</div>
+                <div style="margin-bottom: 10px;"><strong>Months:</strong> ${months}</div>
+                <div style="margin-bottom: 10px;"><strong>Days:</strong> ${remainingDays}</div>
+                <div style="margin-bottom: 10px;"><strong>Hours:</strong> ${hours.toLocaleString()}</div>
+                <div style="margin-bottom: 10px;"><strong>Minutes:</strong> ${minutes.toLocaleString()}</div>
+                <div><strong>Seconds:</strong> ${seconds.toLocaleString()}</div>
+            `;
+        };
+    }
+
+    renderFileHashGenerator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">File Hash Generator</h2>
+            <input type="file" id="hash-file">
+            <button id="generate-hash">Generate Hash</button>
+            <div class="result" id="hash-output" style="text-align: left; font-family: monospace; word-break: break-all;"></div>
+        `;
+
+        document.getElementById('generate-hash').onclick = async () => {
+            const file = document.getElementById('hash-file').files[0];
+            if (!file) {
+                alert('Please select a file');
+                return;
+            }
+
+            const arrayBuffer = await file.arrayBuffer();
+            const hashBuffer = await crypto.subtle.digest('SHA-256', arrayBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+            document.getElementById('hash-output').innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <strong>File:</strong> ${file.name}<br>
+                    <strong>Size:</strong> ${(file.size / 1024).toFixed(2)} KB
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <strong>SHA-256:</strong><br>
+                    <div style="background: #1a1a1a; padding: 10px; border-radius: 8px; margin-top: 5px;">
+                        ${hashHex}
+                    </div>
+                </div>
+                <button onclick="navigator.clipboard.writeText('${hashHex}')">Copy Hash</button>
+            `;
+        };
+    }
+
+    renderSpeedTest() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Typing Speed Test</h2>
+            <div class="result" id="test-text" style="font-size: 18px; line-height: 1.8; margin-bottom: 20px; padding: 20px; background: #1a1a1a; border-radius: 8px;"></div>
+            <textarea id="typing-input" rows="5" placeholder="Start typing here..." disabled></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0;">
+                <button id="start-test">Start Test</button>
+                <button id="reset-test">Reset</button>
+            </div>
+            <div class="result" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="wpm">0</div>
+                    <div style="font-size: 12px; color: #666;">WPM</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="accuracy">100</div>
+                    <div style="font-size: 12px; color: #666;">% Accuracy</div>
+                </div>
+                <div>
+                    <div style="font-size: 32px; font-weight: bold;" id="time-left">60</div>
+                    <div style="font-size: 12px; color: #666;">Seconds</div>
+                </div>
+            </div>
+        `;
+
+        const testTexts = [
+            "The quick brown fox jumps over the lazy dog. Pack my box with five dozen liquor jugs. How vexingly quick daft zebras jump!",
+            "A journey of a thousand miles begins with a single step. The only way to do great work is to love what you do.",
+            "In the middle of difficulty lies opportunity. Success is not final, failure is not fatal: it is the courage to continue that counts."
+        ];
+
+        let startTime, interval, testText;
+
+        document.getElementById('start-test').onclick = () => {
+            testText = testTexts[Math.floor(Math.random() * testTexts.length)];
+            document.getElementById('test-text').textContent = testText;
+            document.getElementById('typing-input').value = '';
+            document.getElementById('typing-input').disabled = false;
+            document.getElementById('typing-input').focus();
+
+            let timeLeft = 60;
+            startTime = Date.now();
+
+            interval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('time-left').textContent = timeLeft;
+
+                const typed = document.getElementById('typing-input').value;
+                const words = typed.trim().split(/\s+/).length;
+                const elapsed = (Date.now() - startTime) / 1000 / 60;
+                const wpm = Math.round(words / elapsed);
+
+                let correct = 0;
+                for (let i = 0; i < Math.min(typed.length, testText.length); i++) {
+                    if (typed[i] === testText[i]) correct++;
+                }
+                const accuracy = typed.length > 0 ? Math.round((correct / typed.length) * 100) : 100;
+
+                document.getElementById('wpm').textContent = wpm;
+                document.getElementById('accuracy').textContent = accuracy;
+
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    document.getElementById('typing-input').disabled = true;
+                }
+            }, 1000);
+        };
+
+        document.getElementById('reset-test').onclick = () => {
+            clearInterval(interval);
+            document.getElementById('test-text').textContent = '';
+            document.getElementById('typing-input').value = '';
+            document.getElementById('typing-input').disabled = true;
+            document.getElementById('wpm').textContent = '0';
+            document.getElementById('accuracy').textContent = '100';
+            document.getElementById('time-left').textContent = '60';
+        };
+    }
+
+    renderGradientText() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gradient Text Generator</h2>
+            <input type="text" id="gradient-text-input" placeholder="Enter text" value="Gradient Text">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <input type="color" id="grad-text-color1" value="#667eea">
+                <input type="color" id="grad-text-color2" value="#764ba2">
+            </div>
+            <div class="result" id="gradient-text-preview" style="font-size: 48px; font-weight: bold; min-height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+            <div class="result" style="text-align: left; font-family: monospace; font-size: 12px; word-break: break-all;" id="gradient-css-code"></div>
+        `;
+
+        const update = () => {
+            const text = document.getElementById('gradient-text-input').value || 'Gradient Text';
+            const color1 = document.getElementById('grad-text-color1').value;
+            const color2 = document.getElementById('grad-text-color2').value;
+
+            const preview = document.getElementById('gradient-text-preview');
+            preview.textContent = text;
+            preview.style.background = `linear-gradient(90deg, ${color1}, ${color2})`;
+            preview.style.webkitBackgroundClip = 'text';
+            preview.style.webkitTextFillColor = 'transparent';
+            preview.style.backgroundClip = 'text';
+
+            document.getElementById('gradient-css-code').textContent = `background: linear-gradient(90deg, ${color1}, ${color2});
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;`;
+        };
+
+        document.getElementById('gradient-text-input').addEventListener('input', update);
+        document.getElementById('grad-text-color1').addEventListener('input', update);
+        document.getElementById('grad-text-color2').addEventListener('input', update);
+        update();
     }
 }
 
