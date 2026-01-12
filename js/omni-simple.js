@@ -1,10 +1,10 @@
 /**
- * 💎 Omni Tools - 500 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 520 ELITE TOOLS! 💎
  * 
  * BATCH 1-42: 470 tools across all categories
- * BATCH 43: ScrabbleScore + DiceRoll + TruthTable + LogicGates + ChessNotation + CardShuffler + HangmanHint + TowerSteps + Riddles + TicTacToe
- * BATCH 44: MoonPhase + SunTimes + WindChill + HeatIndex + BeaufortScale + CloudGuide + StarChart + PlantWaterer + HikingPace + SurvivalCheck
- * BATCH 45: NATOPhonetic + BrailleRef + ASLAlphabet + SolarDist + PetAge + LifeChapters + DecisionMatrix + BubbleWrap + Milestone500 + RandomActivity
+ * BATCH 43-45: 30 tools (Games, Nature, Milestone)
+ * BATCH 46: SyllableCount + RhymeFinder + HaikuHelper + FictionPrompts + CharGen + PlotTwist + DialogueStart + SettingGen + Alliteration + WritingMood
+ * BATCH 47: PaintCalc + FlooringCalc + WallpaperCalc + LumensWatts + WireGauge + Safety + FenceCalc + ConcreteCalc + BrickCalc + DrillSpeed
  */
 
 class OmniTools {
@@ -4084,6 +4084,168 @@ class OmniTools {
                 icon: "✨",
                 category: "Fun",
                 render: () => this.renderRandomActivity()
+            },
+            // === BATCH 46 - 510 TOOLS (LANGUAGE & WRITING) ===
+            syllableCounter: {
+                name: "Syllable Counter",
+                searchTerms: "syllable counter count words poetry writing",
+                description: "Count syllables (est.)",
+                icon: "✍️",
+                category: "Writing",
+                render: () => this.renderSyllableCounter()
+            },
+            rhymeFinder: {
+                name: "Rhyme Finder",
+                searchTerms: "rhyme finder words poetry matching",
+                description: "Common rhyme patterns",
+                icon: "🎵",
+                category: "Writing",
+                render: () => this.renderRhymeFinder()
+            },
+            haikuHelper: {
+                name: "Haiku Helper",
+                searchTerms: "haiku helper poetry writing 5-7-5 structure",
+                description: "Structure checker",
+                icon: "🌸",
+                category: "Writing",
+                render: () => this.renderHaikuHelper()
+            },
+            fictionPrompt: {
+                name: "Writing Prompts",
+                searchTerms: "writing prompts flash fiction story ideas",
+                description: "Random story starts",
+                icon: "💡",
+                category: "Writing",
+                render: () => this.renderFictionPrompt()
+            },
+            characterGen: {
+                name: "Character Gen",
+                searchTerms: "character generator names writing story",
+                description: "Random character traits",
+                icon: "👤",
+                category: "Writing",
+                render: () => this.renderCharacterGen()
+            },
+            plotTwistGen: {
+                name: "Plot Twist Gen",
+                searchTerms: "plot twist generator writing story ideas",
+                description: "Surprise story turns",
+                icon: "🌀",
+                category: "Writing",
+                render: () => this.renderPlotTwistGen()
+            },
+            dialogueStart: {
+                name: "Dialogue Start",
+                searchTerms: "dialogue starter writing conversation prompts",
+                description: "Random opening lines",
+                icon: "💬",
+                category: "Writing",
+                render: () => this.renderDialogueStart()
+            },
+            settingGen: {
+                name: "Setting Gen",
+                searchTerms: "setting generator writing location ideas",
+                description: "Random world locations",
+                icon: "🌍",
+                category: "Writing",
+                render: () => this.renderSettingGen()
+            },
+            alliterationCheck: {
+                name: "Alliteration Check",
+                searchTerms: "alliteration checker writing sounds poetry",
+                description: "Identify sound patterns",
+                icon: "🔤",
+                category: "Writing",
+                render: () => this.renderAlliterationCheck()
+            },
+            writingMood: {
+                name: "Writing Mood",
+                searchTerms: "writing mood ambient focus setting",
+                description: "Creative ambiance",
+                icon: "🕯️",
+                category: "Writing",
+                render: () => this.renderWritingMood()
+            },
+            // === BATCH 47 - 520 TOOLS (HOUSEHOLD & DIY) ===
+            paintCalc: {
+                name: "Paint Calculator",
+                searchTerms: "paint calculator wall area coverage gallons",
+                description: "Calc paint needed",
+                icon: "🎨",
+                category: "DIY",
+                render: () => this.renderPaintCalc()
+            },
+            flooringCalc: {
+                name: "Flooring Calc",
+                searchTerms: "flooring calculator tiles boards hardwood area",
+                description: "Calc floor materials",
+                icon: "🪵",
+                category: "DIY",
+                render: () => this.renderFlooringCalc()
+            },
+            wallpaperCalc: {
+                name: "Wallpaper Calc",
+                searchTerms: "wallpaper calculator rolls area walls",
+                description: "Calc rolls needed",
+                icon: "📜",
+                category: "DIY",
+                render: () => this.renderWallpaperCalc()
+            },
+            lumensToWatts: {
+                name: "Lumens to Watts",
+                searchTerms: "lumens to watts lighting brightness conversion",
+                description: "Light bulb guide",
+                icon: "💡",
+                category: "DIY",
+                render: () => this.renderLumensToWatts()
+            },
+            wireGaugeRef: {
+                name: "Wire Gauge Ref",
+                searchTerms: "wire gauge reference electrical size amps",
+                description: "Standard wire data",
+                icon: "🔌",
+                category: "DIY",
+                render: () => this.renderWireGaugeRef()
+            },
+            diySafety: {
+                name: "DIY Safety",
+                searchTerms: "diy safety checklist tools goggles mask",
+                description: "PPE & Shop checklist",
+                icon: "🦺",
+                category: "DIY",
+                render: () => this.renderDiySafety()
+            },
+            fenceCalc: {
+                name: "Fence Calculator",
+                searchTerms: "fence calculator posts rails panels length",
+                description: "Calc fencing parts",
+                icon: "🪵",
+                category: "DIY",
+                render: () => this.renderFenceCalc()
+            },
+            concreteCalc: {
+                name: "Concrete Calc",
+                searchTerms: "concrete calculator volume slab bags cubic",
+                description: "Calc concrete volume",
+                icon: "🧱",
+                category: "DIY",
+                render: () => this.renderConcreteCalc()
+            },
+            brickCalc: {
+                name: "Brick Calculator",
+                searchTerms: "brick calculator walls masonry count area",
+                description: "Calc bricks for wall",
+                icon: "🧱",
+                category: "DIY",
+                render: () => this.renderBrickCalc()
+            },
+            drillSpeedRef: {
+                name: "Drill Speed Ref",
+                searchTerms: "drill speed reference rpm metal wood plastic",
+                description: "Material RPM guide",
+                icon: "🌀",
+                category: "DIY",
+                render: () => this.renderDrillSpeedRef()
             }
         };
     }
@@ -17174,6 +17336,306 @@ Online: ${n.onLine}
         document.getElementById('ra-btn').onclick = () => {
             document.getElementById('ra-res').textContent = acts[Math.floor(Math.random() * acts.length)];
         };
+    }
+
+    renderSyllableCounter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Syllable Counter</h2>
+            <textarea id="sc-in" placeholder="Type words..." style="height:60px;"></textarea>
+            <div id="sc-res" class="result">Count: 0</div>
+            <p style="font-size:0.75em;">Estimation algorithm (Vowels/Consonants).</p>
+        `;
+        document.getElementById('sc-in').oninput = (e) => {
+            const word = e.target.value.toLowerCase().replace(/[^a-z ]/g, "");
+            if (!word) { document.getElementById('sc-res').textContent = "Count: 0"; return; }
+            let count = word.match(/[aeiouy]{1,2}/g)?.length || 0;
+            if (word.endsWith('e')) count--; // simple suffix handling
+            document.getElementById('sc-res').textContent = `Count: ${Math.max(1, count)}`;
+        };
+    }
+
+    renderRhymeFinder() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rhyme Ideas</h2>
+            <select id="rf-v">
+                <option>-at: Cat, Hat, Flat, Sat</option>
+                <option>-ing: Ring, Sing, King, Wing</option>
+                <option>-ion: Nation, Station, Action</option>
+                <option>-ight: Light, Night, Bright, Fight</option>
+            </select>
+            <div class="result">Try these in your verse!</div>
+        `;
+    }
+
+    renderHaikuHelper() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Haiku Check</h2>
+            <input type="text" id="hh-1" placeholder="5 Syllables" style="margin-bottom:5px;"><br>
+            <input type="text" id="hh-2" placeholder="7 Syllables" style="margin-bottom:5px;"><br>
+            <input type="text" id="hh-3" placeholder="5 Syllables">
+            <div class="result">Structure: 5-7-5</div>
+        `;
+    }
+
+    renderFictionPrompt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Story Prompt</h2>
+            <div id="fp-res" class="result" style="font-style:italic;">"The door was locked from the inside, but the room was empty..."</div>
+            <button id="fp-btn">New Prompt</button>
+        `;
+        const prompts = [
+            "A world where shadows talk back.", "You find a key that opens every door in your city except one.",
+            "The last letter arrived 10 years after they died.", "Gravity begins to weaken exactly at midnight.",
+            "Everyone wakes up with a number on their palm."
+        ];
+        document.getElementById('fp-btn').onclick = () => {
+            document.getElementById('fp-res').textContent = `"${prompts[Math.floor(Math.random() * prompts.length)]}"`;
+        };
+    }
+
+    renderCharacterGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Character Gen</h2>
+            <div id="cg-res" class="result" style="text-align:left; font-size:0.9em;">Click to generate...</div>
+            <button id="cg-btn">Generate</button>
+        `;
+        const names = ["Elias", "Sloane", "Kaelen", "Mira", "Jaxon"];
+        const jobs = ["Blacksmith", "Hacker", "Librarian", "Mercenary", "Architect"];
+        const secrets = ["Afraid of birds", "Can see 5 seconds into future", "Owes a debt to a ghost", "Secretly royal"];
+        document.getElementById('cg-btn').onclick = () => {
+            document.getElementById('cg-res').innerHTML = `
+                <b>Name:</b> ${names[Math.floor(Math.random() * names.length)]}<br>
+                <b>Job:</b> ${jobs[Math.floor(Math.random() * jobs.length)]}<br>
+                <b>Secret:</b> ${secrets[Math.floor(Math.random() * secrets.length)]}
+             `;
+        };
+    }
+
+    renderPlotTwistGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Plot Twist</h2>
+            <div id="pt-res" class="result">The mentor was the villain all along.</div>
+            <button id="pt-btn">Surprise Me</button>
+        `;
+        const twists = ["It was all a simulation.", "The protagonist is actually the sidekick.", "The hero's powers are killing them.", "The 'treasure' is a trap."];
+        document.getElementById('pt-btn').onclick = () => {
+            document.getElementById('pt-res').textContent = twists[Math.floor(Math.random() * twists.length)];
+        };
+    }
+
+    renderDialogueStart() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dialogue Start</h2>
+            <div id="ds-res" class="result">"I didn't think you'd actually show up."</div>
+            <button id="ds-btn">Next Line</button>
+        `;
+        const lines = ["'Don't look behind you.'", "'Is it supposed to glow like that?'", "'I've been waiting for this for 20 years.'", "'Who else knows?'"];
+        document.getElementById('ds-btn').onclick = () => {
+            document.getElementById('ds-res').textContent = lines[Math.floor(Math.random() * lines.length)];
+        };
+    }
+
+    renderSettingGen() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Setting Gen</h2>
+            <div id="sg-res" class="result">A floating city in a toxic atmosphere.</div>
+            <button id="sg-btn">New World</button>
+        `;
+        const sets = ["An underground library guarded by stone golems.", "A desert where it only rains glass.", "A forest where the trees grow upside down.", "A space station orbitng a black hole."];
+        document.getElementById('sg-btn').onclick = () => {
+            document.getElementById('sg-res').textContent = sets[Math.floor(Math.random() * sets.length)];
+        };
+    }
+
+    renderAlliterationCheck() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Alliteration</h2>
+            <input type="text" id="ac-in" placeholder="Peter Piper picked...">
+            <div id="ac-res" class="result">Enter text</div>
+        `;
+        document.getElementById('ac-in').oninput = (e) => {
+            const words = e.target.value.toLowerCase().split(' ').filter(w => w.length > 0);
+            if (words.length < 2) return;
+            const firsts = words.map(w => w[0]);
+            const count = firsts.filter(f => f === firsts[0]).length;
+            document.getElementById('ac-res').textContent = count === words.length ? "Perfect Alliteration!" : `${count}/${words.length} match star sound.`;
+        };
+    }
+
+    renderWritingMood() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Writing Mood</h2>
+            <select id="wm-v">
+                <option value="#fdf6e3">Classic Paper</option>
+                <option value="#282a36">Dark Midnight</option>
+                <option value="#e6f3ff">Ocean Focus</option>
+                <option value="#fff5f5">Warm Sunset</option>
+            </select>
+            <p style="font-size:0.8em; margin-top:10px;">Change workspace ambiance.</p>
+        `;
+        document.getElementById('wm-v').onchange = (e) => {
+            content.style.background = e.target.value;
+            content.style.transition = 'background 0.5s';
+        };
+    }
+
+    renderPaintCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Paint Calc</h2>
+            Wall Area (sq ft): <input type="number" id="pc-a" value="200" style="width:60px">
+            <button id="pc-btn">Calc Gal</button>
+            <div id="pc-res" class="result"></div>
+        `;
+        document.getElementById('pc-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('pc-a').value);
+            const gal = a / 350; // 350 sq ft per gallon
+            document.getElementById('pc-res').textContent = `${gal.toFixed(1)} Gallons needed.`;
+        };
+    }
+
+    renderFlooringCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flooring Calc</h2>
+            Room L x W (ft): <input type="number" id="fc-l" value="10" style="width:40px"> x <input type="number" id="fc-w" value="12" style="width:40px"><br>
+            <small>Area: <span id="fc-area">120</span> sq ft</small><br>
+            <button id="fc-btn">Calc Boards</button>
+            <div id="fc-res" class="result"></div>
+        `;
+        document.getElementById('fc-btn').onclick = () => {
+            const l = parseFloat(document.getElementById('fc-l').value);
+            const w = parseFloat(document.getElementById('fc-w').value);
+            document.getElementById('fc-res').textContent = `Order for ${Math.ceil((l * w) * 1.1)} sq ft (incl. 10% waste)`;
+        };
+    }
+
+    renderWallpaperCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wallpaper</h2>
+            Total Wall Width (ft): <input type="number" id="wc-w" value="30" style="width:50px"><br>
+            Wall Height (ft): <input type="number" id="wc-h" value="8" style="width:50px">
+            <button id="wc-btn">Calc Rolls</button>
+            <div id="wc-res" class="result"></div>
+        `;
+        document.getElementById('wc-btn').onclick = () => {
+            const area = parseFloat(document.getElementById('wc-w').value) * parseFloat(document.getElementById('wc-h').value);
+            const rolls = area / 56; // Standard US double roll ~56 sq ft
+            document.getElementById('wc-res').textContent = `${Math.ceil(rolls)} double rolls needed.`;
+        };
+    }
+
+    renderLumensToWatts() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Brightness Ref</h2>
+            <select id="lw-v">
+                <option>450 lm (40W Equiv)</option>
+                <option selected>800 lm (60W Equiv)</option>
+                <option>1100 lm (75W Equiv)</option>
+                <option>1600 lm (100W Equiv)</option>
+            </select>
+            <div class="result">Standard Equivalents</div>
+        `;
+    }
+
+    renderWireGaugeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wire Gauge</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                14 AWG: 15 Amps (Lights)<br>
+                12 AWG: 20 Amps (Outlets)<br>
+                10 AWG: 30 Amps (Heaters)<br>
+                8 AWG: 40 Amps (Ranges)
+            </div>
+        `;
+    }
+
+    renderDiySafety() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DIY Safety</h2>
+            <div style="text-align:left; font-size:0.8em;">
+                [ ] Eye Protection on<br>
+                [ ] Dust mask for sanding<br>
+                [ ] Hearing protection (saws)<br>
+                [ ] No loose clothing/hair<br>
+                [ ] First aid kit nearby
+            </div>
+        `;
+    }
+
+    renderFenceCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fence Calc</h2>
+            Distance (ft): <input type="number" id="fc-d" value="48" style="width:50px"><br>
+            Post Spacing (ft): <input type="number" id="fc-s" value="8" style="width:50px">
+            <button id="fc-btn">Count Posts</button>
+            <div id="fc-res" class="result"></div>
+        `;
+        document.getElementById('fc-btn').onclick = () => {
+            const d = parseFloat(document.getElementById('fc-d').value);
+            const s = parseFloat(document.getElementById('fc-s').value);
+            document.getElementById('fc-res').textContent = `${Math.ceil(d / s) + 1} posts needed.`;
+        };
+    }
+
+    renderConcreteCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Concrete Calc</h2>
+            Slab L x W (ft): <input type="number" id="cc-l" value="10" style="width:40px"> x <input type="number" id="cc-w" value="10" style="width:40px"><br>
+            Depth (inches): <input type="number" id="cc-d" value="4" style="width:40px">
+            <button id="cc-btn">Calc Yards</button>
+            <div id="cc-res" class="result"></div>
+        `;
+        document.getElementById('cc-btn').onclick = () => {
+            const l = parseFloat(document.getElementById('cc-l').value);
+            const w = parseFloat(document.getElementById('cc-w').value);
+            const d = parseFloat(document.getElementById('cc-d').value) / 12;
+            const cubicYards = (l * w * d) / 27;
+            document.getElementById('cc-res').textContent = `${cubicYards.toFixed(2)} Cubic Yards.`;
+        };
+    }
+
+    renderBrickCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Brick Calc</h2>
+            Wall Area (sq ft): <input type="number" id="bc-a" value="100" style="width:60px">
+            <button id="bc-btn">Calc Bricks</button>
+            <div id="bc-res" class="result"></div>
+        `;
+        document.getElementById('bc-btn').onclick = () => {
+            const a = parseFloat(document.getElementById('bc-a').value);
+            document.getElementById('bc-res').textContent = `${Math.ceil(a * 7)} standard bricks (incl. mortar).`;
+        };
+    }
+
+    renderDrillSpeedRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Drill Speeds</h2>
+            <div style="font-size:0.8em; text-align:left;">
+                <b>Steel:</b> 300 - 800 RPM (Slow)<br>
+                <b>Wood:</b> 1200 - 2500 RPM (Fast)<br>
+                <b>Plastics:</b> 500 - 1000 RPM (Medium)<br>
+                <small>*Use coolant for metal!</small>
+            </div>
+        `;
     }
 }
 

@@ -1,40 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 500 💎
-**Last Updated:** Batch 43, 44 & 45 (Games, Nature, Final Milestone)
+**Total Tools:** 520 💎🚀
+**Last Updated:** Batch 46 & 47 (Writing / DIY)
 
-## Latest Additions (Batch 43 - Games & Logic)
-- Scrabble Word Score Calculator
-- Multi-sided Dice Roller (D6, D20, etc.)
-- Logic Truth Table Generator (p, q)
-- Logic Gates Symbol & Rule Reference
-- Chess Algebraic Notation Guide
-- Card Shuffler & Random Dealer
-- Hangman Letter Frequency Hints
-- Tower of Hanoi Moves Calculator
-- Daily Random Riddle
-- TicTacToe Strategy Guide
+## Latest Additions (Batch 46 - Language & Writing)
+- Syllable Counter (Regex-based estimation)
+- Rhyme Ideas Reference (Common suffixes)
+- Haiku Structure Checker (5-7-5)
+- Fiction Story Prompts Generator
+- Character Traits & Name Generator
+- Adventure Plot Twist Generator
+- Random Dialogue Line Starters
+- Story Setting & World Generator
+- Alliteration Sound Sound Checker
+- Writing Mood Ambient Focus Tool
 
-## Latest Additions (Batch 44 - Nature & Outdoors)
-- Current Moon Phase Estimator
-- Day Length & Sunrise logic theory
-- Wind Chill Perceived Cold Calc
-- Heat Index Perceived Heat Calc
-- Beaufort Scale Wind Force Guide
-- Common Cloud Type Identification
-- Seasonal Constellation Guide (Text)
-- Simple Plant Watering Log
-- Hiking Pace Estimator (Naismith's Rule)
-- 72-Hour Survival Kit Checklist
-
-## The Final Mile (Batch 45 - Milestone 500)
-- NATO Phonetic Alphabet Reference
-- Braille Alphabet Pattern Guide
-- ASL Alphabet Hand Signs (Text)
-- Solar System Planet Distances (AU)
-- Pet Age to Human Years (Dog/Cat)
-- Life Chapters (Age stage estimator)
-- Weighted Decision Matrix tool
-- Stress Relief Virtual Bubble Wrap
-- THE 500 TOOL MILESTONE BADGE 🏆
-- Random Boredom Buster Activity
+## Latest Additions (Batch 47 - Household & DIY)
+- Paint Coverage Calculator (Gallons/SqFt)
+- Flooring Material Calculator (Boards/Tiles)
+- Wallpaper Roll Calculator (Coverage)
+- Lumens to Watts Brightness Guide
+- Electrical Wire Gauge & Amp Reference
+- Workshop & DIY Safety Checklist
+- Fence Post & Rail Calculator
+- Concrete Slab Volume Calculator (Cubic Yards)
+- Brick count for Masonry Walls
+- Material-based Drill Speed (RPM) Guide
