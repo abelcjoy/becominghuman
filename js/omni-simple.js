@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 430 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 450 ELITE TOOLS! 💎
  * 
  * BATCH 1-22: 270 tools across all categories
  * BATCH 23: KinEnergy + PotEnergy + Momentum + OhmLaw + ResistorCol + Capacitance + Inductance + FreqPeriod + Accel + Newton2
@@ -18,6 +18,8 @@
  * BATCH 36: PunnettSquare + BmiCalc + BmrCalc + TdeeCalc + BodyFatNavy + IdealWeight + WaterIntake + BacCalc + MacroCalc + PregDueDate
  * BATCH 37: WorldClock + FlightTime + CoordDist + TzDiff + PackingList + TravelBudget + DialCodes + CurrencyRef + TempGuide + LanguageRef
  * BATCH 38: CarbonTrack + WaterFootprint + EnergyBulb + RecycleHelper + PlasticWaste + TreeOffset + EarthDay + CompostGuide + SolarSaving + ConservationRef
+ * BATCH 39: UnitConvFood + OvenTemp + ServingsScale + PastaTimer + SteakGuide + EggGuide + RoastTime + CaffeineTrack + PantryCheck + SpaghettiMeasure
+ * BATCH 40: MoodTracker + GratitudeLog + Pomodoro + BreatheGuide + HabitCheck + SleepCycles + WaterLog + QuietTimer + ScreenTimeLog + GoalSetter
  */
 
 class OmniTools {
@@ -3530,6 +3532,168 @@ class OmniTools {
                 icon: "🐼",
                 category: "Environment",
                 render: () => this.renderAnimalRef()
+            },
+            // === BATCH 39 - 440 TOOLS (FOOD & COOKING) ===
+            unitConvFood: {
+                name: "Cups to Grams",
+                searchTerms: "cooking unit converter cups grams flour sugar scale",
+                description: "Common ingredient weights",
+                icon: "🧁",
+                category: "Food",
+                render: () => this.renderUnitConvFood()
+            },
+            ovenTemp: {
+                name: "Oven Temp",
+                searchTerms: "oven temperature conversion gas mark celsius fahrenheit",
+                description: "Quick Oven Conversion",
+                icon: "🔥",
+                category: "Food",
+                render: () => this.renderOvenTemp()
+            },
+            servingsScale: {
+                name: "Servings Scaler",
+                searchTerms: "servings scaler recipe portions multiplier",
+                description: "Scale recipe ingredients",
+                icon: "🍽️",
+                category: "Food",
+                render: () => this.renderServingsScale()
+            },
+            pastaTimer: {
+                name: "Pasta Timer",
+                searchTerms: "pasta timer cooking time al dente",
+                description: "Common pasta cook times",
+                icon: "🍝",
+                category: "Food",
+                render: () => this.renderPastaTimer()
+            },
+            steakGuide: {
+                name: "Steak Guide",
+                searchTerms: "steak doneness temperature rare medium well guide",
+                description: "Ideal temperatures",
+                icon: "🥩",
+                category: "Food",
+                render: () => this.renderSteakGuide()
+            },
+            eggTimerGuide: {
+                name: "Egg Guide",
+                searchTerms: "egg timer boiling guide soft hard medium",
+                description: "Boiling time guide",
+                icon: "🥚",
+                category: "Food",
+                render: () => this.renderEggTimerGuide()
+            },
+            roastTime: {
+                name: "Roast Time",
+                searchTerms: "roast timer meat weight chicken beef turkey pork",
+                description: "Est. roasting time",
+                icon: "🍗",
+                category: "Food",
+                render: () => this.renderRoastTime()
+            },
+            caffeineTrack: {
+                name: "Caffeine Tracker",
+                searchTerms: "caffeine tracker coffee intake monitoring limit",
+                description: "Daily intake log",
+                icon: "☕",
+                category: "Food",
+                render: () => this.renderCaffeineTrack()
+            },
+            pantryCheck: {
+                name: "Pantry Checklist",
+                searchTerms: "pantry staples checklist shopping items essentials",
+                description: "Kitchen staples list",
+                icon: "🥫",
+                category: "Food",
+                render: () => this.renderPantryCheck()
+            },
+            spaghettiMeasure: {
+                name: "Spaghetti Calc",
+                searchTerms: "spaghetti measure portions thickness diameter",
+                description: "Portion size by diameter",
+                icon: "🍝",
+                category: "Food",
+                render: () => this.renderSpaghettiMeasure()
+            },
+            // === BATCH 40 - 450 TOOLS (SELF-IMPROVEMENT) ===
+            moodTracker: {
+                name: "Mood Tracker",
+                searchTerms: "mood tracker emoji log daily feelings",
+                description: "Daily mood log",
+                icon: "🎭",
+                category: "Self-Improvement",
+                render: () => this.renderMoodTracker()
+            },
+            gratitudeLog: {
+                name: "Gratitude Log",
+                searchTerms: "gratitude list journal mindset daily",
+                description: "Write 3 good things",
+                icon: "🙏",
+                category: "Self-Improvement",
+                render: () => this.renderGratitudeLog()
+            },
+            pomodoroBasic: {
+                name: "Pomodoro Timer",
+                searchTerms: "pomodoro timer focus work break study productivity",
+                description: "25/5 min workflow",
+                icon: "🍅",
+                category: "Self-Improvement",
+                render: () => this.renderPomodoroBasic()
+            },
+            breatheGuide: {
+                name: "Breathe Guide",
+                searchTerms: "breathing exercise guide mindfulness stress calm",
+                description: "Simple breathing pace",
+                icon: "🌬️",
+                category: "Self-Improvement",
+                render: () => this.renderBreatheGuide()
+            },
+            habitCheck: {
+                name: "Habit Helper",
+                searchTerms: "habit tracker checklist goals daily routine",
+                description: "Track 5 daily habits",
+                icon: "✅",
+                category: "Self-Improvement",
+                render: () => this.renderHabitCheck()
+            },
+            sleepCycles: {
+                name: "Sleep Cycles",
+                searchTerms: "sleep cycles sleep timer wake up time bedtime",
+                description: "Best wake up times",
+                icon: "😴",
+                category: "Self-Improvement",
+                render: () => this.renderSleepCycles()
+            },
+            waterLog: {
+                name: "Water Tracker",
+                searchTerms: "water intake tracker hydration goal daily monitoring",
+                description: "Track daily cups",
+                icon: "🥤",
+                category: "Self-Improvement",
+                render: () => this.renderWaterLog()
+            },
+            meditationSilence: {
+                name: "Quiet Timer",
+                searchTerms: "meditation timer silence focus calm mindfulness",
+                description: "Silent meditation timer",
+                icon: "🧘",
+                category: "Self-Improvement",
+                render: () => this.renderMeditationSilence()
+            },
+            screenTimeLog: {
+                name: "Screen Log",
+                searchTerms: "screen time tracking limit digital detox daily usage",
+                description: "Daily self-report",
+                icon: "📱",
+                category: "Self-Improvement",
+                render: () => this.renderScreenTimeLog()
+            },
+            goalSMART: {
+                name: "Goal Setter",
+                searchTerms: "smart goal setter planning objective monitoring targets",
+                description: "Define a SMART goal",
+                icon: "🎯",
+                category: "Self-Improvement",
+                render: () => this.renderGoalSMART()
             }
         };
     }
@@ -15361,6 +15525,414 @@ Online: ${n.onLine}
                 <span style="color:#5bc0de; font-weight:bold;">NT:</span> Near Threatened<br>
                 <span style="color:#5cb85c; font-weight:bold;">LC:</span> Least Concern
             </div>
+        `;
+    }
+
+    renderUnitConvFood() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cups to Grams</h2>
+            <select id="uf-i">
+                <option value="120">Flour (All Purpose)</option>
+                <option value="200">Sugar (Granulated)</option>
+                <option value="220">Brown Sugar (Packed)</option>
+                <option value="227">Butter</option>
+                <option value="150">Rice (Uncooked)</option>
+                <option value="100">Oats (Rolled)</option>
+            </select>
+            <input type="number" id="uf-v" value="1" placeholder="Cups" style="width:60px">
+            <button id="uf-btn">Calc Grams</button>
+            <div id="uf-res" class="result"></div>
+        `;
+        document.getElementById('uf-btn').onclick = () => {
+            const density = parseFloat(document.getElementById('uf-i').value);
+            const cups = parseFloat(document.getElementById('uf-v').value);
+            document.getElementById('uf-res').textContent = `Total: ${Math.round(cups * density)} grams`;
+        };
+    }
+
+    renderOvenTemp() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Oven Temp</h2>
+            <input type="number" id="ot-v" placeholder="Value">
+            <select id="ot-u">
+                <option value="c">Celsius</option>
+                <option value="f">Fahrenheit</option>
+                <option value="g">Gas Mark</option>
+            </select>
+            <button id="ot-btn">Convert</button>
+            <div id="ot-res" class="result"></div>
+        `;
+        document.getElementById('ot-btn').onclick = () => {
+            let v = parseFloat(document.getElementById('ot-v').value);
+            let u = document.getElementById('ot-u').value;
+            let c, f, g;
+            if (u === 'c') c = v;
+            else if (u === 'f') c = (v - 32) * 5 / 9;
+            else if (u === 'g') c = v === 1 ? 140 : 140 + (v - 1) * 10; // Simplified gas mark
+
+            f = c * 9 / 5 + 32;
+            g = c <= 135 ? "1/4" : c <= 150 ? 2 : c <= 180 ? 4 : c <= 200 ? 6 : c <= 230 ? 8 : 10;
+
+            document.getElementById('ot-res').innerHTML = `
+                Celsius: ${Math.round(c)}°C<br>
+                Fahrenheit: ${Math.round(f)}°F<br>
+                Gas Mark: ~${g}
+             `;
+        };
+    }
+
+    renderServingsScale() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Servings Scaler</h2>
+            Original: <input type="number" id="ss-o" value="4" style="width:50px">
+            Desired: <input type="number" id="ss-d" value="6" style="width:50px">
+            <button id="ss-btn">Calc Factor</button>
+            <div id="ss-res" class="result">Multiplier: x1.5</div>
+        `;
+        document.getElementById('ss-btn').onclick = () => {
+            const o = parseFloat(document.getElementById('ss-o').value);
+            const d = parseFloat(document.getElementById('ss-d').value);
+            document.getElementById('ss-res').innerHTML = `Multiplier: <b>x${(d / o).toFixed(2)}</b><br><small>Multiply all ingredients by this.</small>`;
+        };
+    }
+
+    renderPastaTimer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pasta Timer</h2>
+            <select id="pt-s">
+                <option value="2">Angel Hair (2-3m)</option>
+                <option value="10">Spaghetti (9-11m)</option>
+                <option value="12">Penne (11-13m)</option>
+                <option value="8">Fusilli (7-9m)</option>
+                <option value="11">Farfalle (10-12m)</option>
+            </select>
+            <button id="pt-btn">Start Timer</button>
+            <div id="pt-res" class="result">Al Dente hint: -1m</div>
+        `;
+        document.getElementById('pt-btn').onclick = () => {
+            const mins = parseInt(document.getElementById('pt-s').value);
+            let sec = mins * 60;
+            const btn = document.getElementById('pt-btn');
+            btn.disabled = true;
+            const timer = setInterval(() => {
+                sec--;
+                const m = Math.floor(sec / 60);
+                const s = sec % 60;
+                document.getElementById('pt-res').textContent = `Remaining: ${m}:${s < 10 ? '0' : ''}${s}`;
+                if (sec <= 0) {
+                    clearInterval(timer);
+                    document.getElementById('pt-res').innerHTML = "<b>TIME'S UP! 🍝</b>";
+                    btn.disabled = false;
+                }
+            }, 1000);
+        };
+    }
+
+    renderSteakGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Steak Guide</h2>
+            <div style="text-align:left; font-size:0.9em; line-height:1.6;">
+                <span style="color:blue;">Rare:</span> 120-130°F (49-54°C)<br>
+                <span style="color:green;">Med-Rare:</span> 130-135°F (54-57°C)<br>
+                <span style="color:orange;">Medium:</span> 140-150°F (60-65°C)<br>
+                <span style="color:#d9534f;">Med-Well:</span> 155-165°F (68-74°C)<br>
+                <span style="color:red;">Well Done:</span> 170°F+ (77°C+)
+            </div>
+            <p style="font-size:0.8em; margin-top:10px;">*Rest for 5 mins after cooking!</p>
+        `;
+    }
+
+    renderEggTimerGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Egg Guide</h2>
+            <div style="text-align:left; font-size:0.9em;">
+                🕒 <b>6 mins:</b> Soft boiled (Runny yolk)<br>
+                🕒 <b>7 mins:</b> Jammy (Creamy yolk)<br>
+                🕒 <b>8 mins:</b> Medium (Soft but set)<br>
+                🕒 <b>10 mins:</b> Hard boiled (Firm yolk)<br>
+                🕒 <b>12 mins:</b> Very hard (Solid yellow)
+            </div>
+        `;
+    }
+
+    renderRoastTime() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Roast Time</h2>
+            <select id="rt-m">
+                <option value="45">Chicken (45m/kg + 20m)</option>
+                <option value="50">Beef (50m/kg + 20m)</option>
+                <option value="60">Pork (60m/kg + 20m)</option>
+                <option value="40">Turkey (40m/kg + 20m)</option>
+            </select>
+            Weight (kg): <input type="number" id="rt-w" value="1.5" style="width:60px">
+            <button id="rt-btn">Calc Time</button>
+            <div id="rt-res" class="result"></div>
+        `;
+        document.getElementById('rt-btn').onclick = () => {
+            const m = parseInt(document.getElementById('rt-m').value);
+            const w = parseFloat(document.getElementById('rt-w').value);
+            const total = (m * w) + 20;
+            document.getElementById('rt-res').textContent = `Total: ${Math.floor(total / 60)}h ${Math.round(total % 60)}m at 180°C`;
+        };
+    }
+
+    renderCaffeineTrack() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Caffeine Tracker</h2>
+            <button id="ct-esp">Espresso (+60mg)</button>
+            <button id="ct-cof">Coffee (+95mg)</button>
+            <button id="ct-tea">Tea (+30mg)</button>
+            <div id="ct-res" class="result">Current: 0mg / 400mg</div>
+            <button id="ct-clr" style="font-size:0.8em; opacity:0.6;">Reset</button>
+        `;
+        let total = 0;
+        const draw = () => {
+            const color = total > 400 ? 'red' : 'green';
+            document.getElementById('ct-res').innerHTML = `Current: <b style="color:${color}">${total}mg</b> / 400mg`;
+        };
+        document.getElementById('ct-esp').onclick = () => { total += 60; draw(); };
+        document.getElementById('ct-cof').onclick = () => { total += 95; draw(); };
+        document.getElementById('ct-tea').onclick = () => { total += 30; draw(); };
+        document.getElementById('ct-clr').onclick = () => { total = 0; draw(); };
+    }
+
+    renderPantryCheck() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pantry Staples</h2>
+            <div style="text-align:left; columns:2; font-size:0.8em;">
+                <label><input type="checkbox"> Salt/Pepper</label><br>
+                <label><input type="checkbox"> Olive Oil</label><br>
+                <label><input type="checkbox"> Garlic/Onions</label><br>
+                <label><input type="checkbox"> Flour/Sugar</label><br>
+                <label><input type="checkbox"> Rice/Pasta</label><br>
+                <label><input type="checkbox"> Eggs/Milk</label><br>
+                <label><input type="checkbox"> Canned Beans</label><br>
+                <label><input type="checkbox"> Spices (Basic)</label>
+            </div>
+        `;
+    }
+
+    renderSpaghettiMeasure() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Spaghetti Calc</h2>
+            <p>1 Portion ≈ 20mm diameter (dry)</p>
+            Hold pasta to screen? 👇
+            <div style="width:20mm; height:20mm; border:2px dashed #ccc; border-radius:50%; margin:15px auto; display:flex; align-items:center; justify-content:center; color:#ccc;">1P</div>
+        `;
+    }
+
+    renderMoodTracker() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mood Tracker</h2>
+            <div style="font-size:2em;">
+                <span class="mood-ico" style="cursor:pointer">🤩</span>
+                <span class="mood-ico" style="cursor:pointer">😊</span>
+                <span class="mood-ico" style="cursor:pointer">😐</span>
+                <span class="mood-ico" style="cursor:pointer">😔</span>
+                <span class="mood-ico" style="cursor:pointer">😡</span>
+            </div>
+            <div id="mt-res" class="result">How are you today?</div>
+        `;
+        document.querySelectorAll('.mood-ico').forEach(el => {
+            el.onclick = () => {
+                document.getElementById('mt-res').innerHTML = `Logged: ${el.textContent}<br><small>Great for pattern tracking!</small>`;
+            };
+        });
+    }
+
+    renderGratitudeLog() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gratitude Log</h2>
+            1. <input type="text" style="width:80%"><br>
+            2. <input type="text" style="width:80%"><br>
+            3. <input type="text" style="width:80%"><br>
+            <p style="font-size:0.8em; margin-top:10px;">End the day on a positive note.</p>
+        `;
+    }
+
+    renderPomodoroBasic() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pomodoro Timer</h2>
+            <div id="pm-t" style="font-size:3em; font-weight:bold;">25:00</div>
+            <button id="pm-s">Start Focus</button>
+            <button id="pm-b">Short Break</button>
+        `;
+        let sec = 25 * 60;
+        let timer;
+        const draw = () => {
+            const m = Math.floor(sec / 60);
+            const s = sec % 60;
+            document.getElementById('pm-t').textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+        };
+        const start = (m) => {
+            clearInterval(timer);
+            sec = m * 60;
+            draw();
+            timer = setInterval(() => {
+                sec--;
+                draw();
+                if (sec <= 0) {
+                    clearInterval(timer);
+                    alert("Time's up!");
+                }
+            }, 1000);
+        };
+        document.getElementById('pm-s').onclick = () => start(25);
+        document.getElementById('pm-b').onclick = () => start(5);
+        // Clean up
+        const originalOpen = this.openTool;
+        this.openTool = (id) => { clearInterval(timer); this.openTool = originalOpen; originalOpen.call(this, id); };
+    }
+
+    renderBreatheGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Breathe Guide</h2>
+            <div id="br-ball" style="width:50px; height:50px; background:cyan; border-radius:50%; margin:30px auto; transition: all 4s ease-in-out;"></div>
+            <div id="br-txt" class="result">Inhale...</div>
+        `;
+        const ball = document.getElementById('br-ball');
+        const txt = document.getElementById('br-txt');
+        let state = 0;
+        const step = () => {
+            if (state === 0) {
+                ball.style.transform = "scale(3)";
+                txt.textContent = "Inhale...";
+                state = 1;
+            } else {
+                ball.style.transform = "scale(1)";
+                txt.textContent = "Exhale...";
+                state = 0;
+            }
+        };
+        const t = setInterval(step, 4000);
+        const originalOpen = this.openTool;
+        this.openTool = (id) => { clearInterval(t); this.openTool = originalOpen; originalOpen.call(this, id); };
+    }
+
+    renderHabitCheck() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Habit Helper</h2>
+            <div style="text-align:left; max-width:200px; margin:auto;">
+                <label><input type="checkbox"> Exercise</label><br>
+                <label><input type="checkbox"> Meditate</label><br>
+                <label><input type="checkbox"> Read Book</label><br>
+                <label><input type="checkbox"> 8h Sleep</label><br>
+                <label><input type="checkbox"> No Junk Food</label>
+            </div>
+            <p style="font-size:0.75em; margin-top:10px;">Consistency is king!</p>
+        `;
+    }
+
+    renderSleepCycles() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sleep Cycles</h2>
+            I want to wake up at:<br>
+            <input type="time" id="sc-t" value="07:00">
+            <button id="sc-btn">Calc Bedtime</button>
+            <div id="sc-res" class="result"></div>
+        `;
+        document.getElementById('sc-btn').onclick = () => {
+            const [h, m] = document.getElementById('sc-t').value.split(':').map(Number);
+            const wake = new Date();
+            wake.setHours(h, m, 0);
+            const times = [];
+            for (let i = 6; i >= 4; i--) { // 6, 5, 4 cycles
+                const t = new Date(wake.getTime() - (i * 90 + 15) * 60000);
+                times.push(t.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+            }
+            document.getElementById('sc-res').innerHTML = `Bedtime options (90m cycles):<br><b>${times.join(' or ')}</b>`;
+        };
+    }
+
+    renderWaterLog() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Water Log</h2>
+            <div id="wl-res" style="font-size:2em;">🥛🥛🥛🥛🥛🥛🥛🥛</div>
+            <button id="wl-add">+ Drink 1 Glass</button>
+            <button id="wl-clr" style="font-size:0.8em;">Reset</button>
+        `;
+        let count = 0;
+        const draw = () => {
+            let s = "";
+            for (let i = 0; i < 8; i++) s += i < count ? "💧" : "🥛";
+            document.getElementById('wl-res').textContent = s;
+        };
+        document.getElementById('wl-add').onclick = () => { if (count < 8) count++; draw(); };
+        document.getElementById('wl-clr').onclick = () => { count = 0; draw(); };
+        draw();
+    }
+
+    renderMeditationSilence() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Quiet Timer</h2>
+            <input type="number" id="ms-v" value="10" style="width:60px"> mins
+            <button id="ms-btn">Start Silence</button>
+            <div id="ms-res" class="result"></div>
+        `;
+        document.getElementById('ms-btn').onclick = () => {
+            const mins = parseInt(document.getElementById('ms-v').value);
+            let sec = mins * 60;
+            const btn = document.getElementById('ms-btn');
+            btn.disabled = true;
+            const t = setInterval(() => {
+                sec--;
+                const m = Math.floor(sec / 60);
+                const s = sec % 60;
+                document.getElementById('ms-res').textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+                if (sec <= 0) {
+                    clearInterval(t);
+                    document.getElementById('ms-res').innerHTML = "<b>Peace attained. 🙏</b>";
+                    btn.disabled = false;
+                }
+            }, 1000);
+            const originalOpen = this.openTool;
+            this.openTool = (id) => { clearInterval(t); this.openTool = originalOpen; originalOpen.call(this, id); };
+        };
+    }
+
+    renderScreenTimeLog() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Screen Log</h2>
+            Hours Today: <input type="number" id="st-h" value="4" style="width:50px">
+            <button id="st-btn">Log Time</button>
+            <div id="st-res" class="result"></div>
+        `;
+        document.getElementById('st-btn').onclick = () => {
+            const h = parseFloat(document.getElementById('st-h').value);
+            const msg = h > 4 ? "Try to cut back! 📉" : "Good balance! ✅";
+            document.getElementById('st-res').innerHTML = `<b>${h}h logged.</b><br>${msg}`;
+        };
+    }
+
+    renderGoalSMART() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Goal Setter</h2>
+            <input type="text" placeholder="Specific (What?)" style="width:80%"><br>
+            <input type="text" placeholder="Measurable (How much?)" style="width:80%"><br>
+            <input type="text" placeholder="Achievable (How?)" style="width:80%"><br>
+            <input type="text" placeholder="Relevant (Why?)" style="width:80%"><br>
+            <input type="text" placeholder="Time-bound (When?)" style="width:80%"><br>
+            <p style="font-size:0.7em; margin-top:10px;">SMART goals are 70% more likely to be achieved.</p>
         `;
     }
 }
