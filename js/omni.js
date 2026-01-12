@@ -2029,39 +2029,91 @@ export class OmniProtocol {
         const searchInput = document.getElementById('omni-search');
         if (!container) return;
 
+        // Initialize A2HS close logic
+        const a2hs = document.getElementById('a2hs-banner');
+        if (a2hs && !a2hs.dataset.hooked) {
+            a2hs.dataset.hooked = "true";
+            document.getElementById('a2hs-close').onclick = () => a2hs.classList.add('hidden');
+        }
+
         container.innerHTML = '';
+
+        // Define common synonyms for better UX
+        const synonyms = {
+            'calculator': ['math', 'engine', 'calc', 'baseline', 'audit', 'ratio'],
+            'converter': ['pivot', 'shift', 'forge', 'base', 'unit', 'protocol'],
+            'generator': ['forge', 'filler', 'entropy', 'lorem', 'signal'],
+            'security': ['audit', 'audit', 'aegis', 'cipher', 'secrets']
+        };
+
+        const f = filter.toLowerCase().trim();
+
         Object.keys(this.tools).forEach(id => {
             const tool = this.tools[id];
 
-            if (filter && !tool.name.toLowerCase().includes(filter.toLowerCase()) &&
-                !tool.category.toLowerCase().includes(filter.toLowerCase()) &&
-                !tool.description.toLowerCase().includes(filter.toLowerCase())) {
-                return;
+            // Comprehensive Search Logic
+            let matches = false;
+            if (!f) matches = true;
+            else {
+                const searchPool = [
+                    tool.name.toLowerCase(),
+                    tool.category.toLowerCase(),
+                    tool.description.toLowerCase(),
+                    id.toLowerCase()
+                ];
+
+                // Direct or Partial match
+                if (searchPool.some(s => s.includes(f) || f.includes(s))) matches = true;
+
+                // Keyword normalization (e.g. "calculaor" matches "calculator")
+                const normalizedF = f.replace(/aor$/, 'ator').replace(/er$/, 'or');
+                if (!matches && searchPool.some(s => s.includes(normalizedF))) matches = true;
+
+                // Synonym match
+                if (!matches) {
+                    for (const [key, list] of Object.entries(synonyms)) {
+                        if (f.includes(key) || key.includes(f) || normalizedF.includes(key)) {
+                            if (list.some(l => searchPool.some(s => s.includes(l)))) {
+                                matches = true;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
 
+            if (!matches) return;
+
             const card = document.createElement('div');
-            card.className = "group relative p-8 bg-zinc-900/50 border border-white/5 hover:border-white/20 transition-all duration-500 cursor-pointer overflow-hidden animate-fade-in";
+            // Enhanced Card Classes for Visibility on Mobile
+            card.className = "group relative p-6 bg-zinc-900/40 border border-white/10 hover:border-white transition-all duration-300 cursor-pointer overflow-hidden rounded-xl animate-fade-in";
             card.onclick = () => this.openTool(id);
 
             card.innerHTML = `
-                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity text-4xl">${tool.icon}</div>
+                <div class="protocol-icon absolute top-4 right-4 opacity-40 group-hover:opacity-100 transition-opacity text-2xl md:text-3xl">${tool.icon}</div>
                 <div class="relative z-10">
-                    <div class="text-[10px] uppercase tracking-[0.3em] text-stone-500 mb-4 font-mono">${tool.category}</div>
-                    <h3 class="text-xl font-bold text-white mb-2 font-['Cinzel']">${tool.name}</h3>
-                    <p class="text-sm text-stone-400 font-light leading-relaxed mb-6 h-12 overflow-hidden">${tool.description}</p>
-                    <div class="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/40 group-hover:text-white transition-colors">
-                        <span>Initialize Protocol</span>
-                        <span class="transform group-hover:translate-x-2 transition-transform">→</span>
+                    <div class="text-[10px] uppercase tracking-[0.2em] text-stone-500 mb-2 font-mono">${tool.category}</div>
+                    <h3 class="text-lg font-bold text-white mb-2 font-['Cinzel'] tracking-tight">${tool.name}</h3>
+                    <p class="text-xs text-stone-400 font-light leading-relaxed mb-4 line-clamp-2 md:line-clamp-none">${tool.description}</p>
+                    <div class="flex items-center gap-2 text-[9px] uppercase tracking-widest text-white/20 group-hover:text-white transition-colors">
+                        <span>Execute</span>
+                        <span class="transform group-hover:translate-x-1 transition-transform">→</span>
                     </div>
                 </div>
-                <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
             `;
             container.appendChild(card);
         });
 
+        // Search Input Handling
         if (searchInput && !searchInput.dataset.listening) {
             searchInput.dataset.listening = "true";
             searchInput.oninput = (e) => this.renderGrid(e.target.value);
+
+            // Icon click pulls focus
+            const searchIcon = document.getElementById('omni-search-icon');
+            if (searchIcon) {
+                searchIcon.onclick = () => searchInput.focus();
+            }
         }
     }
 

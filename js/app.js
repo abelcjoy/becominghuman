@@ -188,6 +188,15 @@ class LifeCountdown {
                 navOmni.className = "text-[11px] uppercase tracking-[0.4em] text-white border-b border-white pb-1";
                 navExistence.className = "text-[10px] uppercase tracking-[0.3em] text-white/40 hover:text-white transition-colors";
                 this.omni.closeTool(); // Reset tool view if open
+
+                // Focus Search Bar for instant accessibility
+                setTimeout(() => {
+                    const search = document.getElementById('omni-search');
+                    if (search) {
+                        search.focus();
+                        search.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 100);
             } else {
                 existenceView.classList.remove('hidden');
                 omniView.classList.add('hidden');
