@@ -25,7 +25,7 @@ export class DigitalAtrophy {
         const yearsRemaining = this.state.lifeExpectancy - this.state.currentAge;
 
         // Percentage of conscious life spent on screens
-        const screenPercentage = (totalDailyScreenTime / wakingHours) * 100;
+        const screenPercentage = wakingHours > 0 ? (totalDailyScreenTime / wakingHours) * 100 : 0;
 
         // Total waking years remaining
         const wakingYearsRemaining = yearsRemaining * (wakingHours / 24);

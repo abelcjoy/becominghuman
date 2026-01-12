@@ -12,6 +12,8 @@ export class LifeGrid {
 
     init(dob) {
         this.dob = new Date(dob);
+        if (isNaN(this.dob.getTime())) this.dob = new Date(); // Fallback to now
+
         this.canvas = document.getElementById('life-grid-canvas');
         if (!this.canvas) return;
 
@@ -20,13 +22,10 @@ export class LifeGrid {
         // Animation props
         this.pulse = 0;
         this.isHovering = false;
-        this.animationFrame = null;
 
         // Handle resizing
         this.resize();
-        window.addEventListener('resize', () => {
-            this.resize();
-        });
+        window.addEventListener('resize', () => this.resize());
 
         // Interactive tooltip
         this.canvas.addEventListener('mousemove', (e) => {
@@ -40,18 +39,14 @@ export class LifeGrid {
             this.isHovering = false;
         });
 
-        this.startAnimation();
+        // Register with LifeEngine if available
+        if (window.app && window.app.engine) {
+            window.app.engine.addHook(this);
+        }
     }
 
-    startAnimation() {
-        if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
-
-        const loop = () => {
-            this.pulse = (Math.sin(Date.now() / 200) + 1) / 2; // 0 to 1 oscillation
-            this.draw();
-            this.animationFrame = requestAnimationFrame(loop);
-        };
-        loop();
+    update(deltaTime, pulse, tilt) {
+        this.draw(pulse);
     }
 
     resize() {
@@ -63,7 +58,7 @@ export class LifeGrid {
         this.height = this.canvas.height;
     }
 
-    draw() {
+    draw(pulse) {
         if (!this.ctx || !this.dob) return;
 
         // Clear
@@ -75,7 +70,6 @@ export class LifeGrid {
         const boxSize = Math.min(boxWidth, boxHeight) * 0.8;
         const gap = boxSize * 0.2;
 
-        // Calculate age
         const now = new Date();
         const diffTime = Math.abs(now - this.dob);
         const weeksLived = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7));
@@ -86,41 +80,60 @@ export class LifeGrid {
                 const x = 10 + (week * (boxSize + gap));
                 const y = 10 + (year * (boxSize + gap));
 
-                // Color Logic
+                // 1. Determine Life Phase Style
+                let phaseColor = '#ffffff';
+                let opacity = 0.05;
+
+                if (year < 18) {
+                    // Childhood: Nostalgic White
+                    phaseColor = '#ffffff';
+                    opacity = 0.1;
+                } else if (year < 65) {
+                    // Prime: Industrial Gray
+                    phaseColor = '#888888';
+                    opacity = 0.05;
+                } else {
+                    // Tail End: Golden Sunset
+                    phaseColor = '#fbbf24'; // Amber-400
+                    opacity = 0.15;
+                }
+
+                // 2. Color Logic for Lived vs Future
                 if (absoluteWeekIndex < weeksLived) {
-                    // Past
-                    // Subtle "Memory Flicker": occasionally dim a random square for a frame
-                    const isFlickering = Math.random() > 0.9995;
-                    this.ctx.fillStyle = isFlickering ? '#aaaaaa' : '#ffffff';
-                    this.ctx.globalAlpha = isFlickering ? 0.7 : 1.0;
+                    // Lived (Past)
+                    this.ctx.fillStyle = phaseColor;
+                    this.ctx.globalAlpha = 0.6;
                     this.ctx.fillRect(x, y, boxSize, boxSize);
-
                 } else if (absoluteWeekIndex === weeksLived) {
-                    // Current Week - LIVING PULSE
+                    // CURRENT MOMENT (Pulsing Heart)
                     this.ctx.fillStyle = '#ef4444';
+                    this.ctx.globalAlpha = 0.6 + (pulse * 0.4);
 
-                    // Pulse Scale & Opacity
-                    const pulseScale = 1 + (this.pulse * 0.3); // 1.0 to 1.3
-                    const offset = (boxSize * pulseScale - boxSize) / 2;
+                    const scale = 1 + (pulse * 0.4);
+                    const offset = (boxSize * scale - boxSize) / 2;
+                    this.ctx.fillRect(x - offset, y - offset, boxSize * scale, boxSize * scale);
 
-                    this.ctx.globalAlpha = 0.6 + (this.pulse * 0.4); // 0.6 to 1.0
-                    this.ctx.fillRect(x - offset, y - offset, boxSize * pulseScale, boxSize * pulseScale);
-
-                    // Glow Effect
-                    this.ctx.shadowBlur = 10 * this.pulse;
+                    // Shadow for focus
+                    this.ctx.shadowBlur = 15 * pulse;
                     this.ctx.shadowColor = 'red';
-                    this.ctx.fillRect(x, y, boxSize, boxSize); // Draw solid core
-                    this.ctx.shadowBlur = 0; // Reset
+                    this.ctx.fillRect(x, y, boxSize, boxSize);
+                    this.ctx.shadowBlur = 0;
 
                 } else {
-                    // Future - Quantum Probabilistic Shimmer
-                    this.ctx.fillStyle = '#ffffff';
-
-                    // Creates a wave that moves across the grid representing uncertainty
-                    const shimmer = (Math.sin((Date.now() / 500) + (absoluteWeekIndex / 100)) + 1) / 2;
-
-                    this.ctx.globalAlpha = 0.05 + (shimmer * 0.08); // Vary between 0.05 and 0.13
+                    // Future (Uncertainty)
+                    const shimmer = (Math.sin((Date.now() / 1000) + (absoluteWeekIndex / 50)) + 1) / 2;
+                    this.ctx.fillStyle = phaseColor;
+                    this.ctx.globalAlpha = (opacity * 0.5) + (shimmer * opacity);
                     this.ctx.fillRect(x, y, boxSize, boxSize);
+
+                    // The "Last 1000 Weeks" Border
+                    const weeksTotal = this.totalYears * 52;
+                    if (absoluteWeekIndex > weeksTotal - 1000) {
+                        this.ctx.strokeStyle = '#fbbf24';
+                        this.ctx.lineWidth = 0.5;
+                        this.ctx.globalAlpha = 0.1;
+                        this.ctx.strokeRect(x - 1, y - 1, boxSize + 2, boxSize + 2);
+                    }
                 }
             }
         }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://clarityforhumans.com/sitemap.xml
+
+# Privacy and AdSense Compliance
+Disallow: /private/
+Disallow: /api/

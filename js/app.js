@@ -22,6 +22,69 @@ import { TextScramble } from './textfx.js';
 import { HolographicTilt } from './holo.js';
 import { RealityGlitch } from './glitch.js';
 import { TemporalEchoes } from './trails.js';
+import { BootSequence } from './boot.js';
+import { RippleEffect } from './ripple.js';
+import { NeuralBackground } from './neural.js';
+import { Monolith } from './monolith.js';
+import { AuroraEffect } from './aurora.js';
+import { GravityButtons } from './gravity.js';
+import { ZenBreathing } from './zen.js';
+import { ChronosNavigator } from './navigator.js';
+import { HeliosEngine } from './helios.js';
+import { Oracle } from './oracle.js';
+import { InertialWarp } from './warp.js';
+import { HarmonyEngine } from './harmony.js';
+import { BioScanner } from './scanner.js';
+import { PrismEngine } from './prism.js';
+import { AmbienceEngine } from './ambience.js';
+import { TactileEngine } from './haptics.js';
+import { TextScrambler } from './scramble.js';
+import { QuantumConsent } from './consent.js';
+import { ChronosFavicon } from './favicon.js';
+import { Guardian } from './guardian.js';
+import { RelativityEngine } from './relativity.js';
+import { FluxOptimizer } from './optimizer.js';
+import { SchrodingerState } from './observer.js';
+import { VitalityEngine } from './vitality.js';
+import { ParallaxEngine } from './parallax.js';
+import { RespiratoryEngine } from './breath.js';
+import { ChronoCapsule } from './capsule.js';
+import { SynapticEngine } from './synapse.js';
+import { ConnectionSentinel } from './sentinel.js';
+import { LegacySky } from './legacy.js';
+import { SolarDial } from './dial.js';
+import { CitationEngine } from './citation.js';
+import { MortalStrand } from './strand.js';
+import { FocusShield } from './shield.js';
+import { ChronoSync } from './sync.js';
+import { EntropyEngine } from './entropy.js';
+import { VoltaicInterface } from './voltaic.js';
+import { HorizonLine } from './horizon.js';
+import { QuantumEntanglement } from './entanglement.js';
+import { KnowledgeCost } from './knowledge.js';
+import { AtmosphericEngine } from './atmosphere.js';
+import { StardustSystem } from './stardust.js';
+import { MagneticCore } from './magnet.js';
+import { VelocityGovernor } from './velocity.js';
+import { GlintSystem } from './glint.js';
+import { ResonanceField } from './resonance.js';
+import { LunarInfluence } from './lunar.js';
+import { BioMetricGrid } from './biogrid.js';
+import { AuralHorizon } from './aural.js';
+import { ChronoShift } from './shift.js';
+import { CardioPulse } from './cardio.js';
+import { KineticEngine } from './kinetic.js';
+import { SemanticEngine } from './semantic.js';
+import { ApertureSystem } from './aperture.js';
+import { LuminaInterface } from './lumina.js';
+import { ResonantTypography } from './typography.js';
+import { BioSyncInterface } from './biosync.js';
+import { EncryptionVeil } from './veil.js';
+import { TapticEngine } from './taptic.js';
+import { LifeEngine } from './engine.js';
+import { IronVault } from './vault.js';
+import { EntropyLens } from './entropy.js';
+import { MortalStrand } from './strand.js';
 
 class LifeCountdown {
     constructor() {
@@ -55,9 +118,8 @@ class LifeCountdown {
             breathingText: document.getElementById('breathing-text'),
             crisisTimer: document.getElementById('crisis-timer'),
             exitCrisis: document.getElementById('exit-crisis'),
-            attentionEquity: document.getElementById('attention-equity'),
-            burnRate: document.getElementById('burn-rate'),
-            recaptureTimer: document.getElementById('recapture-timer'),
+            recaptureTimer: document.getElementById('recapture-timer'), // Note: Timer element was inside the removed box. We need to check if we kept it or moved it.
+            // Removed equity elements
             globalSovereigns: document.getElementById('global-sovereigns'),
             simHub: document.getElementById('sim-hub'),
             simAge: document.getElementById('sim-age'),
@@ -85,6 +147,23 @@ class LifeCountdown {
         this.previousStats = { years: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
         this.isPaused = false;
         this.pausedTime = 0;
+
+        // Initialize Security & Novelty
+        this.vault = new IronVault();
+        this.entropyLens = new EntropyLens();
+        this.mortalStrand = new MortalStrand(this);
+
+        this.isGhostMode = false;
+        this.realTargetDate = null;
+        this.decoyTargetDate = new Date();
+
+        // Initialize Engine First
+        this.engine = new LifeEngine(this);
+
+        // Register Hooks
+        this.engine.addHook(this.entropyLens);
+        this.engine.addHook(this.mortalStrand);
+
         this.init();
     }
 
@@ -113,8 +192,47 @@ class LifeCountdown {
         window.wallpaper = new WallpaperGenerator(this);
         new SubliminalAxioms();
         new VoidMode();
-        new ParticleSystem();
-        new MirrorEffect();
+        // Initialize Visuals
+        this.neuralBackground = new NeuralBackground();
+        this.particles = new StardustSystem(); // Note: Search result shows StardustSystem used for particles
+        this.prism = new PrismEngine();
+        // Taptic Engine (Haptic Feedback)
+        this.haptics = new TapticEngine();
+
+        // Register Engine Hooks
+        this.engine.addHook(this.neuralBackground);
+        this.engine.addHook(this.particles);
+        this.engine.addHook(this.prism);
+
+        // --- Sovereign Menu Logic ---
+        const toggle = document.getElementById('sovereign-toggle');
+        const menu = document.getElementById('sovereign-menu');
+        if (toggle && menu) {
+            toggle.addEventListener('click', () => {
+                const isOpen = menu.classList.contains('opacity-100');
+                if (isOpen) {
+                    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    menu.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                    toggle.querySelector('span').innerText = '✧';
+                } else {
+                    menu.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    menu.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                    toggle.querySelector('span').innerText = '×';
+                    this.soundManager?.play('click');
+                    // Auto-request sensors on menu open if possible
+                    this.engine.requestSensorPermission();
+                }
+            });
+
+            // Close on click outside
+            document.addEventListener('click', (e) => {
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                    menu.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+                    menu.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                    toggle.querySelector('span').innerText = '✧';
+                }
+            });
+        }
 
         // Initialize Managers
         this.soundManager = new SoundManager();
@@ -140,6 +258,186 @@ class LifeCountdown {
         // Temporal Echoes
         new TemporalEchoes();
 
+        // Ripple Effect
+        new RippleEffect();
+
+        // The Monolith (Idle Event)
+        new Monolith(this.soundManager);
+
+        // Aurora
+        new AuroraEffect();
+
+        // Magnetic Gravity Buttons
+        new GravityButtons();
+
+        // Subconscious Zen Guide
+        new ZenBreathing();
+
+        // Chronos Navigator (Cursor)
+        new ChronosNavigator();
+
+        // Helios (Circadian Lighting)
+        new HeliosEngine();
+
+        // The Oracle (Philosophical Insights)
+        new Oracle();
+
+        // Kinetic Inertia
+        new InertialWarp();
+
+        // Musical UI
+        new HarmonyEngine(this.soundManager);
+
+        // Secure Vault Access (Visual)
+        if (localStorage.getItem('lifeData')) {
+            new BioScanner();
+        }
+
+        // Chromatic Aberration (Optical Lens)
+        // this.prism = new PrismEngine(); // Moved up
+
+        // Deep Focus Audio (Pink/Brown Noise)
+        new AmbienceEngine();
+
+        // Physical Feedback (Mobile)
+        // this.haptics = new TactileEngine(); // Moved up and assigned to this.haptics
+
+        // Text Matrix Effect
+        new TextScrambler();
+
+        // Privacy Protocol (GDPR)
+        new QuantumConsent();
+
+        // Dynamic Tab Icon
+        new ChronosFavicon();
+
+        // System Integrity Guardian (Self-Healing)
+        new Guardian();
+
+        // Einsteinian Time Dilation (Physics)
+        new RelativityEngine();
+
+        // Performance Manager (Flux Capacitor)
+        new FluxOptimizer();
+
+        // Tab Visibility Handler (Observer Effect)
+        new SchrodingerState();
+
+        // Global Life Sream (Birth/Death Viz)
+        new VitalityEngine();
+
+        // Depth/Gyroscope Effect
+        new ParallaxEngine();
+
+        // Living Interface (Breathing Scale)
+        new RespiratoryEngine();
+
+        // Time Capsule (Future Message)
+        new ChronoCapsule(this.soundManager);
+
+        // Synaptic Cursor (Desktop Lines)
+        new SynapticEngine();
+
+        // Connectivity Guardian (Offline Mode)
+        new ConnectionSentinel();
+
+        // Retention Galaxy (Visit History)
+        new LegacySky();
+
+        // Solar Dial (Real Shadow Physics)
+        new SolarDial();
+
+        // Citation Manager (Professional Sharing)
+        new CitationEngine();
+
+        // The Mortal Strand (Global Progress Line)
+        new MortalStrand();
+
+        // Focus Shield (Idle Dimming)
+        new FocusShield();
+
+        // Temporal Synchronization (Server Time)
+        new ChronoSync();
+
+        // Visual Age Texturing (Entropy)
+        new EntropyEngine();
+
+        // Bio-Digital Energy Sync (Battery)
+        new VoltaicInterface();
+
+        // Custom Scroll Visualizer
+        new HorizonLine();
+
+        // Single Tab Enforcer (Singularity)
+        new QuantumEntanglement();
+
+        // Selection Cost Analyzer (Knowledge Price)
+        new KnowledgeCost();
+
+        // Atmospheric Texture (Time-based Blur)
+        new AtmosphericEngine();
+
+        // Stardust Accumulation (Idle Particles)
+        // new StardustSystem(); // Moved up and assigned to this.particles
+
+        // Magnetic UI (Tactile Feel)
+        new MagneticCore();
+
+        // Anti-Doomscroll Mechanism (Mindfulness)
+        new VelocityGovernor();
+
+        // Holographic Glint (Materiality)
+        new GlintSystem();
+
+        // Input Resonance (Typing Feedback)
+        new ResonanceField();
+
+        // Chromatic Aberration (Impact/Speed FX)
+        // new PrismEngine(); // Redundant, already initialized as this.prism
+
+        // Celestial Tint (Moon Phase Sync)
+        new LunarInfluence();
+
+        // The Oracle (Logic Loop)
+        // Already initialized above
+        // new Oracle();
+
+        // Bio-Metric Grid (Infinity Floor)
+        new BioMetricGrid();
+
+        // Aural Horizon (Binaural Audio)
+        new AuralHorizon();
+
+        // Chrono-Shift (Visual Aging)
+        new ChronoShift();
+
+        // Cardio-Pulse (Subconscious Heartbeat)
+        new CardioPulse();
+
+        // Kinetic Engine (Scroll Physics)
+        new KineticEngine();
+
+        // Semantic SEO (AI-Ready)
+        new SemanticEngine();
+
+        // Aperture System (Visual Focus)
+        new ApertureSystem();
+
+        // Lumina Interface (Perfect Contrast)
+        new LuminaInterface();
+
+        // Resonant Typography (Living Fonts)
+        new ResonantTypography();
+
+        // Bio-Sync (Circadian Advisor)
+        new BioSyncInterface();
+
+        // Encryption Veil (Privacy Theater)
+        new EncryptionVeil();
+
+        // Taptic Engine (Haptic Feedback)
+        // new TapticEngine(); // Moved up and assigned to this.haptics
+
         // Bind Focus Button
         if (this.elements.focusBtn) {
             this.elements.focusBtn.addEventListener('click', () => {
@@ -150,9 +448,9 @@ class LifeCountdown {
 
         // Load saved state (DOB only)
         try {
-            const savedData = localStorage.getItem('lifeData');
+            const savedData = this.secureLoad('lifeData');
             if (savedData) {
-                this.startCountdown(JSON.parse(savedData));
+                this.startCountdown(savedData);
             }
         } catch (error) {
             console.error('Error loading saved data:', error);
@@ -187,7 +485,8 @@ class LifeCountdown {
         let dob, country, sleepHours;
 
         if (data) {
-            ({ dob, country, sleepHours } = data);
+            // Default sleepHours to 0 to prevent NaN if missing in old saves
+            ({ dob, country, sleepHours = 0 } = data);
 
             // Validate loaded data
             const dobDate = new Date(dob);
@@ -198,12 +497,19 @@ class LifeCountdown {
                 return;
             }
         } else {
-            dob = new Date(this.elements.dobInput.value);
-            country = this.elements.countrySelect.value;
-            sleepHours = parseFloat(this.elements.sleepInput.value) || 0;
+            const rawDob = this.elements.dobInput.value;
+            const rawSleep = this.elements.sleepInput.value;
 
-            if (isNaN(dob.getTime())) {
-                toast.error("Please enter a valid Date of Birth");
+            dob = new Date(rawDob);
+            country = this.elements.countrySelect.value;
+            sleepHours = parseFloat(rawSleep);
+
+            // Critical NaN Prevention
+            if (isNaN(sleepHours)) sleepHours = 8;
+            sleepHours = Math.max(0, Math.min(24, sleepHours));
+
+            if (!rawDob || isNaN(dob.getTime())) {
+                toast.error("Reality Check: Enter a valid Date of Birth");
                 return;
             }
             if (!country) {
@@ -226,20 +532,35 @@ class LifeCountdown {
         const lifeExpectancyYears = lifeExpectancyData[country] || 72.6;
         const deathDate = new Date(dob);
         deathDate.setFullYear(deathDate.getFullYear() + Math.floor(lifeExpectancyYears));
+
+        // Ensure sleepHours is a valid number
+        const safeSleepHours = isNaN(sleepHours) ? 8 : Math.min(24, Math.max(0, safeSleepHours));
+
         // Add remaining fractional year in days
         const fractionalYear = lifeExpectancyYears % 1;
         deathDate.setDate(deathDate.getDate() + (fractionalYear * 365));
 
         this.targetDate = deathDate;
         this.dob = dob; // Store for other modules
-        this.sleepRatio = (24 - sleepHours) / 24;
+        this.sleepRatio = (24 - safeSleepHours) / 24;
+        if (isNaN(this.sleepRatio)) this.sleepRatio = 0.66; // Fallback to 16h waking if something exploded
 
         // Cinematic Transition
         this.elements.setupStep.classList.add('view-exit');
-        this.ui.showLoading("Constructing Existence...");
 
-        setTimeout(() => {
+        // Use Boot Sequence mainly for manual starts or dramatic effect
+        // If data is passed (auto-load), we might want to skip, but for now let's enforce the mood 
+        // unless it's a refresh. Actually, let's always show it for the vibe.
+
+        // Hide loading since BootSequence handles its own UI
+        // this.ui.showLoading("Constructing Existence..."); 
+
+        const onComplete = () => {
             try {
+                // Securely Save Data (Iron Vault)
+                this.secureSave('lifeData', data);
+
+                // Hide Setup, Show Countdown
                 this.elements.setupStep.classList.add('hidden');
                 this.elements.setupStep.classList.remove('view-exit');
 
@@ -255,7 +576,6 @@ class LifeCountdown {
                 this.startGameLoop();
 
                 this.displayDailyReflection();
-                this.startRecaptureSession();
 
                 // Initialize modules safely
                 try { this.initProjection(dob); } catch (e) { console.error('Projection Error', e); }
@@ -271,11 +591,19 @@ class LifeCountdown {
                 if (window.pwaInstaller) window.pwaInstaller.showInstallButton();
             } catch (error) {
                 console.error("Initialization Critical Error:", error);
-                toast.error("Reality Glitch: " + error.message);
+                if (window.toast) toast.error("Reality Glitch: " + error.message);
             } finally {
                 this.ui.hideLoading();
             }
-        }, 1500);
+        };
+
+        // If loading from save (data exists), skip boot for speed, else show boot
+        if (data) {
+            this.ui.showLoading("Restoring Timeline...");
+            setTimeout(onComplete, 1000);
+        } else {
+            new BootSequence(onComplete).start();
+        }
     }
 
     initLifeChart(dob, country) {
@@ -288,7 +616,7 @@ class LifeCountdown {
         });
 
         // Update stat cards
-        const livedPercent = ((currentAge / lifeExpectancy) * 100).toFixed(1);
+        const livedPercent = (lifeExpectancy > 0 ? (currentAge / lifeExpectancy) * 100 : 0).toFixed(1);
         const remainingPercent = (100 - livedPercent).toFixed(1);
         const weeksRemaining = Math.floor((lifeExpectancy - currentAge) * 52);
 
@@ -485,6 +813,7 @@ class LifeCountdown {
             // Recapture timer update (1fps)
             if (now - this.lastRecaptureUpdate >= 1000) {
                 this.updateRecaptureTimer();
+                this.updateGlobalSovereigns();
                 this.lastRecaptureUpdate = now;
             }
 
@@ -514,37 +843,31 @@ class LifeCountdown {
     }
 
     updateRecaptureTimer() {
+        if (!this.recaptureStartTime) this.recaptureStartTime = Date.now();
         const elapsed = Date.now() - this.recaptureStartTime;
         const h = Math.floor(elapsed / 3600000);
         const m = Math.floor((elapsed % 3600000) / 60000);
         const s = Math.floor((elapsed % 60000) / 1000);
-        this.elements.recaptureTimer.textContent = `${this.f(h)}:${this.f(m)}:${this.f(s)}`;
-
-        // Pulse Global Sovereigns
-        if (Math.random() > 0.95) {
-            const count = parseInt(this.elements.globalSovereigns.textContent.replace(',', ''));
-            const newCount = count + (Math.random() > 0.5 ? 1 : -1);
-            this.elements.globalSovereigns.textContent = newCount.toLocaleString();
+        if (this.elements.recaptureTimer) {
+            this.elements.recaptureTimer.textContent = `${this.f(h)}:${this.f(m)}:${this.f(s)}`;
         }
     }
 
-    startRecaptureSession() {
-        this.recaptureStartTime = Date.now();
-        this.recaptureInterval = setInterval(() => {
-            const elapsed = Date.now() - this.recaptureStartTime;
-            const h = Math.floor(elapsed / 3600000);
-            const m = Math.floor((elapsed % 3600000) / 60000);
-            const s = Math.floor((elapsed % 60000) / 1000);
-            this.elements.recaptureTimer.textContent = `${this.f(h)}:${this.f(m)}:${this.f(s)}`;
+    updateGlobalSovereigns() {
+        if (!this.elements.globalSovereigns) return;
 
-            // Pulse Global Sovereigns
-            if (Math.random() > 0.95) {
-                const count = parseInt(this.elements.globalSovereigns.textContent.replace(',', ''));
+        // Pulse Global Sovereigns
+        if (Math.random() > 0.95) {
+            const raw = this.elements.globalSovereigns.textContent || "0";
+            const count = parseInt(raw.replace(/,/g, ''));
+            if (!isNaN(count)) {
                 const newCount = count + (Math.random() > 0.5 ? 1 : -1);
                 this.elements.globalSovereigns.textContent = newCount.toLocaleString();
             }
-        }, 1000);
+        }
     }
+
+    // startRecaptureSession removed (Redundant)
 
 
 
@@ -622,42 +945,91 @@ class LifeCountdown {
     }
 
     updateSoulRank(years) {
-        let rank = "";
-        const y = parseInt(years);
-        if (y >= 60) rank = "The Eternal Dreamer";
-        else if (y >= 40) rank = "The Boundless Seeker";
-        else if (y >= 25) rank = "The Timeless Watcher";
-        else if (y >= 10) rank = "The Conscious Soul";
-        else rank = "The Pure Presence";
+        const displayYears = this.isGhostMode ? 120 : years;
+        const rankElement = this.elements.soulRank;
+        if (!rankElement) return;
 
-        if (this.elements.soulRank.textContent !== rank) {
-            this.elements.soulRank.textContent = rank;
+        let level = "Mortal";
+        if (displayYears > 40) level = "Sentinel";
+        if (displayYears > 60) level = "Sovereign";
+        if (displayYears > 80) level = "Eternal";
+        if (this.isGhostMode) level = "PHANTOM";
+
+        if (rankElement.textContent !== level) {
+            rankElement.textContent = level;
+        }
+
+        // Triple Tap Detection for Ghost Mode
+        // Attach listener only once
+        if (!rankElement._hasGhostModeListener) {
+            rankElement._hasGhostModeListener = true;
+            rankElement.addEventListener('click', () => {
+                const now = Date.now();
+                if (now - this.lastSoulTap < 500) { // Taps within 500ms
+                    this.soulTaps++;
+                    if (this.soulTaps >= 2) { // 3 taps (initial + 2 quick ones)
+                        this.toggleGhostMode();
+                        this.soulTaps = 0;
+                    }
+                } else {
+                    this.soulTaps = 0; // Reset if too slow
+                }
+                this.lastSoulTap = now;
+            });
+        }
+    }
+
+    toggleGhostMode() {
+        this.isGhostMode = !this.isGhostMode;
+        if (this.isGhostMode) {
+            this.realTargetDate = this.targetDate;
+            // Set decoy: Current date + 120 years
+            const decoy = new Date();
+            decoy.setFullYear(decoy.getFullYear() + 120);
+            this.targetDate = decoy;
+            toast.info('GHOST PROTOCOL ACTIVE');
+        } else {
+            this.targetDate = this.realTargetDate;
+            toast.success('REALITY RESTORED');
         }
     }
 
     tick() {
-        const now = new Date();
+        // ChronoSync: Use synchronized server time if available
+        const now = window.getTrueTime ? window.getTrueTime() : new Date();
+
+        if (!this.targetDate || isNaN(this.targetDate.getTime())) {
+            this.render(0, 0, 0, 0, 0, 0);
+            return;
+        }
+
         const totalRemainingMs = this.targetDate - now;
 
-        if (totalRemainingMs <= 0) {
+        if (totalRemainingMs <= 0 || isNaN(totalRemainingMs)) {
             this.render(0, 0, 0, 0, 0, 0);
             if (this.interval) clearInterval(this.interval);
             return;
         }
 
         // Apply Sleep Ratio (Conscious Time)
-        const consciousMs = totalRemainingMs * this.sleepRatio;
+        const safeSleepRatio = isNaN(this.sleepRatio) ? 0.66 : this.sleepRatio;
+        const consciousMs = totalRemainingMs * safeSleepRatio;
 
-        const years = Math.floor(consciousMs / (1000 * 60 * 60 * 24 * 365));
-        const days = Math.floor((consciousMs % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+        if (isNaN(consciousMs)) {
+            this.render(0, 0, 0, 0, 0, 0);
+            return;
+        }
+
+        const years = Math.floor(consciousMs / (1000 * 60 * 60 * 24 * 365.25));
+        const days = Math.floor((consciousMs % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
         const hours = Math.floor((consciousMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((consciousMs % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((consciousMs % (1000 * 60)) / 1000);
         const ms = Math.floor(consciousMs % 1000);
 
         // Update Progress Bar
-        const percentage = Math.min(100, (consciousMs / (1000 * 60 * 60 * 24 * 365 * 100)) * 100);
-        if (this.elements.progressBar) this.elements.progressBar.style.width = `${percentage}%`;
+        const percentage = Math.max(0, Math.min(100, (consciousMs / (1000 * 60 * 60 * 24 * 365.25 * 100)) * 100));
+        if (this.elements.progressBar) this.elements.progressBar.style.width = isNaN(percentage) ? '0%' : `${percentage}%`;
 
         this.updateBiologicalCapital(consciousMs);
         this.updateSoulRank(years);
@@ -670,18 +1042,39 @@ class LifeCountdown {
     }
 
     updateBiologicalCapital(ms) {
-        // Market Value: $450,000 for full lifespan (~75 years)
-        const totalConsciousHoursRemaining = ms / (1000 * 60 * 60);
-        // Apply Education Multiplier from simulator if available
-        const multiplier = window.simulator ? window.simulator.state.equityMultiplier : this.equityMultiplier;
-        const equity = totalConsciousHoursRemaining * 25 * multiplier;
-        if (this.elements.attentionEquity) this.elements.attentionEquity.textContent = Math.floor(equity).toLocaleString();
-
-        const dailyBurn = 3 * 25;
-        if (this.elements.burnRate) this.elements.burnRate.textContent = dailyBurn.toFixed(2);
+        // Feature removed per user request for cleanliness.
+        // Logic de-activated.
     }
 
     f(n) { return n.toString().padStart(2, '0'); }
+
+    // --- SECURITY VAULT ---
+    async secureSave(key, data) {
+        try {
+            const encrypted = await this.vault.encrypt(data);
+            localStorage.setItem(key, encrypted);
+        } catch (e) {
+            console.error('Vault Save Failed', e);
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+    }
+
+    async secureLoad(key) {
+        const raw = localStorage.getItem(key);
+        if (!raw) return null;
+
+        try {
+            // Try to decrypt (New Iron Vault Format)
+            const decrypted = await this.vault.decrypt(raw);
+            if (decrypted) return decrypted;
+
+            // Fallback to legacy
+            return JSON.parse(decodeURIComponent(escape(atob(raw))));
+        } catch (e) {
+            try { return JSON.parse(raw); } catch (err) { return null; }
+        }
+    }
+    // -----------------------
 
     shareResult() {
         const years = this.elements.yearsEl.textContent;
@@ -695,7 +1088,7 @@ class LifeCountdown {
 🔴 BIOLOGICAL CAPITAL REMAINING:
    ${years} Years, ${days} Days, ${hours} Hours
 
-💰 ATTENTION EQUITY: $${equity}
+💰 BIOLOGICAL ASSETS PRESERVED
 
 This is not motivation. This is biological maintenance.
 
@@ -752,6 +1145,24 @@ https://clarityforhumans.com
         this.elements.secondsEl.textContent = this.f(s);
         this.elements.millisecondsEl.textContent = fms(ms);
 
+        // Broadcast to Ecosystem
+        // Used by: Mortal Strand, etc.
+        if (window.app?.dob) {
+            const now = new Date();
+            const lifeMs = now - new Date(window.app.dob);
+            const lifeYearMs = 1000 * 60 * 60 * 24 * 365.25;
+            const yearPercent = (lifeMs % lifeYearMs) / lifeYearMs; // Percent through current year
+
+            // We reuse the existing percentage math from above if possible or recalc
+            window.dispatchEvent(new CustomEvent('life-tick', {
+                detail: {
+                    years: y, days: d, hours: h, minutes: m, seconds: s, milliseconds: ms,
+                    yearPercent: yearPercent
+                    // Add more if needed
+                }
+            }));
+        }
+
         // Update Perspective Units
         if (this.elements.unitSunsets) this.elements.unitSunsets.textContent = (d + (y * 365)).toLocaleString();
         if (this.elements.unitSummers) this.elements.unitSummers.textContent = y;
@@ -779,8 +1190,17 @@ https://clarityforhumans.com
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     window.app = new LifeCountdown();
+
+    // Initialize the Iron Vault before loading
+    await window.app.vault.init();
+
+    // Attempt to load saved state
+    const savedData = await window.app.secureLoad('lifeData');
+    if (savedData) {
+        window.app.startCountdown(savedData);
+    }
 
     // Initialize PWA installer
     window.pwaInstaller = new PWAInstaller();

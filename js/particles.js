@@ -69,14 +69,13 @@ export class ParticleSystem {
     start() {
         if (this.isRunning) return;
         this.isRunning = true;
-        this.animate();
     }
 
     stop() {
         this.isRunning = false;
     }
 
-    animate() {
+    update(deltaTime) {
         if (!this.isRunning) return;
 
         this.ctx.clearRect(0, 0, this.width, this.height);
@@ -88,28 +87,32 @@ export class ParticleSystem {
                 const data = new Uint8Array(window.audioAnalyser.frequencyBinCount);
                 window.audioAnalyser.getByteFrequencyData(data);
                 const avg = data.reduce((a, b) => a + b) / data.length;
-                audioMod = avg / 50; // Normalize 0-255 to approx 0-5
+                audioMod = avg / 50;
             } catch (e) {
                 audioMod = 0;
             }
         }
 
+        const deltaFactor = deltaTime / 16;
+
         this.particles.forEach(p => {
             // Physics
-            p.y += p.speedY + (audioMod * 0.5);
-            p.x += p.speedX;
+            p.y += (p.speedY + (audioMod * 0.5)) * deltaFactor;
+            p.x += p.speedX * deltaFactor;
 
             // Mouse Interaction (Push away)
             const dx = p.x - this.mouse.x;
             const dy = p.y - this.mouse.y;
-            const dist = Math.sqrt(dx * dx + dy * dy);
+            const distSq = dx * dx + dy * dy;
 
             // Audio expands interaction radius
-            if (dist < 100 + (audioMod * 20)) {
-                const force = (100 - dist) / 100;
+            const radius = 100 + (audioMod * 20);
+            if (distSq < radius * radius) {
+                const dist = Math.sqrt(distSq);
+                const force = (radius - dist) / radius;
                 const angle = Math.atan2(dy, dx);
-                p.x += Math.cos(angle) * force * 5;
-                p.y += Math.sin(angle) * force * 5;
+                p.x += Math.cos(angle) * force * 5 * deltaFactor;
+                p.y += Math.sin(angle) * force * 5 * deltaFactor;
             }
 
             // Wrap around
@@ -126,25 +129,6 @@ export class ParticleSystem {
             this.ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
             this.ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity + (audioMod * 0.1)})`;
             this.ctx.fill();
-
-            // Connect nearby particles (Constellation Effect)
-            for (let j = 0; j < this.particles.length; j++) {
-                const p2 = this.particles[j];
-                const dx2 = p.x - p2.x;
-                const dy2 = p.y - p2.y;
-                const dist2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
-
-                if (dist2 < 80 + (audioMod * 50)) {
-                    this.ctx.beginPath();
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - dist2 / (80 + audioMod * 50))})`;
-                    this.ctx.lineWidth = 0.5;
-                    this.ctx.moveTo(p.x, p.y);
-                    this.ctx.lineTo(p2.x, p2.y);
-                    this.ctx.stroke();
-                }
-            }
         });
-
-        requestAnimationFrame(() => this.animate());
     }
 }

@@ -103,8 +103,8 @@ export class ChartRenderer {
         this.ctx.textAlign = 'left';
         this.ctx.font = '10px monospace';
         this.ctx.fillStyle = '#999';
-        this.ctx.fillText(`Time Lived: ${Math.floor((currentAge / expectedAge) * 100)}%`, padding, height - 10);
-        this.ctx.fillText(`Time Remaining: ${Math.floor(((expectedAge - currentAge) / expectedAge) * 100)}%`, width - padding - 150, height - 10);
+        this.ctx.fillText(`Time Lived: ${expectedAge > 0 ? Math.floor((currentAge / expectedAge) * 100) : 0}%`, padding, height - 10);
+        this.ctx.fillText(`Time Remaining: ${expectedAge > 0 ? Math.floor(((expectedAge - currentAge) / expectedAge) * 100) : 0}%`, width - padding - 150, height - 10);
     }
 
     drawGrid(width, height, padding) {
