@@ -1,33 +1,12 @@
 /**
- * 🎉 Omni Tools - 100 FULLY FUNCTIONAL TOOLS! 🎉
+ * 🚀 Omni Tools - 110 PREMIUM TOOLS! 🚀
  * 
- * BATCH 1 (30 tools):
- * - 10 Original tools
- * - 8 Calculators (Tip, Loan, Age, Discount, Compound Interest, Percentage Change, Tax, Mortgage)
- * - 6 Converters (Temperature, Length, Weight, Currency, Time Zone, Speed)
- * - 6 Text Tools (Reverse, Sort, Find/Replace, Duplicate Remover, Line Counter, Text Diff)
- * 
- * BATCH 2 (20 tools):
- * - 5 Developer Tools (UUID, Hash, Regex, HTML Encoder, Timestamp)
- * - 5 Finance Tools (ROI, Profit Margin, Break-Even, Savings Goal, Inflation)
- * - 5 Utility Tools (QR Generator, Random Picker, List Randomizer, Number Generator, Counter/Timer)
- * - 5 More Converters (Data Size, Area, Volume, Pressure, Energy)
- * 
- * BATCH 3 (20 tools):
- * - 5 Health & Fitness (Calorie, Macro, Water Intake, Body Fat, Ideal Weight)
- * - 5 Date & Time (Date Difference, Date Calculator, Week Number, Workday, Countdown)
- * - 5 Image & Color (Color Mixer, Gradient, Contrast Checker, Color Shades, Image Resizer)
- * - 5 Math & Science (Fraction, Scientific Calc, Statistics, Number Base, Angle Converter)
- * 
- * BATCH 4 (15 tools):
- * - 5 Productivity (Pomodoro, Notepad, Todo List, Writing Goal, Reading Time)
- * - 5 Network/Web (IP Info, User Agent, DNS Lookup, Port Info, HTTP Status)
- * - 5 Specialized (Binary Text, Morse Code, Roman Numerals, Emoji Picker, Letter Frequency)
- * 
- * BATCH 5 (15 tools) - THE FINAL MILESTONE:
- * - Password Strength, Password Generator, Lorem Ipsum, CSV to JSON, JSON Formatter
- * - Slug Generator, Credit Card Validator, IBAN Validator, Color Palette, Image to Data URL
- * - Cron Expression, Universal Unit Converter, Text Case, Word Scrambler, Dice Roller
+ * BATCH 1 (30 tools): Original + Calculators + Converters + Text
+ * BATCH 2 (20 tools): Developer + Finance + Utility + More Converters
+ * BATCH 3 (20 tools): Health + Date/Time + Design + Math/Science
+ * BATCH 4 (15 tools): Productivity + Network + Specialized
+ * BATCH 5 (15 tools): Password + JSON + Validators + Converters
+ * BATCH 6 (10 tools): Markdown + Regex + Color + SQL + Image + Stopwatch + BMI + Currency + Diff + Unicode
  */
 
 class OmniTools {
@@ -866,6 +845,87 @@ class OmniTools {
                 icon: "🎲",
                 category: "Utility",
                 render: () => this.renderDiceRoller()
+            },
+            // === BATCH 6 - PREMIUM TOOLS (10) ===
+            markdownPreview: {
+                name: "Markdown Preview",
+                searchTerms: "markdown preview render html converter",
+                description: "Preview Markdown in real-time",
+                icon: "📝",
+                category: "Developer",
+                render: () => this.renderMarkdownPreview()
+            },
+            regexTester: {
+                name: "Advanced Regex Tester",
+                searchTerms: "regex regular expression tester matcher",
+                description: "Test regex with matches",
+                icon: "🔍",
+                category: "Developer",
+                render: () => this.renderRegexTester()
+            },
+            colorConverter: {
+                name: "Color Format Converter",
+                searchTerms: "color hex rgb hsl convert format",
+                description: "Convert color formats",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorConverter()
+            },
+            sqlFormatter: {
+                name: "SQL Formatter",
+                searchTerms: "sql format beautify query database",
+                description: "Format SQL queries",
+                icon: "🗄️",
+                category: "Developer",
+                render: () => this.renderSQLFormatter()
+            },
+            imageCompressor: {
+                name: "Image Quality Adjuster",
+                searchTerms: "image compress quality resize optimize",
+                description: "Adjust image quality",
+                icon: "🖼️",
+                category: "Utility",
+                render: () => this.renderImageCompressor()
+            },
+            stopwatch: {
+                name: "Stopwatch & Lap Timer",
+                searchTerms: "stopwatch timer lap chronometer",
+                description: "Precision stopwatch",
+                icon: "⏱️",
+                category: "Utility",
+                render: () => this.renderStopwatch()
+            },
+            bmiCalculator: {
+                name: "Advanced BMI Calculator",
+                searchTerms: "bmi body mass index health calculator",
+                description: "Calculate BMI with categories",
+                icon: "⚖️",
+                category: "Health",
+                render: () => this.renderBMICalculator()
+            },
+            currencyFormatter: {
+                name: "Currency Formatter",
+                searchTerms: "currency format money number locale",
+                description: "Format currency values",
+                icon: "💵",
+                category: "Finance",
+                render: () => this.renderCurrencyFormatter()
+            },
+            textDiff: {
+                name: "Advanced Text Diff",
+                searchTerms: "text diff compare difference changes",
+                description: "Compare text differences",
+                icon: "🔄",
+                category: "Text",
+                render: () => this.renderTextDiff()
+            },
+            unicodeExplorer: {
+                name: "Unicode Character Explorer",
+                searchTerms: "unicode character code point explorer",
+                description: "Explore Unicode characters",
+                icon: "🔤",
+                category: "Developer",
+                render: () => this.renderUnicodeExplorer()
             }
         };
     }
@@ -5113,6 +5173,494 @@ class OmniTools {
             const sides = parseInt(document.getElementById('dice-sides').value);
             roll(sides, count);
         };
+    }
+
+    // === BATCH 6 - PREMIUM TOOL RENDERERS ===
+
+    renderMarkdownPreview() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Markdown Preview</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div>
+                    <h3 style="margin-bottom: 10px;">Markdown Input</h3>
+                    <textarea id="md-input" rows="15" placeholder="# Enter Markdown here..." style="font-family: monospace;"></textarea>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 10px;">Preview</h3>
+                    <div id="md-preview" class="result" style="text-align: left; min-height: 300px; padding: 15px; overflow-y: auto;"></div>
+                </div>
+            </div>
+        `;
+
+        const simpleMarkdown = (text) => {
+            return text
+                .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                .replace(/`(.*?)`/g, '<code style="background: #333; padding: 2px 6px; border-radius: 3px;">$1</code>')
+                .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
+                .replace(/^- (.*$)/gim, '<li>$1</li>')
+                .replace(/\n/g, '<br>');
+        };
+
+        document.getElementById('md-input').addEventListener('input', (e) => {
+            document.getElementById('md-preview').innerHTML = simpleMarkdown(e.target.value);
+        });
+    }
+
+    renderRegexTester() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Advanced Regex Tester</h2>
+            <input type="text" id="regex-pattern" placeholder="Enter regex pattern (without slashes)">
+            <input type="text" id="regex-flags" placeholder="Flags (g, i, m)" value="g">
+            <textarea id="regex-test-text" rows="8" placeholder="Enter text to test..."></textarea>
+            <button id="test-regex">Test Regex</button>
+            <div class="result" id="regex-results" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('test-regex').onclick = () => {
+            try {
+                const pattern = document.getElementById('regex-pattern').value;
+                const flags = document.getElementById('regex-flags').value;
+                const text = document.getElementById('regex-test-text').value;
+
+                if (!pattern) {
+                    alert('Please enter a regex pattern');
+                    return;
+                }
+
+                const regex = new RegExp(pattern, flags);
+                const matches = [...text.matchAll(regex)];
+
+                if (matches.length === 0) {
+                    document.getElementById('regex-results').innerHTML = '<div style="color: #f60;">No matches found</div>';
+                    return;
+                }
+
+                let html = `<div style="margin-bottom: 15px;"><strong>${matches.length} match(es) found:</strong></div>`;
+                matches.forEach((match, i) => {
+                    html += `
+                        <div style="padding: 10px; background: #1a1a1a; border-radius: 8px; margin-bottom: 10px;">
+                            <div><strong>Match ${i + 1}:</strong> "${match[0]}"</div>
+                            <div style="font-size: 12px; color: #666;">Index: ${match.index}</div>
+                        </div>
+                    `;
+                });
+
+                document.getElementById('regex-results').innerHTML = html;
+            } catch (e) {
+                document.getElementById('regex-results').innerHTML = `<div style="color: #f00;">Error: ${e.message}</div>`;
+            }
+        };
+    }
+
+    renderColorConverter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Format Converter</h2>
+            <input type="color" id="color-picker" value="#3b82f6" style="width: 100%; height: 80px; margin-bottom: 20px;">
+            <div class="result" style="text-align: left;">
+                <div style="margin-bottom: 15px;">
+                    <strong>HEX:</strong> <span id="hex-value" style="font-family: monospace;"></span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>RGB:</strong> <span id="rgb-value" style="font-family: monospace;"></span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>HSL:</strong> <span id="hsl-value" style="font-family: monospace;"></span>
+                </div>
+                <div>
+                    <strong>RGBA:</strong> <span id="rgba-value" style="font-family: monospace;"></span>
+                </div>
+            </div>
+        `;
+
+        const hexToRgb = (hex) => {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return { r, g, b };
+        };
+
+        const rgbToHsl = (r, g, b) => {
+            r /= 255; g /= 255; b /= 255;
+            const max = Math.max(r, g, b), min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+
+            if (max === min) {
+                h = s = 0;
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                switch (max) {
+                    case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+                    case g: h = ((b - r) / d + 2) / 6; break;
+                    case b: h = ((r - g) / d + 4) / 6; break;
+                }
+            }
+
+            return {
+                h: Math.round(h * 360),
+                s: Math.round(s * 100),
+                l: Math.round(l * 100)
+            };
+        };
+
+        const update = () => {
+            const hex = document.getElementById('color-picker').value;
+            const rgb = hexToRgb(hex);
+            const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+            document.getElementById('hex-value').textContent = hex.toUpperCase();
+            document.getElementById('rgb-value').textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+            document.getElementById('hsl-value').textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+            document.getElementById('rgba-value').textContent = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 1)`;
+        };
+
+        document.getElementById('color-picker').addEventListener('input', update);
+        update();
+    }
+
+    renderSQLFormatter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Formatter</h2>
+            <textarea id="sql-input" rows="10" placeholder="Paste SQL query here..." style="font-family: monospace;"></textarea>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px;">
+                <button id="format-sql">Format SQL</button>
+                <button id="minify-sql">Minify SQL</button>
+            </div>
+            <div class="result" id="sql-output" style="text-align: left; font-family: monospace; white-space: pre-wrap; font-size: 12px;"></div>
+        `;
+
+        const keywords = ['SELECT', 'FROM', 'WHERE', 'JOIN', 'LEFT', 'RIGHT', 'INNER', 'OUTER', 'ON', 'AND', 'OR', 'GROUP BY', 'ORDER BY', 'HAVING', 'LIMIT', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'ALTER', 'DROP', 'TABLE'];
+
+        document.getElementById('format-sql').onclick = () => {
+            let sql = document.getElementById('sql-input').value;
+
+            keywords.forEach(keyword => {
+                const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+                sql = sql.replace(regex, `\n${keyword}`);
+            });
+
+            sql = sql.replace(/,/g, ',\n  ');
+            sql = sql.trim();
+
+            document.getElementById('sql-output').textContent = sql;
+        };
+
+        document.getElementById('minify-sql').onclick = () => {
+            const sql = document.getElementById('sql-input').value
+                .replace(/\s+/g, ' ')
+                .trim();
+            document.getElementById('sql-output').textContent = sql;
+        };
+    }
+
+    renderImageCompressor() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Image Quality Adjuster</h2>
+            <input type="file" id="img-compress-upload" accept="image/*">
+            <div style="margin: 20px 0;">
+                <label>Quality: <span id="quality-value">80</span>%</label>
+                <input type="range" id="quality-slider" min="10" max="100" value="80" style="width: 100%;">
+            </div>
+            <button id="compress-img">Adjust Quality</button>
+            <div class="result" id="compress-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('quality-slider').addEventListener('input', (e) => {
+            document.getElementById('quality-value').textContent = e.target.value;
+        });
+
+        document.getElementById('compress-img').onclick = () => {
+            const file = document.getElementById('img-compress-upload').files[0];
+            if (!file) {
+                alert('Please select an image');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0);
+
+                    const quality = parseInt(document.getElementById('quality-slider').value) / 100;
+                    const compressed = canvas.toDataURL('image/jpeg', quality);
+
+                    const originalSize = (e.target.result.length / 1024).toFixed(2);
+                    const compressedSize = (compressed.length / 1024).toFixed(2);
+                    const savings = ((1 - compressedSize / originalSize) * 100).toFixed(1);
+
+                    document.getElementById('compress-output').innerHTML = `
+                        <div style="margin-bottom: 15px;">
+                            <strong>Original:</strong> ${originalSize} KB<br>
+                            <strong>Compressed:</strong> ${compressedSize} KB<br>
+                            <strong>Savings:</strong> ${savings}%
+                        </div>
+                        <button onclick="
+                            const a = document.createElement('a');
+                            a.href = '${compressed}';
+                            a.download = 'compressed.jpg';
+                            a.click();
+                        ">Download Compressed Image</button>
+                    `;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+    }
+
+    renderStopwatch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Stopwatch & Lap Timer</h2>
+            <div style="font-size: 64px; font-weight: bold; font-family: monospace; margin: 30px 0;" id="stopwatch-display">00:00:00.00</div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px;">
+                <button id="sw-start">Start</button>
+                <button id="sw-lap">Lap</button>
+                <button id="sw-reset">Reset</button>
+            </div>
+            <div class="result" id="laps-output" style="text-align: left; max-height: 300px; overflow-y: auto;"></div>
+        `;
+
+        let startTime = 0;
+        let elapsedTime = 0;
+        let interval = null;
+        let laps = [];
+
+        const updateDisplay = () => {
+            const total = Date.now() - startTime + elapsedTime;
+            const ms = Math.floor((total % 1000) / 10);
+            const s = Math.floor((total / 1000) % 60);
+            const m = Math.floor((total / (1000 * 60)) % 60);
+            const h = Math.floor(total / (1000 * 60 * 60));
+
+            document.getElementById('stopwatch-display').textContent =
+                `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(2, '0')}`;
+        };
+
+        document.getElementById('sw-start').onclick = () => {
+            if (interval) {
+                clearInterval(interval);
+                interval = null;
+                elapsedTime += Date.now() - startTime;
+                document.getElementById('sw-start').textContent = 'Resume';
+            } else {
+                startTime = Date.now();
+                interval = setInterval(updateDisplay, 10);
+                document.getElementById('sw-start').textContent = 'Pause';
+            }
+        };
+
+        document.getElementById('sw-lap').onclick = () => {
+            if (interval) {
+                const lapTime = document.getElementById('stopwatch-display').textContent;
+                laps.push(lapTime);
+                const lapsHtml = laps.map((lap, i) =>
+                    `<div style="padding: 8px; border-bottom: 1px solid #333;">Lap ${i + 1}: ${lap}</div>`
+                ).join('');
+                document.getElementById('laps-output').innerHTML = lapsHtml;
+            }
+        };
+
+        document.getElementById('sw-reset').onclick = () => {
+            clearInterval(interval);
+            interval = null;
+            startTime = 0;
+            elapsedTime = 0;
+            laps = [];
+            document.getElementById('stopwatch-display').textContent = '00:00:00.00';
+            document.getElementById('laps-output').innerHTML = '';
+            document.getElementById('sw-start').textContent = 'Start';
+        };
+    }
+
+    renderBMICalculator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Advanced BMI Calculator</h2>
+            <select id="bmi-unit" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="metric">Metric (kg, cm)</option>
+                <option value="imperial">Imperial (lbs, inches)</option>
+            </select>
+            <input type="number" id="bmi-weight" placeholder="Weight" step="0.1">
+            <input type="number" id="bmi-height" placeholder="Height" step="0.1">
+            <button id="calc-bmi">Calculate BMI</button>
+            <div class="result" id="bmi-output" style="display: none; text-align: left;"></div>
+        `;
+
+        document.getElementById('calc-bmi').onclick = () => {
+            const unit = document.getElementById('bmi-unit').value;
+            let weight = parseFloat(document.getElementById('bmi-weight').value);
+            let height = parseFloat(document.getElementById('bmi-height').value);
+
+            if (!weight || !height) {
+                alert('Please enter both weight and height');
+                return;
+            }
+
+            if (unit === 'imperial') {
+                weight = weight * 0.453592; // lbs to kg
+                height = height * 2.54; // inches to cm
+            }
+
+            const heightM = height / 100;
+            const bmi = weight / (heightM * heightM);
+
+            let category, color;
+            if (bmi < 18.5) { category = 'Underweight'; color = '#60a5fa'; }
+            else if (bmi < 25) { category = 'Normal weight'; color = '#0f0'; }
+            else if (bmi < 30) { category = 'Overweight'; color = '#fa0'; }
+            else { category = 'Obese'; color = '#f00'; }
+
+            const output = document.getElementById('bmi-output');
+            output.style.display = 'block';
+            output.innerHTML = `
+                <div style="font-size: 48px; font-weight: bold; color: ${color}; margin-bottom: 20px;">
+                    ${bmi.toFixed(1)}
+                </div>
+                <div style="font-size: 24px; margin-bottom: 20px;">${category}</div>
+                <div style="font-size: 14px; color: #666;">
+                    <div>Underweight: &lt; 18.5</div>
+                    <div>Normal: 18.5 - 24.9</div>
+                    <div>Overweight: 25 - 29.9</div>
+                    <div>Obese: ≥ 30</div>
+                </div>
+            `;
+        };
+    }
+
+    renderCurrencyFormatter() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Currency Formatter</h2>
+            <input type="number" id="currency-amount" placeholder="Enter amount" step="0.01">
+            <select id="currency-code" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 10px;">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+                <option value="JPY">JPY - Japanese Yen</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="CNY">CNY - Chinese Yuan</option>
+            </select>
+            <select id="currency-locale" style="padding: 12px; border: 1px solid #333; background: #1a1a1a; color: #fff; border-radius: 8px; margin-bottom: 20px;">
+                <option value="en-US">English (US)</option>
+                <option value="en-GB">English (UK)</option>
+                <option value="de-DE">German</option>
+                <option value="fr-FR">French</option>
+                <option value="ja-JP">Japanese</option>
+                <option value="zh-CN">Chinese</option>
+            </select>
+            <div class="result" id="currency-formatted" style="font-size: 36px; font-weight: bold;"></div>
+        `;
+
+        const format = () => {
+            const amount = parseFloat(document.getElementById('currency-amount').value) || 0;
+            const currency = document.getElementById('currency-code').value;
+            const locale = document.getElementById('currency-locale').value;
+
+            const formatted = new Intl.NumberFormat(locale, {
+                style: 'currency',
+                currency: currency
+            }).format(amount);
+
+            document.getElementById('currency-formatted').textContent = formatted;
+        };
+
+        document.getElementById('currency-amount').addEventListener('input', format);
+        document.getElementById('currency-code').addEventListener('change', format);
+        document.getElementById('currency-locale').addEventListener('change', format);
+        format();
+    }
+
+    renderTextDiff() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Advanced Text Diff</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <h3 style="margin-bottom: 10px;">Original Text</h3>
+                    <textarea id="diff-text1" rows="10" placeholder="Enter original text..."></textarea>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 10px;">Modified Text</h3>
+                    <textarea id="diff-text2" rows="10" placeholder="Enter modified text..."></textarea>
+                </div>
+            </div>
+            <button id="compare-diff">Compare</button>
+            <div class="result" id="diff-output" style="text-align: left; white-space: pre-wrap; font-family: monospace; font-size: 12px;"></div>
+        `;
+
+        document.getElementById('compare-diff').onclick = () => {
+            const text1 = document.getElementById('diff-text1').value.split('\n');
+            const text2 = document.getElementById('diff-text2').value.split('\n');
+
+            let html = '';
+            const maxLines = Math.max(text1.length, text2.length);
+
+            for (let i = 0; i < maxLines; i++) {
+                const line1 = text1[i] || '';
+                const line2 = text2[i] || '';
+
+                if (line1 === line2) {
+                    html += `<div style="padding: 5px; background: #1a1a1a;">${line1 || '(empty)'}</div>`;
+                } else {
+                    if (line1) html += `<div style="padding: 5px; background: #4a1a1a; color: #faa;">- ${line1}</div>`;
+                    if (line2) html += `<div style="padding: 5px; background: #1a4a1a; color: #afa;">+ ${line2}</div>`;
+                }
+            }
+
+            document.getElementById('diff-output').innerHTML = html || 'No differences found';
+        };
+    }
+
+    renderUnicodeExplorer() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Unicode Character Explorer</h2>
+            <input type="text" id="unicode-input" placeholder="Enter text or paste character" maxlength="10">
+            <div class="result" id="unicode-output" style="text-align: left;"></div>
+        `;
+
+        document.getElementById('unicode-input').addEventListener('input', (e) => {
+            const text = e.target.value;
+            if (!text) {
+                document.getElementById('unicode-output').innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const code = char.charCodeAt(0);
+                const hex = code.toString(16).toUpperCase().padStart(4, '0');
+
+                html += `
+                    <div style="padding: 15px; background: #1a1a1a; border-radius: 8px; margin-bottom: 10px;">
+                        <div style="font-size: 48px; margin-bottom: 10px;">${char}</div>
+                        <div><strong>Character:</strong> ${char}</div>
+                        <div><strong>Decimal:</strong> ${code}</div>
+                        <div><strong>Hex:</strong> U+${hex}</div>
+                        <div><strong>HTML Entity:</strong> &amp;#${code};</div>
+                        <div><strong>CSS:</strong> \\${hex}</div>
+                    </div>
+                `;
+            }
+
+            document.getElementById('unicode-output').innerHTML = html;
+        });
     }
 }
 
