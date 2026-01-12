@@ -1,28 +1,28 @@
 # Omni Tools Status
 
-**Total Tools:** 210
-**Last Updated:** Batch 16 (Geometry)
+**Total Tools:** 230
+**Last Updated:** Batch 18 (Unit Converters II)
 
-## Latest Additions (Batch 15 - Financial)
-- ROI Calculator
-- Break-Even Point
-- Markup Calculator
-- Margin Calculator
-- VAT/Sales Tax Calculator
-- Discount Calculator
-- CPM Calculator
-- Simple Loan Calculator
-- Compound Interest
-- Salary to Hourly Converter
+## Latest Additions (Batch 17 - Time/Date)
+- Week Number Calculator
+- Leap Year Checker
+- Detailed Age Calculator
+- Time Difference
+- Date Add/Subtract
+- Day of Year
+- Quarter Calculator
+- Unix Timestamp Converter
+- Time Zone Offset
+- Work Days Calculator
 
-## Latest Additions (Batch 16 - Geometry)
-- Circle Calculator
-- Sphere Calculator
-- Cylinder Calculator
-- Cone Calculator
-- Pythagorean Theorem
-- Triangle Area (Heron's)
-- Slope Calculator
-- Midpoint Calculator
-- Distance Calculator
-- Cube Calculator
+## Latest Additions (Batch 18 - Unit Converters II)
+- Pressure Converter
+- Energy Converter
+- Power Converter
+- Fuel Consumption
+- Data Storage
+- Bandwidth Converter
+- Angle Converter
+- Density Converter
+- Force Converter
+- Torque Converter

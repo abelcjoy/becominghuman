@@ -1,9 +1,9 @@
 /**
- * 💎 Omni Tools - 210 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 230 ELITE TOOLS! 💎
  * 
- * BATCH 1-14: 190 tools across all categories
- * BATCH 15: ROI + BreakEven + Markup + Margin + VAT + Discount + CPM + Loan + CompoundInt + SalaryConv
- * BATCH 16: Circle + Sphere + Cylinder + Cone + Pythagorean + Triangle + Slope + Midpoint + Distance + Cube
+ * BATCH 1-16: 210 tools across all categories
+ * BATCH 17: WeekNum + LeapYear + AgeCalc + TimeDiff + DateAdd + DayOfYear + QuarterCalc + UnixConv + TimeZone + WorkDays
+ * BATCH 18: Pressure + Energy + Power + Fuel + Storage + Bandwidth + Angle + Density + Force + Torque
  */
 
 class OmniTools {
@@ -1750,6 +1750,168 @@ class OmniTools {
                 icon: "🧊",
                 category: "Math",
                 render: () => this.renderCubeCalc()
+            },
+            // === BATCH 17 - 220 TOOLS (TIME/DATE) ===
+            weekNum: {
+                name: "Week Number",
+                searchTerms: "week number date calendar year",
+                description: "Get ISO week number",
+                icon: "📅",
+                category: "Time",
+                render: () => this.renderWeekNum()
+            },
+            leapYear: {
+                name: "Leap Year Check",
+                searchTerms: "leap year check calendar date",
+                description: "Check if year is leap",
+                icon: "🐸",
+                category: "Time",
+                render: () => this.renderLeapYear()
+            },
+            ageCalc: {
+                name: "Detailed Age Calc",
+                searchTerms: "age calculator birthday date life",
+                description: "Calc exact age Y/M/D",
+                icon: "🎂",
+                category: "Time",
+                render: () => this.renderAgeCalc()
+            },
+            timeDiff: {
+                name: "Time Difference",
+                searchTerms: "time difference duration between dates",
+                description: "Diff between two times",
+                icon: "⏳",
+                category: "Time",
+                render: () => this.renderTimeDiff()
+            },
+            dateAdd: {
+                name: "Date Add/Sub",
+                searchTerms: "date add subtract days months years",
+                description: "Add/Sub time to date",
+                icon: "➕",
+                category: "Time",
+                render: () => this.renderDateAdd()
+            },
+            dayOfYear: {
+                name: "Day of Year",
+                searchTerms: "day of year number date calendar",
+                description: "Get day number (1-366)",
+                icon: "📆",
+                category: "Time",
+                render: () => this.renderDayOfYear()
+            },
+            quarterCalc: {
+                name: "Quarter Calculator",
+                searchTerms: "quarter fiscal year date business",
+                description: "Get quarter of date",
+                icon: "🌓",
+                category: "Time",
+                render: () => this.renderQuarterCalc()
+            },
+            unixConv: {
+                name: "Unix Time Conv",
+                searchTerms: "unix time epoch timestamp converter",
+                description: "Convert Unix timestamp",
+                icon: "🕰️",
+                category: "Time",
+                render: () => this.renderUnixConv()
+            },
+            timeZone: {
+                name: "Time Zone Offset",
+                searchTerms: "time zone offset utc gmt converter",
+                description: "Get local UTC offset",
+                icon: "🌍",
+                category: "Time",
+                render: () => this.renderTimeZone()
+            },
+            workDays: {
+                name: "Work Days Calc",
+                searchTerms: "work days business days weekend calculator",
+                description: "Calc work days between",
+                icon: "💼",
+                category: "Time",
+                render: () => this.renderWorkDays()
+            },
+            // === BATCH 18 - 230 TOOLS (UNITS II) ===
+            pressConv: {
+                name: "Pressure Converter",
+                searchTerms: "pressure converter pascal bar psi atm",
+                description: "Convert pressure units",
+                icon: "🎈",
+                category: "Unit",
+                render: () => this.renderPressConv()
+            },
+            energyConv: {
+                name: "Energy Converter",
+                searchTerms: "energy converter joule calorie kwh",
+                description: "Convert energy units",
+                icon: "⚡",
+                category: "Unit",
+                render: () => this.renderEnergyConv()
+            },
+            powerConv: {
+                name: "Power Converter",
+                searchTerms: "power converter watt horsepower",
+                description: "Convert power units",
+                icon: "🔌",
+                category: "Unit",
+                render: () => this.renderPowerConv()
+            },
+            fuelConv: {
+                name: "Fuel Consumption",
+                searchTerms: "fuel consumption mpg km/l converter",
+                description: "Convert fuel efficiency",
+                icon: "⛽",
+                category: "Unit",
+                render: () => this.renderFuelConv()
+            },
+            dataStore: {
+                name: "Data Storage",
+                searchTerms: "data storage converter byte bit kb mb gb tb",
+                description: "Convert storage units",
+                icon: "💾",
+                category: "Unit",
+                render: () => this.renderDataStore()
+            },
+            bandwidth: {
+                name: "Bandwidth Conv",
+                searchTerms: "bandwidth data transfer speed mbps gbps",
+                description: "Convert data rates",
+                icon: "📶",
+                category: "Unit",
+                render: () => this.renderBandwidth()
+            },
+            angleConv: {
+                name: "Angle Converter",
+                searchTerms: "angle converter degrees radians grads",
+                description: "Convert angle units",
+                icon: "📐",
+                category: "Unit",
+                render: () => this.renderAngleConv()
+            },
+            densityConv: {
+                name: "Density Converter",
+                searchTerms: "density converter kg/m3 g/cm3",
+                description: "Convert density units",
+                icon: "🧱",
+                category: "Unit",
+                render: () => this.renderDensityConv()
+            },
+            forceConv: {
+                name: "Force Converter",
+                searchTerms: "force converter newton dyne lbf",
+                description: "Convert force units",
+                icon: "💪",
+                category: "Unit",
+                render: () => this.renderForceConv()
+            },
+            torqueConv: {
+                name: "Torque Converter",
+                searchTerms: "torque converter nm lb-ft",
+                description: "Convert torque units",
+                icon: "🔧",
+                category: "Unit",
+                render: () => this.renderTorqueConv()
             }
         };
     }
@@ -9106,6 +9268,547 @@ background-clip: text;`;
             document.getElementById('cb-res').innerHTML = `
                  <div>Volume: ${(s * s * s).toFixed(2)}</div>
                  <div>Surface Area: ${(6 * s * s).toFixed(2)}</div>
+             `;
+        };
+    }
+}
+
+renderWeekNum() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Week Number Calculator</h2>
+            <input type="date" id="wn-d">
+            <button id="wn-btn">Get Week Number</button>
+            <div class="result" id="wn-res"></div>
+        `;
+    document.getElementById('wn-btn').onclick = () => {
+        const d = new Date(document.getElementById('wn-d').value || new Date());
+        const onejan = new Date(d.getFullYear(), 0, 1);
+        const week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+        document.getElementById('wn-res').textContent = `Week Number: ${week}`;
+    };
+}
+
+renderLeapYear() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Leap Year Checker</h2>
+            <input type="number" id="ly-y" placeholder="Year (e.g. 2024)">
+            <button id="ly-btn">Check</button>
+            <div class="result" id="ly-res"></div>
+        `;
+    document.getElementById('ly-btn').onclick = () => {
+        const y = parseInt(document.getElementById('ly-y').value);
+        const isLeap = (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+        document.getElementById('ly-res').innerHTML = isLeap ?
+            `<span style="color:#2ecc71">${y} is a Leap Year</span>` :
+            `<span style="color:#e74c3c">${y} is not a Leap Year</span>`;
+    };
+}
+
+renderAgeCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Detailed Age Calculator</h2>
+            <p>Date of Birth:</p>
+            <input type="date" id="ac-d">
+            <button id="ac-btn">Calculate Age</button>
+            <div class="result" id="ac-res"></div>
+        `;
+    document.getElementById('ac-btn').onclick = () => {
+        const dob = new Date(document.getElementById('ac-d').value);
+        const now = new Date();
+        if (isNaN(dob.getTime())) return;
+
+        let y = now.getFullYear() - dob.getFullYear();
+        let m = now.getMonth() - dob.getMonth();
+        let d = now.getDate() - dob.getDate();
+
+        if (m < 0 || (m === 0 && d < 0)) { y--; m += 12; }
+        if (d < 0) {
+            const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+            d += prevMonth.getDate();
+            m--;
+        }
+
+        const daysOld = Math.floor((now - dob) / (1000 * 60 * 60 * 24));
+        document.getElementById('ac-res').innerHTML = `
+                 <div>${y} Years, ${m} Months, ${d} Days</div>
+                 <div style="font-size:0.8em; margin-top:5px; color:#aaa">Total Days: ${daysOld.toLocaleString()}</div>
+             `;
+    };
+}
+
+renderTimeDiff() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Time Difference</h2>
+            <input type="datetime-local" id="td-1">
+            <input type="datetime-local" id="td-2">
+            <button id="td-btn">Calculate Difference</button>
+            <div class="result" id="td-res"></div>
+        `;
+    document.getElementById('td-btn').onclick = () => {
+        const d1 = new Date(document.getElementById('td-1').value);
+        const d2 = new Date(document.getElementById('td-2').value);
+        const diffMs = Math.abs(d2 - d1);
+        const diffSec = Math.floor(diffMs / 1000);
+        const diffMin = Math.floor(diffSec / 60);
+        const diffHr = Math.floor(diffMin / 60);
+        const diffDay = Math.floor(diffHr / 24);
+
+        document.getElementById('td-res').innerHTML = `
+                 <div>Days: ${diffDay}</div>
+                 <div>Hours: ${diffHr}</div>
+                 <div>Minutes: ${diffMin}</div>
+                 <div>Seconds: ${diffSec}</div>
+             `;
+    };
+}
+
+renderDateAdd() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Date Add/Subtract</h2>
+            <input type="date" id="da-d">
+            <select id="da-op">
+                <option value="add">Add</option>
+                <option value="sub">Subtract</option>
+            </select>
+            <div style="display:flex; gap:10px;">
+                <input type="number" id="da-n" placeholder="Value">
+                <select id="da-u">
+                    <option value="d">Days</option>
+                    <option value="m">Months</option>
+                    <option value="y">Years</option>
+                </select>
+            </div>
+            <button id="da-btn">Calculate</button>
+            <div class="result" id="da-res"></div>
+        `;
+    document.getElementById('da-btn').onclick = () => {
+        const d = new Date(document.getElementById('da-d').value);
+        const op = document.getElementById('da-op').value;
+        const n = parseInt(document.getElementById('da-n').value);
+        const u = document.getElementById('da-u').value;
+
+        if (isNaN(d.getTime())) return;
+
+        const val = op === 'add' ? n : -n;
+
+        if (u === 'd') d.setDate(d.getDate() + val);
+        else if (u === 'm') d.setMonth(d.getMonth() + val);
+        else if (u === 'y') d.setFullYear(d.getFullYear() + val);
+
+        document.getElementById('da-res').textContent = d.toDateString();
+    };
+}
+
+renderDayOfYear() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Day of Year</h2>
+            <input type="date" id="dy-d">
+            <button id="dy-btn">Get Day Number</button>
+            <div class="result" id="dy-res"></div>
+        `;
+    document.getElementById('dy-btn').onclick = () => {
+        const d = new Date(document.getElementById('dy-d').value);
+        const start = new Date(d.getFullYear(), 0, 0);
+        const diff = d - start;
+        const oneDay = 1000 * 60 * 60 * 24;
+        const day = Math.floor(diff / oneDay);
+        document.getElementById('dy-res').textContent = `Day ${day} of ${d.getFullYear()}`;
+    };
+}
+
+renderQuarterCalc() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Quarter Calculator</h2>
+            <input type="date" id="qc-d">
+            <button id="qc-btn">Get Quarter</button>
+            <div class="result" id="qc-res"></div>
+        `;
+    document.getElementById('qc-btn').onclick = () => {
+        const d = new Date(document.getElementById('qc-d').value);
+        const m = d.getMonth() + 1;
+        const q = Math.ceil(m / 3);
+        document.getElementById('qc-res').textContent = `Q${q} ${d.getFullYear()}`;
+    };
+}
+
+renderUnixConv() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Unix Timestamp Converter</h2>
+            <input type="number" id="uc-t" placeholder="Timestamp (seconds)">
+            <button id="uc-btn">Convert to Date</button>
+            <div style="margin:10px 0; text-align:center;">OR</div>
+            <button id="uc-now">Get Current Timestamp</button>
+            <div class="result" id="uc-res"></div>
+        `;
+    document.getElementById('uc-btn').onclick = () => {
+        const t = document.getElementById('uc-t').value;
+        const d = new Date(t * 1000);
+        document.getElementById('uc-res').innerHTML = `
+                <div>UTC: ${d.toUTCString()}</div>
+                <div>Local: ${d.toLocaleString()}</div>
+             `;
+    };
+    document.getElementById('uc-now').onclick = () => {
+        const now = Math.floor(Date.now() / 1000);
+        document.getElementById('uc-t').value = now;
+        document.getElementById('uc-res').textContent = `Current Timestamp: ${now}`;
+    };
+}
+
+renderTimeZone() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Time Zone Offset</h2>
+            <button id="tz-btn">Get My Local Offset</button>
+            <div class="result" id="tz-res"></div>
+        `;
+    document.getElementById('tz-btn').onclick = () => {
+        const d = new Date();
+        const n = d.getTimezoneOffset();
+        const h = Math.floor(Math.abs(n) / 60);
+        const m = Math.abs(n) % 60;
+        const sign = n > 0 ? '-' : '+'; // Inverted common logic
+        const region = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById('tz-res').innerHTML = `
+                 <div>Region: ${region}</div>
+                 <div>Offset: UTC${sign}${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}</div>
+             `;
+    };
+}
+
+renderWorkDays() {
+    const content = document.getElementById('tool-content');
+    content.innerHTML = `
+            <h2 class="tool-title">Work Days Calculator</h2>
+            <input type="date" id="wd-s" placeholder="Start">
+            <input type="date" id="wd-e" placeholder="End">
+            <button id="wd-btn">Calculate</button>
+            <div class="result" id="wd-res"></div>
+        `;
+    document.getElementById('wd-btn').onclick = () => {
+        const s = new Date(document.getElementById('wd-s').value);
+        const e = new Date(document.getElementById('wd-e').value);
+        let count = 0;
+        let cur = new Date(s);
+        while (cur <= e) {
+            const day = cur.getDay();
+            if (day !== 0 && day !== 6) count++;
+            cur.setDate(cur.getDate() + 1);
+        }
+        document.getElementById('wd-res').textContent = `Work Days: ${count}`;
+    }
+
+    renderPressConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pressure Converter</h2>
+            <input type="number" id="pc-v" placeholder="Value">
+            <select id="pc-u">
+                <option value="pa">Pascal</option>
+                <option value="bar">Bar</option>
+                <option value="psi">PSI</option>
+                <option value="atm">Atmosphere</option>
+            </select>
+            <button id="pc-btn">Convert</button>
+            <div class="result" id="pc-res"></div>
+        `;
+        document.getElementById('pc-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('pc-v').value);
+            const u = document.getElementById('pc-u').value;
+            let pa;
+            if (u === 'pa') pa = v;
+            else if (u === 'bar') pa = v * 100000;
+            else if (u === 'psi') pa = v * 6894.76;
+            else if (u === 'atm') pa = v * 101325;
+
+            document.getElementById('pc-res').innerHTML = `
+                 <div>${pa.toFixed(2)} Pa</div>
+                 <div>${(pa / 100000).toFixed(4)} Bar</div>
+                 <div>${(pa / 6894.76).toFixed(4)} PSI</div>
+                 <div>${(pa / 101325).toFixed(4)} Atm</div>
+             `;
+        };
+    }
+
+    renderEnergyConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Energy Converter</h2>
+            <input type="number" id="ec-v" placeholder="Value">
+            <select id="ec-u">
+                <option value="j">Joule</option>
+                <option value="cal">Calorie</option>
+                <option value="kwh">kWh</option>
+                <option value="btu">BTU</option>
+            </select>
+            <button id="ec-btn">Convert</button>
+            <div class="result" id="ec-res"></div>
+        `;
+        document.getElementById('ec-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('ec-v').value);
+            const u = document.getElementById('ec-u').value;
+            let j;
+            if (u === 'j') j = v;
+            else if (u === 'cal') j = v * 4.184;
+            else if (u === 'kwh') j = v * 3.6e6;
+            else if (u === 'btu') j = v * 1055.06;
+
+            document.getElementById('ec-res').innerHTML = `
+                 <div>${j.toFixed(2)} Joules</div>
+                 <div>${(j / 4.184).toFixed(4)} Calories</div>
+                 <div>${(j / 3.6e6).toExponential(4)} kWh</div>
+                 <div>${(j / 1055.06).toFixed(4)} BTU</div>
+             `;
+        };
+    }
+
+    renderPowerConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Power Converter</h2>
+            <input type="number" id="wc-v" placeholder="Value">
+            <select id="wc-u">
+                <option value="w">Watt</option>
+                <option value="hp">Horsepower</option>
+                <option value="kw">Kilowatt</option>
+            </select>
+            <button id="wc-btn">Convert</button>
+            <div class="result" id="wc-res"></div>
+        `;
+        document.getElementById('wc-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('wc-v').value);
+            const u = document.getElementById('wc-u').value;
+            let w;
+            if (u === 'w') w = v;
+            else if (u === 'hp') w = v * 745.7;
+            else if (u === 'kw') w = v * 1000;
+
+            document.getElementById('wc-res').innerHTML = `
+                 <div>${w.toFixed(2)} Watts</div>
+                 <div>${(w / 745.7).toFixed(4)} HP</div>
+                 <div>${(w / 1000).toFixed(4)} kW</div>
+             `;
+        };
+    }
+
+    renderFuelConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fuel Consumption</h2>
+            <input type="number" id="fc-v" placeholder="Value">
+            <select id="fc-u">
+                <option value="mpg">MPG (US)</option>
+                <option value="kml">km/L</option>
+                <option value="l100">L/100km</option>
+            </select>
+            <button id="fc-btn">Convert</button>
+            <div class="result" id="fc-res"></div>
+        `;
+        document.getElementById('fc-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('fc-v').value);
+            const u = document.getElementById('fc-u').value;
+            // Convert to MPG US base
+            let mpg;
+            if (u === 'mpg') mpg = v;
+            else if (u === 'kml') mpg = v * 2.35215;
+            else if (u === 'l100') mpg = 235.215 / v;
+
+            document.getElementById('fc-res').innerHTML = `
+                 <div>${mpg.toFixed(2)} MPG (US)</div>
+                 <div>${(mpg / 2.35215).toFixed(2)} km/L</div>
+                 <div>${(235.215 / mpg).toFixed(2)} L/100km</div>
+             `;
+        };
+    }
+
+    renderDataStore() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Storage Converter</h2>
+            <input type="number" id="ds-v" placeholder="Value">
+            <select id="ds-u">
+                <option value="b">Bytes</option>
+                <option value="kb">KB</option>
+                <option value="mb">MB</option>
+                <option value="gb">GB</option>
+                <option value="tb">TB</option>
+            </select>
+            <button id="ds-btn">Convert</button>
+            <div class="result" id="ds-res"></div>
+        `;
+        document.getElementById('ds-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('ds-v').value);
+            const u = document.getElementById('ds-u').value;
+            let b;
+            if (u === 'b') b = v;
+            else if (u === 'kb') b = v * 1024;
+            else if (u === 'mb') b = v * 1024 * 1024;
+            else if (u === 'gb') b = v * 1024 * 1024 * 1024;
+            else if (u === 'tb') b = v * 1024 * 1024 * 1024 * 1024;
+
+            document.getElementById('ds-res').innerHTML = `
+                 <div>${b.toLocaleString()} Bytes</div>
+                 <div>${(b / 1024).toFixed(2)} KB</div>
+                 <div>${(b / 1048576).toFixed(2)} MB</div>
+                 <div>${(b / 1073741824).toFixed(2)} GB</div>
+                 <div>${(b / 1099511627776).toFixed(4)} TB</div>
+             `;
+        };
+    }
+
+    renderBandwidth() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Bandwidth Converter</h2>
+            <input type="number" id="bw-v" placeholder="Value">
+            <select id="bw-u">
+                <option value="mbps">Mbps</option>
+                <option value="gbps">Gbps</option>
+                <option value="mbs">MB/s</option>
+            </select>
+            <button id="bw-btn">Convert</button>
+            <div class="result" id="bw-res"></div>
+        `;
+        document.getElementById('bw-btn').onclick = () => {
+            // Base unit Mbps
+            const v = parseFloat(document.getElementById('bw-v').value);
+            const u = document.getElementById('bw-u').value;
+            let mbps;
+            if (u === 'mbps') mbps = v;
+            else if (u === 'gbps') mbps = v * 1000;
+            else if (u === 'mbs') mbps = v * 8;
+
+            document.getElementById('bw-res').innerHTML = `
+                 <div>${mbps.toFixed(2)} Mbps</div>
+                 <div>${(mbps / 1000).toFixed(4)} Gbps</div>
+                 <div>${(mbps / 8).toFixed(2)} MB/s</div>
+             `;
+        };
+    }
+
+    renderAngleConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Angle Converter</h2>
+            <input type="number" id="an-v" placeholder="Value">
+            <select id="an-u">
+                <option value="deg">Degrees</option>
+                <option value="rad">Radians</option>
+                <option value="grad">Gradians</option>
+            </select>
+            <button id="an-btn">Convert</button>
+            <div class="result" id="an-res"></div>
+        `;
+        document.getElementById('an-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('an-v').value);
+            const u = document.getElementById('an-u').value;
+            let deg;
+            if (u === 'deg') deg = v;
+            else if (u === 'rad') deg = v * (180 / Math.PI);
+            else if (u === 'grad') deg = v * 0.9;
+
+            document.getElementById('an-res').innerHTML = `
+                 <div>${deg.toFixed(2)} Deg</div>
+                 <div>${(deg * Math.PI / 180).toFixed(4)} Rad</div>
+                 <div>${(deg / 0.9).toFixed(2)} Grad</div>
+             `;
+        };
+    }
+
+    renderDensityConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Density Converter</h2>
+            <input type="number" id="dn-v" placeholder="Value">
+            <select id="dn-u">
+                <option value="kgm">kg/m³</option>
+                <option value="gcm">g/cm³</option>
+                <option value="lbin">lb/in³</option>
+            </select>
+            <button id="dn-btn">Convert</button>
+            <div class="result" id="dn-res"></div>
+        `;
+        document.getElementById('dn-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('dn-v').value);
+            const u = document.getElementById('dn-u').value;
+            let kgm;
+            if (u === 'kgm') kgm = v;
+            else if (u === 'gcm') kgm = v * 1000;
+            else if (u === 'lbin') kgm = v * 27679.9;
+
+            document.getElementById('dn-res').innerHTML = `
+                 <div>${kgm.toFixed(1)} kg/m³</div>
+                 <div>${(kgm / 1000).toFixed(4)} g/cm³</div>
+                 <div>${(kgm / 27679.9).toFixed(4)} lb/in³</div>
+             `;
+        };
+    }
+
+    renderForceConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Force Converter</h2>
+            <input type="number" id="fo-v" placeholder="Value">
+            <select id="fo-u">
+                <option value="n">Newton</option>
+                <option value="kn">Kilonewton</option>
+                <option value="lbf">Pound-force</option>
+                <option value="kgf">Kilogram-force</option>
+            </select>
+            <button id="fo-btn">Convert</button>
+            <div class="result" id="fo-res"></div>
+        `;
+        document.getElementById('fo-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('fo-v').value);
+            const u = document.getElementById('fo-u').value;
+            let n;
+            if (u === 'n') n = v;
+            else if (u === 'kn') n = v * 1000;
+            else if (u === 'lbf') n = v * 4.44822;
+            else if (u === 'kgf') n = v * 9.80665;
+
+            document.getElementById('fo-res').innerHTML = `
+                 <div>${n.toFixed(2)} N</div>
+                 <div>${(n / 1000).toFixed(4)} kN</div>
+                 <div>${(n / 4.44822).toFixed(4)} lbf</div>
+                 <div>${(n / 9.80665).toFixed(4)} kgf</div>
+             `;
+        };
+    }
+
+    renderTorqueConv() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Torque Converter</h2>
+            <input type="number" id="tq-v" placeholder="Value">
+            <select id="tq-u">
+                <option value="nm">Newton-meter</option>
+                <option value="lbft">Pound-foot</option>
+                <option value="kgm">Kg-meter</option>
+            </select>
+            <button id="tq-btn">Convert</button>
+            <div class="result" id="tq-res"></div>
+        `;
+        document.getElementById('tq-btn').onclick = () => {
+            const v = parseFloat(document.getElementById('tq-v').value);
+            const u = document.getElementById('tq-u').value;
+            let nm;
+            if (u === 'nm') nm = v;
+            else if (u === 'lbft') nm = v * 1.35582;
+            else if (u === 'kgm') nm = v * 9.80665;
+
+            document.getElementById('tq-res').innerHTML = `
+                 <div>${nm.toFixed(2)} Nm</div>
+                 <div>${(nm / 1.35582).toFixed(4)} lb-ft</div>
+                 <div>${(nm / 9.80665).toFixed(4)} kg-m</div>
              `;
         };
     }
