@@ -167,6 +167,41 @@ class StudentLibrary {
                                 <li><b>Index:</b> Number of positive eigenvalues.</li>
                                 <li><b>Signature:</b> (Number of positive λ) - (Number of negative λ).</li>
                             </ol>
+                             <h2>1.6 Quest for Excellence: Important Questions & Answers</h2>
+                             
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: State Cayley-Hamilton Theorem.</b><br>
+                                 <b>Ans:</b> Every square matrix satisfies its own characteristic equation. If |A - λI| = 0 is the characteristic equation, then substituting A for λ yields the null matrix (O).</p>
+                                 
+                                 <p><b>Q2: If the sum of eigenvalues of a 3x3 matrix is 6 and the product is 8, and one eigenvalue is 2, find the others.</b><br>
+                                 <b>Ans:</b> Let λ₁, λ₂, λ₃ be eigenvalues. λ₁ = 2. 
+                                 Sum: 2 + λ₂ + λ₃ = 6 => λ₂ + λ₃ = 4. 
+                                 Product: 2 * λ₂ * λ₃ = 8 => λ₂ * λ₃ = 4.
+                                 Solving λ² - 4λ + 4 = 0 gives λ = 2, 2. So eigenvalues are 2, 2, 2.</p>
+                                 
+                                 <p><b>Q3: Define the nature of a Quadratic Form whose eigenvalues are 2, 3, 0.</b><br>
+                                 <b>Ans:</b> Since one eigenvalue is zero and the others are positive, the nature is <b>Positive Semi-definite</b>.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="exam-tip">🎯 <b>PROBLEM TYPE:</b> The "Diagonalization of a Symmetric Matrix by Orthogonal Transformation" is the most frequent 16-mark question.</div>
+
+                             <div class="highlight-box">
+                                 <p><b>Q4: Diagonalize the matrix A = [[2, 1, 1], [1, 2, 1], [1, 1, 2]] by Orthogonal Transformation.</b></p>
+                                 <p><b>Step 1: Characteristic Equation.</b><br>
+                                 |A - λI| = 0 => λ³ - 6λ² + 9λ - 4 = 0. Eigenvalues are λ = 1, 1, 4.</p>
+                                 
+                                 <p><b>Step 2: Eigenvectors.</b><br>
+                                 - For λ = 4: Solving (A - 4I)X = 0 gives X₁ = [1, 1, 1]ᵀ.
+                                 - For λ = 1 (repeated): Since it's a symmetric matrix, we pick X₂ = [1, -1, 0]ᵀ (satisfies x+y+z=0) and X₃ = [1, 1, -2]ᵀ (orthogonal to both X₁ and X₂).</p>
+                                 
+                                 <p><b>Step 3: Normalized Modal Matrix (N).</b><br>
+                                 Normalize columns: N = [[1/√3, 1/√2, 1/√6], [1/√3, -1/√2, 1/√6], [1/√3, 0, -2/√6]].</p>
+                                 
+                                 <p><b>Step 4: Diagonalization.</b><br>
+                                 D = NᵀAN = [[4, 0, 0], [0, 1, 0], [0, 0, 1]]. Result Verified.</p>
+                             </div>
                         `
                     },
                     {
@@ -217,6 +252,34 @@ class StudentLibrary {
                                 <li>If the curve is parametric, express x̄ and ȳ in terms of 't'.</li>
                                 <li>Eliminate 't' between x̄ and ȳ to find the Cartesian equation f(x̄, ȳ) = 0. This is the Evolute.</li>
                             </ol>
+                             <h2>2.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Find the slope of the curve y² = 4x at (1, 2).</b><br>
+                                 <b>Ans:</b> Differentiate: 2y(dy/dx) = 4 => dy/dx = 2/y. At (1, 2), m = 2/2 = 1.</p>
+                                 
+                                 <p><b>Q2: Define the curvature of a circle of radius 'a'.</b><br>
+                                 <b>Ans:</b> Curvature (κ) is the reciprocal of the radius of curvature. κ = 1/ρ. For a circle, ρ = a, so κ = 1/a.</p>
+                                 
+                                 <p><b>Q3: State the condition for a function to have a vertical tangent.</b><br>
+                                 <b>Ans:</b> A vertical tangent occurs at a point where dy/dx approaches infinity (±∞).</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Find the evolute of the parabola y² = 4ax.</b></p>
+                                 <p><b>Step 1: Parametric Form.</b> x = at², y = 2at. ẏ = dy/dx = (2a)/(2at) = 1/t. ÿ = d²y/dx² = (-1/t²)(dt/dx) = (-1/t²)/(2at) = -1/(2at³).</p>
+                                 
+                                 <p><b>Step 2: Center of Curvature (x̄, ȳ).</b><br>
+                                 x̄ = x - [y₁(1 + y₁²)] / y₂ = at² - [(1/t)(1 + 1/t²)] / (-1/2at³) = at² + 2at²(1 + 1/t²) = 3at² + 2a.<br>
+                                 ȳ = y + [1 + y₁²] / y₂ = 2at + [1 + 1/t²] / (-1/2at³) = 2at - 2at³(1 + 1/t²) = -2at³.</p>
+                                 
+                                 <p><b>Step 3: Eliminate 't'.</b><br>
+                                 From x̄: t² = (x̄ - 2a)/3a.<br>
+                                 From ȳ: t³ = -ȳ/2a => t² = (-ȳ/2a)^(2/3).<br>
+                                 Equating: (x̄ - 2a)/3a = (ȳ²/4a²)^(1/3) => <b>27aȳ² = 4(x̄ - 2a)³</b>.</p>
+                             </div>
                         `
                     },
                     {
@@ -268,6 +331,35 @@ class StudentLibrary {
                                 <li>Set partials to zero: Lx = 0, Ly = 0, Lz = 0, Lλ = 0.</li>
                                 <li>Solve the resulting system of equations to find the critical values.</li>
                             </ol>
+                             <h2>3.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: If u = x^y, find ∂u/∂x and ∂u/∂y.</b><br>
+                                 <b>Ans:</b> ∂u/∂x = y.x^(y-1) and ∂u/∂y = x^y . log(x).</p>
+                                 
+                                 <p><b>Q2: Define the Jacobian of u, v w.r.t x, y.</b><br>
+                                 <b>Ans:</b> It is the determinant J = ∂(u,v)/∂(x,y) = | [∂u/∂x, ∂u/∂y], [∂v/∂x, ∂v/∂y] |.</p>
+                                 
+                                 <p><b>Q3: What are the conditions for f(x,y) to have a minimum at (a,b)?</b><br>
+                                 <b>Ans:</b> (1) fx = 0, fy = 0. (2) rt - s² > 0. (3) r > 0.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: A rectangular box, open at the top, is to have a volume of 32 cc. Find the dimensions of the box that requires the least material for its construction.</b></p>
+                                 <p><b>Step 1: Variables and Functions.</b> Let x, y be the length and breadth of the base, and z be the height. Volume V = xyz = 32. Surface Area S = xy + 2xz + 2yz (to be minimized).</p>
+                                 
+                                 <p><b>Step 2: Constraint.</b> g(x,y,z) = xyz - 32 = 0.</p>
+                                 
+                                 <p><b>Step 3: Lagrange Equations.</b> L = (xy + 2xz + 2yz) + λ(xyz - 32).<br>
+                                 Lx = y + 2z + λyz = 0 => 1/z + 2/y + λ = 0 (i)<br>
+                                 Ly = x + 2z + λxz = 0 => 1/z + 2/x + λ = 0 (ii)<br>
+                                 Lz = 2x + 2y + λxy = 0 => 2/y + 2/x + λ = 0 (iii)</p>
+                                 
+                                 <p><b>Step 4: Solve.</b> From (i) and (ii): x = y. From (ii) and (iii): x = 2z. So dimensions are x, x, x/2.<br>
+                                 Substitute in V: x * x * x/2 = 32 => x³/2 = 32 => x³ = 64 => <b>x = 4, y = 4, z = 2.</b> Material is minimized.</p>
+                             </div>
                         `
                     },
                     {
@@ -309,6 +401,31 @@ class StudentLibrary {
                                 <b>Beta Function:</b> B(m,n) = ∫₀¹ xᵐ⁻¹ (1-x)ⁿ⁻¹ dx.<br>
                                 <b>Relation:</b> B(m,n) = [Γ(m)Γ(n)] / Γ(m+n).
                             </div>
+                             <h2>4.5 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Evaluate ∫ log x dx.</b><br>
+                                 <b>Ans:</b> Use Integration by parts (u=log x, dv=dx). Result: x log x - x + C.</p>
+                                 
+                                 <p><b>Q2: Define the Gamma function.</b><br>
+                                 <b>Ans:</b> Γ(n) = ∫₀᪴ xⁿ⁻¹ e⁻ˣ dx for n > 0.</p>
+                                 
+                                 <p><b>Q3: Evaluation of ∫₋ₐᵃ sin⁵x dx.</b><br>
+                                 <b>Ans:</b> sin⁵x is an odd function. Therefore, the integral is 0.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Evaluate ∫₀᪴ e^(-x²) dx.</b></p>
+                                 <p><b>Step 1: Substitution.</b> Let x² = t => 2x dx = dt => dx = dt / (2√t).</p>
+                                 
+                                 <p><b>Step 2: Change Limits.</b> When x=0, t=0. When x=∞, t=∞.</p>
+                                 
+                                 <p><b>Step 3: Integral Transformation.</b> ∫₀᪴ e⁻ᵗ . (t⁻¹/²) / 2 dt = 1/2 ∫₀᪴ t^(1/2 - 1) e⁻ᵗ dt.</p>
+                                 
+                                 <p><b>Step 4: Using Gamma Function.</b> The integral is (1/2) Γ(1/2). Since Γ(1/2) = √π, the result is <b>√π / 2</b>.</p>
+                             </div>
                         `
                     },
                     {
@@ -346,6 +463,32 @@ class StudentLibrary {
                                 <b>∫∫∫ dx dy dz = ∫∫∫ |J| du dv dw</b>
                             </div>
                             <p>Where J is the Jacobian ∂(x,y,z)/∂(u,v,w).</p>
+
+                             <h2>5.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Evaluate ∫₀¹ ∫₀² xy dx dy.</b><br>
+                                 <b>Ans:</b> ∫₀¹ [x²y/2]₀² dy = ∫₀¹ 2y dy = [y²]₀¹ = 1.</p>
+                                 
+                                 <p><b>Q2: Shade the region of integration for ∫₀¹ ∫ₓ¹ f(x,y) dy dx.</b><br>
+                                 <b>Ans:</b> The region is bounded by y=x, y=1, x=0. It is a triangle with vertices (0,0), (0,1), (1,1).</p>
+                                 
+                                 <p><b>Q3: Give the area element in polar coordinates.</b><br>
+                                 <b>Ans:</b> dA = r dr dθ.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Change the order of integration and evaluate ∫₀ᵃ ∫ₓᵃ x / (x² + y²) dy dx.</b></p>
+                                 <p><b>Step 1: Region.</b> Given limits: y varies from x to a; x varies from 0 to a. Boundary equations: y=x, y=a, x=0, x=a. This is a triangle above y=x in the square [0,a]x[0,a].</p>
+                                 
+                                 <p><b>Step 2: New Limits.</b> Changing to dx dy: x varies from 0 to y; y varies from 0 to a.</p>
+                                 
+                                 <p><b>Step 3: Evaluation.</b> ∫₀ᵃ ∫₀ʸ x / (x² + y²) dx dy.<br>
+                                 Inner Integral: [1/2 log(x² + y²)]₀ʸ = 1/2 [log(2y²) - log(y²)] = 1/2 log(2).<br>
+                                 Outer Integral: ∫₀ᵃ 1/2 log(2) dy = <b>(a/2) log(2)</b>.</p>
+                             </div>
                         `
                     },
                 ],
@@ -430,6 +573,32 @@ class StudentLibrary {
                                 <li>It provides a high <b>Geometric Moment of Inertia (I)</b> with minimum weight.</li>
                                 <li>It reduces the "depression" (sagging) of the beam under its own weight.</li>
                             </ol>
+
+                             <h2>1.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Define Hooke's Law.</b><br>
+                                 <b>Ans:</b> It states that within the elastic limit, the stress produced in a body is directly proportional to the strain produced in it. Stress ∝ Strain.</p>
+                                 
+                                 <p><b>Q2: What is a Torsional Pendulum?</b><br>
+                                 <b>Ans:</b> It consists of a heavy disc suspended by a thin metallic wire from a rigid support. It executes torsional oscillations when the disc is twisted and released.</p>
+                                 
+                                 <p><b>Q3: List two advantages of I-shaped girders.</b><br>
+                                 <b>Ans:</b> (1) High rigidity with minimum weight. (2) Reduced depression under own weight.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Derive the expression for the rigidity modulus of a wire using a Torsional Pendulum.</b></p>
+                                 <p><b>Step 1: Restoring Couple.</b> The couple per unit twist is C = πnr⁴ / 2l. When twisted through angle θ, restoring couple = Cθ.</p>
+                                 
+                                 <p><b>Step 2: Equation of Motion.</b> I (d²θ/dt²) = -Cθ. This is SHM with ω = √(C/I).</p>
+                                 
+                                 <p><b>Step 3: Calculating Period.</b> T = 2π√(I/C). Substituting for C: T = 2π√(2Il / πnr⁴).</p>
+                                 
+                                 <p><b>Step 4: Final Formula.</b> Squaring both sides: T² = 8πIl / nr⁴. Rearranging: <b>n = 8πIl / T²r⁴</b>.</p>
+                             </div>
                         `
                     },
                     {
@@ -483,6 +652,32 @@ class StudentLibrary {
                                 <li><b>Direction:</b> Points in the direction of wave propagation.</li>
                                 <li><b>Average Intensity (I):</b> The time-average of the Poynting vector magnitude, I = <S> = (1/2)cε₀E₀².</li>
                             </ul>
+
+                             <h2>2.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Write the differential form of Gauss's Law for Magnetism.</b><br>
+                                 <b>Ans:</b> ∇·B = 0. It indicates that magnetic monopoles do not exist.</p>
+                                 
+                                 <p><b>Q2: What is Displacement Current?</b><br>
+                                 <b>Ans:</b> It is the current that arises due to a time-varying electric displacement field. J_d = ∂D/∂t.</p>
+                                 
+                                 <p><b>Q3: Define the Poynting Vector.</b><br>
+                                 <b>Ans:</b> It is defined as the cross product of the electric field and the magnetic field intensity (S = E × H). It represents the rate of energy flow per unit area.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Derive the electromagnetic wave equation for the electric field in free space using Maxwell's equations.</b></p>
+                                 <p><b>Step 1: Maxwell's Eqs in Free Space.</b> (1) ∇·E=0, (2) ∇·B=0, (3) ∇×E=-∂B/∂t, (4) ∇×B=μ₀ε₀∂E/∂t.</p>
+                                 
+                                 <p><b>Step 2: Vector Identity.</b> Taking curl of (3): ∇×(∇×E) = -∂(∇×B)/∂t.</p>
+                                 
+                                 <p><b>Step 3: Substitution.</b> Using ∇×(∇×E) = ∇(∇·E) - ∇²E and substituting (4): ∇(0) - ∇²E = -μ₀ε₀∂²E/∂t².</p>
+                                 
+                                 <p><b>Step 4: Final Form.</b> <b>∇²E = μ₀ε₀∂²E/∂t²</b>. This is the wave equation where the velocity v = 1/√(μ₀ε₀) = c.</p>
+                             </div>
                         `
                     },
                     {
@@ -524,6 +719,32 @@ class StudentLibrary {
                                 <li><b>He-Ne Laser:</b> Gas laser producing a continuous red light. Uses helium to pump neon atoms through collisions.</li>
                                 <li><b>Nd:YAG Laser:</b> Solid-state laser used for surgical and industrial applications.</li>
                             </ul>
+
+                             <h2>3.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is Population Inversion?</b><br>
+                                 <b>Ans:</b> It is the process of achieving a state where more atoms are in the higher energy level (excited state) than in the lower energy level (ground state). It is essential for laser action.</p>
+                                 
+                                 <p><b>Q2: Define Metastable State.</b><br>
+                                 <b>Ans:</b> It is an excited state of an atom in which the electron stays for a much longer time (approx. 10⁻³ s) compared to normal excited states (approx. 10⁻⁸ s).</p>
+                                 
+                                 <p><b>Q3: State the principle of an Air Wedge.</b><br>
+                                 <b>Ans:</b> It is based on the principle of interference of light by division of amplitude. It is used to measure the thickness of thin objects like wire or paper.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Describe the construction and working of a He-Ne Laser with a energy level diagram.</b></p>
+                                 <p><b>Step 1: Construction.</b> Consists of a quartz tube filled with Helium (10 parts) and Neon (1 part). Two mirrors are fixed at the ends.</p>
+                                 
+                                 <p><b>Step 2: Pumping Mechanism.</b> High voltage discharge is applied. He atoms are excited through electron impact to metastable states.</p>
+                                 
+                                 <p><b>Step 3: Energy Transfer.</b> Excited He atoms collide with Ne atoms, transferring energy. Ne atoms are excited to metastable states (3s and 2s levels).</p>
+                                 
+                                 <p><b>Step 4: Lasing Action.</b> Population inversion occurs in Ne. Stimulated emission results in a red laser beam of wavelength 632.8 nm.</p>
+                             </div>
                         `
                     },
                     {
@@ -552,6 +773,32 @@ class StudentLibrary {
                                 <li><b>Wave Function:</b> ψₙ = √(2/L) sin(nπx/L).</li>
                                 <li><b>Conclusion:</b> The particle can never be at rest (n cannot be 0). The lowest energy (n=1) is the <b>Zero-Point Energy</b>.</li>
                             </ol>
+
+                             <h2>4.5 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the physical significance of the wave function?</b><br>
+                                 <b>Ans:</b> The wave function ψ itself has no physical significance. However, its square magnitude |ψ|² represents the probability density of finding the particle at a given point in space.</p>
+                                 
+                                 <p><b>Q2: Define Compton Effect.</b><br>
+                                 <b>Ans:</b> When a high-frequency photon (X-rays/Gamma rays) is scattered by a free electron, the scattered photon has a longer wavelength than the incident photon. This change in wavelength is called Compton shift.</p>
+                                 
+                                 <p><b>Q3: Give the de-Broglie wavelength for an electron accelerated by a potential V.</b><br>
+                                 <b>Ans:</b> λ = h / √(2m eV) ≈ 12.27 / √V Å.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Derive the Schrodinger time-independent wave equation for a particle in a one-dimensional potential box of width L.</b></p>
+                                 <p><b>Step 1: Setup.</b> Particle of mass m in box [0, L]. V=0 inside, V=∞ outside. Boundary conditions: ψ(0)=0, ψ(L)=0.</p>
+                                 
+                                 <p><b>Step 2: Equation.</b> ∂²ψ/∂x² + (2mE/ℏ²)ψ = 0. Let k² = 2mE/ℏ².</p>
+                                 
+                                 <p><b>Step 3: Solution.</b> ψ(x) = A sin(kx) + B cos(kx). Using BCs, B=0 and k = nπ/L.</p>
+                                 
+                                 <p><b>Step 4: Energy & ψ.</b> Eₙ = n²h² / 8mL² and ψₙ = √(2/L) sin(nπx/L). These are the quantized energy levels and wave functions.</p>
+                             </div>
                         `
                     },
                     {
@@ -574,6 +821,32 @@ class StudentLibrary {
                             <h2>5.3 Scanning Tunneling Microscope (STM)</h2>
                             <p><b>Working Principle:</b> Based on quantum tunneling. A sharp metallic tip is brought very close to a conducting surface. A small voltage is applied, and electrons "tunnel" through the vacuum gap, creating a current.</p>
                             <p><b>Output:</b> By scanning the tip and maintaining a constant current, the microscope maps the <b>topography</b> of the surface at the atomic scale.</p>
+
+                             <h2>5.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are Quantum Structures?</b><br>
+                                 <b>Ans:</b> These are materials in which the motion of electrons is restricted in one or more dimensions to the nanometer scale, leading to discrete energy levels.</p>
+                                 
+                                 <p><b>Q2: Define a Quantum Dot.</b><br>
+                                 <b>Ans:</b> A quantum dot is a structure where electrons are confined in all three spatial dimensions (0-D). It is often called an "artificial atom".</p>
+                                 
+                                 <p><b>Q3: Give the principle of STM.</b><br>
+                                 <b>Ans:</b> It is based on the principle of quantum mechanical tunneling where electrons tunnel through a vacuum barrier between a sharp tip and a conducting surface.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the construction and working of a Scanning Tunneling Microscope (STM).</b></p>
+                                 <p><b>Step 1: Construction.</b> Consists of an extremely sharp metallic tip, a piezoelectric scanner to move the tip in x, y, z directions, and a feedback system.</p>
+                                 
+                                 <p><b>Step 2: Tunneling Current.</b> A small bias voltage is applied between the tip and the sample. When the tip-sample distance is ~1 nm, a tunneling current flows.</p>
+                                 
+                                 <p><b>Step 3: Scanning Modes.</b> (a) Constant Current Mode: Tip height is adjusted to keep current constant. (b) Constant Height Mode: Tip moves at fixed height and current variations are recorded.</p>
+                                 
+                                 <p><b>Step 4: Advantages.</b> Provides 3D images of surfaces at atomic resolution. Can work in vacuum, air, or liquids.</p>
+                             </div>
                         `
                     },
                 ],
@@ -626,14 +899,38 @@ class StudentLibrary {
 
                             <h3>1.3.2 Pseudo-code: The Human-Readable Logic</h3>
                             <p>Pseudo-code is a middle ground between natural language and actual code. It doesn't follow strict syntax but captures the logic perfectly.</p>
-                            <p><b>Example:</b><br>
-                            BEGIN<br>
-                            &nbsp;&nbsp;READ number1, number2<br>
-                            &nbsp;&nbsp;IF number1 > number2 THEN<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;PRINT number1 "is greater"<br>
-                            &nbsp;&nbsp;ELSE<br>
-                            &nbsp;&nbsp;&nbsp;&nbsp;PRINT number2 "is greater"<br>
-                            END</p>
+                             <p><b>Example:</b><br>
+                             BEGIN<br>
+                             &nbsp;&nbsp;READ number1, number2<br>
+                             &nbsp;&nbsp;IF number1 > number2 THEN<br>
+                             &nbsp;&nbsp;&nbsp;&nbsp;PRINT number1 "is greater"<br>
+                             &nbsp;&nbsp;ELSE<br>
+                             &nbsp;&nbsp;&nbsp;&nbsp;PRINT number2 "is greater"<br>
+                             END</p>
+
+                             <h2>1.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: List the four pillars of computational thinking.</b><br>
+                                 <b>Ans:</b> Decomposition, Pattern Recognition, Abstraction, and Algorithms.</p>
+                                 
+                                 <p><b>Q2: Define Pseudo-code.</b><br>
+                                 <b>Ans:</b> It is a simple way of writing programming code in English. It is not actual programming code but uses similar structures to show the logic of a program.</p>
+                                 
+                                 <p><b>Q3: What are the building blocks of an algorithm?</b><br>
+                                 <b>Ans:</b> Statements, State, Control Flow, and Functions.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the various symbols used in Flowcharts with a simple example of finding the largest of three numbers.</b></p>
+                                 <p><b>Step 1: Symbols.</b> Terminal (Oval), Input/Output (Parallelogram), Process (Rectangle), Decision (Diamond), Flow lines (Arrows), Connectors (Circle).</p>
+                                 
+                                 <p><b>Step 2: Algorithm.</b> 1. Start. 2. Read a, b, c. 3. If a>b and a>c, then Largest=a. 4. Else if b>c, then Largest=b. 5. Else Largest=c. 6. Print Largest. 7. Stop.</p>
+                                 
+                                 <p><b>Step 3: Sketching the Flowchart.</b> Connect the steps using the appropriate symbols. Ensure arrows show the correct logical flow for all decision paths.</p>
+                             </div>
                         `
                     },
                     {
@@ -667,8 +964,32 @@ class StudentLibrary {
                             </ul>
 
                             <h2>2.5 Input and Output</h2>
-                            <p><b>input():</b> Always returns a string. Use <i>int()</i> or <i>float()</i> to convert it for calculations.</p>
-                            <p><b>print():</b> Outputs data to the console. You can use 'f-strings' for formatted output: <i>print(f"Result is {x}")</i>.</p>
+                             <p><b>input():</b> Always returns a string. Use <i>int()</i> or <i>float()</i> to convert it for calculations.</p>
+                             <p><b>print():</b> Outputs data to the console. You can use 'f-strings' for formatted output: <i>print(f"Result is {x}")</i>.</p>
+
+                             <h2>2.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the difference between '/' and '//' operators in Python?</b><br>
+                                 <b>Ans:</b> '/' is the floating-point division operator (e.g., 5/2 = 2.5), while '//' is the floor division operator which returns the integer part of the quotient (e.g., 5//2 = 2).</p>
+                                 
+                                 <p><b>Q2: Define a variable in Python.</b><br>
+                                 <b>Ans:</b> A variable is a reserved memory location to store values. In Python, you don't need to declare the type; it is determined at runtime (dynamic typing).</p>
+                                 
+                                 <p><b>Q3: What are f-strings?</b><br>
+                                 <b>Ans:</b> Introduced in Python 3.6, f-strings (formatted string literals) provide a concise way to embed expressions inside string literals using curly braces {}.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Write a Python program to swap two numbers without using a temporary variable and explain how operators work.</b></p>
+                                 <p><b>Step 1: Code.</b> a, b = 10, 20; a = a + b; b = a - b; a = a - b; print(a, b).</p>
+                                 
+                                 <p><b>Step 2: Logic.</b> We use basic arithmetic to store the sum in 'a', then derive the original 'a' by subtracting original 'b' from the sum, and finally derive the original 'b'.</p>
+                                 
+                                 <p><b>Step 3: Alternative.</b> Python supports tuple unpacking: <b>a, b = b, a</b>. This is the more "Pythonic" and efficient way to swap.</p>
+                             </div>
                         `
                     },
                     {
@@ -727,10 +1048,34 @@ class StudentLibrary {
                                     <li><b>Recursive Step:</b> The part where the function calls itself with a modified argument.</li>
                                 </ol>
                             </div>
-                            <p><b>Classic Example (Factorial):</b><br>
-                            def fact(n):<br>
-                            &nbsp;&nbsp;if n == 0: return 1 # Base case<br>
-                            &nbsp;&nbsp;return n * fact(n-1) # Recursive call</p>
+                             <p><b>Classic Example (Factorial):</b><br>
+                             def fact(n):<br>
+                             &nbsp;&nbsp;if n == 0: return 1 # Base case<br>
+                             &nbsp;&nbsp;return n * fact(n-1) # Recursive call</p>
+
+                             <h2>3.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are the two essential components of a recursive function?</b><br>
+                                 <b>Ans:</b> (1) Base Case: A condition to stop the recursion. (2) Recursive Step: The part where the function calls itself.</p>
+                                 
+                                 <p><b>Q2: Define "local scope" of a variable.</b><br>
+                                 <b>Ans:</b> Variables defined inside a function have a local scope. They can only be accessed within that function and are destroyed once the function finishes execution.</p>
+                                 
+                                 <p><b>Q3: What is the purpose of the 'break' statement in loops?</b><br>
+                                 <b>Ans:</b> The 'break' statement is used to terminate the current loop prematurely and transfer execution to the next statement immediately following the loop.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the difference between fruitful functions and void functions with examples.</b></p>
+                                 <p><b>Fruitful Functions:</b> Functions that return a value to the caller using the 'return' statement. Example: A function calculating the area of a circle.</p>
+                                 
+                                 <p><b>Void Functions:</b> Functions that perform an action (like printing) but do not return a specific value. In Python, they technically return 'None'. Example: A function that prints a greeting.</p>
+                                 
+                                 <p><b>Comparison:</b> Fruitful functions are used when the result of a calculation is needed for further processing, while void functions are used for their side effects (I/O operations).</p>
+                             </div>
                         `
                     },
                     {
@@ -763,9 +1108,33 @@ class StudentLibrary {
 
                             <h2>4.4 Sets and Strings</h2>
                             <ul>
-                                <li><b>Strings:</b> Sequences of characters. Strings are <b>immutable</b>. Useful methods: <i>split()</i>, <i>join()</i>, <i>find()</i>, <i>replace()</i>.</li>
-                                <li><b>Sets:</b> Unordered collection of unique elements. Useful for removing duplicates and mathematical operations (union, intersection).</li>
-                            </ul>
+                                 <li><b>Strings:</b> Sequences of characters. Strings are <b>immutable</b>. Useful methods: <i>split()</i>, <i>join()</i>, <i>find()</i>, <i>replace()</i>.</li>
+                                 <li><b>Sets:</b> Unordered collection of unique elements. Useful for removing duplicates and mathematical operations (union, intersection).</li>
+                             </ul>
+
+                             <h2>4.5 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the difference between a List and a Tuple?</b><br>
+                                 <b>Ans:</b> Lists are mutable (can be changed) and defined with square brackets []. Tuples are immutable (cannot be changed) and defined with parentheses ().</p>
+                                 
+                                 <p><b>Q2: How do you access the last element of a list in Python?</b><br>
+                                 <b>Ans:</b> Using negative indexing: <i>list[-1]</i>.</p>
+                                 
+                                 <p><b>Q3: What is a dictionary in Python?</b><br>
+                                 <b>Ans:</b> It is an unordered collection of data in key-value pairs. Keys must be unique and immutable.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Write a Python program to count the frequency of characters in a given string using a dictionary.</b></p>
+                                 <p><b>Step 1: Code.</b> def char_freq(s): d = {}; for c in s: d[c] = d.get(c, 0) + 1; return d.</p>
+                                 
+                                 <p><b>Step 2: Logic.</b> We iterate through each character, using it as a key. The <i>get()</i> method helps initialize the count to 0 if the key is new.</p>
+                                 
+                                 <p><b>Step 3: Outcome.</b> This efficiently counts occurrences without needing multiple passes or complex nested loops.</p>
+                             </div>
                         `
                     },
                     {
@@ -799,8 +1168,32 @@ class StudentLibrary {
                                 <li><b>Importing:</b> <i>import module</i> or <i>from module import function</i>.</li>
                             </ul>
 
-                            <h2>5.4 Packages</h2>
-                            <p>A package is a way of organizing related modules into a directory hierarchy using <b>dotted module names</b>. A directory must contain an <i>__init__.py</i> file to be treated as a package.</p>
+                             <h2>5.4 Packages</h2>
+                             <p>A package is a way of organizing related modules into a directory hierarchy using <b>dotted module names</b>. A directory must contain an <i>__init__.py</i> file to be treated as a package.</p>
+
+                             <h2>5.5 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is a module in Python?</b><br>
+                                 <b>Ans:</b> A module is a file containing Python definitions and statements. It helps in organizing code and encourages reusability.</p>
+                                 
+                                 <p><b>Q2: What is the purpose of the 'finally' block?</b><br>
+                                 <b>Ans:</b> The 'finally' block is used in exception handling to define a block of code that will be executed no matter if an exception is raised or not. It is typically used for clean-up actions.</p>
+                                 
+                                 <p><b>Q3: What are the different modes of opening a file?</b><br>
+                                 <b>Ans:</b> 'r': Read, 'w': Write (overwrites), 'a': Append (adds at end), 'r+': Read and Write.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain Exception Handling in Python with examples of multiple except blocks.</b></p>
+                                 <p><b>Step 1: Concept.</b> Exceptions are runtime errors. Python uses <i>try, except, else, finally</i> to handle them.</p>
+                                 
+                                 <p><b>Step 2: Multiple Except Blocks.</b> We can handle different errors differently: <i>except ValueError: ... except ZeroDivisionError: ...</i></p>
+                                 
+                                 <p><b>Step 3: Example.</b> A program that reads user input and performs division. We handle non-numeric input (ValueError) and division by zero (ZeroDivisionError) separately to provide specific feedback.</p>
+                             </div>
                         `
                     },
                 ],
@@ -869,11 +1262,36 @@ class StudentLibrary {
                                 <li><b>Filtration:</b> Passing through sand filters.</li>
                                 <li><b>Disinfection:</b> Killing bacteria.
                                     <ul>
-                                        <li><b>Chlorination:</b> Adding Chlorine. <b>Breakpoint Chlorination</b> is the point where enough chlorine is added to oxidize all impurities and leave a residual for future protection.</li>
-                                        <li><b>Reverse Osmosis (RO):</b> Applying pressure higher than osmotic pressure to force water through a semi-permeable membrane, leaving salts behind.</li>
-                                    </ul>
-                                </li>
-                            </ol>
+                                         <li><b>Reverse Osmosis (RO):</b> Applying pressure higher than osmotic pressure to force water through a semi-permeable membrane, leaving salts behind.</li>
+                                     </ul>
+                                 </li>
+                             </ol>
+
+                             <h2>1.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Why is EDTA used as a primary standard in water hardness estimation?</b><br>
+                                 <b>Ans:</b> EDTA forms stable, soluble, stoichiometric complexes with Ca²⁺ and Mg²⁺ at pH 10. It is reliable and gives a sharp endpoint with EBT indicator.</p>
+                                 
+                                 <p><b>Q2: Define Breakpoint Chlorination.</b><br>
+                                 <b>Ans:</b> It is the point in chlorination where the addition of chlorine is sufficient to oxidize all ammonia and organic matter. Any further addition results in free residual chlorine.</p>
+                                 
+                                 <p><b>Q3: What are the disadvantages of using hard water in boilers?</b><br>
+                                 <b>Ans:</b> (1) Scale and sludge formation, (2) Boiler corrosion, (3) Priming and foaming, (4) Caustic embrittlement.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Describe the Ion-Exchange process for demineralization of water with a neat sketch.</b></p>
+                                 <p><b>Step 1: Principle.</b> It uses synthetic resins (cation and anion exchangers) to replace the ions in hard water with H⁺ and OH⁻ ions respectively.</p>
+                                 
+                                 <p><b>Step 2: Process.</b> Raw water passes through a Cation Exchanger (RH⁺), then an Anion Exchanger (ROH⁻). The resulting water is completely deionized.</p>
+                                 
+                                 <p><b>Step 3: Regeneration.</b> Cation resins are regenerated with HCl/H₂SO₄. Anion resins are regenerated with NaOH solution.</p>
+                                 
+                                 <p><b>Step 4: Merits.</b> Produces very high-quality water suitable for high-pressure boilers. Can handle water with high acidity or alkalinity.</p>
+                             </div>
                         `
                     },
                     {
@@ -928,9 +1346,35 @@ class StudentLibrary {
                             <ol>
                                 <li><b>Medicine:</b> Targeted drug delivery to cancer cells using nano-carriers.</li>
                                 <li><b>Environment:</b> Nano-membranes for effective water desalination and purification.</li>
-                                <li><b>Energy:</b> High-efficiency solar cells and improved battery capacity using nano-electrodes.</li>
-                                <li><b>Cosmetics:</b> ZnO and TiO₂ nanoparticles in sunscreens for UV protection.</li>
-                            </ol>
+                                 <li><b>Energy:</b> High-efficiency solar cells and improved battery capacity using nano-electrodes.</li>
+                                 <li><b>Cosmetics:</b> ZnO and TiO₂ nanoparticles in sunscreens for UV protection.</li>
+                             </ol>
+
+                             <h2>2.6 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are the two types of syntheses in Nanochemistry?</b><br>
+                                 <b>Ans:</b> (1) Top-Down (breaking bulk into nano) e.g., Ball Milling. (2) Bottom-Up (assembling atoms into nano) e.g., Sol-Gel, CVD.</p>
+                                 
+                                 <p><b>Q2: Define Surface-to-Volume ratio.</b><br>
+                                 <b>Ans:</b> It is the ratio of total surface area to the volume of a particle. For nanomaterials, this ratio is very large, making them highly reactive.</p>
+                                 
+                                 <p><b>Q3: Give two applications of CNTs.</b><br>
+                                 <b>Ans:</b> (1) Reinforcement in structural materials (high strength). (2) Conductors in microelectronics.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Discuss the Sol-Gel method of synthesis of nanomaterials and mention its advantages.</b></p>
+                                 <p><b>Step 1: Reaction.</b> Hydrolysis and condensation of metal alkoxides (like TEOS) to form a Sol.</p>
+                                 
+                                 <p><b>Step 2: Gelation.</b> The Sol is aged to form a 3D network called a Gel.</p>
+                                 
+                                 <p><b>Step 3: Drying.</b> The solvent is removed by heating or supercritical drying to get the final powder or thin film.</p>
+                                 
+                                 <p><b>Step 4: Advantages.</b> Low-temperature process, produces high-purity and uniform materials, and allows for precise control of composition.</p>
+                             </div>
                         `
                     },
                     {
@@ -959,9 +1403,32 @@ class StudentLibrary {
                             <h2>3.3 Alloys and Heat Treatment</h2>
                             <p>An alloy is a solid solution of two or more metals. Objectives: To increase hardness, corrosion resistance, and lower the melting point.</p>
                             <ul>
-                                <li><b>Ferrous Alloys:</b> Stainless Steel (Fe-Cr-Ni) used for surgical tools and cutlery.</li>
-                                <li><b>Non-Ferrous Alloys:</b> Nichrome (Ni-Cr) used as a heating element due to its high resistance and melting point.</li>
-                            </ul>
+                                 <li><b>Non-Ferrous Alloys:</b> Nichrome (Ni-Cr) used as a heating element due to its high resistance and melting point.</li>
+                             </ul>
+
+                             <h2>3.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: State Gibbs Phase Rule and define the terms.</b><br>
+                                 <b>Ans:</b> F = C - P + 2. P = number of phases, C = number of components, F = degrees of freedom.</p>
+                                 
+                                 <p><b>Q2: What is a Triple Point? Give the values for the water system.</b><br>
+                                 <b>Ans:</b> It is the unique point where all three phases (solid, liquid, vapor) coexist in equilibrium. For water: T=0.0098°C and P=4.58 mmHg.</p>
+                                 
+                                 <p><b>Q3: Define the term "Alloy".</b><br>
+                                 <b>Ans:</b> An alloy is a homogeneous solid solution of two or more metals, or a metal and a non-metal, designed to have specific improved properties.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the Phase Diagram of the Lead-Silver system and its application in Pattinson's process.</b></p>
+                                 <p><b>Step 1: Diagram.</b> Plot Temperature vs. Composition. Identify the freezing point curves of Pb and Ag, and the Eutectic point (303°C at 2.6% Ag).</p>
+                                 
+                                 <p><b>Step 2: Regions.</b> Above the curves is the liquid region. Below the eutectic line is solid Pb + solid Ag. In between are regions of solid metal + liquid.</p>
+                                 
+                                 <p><b>Step 3: Pattinson's Process.</b> Argentiferous lead (lead with low silver) is heated and slowly cooled. Pure lead crystals separate out, leaving a liquid increasingly rich in silver. This concentrates silver up to 2.6%.</p>
+                             </div>
                         `
                     },
                     {
@@ -993,6 +1460,30 @@ class StudentLibrary {
 
                             <h2>4.4 Flue Gas Analysis (Orsat's Apparatus)</h2>
                             <p>The exit gases from a combustion chamber (CO₂, CO, O₂) are analyzed to determine combustion efficiency. Excess CO₂ indicates complete combustion, while CO indicates incomplete combustion.</p>
+
+                             <h2>4.5 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the difference between GCV and NCV?</b><br>
+                                 <b>Ans:</b> GCV (Gross Calorific Value) is the total heat produced including the latent heat of condensation of water. NCV (Net Calorific Value) is the heat available in actual use where latent heat is not recovered.</p>
+                                 
+                                 <p><b>Q2: Define Octane Number.</b><br>
+                                 <b>Ans:</b> It is a measure of the anti-knock property of gasoline. It is the percentage of iso-octane in a mixture of iso-octane and n-heptane that has the same knocking characteristics as the fuel.</p>
+                                 
+                                 <p><b>Q3: Give two significances of Flue Gas analysis.</b><br>
+                                 <b>Ans:</b> (1) To determine the efficiency of the combustion process. (2) To minimize heat loss and environmental pollution.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Describe the estimation of Carbon, Hydrogen, and Nitrogen in a coal sample (Ultimate Analysis) and mention their significance.</b></p>
+                                 <p><b>Carbon & Hydrogen:</b> A known mass of coal is burnt in oxygen. CO₂ and H₂O formed are absorbed in KOH and CaCl₂ tubes respectively. %C = (Increase in wt of KOH * 12 * 100) / (wt of coal * 44). %H = (Increase in wt of CaCl₂ * 2 * 100) / (wt of coal * 18).</p>
+                                 
+                                 <p><b>Nitrogen (Kjeldahl's method):</b> Coal is heated with conc. H₂SO₄ to form (NH₄)₂SO₄, which is then decomposed with NaOH to liberate NH₃. The NH₃ is absorbed in standard acid.</p>
+                                 
+                                 <p><b>Significance:</b> Higher %C and %H increase calorific value. Higher %N is undesirable as it leads to atmospheric pollution.</p>
+                             </div>
                         `
                     },
                     {
@@ -1013,9 +1504,35 @@ class StudentLibrary {
                             <h2>5.3 Batteries and Fuel Cells</h2>
                             <ul>
                                 <li><b>Lead-Acid Battery:</b> Rechargeable battery used in cars. Uses Lead (Anode), Lead Dioxide (Cathode), and H₂SO₄ (Electrolyte).</li>
-                                <li><b>Lithium-Ion Battery:</b> Modern battery with high energy density. Lithium ions move between the graphite anode and lithium cobalt oxide cathode.</li>
-                                <li><b>H₂-O₂ Fuel Cell:</b> Converts the chemical energy of Hydrogen and Oxygen into water and electricity. <b>Efficiency is very high (~70%)</b> and it is pollution-free.</li>
-                            </ul>
+                                 <li><b>Lithium-Ion Battery:</b> Modern battery with high energy density. Lithium ions move between the graphite anode and lithium cobalt oxide cathode.</li>
+                                 <li><b>H₂-O₂ Fuel Cell:</b> Converts the chemical energy of Hydrogen and Oxygen into water and electricity. <b>Efficiency is very high (~70%)</b> and it is pollution-free.</li>
+                             </ul>
+
+                             <h2>5.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is a Fuel Cell?</b><br>
+                                 <b>Ans:</b> A fuel cell is an electrochemical cell that converts the chemical energy of a fuel (often hydrogen) and an oxidizing agent (often oxygen) into electricity through a pair of redox reactions.</p>
+                                 
+                                 <p><b>Q2: Give two advantages of Lithium-ion batteries.</b><br>
+                                 <b>Ans:</b> (1) High energy density and voltage. (2) Low self-discharge and no memory effect.</p>
+                                 
+                                 <p><b>Q3: What are the main components of a Nuclear Reactor?</b><br>
+                                 <b>Ans:</b> Fuel elements (U-235), Moderator (D₂O/Graphite), Control rods (Cd/B), Coolant (Water/Liquid Sodium), and Protective shield.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the construction, working, and applications of a Hydrogen-Oxygen Fuel Cell.</b></p>
+                                 <p><b>Step 1: Construction.</b> Consists of two porous carbon electrodes impregnated with catalysts like Pt or Pd. The electrolyte is typically hot KOH solution.</p>
+                                 
+                                 <p><b>Step 2: Reactions.</b> At Anode: 2H₂ + 4OH⁻ → 4H₂O + 4e⁻. At Cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻. Overall: 2H₂ + O₂ → 2H₂O.</p>
+                                 
+                                 <p><b>Step 3: Working.</b> Hydrogen and oxygen gases are bubbled through the electrodes. The flow of electrons from anode to cathode through the external circuit produces electricity.</p>
+                                 
+                                 <p><b>Step 4: Applications.</b> Used as an auxiliary power source in space vehicles (Appollo mission). Fuel cells are also used in eco-friendly automobiles and remote power stations.</p>
+                             </div>
                         `
                     },
                 ],
@@ -1048,9 +1565,34 @@ class StudentLibrary {
 
                             <h2>1.3 Vocabulary Building</h2>
                             <ul>
-                                <li><b>Prefixes/Suffixes:</b> Understand roots to decode scientific terms (e.g., <i>nano-</i> for 10⁻⁹, <i>-logy</i> for study of).</li>
-                                <li><b>Synonyms/Antonyms:</b> Use varied vocabulary to avoid repetition in technical reports.</li>
-                            </ul>
+                                 <li><b>Synonyms/Antonyms:</b> Use varied vocabulary to avoid repetition in technical reports.</li>
+                             </ul>
+
+                             <h2>1.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Frame questions for the following statements: (a) The meeting starts at 10 AM. (b) We need 5 samples.</b><br>
+                                 <b>Ans:</b> (a) When does the meeting start? (b) How many samples do we need?</p>
+                                 
+                                 <p><b>Q2: Give the synonyms for the following technical terms: (a) Durable (b) Efficient.</b><br>
+                                 <b>Ans:</b> (a) Long-lasting, robust. (b) Productive, high-yielding.</p>
+                                 
+                                 <p><b>Q3: What is the significance of using technical vocabulary?</b><br>
+                                 <b>Ans:</b> It ensures precision, avoids ambiguity, and shows the speaker's expertise in a particular engineering field.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Describe the importance of sharing information effectively in a multinational engineering project.</b></p>
+                                 <p><b>Step 1: Introduction.</b> Information sharing is the backbone of collaborative projects, especially across different time zones and cultures.</p>
+                                 
+                                 <p><b>Step 2: Methods.</b> Use of technical reports, emails, video conferencing, and shared databases (like Git or Cloud storage).</p>
+                                 
+                                 <p><b>Step 3: Challenges.</b> Language barriers, technical jargon differences, and misinterpretation of non-verbal cues.</p>
+                                 
+                                 <p><b>Step 4: Solutions.</b> Using standardized terminology (SI units), clear graphics, and concise summaries to ensure alignment among all team members.</p>
+                             </div>
                         `
                     },
                     {
@@ -1079,8 +1621,32 @@ class StudentLibrary {
                                 </ol>
                             </div>
 
-                            <h2>2.3 Note-making</h2>
-                            <p>Condensing long lectures or documents into structured notes using the Cornell method or Mind-maps.</p>
+                             <h2>2.3 Note-making</h2>
+                             <p>Condensing long lectures or documents into structured notes using the Cornell method or Mind-maps.</p>
+
+                             <h2>2.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Differentiate between Skimming and Scanning.</b><br>
+                                 <b>Ans:</b> Skimming is reading quickly to get the general idea or gist of a text. Scanning is looking for specific details or keywords without reading the entire text.</p>
+                                 
+                                 <p><b>Q2: What is the purpose of a subject line in a formal email?</b><br>
+                                 <b>Ans:</b> It provides a concise summary of the email's content, allowing the receiver to understand the purpose and priority of the message at a glance.</p>
+                                 
+                                 <p><b>Q3: What are the two essential qualities of a good note?</b><br>
+                                 <b>Ans:</b> (1) Conciseness (using abbreviations and keywords). (2) Organization (using headings, sub-headings, and logical flow).</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Write a formal letter to a tool manufacturer requesting a quotation for 50 units of a high-precision digital multimeter.</b></p>
+                                 <p><b>Structure:</b> Sender's Address, Date, Receiver's Address, Subject: Quotation for Digital Multimeters.</p>
+                                 
+                                 <p><b>Body:</b> State the purpose (procurement for laboratory). Specify the technical requirements (accuracy, range, durability). Request for the best price, discount for bulk order, and delivery timeline.</p>
+                                 
+                                 <p><b>Closing:</b> Thanking the vendor and providing contact details for further clarification.</p>
+                             </div>
                         `
                     },
                     {
@@ -1102,10 +1668,34 @@ class StudentLibrary {
                             <h2>3.3 Discourse Markers</h2>
                             <p>Words used to link ideas and show relationships:</p>
                             <ul>
-                                <li><b>Addition:</b> Furthermore, Moreover, In addition.</li>
-                                <li><b>Contrast:</b> However, Nevertheless, Conversely.</li>
-                                <li><b>Cause/Effect:</b> Consequently, Therefore, As a result.</li>
-                            </ul>
+                                 <li><b>Cause/Effect:</b> Consequently, Therefore, As a result.</li>
+                             </ul>
+
+                             <h2>3.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Convert to Passive Voice: "Electronic engineers design intricate circuits."</b><br>
+                                 <b>Ans:</b> Intricate circuits are designed by electronic engineers.</p>
+                                 
+                                 <p><b>Q2: Fill with appropriate discourse markers: ______ we finished the experiment early, ______ we had time to analyze the data.</b><br>
+                                 <b>Ans:</b> Since, therefore.</p>
+                                 
+                                 <p><b>Q3: Give an example of a sentence in the Present Perfect Tense related to engineering.</b><br>
+                                 <b>Ans:</b> Our team has implemented the new algorithm in the software.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Discuss the role of discourse markers in ensuring coherence and cohesion in technical writing.</b></p>
+                                 <p><b>Step 1: Definition.</b> Discourse markers are words or phrases that link ideas and show logical relationships between sentences and paragraphs.</p>
+                                 
+                                 <p><b>Step 2: Functions.</b> They show contrast (however), addition (furthermore), sequence (firstly, secondly), and cause-effect (consequently).</p>
+                                 
+                                 <p><b>Step 3: Importance.</b> Without them, technical writing feels disjointed and difficult to follow. They guide the reader through complex arguments and experimental procedures.</p>
+                                 
+                                 <p><b>Step 4: Examples.</b> Using "Initially" to start a procedure and "Finally" to conclude. Using "Moreover" to add a crucial safety instruction.</p>
+                             </div>
                         `
                     },
                     {
@@ -1123,8 +1713,34 @@ class StudentLibrary {
                             <h2>4.2 Listening for Specific Information</h2>
                             <p>Focusing on keywords, numbers, and technical instructions during a briefing or lecture.</p>
 
-                            <h2>4.3 Interpreting Non-Verbal Cues</h2>
-                            <p>Understanding tone, pitch, and pauses which often signal important points or shifts in the topic.</p>
+                             <h2>4.3 Interpreting Non-Verbal Cues</h2>
+                             <p>Understanding tone, pitch, and pauses which often signal important points or shifts in the topic.</p>
+
+                             <h2>4.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the difference between hearing and listening?</b><br>
+                                 <b>Ans:</b> Hearing is a physiological process (passive), while listening is a cognitive process that involves paying attention and interpreting the sound (active).</p>
+                                 
+                                 <p><b>Q2: Define "Critical Listening".</b><br>
+                                 <b>Ans:</b> It is the process of listening to understand a message and also evaluate it for its validity, logic, and intent.</p>
+                                 
+                                 <p><b>Q3: Give two non-verbal cues that signal importance in a speech.</b><br>
+                                 <b>Ans:</b> (1) A sudden change in pitch or volume. (2) A significant pause before or after a key statement.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Discuss the barriers to effective listening in a professional environment and how to overcome them.</b></p>
+                                 <p><b>Step 1: Physical Barriers.</b> Noise from machinery, poor acoustics, or technical glitches in a virtual meeting.</p>
+                                 
+                                 <p><b>Step 2: Psychological Barriers.</b> Preconceived notions about the speaker, lack of interest, or emotional stress.</p>
+                                 
+                                 <p><b>Step 3: Linguistic Barriers.</b> Unfamiliar technical jargon or different accents.</p>
+                                 
+                                 <p><b>Step 4: Solutions.</b> Minimize environmental noise, practice active listening (nodding, clarifying), and use standardized technical terms to avoid confusion.</p>
+                             </div>
                         `
                     },
                     {
@@ -1150,8 +1766,34 @@ class StudentLibrary {
                                 </ul>
                             </div>
 
-                            <h2>5.3 Interview Skills</h2>
-                            <p>Preparing for "Tell me about yourself", standard technical questions, and situational (STAR method) answers.</p>
+                             <h2>5.3 Interview Skills</h2>
+                             <p>Preparing for "Tell me about yourself", standard technical questions, and situational (STAR method) answers.</p>
+
+                             <h2>5.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are different roles in a Group Discussion?</b><br>
+                                 <b>Ans:</b> (1) Initiator: Starts the discussion. (2) Moderator: Keeps the discussion on track. (3) Summarizer: Concludes with key points.</p>
+                                 
+                                 <p><b>Q2: Define "Voice Modulation".</b><br>
+                                 <b>Ans:</b> It is the variation of pitch, tone, and pace of one's voice while speaking. It helps in emphasizing important points and keeping the audience engaged.</p>
+                                 
+                                 <p><b>Q3: What does the STAR method stand for in an interview?</b><br>
+                                 <b>Ans:</b> Situation, Task, Action, and Result. It is used to provide structured answers to behavioral questions.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the essential elements of an effective technical presentation.</b></p>
+                                 <p><b>Step 1: Planning and Preparation.</b> Define the objective, understand the audience, and structure the content logically.</p>
+                                 
+                                 <p><b>Step 2: Content and Visuals.</b> Use clear and concise slides, limit text, use high-quality diagrams, and maintain a consistent layout.</p>
+                                 
+                                 <p><b>Step 3: Delivery Skills.</b> Maintain eye contact, use appropriate body language, practice voice modulation, and manage time effectively.</p>
+                                 
+                                 <p><b>Step 4: Handling Questions.</b> Listen carefully to the question, clarify if necessary, provide a concise answer, and thank the audience for their engagement.</p>
+                             </div>
                         `
                     },
                 ],
@@ -1189,9 +1831,35 @@ class StudentLibrary {
                                     <li><b>Mullai (Forest):</b> Theme - Waiting. God - Thirumal.</li>
                                     <li><b>Marutham (Agricultural Land):</b> Theme - Lovers' quarrel. God - Indhiran.</li>
                                     <li><b>Neithal (Seashore):</b> Theme - Lamenting. God - Varunan.</li>
-                                    <li><b>Paalai (Wasteland):</b> Theme - Separation. God - Kotravai.</li>
-                                </ul>
-                            </div>
+                                     <li><b>Paalai (Wasteland):</b> Theme - Separation. God - Kotravai.</li>
+                                 </ul>
+                             </div>
+
+                             <h2>1.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are the two main divisions of Sangam Literature?</b><br>
+                                 <b>Ans:</b> (1) Akam (focus on internal aspects like love and family). (2) Puram (focus on external aspects like heroism, war, and social ethics).</p>
+                                 
+                                 <p><b>Q2: Name the early Tamil grammar work and its author.</b><br>
+                                 <b>Ans:</b> Tholkappiyam, written by Tholkappiyar.</p>
+                                 
+                                 <p><b>Q3: List the five landscapes (Ainthinai).</b><br>
+                                 <b>Ans:</b> Kurinji (Mountains), Mullai (Forest), Marutham (Fields), Neithal (Sea), and Paalai (Desert).</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the socio-cultural significance of the Five Landscapes (Ainthinai) as described in ancient Tamil literature.</b></p>
+                                 <p><b>Step 1: Concept.</b> The classification reflects the deep connection between the geography of a region and the lifestyle, emotions, and culture of its people.</p>
+                                 
+                                 <p><b>Step 2: Detailed Breakdown.</b> For each thinai (Kurinji, Mullai, Marutham, Neithal, Paalai), describe the primary occupation (e.g., hunting for Kurinji, farming for Marutham), the specific flower, bird, and animal associated with it.</p>
+                                 
+                                 <p><b>Step 3: Emotional Mapping.</b> Explain how each landscape was used as a metaphor for human emotions (e.g., Kurinji for union, Neithal for sadness).</p>
+                                 
+                                 <p><b>Step 4: Conclusion.</b> This classification shows the highly advanced and scientific approach ancient Tamils had towards ecology and sociology.</p>
+                             </div>
                         `
                     },
                     {
@@ -1210,8 +1878,34 @@ class StudentLibrary {
                             <h2>2.2 Sculpture and Bronze Casting</h2>
                             <p>The <b>Lost Wax Process</b> (Cire perdue) reached its zenith under the Cholas. The <b>Nataraja</b> bronze is considered a masterpiece of world art, representing the cosmic dance of creation and destruction.</p>
 
-                            <h2>2.3 Traditional Crafts</h2>
-                            <p>Pottery, Weaving (Kanchipuram Silk), and Metallurgy (Swamimalai Bronzes) have been passed down through generations, maintaining the cultural identity of Tamils.</p>
+                             <h2>2.3 Traditional Crafts</h2>
+                             <p>Pottery, Weaving (Kanchipuram Silk), and Metallurgy (Swamimalai Bronzes) have been passed down through generations, maintaining the cultural identity of Tamils.</p>
+
+                             <h2>2.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What are the main features of Dravidian Architecture?</b><br>
+                                 <b>Ans:</b> Vimanas (tower over sanctum), Gopurams (gateways), Mandapams (pillared halls), and Temple tanks.</p>
+                                 
+                                 <p><b>Q2: What is the significance of the Shore Temple at Mamallapuram?</b><br>
+                                 <b>Ans:</b> It is one of the oldest structural stone temples in South India, built by the Pallavas, and is a UNESCO World Heritage site.</p>
+                                 
+                                 <p><b>Q3: Define the "Lost Wax Process".</b><br>
+                                 <b>Ans:</b> It is a method of metal casting where a molten metal is poured into a mold that has been created by means of a wax model. Once the mold is made, the wax is melted and drained away.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Describe the architectural excellence of the Brihadisvara Temple at Thanjavur.</b></p>
+                                 <p><b>Step 1: Introduction.</b> Commissioned by Raja Raja Chola I in 1010 CE. It is also known as the Big Temple.</p>
+                                 
+                                 <p><b>Step 2: Engineering Marvel.</b> The Vimana is 66m high and is designed such that its shadow never falls on the ground at noon. The Kumbam (apex) is a single block of granite weighing 80 tons.</p>
+                                 
+                                 <p><b>Step 3: Art and Sculpture.</b> Houses one of the largest monolithic Nandis in India. The walls are covered with exquisite frescoes and inscriptions depicting Chola history.</p>
+                                 
+                                 <p><b>Step 4: Conclusion.</b> It stands as a testament to the advanced engineering, mathematical, and artistic skills of the Cholas.</p>
+                             </div>
                         `
                     },
                     {
@@ -1233,6 +1927,32 @@ class StudentLibrary {
                                 <li><b>Adimurai/Kuthu Varisai:</b> Unarmed combat techniques.</li>
                                 <li><b>Jallikattu:</b> The traditional bull-taming sport, symbolizing the bravery of the youth and the importance of native cattle breeds.</li>
                             </ul>
+
+                             <h2>3.3 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the main objective of Silambam?</b><br>
+                                 <b>Ans:</b> It is a form of self-defense involving staff fencing. It aims to develop physical strength, agility, and concentration.</p>
+                                 
+                                 <p><b>Q2: Define Karakattam.</b><br>
+                                 <b>Ans:</b> It is an ancient Tamil folk dance performed with a decorated pot on the head. It is usually performed in praise of the rain goddess Mariamman.</p>
+                                 
+                                 <p><b>Q3: What does Jallikattu represent?</b><br>
+                                 <b>Ans:</b> It is a traditional event during the Pongal festival that symbolizes the bravery of youths and is crucial for the preservation of indigenous cattle breeds.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Discuss the cultural significance of various folk arts in the social life of Tamils.</b></p>
+                                 <p><b>Step 1: Role of Folk Arts.</b> Folk arts like Therukoothu and Oyilattam serve as a means of entertainment, social commentary, and preserving religious narratives.</p>
+                                 
+                                 <p><b>Step 2: Community Bonding.</b> These arts are usually performed during village festivals (Thiruvizha), bringing people of all sections together.</p>
+                                 
+                                 <p><b>Step 3: Preservation of History.</b> Many folk arts depict historical events, moral stories, and the struggles of common people, ensuring that traditional wisdom is passed down.</p>
+                                 
+                                 <p><b>Step 4: Economic Aspect.</b> These arts provide a livelihood for many rural artists and help in maintaining the unique local identity of different regions in Tamil Nadu.</p>
+                             </div>
                         `
                     },
                     {
@@ -1250,8 +1970,34 @@ class StudentLibrary {
                             <h2>4.2 Navigational Greatness</h2>
                             <p>The Chola navy was one of the strongest in the world. They expanded their influence to Southeast Asia (Sumatra, Java, Malaysia). Ships were built using advanced techniques for wood-joining and waterproofing.</p>
 
-                            <h2>4.3 Textiles and Metallurgy</h2>
-                            <p>Tamil Nadu has been a hub for high-quality cotton and silk since ancient times. Exports of iron and steel (Wootz steel) from this region to the Roman Empire are well-documented.</p>
+                             <h2>4.3 Textiles and Metallurgy</h2>
+                             <p>Tamil Nadu has been a hub for high-quality cotton and silk since ancient times. Exports of iron and steel (Wootz steel) from this region to the Roman Empire are well-documented.</p>
+
+                             <h2>4.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: Who built the Kallanai and in which century?</b><br>
+                                 <b>Ans:</b> King Karikala Chola in the 2nd Century CE.</p>
+                                 
+                                 <p><b>Q2: What is "Wootz Steel"?</b><br>
+                                 <b>Ans:</b> It is a high-carbon steel characterized by a pattern of bands. It was developed in ancient Tamil Nadu and was highly sought after in the Roman Empire for making weapons.</p>
+                                 
+                                 <p><b>Q3: Mention two Southeast Asian regions influenced by the Chola Navy.</b><br>
+                                 <b>Ans:</b> (1) Sumatra (2) Malaysia.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Explain the engineering marvel behind the construction of Kallanai (Grand Anicut).</b></p>
+                                 <p><b>Step 1: Background.</b> Kallanai is the oldest water-diversion structure in the world still in use. It was built across the main stream of the Kaveri River.</p>
+                                 
+                                 <p><b>Step 2: Construction Technique.</b> The dam was built using large unhewn stones, which were sunk into the sandy bed of the river. The structure was designed to withstand the tremendous pressure of the flowing water.</p>
+                                 
+                                 <p><b>Step 3: Purpose.</b> The main objective was to divert the Kaveri water into the Kollidam branch for irrigation while protecting the Delta region from floods.</p>
+                                 
+                                 <p><b>Step 4: Legacy.</b> The structure has stood for nearly 2000 years, proving the advanced hydraulic engineering skills of the ancient Cholas. It still serves as a base for modern irrigation systems in the region.</p>
+                             </div>
                         `
                     },
                     {
@@ -1267,8 +2013,34 @@ class StudentLibrary {
                             <ul>
                                 <li><b>Pongal:</b> The harvest festival, expressing gratitude to Nature and Cattle.</li>
                                 <li><b>Tamil New Year:</b> Celebrating the solar cycle.</li>
-                                <li><b>Customs:</b> Hospitaly (Virunthinar), respecting elders, and community living.</li>
-                            </ul>
+                                 <li><b>Customs:</b> Hospitaly (Virunthinar), respecting elders, and community living.</li>
+                             </ul>
+
+                             <h2>5.4 Quest for Excellence: Important Questions & Answers</h2>
+
+                             <h3>Part A (2-Mark Essentials)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q1: What is the primary focus of Thirukkural?</b><br>
+                                 <b>Ans:</b> It provides a comprehensive code of ethics and moral values for individuals, families, and rulers to lead a righteous and fulfilling life.</p>
+                                 
+                                 <p><b>Q2: Define 'Aram' in the context of Tamil culture.</b><br>
+                                 <b>Ans:</b> It refers to virtue, righteousness, and moral duty. It is considered the foundation of a stable and just society.</p>
+                                 
+                                 <p><b>Q3: Give an example of ancient Tamil hospitality.</b><br>
+                                 <b>Ans:</b> The concept of 'Virunthinar' (guest), where even a stranger is treated with upmost respect and provided with food and shelter.</p>
+                             </div>
+
+                             <h3>Part B (16-Mark Masterpieces)</h3>
+                             <div class="highlight-box">
+                                 <p><b>Q4: Discuss the universal appeal and timeless values of the Thirukkural.</b></p>
+                                 <p><b>Step 1: Introduction.</b> Authored by Thiruvalluvar, it consists of 1330 couplets (Kurals) divided into Aram (Virtue), Porul (Wealth), and Inbam (Love).</p>
+                                 
+                                 <p><b>Step 2: Secular Nature.</b> It does not belong to any specific religion or caste, making its teachings applicable to all of humanity across different time periods.</p>
+                                 
+                                 <p><b>Step 3: Comprehensive Guidance.</b> It addresses various aspects of life, including governance, friendship, gratitude, self-control, and the importance of hard work.</p>
+                                 
+                                 <p><b>Step 4: Conclusion.</b> Regarded as the "Universal Veda," it continues to inspire millions with its profound wisdom and emphasis on human values.</p>
+                             </div>
                         `
                     },
                 ],

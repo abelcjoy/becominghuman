@@ -15,11 +15,11 @@ Every core subject for Semester 1 (Regulation 2021) is now populated with **Deep
 - [x] **GE3152: Heritage of Tamils** (All 5 Units: Language, Arts, Martial arts, Industrial/Social Heritage)
 
 ## 🛠️ Features implemented
-- [x] **MEGA CONTENT WAVE:** Re-attempted and solved all failed tool calls to ensure 100% subject coverage.
-- [x] **High-Detail Education:** Content expanded from 1-2 sentences to full pedagogical notes.
-- [x] **Exam Focus Blocks:** Strategic tips for 16-mark university questions integrated into reading.
-- [x] **Highlight Boxes:** Formula and key definition callouts for quick revision.
-- [x] **Mobile Optimization:** Text hierarchy designed for clear reading on low-end smartphones.
+- [x] **EXAM-READY Q&A WAVE:** Every unit in AU Sem 1 now contains a "Quest for Excellence: Important Questions & Answers" section.
+- [x] **Part A (2-Mark Essentials):** Direct answers to the most frequently asked short questions.
+- [x] **Part B (16-Mark Masterpieces):** Detailed, step-by-step solutions and essay frameworks for scoring full marks.
+- [x] **Instructional Content:** Content is now "Textbook-plus" - combining deep theory with direct exam preparation.
+- [x] **Mobile Optimization:** Text hierarchy designed for clear reading on smartphones.
 
 ## 🚀 Next Wave
 - Starting **Anna University Semester 2** (Detailed units).
