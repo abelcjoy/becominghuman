@@ -1,8 +1,10 @@
- * 💎 Omni Tools - 23 ELITE TOOLS(CORE EDITION) 💎
+/**
+ * 💎 Omni Tools - 33 ELITE TOOLS (CORE EDITION) 💎
  * 
  * CORE: Calculator, Unit Pro, Secret Key Gen
-    * AI FINDER BATCH 1: Text - to - Image, Text - to - Video, Image - to - Video, Logo Gen, Upscalers, etc.
- * AI FINDER BATCH 2: Text - to - Speech, Speech - to - Text, Voice Changers, Music Gen, etc.
+ * AI FINDER BATCH 1: Visual Generation (Text-to-Image, Video, etc.)
+ * AI FINDER BATCH 2: Audio & Voice (TTS, Music, Translation)
+ * AI FINDER BATCH 3: Writing & Research (Essay, PDF, Email)
  */
 
 class OmniTools {
@@ -316,6 +318,127 @@ class OmniTools {
                     { name: 'Murf.ai', status: 'Studio Quality Voices', link: 'https://murf.ai' },
                     { name: 'LOVO AI', status: 'Great for Games/Ads', link: 'https://lovo.ai' },
                     { name: 'WellSaid Labs', status: 'Most Natural Tech', link: 'https://wellsaidlabs.com' }
+                ])
+            },
+            // === AI FINDER BATCH 3: WRITING & RESEARCH ===
+            essayWriterAI: {
+                name: "AI Essay Writer",
+                searchTerms: "ai essay writer paper homework college writing acadmic",
+                description: "Write essays & papers",
+                icon: "📝",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Essay Writer', 'Generate well-structured essays, papers, and academic reports.', [
+                    { name: 'Textero.ai', status: 'Best for College Papers', link: 'https://textero.ai' },
+                    { name: 'Jasper.ai', status: 'Professional Content', link: 'https://jasper.ai' },
+                    { name: 'Writesonic', status: 'Fast Article Gen', link: 'https://writesonic.com' }
+                ])
+            },
+            pdfSummarizerAI: {
+                name: "PDF Summarizer AI",
+                searchTerms: "ai pdf summary chat with doc research analyze",
+                description: "Summarize long documents",
+                icon: "📄",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('PDF Summarizer', 'Upload long PDFs and long documents to get instant summaries.', [
+                    { name: 'ChatPDF', status: 'Best Overall Tool', link: 'https://chatpdf.com' },
+                    { name: 'Humata AI', status: 'Detailed Analysis', link: 'https://humata.ai' },
+                    { name: 'AskYourPDF', status: 'Top Rated Chrome Ext', link: 'https://askyourpdf.com' }
+                ])
+            },
+            emailAutomatorAI: {
+                name: "Email Automator AI",
+                searchTerms: "ai email writer professional mail reply automate",
+                description: "Write perfect emails",
+                icon: "📧",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Email Writer', 'Generate professional emails and automated replies in seconds.', [
+                    { name: 'Flowrite', status: 'Best for Productivity', link: 'https://flowrite.com' },
+                    { name: 'Lavender', status: 'Best for Sales', link: 'https://lavender.ai' },
+                    { name: 'Copy.ai', status: 'Infinite Email Templates', link: 'https://copy.ai' }
+                ])
+            },
+            searchAI: {
+                name: "AI Search Engine",
+                searchTerms: "ai search research sources citations answer",
+                description: "Search with AI answers",
+                icon: "🔍",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('AI Search', 'Search the web with real-time AI answers and source citations.', [
+                    { name: 'Perplexity', status: 'Industry Leader (Free)', link: 'https://perplexity.ai' },
+                    { name: 'You.com', status: 'Private & Fast', link: 'https://you.com' },
+                    { name: 'Genspark', status: 'Summarized Discovery', link: 'https://genspark.ai' }
+                ])
+            },
+            grammarFixerAI: {
+                name: "Grammar Fixer AI",
+                searchTerms: "ai grammar check fix spelling punctuation proofread",
+                description: "Fix writing errors",
+                icon: "✅",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Grammar Fixer', 'Automatically detect and fix grammar, spelling, and tone errors.', [
+                    { name: 'Grammarly', status: 'The Gold Standard', link: 'https://grammarly.com' },
+                    { name: 'QuillBot', status: 'Best Paraphraser', link: 'https://quillbot.com' },
+                    { name: 'ProWritingAid', status: 'Best for Authors', link: 'https://prowritingaid.com' }
+                ])
+            },
+            studyHelperAI: {
+                name: "AI Study Helper",
+                searchTerms: "ai study tutor homework help test prep learn",
+                description: "Get homework help",
+                icon: "🎓",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Study Helper', 'Personalized AI tutoring for homework, test prep, and learning.', [
+                    { name: 'Khanmigo', status: 'Best AI Tutor', link: 'https://khanacademy.org/khanmigo' },
+                    { name: 'Chegg AI', status: 'Best for Homework', link: 'https://chegg.com' },
+                    { name: 'Socratic by Google', status: 'Mobile Visual Helper', link: 'https://socratic.org' }
+                ])
+            },
+            contentIdeaAI: {
+                name: "Content Ideas AI",
+                searchTerms: "ai brainstorm content social media youtube ideas",
+                description: "Get viral content ideas",
+                icon: "💡",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Content Ideas', 'Generate unlimited ideas for social media, YouTube, and blogs.', [
+                    { name: 'VidIQ AI', status: 'Best for YouTube', link: 'https://vidiq.com' },
+                    { name: 'BuzzSumo', status: 'Trend Analysis', link: 'https://buzzsumo.com' },
+                    { name: 'ContentShake', status: 'Full Content Plan', link: 'https://semrush.com/contentshake' }
+                ])
+            },
+            resumeBuilderAI: {
+                name: "Resume Builder AI",
+                searchTerms: "ai resume cv maker job application profile",
+                description: "Build a pro resume",
+                icon: "💼",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Resume Builder', 'Create job-winning resumes and CVs tailored by AI.', [
+                    { name: 'Rezi.ai', status: 'Best for ATS Bypass', link: 'https://rezi.ai' },
+                    { name: 'Resume.io', status: 'Premium Templates', link: 'https://resume.io' },
+                    { name: 'Kickresume', status: 'Creative Design', link: 'https://kickresume.com' }
+                ])
+            },
+            plagiarismAI: {
+                name: "AI Plagiarism Check",
+                searchTerms: "ai detector plagiarism check originality writing",
+                description: "Check for AI content",
+                icon: "🛡️",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('AI Detector', 'Check if a piece of text was written by a human or an AI.', [
+                    { name: 'Copyleaks', status: 'Enterprise Class', link: 'https://copyleaks.com' },
+                    { name: 'GPTZero', status: 'Best for Education', link: 'https://gptzero.me' },
+                    { name: 'Originality.ai', status: 'Pro Marketers Choice', link: 'https://originality.ai' }
+                ])
+            },
+            legalAssistantAI: {
+                name: "AI Legal Assistant",
+                searchTerms: "ai legal law lawyer documents research",
+                description: "Simplified legal help",
+                icon: "⚖️",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Legal Assistant', 'Simplify legal documents and perform basic legal research with AI.', [
+                    { name: 'DoNotPay', status: 'The Robot Lawyer', link: 'https://donotpay.com' },
+                    { name: 'Casetext', status: 'Professional Research', link: 'https://casetext.com' },
+                    { name: 'LegalRobot', status: 'Contract Analysis', link: 'https://legalrobot.com' }
                 ])
             }
         };
