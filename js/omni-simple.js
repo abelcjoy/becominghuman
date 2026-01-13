@@ -49,7 +49,8 @@ class StudentLibrary {
             { id: 'school', name: 'School Education (K-12)', icon: '🎒', desc: 'NCERT, CBSE & All State Boards.' },
             { id: 'medical', name: 'Medical & Health Sciences', icon: '🩺', desc: 'MBBS, BDS, Nursing & Pharmacy.' },
             { id: 'arts', name: 'Arts, Science & Commerce', icon: '🎨', desc: 'UGC-CBCS, DU, Madras Univ & more.' },
-            { id: 'distance', name: 'Distance & Open Learning', icon: '📚', desc: 'IGNOU & NIOS Resources.' }
+            { id: 'distance', name: 'Distance & Open Learning', icon: '📚', desc: 'IGNOU & NIOS Resources.' },
+            { id: 'arcade', name: 'The Digital Arcade', icon: '🕹️', desc: 'Bored? Hack the mainframe, play sims, and unwind.' }
         ];
     }
 
@@ -2134,6 +2135,11 @@ class StudentLibrary {
                 this.createCard(chapter.name, `Read the full detailed notes for ${chapter.name}`, '📄', 'CHAPTER', () => this.openReader(subject.id, index), grid);
             });
         }
+        else if (current.type === 'arcade') {
+            const cat = current.data;
+            this.renderHeader(`${cat.icon} ${cat.name}`, 'Select a Simulation', grid);
+            this.createCard('The Firewall Guard', 'Defend the Student Library server from digital rot. A clicker/defense game.', '🛡️', 'GAME', () => this.launchGame('firewall'), grid);
+        }
     }
 
     pushNav(item) {
@@ -2245,6 +2251,282 @@ class StudentLibrary {
             `;
             content.appendChild(style);
         }
+    }
+
+    launchGame(gameId) {
+        if (gameId !== 'firewall') return;
+
+        const view = document.getElementById('tool-view');
+        const content = document.getElementById('tool-content');
+        if (!content) return;
+
+        // 1. Setup Game UI
+        content.innerHTML = `
+            <div id="game-container" style="position:relative; width:100%; max-width:600px; height:80vh; margin:0 auto; background:#000; border:2px solid #0f0; box-shadow:0 0 20px rgba(0,255,0,0.2); overflow:hidden; font-family:'Courier New', monospace;">
+                
+                <!-- HUD -->
+                <div style="position:absolute; top:0; left:0; right:0; padding:15px; background:rgba(0,20,0,0.9); border-bottom:1px solid #0f0; display:flex; justify-content:space-between; z-index:10;">
+                    <span style="color:#0f0; font-weight:bold;">INTEGRITY: <span id="g-health">100</span>%</span>
+                    <span style="color:#0f0; font-weight:bold;">BYTES: <span id="g-money">0</span></span>
+                    <button onclick="window.omni.handleBack()" style="background:#300; color:#f00; border:1px solid #f00; padding:5px 10px; font-size:12px; cursor:pointer;">ABORT</button>
+                </div>
+
+                <!-- UPGRADES -->
+                <div style="position:absolute; bottom:0; left:0; right:0; padding:10px; background:rgba(0,20,0,0.9); border-top:1px solid #0f0; display:flex; gap:10px; overflow-x:auto; z-index:10;">
+                    <button id="btn-upg-1" style="background:#000; border:1px solid #0f0; color:#0f0; padding:10px; white-space:nowrap; cursor:pointer;">
+                        Auto-Patcher (Cost: 50)
+                    </button>
+                    <button id="btn-upg-2" style="background:#000; border:1px solid #0f0; color:#0f0; padding:10px; white-space:nowrap; cursor:pointer;">
+                        Bandwidth Boost (Cost: 150)
+                    </button>
+                    <button id="btn-nuke" style="background:#000; border:1px solid #f00; color:#f00; padding:10px; white-space:nowrap; cursor:pointer;">
+                        SYS.PURGE() (Cost: 500)
+                    </button>
+                </div>
+
+                <!-- GAME LAYER -->
+                <canvas id="game-canvas" style="display:block; width:100%; height:100%;"></canvas>
+
+                <!-- OVERLAY -->
+                <div id="game-overlay" style="display:none; position:absolute; inset:0; background:rgba(0,0,0,0.9); z-index:20; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+                    <h1 id="go-title" style="color:#f00; font-size:40px; margin-bottom:20px; text-shadow:0 0 10px #f00;">SYSTEM CRASH</h1>
+                    <p id="go-score" style="color:#fff; margin-bottom:30px; font-size:20px;"></p>
+                    <button id="btn-restart" style="background:#0f0; color:#000; border:none; padding:15px 30px; font-size:20px; font-weight:bold; cursor:pointer;">REBOOT SYSTEM</button>
+                </div>
+            </div>
+        `;
+
+        view.classList.add('active');
+        document.body.style.overflow = 'hidden';
+
+        // 2. Game Logic
+        const canvas = document.getElementById('game-canvas');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+
+        // Resize Handler
+        const resize = () => {
+            const rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = rect.height * dpr;
+            ctx.scale(dpr, dpr);
+            return { w: rect.width, h: rect.height };
+        };
+        let dims = resize();
+
+        // State
+        let state = {
+            running: true,
+            health: 100,
+            money: 0,
+            score: 0,
+            entities: [],
+            particles: [],
+            lastSpawn: 0,
+            spawnRate: 1500,
+            autoDmg: 0,
+            enemySpeed: 1,
+            level: 1
+        };
+
+        // Render Loop
+        const loop = (time) => {
+            // Check if view is still active (handle back button)
+            if (!view.classList.contains('active')) return;
+
+            if (!state.running) return;
+
+            // Clear
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; // Trails effect
+            ctx.fillRect(0, 0, dims.w, dims.h);
+
+            // Spawn Logic
+            if (time - state.lastSpawn > state.spawnRate) {
+                const type = Math.random();
+                let txt = '01'; // Glitch
+                let hp = 1;
+                let col = '#0f0';
+
+                if (state.level > 2 && type > 0.7) { txt = 'TROJAN'; hp = 3; col = '#ff0'; }
+                if (state.level > 4 && type > 0.9) { txt = 'MALWARE'; hp = 5; col = '#f0f'; }
+
+                state.entities.push({
+                    x: Math.random() * (dims.w - 50) + 25,
+                    y: -20,
+                    text: txt,
+                    hp: hp,
+                    maxHp: hp,
+                    color: col,
+                    speed: state.enemySpeed + (Math.random() * 0.5)
+                });
+                state.lastSpawn = time;
+
+                // Difficulty Scaling
+                if (state.spawnRate > 400) state.spawnRate -= 10;
+                state.enemySpeed += 0.001;
+                if (state.score % 10 === 0) state.level++;
+            }
+
+            // Update Entities
+            state.entities.forEach((e, i) => {
+                e.y += e.speed;
+
+                // Draw
+                ctx.font = '16px monospace';
+                ctx.fillStyle = e.color;
+                ctx.fillText(e.text, e.x, e.y);
+
+                // Health Bar (for tough enemies)
+                if (e.maxHp > 1) {
+                    ctx.fillStyle = '#333';
+                    ctx.fillRect(e.x, e.y - 15, 30, 4);
+                    ctx.fillStyle = e.color;
+                    ctx.fillRect(e.x, e.y - 15, 30 * (e.hp / e.maxHp), 4);
+                }
+
+                // Integrity Hit
+                if (e.y > dims.h) {
+                    state.health -= 10;
+                    state.entities.splice(i, 1);
+                    document.getElementById('g-health').innerText = state.health;
+                    if (state.health <= 0) gameOver();
+                }
+            });
+
+            // Particles
+            state.particles.forEach((p, i) => {
+                p.life--;
+                p.x += p.vx;
+                p.y += p.vy;
+                ctx.fillStyle = `rgba(0, 255, 0, ${p.life / 30})`;
+                ctx.fillRect(p.x, p.y, 2, 2);
+                if (p.life <= 0) state.particles.splice(i, 1);
+            });
+
+            // Auto-Dmg Logic (Auto-Patcher)
+            if (time % 60 < 16 && state.autoDmg > 0 && state.entities.length > 0) {
+                // Damage random enemy
+                hitEnemy(state.entities[0], state.autoDmg);
+                // Draw laser
+                ctx.strokeStyle = '#0ff';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.moveTo(dims.w / 2, dims.h);
+                ctx.lineTo(state.entities[0].x, state.entities[0].y);
+                ctx.stroke();
+            }
+
+            requestAnimationFrame(loop);
+        };
+
+        // Inputs
+        const hitEnemy = (e, dmg) => {
+            e.hp -= dmg;
+            // Spawn particles
+            for (let i = 0; i < 5; i++) {
+                state.particles.push({
+                    x: e.x, y: e.y, life: 30,
+                    vx: (Math.random() - 0.5) * 5, vy: (Math.random() - 0.5) * 5
+                });
+            }
+
+            if (e.hp <= 0) {
+                state.money += (e.maxHp * 5);
+                state.score++;
+                state.entities = state.entities.filter(ent => ent !== e);
+                updateHUD();
+            }
+        };
+
+        canvas.addEventListener('mousedown', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const clickX = (e.clientX - rect.left) * (canvas.width / rect.width);
+            const clickY = (e.clientY - rect.top) * (canvas.height / rect.height);
+
+            // Adjust for scale
+            const x = clickX / dpr;
+            const y = clickY / dpr;
+
+            // Check hits
+            state.entities.forEach(ent => {
+                const dist = Math.hypot(x - ent.x, y - ent.y);
+                if (dist < 40) { // hit radius
+                    hitEnemy(ent, 1);
+                }
+            });
+        });
+
+        // Upgrades
+        const updateHUD = () => {
+            const mDisplay = document.getElementById('g-money');
+            if (mDisplay) mDisplay.innerText = state.money;
+
+            // Check affordability styling
+            const btn1 = document.getElementById('btn-upg-1');
+            if (btn1) btn1.style.opacity = state.money >= 50 ? '1' : '0.5';
+
+            const btn2 = document.getElementById('btn-upg-2');
+            if (btn2) btn2.style.opacity = state.money >= 150 ? '1' : '0.5';
+
+            const btn3 = document.getElementById('btn-nuke');
+            if (btn3) btn3.style.opacity = state.money >= 500 ? '1' : '0.5';
+        };
+
+        const setupButtons = () => {
+            const btn1 = document.getElementById('btn-upg-1');
+            if (btn1) btn1.onclick = () => {
+                if (state.money >= 50) {
+                    state.money -= 50;
+                    state.autoDmg += 1;
+                    updateHUD();
+                }
+            };
+            const btn2 = document.getElementById('btn-upg-2');
+            if (btn2) btn2.onclick = () => {
+                if (state.money >= 150) {
+                    state.money -= 150;
+                    state.enemySpeed *= 0.8;
+                    updateHUD();
+                }
+            };
+            const btn3 = document.getElementById('btn-nuke');
+            if (btn3) btn3.onclick = () => {
+                if (state.money >= 500) {
+                    state.money -= 500;
+                    state.entities = [];
+                    updateHUD();
+                    ctx.fillStyle = '#fff';
+                    ctx.fillRect(0, 0, dims.w, dims.h);
+                }
+            };
+        }
+        setupButtons();
+
+        const gameOver = () => {
+            state.running = false;
+            const overlay = document.getElementById('game-overlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+                document.getElementById('go-score').innerText = `Bytes Collected: ${state.score}`;
+                document.getElementById('btn-restart').onclick = () => {
+                    overlay.style.display = 'none';
+                    state.health = 100;
+                    state.money = 0;
+                    state.score = 0;
+                    state.entities = [];
+                    state.running = true;
+                    state.spawnRate = 1500;
+                    state.enemySpeed = 1;
+                    state.autoDmg = 0;
+                    updateHUD();
+                    const hDisplay = document.getElementById('g-health');
+                    if (hDisplay) hDisplay.innerText = 100;
+                    requestAnimationFrame(loop);
+                };
+            }
+        };
+
+        requestAnimationFrame(loop);
     }
 }
 
