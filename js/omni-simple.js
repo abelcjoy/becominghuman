@@ -1,10 +1,38 @@
 /**
- * 💎 Omni Tools - 640 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 920 ELITE TOOLS! 💎
  * 
  * BATCH 56: AiModels + PromptEng + TokenEst + NnLayers + TrainVsInfer + AiBias + Hallucination + VectorDb + Rlhf + FineTune
  * BATCH 57: WebWorkers + ServiceWorkers + StorageTypes + IndexedDb + FetchApi + GeoApi + ClipApi + InteractionObs + MutationObs + DeviceMotion
  * BATCH 58: CloudModels + Scaling + Serverless + Microservices + ApiGateway + DbSharding + EdgeCompute + ColdStart + EventDriven + SharedResp
  * BATCH 59: FittsLaw + HicksLaw + Zeigarnik + JakobsLaw + MillersLaw + PeakEnd + Gestalt + SerialPos + VonRestorff + OccamsRazor
+ * BATCH 60: ContainerQs + AspectRatio + ClampCalc + Subgrid + LogicalProp + CssVars + DispContents + ObjectFit + ScrollSnap + Glassmorphism
+ * BATCH 61: LightSpeed + GravityG + PlanckConst + Boltzmann + Avogadro + GoldenRatio + PiRef + EulerNum + EarthG + SoundSpeed
+ * BATCH 62: Http3 + TlsHandshake + OauthFlows + JwtRef + CorsExplained + CspGuide + HSTS + DnssecRef + SshGuide + ZeroTrust
+ * BATCH 63: ManifestGuide + SwLifecycle + CacheStrats + OfflineRef + PushNotif + AppShell + Breakpoints + MobileFirst + TouchEvents + SafeArea
+ * BATCH 64: ConsolePro + NetThrottling + Lighthouse + PerfTab + MemoryLeaks + LayerTree + SourceMaps + LocalOverrides + Snippets + Websockets
+ * BATCH 65: GitRebase + GitCherryPick + GitStash + GitReflog + GitSubmodules + GitHooks + GitBisect + GitSquash + GitRemotes + GitResets
+ * BATCH 66: Dockerfile + DockerCompose + DockerVolumes + DockerNet + DockerImg + DockerPrune + DockerExec + DockerLogs + PortMap + MultiStage
+ * BATCH 67: K8sPods + K8sServices + K8sDeploy + K8sNamespaces + ConfigMaps + K8sSecrets + K8sIngress + K8sNodes + KubectlPro + HelmGuide
+ * BATCH 68: SqlJoins + AcidProps + BaseProps + Normalized + DbIndexes + CapTheorem + RedisTypes + MongoCrud + SqlInj + ShardVsPart
+ * BATCH 69: IncogMyth + PassLogic + VpnTruths + 2faMethods + PhishSigns + HashVsEnc + PassSalt + HttpsVsHttp + IotSec + SocialEng
+ * BATCH 70: BashNav + TermFiles + ProcMgmt + IoRedirect + GrepFind + TermHist + AliasGuide + Perims + VimBasics + Multiplex
+ * BATCH 71: Palettes + TypoScales + Spacing8pt + States + IconSys + A11ySys + Shadows + Radii + Buttons + Tokens
+ * BATCH 72: OptChain + Nullish + ArrDest + ObjDest + Spread + Rest + TemplateLit + ArrowFunc + DefaultParams + AsyncAwait
+ * BATCH 73: Debounce + Throttle + LazyLoad + CritCss + WebVitals + Minify + ImgFormat + Caching + Preload + CdnBenefits
+ * BATCH 74: TryCatch + ErrorBound + Http400s + Http500s + CustErr + PromRej + ErrLog + Fallbacks + Valid + Retry
+ * BATCH 75: Dry + Kiss + Yagni + SoC + CompVsInh + Solid + Reviews + Debt + Refactor + Docs
+ * BATCH 76: UnitTests + IntegTests + E2eTesting + TddGuide + BddGuide + MockSpy + Coverage + SmokeTest + Snapshot + Regression
+ * BATCH 77: MdHeaders + MdFormat + MdLinks + MdLists + MdCode + MdTables + MdQuotes + MdTasks + MdDivide + MdEscape
+ * BATCH 78: ExtManifest + ExtBackground + ExtContent + ExtPopup + ExtOptions + ExtStorage + ExtPerms + ExtMessaging + ExtIcons + ExtDeploy
+ * BATCH 79: RegexChars + RegexQuant + RegexAnchors + RegexClasses + RegexGroups + RegexLook + RegexFlags + RegexEscape + RegexReplace + RegexTest
+ * BATCH 80: WcagGuide + AriaRoles + ScreenReaders + KeyboardNav + ContrastCheck + AltText + SemanticHtml + FocusVisible + ReducedMotion + A11yForms
+ * BATCH 81: Singleton + Factory + Observer + Decorator + Facade + Strategy + Proxy + Mediator + Bridge + Flyweight
+ * BATCH 82: NodeFs + NodePath + NodeHttp + NodeEvents + NodeStreams + NodeBuffers + NpmBasics + PackageJson + EnvVars + NodeProcess
+ * BATCH 83: XssDefense + CsrfDefense + SqlSecurity + BruteForce + RateLimit + Sanitization + SaltsPepper + OauthSec + MfaBasics + SecHeaders
+ * BATCH 84: WebShare + ContactPick + WakeLock + BroadChan + Vibration + ResizeObs + IdleCallback + WebCrypto + PaymentReq + EyeDropper
+ * BATCH 85: HolyGrail + Sidebar + Centering + Masonry + GridCards + AspectRatio + FluidTypo + Glassmorph + DarkMode + ScrollSnap
+ * BATCH 86: PrivateFields + TopAwait + ArrayAt + StaticBlocks + HasOwn + ErrorCause + RegexIndices + WeakRefs + FinalRegistry + ToSorted
+ * BATCH 87: AwkBasics + SedBasics + XargsGuide + CurlAdv + WgetGuide + SshTunnel + CronSyntax + Systemd + Chroot + EnvScope
  */
 
 class OmniTools {
@@ -5218,6 +5246,2274 @@ class OmniTools {
                 icon: "🪒",
                 category: "Design",
                 render: () => this.renderOccamsRazorUx()
+            },
+            // === BATCH 60 - 650 TOOLS (MODERN CSS & LAYOUT) ===
+            containerQueries: {
+                name: "Container Qs",
+                searchTerms: "container queries css layout responsive design",
+                description: "Component-based queries",
+                icon: "📦",
+                category: "Design",
+                render: () => this.renderContainerQueries()
+            },
+            aspectRatioRef: {
+                name: "Aspect Ratio",
+                searchTerms: "aspect ratio css property calculation guide",
+                description: "Proportional sizing ref",
+                icon: "📐",
+                category: "Design",
+                render: () => this.renderAspectRatioRef()
+            },
+            cssClampCalc: {
+                name: "CSS Clamp()",
+                searchTerms: "css clamp function fluid typography responsive",
+                description: "Fluid scaling helper",
+                icon: "🔩",
+                category: "Design",
+                render: () => this.renderCssClampCalc()
+            },
+            subgridRef: {
+                name: "CSS Subgrid",
+                searchTerms: "css subgrid display grid nested layout",
+                description: "Inherited grid tracks",
+                icon: "🕸️",
+                category: "Design",
+                render: () => this.renderSubgridRef()
+            },
+            logicalProperties: {
+                name: "Logical Prop",
+                searchTerms: "css logical properties ltr rtl margin padding block inline",
+                description: "Text-direction layout",
+                icon: "↔️",
+                category: "Design",
+                render: () => this.renderLogicalProperties()
+            },
+            cssVariablesRef: {
+                name: "CSS Variables",
+                searchTerms: "css custom properties variables root scope",
+                description: "Cascade & scoping ref",
+                icon: "🔗",
+                category: "Design",
+                render: () => this.renderCssVariablesRef()
+            },
+            displayContents: {
+                name: "Disp: Contents",
+                searchTerms: "css display contents layout dom accessibility",
+                description: "Invisible wrapper guide",
+                icon: "👻",
+                category: "Design",
+                render: () => this.renderDisplayContents()
+            },
+            objectFitRef: {
+                name: "Object Fit",
+                searchTerms: "css object-fit cover contain fill image layout",
+                description: "Img/Video scaling ref",
+                icon: "🖼️",
+                category: "Design",
+                render: () => this.renderObjectFitRef()
+            },
+            scrollSnapRef: {
+                name: "Scroll Snap",
+                searchTerms: "css scroll snap mandatory proximity slider",
+                description: "Sticky scroll behaviors",
+                icon: "🎡",
+                category: "Design",
+                render: () => this.renderScrollSnapRef()
+            },
+            glassmorphismRef: {
+                name: "Glassmorphism",
+                searchTerms: "glassmorphism backdrop-filter blur frosted glass css",
+                description: "Backdrop filter guide",
+                icon: "🍷",
+                category: "Design",
+                render: () => this.renderGlassmorphismRef()
+            },
+            // === BATCH 61 - 660 TOOLS (SCIENTIFIC CONSTANTS) ===
+            speedOfLight: {
+                name: "Light Speed",
+                searchTerms: "speed of light constant c physics vacuum",
+                description: "299,792,458 m/s",
+                icon: "✨",
+                category: "Science",
+                render: () => this.renderSpeedOfLight()
+            },
+            gravitationalConst: {
+                name: "Gravity (G)",
+                searchTerms: "universal gravitational constant big g physics",
+                description: "Universal attraction",
+                icon: "🌍",
+                category: "Science",
+                render: () => this.renderGravitationalConst()
+            },
+            planckConstant: {
+                name: "Planck Const",
+                searchTerms: "planck constant h quantum physics energy",
+                description: "Action quantum",
+                icon: "🌌",
+                category: "Science",
+                render: () => this.renderPlanckConstant()
+            },
+            boltzmannConst: {
+                name: "Boltzmann (k)",
+                searchTerms: "boltzmann constant k thermodynamics entropy",
+                description: "Gas law constant",
+                icon: "🌡️",
+                category: "Science",
+                render: () => this.renderBoltzmannConst()
+            },
+            avogadroNumber: {
+                name: "Avogadro (Na)",
+                searchTerms: "avogadro constant number mole chemistry",
+                description: "Mole proportionality",
+                icon: "🧪",
+                category: "Science",
+                render: () => this.renderAvogadroNumber()
+            },
+            goldenRatioRef: {
+                name: "Golden Ratio",
+                searchTerms: "golden ratio phi 1.618 math beauty design",
+                description: "Phi constant & spiral",
+                icon: "🌀",
+                category: "Science",
+                render: () => this.renderGoldenRatioRef()
+            },
+            piReference: {
+                name: "Pi Ref (π)",
+                searchTerms: "pi mathematical constant 3.14 circle geometry",
+                description: "Circle ratio details",
+                icon: "🥧",
+                category: "Science",
+                render: () => this.renderPiReference()
+            },
+            eulerNumber: {
+                name: "Euler's (e)",
+                searchTerms: "euler number e natural logarithm growth base",
+                description: "Base of natural log",
+                icon: "📈",
+                category: "Science",
+                render: () => this.renderEulerNumber()
+            },
+            earthGravity: {
+                name: "Earth's g",
+                searchTerms: "standard gravity earth acceleration 9.806m/s2",
+                description: "Surface acceleration",
+                icon: "🍎",
+                category: "Science",
+                render: () => this.earthGravityRender()
+            },
+            soundSpeedMed: {
+                name: "Sound Speed",
+                searchTerms: "speed of sound mediums air water steel Mach",
+                description: "Medium-based speeds",
+                icon: "🔊",
+                category: "Science",
+                render: () => this.renderSoundSpeedMed()
+            },
+            // === BATCH 62 - 670 TOOLS (NETWORK & SECURITY) ===
+            http3Ref: {
+                name: "HTTP/3",
+                searchTerms: "http3 quic protocol network performance speed",
+                description: "QUIC protocol guide",
+                icon: "🚀",
+                category: "Network",
+                render: () => this.renderHttp3Ref()
+            },
+            tlsHandshake: {
+                name: "TLS Handshake",
+                searchTerms: "tls ssl handshake security encryption protocols",
+                description: "Security negotiation guide",
+                icon: "🤝",
+                category: "Network",
+                render: () => this.renderTlsHandshake()
+            },
+            oauthFlows: {
+                name: "OAuth2 Flows",
+                searchTerms: "oauth2 authorization authentication flows grant types",
+                description: "Auth delegation guide",
+                icon: "🔑",
+                category: "Network",
+                render: () => this.renderOauthFlows()
+            },
+            jwtRef: {
+                name: "JWT (JSON Web)",
+                searchTerms: "jwt json web token auth security claims",
+                description: "Token structure guide",
+                icon: "🎫",
+                category: "Network",
+                render: () => this.renderJwtRef()
+            },
+            corsExplained: {
+                name: "CORS Explained",
+                searchTerms: "cors cross origin resource sharing security api",
+                description: "Cross-origin guide",
+                icon: "🌐",
+                category: "Network",
+                render: () => this.renderCorsExplained()
+            },
+            cspGuide: {
+                name: "CSP Guide",
+                searchTerms: "csp content security policy xss prevention security",
+                description: "XSS protection guide",
+                icon: "🛡️",
+                category: "Network",
+                render: () => this.renderCspGuide()
+            },
+            hstsRef: {
+                name: "HSTS Ref",
+                searchTerms: "hsts http strict transport security ssl tls",
+                description: "Always-HTTPS guide",
+                icon: "🔒",
+                category: "Network",
+                render: () => this.renderHstsRef()
+            },
+            dnssecRef: {
+                name: "DNSSEC",
+                searchTerms: "dnssec dns security signatures integrity",
+                description: "DNS integrity guide",
+                icon: "📛",
+                category: "Network",
+                render: () => this.renderDnssecRef()
+            },
+            sshGuide: {
+                name: "SSH Key Guide",
+                searchTerms: "ssh keys rsa ed25519 security remote access",
+                description: "Remote access security",
+                icon: "🗝️",
+                category: "Network",
+                render: () => this.renderSshGuide()
+            },
+            zeroTrustRef: {
+                name: "Zero Trust",
+                searchTerms: "zero trust security model architecture network",
+                description: "Never trust, always verify",
+                icon: "🚫",
+                category: "Network",
+                render: () => this.renderZeroTrustRef()
+            },
+            // === BATCH 63 - 680 TOOLS (MOBILE & PWA) ===
+            manifestGuide: {
+                name: "Manifest Guide",
+                searchTerms: "manifest.json pwa web app setup icons startup",
+                description: "PWA metadata guide",
+                icon: "📜",
+                category: "Developer",
+                render: () => this.renderManifestGuide()
+            },
+            swLifecycle: {
+                name: "SW Lifecycle",
+                searchTerms: "service worker lifecycle install activate fetch updates",
+                description: "Worker state guide",
+                icon: "🔄",
+                category: "Developer",
+                render: () => this.renderSwLifecycle()
+            },
+            cacheStrategies: {
+                name: "Cache Strats",
+                searchTerms: "caching strategies network first cache first stale while revalidate",
+                description: "Offline performance",
+                icon: "📦",
+                category: "Developer",
+                render: () => this.renderCacheStrategies()
+            },
+            offlineRef: {
+                name: "Offline Support",
+                searchTerms: "offline support pwa service worker storage",
+                description: "No-connectivity guide",
+                icon: "📵",
+                category: "Developer",
+                render: () => this.renderOfflineRef()
+            },
+            pushNotif: {
+                name: "Push Notif",
+                searchTerms: "push notifications pwa web notifications browser",
+                description: "User re-engagement",
+                icon: "🔔",
+                category: "Developer",
+                render: () => this.renderPushNotif()
+            },
+            appShell: {
+                name: "App Shell",
+                searchTerms: "app shell architecture pwa instant loading performance",
+                description: "Instant load pattern",
+                icon: "🐚",
+                category: "Developer",
+                render: () => this.renderAppShell()
+            },
+            breakpointsRef: {
+                name: "Breakpoints",
+                searchTerms: "responsive design breakpoints mobile tablet desktop media queries",
+                description: "Standard width guide",
+                icon: "📱",
+                category: "Design",
+                render: () => this.renderBreakpointsRef()
+            },
+            mobileFirst: {
+                name: "Mobile First",
+                searchTerms: "mobile first design philosophy responsive web design",
+                description: "Design approach ref",
+                icon: "☝️",
+                category: "Design",
+                render: () => this.renderMobileFirst()
+            },
+            touchEvents: {
+                name: "Touch Events",
+                searchTerms: "touch events pointer events mobile interaction swipe",
+                description: "Gesture handling guide",
+                icon: "👈",
+                category: "Developer",
+                render: () => this.renderTouchEvents()
+            },
+            safeAreaRef: {
+                name: "Safe Areas",
+                searchTerms: "safe area insets notch css env() padding mobile",
+                description: "Notch handling guide",
+                icon: "📐",
+                category: "Design",
+                render: () => this.renderSafeAreaRef()
+            },
+            // === BATCH 64 - 690 TOOLS (DEVTOOLS & PERFORMANCE) ===
+            consoleMethods: {
+                name: "Console Pro",
+                searchTerms: "console log table warn error group trace devtools",
+                description: "Beyond console.log",
+                icon: "💻",
+                category: "Developer",
+                render: () => this.renderConsoleMethods()
+            },
+            networkThrottling: {
+                name: "Net Throttling",
+                searchTerms: "network throttling devtools speed simulation slow 3g",
+                description: "Speed simulation guide",
+                icon: "🐌",
+                category: "Developer",
+                render: () => this.renderNetworkThrottling()
+            },
+            lighthouseRef: {
+                name: "Lighthouse",
+                searchTerms: "google lighthouse audit seo performance accessibility pwa",
+                description: "Quality audit guide",
+                icon: "🏮",
+                category: "Developer",
+                render: () => this.renderLighthouseRef()
+            },
+            performanceTab: {
+                name: "Perf Tab",
+                searchTerms: "chrome devtools performance tab profiling frame rate",
+                description: "Profiling guide",
+                icon: "⏱️",
+                category: "Developer",
+                render: () => this.renderPerformanceTab()
+            },
+            memoryLeaks: {
+                name: "Memory Leaks",
+                searchTerms: "javascript memory leaks heap snapshot garbage collection",
+                description: "Leak detection guide",
+                icon: "💧",
+                category: "Developer",
+                render: () => this.renderMemoryLeaks()
+            },
+            layerTreeRef: {
+                name: "Layer Tree",
+                searchTerms: "devtools layer tree 3d view compositing z-index",
+                description: "Compositing guide",
+                icon: "🥞",
+                category: "Developer",
+                render: () => this.renderLayerTreeRef()
+            },
+            sourceMapsRef: {
+                name: "Source Maps",
+                searchTerms: "source maps debugging minified code production",
+                description: "Debug prod code",
+                icon: "🗺️",
+                category: "Developer",
+                render: () => this.renderSourceMapsRef()
+            },
+            localOverrides: {
+                name: "Local Overrides",
+                searchTerms: "devtools local overrides persistence workspace",
+                description: "Persistent edits guide",
+                icon: "💾",
+                category: "Developer",
+                render: () => this.renderLocalOverrides()
+            },
+            devtoolsSnippets: {
+                name: "Snippets",
+                searchTerms: "devtools snippets scripts automation javascript",
+                description: "Script automation guide",
+                icon: "✂️",
+                category: "Developer",
+                render: () => this.renderDevtoolsSnippets()
+            },
+            inspectWebsockets: {
+                name: "WebSockets",
+                searchTerms: "inspect websockets devtools frames real-time network",
+                description: "Socket inspection guide",
+                icon: "🔌",
+                category: "Developer",
+                render: () => this.renderInspectWebsockets()
+            },
+            // === BATCH 65 - 700 TOOLS (GIT ESSENTIALS) ===
+            gitRebase: {
+                name: "Git Rebase",
+                searchTerms: "git rebase interactive rewrite history commits merge",
+                description: "History management",
+                icon: "🌿",
+                category: "Developer",
+                render: () => this.renderGitRebase()
+            },
+            gitCherryPick: {
+                name: "Git Cherry-Pick",
+                searchTerms: "git cherry-pick commit specific branch move",
+                description: "Commit porting guide",
+                icon: "🍒",
+                category: "Developer",
+                render: () => this.renderGitCherryPick()
+            },
+            gitStashRef: {
+                name: "Git Stash",
+                searchTerms: "git stash push pop apply list temporary storage",
+                description: "WIP management",
+                icon: "📦",
+                category: "Developer",
+                render: () => this.renderGitStashRef()
+            },
+            gitReflog: {
+                name: "Git Reflog",
+                searchTerms: "git reflog recover lost commits history undo",
+                description: "Safety net guide",
+                icon: "📜",
+                category: "Developer",
+                render: () => this.renderGitReflog()
+            },
+            gitSubmodules: {
+                name: "Git Submodules",
+                searchTerms: "git submodules nested repositories dependencies",
+                description: "Repo-in-repo guide",
+                icon: "📂",
+                category: "Developer",
+                render: () => this.renderGitSubmodules()
+            },
+            gitHooksInfo: {
+                name: "Git Hooks",
+                searchTerms: "git hooks pre-commit post-merge scripts automation",
+                description: "Workflow automation",
+                icon: "🪝",
+                category: "Developer",
+                render: () => this.renderGitHooksInfo()
+            },
+            gitBisectGuide: {
+                name: "Git Bisect",
+                searchTerms: "git bisect debug regression binary search commits",
+                description: "Bug hunting guide",
+                icon: "🔍",
+                category: "Developer",
+                render: () => this.renderGitBisectGuide()
+            },
+            gitSquash: {
+                name: "Git Squash",
+                searchTerms: "git squash commits interactive rebase cleanup",
+                description: "Commit cleanup guide",
+                icon: "🍋",
+                category: "Developer",
+                render: () => this.renderGitSquash()
+            },
+            gitRemotes: {
+                name: "Git Remotes",
+                searchTerms: "git remote add remove set-url origin upstream",
+                description: "Server management",
+                icon: "🛰️",
+                category: "Developer",
+                render: () => this.renderGitRemotes()
+            },
+            gitResetTypes: {
+                name: "Git Resets",
+                searchTerms: "git reset soft mixed hard undo changes",
+                description: "Undo types guide",
+                icon: "⏪",
+                category: "Developer",
+                render: () => this.renderGitResetTypes()
+            },
+            // === BATCH 66 - 710 TOOLS (CONTAINERIZATION/DOCKER) ===
+            dockerfileBasics: {
+                name: "Dockerfile",
+                searchTerms: "dockerfile basics instructions from run cmd entrypoint",
+                description: "Image build guide",
+                icon: "🐳",
+                category: "Developer",
+                render: () => this.renderDockerfileBasics()
+            },
+            dockerComposeRef: {
+                name: "Docker-Compose",
+                searchTerms: "docker compose yaml services multi-container orchestration",
+                description: "Multi-container guide",
+                icon: "🏗️",
+                category: "Developer",
+                render: () => this.renderDockerComposeRef()
+            },
+            dockerVolumes: {
+                name: "Docker Volumes",
+                searchTerms: "docker volumes persistence data storage bind mounts",
+                description: "Data persistence guide",
+                icon: "💾",
+                category: "Developer",
+                render: () => this.renderDockerVolumes()
+            },
+            dockerNetworks: {
+                name: "Docker Network",
+                searchTerms: "docker networking bridge host overlay drivers",
+                description: "Container connectivity",
+                icon: "🌐",
+                category: "Developer",
+                render: () => this.renderDockerNetworks()
+            },
+            dockerImagesContainers: {
+                name: "Image vs Cont",
+                searchTerms: "docker image vs container difference layers runtime",
+                description: "Blueprint vs Runtime",
+                icon: "🖼️",
+                category: "Developer",
+                render: () => this.renderDockerImagesContainers()
+            },
+            dockerCleanup: {
+                name: "Docker Prune",
+                searchTerms: "docker cleanup prune system image volume container",
+                description: "Space recovery guide",
+                icon: "🧹",
+                category: "Developer",
+                render: () => this.renderDockerCleanup()
+            },
+            dockerExec: {
+                name: "Docker Exec",
+                searchTerms: "docker exec interactive shell container access",
+                description: "Container access guide",
+                icon: "⌨️",
+                category: "Developer",
+                render: () => this.renderDockerExec()
+            },
+            dockerLogsGuide: {
+                name: "Docker Logs",
+                searchTerms: "docker logs stdout stderr troubleshooting follow",
+                description: "Output tracking guide",
+                icon: "📜",
+                category: "Developer",
+                render: () => this.renderDockerLogsGuide()
+            },
+            dockerPortMapping: {
+                name: "Port Mapping",
+                searchTerms: "docker port mapping publish host container",
+                description: "External access guide",
+                icon: "🔌",
+                category: "Developer",
+                render: () => this.renderDockerPortMapping()
+            },
+            dockerMultistage: {
+                name: "Multi-stage",
+                searchTerms: "docker multi-stage builds optimize image size",
+                description: "Image optimization",
+                icon: "📉",
+                category: "Developer",
+                render: () => this.renderDockerMultistage()
+            },
+            // === BATCH 67 - 720 TOOLS (KUBERNETES) ===
+            k8sPods: {
+                name: "K8s Pods",
+                searchTerms: "kubernetes pods scaling containers scheduling",
+                description: "Smallest unit guide",
+                icon: "☸️",
+                category: "Developer",
+                render: () => this.renderK8sPods()
+            },
+            k8sServices: {
+                name: "K8s Services",
+                searchTerms: "kubernetes services clusterip nodeport loadbalancer",
+                description: "Internal/External access",
+                icon: "🌐",
+                category: "Developer",
+                render: () => this.renderK8sServices()
+            },
+            k8sDeployments: {
+                name: "K8s Deploy",
+                searchTerms: "kubernetes deployments rollout rollback scaling",
+                description: "State management guide",
+                icon: "🚀",
+                category: "Developer",
+                render: () => this.renderK8sDeployments()
+            },
+            k8sNamespaces: {
+                name: "K8s Namespace",
+                searchTerms: "kubernetes namespaces isolation resources multi-tenancy",
+                description: "Isolation guide",
+                icon: "🏘️",
+                category: "Developer",
+                render: () => this.renderK8sNamespaces()
+            },
+            k8sConfigMaps: {
+                name: "ConfigMaps",
+                searchTerms: "kubernetes configmaps environment variables settings",
+                description: "App config guide",
+                icon: "⚙️",
+                category: "Developer",
+                render: () => this.renderK8sConfigMaps()
+            },
+            k8sSecrets: {
+                name: "K8s Secrets",
+                searchTerms: "kubernetes secrets sensitive data encryption",
+                description: "Sensitive data guide",
+                icon: "🤫",
+                category: "Developer",
+                render: () => this.renderK8sSecrets()
+            },
+            k8sIngress: {
+                name: "Ingress",
+                searchTerms: "kubernetes ingress controller routing ssl termination",
+                description: "HTTP routing guide",
+                icon: "🛣️",
+                category: "Developer",
+                render: () => this.renderK8sIngress()
+            },
+            k8sNodesClusters: {
+                name: "Nodes vs Clust",
+                searchTerms: "kubernetes node vs cluster master worker architecture",
+                description: "Architecture guide",
+                icon: "🏗️",
+                category: "Developer",
+                render: () => this.renderK8sNodesClusters()
+            },
+            kubectlTips: {
+                name: "Kubectl Pro",
+                searchTerms: "kubectl commands tips get describe logs exec apply",
+                description: "CLI mastery guide",
+                icon: "⌨️",
+                category: "Developer",
+                render: () => this.renderKubectlTips()
+            },
+            helmBasics: {
+                name: "Helm Guide",
+                searchTerms: "helm charts kubernetes package manager deployment",
+                description: "Package manager guide",
+                icon: "🛶",
+                category: "Developer",
+                render: () => this.renderHelmBasics()
+            },
+            // === BATCH 68 - 730 TOOLS (SQL & NoSQL) ===
+            sqlJoinsRef: {
+                name: "SQL Joins",
+                searchTerms: "sql joins inner left right full outer database",
+                description: "Visual join guide",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderSqlJoinsRef()
+            },
+            acidProperties: {
+                name: "ACID Props",
+                searchTerms: "acid properties database transactions atomicity consistency isolation durability",
+                description: "Transaction pillars",
+                icon: "⚗️",
+                category: "Developer",
+                render: () => this.renderAcidProperties()
+            },
+            baseProperties: {
+                name: "BASE Props",
+                searchTerms: "base properties nosql availability soft-state eventual consistency",
+                description: "NoSQL consistency",
+                icon: "🧪",
+                category: "Developer",
+                render: () => this.renderBaseProperties()
+            },
+            sqlNormalization: {
+                name: "Normalization",
+                searchTerms: "database normalization 1nf 2nf 3nf relational design",
+                description: "Relational design guide",
+                icon: "📏",
+                category: "Developer",
+                render: () => this.renderSqlNormalization()
+            },
+            dbIndexes: {
+                name: "DB Indexes",
+                searchTerms: "database indexes b-tree hash performance search",
+                description: "Query optimization",
+                icon: "📇",
+                category: "Developer",
+                render: () => this.renderDbIndexes()
+            },
+            capTheorem: {
+                name: "CAP Theorem",
+                searchTerms: "cap theorem consistency availability partition tolerance distributed systems",
+                description: "Distributed system trade-off",
+                icon: "🧢",
+                category: "Developer",
+                render: () => this.renderCapTheorem()
+            },
+            redisDataTypes: {
+                name: "Redis Types",
+                searchTerms: "redis data types strings lists sets hashes sorted-sets",
+                description: "In-memory data guide",
+                icon: "🏎️",
+                category: "Developer",
+                render: () => this.renderRedisDataTypes()
+            },
+            mongoCrud: {
+                name: "MongoDB CRUD",
+                searchTerms: "mongodb commands find insert update delete nosql",
+                description: "Document operations",
+                icon: "🍃",
+                category: "Developer",
+                render: () => this.renderMongoCrud()
+            },
+            sqlInjection: {
+                name: "SQL Injection",
+                searchTerms: "sql injection prevention owasp security database",
+                description: "Prevention guide",
+                icon: "💉",
+                category: "Security",
+                render: () => this.renderSqlInjection()
+            },
+            shardingVsPartitioning: {
+                name: "Shard vs Part",
+                searchTerms: "sharding vs partitioning database scaling horizontal vertical",
+                description: "Scaling strategy guide",
+                icon: "⚖️",
+                category: "Developer",
+                render: () => this.renderShardingVsPartitioning()
+            },
+            // === BATCH 69 - 740 TOOLS (SECURITY MYTHS & FACTS) ===
+            incognitoMyth: {
+                name: "Incognito Myth",
+                searchTerms: "incognito mode private browsing privacy tracking misconceptions",
+                description: "Privacy reality check",
+                icon: "🕶️",
+                category: "Security",
+                render: () => this.renderIncognitoMyth()
+            },
+            passwordComplexity: {
+                name: "Password Logic",
+                searchTerms: "password length vs complexity security strength brute force",
+                description: "Entropy selection guide",
+                icon: "🔐",
+                category: "Security",
+                render: () => this.renderPasswordComplexity()
+            },
+            vpnTruths: {
+                name: "VPN Truths",
+                searchTerms: "vpn security anonymity logs tracking myths reality",
+                description: "Anonymity guide",
+                icon: "🌐",
+                category: "Security",
+                render: () => this.renderVpnTruths()
+            },
+            twoFactorMethods: {
+                name: "2FA Methods",
+                searchTerms: "2fa mfa sms totp security keys authentication",
+                description: "Security level comparison",
+                icon: "📱",
+                category: "Security",
+                render: () => this.renderTwoFactorMethods()
+            },
+            phishingSigns: {
+                name: "Phishing Signs",
+                searchTerms: "phishing scam red flags protection email security",
+                description: "Fraud detection guide",
+                icon: "🎣",
+                category: "Security",
+                render: () => this.renderPhishingSigns()
+            },
+            hashingVsEncryption: {
+                name: "Hash vs Encrypt",
+                searchTerms: "hashing vs encryption difference security cryptography",
+                description: "Data protection types",
+                icon: "🔒",
+                category: "Security",
+                render: () => this.renderHashingVsEncryption()
+            },
+            passwordSalting: {
+                name: "Password Salt",
+                searchTerms: "password salting hashing pepper security database",
+                description: "Rainbow table defense",
+                icon: "🧂",
+                category: "Security",
+                render: () => this.renderPasswordSalting()
+            },
+            httpsVsHttp: {
+                name: "HTTPS vs HTTP",
+                searchTerms: "https http ssl tls encryption transport security",
+                description: "Transit security guide",
+                icon: "🛡️",
+                category: "Security",
+                render: () => this.renderHttpsVsHttp()
+            },
+            iotSecurity: {
+                name: "IoT Security",
+                searchTerms: "iot security smart home hardening firmware",
+                description: "Device hardening guide",
+                icon: "🏠",
+                category: "Security",
+                render: () => this.renderIotSecurity()
+            },
+            socialEngineering: {
+                name: "Social Eng.",
+                searchTerms: "social engineering pretexting baiting tailgating scams",
+                description: "Human hack guide",
+                icon: "👥",
+                category: "Security",
+                render: () => this.renderSocialEngineering()
+            },
+            // === BATCH 70 - 750 TOOLS (TERMINAL SHORTCUTS) ===
+            bashNav: {
+                name: "Bash Nav",
+                searchTerms: "bash navigation terminal commands cd ls pwd",
+                description: "Directory navigation",
+                icon: "📂",
+                category: "Developer",
+                render: () => this.renderBashNav()
+            },
+            terminalFiles: {
+                name: "Term Files",
+                searchTerms: "terminal file operations cp mv rm mkdir touch",
+                description: "File management",
+                icon: "📄",
+                category: "Developer",
+                render: () => this.renderTerminalFiles()
+            },
+            processMgmt: {
+                name: "Process Mgmt",
+                searchTerms: "terminal process top kill ps performance system",
+                description: "Job control guide",
+                icon: "⚙️",
+                category: "Developer",
+                render: () => this.renderProcessMgmt()
+            },
+            ioRedirection: {
+                name: "I/O Redirect",
+                searchTerms: "bash redirection stdout stderr pipes append",
+                description: "Data flow guide",
+                icon: "🔀",
+                category: "Developer",
+                render: () => this.renderIoRedirection()
+            },
+            grepFind: {
+                name: "Grep & Find",
+                searchTerms: "grep find search terminal files patterns",
+                description: "Search efficiency",
+                icon: "🔍",
+                category: "Developer",
+                render: () => this.renderGrepFind()
+            },
+            historySearch: {
+                name: "Term History",
+                searchTerms: "terminal history ctrl+r search persistence",
+                description: "Command search tips",
+                icon: "📜",
+                category: "Developer",
+                render: () => this.renderHistorySearch()
+            },
+            aliasCreation: {
+                name: "Alias Guide",
+                searchTerms: "terminal alias bashrc shortcut custom commands",
+                description: "Speed shortcuts",
+                icon: "⚡",
+                category: "Developer",
+                render: () => this.renderAliasCreation()
+            },
+            chmodChown: {
+                name: "Permissions",
+                searchTerms: "chmod chown terminal linux permissions ownership",
+                description: "Access control guide",
+                icon: "🔑",
+                category: "Developer",
+                render: () => this.renderChmodChown()
+            },
+            vimBasics: {
+                name: "Vim Basics",
+                searchTerms: "vim editor shortcuts navigation modes save quit",
+                description: "Modal editing starter",
+                icon: "🖊️",
+                category: "Developer",
+                render: () => this.renderVimBasics()
+            },
+            screenTmux: {
+                name: "Multiplexers",
+                searchTerms: "screen tmux terminal persistence sessions",
+                description: "Session persistence",
+                icon: "🖥️",
+                category: "Developer",
+                render: () => this.renderScreenTmux()
+            },
+            // === BATCH 71 - 760 TOOLS (DESIGN SYSTEM BASICS) ===
+            colorPalettes: {
+                name: "Palettes",
+                searchTerms: "design system color palettes primary secondary accent",
+                description: "Color architecture",
+                icon: "🎨",
+                category: "Design",
+                render: () => this.renderColorPalettes()
+            },
+            typographyScales: {
+                name: "Typo Scales",
+                searchTerms: "typography design system hierarchy scale font-size",
+                description: "Type hierarchy guide",
+                icon: "🔤",
+                category: "Design",
+                render: () => this.typographyScalesRender()
+            },
+            spacingSystem: {
+                name: "Spacing 8pt",
+                searchTerms: "design system spacing 8px grid layout consistency",
+                description: "Logical layout guide",
+                icon: "📏",
+                category: "Design",
+                render: () => this.renderSpacingSystem()
+            },
+            componentStates: {
+                name: "States",
+                searchTerms: "component states hover active disabled focus design",
+                description: "Interaction states",
+                icon: "🔘",
+                category: "Design",
+                render: () => this.renderComponentStates()
+            },
+            iconographySys: {
+                name: "Icon System",
+                searchTerms: "iconography consistency metaphor size design system",
+                description: "Visual metaphor guide",
+                icon: "🖼️",
+                category: "Design",
+                render: () => this.renderIconographySys()
+            },
+            accessibilityDs: {
+                name: "A11y System",
+                searchTerms: "accessibility design system contrast aria standards",
+                description: "Inclusive design guide",
+                icon: "♿",
+                category: "Design",
+                render: () => this.renderAccessibilityDs()
+            },
+            shadowSystems: {
+                name: "Shadows",
+                searchTerms: "design system shadows elevation depth layering",
+                description: "Z-axis depth guide",
+                icon: "🌘",
+                category: "Design",
+                render: () => this.renderShadowSystems()
+            },
+            borderRadii: {
+                name: "Radii",
+                searchTerms: "border radius softness design system corners",
+                description: "Shape personality",
+                icon: "⬛",
+                category: "Design",
+                render: () => this.renderBorderRadii()
+            },
+            buttonVarieties: {
+                name: "Buttons",
+                searchTerms: "design system buttons primary ghost text variants",
+                description: "Action hierarchy",
+                icon: "🖱️",
+                category: "Design",
+                render: () => this.renderButtonVarieties()
+            },
+            designTokens: {
+                name: "Tokens",
+                searchTerms: "design tokens variables cross-platform hardcoded",
+                description: "Bridge design/code",
+                icon: "🏷️",
+                category: "Design",
+                render: () => this.renderDesignTokens()
+            },
+            // === BATCH 72 - 770 TOOLS (MODERN JS FEATURES) ===
+            optionalChaining: {
+                name: "Optional Chain",
+                searchTerms: "javascript optional chaining ?. undefined null check",
+                description: "Safe property access",
+                icon: "🔗",
+                category: "Developer",
+                render: () => this.renderOptionalChaining()
+            },
+            nullishCoalescing: {
+                name: "Nullish Coal.",
+                searchTerms: "javascript nullish coalescing ?? null undefined default",
+                description: "Better default values",
+                icon: "❓",
+                category: "Developer",
+                render: () => this.renderNullishCoalescing()
+            },
+            arrayDestructuring: {
+                name: "Arr Destruct",
+                searchTerms: "javascript array destructuring variables unpacking",
+                description: "Unpack arrays easily",
+                icon: "🍱",
+                category: "Developer",
+                render: () => this.renderArrayDestructuring()
+            },
+            objectDestructuring: {
+                name: "Obj Destruct",
+                searchTerms: "javascript object destructuring variables unpacking",
+                description: "Unpack objects easily",
+                icon: "📦",
+                category: "Developer",
+                render: () => this.renderObjectDestructuring()
+            },
+            spreadOperator: {
+                name: "Spread Op",
+                searchTerms: "javascript spread operator ... arrays objects copy",
+                description: "Expand & copy guide",
+                icon: "🍞",
+                category: "Developer",
+                render: () => this.renderSpreadOperator()
+            },
+            restParameters: {
+                name: "Rest Params",
+                searchTerms: "javascript rest parameters ... functions arguments",
+                description: "Infinite arguments guide",
+                icon: "🧺",
+                category: "Developer",
+                render: () => this.renderRestParameters()
+            },
+            templateLiterals: {
+                name: "Template Lit",
+                searchTerms: "javascript template literals backticks interpolation string",
+                description: "Modern strings guide",
+                icon: "📝",
+                category: "Developer",
+                render: () => this.renderTemplateLiterals()
+            },
+            arrowFunctions: {
+                name: "Arrow Funcs",
+                searchTerms: "javascript arrow functions => this context syntax",
+                description: "Sleek function guide",
+                icon: "🏹",
+                category: "Developer",
+                render: () => this.renderArrowFunctions()
+            },
+            defaultParameters: {
+                name: "Default Params",
+                searchTerms: "javascript default parameters function arguments fallback",
+                description: "Arg fallbacks guide",
+                icon: "🛡️",
+                category: "Developer",
+                render: () => this.renderDefaultParameters()
+            },
+            asyncAwaitRef: {
+                name: "Async/Await",
+                searchTerms: "javascript async await promises asynchronous flow",
+                description: "Async flow guide",
+                icon: "🚀",
+                category: "Developer",
+                render: () => this.renderAsyncAwaitRef()
+            },
+            // === BATCH 73 - 780 TOOLS (BROWSER PERFORMANCE) ===
+            debounceRef: {
+                name: "Debouncing",
+                searchTerms: "browser performance debouncing execution control scroll resize",
+                description: "Delay execution guide",
+                icon: "⏱️",
+                category: "Developer",
+                render: () => this.renderDebounceRef()
+            },
+            throttleRef: {
+                name: "Throttling",
+                searchTerms: "browser performance throttling frequency control scroll resize",
+                description: "Limit frequency guide",
+                icon: "🚰",
+                category: "Developer",
+                render: () => this.renderThrottleRef()
+            },
+            lazyLoadingRef: {
+                name: "Lazy Loading",
+                searchTerms: "performance lazy loading images scripts intersection observer",
+                description: "Deffered load guide",
+                icon: "💤",
+                category: "Developer",
+                render: () => this.renderLazyLoadingRef()
+            },
+            criticalCss: {
+                name: "Critical CSS",
+                searchTerms: "performance critical css above the fold render blocking",
+                description: "First paint speed",
+                icon: "⚡",
+                category: "Developer",
+                render: () => this.renderCriticalCss()
+            },
+            webVitalsRef: {
+                name: "Web Vitals",
+                searchTerms: "google web vitals lcp fid cls performance audit",
+                description: "User exp metrics",
+                icon: "🩺",
+                category: "Developer",
+                render: () => this.renderWebVitalsRef()
+            },
+            assetMinification: {
+                name: "Minification",
+                searchTerms: "performance minification css js uglify reduction",
+                description: "File size reduction",
+                icon: "🤏",
+                category: "Developer",
+                render: () => this.renderAssetMinification()
+            },
+            imageFormats: {
+                name: "Img Formats",
+                searchTerms: "performance image formats webp avif jpg png comparison",
+                description: "Modern format guide",
+                icon: "🖼️",
+                category: "Developer",
+                render: () => this.renderImageFormats()
+            },
+            browserCaching: {
+                name: "Caching",
+                searchTerms: "performance browser caching cache-control headers expires",
+                description: "Repeat visit speed",
+                icon: "🗄️",
+                category: "Developer",
+                render: () => this.renderBrowserCaching()
+            },
+            preloadPrefetch: {
+                name: "Pre / Pre",
+                searchTerms: "performance preload vs prefetch link tags browser hinting",
+                description: "Load hinting guide",
+                icon: "🏃",
+                category: "Developer",
+                render: () => this.renderPreloadPrefetch()
+            },
+            cdnBenefits: {
+                name: "CDN Guide",
+                searchTerms: "performance cdn benefits edge compute latency",
+                description: "Global delivery guide",
+                icon: "🌍",
+                category: "Developer",
+                render: () => this.renderCdnBenefits()
+            },
+            // === BATCH 74 - 790 TOOLS (ERROR HANDLING) ===
+            tryCatchRef: {
+                name: "Try/Catch",
+                searchTerms: "javascript try catch finally error handling exceptions",
+                description: "Safe execution guide",
+                icon: "🎣",
+                category: "Developer",
+                render: () => this.renderTryCatchRef()
+            },
+            errorBoundaries: {
+                name: "Error Bounds",
+                searchTerms: "error boundaries react web-components fallback ui crash",
+                description: "UI crash safety",
+                icon: "🧱",
+                category: "Developer",
+                render: () => this.renderErrorBoundaries()
+            },
+            http400s: {
+                name: "HTTP 400s",
+                searchTerms: "http status client errors 400 401 403 404 forbidden unauthorized",
+                description: "Client error guide",
+                icon: "🚫",
+                category: "Developer",
+                render: () => this.renderHttp400s()
+            },
+            http500s: {
+                name: "HTTP 500s",
+                searchTerms: "http status server errors 500 502 503 504 gateway timeout",
+                description: "Server error guide",
+                icon: "🔥",
+                category: "Developer",
+                render: () => this.renderHttp500s()
+            },
+            customErrorsJs: {
+                name: "Custom Errors",
+                searchTerms: "javascript custom error class extend error throw",
+                description: "Named error guide",
+                icon: "🏷️",
+                category: "Developer",
+                render: () => this.renderCustomErrorsJs()
+            },
+            promiseRejections: {
+                name: "Promise Rej",
+                searchTerms: "javascript promise rejections unhandledrejection catch flow",
+                description: "Async error guide",
+                icon: "📉",
+                category: "Developer",
+                render: () => this.renderPromiseRejections()
+            },
+            errorLoggingRef: {
+                name: "Error Logs",
+                searchTerms: "error logging sentry logrocket observability production",
+                description: "Production tracking",
+                icon: "🕵️",
+                category: "Developer",
+                render: () => this.renderErrorLoggingRef()
+            },
+            gracefulFallbacks: {
+                name: "Fallbacks",
+                searchTerms: "error handling graceful fallbacks ui messages feedback",
+                description: "User rescue guide",
+                icon: "🪂",
+                category: "Developer",
+                render: () => this.renderGracefulFallbacks()
+            },
+            inputValidationRef: {
+                name: "Validation",
+                searchTerms: "input validation client-side server-side security regex",
+                description: "Data integrity guide",
+                icon: "✅",
+                category: "Developer",
+                render: () => this.renderInputValidationRef()
+            },
+            retryLogicRef: {
+                name: "Retry Logic",
+                searchTerms: "error handling retry logic exponential backoff network",
+                description: "Resilience guide",
+                icon: "🔄",
+                category: "Developer",
+                render: () => this.renderRetryLogicRef()
+            },
+            // === BATCH 75 - 800 TOOLS (DEVELOPMENT MINDSET) ===
+            dryPrinciple: {
+                name: "DRY",
+                searchTerms: "dry principle don't repeat yourself clean code modularity",
+                description: "Avoid duplication",
+                icon: "🧊",
+                category: "Mindset",
+                render: () => this.renderDryPrinciple()
+            },
+            kissPrinciple: {
+                name: "KISS",
+                searchTerms: "kiss principle keep it simple stupid engineering philosophy",
+                description: "Simplicity guide",
+                icon: "💋",
+                category: "Mindset",
+                render: () => this.renderKissPrinciple()
+            },
+            yagniRef: {
+                name: "YAGNI",
+                searchTerms: "yagni you ain't gonna need it over-engineering features",
+                description: "Avoid bloat guide",
+                icon: "🙅",
+                category: "Mindset",
+                render: () => this.renderYagniRef()
+            },
+            sepConcerns: {
+                name: "Sep. Concerns",
+                searchTerms: "separation of concerns architecture modularity decoupling",
+                description: "Clean structure guide",
+                icon: "🗂️",
+                category: "Mindset",
+                render: () => this.renderSepConcerns()
+            },
+            compVsInheritance: {
+                name: "Comp vs Inh",
+                searchTerms: "composition vs inheritance oops design patterns",
+                description: "Core design choice",
+                icon: "🧩",
+                category: "Mindset",
+                render: () => this.renderCompVsInheritance()
+            },
+            solidPrinciples: {
+                name: "SOLID",
+                searchTerms: "solid principles oops design patterns clean code",
+                description: "Architecture pillars",
+                icon: "🧱",
+                category: "Mindset",
+                render: () => this.renderSolidPrinciples()
+            },
+            codeReviewsRef: {
+                name: "Code Reviews",
+                searchTerms: "code reviews best practices feedback quality collaboration",
+                description: "Quality control guide",
+                icon: "👁️",
+                category: "Mindset",
+                render: () => this.renderCodeReviewsRef()
+            },
+            techDebtRef: {
+                name: "Tech Debt",
+                searchTerms: "technical debt software maintenance complexity cost",
+                description: "Maintenance reality",
+                icon: "📉",
+                category: "Mindset",
+                render: () => this.renderTechDebtRef()
+            },
+            refactoringRef: {
+                name: "Refactoring",
+                searchTerms: "refactoring clean code technical debt improvement",
+                description: "Continuous polish",
+                icon: "🔨",
+                category: "Mindset",
+                render: () => this.renderRefactoringRef()
+            },
+            documentationRef: {
+                name: "Documentation",
+                searchTerms: "software documentation why it matters maintenance knowledge",
+                description: "Knowledge preservation",
+                icon: "📚",
+                category: "Mindset",
+                render: () => this.renderDocumentationRef()
+            },
+            // === BATCH 76 - 810 TOOLS (TESTING PILLARS) ===
+            unitTesting: {
+                name: "Unit Tests",
+                searchTerms: "testing unit tests functions logic jest vitest",
+                description: "Atomic logic testing",
+                icon: "🧪",
+                category: "Developer",
+                render: () => this.renderUnitTesting()
+            },
+            integrationTesting: {
+                name: "Integ. Tests",
+                searchTerms: "testing integration modules communication backend frontend",
+                description: "Module connection test",
+                icon: "🔌",
+                category: "Developer",
+                render: () => this.renderIntegrationTesting()
+            },
+            e2eTesting: {
+                name: "E2E Testing",
+                searchTerms: "testing end to end selenium cypress playwright browser",
+                description: "Full user flow test",
+                icon: "🤖",
+                category: "Developer",
+                render: () => this.renderE2eTesting()
+            },
+            tddGuide: {
+                name: "TDD Guide",
+                searchTerms: "testing test driven development red green refactor",
+                description: "Test-first workflow",
+                icon: "🔄",
+                category: "Developer",
+                render: () => this.renderTddGuide()
+            },
+            bddGuide: {
+                name: "BDD Guide",
+                searchTerms: "testing behavior driven development gherkin given when then",
+                description: "Behavior-first guide",
+                icon: "🎭",
+                category: "Developer",
+                render: () => this.renderBddGuide()
+            },
+            mockingSpying: {
+                name: "Mock & Spy",
+                searchTerms: "testing mocking spying stubbing dependencies",
+                description: "Isolate test code",
+                icon: "🤫",
+                category: "Developer",
+                render: () => this.renderMockingSpying()
+            },
+            codeCoverage: {
+                name: "Code Coverage",
+                searchTerms: "testing coverage percentage metrics quality",
+                description: "Test density guide",
+                icon: "📊",
+                category: "Developer",
+                render: () => this.renderCodeCoverage()
+            },
+            smokeTesting: {
+                name: "Smoke Tests",
+                searchTerms: "testing smoke tests stability basic functionality",
+                description: "Core stability check",
+                icon: "💨",
+                category: "Developer",
+                render: () => this.renderSmokeTesting()
+            },
+            snapshotTesting: {
+                name: "Snapshots",
+                searchTerms: "testing snapshot regression ui comparison jest",
+                description: "UI regression guide",
+                icon: "📸",
+                category: "Developer",
+                render: () => this.renderSnapshotTesting()
+            },
+            regressionTesting: {
+                name: "Regression Test",
+                searchTerms: "testing regression bugs fix verification",
+                description: "Fix verification guide",
+                icon: "⏪",
+                category: "Developer",
+                render: () => this.renderRegressionTesting()
+            },
+            // === BATCH 77 - 820 TOOLS (MARKDOWN REFERENCE) ===
+            mdHeaders: {
+                name: "MD Headers",
+                searchTerms: "markdown headers h1 h2 h3 h4 h5 h6 sync",
+                description: "Heading syntax guide",
+                icon: "📑",
+                category: "Text",
+                render: () => this.renderMdHeaders()
+            },
+            mdFormatting: {
+                name: "MD Format",
+                searchTerms: "markdown bold italic strikethrough code text",
+                description: "Text style guide",
+                icon: "🖋️",
+                category: "Text",
+                render: () => this.renderMdFormatting()
+            },
+            mdLinks: {
+                name: "MD Links",
+                searchTerms: "markdown links images syntax reference",
+                description: "Media & link guide",
+                icon: "🔗",
+                category: "Text",
+                render: () => this.renderMdLinks()
+            },
+            mdLists: {
+                name: "MD Lists",
+                searchTerms: "markdown lists ordered unordered nested",
+                description: "Bullet point guide",
+                icon: "📋",
+                category: "Text",
+                render: () => this.renderMdLists()
+            },
+            mdCode: {
+                name: "MD Code",
+                searchTerms: "markdown code blocks inline highlight syntax",
+                description: "Snippet formatting",
+                icon: "💻",
+                category: "Text",
+                render: () => this.renderMdCode()
+            },
+            mdTables: {
+                name: "MD Tables",
+                searchTerms: "markdown tables rows columns alignment",
+                description: "Data grid syntax",
+                icon: "📅",
+                category: "Text",
+                render: () => this.renderMdTables()
+            },
+            mdQuotes: {
+                name: "MD Quotes",
+                searchTerms: "markdown blockquotes citation text",
+                description: "Citation syntax",
+                icon: "💬",
+                category: "Text",
+                render: () => this.renderMdQuotes()
+            },
+            mdTaskLists: {
+                name: "MD TaskLists",
+                searchTerms: "markdown task list checkbox github",
+                description: "Todo list syntax",
+                icon: "☑️",
+                category: "Text",
+                render: () => this.renderMdTaskLists()
+            },
+            mdHorizRule: {
+                name: "MD Dividers",
+                searchTerms: "markdown horizontal rule hr separator",
+                description: "Content splitting",
+                icon: "➖",
+                category: "Text",
+                render: () => this.renderMdHorizRule()
+            },
+            mdEscaping: {
+                name: "MD Escaping",
+                searchTerms: "markdown escape characters special literal",
+                description: "Literal symbol guide",
+                icon: "🛡️",
+                category: "Text",
+                render: () => this.renderMdEscaping()
+            },
+            // === BATCH 78 - 830 TOOLS (CHROME EXT BASICS) ===
+            extManifest: {
+                name: "Ext Manifest",
+                searchTerms: "chrome extension manifest v3 instructions json",
+                description: "Entry point guide",
+                icon: "📄",
+                category: "Developer",
+                render: () => this.renderExtManifest()
+            },
+            extBackground: {
+                name: "Background Scr.",
+                searchTerms: "chrome extension background service workers scripts",
+                description: "Core logic guide",
+                icon: "⚙️",
+                category: "Developer",
+                render: () => this.renderExtBackground()
+            },
+            extContent: {
+                name: "Content Scr.",
+                searchTerms: "chrome extension content scripts dom injection",
+                description: "Page interaction",
+                icon: "💉",
+                category: "Developer",
+                render: () => this.renderExtContent()
+            },
+            extPopup: {
+                name: "Ext PopupUI",
+                searchTerms: "chrome extension popup ui html css action",
+                description: "Icon menu guide",
+                icon: "🖱️",
+                category: "Developer",
+                render: () => this.renderExtPopup()
+            },
+            extOptions: {
+                name: "Ext Options",
+                searchTerms: "chrome extension options page settings user",
+                description: "Settings page guide",
+                icon: "⚙️",
+                category: "Developer",
+                render: () => this.renderExtOptions()
+            },
+            extStorage: {
+                name: "Ext Storage",
+                searchTerms: "chrome extension storage sync local api",
+                description: "Data persistence",
+                icon: "💾",
+                category: "Developer",
+                render: () => this.renderExtStorage()
+            },
+            extPermissions: {
+                name: "Ext Perms",
+                searchTerms: "chrome extension permissions tabs storage host",
+                description: "Access control guide",
+                icon: "🔑",
+                category: "Developer",
+                render: () => this.renderExtPermissions()
+            },
+            extMessaging: {
+                name: "Ext Messaging",
+                searchTerms: "chrome extension messaging background content popup",
+                description: "Script communication",
+                icon: "💬",
+                category: "Developer",
+                render: () => this.renderExtMessaging()
+            },
+            extIcons: {
+                name: "Ext Icons",
+                searchTerms: "chrome extension icons sizes assets manifest",
+                description: "Asset requirements",
+                icon: "🖼️",
+                category: "Developer",
+                render: () => this.renderExtIcons()
+            },
+            extDeploy: {
+                name: "Ext Deploy",
+                searchTerms: "chrome extension publishing dashboard store webstore",
+                description: "Publishing guide",
+                icon: "🚀",
+                category: "Developer",
+                render: () => this.renderExtDeploy()
+            },
+            // === BATCH 79 - 840 TOOLS (REGEX FUNDAMENTALS) ===
+            regexChars: {
+                name: "RegEx Chars",
+                searchTerms: "regex characters digit word space literal",
+                description: "Basic symbol match",
+                icon: "🔡",
+                category: "Developer",
+                render: () => this.renderRegexChars()
+            },
+            regexQuantifiers: {
+                name: "RegEx Quant.",
+                searchTerms: "regex quantifiers star plus question curly",
+                description: "Frequency matching",
+                icon: "🔢",
+                category: "Developer",
+                render: () => this.renderRegexQuantifiers()
+            },
+            regexAnchors: {
+                name: "RegEx Anchors",
+                searchTerms: "regex anchors start end boundary word",
+                description: "Position matching",
+                icon: "⚓",
+                category: "Developer",
+                render: () => this.renderRegexAnchors()
+            },
+            regexClasses: {
+                name: "RegEx Classes",
+                searchTerms: "regex character classes sets ranges negation",
+                description: "Set matching guide",
+                icon: "🗂️",
+                category: "Developer",
+                render: () => this.renderRegexClasses()
+            },
+            regexGroups: {
+                name: "RegEx Groups",
+                searchTerms: "regex groups capturing non-capturing references",
+                description: "Logic clustering",
+                icon: "📂",
+                category: "Developer",
+                render: () => this.renderRegexGroups()
+            },
+            regexLookaround: {
+                name: "RegEx Lookahead",
+                searchTerms: "regex lookahead lookbehind positive negative asserting",
+                description: "Contextual matching",
+                icon: "👀",
+                category: "Developer",
+                render: () => this.renderRegexLookaround()
+            },
+            regexFlags: {
+                name: "RegEx Flags",
+                searchTerms: "regex flags global case multiline unicode sticky",
+                description: "Search mode guide",
+                icon: "🚩",
+                category: "Developer",
+                render: () => this.renderRegexFlags()
+            },
+            regexEscaping: {
+                name: "RegEx Escape",
+                searchTerms: "regex escaping special characters backslash",
+                description: "Symbol literal guide",
+                icon: "🛡️",
+                category: "Developer",
+                render: () => this.renderRegexEscaping()
+            },
+            regexReplace: {
+                name: "RegEx Replace",
+                searchTerms: "regex replace substitution backreferences strings",
+                description: "String swap guide",
+                icon: "🔄",
+                category: "Developer",
+                render: () => this.renderRegexReplace()
+            },
+            regexTesting: {
+                name: "RegEx Testing",
+                searchTerms: "regex testing methods .test() .match() javascript",
+                description: "JS usage guide",
+                icon: "🧪",
+                category: "Developer",
+                render: () => this.renderRegexTesting()
+            },
+            // === BATCH 80 - 850 TOOLS (ACCESSIBILITY STANDARDS) ===
+            wcagGuide: {
+                name: "WCAG Guide",
+                searchTerms: "accessibility wcag a aa aaa standards",
+                description: "Web accessibility levels",
+                icon: "♿",
+                category: "UX/UI",
+                render: () => this.renderWcagGuide()
+            },
+            ariaRoles: {
+                name: "ARIA Roles",
+                searchTerms: "accessibility aria roles landmark button alert",
+                description: "Semantic web roles",
+                icon: "🏷️",
+                category: "UX/UI",
+                render: () => this.renderAriaRoles()
+            },
+            screenReaders: {
+                name: "Screen Readers",
+                searchTerms: "accessibility screen reader nvda jaws voiceover",
+                description: "Screen reader basics",
+                icon: "🗣️",
+                category: "UX/UI",
+                render: () => this.renderScreenReaders()
+            },
+            keyboardNav: {
+                name: "Keyboard Nav",
+                searchTerms: "accessibility keyboard navigation tab index focus",
+                description: "Tabbing & focus flow",
+                icon: "⌨️",
+                category: "UX/UI",
+                render: () => this.renderKeyboardNav()
+            },
+            contrastCheck: {
+                name: "Contrast Check",
+                searchTerms: "accessibility contrast ratio color visibility",
+                description: "Color readability",
+                icon: "🌓",
+                category: "UX/UI",
+                render: () => this.renderContrastCheck()
+            },
+            altTextGuide: {
+                name: "Alt Text",
+                searchTerms: "accessibility alt text images descriptive",
+                description: "Image alternative text",
+                icon: "🖼️",
+                category: "UX/UI",
+                render: () => this.renderAltTextGuide()
+            },
+            semanticHtml: {
+                name: "Semantic HTML",
+                searchTerms: "accessibility semantics main nav footer article",
+                description: "Structural meaning",
+                icon: "🏗️",
+                category: "UX/UI",
+                render: () => this.renderSemanticHtml()
+            },
+            focusVisible: {
+                name: "Focus Visible",
+                searchTerms: "accessibility focus-visible ring outline",
+                description: "Keyboard focus styles",
+                icon: "⭕",
+                category: "UX/UI",
+                render: () => this.renderFocusVisible()
+            },
+            reducedMotion: {
+                name: "Reduced Motion",
+                searchTerms: "accessibility prefers-reduced-motion animation",
+                description: "Sensory sensitivity",
+                icon: "📉",
+                category: "UX/UI",
+                render: () => this.renderReducedMotion()
+            },
+            accessibleForms: {
+                name: "A11y Forms",
+                searchTerms: "accessibility forms labels errors fieldset",
+                description: "Input accessibility",
+                icon: "📝",
+                category: "UX/UI",
+                render: () => this.renderAccessibleForms()
+            },
+            // === BATCH 81 - 860 TOOLS (ADVANCED JS PATTERNS) ===
+            singletonPattern: {
+                name: "Singleton",
+                searchTerms: "design patterns singleton instance global",
+                description: "Single instance guide",
+                icon: "1️⃣",
+                category: "Developer",
+                render: () => this.renderSingletonPattern()
+            },
+            factoryPattern: {
+                name: "Factory",
+                searchTerms: "design patterns factory method creation",
+                description: "Object creator guide",
+                icon: "🏭",
+                category: "Developer",
+                render: () => this.renderFactoryPattern()
+            },
+            observerPattern: {
+                name: "Observer",
+                searchTerms: "design patterns observer pub sub events",
+                description: "Sub/Pub event guide",
+                icon: "🔔",
+                category: "Developer",
+                render: () => this.renderObserverPattern()
+            },
+            decoratorPattern: {
+                name: "Decorator",
+                searchTerms: "design patterns decorator wrapper functional",
+                description: "Behavior wrapper",
+                icon: "🎀",
+                category: "Developer",
+                render: () => this.renderDecoratorPattern()
+            },
+            facadePattern: {
+                name: "Facade",
+                searchTerms: "design patterns facade simplification api",
+                description: "Complexity hider",
+                icon: "🏛️",
+                category: "Developer",
+                render: () => this.renderFacadePattern()
+            },
+            strategyPattern: {
+                name: "Strategy",
+                searchTerms: "design patterns strategy algorithmic swap",
+                description: "Algorithmic swap",
+                icon: "🎯",
+                category: "Developer",
+                render: () => this.renderStrategyPattern()
+            },
+            proxyPattern: {
+                name: "Proxy",
+                searchTerms: "design patterns proxy agent middleware",
+                description: "Access control agent",
+                icon: "🛡️",
+                category: "Developer",
+                render: () => this.renderProxyPattern()
+            },
+            mediatorPattern: {
+                name: "Mediator",
+                searchTerms: "design patterns mediator communication central",
+                description: "Centralized comms",
+                icon: "🚥",
+                category: "Developer",
+                render: () => this.renderMediatorPattern()
+            },
+            bridgePattern: {
+                name: "Bridge",
+                searchTerms: "design patterns bridge abstraction implementation",
+                description: "Decoupling guide",
+                icon: "🌉",
+                category: "Developer",
+                render: () => this.renderBridgePattern()
+            },
+            flyweightPattern: {
+                name: "Flyweight",
+                searchTerms: "design patterns flyweight memory sharing",
+                description: "Object sharing guide",
+                icon: "🪶",
+                category: "Developer",
+                render: () => this.renderFlyweightPattern()
+            },
+            // === BATCH 82 - 870 TOOLS (NODE.JS BASICS) ===
+            nodeFsModule: {
+                name: "Node FS",
+                searchTerms: "nodejs fs module file system read write",
+                description: "File system API",
+                icon: "📂",
+                category: "Backend",
+                render: () => this.renderNodeFsModule()
+            },
+            nodePathModule: {
+                name: "Node Path",
+                searchTerms: "nodejs path module resolve join dirname",
+                description: "File path utility",
+                icon: "🗺️",
+                category: "Backend",
+                render: () => this.renderNodePathModule()
+            },
+            nodeHttpModule: {
+                name: "Node HTTP",
+                searchTerms: "nodejs http module server request response",
+                description: "Native server API",
+                icon: "🌐",
+                category: "Backend",
+                render: () => this.renderNodeHttpModule()
+            },
+            nodeEvents: {
+                name: "Node Events",
+                searchTerms: "nodejs events eventemitter emit on listener",
+                description: "Event-driven arch",
+                icon: "📢",
+                category: "Backend",
+                render: () => this.renderNodeEvents()
+            },
+            nodeStreams: {
+                name: "Node Streams",
+                searchTerms: "nodejs streams pipe readable writable chunk",
+                description: "Data flow handling",
+                icon: "🚰",
+                category: "Backend",
+                render: () => this.renderNodeStreams()
+            },
+            nodeBuffers: {
+                name: "Node Buffers",
+                searchTerms: "nodejs buffers binary data raw memory",
+                description: "Binary data guide",
+                icon: "💾",
+                category: "Backend",
+                render: () => this.renderNodeBuffers()
+            },
+            npmBasics: {
+                name: "NPM Basics",
+                searchTerms: "nodejs npm install publish modules registry",
+                description: "Package mgmt guide",
+                icon: "📦",
+                category: "Backend",
+                render: () => this.renderNpmBasics()
+            },
+            packageJson: {
+                name: "package.json",
+                searchTerms: "nodejs package.json scripts dependencies version",
+                description: "Manifest breakdown",
+                icon: "📜",
+                category: "Backend",
+                render: () => this.renderPackageJson()
+            },
+            envVars: {
+                name: "Env Vars",
+                searchTerms: "nodejs process.env environment variables secret",
+                description: "Config management",
+                icon: "🔑",
+                category: "Backend",
+                render: () => this.renderEnvVars()
+            },
+            nodeProcess: {
+                name: "Node Process",
+                searchTerms: "nodejs process api argv exit platform",
+                description: "Process control API",
+                icon: "⚙️",
+                category: "Backend",
+                render: () => this.renderNodeProcess()
+            },
+            // === BATCH 83 - 880 TOOLS (WEB SECURITY) ===
+            xssDefense: {
+                name: "XSS Defense",
+                searchTerms: "security xss cross site scripting sanitization",
+                description: "Script injection fix",
+                icon: "💉",
+                category: "Security",
+                render: () => this.renderXssDefense()
+            },
+            csrfDefense: {
+                name: "CSRF Defense",
+                searchTerms: "security csrf cross site request forgery token",
+                description: "Request forgery fix",
+                icon: "🛡️",
+                category: "Security",
+                render: () => this.renderCsrfDefense()
+            },
+            sqlSecurity: {
+                name: "SQL Security",
+                searchTerms: "security sql injection prepared statements",
+                description: "Query safety guide",
+                icon: "💾",
+                category: "Security",
+                render: () => this.renderSqlSecurity()
+            },
+            bruteForce: {
+                name: "Brute Force",
+                searchTerms: "security brute force rate limit passwords",
+                description: "Attack prevention",
+                icon: "🔨",
+                category: "Security",
+                render: () => this.renderBruteForce()
+            },
+            rateLimiting: {
+                name: "Rate Limit",
+                searchTerms: "security rate limiting throttling api",
+                description: "Traffic control",
+                icon: "🚥",
+                category: "Security",
+                render: () => this.renderRateLimiting()
+            },
+            dataSanitization: {
+                name: "Sanitization",
+                searchTerms: "security data sanitization input html escape",
+                description: "Clean input guide",
+                icon: "🧼",
+                category: "Security",
+                render: () => this.renderDataSanitization()
+            },
+            passwordSalts: {
+                name: "Salts & Pepper",
+                searchTerms: "security password salts pepper hashing",
+                description: "Crypto hardening",
+                icon: "🧂",
+                category: "Security",
+                render: () => this.renderPasswordSalts()
+            },
+            oauthSecurity: {
+                name: "OAuth Sec.",
+                searchTerms: "security oauth2 openid connect scopes tokens",
+                description: "Auth delegation guide",
+                icon: "🔑",
+                category: "Security",
+                render: () => this.renderOauthSecurity()
+            },
+            mfaSecurity: {
+                name: "MFA Basics",
+                searchTerms: "security multi factor auth totp biometric",
+                description: "Auth hardening",
+                icon: "📱",
+                category: "Security",
+                render: () => this.renderMfaSecurity()
+            },
+            securityHeaders: {
+                name: "Sec. Headers",
+                searchTerms: "security http headers hsts csp x-frame-options",
+                description: "Browser hardening",
+                icon: "🛡️",
+                category: "Security",
+                render: () => this.renderSecurityHeaders()
+            },
+            // === BATCH 84 - 890 TOOLS (LATEST BROWSER APIS) ===
+            webShareApi: {
+                name: "Web Share",
+                searchTerms: "browser api share navigator.share social",
+                description: "Native sharing guide",
+                icon: "📤",
+                category: "Browser",
+                render: () => this.renderWebShareApi()
+            },
+            contactPickerApi: {
+                name: "Contact Pick",
+                searchTerms: "browser api contacts picker selection",
+                description: "Contact selection",
+                icon: "👥",
+                category: "Browser",
+                render: () => this.renderContactPickerApi()
+            },
+            screenWakeLock: {
+                name: "Wake Lock",
+                searchTerms: "browser api wake lock screen dimming",
+                description: "Keep screen awake",
+                icon: "💡",
+                category: "Browser",
+                render: () => this.renderScreenWakeLock()
+            },
+            broadcastChannel: {
+                name: "Broad. Chan.",
+                searchTerms: "browser api broadcast channel tab communication",
+                description: "Cross-tab comms",
+                icon: "📻",
+                category: "Browser",
+                render: () => this.renderBroadcastChannel()
+            },
+            vibrationApi: {
+                name: "Vibration API",
+                searchTerms: "browser api vibration haptic feedback",
+                description: "Haptic feedback",
+                icon: "📳",
+                category: "Browser",
+                render: () => this.renderVibrationApi()
+            },
+            resizeObserverApi: {
+                name: "Resize Obs.",
+                searchTerms: "browser api resize observer element size",
+                description: "Element size track",
+                icon: "📏",
+                category: "Browser",
+                render: () => this.renderResizeObserverApi()
+            },
+            requestIdleCallbackRef: {
+                name: "Idle Callback",
+                searchTerms: "browser api requestIdleCallback performance",
+                description: "Low-priority tasks",
+                icon: "⏸️",
+                category: "Browser",
+                render: () => this.renderRequestIdleCallbackRef()
+            },
+            webCryptoApi: {
+                name: "Web Crypto",
+                searchTerms: "browser api crypto encryption subtle",
+                description: "Browser encryption",
+                icon: "🔐",
+                category: "Browser",
+                render: () => this.renderWebCryptoApi()
+            },
+            paymentRequestApi: {
+                name: "Payment Req.",
+                searchTerms: "browser api payment request checkout applepay googlepay",
+                description: "Native payments",
+                icon: "💳",
+                category: "Browser",
+                render: () => this.renderPaymentRequestApi()
+            },
+            eyeDropperApi: {
+                name: "Eye Dropper",
+                searchTerms: "browser api eyedropper color picker",
+                description: "Color picker API",
+                icon: "🧪",
+                category: "Browser",
+                render: () => this.renderEyeDropperApi()
+            },
+            // === BATCH 85 - 900 TOOLS (UI LAYOUT PATTERNS) ===
+            holyGrailLayout: {
+                name: "Holy Grail",
+                searchTerms: "css layout holy grail 3 column grid flex",
+                description: "Classic 3-col layout",
+                icon: "🏆",
+                category: "Layout",
+                render: () => this.renderHolyGrailLayout()
+            },
+            stickySidebarLayout: {
+                name: "Sticky Side",
+                searchTerms: "css layout sidebar sticky aside",
+                description: "Modern sidebar",
+                icon: "📌",
+                category: "Layout",
+                render: () => this.renderStickySidebarLayout()
+            },
+            centerEverything: {
+                name: "Center All",
+                searchTerms: "css layout center middle grid flex",
+                description: "The 3-line fix",
+                icon: "🎯",
+                category: "Layout",
+                render: () => this.renderCenterEverything()
+            },
+            masonryLayout: {
+                name: "Masonry",
+                searchTerms: "css layout masonry columns pinterest grid",
+                description: "Pinterest-style",
+                icon: "🧱",
+                category: "Layout",
+                render: () => this.renderMasonryLayout()
+            },
+            gridCardsLayout: {
+                name: "Grid Cards",
+                searchTerms: "css layout cards responsive grid",
+                description: "Responsive cards",
+                icon: "🎴",
+                category: "Layout",
+                render: () => this.renderGridCardsLayout()
+            },
+            aspectRatioBox: {
+                name: "Aspect Box",
+                searchTerms: "css layout aspect-ratio video image",
+                description: "Box ratio guide",
+                icon: "📺",
+                category: "Layout",
+                render: () => this.renderAspectRatioBox()
+            },
+            fluidTypography: {
+                name: "Fluid Typo",
+                searchTerms: "css layout typography clamp responsive",
+                description: "clamp() based text",
+                icon: "🌊",
+                category: "Layout",
+                render: () => this.renderFluidTypography()
+            },
+            glassmorphismLayout: {
+                name: "Glassmorphism",
+                searchTerms: "css layout glass backdrop-filter blur",
+                description: "Frosted glass Effect",
+                icon: "🧊",
+                category: "Layout",
+                render: () => this.renderGlassmorphismLayout()
+            },
+            darkModeLayout: {
+                name: "Dark Mode",
+                searchTerms: "css layout dark theme prefers-color-scheme",
+                description: "Theme switching",
+                icon: "🌙",
+                category: "Layout",
+                render: () => this.renderDarkModeLayout()
+            },
+            scrollSnapLayout: {
+                name: "Scroll Snap",
+                searchTerms: "css layout scroll snap mobile desktop",
+                description: "Mobile-like scroll",
+                icon: "🖱️",
+                category: "Layout",
+                render: () => this.renderScrollSnapLayout()
+            },
+            // === BATCH 86 - 910 TOOLS (ES2022-2024 FEATURES) ===
+            privateFields: {
+                name: "Private Flds",
+                searchTerms: "js features private fields class hash",
+                description: "Class encapsulation",
+                icon: "🔒",
+                category: "JS",
+                render: () => this.renderPrivateFields()
+            },
+            topLevelAwait: {
+                name: "Top Await",
+                searchTerms: "js features top-level await modules async",
+                description: "Module loading",
+                icon: "🔝",
+                category: "JS",
+                render: () => this.renderTopLevelAwait()
+            },
+            arrayAtMethod: {
+                name: "Array.at()",
+                searchTerms: "js features array at relative index",
+                description: "Relative indexing",
+                icon: "📍",
+                category: "JS",
+                render: () => this.renderArrayAtMethod()
+            },
+            staticBlocks: {
+                name: "Static Blocks",
+                searchTerms: "js features class static block initialization",
+                description: "Class init guide",
+                icon: "🏗️",
+                category: "JS",
+                render: () => this.renderStaticBlocks()
+            },
+            objectHasOwn: {
+                name: "Object.hasOwn",
+                searchTerms: "js features object hasown property",
+                description: "Safe prop check",
+                icon: "✔️",
+                category: "JS",
+                render: () => this.renderObjectHasOwn()
+            },
+            errorCause: {
+                name: "Error Cause",
+                searchTerms: "js features error cause wrapping nesting",
+                description: "Error nesting guide",
+                icon: "🩹",
+                category: "JS",
+                render: () => this.renderErrorCause()
+            },
+            regexIndices: {
+                name: "Regex Indices",
+                searchTerms: "js features regex indices match flag d",
+                description: "Substring positions",
+                icon: "🔬",
+                category: "JS",
+                render: () => this.renderRegexIndices()
+            },
+            weakRefs: {
+                name: "WeakRefs",
+                searchTerms: "js features weakref finalization registry memory",
+                description: "Memory mgmt guide",
+                icon: "🧠",
+                category: "JS",
+                render: () => this.renderWeakRefs()
+            },
+            finalizationRegistry: {
+                name: "FinalRegistry",
+                searchTerms: "js features finalization registry garbage",
+                description: "GC cleanup guide",
+                icon: "🧹",
+                category: "JS",
+                render: () => this.renderFinalizationRegistry()
+            },
+            toSortedArray: {
+                name: "toSorted()",
+                searchTerms: "js features tosorted array non-mutating",
+                description: "Non-mutating sort",
+                icon: "🔢",
+                category: "JS",
+                render: () => this.renderToSortedArray()
+            },
+            // === BATCH 87 - 920 TOOLS (UNIX POWER TOOLS) ===
+            awkBasics: {
+                name: "Awk Basics",
+                searchTerms: "unix awk text processing field print",
+                description: "Text processing",
+                icon: "🦅",
+                category: "Unix",
+                render: () => this.renderAwkBasics()
+            },
+            sedBasics: {
+                name: "Sed Basics",
+                searchTerms: "unix sed stream editor substitute replace",
+                description: "Stream editing",
+                icon: "✂️",
+                category: "Unix",
+                render: () => this.renderSedBasics()
+            },
+            xargsGuide: {
+                name: "Xargs Guide",
+                searchTerms: "unix xargs arguments list command",
+                description: "Command chainer",
+                icon: "🔗",
+                category: "Unix",
+                render: () => this.renderXargsGuide()
+            },
+            curlAdvanced: {
+                name: "Curl Adv.",
+                searchTerms: "unix curl http headers request",
+                description: "Advanced networking",
+                icon: "➰",
+                category: "Unix",
+                render: () => this.renderCurlAdvanced()
+            },
+            wgetGuide: {
+                name: "Wget Guide",
+                searchTerms: "unix wget download recursive mirror",
+                description: "Download manager",
+                icon: "📥",
+                category: "Unix",
+                render: () => this.renderWgetGuide()
+            },
+            sshTunneling: {
+                name: "SSH Tunnel",
+                searchTerms: "unix ssh tunnel port forward local remote",
+                description: "Secure tunneling",
+                icon: "🚇",
+                category: "Unix",
+                render: () => this.renderSshTunneling()
+            },
+            cronSyntax: {
+                name: "Cron Syntax",
+                searchTerms: "unix cron job schedule crontab",
+                description: "Job scheduling",
+                icon: "⏰",
+                category: "Unix",
+                render: () => this.renderCronSyntax()
+            },
+            systemdUnits: {
+                name: "Systemd",
+                searchTerms: "unix systemd service unit status daemon",
+                description: "Service management",
+                icon: "⚙️",
+                category: "Unix",
+                render: () => this.renderSystemdUnits()
+            },
+            chrootJails: {
+                name: "Chroot Jails",
+                searchTerms: "unix chroot jail isolation container",
+                description: "Process isolation",
+                icon: "⛓️",
+                category: "Unix",
+                render: () => this.renderChrootJails()
+            },
+            envScope: {
+                name: "Env Scope",
+                searchTerms: "unix export environment variables local global",
+                description: "Variable scoping",
+                icon: "🌐",
+                category: "Unix",
+                render: () => this.renderEnvScope()
             }
         };
     }
@@ -20127,6 +22423,3163 @@ Online: ${n.onLine}
             </div>
         `;
     }
+
+    renderContainerQueries() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Container Qs</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>CQ:</b> Querying the size of a parent container rather than the viewport.<br><br>
+                <code>container-type: inline-size;</code><br>
+                <code>@container (min-width: 300px) { ... }</code>
+            </div>
+        `;
+    }
+
+    renderAspectRatioRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Aspect Ratio</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Property:</b> <code>aspect-ratio: 16 / 9;</code><br>
+                <b>Square:</b> 1 / 1<br>
+                <b>Video:</b> 16 / 9<br>
+                <b>Portrait:</b> 9 / 16<br>
+                <b>Photo:</b> 4 / 3
+            </div>
+        `;
+    }
+
+    renderCssClampCalc() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Clamp()</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>clamp(min, preferred, max)</code><br><br>
+                <b>Fluid Type:</b> <code>font-size: clamp(1rem, 5vw, 2.5rem);</code><br>
+                <i>The font scales with viewport but stays within bounds.</i>
+            </div>
+        `;
+    }
+
+    renderSubgridRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Subgrid</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>grid-template-columns: subgrid;</code><br><br>
+                Allows nested grid items to align to the tracks of the parent grid.
+            </div>
+        `;
+    }
+
+    renderLogicalProperties() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Logical Prop</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Block/Inline:</b> Direction-agnostic spacing.<br>
+                - <code>margin-block-start</code> (Top in LTR)<br>
+                - <code>margin-inline-end</code> (Right in LTR)<br>
+                - <code>padding-inline</code> (Left & Right)
+            </div>
+        `;
+    }
+
+    renderCssVariablesRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Variables</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Custom Props:</b><br>
+                <code>--main-bg: #fff;</code><br>
+                <code>background: var(--main-bg);</code><br><br>
+                Cascade-aware and dynamic.
+            </div>
+        `;
+    }
+
+    renderDisplayContents() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Disp: Contents</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Effect:</b> The element itself disappears (no box), but its children remain in the layout as if they were direct children of the parent.
+            </div>
+        `;
+    }
+
+    renderObjectFitRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Object Fit</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Values:</b><br>
+                <b>cover:</b> Fills box, crops edges.<br>
+                <b>contain:</b> Shows full image, letterboxed.<br>
+                <b>fill:</b> Stretches image.
+            </div>
+        `;
+    }
+
+    renderScrollSnapRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scroll Snap</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Parent:</b> <code>scroll-snap-type: x mandatory;</code><br>
+                <b>Child:</b> <code>scroll-snap-align: center;</code><br><br>
+                Native slider behavior.
+            </div>
+        `;
+    }
+
+    renderGlassmorphismRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Glassmorphism</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Backdrop:</b><br>
+                <code>background: rgba(255, 255, 255, 0.2);</code><br>
+                <code>backdrop-filter: blur(10px);</code><br>
+                <code>border: 1px solid rgba(255, 255, 255, 0.1);</code>
+            </div>
+        `;
+    }
+
+    renderSpeedOfLight() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Light Speed</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>c = 299,792,458 m/s</b><br><br>
+                The maximum speed at which all conventional matter and information in the universe can travel.
+            </div>
+        `;
+    }
+
+    renderGravitationalConst() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Gravity (G)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>G ≈ 6.674 × 10⁻¹¹ m³⋅kg⁻¹⋅s⁻²</b><br><br>
+                The empirical physical constant involved in the calculation of gravitational effects.
+            </div>
+        `;
+    }
+
+    renderPlanckConstant() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Planck Const</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>h ≈ 6.626 × 10⁻³⁴ J⋅s</b><br><br>
+                The fundamental constant of quantum mechanics relating the energy of a photon to its frequency.
+            </div>
+        `;
+    }
+
+    renderBoltzmannConst() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Boltzmann (k)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>k ≈ 1.380 × 10⁻²³ J/K</b><br><br>
+                Relates the average relative kinetic energy of particles in a gas with the thermodynamic temperature.
+            </div>
+        `;
+    }
+
+    renderAvogadroNumber() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Avogadro (Na)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Na ≈ 6.022 × 10²³ mol⁻¹</b><br><br>
+                The number of constituent particles (usually atoms or molecules) per mole of a given substance.
+            </div>
+        `;
+    }
+
+    renderGoldenRatioRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Golden Ratio</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Phi (φ) ≈ 1.6180339887...</b><br><br>
+                Found in nature, architecture, and art. The ratio occurs when (a+b)/a = a/b.
+            </div>
+        `;
+    }
+
+    renderPiReference() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pi Ref (π)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>π ≈ 3.1415926535...</b><br><br>
+                Ratio of a circle's circumference to its diameter. An irrational and transcendental number.
+            </div>
+        `;
+    }
+
+    renderEulerNumber() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Euler's (e)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>e ≈ 2.7182818284...</b><br><br>
+                The base of natural logarithms. Limit of (1 + 1/n)^n as n approaches infinity.
+            </div>
+        `;
+    }
+
+    earthGravityRender() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Earth's g</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>g ≈ 9.80665 m/s²</b><br><br>
+                Standard acceleration due to gravity on Earth's surface. Used in weight and free-fall calcs.
+            </div>
+        `;
+    }
+
+    renderSoundSpeedMed() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sound Speed</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Air (20°C):</b> 343 m/s<br>
+                <b>Water:</b> 1,482 m/s<br>
+                <b>Steel:</b> 5,960 m/s<br><br>
+                <i>Speed increases with density of medium.</i>
+            </div>
+        `;
+    }
+
+    renderHttp3Ref() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTTP/3</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>HTTP/3:</b> The third major version of HTTP, built on QUIC instead of TCP.<br><br>
+                <b>Key feature:</b> Eliminates head-of-line blocking and improves performance on unreliable networks.
+            </div>
+        `;
+    }
+
+    renderTlsHandshake() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TLS Handshake</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>TLS:</b> Transport Layer Security. The handshake establishes keys for encryption.<br><br>
+                1. ClientHello<br>
+                2. ServerHello<br>
+                3. Key Exchange<br>
+                4. Cipher Spec
+            </div>
+        `;
+    }
+
+    renderOauthFlows() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">OAuth2 Flows</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Authorization Code:</b> For server-side apps.<br>
+                <b>Implicit:</b> For client-side (legacy).<br>
+                <b>Client Credentials:</b> For machine-to-machine.<br>
+                <b>Device Code:</b> For input-constrained devices.
+            </div>
+        `;
+    }
+
+    renderJwtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">JWT (JSON Web)</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>JWT:</b> Self-contained authentication token.<br><br>
+                <b>Format:</b> <code>header.payload.signature</code><br>
+                Base64Url encoded JSON objects.
+            </div>
+        `;
+    }
+
+    renderCorsExplained() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CORS Explained</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CORS:</b> Browser security feature that restricts cross-origin HTTP requests.<br><br>
+                <b>Header:</b> <code>Access-Control-Allow-Origin: *</code><br>
+                Prevents malicious sites from reading data from another site.
+            </div>
+        `;
+    }
+
+    renderCspGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSP Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CSP:</b> Content Security Policy. Restricts where resources (scripts, images) can be loaded from.<br><br>
+                <b>Example:</b> <code>script-src 'self' https://apis.google.com</code><br>
+                Primarily used to prevent XSS attacks.
+            </div>
+        `;
+    }
+
+    renderHstsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HSTS Ref</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>HSTS:</b> HTTP Strict Transport Security.<br><br>
+                Tells browsers to ONLY interact with the site via HTTPS, never plain HTTP.
+            </div>
+        `;
+    }
+
+    renderDnssecRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DNSSEC</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>DNSSEC:</b> Adds cryptographic signatures to DNS records to verify their authenticity and prevent spoofing.
+            </div>
+        `;
+    }
+
+    renderSshGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SSH Key Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>RSA:</b> Older standard, widely compatible.<br>
+                <b>ED25519:</b> Modern, faster, more secure (shorter keys).<br><br>
+                <b>CMD:</b> <code>ssh-keygen -t ed25519 -C "email@example.com"</code>
+            </div>
+        `;
+    }
+
+    renderZeroTrustRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Zero Trust</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Principle:</b> "Never trust, always verify." No user or device is trusted by default, even if inside the network perimeter.
+            </div>
+        `;
+    }
+
+    renderManifestGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Manifest Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>manifest.json:</b> Controls how the PWA appears to the user (icons, theme color, display mode).<br><br>
+                <b>Key:</b> <code>"display": "standalone"</code> makes it feel like a native app.
+            </div>
+        `;
+    }
+
+    renderSwLifecycle() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SW Lifecycle</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. <b>Register:</b> JS registers the worker.<br>
+                2. <b>Install:</b> Worker installs (caching begins).<br>
+                3. <b>Activate:</b> Old worker replaced.<br>
+                4. <b>Fetch/Sync:</b> Worker handles events.
+            </div>
+        `;
+    }
+
+    renderCacheStrategies() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cache Strats</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Cache First:</b> Best for static assets.<br>
+                <b>Network First:</b> Best for dynamic data.<br>
+                <b>Stale-While-Revalidate:</b> Instantly load from cache, then update in background.
+            </div>
+        `;
+    }
+
+    renderOfflineRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Offline Support</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Offline:</b> Achieved via Service Workers intercepting fetch requests and returning cached responses when network is down.
+            </div>
+        `;
+    }
+
+    renderPushNotif() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Push Notif</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Push API:</b> Allows servers to send messages to the Service Worker even when the app isn't open in the browser.
+            </div>
+        `;
+    }
+
+    renderAppShell() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Shell</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Pattern:</b> Cache the minimal HTML, CSS, and JS needed to power the user interface.<br><br>
+                Provides an instant, reliable experience on repeat visits.
+            </div>
+        `;
+    }
+
+    renderBreakpointsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Breakpoints</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Mobile:</b> up to 480px<br>
+                <b>Tablet:</b> 481px to 768px<br>
+                <b>Laptop:</b> 769px to 1024px<br>
+                <b>Desktop:</b> 1025px and up
+            </div>
+        `;
+    }
+
+    renderMobileFirst() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mobile First</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Approach:</b> Start design and development with the smallest screen size and work upwards to larger screens.
+            </div>
+        `;
+    }
+
+    renderTouchEvents() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Touch Events</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>touchstart:</b> Finger placed.<br>
+                <b>touchmove:</b> Finger moved.<br>
+                <b>touchend:</b> Finger removed.<br>
+                <b>Pointer Events:</b> Unified API for mouse/touch/pen.
+            </div>
+        `;
+    }
+
+    renderSafeAreaRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Safe Areas</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Insets:</b> Handling notches and home indicators.<br><br>
+                <code>padding-top: env(safe-area-inset-top);</code><br>
+                <code>padding-bottom: env(safe-area-inset-bottom);</code>
+            </div>
+        `;
+    }
+
+    renderSqlJoinsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Joins</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Inner Join:</b> Matches in both tables.<br>
+                <b>Left Join:</b> All from left + matches from right.<br>
+                <b>Right Join:</b> All from right + matches from left.<br>
+                <b>Full Join:</b> All records from both tables.
+            </div>
+        `;
+    }
+
+    renderAcidProperties() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ACID Props</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Atomicity:</b> All or nothing.<br>
+                <b>Consistency:</b> Valid state to valid state.<br>
+                <b>Isolation:</b> Concurrent transactions don't interfere.<br>
+                <b>Durability:</b> Committed data is permanent.
+            </div>
+        `;
+    }
+
+    renderBaseProperties() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BASE Props</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Basically Available:</b> Reads/writes always possible.<br>
+                <b>Soft State:</b> State might change without input.<br>
+                <b>Eventual Consistency:</b> System will become consistent over time.
+            </div>
+        `;
+    }
+
+    renderSqlNormalization() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Normalization</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>1NF:</b> Atomic values, no repeating groups.<br>
+                <b>2NF:</b> No partial functional dependencies.<br>
+                <b>3NF:</b> No transitive dependencies.
+            </div>
+        `;
+    }
+
+    renderDbIndexes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DB Indexes</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>B-Tree:</b> Optimized for range queries and equality.<br>
+                <b>Hash Index:</b> Extremely fast for exact matches.<br>
+                <b>Pros:</b> Faster reads. <b>Cons:</b> Slower writes & storage overhead.
+            </div>
+        `;
+    }
+
+    renderCapTheorem() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CAP Theorem</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Consistency:</b> Every read receives the most recent write.<br>
+                <b>Availability:</b> Every request receives a response.<br>
+                <b>Partition Tolerance:</b> System continues to operate despite network failures.<br>
+                <i>Pick two!</i>
+            </div>
+        `;
+    }
+
+    renderRedisDataTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Redis Types</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Strings:</b> Basic values.<br>
+                <b>Lists:</b> Ordered collections.<br>
+                <b>Sets:</b> Unordered unique elements.<br>
+                <b>Hashes:</b> Map between string fields and values.<br>
+                <b>Sorted Sets:</b> Sets with scores.
+            </div>
+        `;
+    }
+
+    renderMongoCrud() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MongoDB CRUD</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Create:</b> <code>insertOne()</code> / <code>insertMany()</code><br>
+                <b>Read:</b> <code>find()</code> / <code>findOne()</code><br>
+                <b>Update:</b> <code>updateOne()</code> / <code>updateMany()</code><br>
+                <b>Delete:</b> <code>deleteOne()</code> / <code>deleteMany()</code>
+            </div>
+        `;
+    }
+
+    renderSqlInjection() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Injection</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Risk:</b> Unfiltered user input executed as code.<br>
+                <b>Defense:</b><br>
+                1. Prepared Statements (Parameterized Queries).<br>
+                2. Input Validation.<br>
+                3. Principle of Least Privilege.
+            </div>
+        `;
+    }
+
+    renderShardingVsPartitioning() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shard vs Part</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Partitioning:</b> Splitting data within a single DB instance.<br><br>
+                <b>Sharding:</b> Splitting data across multiple separate DB instances (horizontal scaling).
+            </div>
+        `;
+    }
+
+    renderIncognitoMyth() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Incognito Myth</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Myth:</b> You are anonymous. <br>
+                <b>Fact:</b> Only hides activity from other users on the <i>same device</i>. ISPs, employers, and websites can still track you.
+            </div>
+        `;
+    }
+
+    renderPasswordComplexity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Password Logic</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Myth:</b> "P@ssw0rd1!" is strong.<br>
+                <b>Fact:</b> Length beats complexity. <i>"correcthorsebatterystaple"</i> is harder to crack than a short complex string.
+            </div>
+        `;
+    }
+
+    renderVpnTruths() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">VPN Truths</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Myth:</b> Full anonymity. <br>
+                <b>Truth:</b> You are shifting trust from your ISP to your VPN provider. They can technically see/log all your traffic.
+            </div>
+        `;
+    }
+
+    renderTwoFactorMethods() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">2FA Methods</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>SMS:</b> High convenience, low security (SIM swapping).<br>
+                <b>TOTP (App):</b> Good security (Google Auth).<br>
+                <b>Hardware (YubiKey):</b> Best security (Phishing resistant).
+            </div>
+        `;
+    }
+
+    renderPhishingSigns() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Phishing Signs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. Mismatched URL/Email.<br>
+                2. Urgent/Threatening language.<br>
+                3. Generic greetings.<br>
+                4. Request for sensitive info.<br>
+                5. Unusual attachments.
+            </div>
+        `;
+    }
+
+    renderHashingVsEncryption() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hash vs Encrypt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Hashing:</b> One-way transformation (Passcodes).<br><br>
+                <b>Encryption:</b> Two-way transformation with a key (Messaging).
+            </div>
+        `;
+    }
+
+    renderPasswordSalting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Password Salt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Salt:</b> A unique random string added to each password before hashing.<br><br>
+                <b>Why:</b> Prevents rainbow table attacks and ensure same passwords have different hashes.
+            </div>
+        `;
+    }
+
+    renderHttpsVsHttp() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTTPS vs HTTP</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>HTTPS:</b> HTTP + TLS/SSL. Encrypts the data in transit. Provides authentication and data integrity.<br><br>
+                <i>Never enter passwords on HTTP sites.</i>
+            </div>
+        `;
+    }
+
+    renderIotSecurity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IoT Security</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. Change default passwords.<br>
+                2. Keep firmware updated.<br>
+                3. Disable UPnP.<br>
+                4. Use a separate guest network.<br>
+                5. Disable remote access if not needed.
+            </div>
+        `;
+    }
+
+    renderSocialEngineering() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Social Eng.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Pretexting:</b> Creating a fake scenario.<br>
+                <b>Baiting:</b> Offering a gift (free USB).<br>
+                <b>Quid Pro Quo:</b> Tech support scam.<br>
+                <b>Tailgating:</b> Following someone into a secure area.
+            </div>
+        `;
+    }
+
+    renderBashNav() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Bash Nav</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>cd:</b> Change directory.<br>
+                <b>ls:</b> List files.<br>
+                <b>pwd:</b> Print working directory.<br>
+                <b>.. :</b> Parent directory.<br>
+                <b>~ :</b> Home directory.
+            </div>
+        `;
+    }
+
+    renderTerminalFiles() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Term Files</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>cp:</b> Copy file/dir.<br>
+                <b>mv:</b> Move/Rename.<br>
+                <b>rm:</b> Delete (DANGEROUS).<br>
+                <b>mkdir:</b> Create directory.<br>
+                <b>touch:</b> Create empty file.
+            </div>
+        `;
+    }
+
+    renderProcessMgmt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Process Mgmt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>top/htop:</b> Show running tasks.<br>
+                <b>ps:</b> Snapshot of current processes.<br>
+                <b>kill -9 [ID]:</b> Force stop process.<br>
+                <b>bg/fg:</b> Background/Foreground job.
+            </div>
+        `;
+    }
+
+    renderIoRedirection() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">I/O Redirect</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>>:</b> Redirect output (overwrite).<br>
+                <b>>>:</b> Redirect output (append).<br>
+                <b>| :</b> Pipe output to another command.<br>
+                <b>< :</b> Redirect input.
+            </div>
+        `;
+    }
+
+    renderGrepFind() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Grep & Find</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>grep:</b> Search text patterns in files.<br>
+                <b>find:</b> Search for files by name/attr.<br>
+                <code>grep "pattern" file.txt</code><br>
+                <code>find . -name "*.js"</code>
+            </div>
+        `;
+    }
+
+    renderHistorySearch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Term History</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>history:</b> List previous commands.<br>
+                <b>Ctrl + R:</b> Reverse search history.<br>
+                <b>!! :</b> Repeat last command.<br>
+                <b>!$ :</b> Last argument of last command.
+            </div>
+        `;
+    }
+
+    renderAliasCreation() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Alias Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Alias:</b> Create custom shortcuts.<br>
+                <code>alias ll='ls -al'</code><br><br>
+                Add to your <code>.bashrc</code> or <code>.zshrc</code> for persistence.
+            </div>
+        `;
+    }
+
+    renderChmodChown() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Permissions</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>chmod 755:</b> rwxr-xr-x.<br>
+                <b>chmod +x:</b> Make executable.<br>
+                <b>chown:</b> Change file owner/group.
+            </div>
+        `;
+    }
+
+    renderVimBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vim Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>i:</b> Insert mode.<br>
+                <b>Esc:</b> Command mode.<br>
+                <b>:wq :</b> Save and quit.<br>
+                <b>:q! :</b> Quit without saving.<br>
+                <b>dd:</b> Delete line.
+            </div>
+        `;
+    }
+
+    renderScreenTmux() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Multiplexers</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Tmux:</b> Keep terminal sessions running if the connection drops. Split windows and switch between sessions.
+            </div>
+        `;
+    }
+
+    renderColorPalettes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Palettes</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Primary:</b> Brand core color.<br>
+                <b>Secondary:</b> Accents & UI elements.<br>
+                <b>Neutral:</b> Backgrounds & Surface levels.<br>
+                <b>Semantic:</b> Error, Warning, Success.
+            </div>
+        `;
+    }
+
+    typographyScalesRender() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Typo Scales</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Golden Ratio (1.618):</b> High contrast.<br>
+                <b>Major Third (1.250):</b> Harmonic & Clear.<br>
+                <b>Perfect Fourth (1.333):</b> Modern & Balanced.
+            </div>
+        `;
+    }
+
+    renderSpacingSystem() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Spacing 8pt</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>8pt Grid:</b> Use multiples of 8 (8, 16, 24, 32...) for padding, margins, and element sizes. Ensures layout consistency.
+            </div>
+        `;
+    }
+
+    renderComponentStates() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">States</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Default:</b> Resting state.<br>
+                <b>Hover:</b> Mouse pointer indication.<br>
+                <b>Active:</b> Interaction in progress.<br>
+                <b>Disabled:</b> Action unavailable.<br>
+                <b>Focus:</b> Keyboard navigation state.
+            </div>
+        `;
+    }
+
+    renderIconographySys() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Icon System</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. Single visual style (weight/corner).<br>
+                2. Standardized sizes (24x24).<br>
+                3. Clear metaphors.<br>
+                4. Sufficient white space.
+            </div>
+        `;
+    }
+
+    renderAccessibilityDs() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">A11y System</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Contrast:</b> AA (4.5:1) or AAA (7:1).<br>
+                <b>ARIA:</b> Labels and roles for screen readers.<br>
+                <b>Focus States:</b> Visible navigation markers.
+            </div>
+        `;
+    }
+
+    renderShadowSystems() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shadows</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Level 1:</b> Cards/Surfaces.<br>
+                <b>Level 2:</b> Hover states.<br>
+                <b>Level 3:</b> Popups/Modals.<br>
+                <b>Level 4:</b> Floating Action Buttons.
+            </div>
+        `;
+    }
+
+    renderBorderRadii() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Radii</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Sharp (0px):</b> Corporate/Military.<br>
+                <b>Soft (4-8px):</b> Balanced/Modern.<br>
+                <b>Round (12px+):</b> Playful/User-friendly.<br>
+                <b>Pill:</b> High prominence.
+            </div>
+        `;
+    }
+
+    renderButtonVarieties() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Buttons</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Primary:</b> High emphasis (Solid).<br>
+                <b>Secondary:</b> Medium emphasis (Outline).<br>
+                <b>Ghost:</b> Low emphasis (No frame).<br>
+                <b>Destructive:</b> Error/Delete (Red).
+            </div>
+        `;
+    }
+
+    renderDesignTokens() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tokens</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Tokens:</b> Smallest building blocks (color-blue-500). Used instead of hardcoded hex codes to sync design and code.
+            </div>
+        `;
+    }
+
+    renderOptionalChaining() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Optional Chain</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>user?.address?.city</code><br><br>
+                Prevents "Cannot read property of undefined" errors by returning <code>undefined</code> if the reference is nullish.
+            </div>
+        `;
+    }
+
+    renderNullishCoalescing() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Nullish Coal.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>value ?? 'default'</code><br><br>
+                Returns the right-hand side ONLY if the left-hand side is <code>null</code> or <code>undefined</code>. (Difference from <code>||</code>).
+            </div>
+        `;
+    }
+
+    renderArrayDestructuring() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Arr Destruct</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>const [a, b] = [1, 2]</code><br><br>
+                Unpack items from arrays into distinct variables in one line.
+            </div>
+        `;
+    }
+
+    renderObjectDestructuring() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Obj Destruct</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>const {name, age} = user</code><br><br>
+                Extract properties from objects into variables efficiently.
+            </div>
+        `;
+    }
+
+    renderSpreadOperator() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Spread Op</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>const newArr = [...oldArr, 4]</code><br>
+                <b>Object:</b> <code>{...oldObj, newKey: 1}</code><br><br>
+                Expands an iterable into individual elements. Great for cloning.
+            </div>
+        `;
+    }
+
+    renderRestParameters() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rest Params</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>function sum(...args) { ... }</code><br><br>
+                Allows a function to accept an indefinite number of arguments as an array.
+            </div>
+        `;
+    }
+
+    renderTemplateLiterals() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Template Lit</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>\`Hello \${name}\`</code><br><br>
+                Strings wrapped in backticks that allow embedded expressions and multi-line strings.
+            </div>
+        `;
+    }
+
+    renderArrowFunctions() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Arrow Funcs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>const add = (a, b) => a + b;</code><br><br>
+                Shorter syntax and lexically binds the <code>this</code> value (it doesn't have its own <code>this</code>).
+            </div>
+        `;
+    }
+
+    renderDefaultParameters() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Default Params</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>function greet(name = 'Guest') { ... }</code><br><br>
+                Allows named parameters to be initialized with default values if no value is passed.
+            </div>
+        `;
+    }
+
+    renderAsyncAwaitRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Async/Await</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>const data = await fetch(url);</code><br><br>
+                Syntactic sugar over Promises that makes asynchronous code look and behave like synchronous code.
+            </div>
+        `;
+    }
+
+    renderDebounceRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Debouncing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Group multiple sequential calls into a single one. <br>
+                <b>Use case:</b> Search input field (wait for user to stop typing).
+            </div>
+        `;
+    }
+
+    renderThrottleRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Throttling</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Limit the maximum number of times a function can be called over time. <br>
+                <b>Use case:</b> Scroll or resize events.
+            </div>
+        `;
+    }
+
+    renderLazyLoadingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Lazy Loading</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Delay loading of non-critical resources at page load time. Load them only when needed (on scroll).<br>
+                <code>loading="lazy"</code>
+            </div>
+        `;
+    }
+
+    renderCriticalCss() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Critical CSS</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> Extracting the CSS for "above-the-fold" content and inlining it into the HTML for faster initial rendering.
+            </div>
+        `;
+    }
+
+    renderWebVitalsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Vitals</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>LCP:</b> Loading performance (Largest Contentful Paint).<br>
+                <b>FID:</b> Interactivity (First Input Delay).<br>
+                <b>CLS:</b> Visual stability (Cumulative Layout Shift).
+            </div>
+        `;
+    }
+
+    renderAssetMinification() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Minification</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Process:</b> Removing unnecessary characters (whitespace, comments) from source code without changing its functionality to reduce file size.
+            </div>
+        `;
+    }
+
+    renderImageFormats() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Img Formats</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>WebP:</b> Small size, high quality, supported everywhere.<br>
+                <b>AVIF:</b> Next-gen, even smaller than WebP.<br>
+                <b>SVG:</b> Best for icons and logos (lossless scaling).
+            </div>
+        `;
+    }
+
+    renderBrowserCaching() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Caching</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Cache-Control:</b> Instructs the browser how long to store a resource.<br>
+                <code>max-age=31536000</code> - Cache for a year.<br>
+                <code>no-store</code> - Don't cache at all.
+            </div>
+        `;
+    }
+
+    renderPreloadPrefetch() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pre / Pre</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Preload:</b> High priority load needed for <i>current</i> page.<br><br>
+                <b>Prefetch:</b> Low priority load for <i>future</i> page navigation.
+            </div>
+        `;
+    }
+
+    renderCdnBenefits() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CDN Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CDN:</b> Content Delivery Network. Distributed servers that serve content from the location closest to the user, reducing latency.
+            </div>
+        `;
+    }
+
+    renderTryCatchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Try/Catch</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Try:</b> Code that might fail.<br>
+                <b>Catch:</b> Code to handle the failure.<br>
+                <b>Finally:</b> Code that runs regardless of the outcome.
+            </div>
+        `;
+    }
+
+    renderErrorBoundaries() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Error Bounds</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Catch JS errors anywhere in a child component tree and display a fallback UI instead of crashing the whole app.
+            </div>
+        `;
+    }
+
+    renderHttp400s() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTTP 400s</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>400:</b> Bad Request.<br>
+                <b>401:</b> Unauthorized.<br>
+                <b>403:</b> Forbidden.<br>
+                <b>404:</b> Not Found.<br>
+                <b>429:</b> Too Many Requests.
+            </div>
+        `;
+    }
+
+    renderHttp500s() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">HTTP 500s</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>500:</b> Internal Server Error.<br>
+                <b>502:</b> Bad Gateway.<br>
+                <b>503:</b> Service Unavailable.<br>
+                <b>504:</b> Gateway Timeout.
+            </div>
+        `;
+    }
+
+    renderCustomErrorsJs() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Custom Errors</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b><br>
+                <code>class MyError extends Error { ... }</code><br><br>
+                Makes error handling more descriptive and typed.
+            </div>
+        `;
+    }
+
+    renderPromiseRejections() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Promise Rej</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Always catch rejections! <br>
+                <code>promise.catch(err => { ... })</code><br><br>
+                Uncaught rejections can lead to memory leaks and silent failures.
+            </div>
+        `;
+    }
+
+    renderErrorLoggingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Error Logs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Tools:</b> Sentry, LogRocket, Datadog.<br><br>
+                Automatically capture and report frontend errors in production for easier debugging.
+            </div>
+        `;
+    }
+
+    renderGracefulFallbacks() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fallbacks</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Instead of showing a blank screen, show a friendly message or a simplified version of the UI when a feature fails.
+            </div>
+        `;
+    }
+
+    renderInputValidationRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Validation</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Client-side:</b> Instant feedback (UX).<br><br>
+                <b>Server-side:</b> Security (Critical). <i>Never trust client input.</i>
+            </div>
+        `;
+    }
+
+    renderRetryLogicRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Retry Logic</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Exponential Backoff:</b> Retrying a failed request with increasing wait times (1s, 2s, 4s, 8s...). Reduces server load.
+            </div>
+        `;
+    }
+
+    renderDryPrinciple() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DRY</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Don't Repeat Yourself:</b> Every piece of knowledge must have a single, unambiguous representation within a system.
+            </div>
+        `;
+    }
+
+    renderKissPrinciple() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">KISS</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Keep It Simple, Stupid:</b> Most systems work best if they are kept simple rather than made complicated.
+            </div>
+        `;
+    }
+
+    renderYagniRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">YAGNI</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>You Ain't Gonna Need It:</b> Always implement things when you actually need them, never when you just foresee that you may need them.
+            </div>
+        `;
+    }
+
+    renderSepConcerns() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sep. Concerns</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>SoC:</b> Partitioning a computer program into distinct sections such that each section addresses a separate concern (e.g., UI, Logic, Data).
+            </div>
+        `;
+    }
+
+    renderCompVsInheritance() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Comp vs Inh</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Composition:</b> Building complex objects from simple ones ("has a").<br><br>
+                <b>Inheritance:</b> Deriving classes ("is a"). <i>Prefer composition.</i>
+            </div>
+        `;
+    }
+
+    renderSolidPrinciples() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SOLID</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                <b>S:</b> Single Resp.<br>
+                <b>O:</b> Open/Closed.<br>
+                <b>L:</b> Liskov Sub.<br>
+                <b>I:</b> Interface Seg.<br>
+                <b>D:</b> Dependency Inv.
+            </div>
+        `;
+    }
+
+    renderCodeReviewsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Code Reviews</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                1. Knowledge sharing.<br>
+                2. Improved code quality.<br>
+                3. Detecting bugs early.<br>
+                4. Consistency in codebase.
+            </div>
+        `;
+    }
+
+    renderTechDebtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tech Debt</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> The implied cost of additional rework caused by choosing an easy solution now instead of a better approach that would take longer.
+            </div>
+        `;
+    }
+
+    renderRefactoringRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Refactoring</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Process:</b> Restructuring existing computer code—changing the factoring—without changing its external behavior.
+            </div>
+        `;
+    }
+
+    renderDocumentationRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Documentation</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Good documentation reduces onboarding time, serves as a single source of truth, and helps future-you understand past-you's code.
+            </div>
+        `;
+    }
+
+    renderUnitTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Unit Tests</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Focus:</b> Testing individual functions or components in isolation.<br><br>
+                <b>Tools:</b> Jest, Vitest, Mocha, Jasmine.
+            </div>
+        `;
+    }
+
+    renderIntegrationTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Integ. Tests</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Focus:</b> Testing how different modules or services work together (e.g., API + Database).
+            </div>
+        `;
+    }
+
+    renderE2eTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">E2E Testing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Focus:</b> Testing the entire application flow from the user's perspective in a real browser.<br><br>
+                <b>Tools:</b> Playwright, Cypress, Selenium.
+            </div>
+        `;
+    }
+
+    renderTddGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TDD Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Cycle:</b> Red, Green, Refactor.<br><br>
+                1. Write a failing test.<br>
+                2. Write minimum code to pass.<br>
+                3. Refactor code while keeping tests green.
+            </div>
+        `;
+    }
+
+    renderBddGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BDD Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Focus:</b> Testing behaviors described in plain language.<br><br>
+                <b>Syntax:</b> Given [context], When [action], Then [outcome].
+            </div>
+        `;
+    }
+
+    renderMockingSpying() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mock & Spy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Mock:</b> Replace a dependency with a fake version.<br><br>
+                <b>Spy:</b> Wrap a function to track its calls and arguments without changing behavior.
+            </div>
+        `;
+    }
+
+    renderCodeCoverage() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Code Coverage</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Metric:</b> Measures the percentage of source code executed during testing. High coverage ≠ no bugs, but helps find untested areas.
+            </div>
+        `;
+    }
+
+    renderSmokeTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Smoke Tests</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> A quick set of tests to verify the most critical functions of an application work after a deployment.
+            </div>
+        `;
+    }
+
+    renderSnapshotTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Snapshots</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> Capturing the rendered output of a UI component and comparing it to a stored "gold master" to detect accidental changes.
+            </div>
+        `;
+    }
+
+    renderRegressionTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Regression Test</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Re-running tests after fixes or changes to ensure that existing functionality hasn't been broken.
+            </div>
+        `;
+    }
+
+    renderMdHeaders() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Headers</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <code># Header 1</code><br>
+                <code>## Header 2</code><br>
+                <code>### Header 3</code><br>
+                <code>#### Header 4</code>
+            </div>
+        `;
+    }
+
+    renderMdFormatting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Format</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <code>**Bold text**</code><br>
+                <code>*Italic text*</code><br>
+                <code>~~Strikethrough~~</code><br>
+                <code>\`Inline code\`</code>
+            </div>
+        `;
+    }
+
+    renderMdLinks() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Links</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Link:</b> <code>[Label](url)</code><br>
+                <b>Image:</b> <code>![Alt](url)</code>
+            </div>
+        `;
+    }
+
+    renderMdLists() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Lists</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Ordered:</b> 1. Item<br>
+                <b>Unordered:</b> - Item or * Item<br>
+                <b>Nested:</b> (add 2 spaces)
+            </div>
+        `;
+    }
+
+    renderMdCode() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Code</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Code Block:</b><br>
+                <code>\`\`\`javascript</code><br>
+                <code>console.log('test');</code><br>
+                <code>\`\`\`</code>
+            </div>
+        `;
+    }
+
+    renderMdTables() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Tables</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                <code>| Head | Head |</code><br>
+                <code>| ---- | ---- |</code><br>
+                <code>| Cell | Cell |</code>
+            </div>
+        `;
+    }
+
+    renderMdQuotes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Quotes</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Blockquote:</b><br>
+                <code>> This is a quote.</code>
+            </div>
+        `;
+    }
+
+    renderMdTaskLists() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD TaskLists</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <code>- [x] Finished task</code><br>
+                <code>- [ ] Pending task</code>
+            </div>
+        `;
+    }
+
+    renderMdHorizRule() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Dividers</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <code>---</code> or <code>***</code><br><br>
+                Creates a horizontal thematic break.
+            </div>
+        `;
+    }
+
+    renderMdEscaping() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MD Escaping</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Literal:</b> Use backslash <code>\\</code> before a special character (like <code>*</code> or <code>#</code>) to show it literally.
+            </div>
+        `;
+    }
+
+    renderExtManifest() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Manifest</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Manifest v3:</b> The JSON file that defines metadata, permissions, and scripts for a Chrome Extension.
+            </div>
+        `;
+    }
+
+    renderExtBackground() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Background Scr.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Service Worker:</b> Runs in the background independently of any web page. Handles events and long-running logic.
+            </div>
+        `;
+    }
+
+    renderExtContent() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Content Scr.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Injection:</b> Scripts that run in the context of web pages. They can read/modify the DOM of the pages the user visits.
+            </div>
+        `;
+    }
+
+    renderExtPopup() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext PopupUI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Action UI:</b> The small HTML window that appears when you click the extension's icon in the toolbar.
+            </div>
+        `;
+    }
+
+    renderExtOptions() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Options</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Settings:</b> A dedicated page where users can configure the extension's behavior and features.
+            </div>
+        `;
+    }
+
+    renderExtStorage() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Storage</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>chrome.storage:</b> Optimized for extensions. <code>sync</code> stores data across devices; <code>local</code> is machine-specific.
+            </div>
+        `;
+    }
+
+    renderExtPermissions() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Perms</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Extensions must declare what they need to access (e.g., <code>tabs</code>, <code>storage</code>, <code>host_permissions</code>) in the manifest.
+            </div>
+        `;
+    }
+
+    renderExtMessaging() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Messaging</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Communication:</b> Use <code>runtime.sendMessage</code> and <code>onMessage</code> to pass data between background, content, and popup scripts.
+            </div>
+        `;
+    }
+
+    renderExtIcons() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Icons</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                Standard sizes needed: 16x16 (favicon), 32x32 (windows), 48x48 (extension page), 128x128 (webstore).
+            </div>
+        `;
+    }
+
+    renderExtDeploy() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ext Deploy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Chrome Web Store:</b> Zip your source, pay the developer fee, upload via dashboard, and wait for review.
+            </div>
+        `;
+    }
+
+    renderRegexChars() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Chars</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>.</b> - Any char<br>
+                <b>\\\\d</b> - Digit<br>
+                <b>\\\\w</b> - Word char<br>
+                <b>\\\\s</b> - Whitespace
+            </div>
+        `;
+    }
+
+    renderRegexQuantifiers() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Quant.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>*</b> - 0 or more<br>
+                <b>+</b> - 1 or more<br>
+                <b>?</b> - 0 or 1<br>
+                <b>{n}</b> - Exactly n
+            </div>
+        `;
+    }
+
+    renderRegexAnchors() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Anchors</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>^</b> - Start of string<br>
+                <b>$</b> - End of string<br>
+                <b>\\\\b</b> - Word boundary
+            </div>
+        `;
+    }
+
+    renderRegexClasses() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Classes</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>[abc]</b> - a, b, or c<br>
+                <b>[a-z]</b> - Range a to z<br>
+                <b>[^abc]</b> - Not a, b, or c
+            </div>
+        `;
+    }
+
+    renderRegexGroups() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Groups</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>(abc)</b> - Capture group<br>
+                <b>(?:abc)</b> - Non-capture group<br>
+                <b>(a|b)</b> - a or b
+            </div>
+        `;
+    }
+
+    renderRegexLookaround() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Lookahead</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>(?=...)</b> - Pos. Lookahead<br>
+                <b>(?!...)</b> - Neg. Lookahead<br>
+                <b>(?<=...)</b> - Pos. Lookbehind
+            </div>
+        `;
+    }
+
+    renderRegexFlags() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Flags</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>g:</b> Global<br>
+                <b>i:</b> Case-insensitive<br>
+                <b>m:</b> Multiline<br>
+                <b>u:</b> Unicode
+            </div>
+        `;
+    }
+
+    renderRegexEscaping() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Escape</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Literal:</b> Use <code>\\\\</code> to match special characters like <code>\\\\.</code> or <code>\\\\*</code> or <code>\\\\?</code>.
+            </div>
+        `;
+    }
+
+    renderRegexReplace() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Replace</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                In JS: <code>str.replace(/pattern/g, 'new')</code><br><br>
+                Use <code>$1</code>, <code>$2</code> for capturing groups in replacement.
+            </div>
+        `;
+    }
+
+    renderRegexTesting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RegEx Testing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Logic:</b><br>
+                <code>/abc/.test('abc')</code> -> true<br>
+                <code>'abc'.match(/abc/)</code> -> array
+            </div>
+        `;
+    }
+
+    // === BATCH 80 - 850 TOOLS (ACCESSIBILITY STANDARDS) ===
+    renderWcagGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WCAG Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Levels:</b><br>
+                <b>A:</b> Minimal accessibility.<br>
+                <b>AA:</b> Standard (target for most sites).<br>
+                <b>AAA:</b> Highest level of accessibility.
+            </div>
+        `;
+    }
+
+    renderAriaRoles() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ARIA Roles</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Landmarks:</b> <code>role="main", role="navigation", role="banner"</code>.<br><br>
+                <b>Interactive:</b> <code>role="button", role="dialog"</code>. Use only when native tags aren't suitable.
+            </div>
+        `;
+    }
+
+    renderScreenReaders() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Screen Readers</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Top tools:</b> NVDA (Windows), JAWS (Windows), VoiceOver (macOS/iOS), TalkBack (Android).<br><br>
+                Test your site by navigating with your eyes closed!
+            </div>
+        `;
+    }
+
+    renderKeyboardNav() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Keyboard Nav</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Requirements:</b> All interactive elements must be reachable via <code>Tab</code> and triggers must work with <code>Enter</code> or <code>Space</code>.
+            </div>
+        `;
+    }
+
+    renderContrastCheck() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Contrast Check</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Ratio target:</b> 4.5:1 for normal text and 3:1 for large text (WCAG AA).<br><br>
+                Ensures text is readable for users with visual impairments.
+            </div>
+        `;
+    }
+
+    renderAltTextGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Alt Text</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Rule:</b> Describe the *purpose*, not just the *appearance*.<br><br>
+                <b>Empty alt:</b> <code>alt=""</code> for decorative images so screen readers skip them.
+            </div>
+        `;
+    }
+
+    renderSemanticHtml() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Semantic HTML</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Prefer:</b> <code>&lt;nav&gt;</code> over <code>&lt;div&gt;</code>, <code>&lt;button&gt;</code> over <code>&lt;span&gt;</code>.<br><br>
+                Built-in accessibility and better SEO.
+            </div>
+        `;
+    }
+
+    renderFocusVisible() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Focus Visible</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CSS:</b> <code>:focus-visible</code><br><br>
+                Shows focus rings only for keyboard users, helping them see where they are without cluttering mouse user experience.
+            </div>
+        `;
+    }
+
+    renderReducedMotion() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Reduced Motion</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CSS Query:</b> <code>@media (prefers-reduced-motion: reduce)</code>.<br><br>
+                Use it to disable non-essential animations for users with motion sensitivity.
+            </div>
+        `;
+    }
+
+    renderAccessibleForms() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">A11y Forms</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Labels:</b> <code>&lt;label for="id"&gt;</code>.<br>
+                <b>Help:</b> <code>aria-describedby</code>.<br>
+                <b>Errors:</b> <code>aria-invalid="true"</code>. Always provide text descriptions for errors.
+            </div>
+        `;
+    }
+
+    // === BATCH 81 - 860 TOOLS (ADVANCED JS PATTERNS) ===
+    renderSingletonPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Singleton</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Restricts a class to a single instance. <br><br>
+                Useful for managing global state or heavy resources like database connections.
+            </div>
+        `;
+    }
+
+    renderFactoryPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Factory</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Defines an interface for creating objects, but lets subclasses decide which class to instantiate.
+            </div>
+        `;
+    }
+
+    renderObserverPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Observer</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> One-to-many relationship where one object notifies others of changes. (Pub/Sub pattern).
+            </div>
+        `;
+    }
+
+    renderDecoratorPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Decorator</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Attach additional responsibilities to an object dynamically. <br><br>
+                Provides a flexible alternative to subclassing.
+            </div>
+        `;
+    }
+
+    renderFacadePattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Facade</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Provides a simplified interface to a library, framework, or any other complex set of classes.
+            </div>
+        `;
+    }
+
+    renderStrategyPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Strategy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Let an algorithm vary independently from the clients that use it by encapsulating each algorithm in a separate class.
+            </div>
+        `;
+    }
+
+    renderProxyPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Proxy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> A placeholder for another object to control access, logging, or lazy loading of that object.
+            </div>
+        `;
+    }
+
+    renderMediatorPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mediator</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Reduces coupling between classes by making them communicate indirectly through a mediator object.
+            </div>
+        `;
+    }
+
+    renderBridgePattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Bridge</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Decouples an abstraction from its implementation so that the two can vary independently.
+            </div>
+        `;
+    }
+
+    renderFlyweightPattern() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Flyweight</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Efficiently share many small objects to minimize memory usage, rather than creating multiple similar objects.
+            </div>
+        `;
+    }
+
+    // === BATCH 82 - 870 TOOLS (NODE.JS BASICS) ===
+    renderNodeFsModule() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node FS</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Core:</b> <code>fs.readFile()</code>, <code>fs.writeFile()</code>, <code>fs.readdir()</code>.<br><br>
+                Synchronous versions (<code>fs.readFileSync</code>) block the event loop—avoid them!
+            </div>
+        `;
+    }
+
+    renderNodePathModule() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node Path</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Core:</b> <code>path.join()</code>, <code>path.resolve()</code>, <code>path.extname()</code>.<br><br>
+                Ensures cross-platform compatibility for file paths.
+            </div>
+        `;
+    }
+
+    renderNodeHttpModule() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node HTTP</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Low-level API to create HTTP servers and clients without Express or Fastify.<br><br>
+                <code>http.createServer((req, res) => { ... })</code>.
+            </div>
+        `;
+    }
+
+    renderNodeEvents() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node Events</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>EventEmitter:</b> The heart of Node's event-driven architecture. Components can emit signals and listen for them asynchronously.
+            </div>
+        `;
+    }
+
+    renderNodeStreams() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node Streams</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Efficiency:</b> Handle large data sets by processing them chunk-by-chunk rather than loading the whole file into memory.
+            </div>
+        `;
+    }
+
+    renderNodeBuffers() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Buffers</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Raw data:</b> Buffers represent a fixed-size chunk of memory outside the V8 heap. Used for binary data manipulation.
+            </div>
+        `;
+    }
+
+    renderNpmBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">NPM Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>npm install:</b> Install dependencies.<br>
+                <b>npm publish:</b> Share your package.<br>
+                <b>npm run:</b> Run scripts defined in package.json.
+            </div>
+        `;
+    }
+
+    renderPackageJson() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">package.json</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>The manifest:</b> Lists metadata, dependencies, devDependencies, and scripts of your Node project.
+            </div>
+        `;
+    }
+
+    renderEnvVars() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Env Vars</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Safety:</b> Store API keys and configs in <code>.env</code> files. Access via <code>process.env</code>. <br>
+                <i>Never commit .env to Git!</i>
+            </div>
+        `;
+    }
+
+    renderNodeProcess() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Node Process</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Interaction:</b> Information about current process. <code>process.argv</code> (CLI args), <code>process.exit()</code>, <code>process.pid</code>.
+            </div>
+        `;
+    }
+
+    // === BATCH 83 - 880 TOOLS (WEB SECURITY) ===
+    renderXssDefense() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">XSS Defense</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Protection:</b> Use <code>textContent</code> instead of <code>innerHTML</code>, use CSP (Content Security Policy), and escape all user content.
+            </div>
+        `;
+    }
+
+    renderCsrfDefense() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSRF Defense</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Protection:</b> Use anti-CSRF tokens, <code>SameSite=Strict</code> cookie attributes, and check <code>Origin</code>/<code>Referer</code> headers.
+            </div>
+        `;
+    }
+
+    renderSqlSecurity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SQL Security</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Protection:</b> Always use parameterized queries or Prepared Statements. Never use raw string concatenation with user input.
+            </div>
+        `;
+    }
+
+    renderBruteForce() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Brute Force</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Defense:</b> Implement login attempt limits, account lockouts, captchas, and use strong hashing like Argon2 or BCrypt.
+            </div>
+        `;
+    }
+
+    renderRateLimiting() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rate Limit</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Purpose:</b> Prevents API abuse and DoS attacks by limiting requests per IP within a specific timeframe.
+            </div>
+        `;
+    }
+
+    renderDataSanitization() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sanitization</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Rule of thumb:</b> Sanitize input, escape output. Clean data from malicious symbols like <code><></code> before storage.
+            </div>
+        `;
+    }
+
+    renderPasswordSalts() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Salts & Pepper</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Salt:</b> Unique per user. <br>
+                <b>Pepper:</b> Secret string added to all passwords. <br>
+                Prevents rainbow table attacks.
+            </div>
+        `;
+    }
+
+    renderOauthSecurity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">OAuth Sec.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Best practices:</b> Use PKCE (Proof Key for Code Exchange), validate Redirect URIs strictly, and use scoped tokens.
+            </div>
+        `;
+    }
+
+    renderMfaSecurity() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MFA Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Layers:</b> Something you know (pass), something you have (token), something you are (bio). <br>
+                Dramatically reduces account takeover risk.
+            </div>
+        `;
+    }
+
+    renderSecurityHeaders() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sec. Headers</h2>
+            <div style="font-size:0.6em; text-align:left;">
+                <b>HSTS:</b> Force HTTPS.<br>
+                <b>CSP:</b> Content security.<br>
+                <b>X-Frame-Options:</b> Anti-clickjacking.<br>
+                <b>X-Content-Type:</b> Anti-sniffing.
+            </div>
+        `;
+    }
+
+    // === BATCH 84 - 890 TOOLS (LATEST BROWSER APIS) ===
+    renderWebShareApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Share</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.share({title, text, url})</code>. <br><br>
+                Triggers the native sharing dialog of the OS. Only works on HTTPS and via user activation.
+            </div>
+        `;
+    }
+
+    renderContactPickerApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Contact Pick</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.contacts.select(props, options)</code>. <br><br>
+                Allows users to select contacts from their native address book and share details with the web app.
+            </div>
+        `;
+    }
+
+    renderScreenWakeLock() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wake Lock</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.wakeLock.request('screen')</code>. <br><br>
+                Prevents the device from dimming or locking the screen. Useful for maps, recipes, or presentations.
+            </div>
+        `;
+    }
+
+    renderBroadcastChannel() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Broad. Chan.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>new BroadcastChannel('channel_name')</code>. <br><br>
+                Allows simple communication between different windows, tabs, or iframes of the same origin.
+            </div>
+        `;
+    }
+
+    renderVibrationApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vibration API</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.vibrate([200, 100, 200])</code>. <br><br>
+                Provides haptic feedback by vibrating the device. Great for games or critical alerts.
+            </div>
+        `;
+    }
+
+    renderResizeObserverApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Resize Obs.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>new ResizeObserver(entries => { ... })</code>. <br><br>
+                Reports changes to the dimensions of an Element's content box or border box.
+            </div>
+        `;
+    }
+
+    renderRequestIdleCallbackRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Idle Callback</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>window.requestIdleCallback(callback)</code>. <br><br>
+                Schedules low-priority work to be performed during a browser's idle periods. Improves responsiveness.
+            </div>
+        `;
+    }
+
+    renderWebCryptoApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Crypto</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>crypto.subtle.encrypt()</code>, <code>decrypt()</code>, <code>digest()</code>. <br><br>
+                Perform cryptographic operations directly in the browser with high performance.
+            </div>
+        `;
+    }
+
+    renderPaymentRequestApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Payment Req.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>new PaymentRequest(methods, details)</code>. <br><br>
+                Standardizes the checkout experience using the OS's native payment UI (Apple Pay, Google Pay).
+            </div>
+        `;
+    }
+
+    renderEyeDropperApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Eye Dropper</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>new EyeDropper().open()</code>. <br><br>
+                Opens a native color picker that lets users pick a color from anywhere on their screen (even outside the browser).
+            </div>
+        `;
+    }
+
+    // === BATCH 85 - 900 TOOLS (UI LAYOUT PATTERNS) ===
+    renderHolyGrailLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Holy Grail</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Components:</b> Header, Footer, and a 3-column middle section (Nav, Main, Aside). <br><br>
+                Achieved easily today with <code>display: grid</code> and <code>grid-template-areas</code>.
+            </div>
+        `;
+    }
+
+    renderStickySidebarLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sticky Side</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CSS:</b> <code>position: sticky; top: 0;</code>. <br><br>
+                Ensures navigation or secondary content stays visible while the user scrolls through long main content.
+            </div>
+        `;
+    }
+
+    renderCenterEverything() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Center All</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>The Modern Fix:</b><br>
+                <code>display: grid;</code><br>
+                <code>place-items: center;</code><br><br>
+                Perfectly centers children horizontally and vertically.
+            </div>
+        `;
+    }
+
+    renderMasonryLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Masonry</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Items are placed in columns, but since they have different heights, they "stack" like bricks. <br><br>
+                Often requires JS or <code>column-count</code> in CSS.
+            </div>
+        `;
+    }
+
+    renderGridCardsLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Grid Cards</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                <b>Robust Grid:</b><br>
+                <code>grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));</code><br><br>
+                Automatically creates responsive columns without media queries!
+            </div>
+        `;
+    }
+
+    renderAspectRatioBox() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Aspect Box</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Modern CSS:</b> <code>aspect-ratio: 16 / 9;</code>. <br><br>
+                Deprecated the "padding-top percentage" hack for responsive videos and images.
+            </div>
+        `;
+    }
+
+    renderFluidTypography() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fluid Typo</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>font-size: clamp(1rem, 5vw, 2.5rem);</code>. <br><br>
+                Smoothly scales font size between a minimum and maximum based on viewport width.
+            </div>
+        `;
+    }
+
+    renderGlassmorphismLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Glassmorphism</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                <b>Design:</b> Use translucent backgrounds with <code>backdrop-filter: blur(10px);</code> and a thin white border for that high-end Apple-style UI.
+            </div>
+        `;
+    }
+
+    renderDarkModeLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dark Mode</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Detection:</b> <code>@media (prefers-color-scheme: dark)</code>. <br><br>
+                Best implemented using CSS Variables (Custom Properties) to swap theme colors globally.
+            </div>
+        `;
+    }
+
+    renderScrollSnapLayout() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scroll Snap</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>scroll-snap-type: x mandatory;</code> on parent and <code>scroll-snap-align: center;</code> on children for carousel behaviors.
+            </div>
+        `;
+    }
+
+    // === BATCH 86 - 910 TOOLS (ES2022-2024 FEATURES) ===
+    renderPrivateFields() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Private Flds</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>class User { #password; }</code>. <br><br>
+                Members starting with <code>#</code> are truly private to the class—no external access possible.
+            </div>
+        `;
+    }
+
+    renderTopLevelAwait() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Top Await</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>const data = await fetch(url);</code> at the top level of an ES Module. <br><br>
+                Eliminates the need for <code>(async () => { ... })()</code> wrappers.
+            </div>
+        `;
+    }
+
+    renderArrayAtMethod() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Array.at()</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>arr.at(-1)</code> returns the last item. <br><br>
+                A cleaner way to perform relative indexing (negative values count from the end).
+            </div>
+        `;
+    }
+
+    renderStaticBlocks() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Static Blocks</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>class C { static { ... init stuff ... } }</code>. <br><br>
+                Allows complex initialization code for static class members, including try-catch or multiple steps.
+            </div>
+        `;
+    }
+
+    renderObjectHasOwn() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Object.hasOwn</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Better way:</b> <code>Object.hasOwn(obj, 'prop')</code>. <br><br>
+                Replaces <code>obj.hasOwnProperty('prop')</code> as it's safer against objects with null prototypes.
+            </div>
+        `;
+    }
+
+    renderErrorCause() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Error Cause</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>new Error('msg', { cause: originalErr })</code>. <br><br>
+                Allows wrapping a low-level error in a higher-level one while preserving the original stack and reason.
+            </div>
+        `;
+    }
+
+    renderRegexIndices() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Regex Indices</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Flag:</b> <code>/pattern/d</code>. <br><br>
+                When used, the match result includes an <code>indices</code> property with start/end positions for all capture groups.
+            </div>
+        `;
+    }
+
+    renderWeakRefs() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WeakRefs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> <code>new WeakRef(obj)</code> allows you to hold a reference to an object without preventing it from being garbage collected.
+            </div>
+        `;
+    }
+
+    renderFinalizationRegistry() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">FinalRegistry</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Registers a callback that runs when an object is garbage collected. Useful for cleaning up external resources.
+            </div>
+        `;
+    }
+
+    renderToSortedArray() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">toSorted()</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Immutability:</b> <code>arr.toSorted()</code>, <code>toReversed()</code>, <code>toSpliced()</code>. <br><br>
+                Returns a copy of the array instead of mutating the original one.
+            </div>
+        `;
+    }
+
+    // === BATCH 87 - 920 TOOLS (UNIX POWER TOOLS) ===
+    renderAwkBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Awk Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Powerhouse:</b> <code>awk '{print $1}' file</code>. <br><br>
+                The ultimate line-by-line text processing tool. Great for extracting columns from logs.
+            </div>
+        `;
+    }
+
+    renderSedBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sed Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Editing:</b> <code>sed 's/old/new/g' file</code>. <br><br>
+                The Stream Editor for replacing text, deleting lines, or inserting content without opening a file.
+            </div>
+        `;
+    }
+
+    renderXargsGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Xargs Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Piping:</b> <code>find . -name "*.log" | xargs rm</code>. <br><br>
+                Converts standard input into arguments for other commands.
+            </div>
+        `;
+    }
+
+    renderCurlAdvanced() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Curl Adv.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>API Pro:</b> <code>curl -i -X POST -H "Content-Type: application/json" -d '{"key":"val"}' URL</code>. <br><br>
+                The swiss-army knife of network transfers.
+            </div>
+        `;
+    }
+
+    renderWgetGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Wget Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Mirror:</b> <code>wget -m -p -E -k URL</code>. <br><br>
+                Perfect for recursive downloads, mirroring websites, and resuming interrupted transfers.
+            </div>
+        `;
+    }
+
+    renderSshTunneling() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SSH Tunnel</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Local Forward:</b> <code>ssh -L 8080:localhost:80 user@host</code>. <br><br>
+                Securely access remote services as if they were running locally.
+            </div>
+        `;
+    }
+
+    renderCronSyntax() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cron Syntax</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Schedule:</b> <code>* * * * * command</code>.<br>
+                1: Minute, 2: Hour, 3: Day of month, 4: Month, 5: Day of week. <br>
+                Use <code>crontab -e</code> to edit.
+            </div>
+        `;
+    }
+
+    renderSystemdUnits() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Systemd</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Daemons:</b> <code>systemctl start/stop/status service_name</code>. <br><br>
+                Modern Linux service manager for starting processes at boot and auto-restarting them.
+            </div>
+        `;
+    }
+
+    renderChrootJails() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Chroot Jails</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Isolation:</b> Changes the apparent root directory for a process. <br><br>
+                A precursor to containers, used for security and sandboxing applications.
+            </div>
+        `;
+    }
+
+    renderEnvScope() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Env Scope</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Export:</b> <code>export VAR=val</code> makes it available to child processes. <br><br>
+                Without <code>export</code>, the variable is only shell-local.
+            </div>
+        `;
+    }
+
+    renderConsoleMethods() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Console Pro</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>.table():</b> Display data as a table.<br>
+                <b>.group():</b> Group related logs.<br>
+                <b>.trace():</b> Show stack trace.<br>
+                <b>.warn() / .error():</b> Visual warning/error.
+            </div>
+        `;
+    }
+
+    renderNetworkThrottling() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Net Throttling</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Throttling:</b> Simulate slow 3G or offline mode in the Network tab to test app behavior under poor connectivity.
+            </div>
+        `;
+    }
+
+    renderLighthouseRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Lighthouse</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Audit:</b> Automates audits for Performance, SEO, Accessibility, Best Practices, and PWA readiness. Found in the Lighthouse tab.
+            </div>
+        `;
+    }
+
+    renderPerformanceTab() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Perf Tab</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Profiling:</b> Record a session to see script execution, layout changes, and frame rates. Identifies "jank" and long tasks.
+            </div>
+        `;
+    }
+
+    renderMemoryLeaks() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Memory Leaks</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Memory Tab:</b> Use "Heap Snapshot" to find objects that aren't being garbage collected. Look for growing memory usage.
+            </div>
+        `;
+    }
+
+    renderLayerTreeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Layer Tree</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Layers:</b> View the 3D representation of your site's compositing layers. Helps debug z-index and performance issues.
+            </div>
+        `;
+    }
+
+    renderSourceMapsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Source Maps</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Debugging:</b> Maps minified/transpiled code back to your original source code, making production debugging possible.
+            </div>
+        `;
+    }
+
+    renderLocalOverrides() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Local Overrides</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Persistence:</b> Save changes made in DevTools back to your local files automatically via the "Overrides" feature.
+            </div>
+        `;
+    }
+
+    renderDevtoolsSnippets() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Snippets</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Automation:</b> Small scripts that you can save and run on any page via the Sources > Snippets tab.
+            </div>
+        `;
+    }
+
+    renderInspectWebsockets() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WebSockets</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Inspection:</b> Select a WebSocket connection in the Network tab and click the "Messages" sub-tab to see frames.
+            </div>
+        `;
+    }
+
+    renderGitRebase() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Rebase</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Rebase:</b> Rewrites history by moving a series of commits to a new base commit. Use <code>-i</code> for interactive cleanup.
+            </div>
+        `;
+    }
+
+    renderGitCherryPick() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Cherry-Pick</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Cherry-Pick:</b> Apply the changes introduced by some existing commits onto your current branch.<br>
+                <code>git cherry-pick [hash]</code>
+            </div>
+        `;
+    }
+
+    renderGitStashRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Stash</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Stash:</b> Temporarily shelves (stashes) changes you've made to your working copy.<br>
+                <code>git stash pop</code> - restore changes.
+            </div>
+        `;
+    }
+
+    renderGitReflog() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Reflog</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Reflog:</b> Records when the tips of branches and other references were updated in the local repository. Safety net for <code>reset</code>.
+            </div>
+        `;
+    }
+
+    renderGitSubmodules() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Submodules</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Submodules:</b> Allows you to keep a Git repository as a subdirectory of another Git repository.
+            </div>
+        `;
+    }
+
+    renderGitHooksInfo() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Hooks</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Hooks:</b> Scripts that Git executes before or after events such as: commit, push, and receive. Found in <code>.git/hooks</code>.
+            </div>
+        `;
+    }
+
+    renderGitBisectGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Bisect</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Bisect:</b> Uses binary search to find the commit that introduced a bug.<br>
+                <code>git bisect start</code> -> <code>bad</code> -> <code>good</code>.
+            </div>
+        `;
+    }
+
+    renderGitSquash() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Squash</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Squash:</b> Combining multiple commits into a single commit to keep project history clean. Accomplished via <code>rebase -i</code>.
+            </div>
+        `;
+    }
+
+    renderGitRemotes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Remotes</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Remotes:</b> Manage the set of tracked repositories.<br>
+                <code>git remote -v</code><br>
+                <code>git remote add [name] [url]</code>
+            </div>
+        `;
+    }
+
+    renderGitResetTypes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Git Resets</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Soft:</b> Keeps changes in staging.<br>
+                <b>Mixed:</b> Keeps changes in working dir (default).<br>
+                <b>Hard:</b> Discards all changes. <i>Dangerous!</i>
+            </div>
+        `;
+    }
+
+    renderDockerfileBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dockerfile</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>FROM:</b> Base image.<br>
+                <b>RUN:</b> Build-time command.<br>
+                <b>CMD:</b> Runtime command (default).<br>
+                <b>ENTRYPOINT:</b> Executable run at start.<br>
+                <b>COPY:</b> Add files from host.
+            </div>
+        `;
+    }
+
+    renderDockerComposeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker-Compose</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Compose:</b> Tool for defining and running multi-container Docker applications. Uses a YAML file to configure services.
+            </div>
+        `;
+    }
+
+    renderDockerVolumes() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker Volumes</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Volumes:</b> The preferred mechanism for persisting data generated by and used by Docker containers. Detached from container lifecycle.
+            </div>
+        `;
+    }
+
+    renderDockerNetworks() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker Network</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Networking:</b> Allows containers to communicate with each other and the host. Bridge (default), Host, and Overlay are common drivers.
+            </div>
+        `;
+    }
+
+    renderDockerImagesContainers() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Image vs Cont</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Image:</b> A read-only template with instructions for creating a container (Blueprint).<br><br>
+                <b>Container:</b> A runnable instance of an image (Runtime).
+            </div>
+        `;
+    }
+
+    renderDockerCleanup() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker Prune</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Cleanup:</b> Reclaim disk space by removing unused Docker objects.<br>
+                <code>docker system prune</code><br>
+                <code>docker image prune -a</code>
+            </div>
+        `;
+    }
+
+    renderDockerExec() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker Exec</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Exec:</b> Run a command in a running container.<br>
+                <code>docker exec -it [cont_id] /bin/bash</code><br>
+                Use it to inspect files or processes inside.
+            </div>
+        `;
+    }
+
+    renderDockerLogsGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Docker Logs</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Logs:</b> View stdout/stderr output from a container.<br>
+                <code>docker logs -f [cont_id]</code> - Follow logs in real-time.
+            </div>
+        `;
+    }
+
+    renderDockerPortMapping() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Port Mapping</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Ports:</b> Map host port to container port.<br>
+                <code>-p 8080:80</code><br>
+                Host port is 8080, container port is 80.
+            </div>
+        `;
+    }
+
+    renderDockerMultistage() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Multi-stage</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Optimization:</b> Use multiple <code>FROM</code> statements in one Dockerfile to keep the final production image small and clean.
+            </div>
+        `;
+    }
+
+    renderK8sPods() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">K8s Pods</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Pod:</b> The basic execution unit in K8s. It encapsulates one or more containers, storage resources, and a unique network IP.
+            </div>
+        `;
+    }
+
+    renderK8sServices() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">K8s Services</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>ClusterIP:</b> Internal access (default).<br>
+                <b>NodePort:</b> Port on each node.<br>
+                <b>LoadBalancer:</b> External cloud LB.<br>
+                <b>ExternalName:</b> Map to DNS name.
+            </div>
+        `;
+    }
+
+    renderK8sDeployments() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">K8s Deploy</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Deployment:</b> Provides declarative updates for Pods and ReplicaSets. Handles rollouts, rollbacks, and scaling.
+            </div>
+        `;
+    }
+
+    renderK8sNamespaces() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">K8s Namespace</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Namespace:</b> Used to isolate groups of resources within a single cluster. Useful for dev/prod separation.
+            </div>
+        `;
+    }
+
+    renderK8sConfigMaps() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ConfigMaps</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>ConfigMap:</b> API object used to store non-confidential data in key-value pairs. Consumed as env vars or volume files.
+            </div>
+        `;
+    }
+
+    renderK8sSecrets() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">K8s Secrets</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Secret:</b> Similar to ConfigMap but specifically for sensitive data (passwords, keys). Usually encoded (Base64).
+            </div>
+        `;
+    }
+
+    renderK8sIngress() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ingress</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Ingress:</b> Manages external access to services in a cluster, typically HTTP. Provides load balancing, SSL termination, and name-based virtual hosting.
+            </div>
+        `;
+    }
+
+    renderK8sNodesClusters() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Nodes vs Clust</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Node:</b> A worker machine (VM or physical).<br><br>
+                <b>Cluster:</b> A set of node machines for running containerized applications.
+            </div>
+        `;
+    }
+
+    renderKubectlTips() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Kubectl Pro</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>get:</b> List resources.<br>
+                <b>describe:</b> Show details.<br>
+                <b>logs:</b> Print pod logs.<br>
+                <b>exec:</b> Execute cmd in pod.<br>
+                <b>apply -f:</b> Apply config from file.
+            </div>
+        `;
+    }
+
+    renderHelmBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Helm Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Helm:</b> The package manager for Kubernetes. Uses "Charts" to define, install, and upgrade complex K8s applications.
+            </div>
+        `;
+    }
+
 }
 
 // Initialize
