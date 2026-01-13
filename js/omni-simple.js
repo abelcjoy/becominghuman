@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 920 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 1,080 ELITE TOOLS! 💎
  * 
  * BATCH 56: AiModels + PromptEng + TokenEst + NnLayers + TrainVsInfer + AiBias + Hallucination + VectorDb + Rlhf + FineTune
  * BATCH 57: WebWorkers + ServiceWorkers + StorageTypes + IndexedDb + FetchApi + GeoApi + ClipApi + InteractionObs + MutationObs + DeviceMotion
@@ -33,6 +33,22 @@
  * BATCH 85: HolyGrail + Sidebar + Centering + Masonry + GridCards + AspectRatio + FluidTypo + Glassmorph + DarkMode + ScrollSnap
  * BATCH 86: PrivateFields + TopAwait + ArrayAt + StaticBlocks + HasOwn + ErrorCause + RegexIndices + WeakRefs + FinalRegistry + ToSorted
  * BATCH 87: AwkBasics + SedBasics + XargsGuide + CurlAdv + WgetGuide + SshTunnel + CronSyntax + Systemd + Chroot + EnvScope
+ * BATCH 88: Metrics + Logging + Tracing + Heartbeat + HealthCheck + Dashboard + Alerting + LogAgg + SreBasics + SloSli
+ * BATCH 89: DevSecOps + IaCScan + SecPipeline + ContainerSec + SecretMgmt + StaticAnalysis + DynamicAnalysis + Pentest + ThreatModel + IncidentResp
+ * BATCH 90: AiEthics + BiasMitigation + Explainability + ModelSafety + DataPrivacy + AiGovernance + RlhfRef + PromptSec + ModelWatermark + Adversarial
+ * BATCH 91: WebComponents + ShadowDom + CustElements + TemplateTag + SlotRef + ComponentLifecycle + StylesScoping + DeclarativeShadow + LitRef + WebCompA11y
+ * BATCH 92: PerioSync + AppBadging + ShapeDet + WebBluetooth + WebUsb + WebNfc + BackFetch + WebSerial + BackSync + AppInstall
+ * BATCH 93: CSSSubgrid + ContUnits + ColorMix + RelColors + Nesting + LayRef + ScopeCSS + ViewTrans + InitLetter + ScrollTime
+ * BATCH 94: Prerender + PreloadStrats + PriorityHints + EarlyHints + ResourceHints + VitalsRef + LongTask + TaskAttr + MemPressure + ImgSet
+ * BATCH 95: ServPatterns + EdgeComms + ColdStart + FinOps + MultiCloud + HybridCloud + ChaosEng + BlueGreen + CanaryRelease + RollingUpd
+ * BATCH 96: ETLPipe + DataLake + DataWare + SchemaReg + StreamProc + CDCGuide + DataQual + DataMesh + AnalyticsDb + VectorSearch
+ * BATCH 97: GameLoop + Canvas2D + WebGLRef + SpriteSheet + PhysicsEng + CollisionDet + ShaderBasics + InputHand + AudioEng + GameState
+ * BATCH 98: CrossPlat + NativeBridge + HotReload + StoreDeploy + PushSetup + MobileA11y + DeepLink + AppPerms + Sensors + AppBundle
+ * BATCH 99: MicroFront + HexArch + CleanArch + EvSourcing + CqrsPattern + SidecarRef + CircBreaker + ServMesh + BffPattern + ApiGateAdv
+ * BATCH 100: PropTesting + MutTesting + Fuzzing + VisualReg + ContractTest + LoadTesting + ChaosTesting + A11yAudit + SecTesting + SynthMon
+ * BATCH 101: WebCodecs + WebTransport + StreamsAPI + CompressionAPI + ReportingAPI + PermissionsAPI + ScreenCapture + FontAccess + ComputePressure + UaHints
+ * BATCH 102: DoraMetrics + TeamTopos + InnerSource + TechDebt + RfcProcess + AdrRecords + LaddersRef + MentorsRef + IncidentMgmt + PostMortems
+ * BATCH 103: CoreVitals + StructData + OpenGraph + Sitemaps + RobotsTxt + CanonTags + MetaTags + AltText + InternalLinks + Backlinks
  */
 
 class OmniTools {
@@ -7514,6 +7530,1302 @@ class OmniTools {
                 icon: "🌐",
                 category: "Unix",
                 render: () => this.renderEnvScope()
+            },
+            // === BATCH 88 - 930 TOOLS (SYSTEM OBSERVABILITY) ===
+            metricsBasics: {
+                name: "Metrics",
+                searchTerms: "sre monitoring metrics prometheus grafana counter gauge",
+                description: "System data points",
+                icon: "📊",
+                category: "SRE",
+                render: () => this.renderMetricsBasics()
+            },
+            loggingBasics: {
+                name: "Logging",
+                searchTerms: "sre logs aggregation elk splunk graylog",
+                description: "Event record guide",
+                icon: "📝",
+                category: "SRE",
+                render: () => this.renderLoggingBasics()
+            },
+            tracingBasics: {
+                name: "Tracing",
+                searchTerms: "sre distributed tracing jaeger zipkin span",
+                description: "Request flow track",
+                icon: "🧶",
+                category: "SRE",
+                render: () => this.renderTracingBasics()
+            },
+            heartbeatRef: {
+                name: "Heartbeat",
+                searchTerms: "sre monitoring heartbeat health check pulse",
+                description: "Service pulse check",
+                icon: "💓",
+                category: "SRE",
+                render: () => this.renderHeartbeatRef()
+            },
+            healthCheckRef: {
+                name: "Health Check",
+                searchTerms: "sre kubernetes liveness readiness startup",
+                description: "App health status",
+                icon: "🏥",
+                category: "SRE",
+                render: () => this.renderHealthCheckRef()
+            },
+            dashboardRef: {
+                name: "Dashboard",
+                searchTerms: "sre visualization grafana kibana monitoring",
+                description: "Data visualization",
+                icon: "🖥️",
+                category: "SRE",
+                render: () => this.renderDashboardRef()
+            },
+            alertingRef: {
+                name: "Alerting",
+                searchTerms: "sre alertmanager pagerduty on-call monitoring",
+                description: "Incident notification",
+                icon: "🚨",
+                category: "SRE",
+                render: () => this.renderAlertingRef()
+            },
+            logAggRef: {
+                name: "Log Aggregation",
+                searchTerms: "sre logging centralization elk fluentd",
+                description: "Centralized logging",
+                icon: "🗄️",
+                category: "SRE",
+                render: () => this.renderLogAggRef()
+            },
+            sreBasics: {
+                name: "SRE Basics",
+                searchTerms: "sre site reliability engineering devops culture",
+                description: "Reliability guide",
+                icon: "🛠️",
+                category: "SRE",
+                render: () => this.renderSreBasics()
+            },
+            sloSliRef: {
+                name: "SLO vs SLI",
+                searchTerms: "sre slo sli sla error budget",
+                description: "Reliability targets",
+                icon: "🎯",
+                category: "SRE",
+                render: () => this.renderSloSliRef()
+            },
+            // === BATCH 89 - 940 TOOLS (DEVSECOPS) ===
+            devSecOpsBasics: {
+                name: "DevSecOps",
+                searchTerms: "security devops pipeline automation compliance",
+                description: "Shift-left security",
+                icon: "🛡️",
+                category: "Security",
+                render: () => this.renderDevSecOpsBasics()
+            },
+            iacScanRef: {
+                name: "IaC Scanning",
+                searchTerms: "security infrastructure as code scan tfsec checkov",
+                description: "Terraform/Cloud scan",
+                icon: "🏗️",
+                category: "Security",
+                render: () => this.renderIacScanRef()
+            },
+            secPipelineRef: {
+                name: "Sec. Pipeline",
+                searchTerms: "security devops pipeline sast dast scanning",
+                description: "Hardened CI/CD",
+                icon: "⛓️",
+                category: "Security",
+                render: () => this.renderSecPipelineRef()
+            },
+            containerSecRef: {
+                name: "Cont. Security",
+                searchTerms: "security docker kubernetes container scan trivy",
+                description: "Image hardening",
+                icon: "📦",
+                category: "Security",
+                render: () => this.renderContainerSecRef()
+            },
+            secretMgmtRef: {
+                name: "Secret Mgmt",
+                searchTerms: "security vault secrets keys rotation",
+                description: "Secure key storage",
+                icon: "🗝️",
+                category: "Security",
+                render: () => this.renderSecretMgmtRef()
+            },
+            staticAnalysisRef: {
+                name: "SAST Guide",
+                searchTerms: "security static analysis code scan sonarqube",
+                description: "Static code scan",
+                icon: "🔎",
+                category: "Security",
+                render: () => this.renderStaticAnalysisRef()
+            },
+            dynamicAnalysisRef: {
+                name: "DAST Guide",
+                searchTerms: "security dynamic analysis web scan zap",
+                description: "Runtime security",
+                icon: "⚡",
+                category: "Security",
+                render: () => this.renderDynamicAnalysisRef()
+            },
+            pentestRef: {
+                name: "Pen Testing",
+                searchTerms: "security penetration testing assessment audit",
+                description: "Security auditing",
+                icon: "🕵️",
+                category: "Security",
+                render: () => this.renderPentestRef()
+            },
+            threatModelRef: {
+                name: "Threat Model",
+                searchTerms: "security architecture threat modeling stride",
+                description: "Visual security prep",
+                icon: "📐",
+                category: "Security",
+                render: () => this.renderThreatModelRef()
+            },
+            incidentRespRef: {
+                name: "Incident Resp.",
+                searchTerms: "security incident response plan forensics",
+                description: "Hack cleanup guide",
+                icon: "🚒",
+                category: "Security",
+                render: () => this.renderIncidentRespRef()
+            },
+            // === BATCH 90 - 950 TOOLS (AI ETHICS & SAFETY) ===
+            aiEthicsRef: {
+                name: "AI Ethics",
+                searchTerms: "ai ethics bias fairness alignment",
+                description: "Moral AI guide",
+                icon: "⚖️",
+                category: "AI",
+                render: () => this.renderAiEthicsRef()
+            },
+            biasMitigationRef: {
+                name: "Bias Mitigat.",
+                searchTerms: "ai bias mitigation data fairness",
+                description: "Neutrality guide",
+                icon: "🎭",
+                category: "AI",
+                render: () => this.renderBiasMitigationRef()
+            },
+            explainabilityRef: {
+                name: "Explainability",
+                searchTerms: "ai explainable xai black box interpretability",
+                description: "Logic transparency",
+                icon: "💡",
+                category: "AI",
+                render: () => this.renderExplainabilityRef()
+            },
+            modelSafetyRef: {
+                name: "Model Safety",
+                searchTerms: "ai safety alignment jailbreak prevention",
+                description: "Safe output guide",
+                icon: "🛑",
+                category: "AI",
+                render: () => this.renderModelSafetyRef()
+            },
+            dataPrivacyRef: {
+                name: "Data Privacy",
+                searchTerms: "ai privacy gdpr differential anonymization",
+                description: "Secure data usage",
+                icon: "👤",
+                category: "AI",
+                render: () => this.renderDataPrivacyRef()
+            },
+            aiGovernanceRef: {
+                name: "AI Governance",
+                searchTerms: "ai regulation policy legal compliance",
+                description: "Policy framework",
+                icon: "🏛️",
+                category: "AI",
+                render: () => this.renderAiGovernanceRef()
+            },
+            rlhfRef: {
+                name: "RLHF Guide",
+                searchTerms: "ai rlhf alignment feedback reinforcement",
+                description: "Human-led training",
+                icon: "🤝",
+                category: "AI",
+                render: () => this.renderRlhfRef()
+            },
+            promptSecRef: {
+                name: "Prompt Sec.",
+                searchTerms: "ai prompt injection jailbreak security",
+                description: "Injection defense",
+                icon: "🔫",
+                category: "AI",
+                render: () => this.renderPromptSecRef()
+            },
+            modelWatermarkRef: {
+                name: "Model Water.",
+                searchTerms: "ai watermarking synthetic media detection",
+                description: "Output tracing",
+                icon: "💧",
+                category: "AI",
+                render: () => this.renderModelWatermarkRef()
+            },
+            adversarialRef: {
+                name: "Adversarial",
+                searchTerms: "ai adversarial attacks robustness perturbations",
+                description: "Robustness guide",
+                icon: "⚔️",
+                category: "AI",
+                render: () => this.renderAdversarialRef()
+            },
+            // === BATCH 91 - 960 TOOLS (WEB COMPONENTS) ===
+            webComponentsBasics: {
+                name: "Web Component",
+                searchTerms: "web components shadow dom custom elements",
+                description: "Encapsulated logic",
+                icon: "🧱",
+                category: "Web",
+                render: () => this.renderWebComponentsBasics()
+            },
+            shadowDomRef: {
+                name: "Shadow DOM",
+                searchTerms: "web components shadow dom styles encapsulation",
+                description: "Style isolation",
+                icon: "🌓",
+                category: "Web",
+                render: () => this.renderShadowDomRef()
+            },
+            custElementsRef: {
+                name: "Custom Elem.",
+                searchTerms: "web components custom elements register define",
+                description: "Native HTML tags",
+                icon: "🏷️",
+                category: "Web",
+                render: () => this.renderCustElementsRef()
+            },
+            templateTagRef: {
+                name: "Template Tag",
+                searchTerms: "web components template tag fragment html",
+                description: "Reusable HTML",
+                icon: "♻️",
+                category: "Web",
+                render: () => this.renderTemplateTagRef()
+            },
+            slotRef: {
+                name: "Slot API",
+                searchTerms: "web components slot composition projection",
+                description: "Content injection",
+                icon: "📥",
+                category: "Web",
+                render: () => this.renderSlotRef()
+            },
+            compLifecycleRef: {
+                name: "Comp Life.",
+                searchTerms: "web components lifecycle connectedCallback detached",
+                description: "Execution flow",
+                icon: "🔄",
+                category: "Web",
+                render: () => this.renderCompLifecycleRef()
+            },
+            stylesScopingRef: {
+                name: "Style Scope",
+                searchTerms: "web components styles shadow dom css host",
+                description: "CSS isolation guide",
+                icon: "🎨",
+                category: "Web",
+                render: () => this.renderStylesScopingRef()
+            },
+            declarativeShadowRef: {
+                name: "D-Shadow DOM",
+                searchTerms: "web components declarative shadow dom ssr",
+                description: "Shadow DOM SSR",
+                icon: "📄",
+                category: "Web",
+                render: () => this.renderDeclarativeShadowRef()
+            },
+            litRef: {
+                name: "Lit Guide",
+                searchTerms: "web components lit html reactive components",
+                description: "Modern component HW",
+                icon: "🔥",
+                category: "Web",
+                render: () => this.renderLitRef()
+            },
+            webCompA11yRef: {
+                name: "Comp A11y",
+                searchTerms: "web components accessibility a11y focus aria",
+                description: "Accessible component",
+                icon: "♿",
+                category: "Web",
+                render: () => this.renderWebCompA11yRef()
+            },
+            // === BATCH 92 - 970 TOOLS (ADVANCED PWA & HARDWARE) ===
+            periodicBackgroundSync: {
+                name: "PerioSync",
+                searchTerms: "pwa periodic background sync service worker",
+                description: "Update in background",
+                icon: "🔄",
+                category: "PWA",
+                render: () => this.renderPeriodicBackgroundSync()
+            },
+            appBadgingApi: {
+                name: "App Badging",
+                searchTerms: "pwa app badge notification count icon",
+                description: "Unread count icon",
+                icon: "🔴",
+                category: "PWA",
+                render: () => this.renderAppBadgingApi()
+            },
+            shapeDetectionApi: {
+                name: "Shape Det.",
+                searchTerms: "browser api shape detection face barcode text qr",
+                description: "Native face/QR scan",
+                icon: "📷",
+                category: "Browser",
+                render: () => this.renderShapeDetectionApi()
+            },
+            webBluetoothApi: {
+                name: "Web Bluetooth",
+                searchTerms: "browser api bluetooth low energy ble iot",
+                description: "Connect to devices",
+                icon: "🦷",
+                category: "Browser",
+                render: () => this.renderWebBluetoothApi()
+            },
+            webUsbApi: {
+                name: "Web USB",
+                searchTerms: "browser api usb hardware iot",
+                description: "Direct USB access",
+                icon: "🔌",
+                category: "Browser",
+                render: () => this.renderWebUsbApi()
+            },
+            webNfcApi: {
+                name: "Web NFC",
+                searchTerms: "browser api nfc tag reader writer iot",
+                description: "Read/Write NFC tags",
+                icon: "📡",
+                category: "Browser",
+                render: () => this.renderWebNfcApi()
+            },
+            backgroundFetchApi: {
+                name: "Back. Fetch",
+                searchTerms: "pwa background fetch download upload large files",
+                description: "Large file transfer",
+                icon: "📥",
+                category: "PWA",
+                render: () => this.renderBackgroundFetchApi()
+            },
+            webSerialApi: {
+                name: "Web Serial",
+                searchTerms: "browser api serial port hardware arduino iot",
+                description: "Serial port comms",
+                icon: "⌨️",
+                category: "Browser",
+                render: () => this.renderWebSerialApi()
+            },
+            backgroundSyncBasics: {
+                name: "Back. Sync",
+                searchTerms: "pwa background sync service worker offline",
+                description: "Retry when online",
+                icon: "📶",
+                category: "PWA",
+                render: () => this.renderBackgroundSyncBasics()
+            },
+            appInstallPromptRef: {
+                name: "App Install",
+                searchTerms: "pwa install prompt beforeinstallprompt custom ui",
+                description: "Custom install UI",
+                icon: "📲",
+                category: "PWA",
+                render: () => this.renderAppInstallPromptRef()
+            },
+            // === BATCH 93 - 980 TOOLS (ADVANCED CSS) ===
+            cssSubgridRef: {
+                name: "CSS Subgrid",
+                searchTerms: "css grid subgrid nested layout",
+                description: "Inherit parent grid",
+                icon: "🕸️",
+                category: "CSS",
+                render: () => this.renderCssSubgridRef()
+            },
+            containerUnitsRef: {
+                name: "Cont. Units",
+                searchTerms: "css container queries units cqw cqh cqi",
+                description: "Relative to parent",
+                icon: "📦",
+                category: "CSS",
+                render: () => this.renderContainerUnitsRef()
+            },
+            cssColorMix: {
+                name: "Color Mix",
+                searchTerms: "css color-mix function colors dynamic",
+                description: "Native color blend",
+                icon: "🎨",
+                category: "CSS",
+                render: () => this.renderCssColorMix()
+            },
+            relativeColorsRef: {
+                name: "Rel. Colors",
+                searchTerms: "css relative color syntax hsl rgb lch",
+                description: "Derived colors",
+                icon: "🌈",
+                category: "CSS",
+                render: () => this.renderRelativeColorsRef()
+            },
+            cssNestingRef: {
+                name: "CSS Nesting",
+                searchTerms: "css native nesting syntax & amp",
+                description: "Standard nesting",
+                icon: "🪆",
+                category: "CSS",
+                render: () => this.renderCssNestingRef()
+            },
+            cssLayersRef: {
+                name: "CSS Layers",
+                searchTerms: "css cascade layers @layer priority",
+                description: "Manage specificity",
+                icon: "🥞",
+                category: "CSS",
+                render: () => this.renderCssLayersRef()
+            },
+            cssScopeRef: {
+                name: "Scope CSS",
+                searchTerms: "css @scope component local styles",
+                description: "Local CSS scoping",
+                icon: "🎯",
+                category: "CSS",
+                render: () => this.renderCssScopeRef()
+            },
+            viewTransitionsRef: {
+                name: "View Trans.",
+                searchTerms: "browser api view transitions spa mpa page animation",
+                description: "Native page trans",
+                icon: "🎞️",
+                category: "Browser",
+                render: () => this.renderViewTransitionsRef()
+            },
+            initialLetterRef: {
+                name: "Init. Letter",
+                searchTerms: "css initial-letter drop cap typography",
+                description: "Cool drop caps",
+                icon: "🔠",
+                category: "CSS",
+                render: () => this.renderInitialLetterRef()
+            },
+            scrollTimelineRef: {
+                name: "Scroll Time",
+                searchTerms: "css scroll-timeline animation scroll-driven",
+                description: "Scroll animations",
+                icon: "📉",
+                category: "CSS",
+                render: () => this.renderScrollTimelineRef()
+            },
+            // === BATCH 94 - 990 TOOLS (PERFORMANCE ADVANCED) ===
+            prerenderRef: {
+                name: "Prerender",
+                searchTerms: "performance prerender speculation rules fetch",
+                description: "Instant navigation",
+                icon: "⚡",
+                category: "Perf",
+                render: () => this.renderPrerenderRef()
+            },
+            preloadStratsRef: {
+                name: "Preload Strat",
+                searchTerms: "performance preload preconnect prefetch strats",
+                description: "Resource loading",
+                icon: "🚀",
+                category: "Perf",
+                render: () => this.renderPreloadStratsRef()
+            },
+            priorityHintsRef: {
+                name: "Priority Hint",
+                searchTerms: "performance priority hints fetchpriority high low",
+                description: "Set load order",
+                icon: "🔝",
+                category: "Perf",
+                render: () => this.renderPriorityHintsRef()
+            },
+            earlyHintsRef: {
+                name: "Early Hints",
+                searchTerms: "performance 103 early hints server push http2",
+                description: "Fast server hints",
+                icon: "📧",
+                category: "Perf",
+                render: () => this.renderEarlyHintsRef()
+            },
+            resourceHintsGuide: {
+                name: "Res. Hints",
+                searchTerms: "performance resource hints dns-prefetch preconnect",
+                description: "Optimize discovery",
+                icon: "🔍",
+                category: "Perf",
+                render: () => this.renderResourceHintsGuide()
+            },
+            webVitalsAdvanced: {
+                name: "Vitals Ref.",
+                searchTerms: "performance lcp fid cls inp ttfb vitals",
+                description: "Core Web Vitals",
+                icon: "📈",
+                category: "Perf",
+                render: () => this.renderWebVitalsAdvanced()
+            },
+            longTaskApiRef: {
+                name: "Long Task",
+                searchTerms: "performance long task api main thread jank",
+                description: "Track UI blocking",
+                icon: "🐢",
+                category: "Perf",
+                render: () => this.renderLongTaskApiRef()
+            },
+            taskAttributionRef: {
+                name: "Task Attr.",
+                searchTerms: "performance task attribution monitor main thread",
+                description: "Trace slow tasks",
+                icon: "🕵️",
+                category: "Perf",
+                render: () => this.renderTaskAttributionRef()
+            },
+            memoryPressureApi: {
+                name: "Mem Pressure",
+                searchTerms: "performance device memory pressure garbage collection",
+                description: "Monitor resources",
+                icon: "📀",
+                category: "Perf",
+                render: () => this.renderMemoryPressureApi()
+            },
+            imageSetRef: {
+                name: "ImageSet",
+                searchTerms: "performance css image-set responsive images dppx",
+                description: "Responsive bg img",
+                icon: "🖼️",
+                category: "Perf",
+                render: () => this.renderImageSetRef()
+            },
+            // === BATCH 95 - 1,000 TOOLS (CLOUD NATIVE) ===
+            serverlessPatterns: {
+                name: "Serv. Pattern",
+                searchTerms: "cloud serverless patterns fan-out orchestration lambda",
+                description: "FaaS architectures",
+                icon: "☁️",
+                category: "Cloud",
+                render: () => this.renderServerlessPatterns()
+            },
+            edgeCommsRef: {
+                name: "Edge Comms",
+                searchTerms: "cloud edge computing communication latency cdn",
+                description: "Low-latency comms",
+                icon: "🌐",
+                category: "Cloud",
+                render: () => this.renderEdgeCommsRef()
+            },
+            coldStartOpt: {
+                name: "Cold Start",
+                searchTerms: "cloud serverless cold start optimization lambda",
+                description: "Instant execution",
+                icon: "❄️",
+                category: "Cloud",
+                render: () => this.renderColdStartOpt()
+            },
+            finOpsBasics: {
+                name: "FinOps",
+                searchTerms: "cloud finops cost optimization budget billing",
+                description: "Cloud cost mgmt",
+                icon: "💰",
+                category: "Cloud",
+                render: () => this.renderFinOpsBasics()
+            },
+            multiCloudRef: {
+                name: "Multi-Cloud",
+                searchTerms: "cloud multi-cloud strategy aws azure gcp redundancy",
+                description: "Vendor agnostic",
+                icon: "🌌",
+                category: "Cloud",
+                render: () => this.renderMultiCloudRef()
+            },
+            hybridCloudRef: {
+                name: "Hybrid Cloud",
+                searchTerms: "cloud hybrid cloud on-premise connectivity",
+                description: "Local + Cloud mix",
+                icon: "🔄",
+                category: "Cloud",
+                render: () => this.renderHybridCloudRef()
+            },
+            chaosEngBasics: {
+                name: "Chaos Eng.",
+                searchTerms: "cloud chaos engineering resilience testing gremlin",
+                description: "Resilience test",
+                icon: "🧨",
+                category: "Cloud",
+                render: () => this.renderChaosEngBasics()
+            },
+            blueGreenDeployRef: {
+                name: "Blue/Green",
+                searchTerms: "cloud deployment blue green zero downtime",
+                description: "Zero-downtime upd",
+                icon: "🔵",
+                category: "Cloud",
+                render: () => this.renderBlueGreenDeployRef()
+            },
+            canaryReleaseRef: {
+                name: "Canary",
+                searchTerms: "cloud deployment canary release traffic splitting",
+                description: "Gradual rollouts",
+                icon: "🐤",
+                category: "Cloud",
+                render: () => this.renderCanaryReleaseRef()
+            },
+            rollingUpdateRef: {
+                name: "Rolling Upd.",
+                searchTerms: "cloud deployment rolling update kubernetes swarm",
+                description: "Continuous release",
+                icon: "🎢",
+                category: "Cloud",
+                render: () => this.renderRollingUpdateRef()
+            },
+            // === BATCH 96 - 1,010 TOOLS (DATA ENGINEERING) ===
+            etlPipelineRef: {
+                name: "ETL Pipe",
+                searchTerms: "data engineering etl pipeline extract transform load",
+                description: "Data flow guide",
+                icon: "🧪",
+                category: "Data",
+                render: () => this.renderEtlPipelineRef()
+            },
+            dataLakeRef: {
+                name: "Data Lake",
+                searchTerms: "data engineering data lake s3 hdfs raw data",
+                description: "Raw storage guide",
+                icon: "🌊",
+                category: "Data",
+                render: () => this.renderDataLakeRef()
+            },
+            dataWarehouseRef: {
+                name: "Data Ware",
+                searchTerms: "data engineering data warehouse snowflake redshift",
+                description: "Structured storage",
+                icon: "🏢",
+                category: "Data",
+                render: () => this.renderDataWarehouseRef()
+            },
+            schemaRegistryRef: {
+                name: "Schema Reg",
+                searchTerms: "data engineering schema registry avro kafka proto",
+                description: "Schema evolution",
+                icon: "📖",
+                category: "Data",
+                render: () => this.renderSchemaRegistryRef()
+            },
+            streamProcRef: {
+                name: "Stream Proc",
+                searchTerms: "data engineering stream processing flink spark kafka",
+                description: "Real-time data",
+                icon: "🌊",
+                category: "Data",
+                render: () => this.renderStreamProcRef()
+            },
+            cdcGuideRef: {
+                name: "CDC Guide",
+                searchTerms: "data engineering change data capture debezium replication",
+                description: "Real-time sync",
+                icon: "🔄",
+                category: "Data",
+                render: () => this.renderCdcGuideRef()
+            },
+            dataQualityRef: {
+                name: "Data Qual",
+                searchTerms: "data engineering data quality testing validation",
+                description: "Accuracy check",
+                icon: "💎",
+                category: "Data",
+                render: () => this.renderDataQualityRef()
+            },
+            dataMeshRef: {
+                name: "Data Mesh",
+                searchTerms: "data engineering data mesh architecture decentralized",
+                description: "Distributed data",
+                icon: "🕸️",
+                category: "Data",
+                render: () => this.renderDataMeshRef()
+            },
+            analyticsDbRef: {
+                name: "Analytics Db",
+                searchTerms: "data engineering olap clickhouse duckdb analytics",
+                description: "Fast query db",
+                icon: "📊",
+                category: "Data",
+                render: () => this.renderAnalyticsDbRef()
+            },
+            vectorSearchRef: {
+                name: "Vector Search",
+                searchTerms: "data engineering vector search pinecone milvus embedding",
+                description: "AI-ready search",
+                icon: "🏹",
+                category: "Data",
+                render: () => this.renderVectorSearchRef()
+            },
+            // === BATCH 97 - 1,020 TOOLS (GAME DEVELOPMENT) ===
+            gameLoopRef: {
+                name: "Game Loop",
+                searchTerms: "game dev loop update render delta time",
+                description: "Core execution",
+                icon: "♻️",
+                category: "Game",
+                render: () => this.renderGameLoopRef()
+            },
+            canvas2dRef: {
+                name: "Canvas 2D",
+                searchTerms: "game dev html5 canvas 2d context drawing",
+                description: "2D graphics API",
+                icon: "🖌️",
+                category: "Game",
+                render: () => this.renderCanvas2dRef()
+            },
+            webglBasicsRef: {
+                name: "WebGL Ref",
+                searchTerms: "game dev webgl opengl gpu 3d graphics",
+                description: "Hardware graphics",
+                icon: "🧊",
+                category: "Game",
+                render: () => this.renderWebglBasicsRef()
+            },
+            spriteSheetRef: {
+                name: "Sprite Sheet",
+                searchTerms: "game dev sprites sheet animation frames",
+                description: "Anim management",
+                icon: "🎞️",
+                category: "Game",
+                render: () => this.renderSpriteSheetRef()
+            },
+            physicsEngRef: {
+                name: "Physics Eng",
+                searchTerms: "game dev physics engine rigid body gravity",
+                description: "Real-world motion",
+                icon: "🍎",
+                category: "Game",
+                render: () => this.renderPhysicsEngRef()
+            },
+            collisionDetRef: {
+                name: "Collision Det",
+                searchTerms: "game dev collision detection aabb circles hitboxes",
+                description: "Hit detection",
+                icon: "💥",
+                category: "Game",
+                render: () => this.renderCollisionDetRef()
+            },
+            shaderBasicsRef: {
+                name: "Shader Basics",
+                searchTerms: "game dev glsl shaders vertex fragment gpu",
+                description: "Visual effects",
+                icon: "🎆",
+                category: "Game",
+                render: () => this.renderShaderBasicsRef()
+            },
+            inputHandlingRef: {
+                name: "Input Hand.",
+                searchTerms: "game dev input keyboard mouse gamepad touch",
+                description: "User control",
+                icon: "🎮",
+                category: "Game",
+                render: () => this.renderInputHandlingRef()
+            },
+            audioEngineRef: {
+                name: "Audio Eng",
+                searchTerms: "game dev web audio api sound effects music",
+                description: "Sound management",
+                icon: "🔊",
+                category: "Game",
+                render: () => this.renderAudioEngineRef()
+            },
+            gameStateRef: {
+                name: "Game State",
+                searchTerms: "game dev state management level menu pausing",
+                description: "Logic flow",
+                icon: "💾",
+                category: "Game",
+                render: () => this.renderGameStateRef()
+            },
+            // === BATCH 98 - 1,030 TOOLS (MOBILE DEVELOPMENT) ===
+            crossPlatRef: {
+                name: "Cross-Plat",
+                searchTerms: "mobile dev react native flutter cross platform",
+                description: "Multi-OS apps",
+                icon: "📱",
+                category: "Mobile",
+                render: () => this.renderCrossPlatRef()
+            },
+            nativeBridgeRef: {
+                name: "Native Bridge",
+                searchTerms: "mobile dev native bridge communication module",
+                description: "OS-Web bridge",
+                icon: "🌉",
+                category: "Mobile",
+                render: () => this.renderNativeBridgeRef()
+            },
+            hotReloadRef: {
+                name: "Hot Reload",
+                searchTerms: "mobile dev hot module replacement development",
+                description: "Fast iteration",
+                icon: "🔥",
+                category: "Mobile",
+                render: () => this.renderHotReloadRef()
+            },
+            storeDeployRef: {
+                name: "Store Deploy",
+                searchTerms: "mobile dev app store play store publishing release",
+                description: "Go-live guide",
+                icon: "🏪",
+                category: "Mobile",
+                render: () => this.renderStoreDeployRef()
+            },
+            pushSetupRef: {
+                name: "Push Setup",
+                searchTerms: "mobile dev push notifications fcm apns setup",
+                description: "Alert management",
+                icon: "🔔",
+                category: "Mobile",
+                render: () => this.renderPushSetupRef()
+            },
+            mobileA11yRef: {
+                name: "Mobile A11y",
+                searchTerms: "mobile dev accessibility talkback voiceover",
+                description: "Accessible apps",
+                icon: "♿",
+                category: "Mobile",
+                render: () => this.renderMobileA11yRef()
+            },
+            deepLinkRef: {
+                name: "Deep Link",
+                searchTerms: "mobile dev deep linking universal links app links",
+                description: "App URL routing",
+                icon: "🔗",
+                category: "Mobile",
+                render: () => this.renderDeepLinkRef()
+            },
+            appPermsRef: {
+                name: "App Perms",
+                searchTerms: "mobile dev permissions privacy camera location",
+                description: "Consent management",
+                icon: "🔐",
+                category: "Mobile",
+                render: () => this.renderAppPermsRef()
+            },
+            sensorRef: {
+                name: "Sensors",
+                searchTerms: "mobile dev sensors accelerometer gyroscope gps",
+                description: "Hardware data",
+                icon: "🧭",
+                category: "Mobile",
+                render: () => this.renderSensorRef()
+            },
+            appBundleRef: {
+                name: "App Bundle",
+                searchTerms: "mobile dev app bundle binary ipa apk aab build",
+                description: "Build packaging",
+                icon: "📦",
+                category: "Mobile",
+                render: () => this.renderAppBundleRef()
+            },
+            // === BATCH 99 - 1,040 TOOLS (ADVANCED ARCHITECTURE) ===
+            microFrontendsRef: {
+                name: "MicroFront",
+                searchTerms: "architecture micro-frontends module federation",
+                description: "Modular frontend",
+                icon: "🧩",
+                category: "Arch",
+                render: () => this.renderMicroFrontendsRef()
+            },
+            hexagonalArchRef: {
+                name: "Hex Arch",
+                searchTerms: "architecture hexagonal ports and adapters design",
+                description: "Isolation pattern",
+                icon: "⬡",
+                category: "Arch",
+                render: () => this.renderHexagonalArchRef()
+            },
+            cleanArchRef: {
+                name: "Clean Arch",
+                searchTerms: "architecture clean architecture layers dependency",
+                description: "Scalable design",
+                icon: "✨",
+                category: "Arch",
+                render: () => this.renderCleanArchRef()
+            },
+            eventSourcingRef: {
+                name: "Ev. Sourcing",
+                searchTerms: "architecture event sourcing stream immuatble",
+                description: "Historical data",
+                icon: "📜",
+                category: "Arch",
+                render: () => this.renderEventSourcingRef()
+            },
+            cqrsPatternRef: {
+                name: "CQRS Pattern",
+                searchTerms: "architecture cqrs command query segregation",
+                description: "Separate R/W",
+                icon: "🌓",
+                category: "Arch",
+                render: () => this.renderCqrsPatternRef()
+            },
+            sidecarRef: {
+                name: "Sidecar Ref",
+                searchTerms: "architecture sidecar pattern proxy utility",
+                description: "Helper container",
+                icon: "🏍️",
+                category: "Arch",
+                render: () => this.renderSidecarRef()
+            },
+            circuitBreakerRef: {
+                name: "Circ. Breaker",
+                searchTerms: "architecture circuit breaker resilience fault",
+                description: "Stopper pattern",
+                icon: "🔌",
+                category: "Arch",
+                render: () => this.renderCircuitBreakerRef()
+            },
+            serviceMeshRef: {
+                name: "Serv. Mesh",
+                searchTerms: "architecture service mesh istio linkerd sidecar",
+                description: "Comms layer",
+                icon: "🕸️",
+                category: "Arch",
+                render: () => this.renderServiceMeshRef()
+            },
+            bffPatternRef: {
+                name: "BFF Pattern",
+                searchTerms: "architecture backend for frontend mobile web api",
+                description: "Specific APIs",
+                icon: "🤝",
+                category: "Arch",
+                render: () => this.renderBffPatternRef()
+            },
+            apiGatewayAdvRef: {
+                name: "Api Gate Adv",
+                searchTerms: "architecture api gateway routing rate limit auth",
+                description: "Entry point pro",
+                icon: "🚪",
+                category: "Arch",
+                render: () => this.renderApiGatewayAdvRef()
+            },
+            // === BATCH 100 - 1,050 TOOLS (ADVANCED TESTING) ===
+            propTestingRef: {
+                name: "PropTesting",
+                searchTerms: "testing property-based testing fast-check hypothesis",
+                description: "Generate test cases",
+                icon: "🧪",
+                category: "Test",
+                render: () => this.renderPropTestingRef()
+            },
+            mutTestingRef: {
+                name: "MutTesting",
+                searchTerms: "testing mutation testing stryker pitest",
+                description: "Test test quality",
+                icon: "🧬",
+                category: "Test",
+                render: () => this.renderMutTestingRef()
+            },
+            fuzzingRef: {
+                name: "Fuzzing",
+                searchTerms: "testing fuzzing security random input",
+                description: "Crash testing",
+                icon: "💥",
+                category: "Test",
+                render: () => this.renderFuzzingRef()
+            },
+            visualRegRef: {
+                name: "VisualReg",
+                searchTerms: "testing visual regression backstopjs applitools",
+                description: "UI pixel check",
+                icon: "👁️",
+                category: "Test",
+                render: () => this.renderVisualRegRef()
+            },
+            contractTestRef: {
+                name: "ContractTest",
+                searchTerms: "testing contract testing pact microservices",
+                description: "API compatibility",
+                icon: "📜",
+                category: "Test",
+                render: () => this.renderContractTestRef()
+            },
+            loadTestingRef: {
+                name: "LoadTesting",
+                searchTerms: "testing load testing k6 jmeter artillery",
+                description: "Traffic simulation",
+                icon: "🏋️",
+                category: "Test",
+                render: () => this.renderLoadTestingRef()
+            },
+            chaosTestingRef: {
+                name: "ChaosTesting",
+                searchTerms: "testing chaos engineering fault injection",
+                description: "Identify failures",
+                icon: "🧨",
+                category: "Test",
+                render: () => this.renderChaosTestingRef()
+            },
+            a11yAuditRef: {
+                name: "A11yAudit",
+                searchTerms: "testing accessibility audit axe-core lighthouse",
+                description: "Check compliance",
+                icon: "♿",
+                category: "Test",
+                render: () => this.renderA11yAuditRef()
+            },
+            secTestingRef: {
+                name: "SecTesting",
+                searchTerms: "testing security testing nmap zap burp",
+                description: "Vulnerab. scan",
+                icon: "🛡️",
+                category: "Test",
+                render: () => this.renderSecTestingRef()
+            },
+            synthMonRef: {
+                name: "SynthMon",
+                searchTerms: "testing synthetic monitoring uptime pingdom",
+                description: "Uptime simulation",
+                icon: "🤖",
+                category: "Test",
+                render: () => this.renderSynthMonRef()
+            },
+            // === BATCH 101 - 1,060 TOOLS (EMERGING WEB APIS) ===
+            webCodecsRef: {
+                name: "WebCodecs",
+                searchTerms: "browser api webcodecs video audio pixel",
+                description: "Low-level media",
+                icon: "🎬",
+                category: "Browser",
+                render: () => this.renderWebCodecsRef()
+            },
+            webTransportRef: {
+                name: "WebTransport",
+                searchTerms: "browser api webtransport quic http3",
+                description: "Low-latency comms",
+                icon: "🚀",
+                category: "Browser",
+                render: () => this.renderWebTransportRef()
+            },
+            streamsApiRef: {
+                name: "StreamsAPI",
+                searchTerms: "browser api streams readable writable transform",
+                description: "Handle large data",
+                icon: "🌊",
+                category: "Browser",
+                render: () => this.renderStreamsApiRef()
+            },
+            compressionApiRef: {
+                name: "CompressionAPI",
+                searchTerms: "browser api compression gzip deflate",
+                description: "Native zip/unzip",
+                icon: "🗜️",
+                category: "Browser",
+                render: () => this.renderCompressionApiRef()
+            },
+            reportingApiRef: {
+                name: "ReportingAPI",
+                searchTerms: "browser api reporting endpoint crashes",
+                description: "Browser errors",
+                icon: "📋",
+                category: "Browser",
+                render: () => this.renderReportingApiRef()
+            },
+            permissionsApiRef: {
+                name: "PermissionsAPI",
+                searchTerms: "browser api permissions check query",
+                description: "Managed access",
+                icon: "🔑",
+                category: "Browser",
+                render: () => this.renderPermissionsApiRef()
+            },
+            screenCaptureRef: {
+                name: "ScreenCapture",
+                searchTerms: "browser api screen capture getDisplayMedia",
+                description: "Record screen",
+                icon: "📹",
+                category: "Browser",
+                render: () => this.renderScreenCaptureRef()
+            },
+            fontAccessRef: {
+                name: "FontAccess",
+                searchTerms: "browser api local font access typography",
+                description: "Use local fonts",
+                icon: "🔤",
+                category: "Browser",
+                render: () => this.renderFontAccessRef()
+            },
+            computePressureRef: {
+                name: "ComputePressure",
+                searchTerms: "browser api compute pressure cpu load",
+                description: "Monitor CPU load",
+                icon: "🌡️",
+                category: "Browser",
+                render: () => this.renderComputePressureRef()
+            },
+            uaHintsRef: {
+                name: "UaHints",
+                searchTerms: "browser api user agent client hints fingerprint",
+                description: "Modern UA strings",
+                icon: "🕵️",
+                category: "Browser",
+                render: () => this.renderUaHintsRef()
+            },
+            // === BATCH 102 - 1,070 TOOLS (ENGINEERING LEADERSHIP) ===
+            doraMetricsRef: {
+                name: "DoraMetrics",
+                searchTerms: "leadership dora metrics delivery lead time",
+                description: "Perf measurement",
+                icon: "📊",
+                category: "Lead",
+                render: () => this.renderDoraMetricsRef()
+            },
+            teamToposRef: {
+                name: "TeamTopos",
+                searchTerms: "leadership team topologies stream-aligned",
+                description: "Org architecture",
+                icon: "👥",
+                category: "Lead",
+                render: () => this.renderTeamToposRef()
+            },
+            innerSourceRef: {
+                name: "InnerSource",
+                searchTerms: "leadership innersource open source internal",
+                description: "Int-Open source",
+                icon: "🏢",
+                category: "Lead",
+                render: () => this.renderInnerSourceRef()
+            },
+            techDebtRef: {
+                name: "TechDebt",
+                searchTerms: "leadership tech debt management refactor",
+                description: "Manage legacy",
+                icon: "💳",
+                category: "Lead",
+                render: () => this.renderTechDebtRef()
+            },
+            rfcProcessRef: {
+                name: "RfcProcess",
+                searchTerms: "leadership rfc process request for comments",
+                description: "Design consensus",
+                icon: "📝",
+                category: "Lead",
+                render: () => this.renderRfcProcessRef()
+            },
+            adrRecordsRef: {
+                name: "AdrRecords",
+                searchTerms: "leadership adr architectural decision records",
+                description: "Decision history",
+                icon: "📓",
+                category: "Lead",
+                render: () => this.renderAdrRecordsRef()
+            },
+            laddersRef: {
+                name: "LaddersRef",
+                searchTerms: "leadership engineering ladders career path",
+                description: "Growth guide",
+                icon: "🧗",
+                category: "Lead",
+                render: () => this.renderLaddersRef()
+            },
+            mentorsRef: {
+                name: "MentorsRef",
+                searchTerms: "leadership mentorship sponsorship coaching",
+                description: "Skill sharing",
+                icon: "🤝",
+                category: "Lead",
+                render: () => this.renderMentorsRef()
+            },
+            incidentMgmtRef: {
+                name: "IncidentMgmt",
+                searchTerms: "leadership incident management on-call page",
+                description: "On-call flow",
+                icon: "🚨",
+                category: "Lead",
+                render: () => this.renderIncidentMgmtRef()
+            },
+            postMortemsRef: {
+                name: "PostMortems",
+                searchTerms: "leadership post-mortems blameless culture",
+                description: "Learn from fail",
+                icon: "📑",
+                category: "Lead",
+                render: () => this.renderPostMortemsRef()
+            },
+            // === BATCH 103 - 1,080 TOOLS (CONTENT & SEO) ===
+            coreVitalsRef: {
+                name: "CoreVitals",
+                searchTerms: "seo core web vitals lcp cls fid",
+                description: "Search ranking",
+                icon: "🚦",
+                category: "SEO",
+                render: () => this.renderCoreVitalsRef()
+            },
+            structDataRef: {
+                name: "StructData",
+                searchTerms: "seo structured data schema.org json-ld",
+                description: "Rich snippets",
+                icon: "🏷️",
+                category: "SEO",
+                render: () => this.renderStructDataRef()
+            },
+            openGraphRef: {
+                name: "OpenGraph",
+                searchTerms: "seo open graph facebook meta twitter",
+                description: "Social previews",
+                icon: "🖼️",
+                category: "SEO",
+                render: () => this.renderOpenGraphRef()
+            },
+            sitemapsRef: {
+                name: "Sitemaps",
+                searchTerms: "seo sitemap.xml search console",
+                description: "Crawl maps",
+                icon: "🗺️",
+                category: "SEO",
+                render: () => this.renderSitemapsRef()
+            },
+            robotsTxtRef: {
+                name: "RobotsTxt",
+                searchTerms: "seo robots.txt crawler access",
+                description: "Bot management",
+                icon: "🤖",
+                category: "SEO",
+                render: () => this.renderRobotsTxtRef()
+            },
+            canonTagsRef: {
+                name: "CanonTags",
+                searchTerms: "seo canonical tags duplicate content",
+                description: "Content authority",
+                icon: "⚓",
+                category: "SEO",
+                render: () => this.renderCanonTagsRef()
+            },
+            seoMetaTagsRef: {
+                name: "MetaTags",
+                searchTerms: "seo title description meta keywords",
+                description: "Search display",
+                icon: "🕶️",
+                category: "SEO",
+                render: () => this.renderSeoMetaTagsRef()
+            },
+            imgAltTextRef: {
+                name: "AltText",
+                searchTerms: "seo image alt text accessibility",
+                description: "Image context",
+                icon: "🖼️",
+                category: "SEO",
+                render: () => this.renderImgAltTextRef()
+            },
+            internalLinksRef: {
+                name: "InternalLinks",
+                searchTerms: "seo internal linking site structure",
+                description: "Site flow pro",
+                icon: "🔗",
+                category: "SEO",
+                render: () => this.renderInternalLinksRef()
+            },
+            backlinksRef: {
+                name: "Backlinks",
+                searchTerms: "seo backlinks authority site trust",
+                description: "Authority build",
+                icon: "📡",
+                category: "SEO",
+                render: () => this.renderBacklinksRef()
             }
         };
     }
@@ -25576,6 +26888,1651 @@ Online: ${n.onLine}
             <h2 class="tool-title">Helm Guide</h2>
             <div style="font-size:0.75em; text-align:left;">
                 <b>Helm:</b> The package manager for Kubernetes. Uses "Charts" to define, install, and upgrade complex K8s applications.
+            </div>
+        `;
+    }
+
+    // === BATCH 88 - 930 TOOLS (SYSTEM OBSERVABILITY) ===
+    renderMetricsBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Metrics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Types:</b> Counters (up only), Gauges (up/down), Histograms (buckets), Summaries (percentiles). <br><br>
+                Essential for measuring system SLIs like latency and throughput.
+            </div>
+        `;
+    }
+
+    renderLoggingBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Logging</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Format:</b> Always use structured logging (JSON) for easy machine parsing and searching in ELK or Splunk.
+            </div>
+        `;
+    }
+
+    renderTracingBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Tracing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Follows a single request across many microservices using a unique Trace ID. Shows where time is being spent.
+            </div>
+        `;
+    }
+
+    renderHeartbeatRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Heartbeat</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Mechanism:</b> A periodic signal sent by a service to a monitoring system to indicate it is still "alive" and healthy.
+            </div>
+        `;
+    }
+
+    renderHealthCheckRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Health Check</h2>
+            <div style="font-size:0.65em; text-align:left;">
+                <b>Liveness:</b> Should the container be restarted?<br>
+                <b>Readiness:</b> Should it receive traffic?<br>
+                <b>Startup:</b> Has it finished booting?
+            </div>
+        `;
+    }
+
+    renderDashboardRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Dashboard</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Goal:</b> High-level visibility of system state. Use the "Four Golden Signals": Latency, Traffic, Errors, and Saturation.
+            </div>
+        `;
+    }
+
+    renderAlertingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Alerting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Best Practice:</b> Only alert on actionable symptoms that humans need to fix immediately. Avoid "alert fatigue".
+            </div>
+        `;
+    }
+
+    renderLogAggRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Log Aggregation</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Pipeline:</b> Logs -> Shipper (Fluentd) -> Buffer (Kafka) -> Inducer (Logstash) -> Store (Elasticsearch).
+            </div>
+        `;
+    }
+
+    renderSreBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SRE Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Definition:</b> What happens when you ask a software engineer to design an operations team. Focus on automation and reliability.
+            </div>
+        `;
+    }
+
+    renderSloSliRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SLO vs SLI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>SLI:</b> Technical metric (e.g., Error rate).<br>
+                <b>SLO:</b> Target for that SLI (e.g., < 0.1%).<br>
+                <b>Error Budget:</b> 100% - SLO.
+            </div>
+        `;
+    }
+
+    // === BATCH 89 - 940 TOOLS (DEVSECOPS) ===
+    renderDevSecOpsBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DevSecOps</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Goal:</b> Integrate security at every stage of the DevOps lifecycle rather than inspecting at the end.
+            </div>
+        `;
+    }
+
+    renderIacScanRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IaC Scanning</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Scan Terraform or CloudFormation code for misconfigurations (e.g., open S3 buckets) before deployment.
+            </div>
+        `;
+    }
+
+    renderSecPipelineRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sec. Pipeline</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Tools:</b> Secret scanning (TruffleHog), Dependency checks (OWASP Dependency-Check), SAST, and DAST.
+            </div>
+        `;
+    }
+
+    renderContainerSecRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cont. Security</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Hardening:</b> Use non-root users, minimal base images (Alpine/Distroless), and scan for CVEs in libraries.
+            </div>
+        `;
+    }
+
+    renderSecretMgmtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Secret Mgmt</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Rule:</b> Never store secrets in code. Use HashiCorp Vault, AWS Secrets Manager, or Azure Key Vault.
+            </div>
+        `;
+    }
+
+    renderStaticAnalysisRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SAST Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>SAST:</b> Static Application Security Testing. Analyzes source code or binaries for vulnerabilities without running the program.
+            </div>
+        `;
+    }
+
+    renderDynamicAnalysisRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DAST Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>DAST:</b> Dynamic Application Security Testing. Tests the running application from the outside, like a hacker would.
+            </div>
+        `;
+    }
+
+    renderPentestRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Pen Testing</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Goal:</b> Manual security evaluation by experts to find complex logic flaws that automated scanners miss.
+            </div>
+        `;
+    }
+
+    renderThreatModelRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Threat Model</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>STRIDE:</b> Spoofing, Tampering, Repudiation, Info Disclosure, Denial of Service, Elevation of Privilege.
+            </div>
+        `;
+    }
+
+    renderIncidentRespRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Incident Resp.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Phases:</b> Preparation, Identification, Containment, Eradication, Recovery, and Lessons Learned (Post-mortem).
+            </div>
+        `;
+    }
+
+    // === BATCH 90 - 950 TOOLS (AI ETHICS & SAFETY) ===
+    renderAiEthicsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AI Ethics</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Core Principles:</b> Fairness, Accountability, Transparency, and Privacy (FATP) in machine learning systems.
+            </div>
+        `;
+    }
+
+    renderBiasMitigationRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Bias Mitigat.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Techniques:</b> Re-sampling training data, adversarial debiasing, and post-processing model predictions to ensure parity across groups.
+            </div>
+        `;
+    }
+
+    renderExplainabilityRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Explainability</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>XAI:</b> Methods like SHAP or LIME that explain why a complex model made a specific prediction.
+            </div>
+        `;
+    }
+
+    renderModelSafetyRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Model Safety</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Alignment:</b> Ensuring AI behavior matches human values and intent, avoiding unintended harmful consequences.
+            </div>
+        `;
+    }
+
+    renderDataPrivacyRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Privacy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Methods:</b> Differential Privacy - adding noise to data to prevent individual identification while maintaining aggregate accuracy.
+            </div>
+        `;
+    }
+
+    renderAiGovernanceRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AI Governance</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Framework:</b> Creating institutional rules and processes to oversee AI development and ensure compliance with laws like the EU AI Act.
+            </div>
+        `;
+    }
+
+    renderRlhfRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RLHF Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>RLHF:</b> Reinforcement Learning from Human Feedback. Training models to follow instructions by ranking their outputs.
+            </div>
+        `;
+    }
+
+    renderPromptSecRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prompt Sec.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Defenses:</b> Sanitizing user input, using system prompts, and output filtering to prevent leaks or command injection.
+            </div>
+        `;
+    }
+
+    renderModelWatermarkRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Model Water.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> Embedding invisible patterns in AI output (text or images) to identify it as machine-generated.
+            </div>
+        `;
+    }
+
+    renderAdversarialRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Adversarial</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Robustness:</b> Testing models against inputs specifically designed to trick them into making wrong or harmful predictions.
+            </div>
+        `;
+    }
+
+    // === BATCH 91 - 960 TOOLS (WEB COMPONENTS) ===
+    renderWebComponentsBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Component</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Web Components:</b> A suite of different technologies allowing you to create reusable custom elements.
+            </div>
+        `;
+    }
+
+    renderShadowDomRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shadow DOM</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> A way to attach an isolated DOM tree to an element. This "shadow" tree cannot be seen or styled from the main document.
+            </div>
+        `;
+    }
+
+    renderCustElementsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Custom Elem.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>customElements.define('my-tag', MyClass);</code>. <br><br>
+                Allows you to define your own HTML elements with custom logic and UI.
+            </div>
+        `;
+    }
+
+    renderTemplateTagRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Template Tag</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>&lt;template&gt;:</b> Holds HTML that is not rendered on page load, but can be cloned and reused later via JS.
+            </div>
+        `;
+    }
+
+    renderSlotRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Slot API</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>&lt;slot&gt;:</b> A placeholder inside a web component that you can fill with your own markup from the light DOM.
+            </div>
+        `;
+    }
+
+    renderCompLifecycleRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Comp Life.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Callbacks:</b> <code>connectedCallback</code>, <code>disconnectedCallback</code>, and <code>attributeChangedCallback</code>.
+            </div>
+        `;
+    }
+
+    renderStylesScopingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Style Scope</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CSS:</b> Use <code>:host</code> to style the component itself and <code>::slotted()</code> to style elements passed into slots.
+            </div>
+        `;
+    }
+
+    renderDeclarativeShadowRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">D-Shadow DOM</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>&lt;template shadowrootmode="open"&gt;</code>. <br><br>
+                Allows creating Shadow DOM directly in HTML for better Server-Side Rendering support.
+            </div>
+        `;
+    }
+
+    renderLitRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Lit Guide</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Lit:</b> A simple library for building fast, lightweight web components using template literals and reactive properties.
+            </div>
+        `;
+    }
+
+    renderWebCompA11yRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Comp A11y</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Delegate Focus:</b> Using <code>delegatesFocus: true</code> when attaching a shadow root to handle focus management for sub-elements.
+            </div>
+        `;
+    }
+
+    // === BATCH 92 - 970 TOOLS (ADVANCED PWA & HARDWARE) ===
+    renderPeriodicBackgroundSync() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PerioSync</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>registration.periodicSync.register('tag', {minInterval})</code>. <br><br>
+                Allows web apps to periodically update data in the background, even when the app is closed.
+            </div>
+        `;
+    }
+
+    renderAppBadgingApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Badging</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.setAppBadge(count)</code>. <br><br>
+                Displays a small badge (typically a red dot with a number) on the app's icon in the OS taskbar or home screen.
+            </div>
+        `;
+    }
+
+    renderShapeDetectionApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shape Det.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>new FaceDetector().detect(image)</code>. <br><br>
+                Native hardware-accelerated detection of faces, barcodes, and text in images or video streams.
+            </div>
+        `;
+    }
+
+    renderWebBluetoothApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Bluetooth</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.bluetooth.requestDevice()</code>. <br><br>
+                Allows web apps to connect to and interact with Bluetooth Low Energy (BLE) devices directly.
+            </div>
+        `;
+    }
+
+    renderWebUsbApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web USB</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>navigator.usb.requestDevice()</code>. <br><br>
+                Provides a way to expose USB device services to the web, enabling direct hardware interaction.
+            </div>
+        `;
+    }
+
+    renderWebNfcApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web NFC</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>new NDEFReader().scan()</code>. <br><br>
+                Allows web applications to read and write to NFC tags when they are brought close to the user's device.
+            </div>
+        `;
+    }
+
+    renderBackgroundFetchApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Back. Fetch</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>registration.backgroundFetch.fetch(id, requests)</code>. <br><br>
+                Manage large downloads or uploads that can continue even if the user closes all tabs.
+            </div>
+        `;
+    }
+
+    renderWebSerialApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Web Serial</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>navigator.serial.requestPort()</code>. <br><br>
+                Allows websites to communicate with serial devices, such as microcontrollers (Arduino) and 3D printers.
+            </div>
+        `;
+    }
+
+    renderBackgroundSyncBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Back. Sync</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>registration.sync.register('tag')</code>. <br><br>
+                Defers actions until the user has stable connectivity. Useful for retrying failed form submissions.
+            </div>
+        `;
+    }
+
+    renderAppInstallPromptRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Install</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Event:</b> <code>beforeinstallprompt</code>. <br><br>
+                Prevent the default mini-infobar and trigger a custom "Install App" button at a more relevant moment for the user.
+            </div>
+        `;
+    }
+
+    // === BATCH 93 - 980 TOOLS (ADVANCED CSS) ===
+    renderCssSubgridRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Subgrid</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>grid-template-columns: subgrid;</code>. <br><br>
+                Allows nested grids to align their tracks to the parent grid's tracks, ensuring perfect vertical/horizontal alignment across deep trees.
+            </div>
+        `;
+    }
+
+    renderContainerUnitsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cont. Units</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Units:</b> <code>cqw</code>, <code>cqh</code>, <code>cqi</code>, <code>cqb</code>, <code>cqmin</code>, <code>cqmax</code>. <br><br>
+                Size elements relative to their nearest container's dimensions rather than the viewport.
+            </div>
+        `;
+    }
+
+    renderCssColorMix() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Color Mix</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Syntax:</b> <code>color: color-mix(in srgb, blue, white 20%);</code>. <br><br>
+                Mix two colors in a given color space directly in CSS without preprocessors.
+            </div>
+        `;
+    }
+
+    renderRelativeColorsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rel. Colors</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>color: hsl(from var(--primary) h s calc(l - 20%));</code>. <br><br>
+                Derive new colors from existing ones by modifying specific channels (H, S, L, R, G, B).
+            </div>
+        `;
+    }
+
+    renderCssNestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Nesting</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Syntax:</b> <code>.card { & .title { color: red; } }</code>. <br><br>
+                Native CSS nesting is now supported in all major browsers, reducing code verbosity similar to Sass.
+            </div>
+        `;
+    }
+
+    renderCssLayersRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CSS Layers</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>@layer base, components, utilities;</code>. <br><br>
+                Explicitly manage the cascade order to solve specificity wars without using <code>!important</code>.
+            </div>
+        `;
+    }
+
+    renderCssScopeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scope CSS</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Usage:</b> <code>@scope (.card) to (.content) { img { ... } }</code>. <br><br>
+                Select elements within a specific proximity, preventing styles from leaking out of components.
+            </div>
+        `;
+    }
+
+    renderViewTransitionsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">View Trans.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>document.startViewTransition(() => updateDOM())</code>. <br><br>
+                Creates seamless animated transitions between different DOM states or pages.
+            </div>
+        `;
+    }
+
+    renderInitialLetterRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Init. Letter</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Syntax:</b> <code>initial-letter: 3 2;</code> (size in lines, sink). <br><br>
+                The modern way to create beautiful drop caps for editorial layouts.
+            </div>
+        `;
+    }
+
+    renderScrollTimelineRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Scroll Time</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Syntax:</b> <code>scroll-timeline-name: --nav;</code>. <br><br>
+                Link animations directly to a scroll container's progress instead of the wall clock.
+            </div>
+        `;
+    }
+
+    // === BATCH 94 - 990 TOOLS (PERFORMANCE ADVANCED) ===
+    renderPrerenderRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Prerender</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Speculation Rules:</b> Tell the browser to fully render a page in the background before the user actually clicks the link.
+            </div>
+        `;
+    }
+
+    renderPreloadStratsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Preload Strat</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Strategy:</b> Use <code>preload</code> for critical fonts/scripts and <code>prefetch</code> for low-priority future resources.
+            </div>
+        `;
+    }
+
+    renderPriorityHintsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Priority Hint</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>&lt;img fetchpriority="high"&gt;</code>. <br><br>
+                Signals to the browser that an element (like a hero image) should be prioritized over others.
+            </div>
+        `;
+    }
+
+    renderEarlyHintsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Early Hints</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>HTTP 103:</b> A server response that hints at resources to start loading while the main HTML is still being generated.
+            </div>
+        `;
+    }
+
+    renderResourceHintsGuide() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Res. Hints</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Overview:</b> <code>dns-prefetch</code>, <code>preconnect</code>, <code>prefetch</code>, and <code>prerender</code> are collectively known as resource hints.
+            </div>
+        `;
+    }
+
+    renderWebVitalsAdvanced() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vitals Ref.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>LCP:</b> Loading. <b>FID:</b> Interactivity. <b>CLS:</b> Visual Stability. <b>INP:</b> Responsiveness throughout page life.
+            </div>
+        `;
+    }
+
+    renderLongTaskApiRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Long Task</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Detection:</b> Any task taking >50ms is a "long task" and can cause frame drops and laggy input response.
+            </div>
+        `;
+    }
+
+    renderTaskAttributionRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Task Attr.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Purpose:</b> Identify which script or container is responsible for a long task, helping you pinpoint slow 3rd-party code.
+            </div>
+        `;
+    }
+
+    renderMemoryPressureApi() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mem Pressure</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> Detect when the device is running low on memory so the app can purge caches or reduce complexity.
+            </div>
+        `;
+    }
+
+    renderImageSetRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ImageSet</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Syntax:</b> <code>background-image: image-set("img.avif" type("image/avif"), "img.webp" 1x);</code>. <br><br>
+                Responsive, multi-format images for CSS backgrounds.
+            </div>
+        `;
+    }
+
+    // === BATCH 95 - 1,000 TOOLS (CLOUD NATIVE) ===
+    renderServerlessPatterns() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Serv. Pattern</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Patterns:</b> Event Sourcing, Sidecar, Command and Query Responsibility Segregation (CQRS), and Saga pattern for distributed transactions.
+            </div>
+        `;
+    }
+
+    renderEdgeCommsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Edge Comms</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Concept:</b> Move logic and data as close to the user as possible (the "edge") to minimize latency for global users.
+            </div>
+        `;
+    }
+
+    renderColdStartOpt() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cold Start</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>fixes:</b> Keep functions small, use provisioned concurrency, and favor lightweight runtimes like Go or Node.js over Java for FaaS.
+            </div>
+        `;
+    }
+
+    renderFinOpsBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">FinOps</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Goal:</b> Financial management of cloud services, ensuring every dollar spent is optimized for business value.
+            </div>
+        `;
+    }
+
+    renderMultiCloudRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Multi-Cloud</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Strategy:</b> Spread workloads across AWS, Azure, and GCP to avoid vendor lock-in and increase regional availability.
+            </div>
+        `;
+    }
+
+    renderHybridCloudRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hybrid Cloud</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Architecture:</b> Integration of on-premise private cloud and third-party public cloud for increased flexibility and data security.
+            </div>
+        `;
+    }
+
+    renderChaosEngBasics() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Chaos Eng.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Principle:</b> Intentionally introducing failures to systems to verify they can recover gracefully. "Breaking things to make them stronger."
+            </div>
+        `;
+    }
+
+    renderBlueGreenDeployRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Blue/Green</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Method:</b> Run two identical production environments. Route all traffic to Blue while updating Green, then switch.
+            </div>
+        `;
+    }
+
+    renderCanaryReleaseRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Canary</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Method:</b> Release a new version to a small subset of users first to test stability before rolling out to everyone.
+            </div>
+        `;
+    }
+
+    renderRollingUpdateRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Rolling Upd.</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Method:</b> Systematically replace old instances of an application with new instances, one by one, to ensure zero downtime.
+            </div>
+        `;
+    }
+
+    // === BATCH 96 - 1,010 TOOLS (DATA ENGINEERING) ===
+    renderEtlPipelineRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ETL Pipe</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Process:</b> Extract (from sources), Transform (clean/calc), Load (to target). The backbone of data engineering.
+            </div>
+        `;
+    }
+
+    renderDataLakeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Lake</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> A centralized repository that allows you to store all your structured and unstructured data at any scale.
+            </div>
+        `;
+    }
+
+    renderDataWarehouseRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Ware</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> A system used for reporting and data analysis, considered a core component of business intelligence.
+            </div>
+        `;
+    }
+
+    renderSchemaRegistryRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Schema Reg</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Purpose:</b> Stores a versioned history of all schemas, allowing producers and consumers to evolve independently without breaking.
+            </div>
+        `;
+    }
+
+    renderStreamProcRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Stream Proc</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Tech:</b> Processing data in motion. Tools like Apache Flink or Kafka Streams for sub-second insights.
+            </div>
+        `;
+    }
+
+    renderCdcGuideRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CDC Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CDC:</b> Change Data Capture. Automatically tracking changes in a database and sending them to a downstream system in real-time.
+            </div>
+        `;
+    }
+
+    renderDataQualityRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Qual</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Checks:</b> Completeness, Accuracy, Consistency, Validity, and Timeliness of data. Essential for trust in analytics.
+            </div>
+        `;
+    }
+
+    renderDataMeshRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Data Mesh</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Principles:</b> Domain ownership, Data as a product, Self-serve platform, and Federated computational governance.
+            </div>
+        `;
+    }
+
+    renderAnalyticsDbRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Analytics Db</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>OLAP:</b> Columnar databases like ClickHouse or DuckDB optimized for fast aggregation queries over billions of rows.
+            </div>
+        `;
+    }
+
+    renderVectorSearchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Vector Search</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>AI Ready:</b> Storing and searching data using high-dimensional vectors (embeddings) to find semantically similar items.
+            </div>
+        `;
+    }
+
+    // === BATCH 97 - 1,020 TOOLS (GAME DEVELOPMENT) ===
+    renderGameLoopRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Game Loop</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Cycle:</b> Process Input -> Update Game World -> Render Scene. Repeats 60+ times per second.
+            </div>
+        `;
+    }
+
+    renderCanvas2dRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Canvas 2D</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>ctx.fillRect()</code>, <code>ctx.drawImage()</code>. Simple yet powerful API for 2D browser games.
+            </div>
+        `;
+    }
+
+    renderWebglBasicsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WebGL Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>GPU Power:</b> Low-level API for 3D and high-performance 2D graphics. Direct access to the video card.
+            </div>
+        `;
+    }
+
+    renderSpriteSheetRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sprite Sheet</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Efficiency:</b> One big image containing many small frames. Reduces draw calls and memory overhead in games.
+            </div>
+        `;
+    }
+
+    renderPhysicsEngRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Physics Eng</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Math:</b> Simulating forces, gravity, friction, and rigid body dynamics. (e.g., Matter.js, Box2D).
+            </div>
+        `;
+    }
+
+    renderCollisionDetRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Collision Det</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Algorithms:</b> AABB (Rectangle), Circle-to-Circle, and SAT (Separated Axis Theorem) for complex shapes.
+            </div>
+        `;
+    }
+
+    renderShaderBasicsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Shader Basics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>GLSL:</b> Code that runs directly on the GPU to calculate pixel colors (Fragment) or vertex positions (Vertex).
+            </div>
+        `;
+    }
+
+    renderInputHandlingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Input Hand.</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Events:</b> Listening for keys, mouse delta, or gamepad button presses and mapping them to game actions.
+            </div>
+        `;
+    }
+
+    renderAudioEngineRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Audio Eng</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Web Audio API:</b> Managing background music, sound effects, spatial 3D audio, and real-time synthesis.
+            </div>
+        `;
+    }
+
+    renderGameStateRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Game State</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Management:</b> Switching between Menu, Playing, Paused, and Game Over states efficiently.
+            </div>
+        `;
+    }
+
+    // === BATCH 98 - 1,030 TOOLS (MOBILE DEVELOPMENT) ===
+    renderCrossPlatRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Cross-Plat</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Efficiency:</b> Write once, run on both iOS and Android using frameworks like React Native or Flutter.
+            </div>
+        `;
+    }
+
+    renderNativeBridgeRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Native Bridge</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>How it works:</b> Communication layer between the JavaScript engine and the underlying native OS APIs.
+            </div>
+        `;
+    }
+
+    renderHotReloadRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hot Reload</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Speed:</b> Seeing code changes instantly in the mobile app without a full rebuild or losing app state.
+            </div>
+        `;
+    }
+
+    renderStoreDeployRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Store Deploy</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Checklist:</b> Icons, Screenshots, Descriptions, Privacy Policy, and signing the binary for release.
+            </div>
+        `;
+    }
+
+    renderPushSetupRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Push Setup</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>FCM/APNs:</b> Cloud services used to send notifications to devices even when the app isn't active.
+            </div>
+        `;
+    }
+
+    renderMobileA11yRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Mobile A11y</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Essentials:</b> Large tap targets, semantic labels for TalkBack/VoiceOver, and high contrast modes.
+            </div>
+        `;
+    }
+
+    renderDeepLinkRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Deep Link</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Routing:</b> Custom URL schemes (<code>myapp://</code>) or Universal Links to open specific app screens from the web.
+            </div>
+        `;
+    }
+
+    renderAppPermsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Perms</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Consent:</b> Explicitly asking for Camera, Mic, GPS, or Contact access at run-time (not just at install).
+            </div>
+        `;
+    }
+
+    renderSensorRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sensors</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Capabilities:</b> Accessing the Magnetometer, Barometer, Pedometer, and other device-specific hardware.
+            </div>
+        `;
+    }
+
+    renderAppBundleRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">App Bundle</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Optimized:</b> Android App Bundles (.aab) serve only the code and resources needed for a specific device's architecture.
+            </div>
+        `;
+    }
+
+    // === BATCH 99 - 1,040 TOOLS (ADVANCED ARCHITECTURE) ===
+    renderMicroFrontendsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MicroFront</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Scaling:</b> Breaking a large frontend into small, independently deployable apps that are composed at runtime.
+            </div>
+        `;
+    }
+
+    renderHexagonalArchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hex Arch</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Logic Isolation:</b> Separating the core business logic from external concerns (DB, UI, APIs) using Ports and Adapters.
+            </div>
+        `;
+    }
+
+    renderCleanArchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Clean Arch</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Onion Model:</b> Dependencies only point inwards. Entities at the center, then Use Cases, Controllers, and External stuff.
+            </div>
+        `;
+    }
+
+    renderEventSourcingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Ev. Sourcing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Immutability:</b> Storing every change as a discrete event in an append-only log, allowing you to reconstruct state at any point in time.
+            </div>
+        `;
+    }
+
+    renderCqrsPatternRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CQRS Pattern</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CQRS:</b> Command Query Responsibility Segregation. Using different models for reading and writing data to optimize performance.
+            </div>
+        `;
+    }
+
+    renderSidecarRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sidecar Ref</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Deploy:</b> Attaching a helper container to an application pod to handle logging, monitoring, or networking proxying.
+            </div>
+        `;
+    }
+
+    renderCircuitBreakerRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Circ. Breaker</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Stability:</b> Automatically "tripping" and failing fast when a remote service is down, preventing cascading failures.
+            </div>
+        `;
+    }
+
+    renderServiceMeshRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Serv. Mesh</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Networking:</b> A dedicated infrastructure layer for handling service-to-service communication, including security and observability.
+            </div>
+        `;
+    }
+
+    renderBffPatternRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BFF Pattern</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Specifics:</b> Backend For Frontend. Implementing a separate backend for each UI (Mobile vs Web) to tailor the API response.
+            </div>
+        `;
+    }
+
+    renderApiGatewayAdvRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Api Gate Adv</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Centralized:</b> Handling authentication, rate limiting, logging, and request routing at a single entry point for all microservices.
+            </div>
+        `;
+    }
+
+    // === BATCH 100 - 1,050 TOOLS (ADVANCED TESTING) ===
+    renderPropTestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PropTesting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Generating hundreds of random test cases to find edge cases where your code fails, rather than writing specific assertions.
+            </div>
+        `;
+    }
+
+    renderMutTestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MutTesting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Concept:</b> Intentionally introducing bugs into your source code (mutants) to see if your tests catch them. High survival rate = poor tests.
+            </div>
+        `;
+    }
+
+    renderFuzzingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Fuzzing</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Security:</b> Feeding massive amounts of random or invalid data to an application to trigger crashes or find memory leaks.
+            </div>
+        `;
+    }
+
+    renderVisualRegRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">VisualReg</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>UI Quality:</b> Comparing screenshots of the UI before and after a change to detect unintended pixel-level regressions.
+            </div>
+        `;
+    }
+
+    renderContractTestRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ContractTest</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Microservices:</b> Testing the communication "contract" between services to ensure they remain compatible without full integration tests.
+            </div>
+        `;
+    }
+
+    renderLoadTestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">LoadTesting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Performance:</b> Simulating a high volume of concurrent users to measure system response time and stability under pressure.
+            </div>
+        `;
+    }
+
+    renderChaosTestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ChaosTesting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Resilience:</b> Randomly killing servers or introducing network latency in production to verify the system can handle unexpected failures.
+            </div>
+        `;
+    }
+
+    renderA11yAuditRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">A11yAudit</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Compliance:</b> Using automated tools to scan DOM elements for WCAG violations, ensuring the site is usable by everyone.
+            </div>
+        `;
+    }
+
+    renderSecTestingRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SecTesting</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Security:</b> Automated scanning for known vulnerabilities like SQLi, XSS, and insecure dependencies.
+            </div>
+        `;
+    }
+
+    renderSynthMonRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SynthMon</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Uptime:</b> Running automated scripts that mimic user flows periodically to detect downtime before real users do.
+            </div>
+        `;
+    }
+
+    // === BATCH 101 - 1,060 TOOLS (EMERGING WEB APIS) ===
+    renderWebCodecsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WebCodecs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Grants access to individual video/audio frames for high-performance processing, encoding, and decoding.
+            </div>
+        `;
+    }
+
+    renderWebTransportRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">WebTransport</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Protocol:</b> Low-latency, bidirectional client-server communication using QUIC. Successor to WebSockets for real-time data.
+            </div>
+        `;
+    }
+
+    renderStreamsApiRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">StreamsAPI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Efficiently processing large files or data feeds by reading and writing chunks of data sequentially.
+            </div>
+        `;
+    }
+
+    renderCompressionApiRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CompressionAPI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Native browser support for Gzip and Deflate compression and decompression of data streams.
+            </div>
+        `;
+    }
+
+    renderReportingApiRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ReportingAPI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Collects crash reports, CSP violations, and deprecation warnings from the browser and sends them to your server.
+            </div>
+        `;
+    }
+
+    renderPermissionsApiRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PermissionsAPI</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Query the status of permission requests (Camera, GPS, etc.) before triggering the prompt.
+            </div>
+        `;
+    }
+
+    renderScreenCaptureRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ScreenCapture</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Usage:</b> <code>navigator.mediaDevices.getDisplayMedia()</code>. Allows web apps to record the user's screen or specific windows.
+            </div>
+        `;
+    }
+
+    renderFontAccessRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">FontAccess</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Enumerates and provides access to local font data on the user's system for high-fidelity rendering.
+            </div>
+        `;
+    }
+
+    renderComputePressureRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ComputePressure</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Browser API:</b> Reports the current system load (CPU pressure) so apps can adjust complexity to maintain smoothness.
+            </div>
+        `;
+    }
+
+    renderUaHintsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">UaHints</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Modernization:</b> Client Hints are replacing the messy User-Agent string with structured, privacy-preserving device data.
+            </div>
+        `;
+    }
+
+    // === BATCH 102 - 1,070 TOOLS (ENGINEERING LEADERSHIP) ===
+    renderDoraMetricsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DoraMetrics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Metrics:</b> Deployment Frequency, Lead Time for Changes, Change Failure Rate, and Time to Restore Service.
+            </div>
+        `;
+    }
+
+    renderTeamToposRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TeamTopos</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Strategy:</b> Organizing teams around Flow (Stream-aligned), Platforms, Enabling, and Complicated Subsystems.
+            </div>
+        `;
+    }
+
+    renderInnerSourceRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">InnerSource</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Culture:</b> Adopting open-source best practices (Pull Requests, transparent docs) for internal software development.
+            </div>
+        `;
+    }
+
+    renderTechDebtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">TechDebt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Management:</b> Tracking and prioritizing the refactoring of "quick and dirty" solutions to maintain long-term velocity.
+            </div>
+        `;
+    }
+
+    renderRfcProcessRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RfcProcess</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Communication:</b> Request For Comments. A formal process for proposing architectural changes and getting feedback from the team.
+            </div>
+        `;
+    }
+
+    renderAdrRecordsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AdrRecords</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>History:</b> Architectural Decision Records. Documenting the "Why" behind technical decisions to provide context for future devs.
+            </div>
+        `;
+    }
+
+    renderLaddersRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">LaddersRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Growth:</b> Defining clear competency levels and career paths (Junior -> Senior -> Staff) to help engineers advance.
+            </div>
+        `;
+    }
+
+    renderMentorsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MentorsRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Impact:</b> Implementing structured mentorship programs to accelerate onboarding and foster a culture of learning.
+            </div>
+        `;
+    }
+
+    renderIncidentMgmtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IncidentMgmt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Flow:</b> Clear roles (Incident Commander, Tech Lead) and communication channels for handling production outages.
+            </div>
+        `;
+    }
+
+    renderPostMortemsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PostMortems</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Learning:</b> Blameless retrospectives after an incident to identify root causes and prevent similar issues in the future.
+            </div>
+        `;
+    }
+
+    // === BATCH 103 - 1,080 TOOLS (CONTENT & SEO) ===
+    renderCoreVitalsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CoreVitals</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>SEO:</b> Google's performance metrics (LCP, CLS, FID/INP) that directly impact search engine visibility.
+            </div>
+        `;
+    }
+
+    renderStructDataRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">StructData</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Rich Snippets:</b> Using schema.org metadata to give search engines deeper context about your content (reviews, recipes, events).
+            </div>
+        `;
+    }
+
+    renderOpenGraphRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">OpenGraph</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Social:</b> Meta tags that control how your links look when shared on Facebook, Twitter, and LinkedIn.
+            </div>
+        `;
+    }
+
+    renderSitemapsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Sitemaps</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Indexing:</b> A XML map of every page on your site to help search engine crawlers discover and index your content.
+            </div>
+        `;
+    }
+
+    renderRobotsTxtRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RobotsTxt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Governance:</b> Instructs web robots which pages to crawl or avoid, saving crawl budget for important content.
+            </div>
+        `;
+    }
+
+    renderCanonTagsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CanonTags</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Consolidation:</b> Telling search engines which URL is the "master" copy of a page to avoid duplicate content penalties.
+            </div>
+        `;
+    }
+
+    renderSeoMetaTagsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MetaTags</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Basics:</b> Optimizing Title tags and Meta Descriptions to increase Click-Through Rate (CTR) from search results.
+            </div>
+        `;
+    }
+
+    renderImgAltTextRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">AltText</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Context:</b> Descriptive text for images that improves SEO and makes your site accessible to screen reader users.
+            </div>
+        `;
+    }
+
+    renderInternalLinksRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">InternalLinks</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Hierarchy:</b> Strategic linking between pages on your own site to spread authority and guide users to key content.
+            </div>
+        `;
+    }
+
+    renderBacklinksRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Backlinks</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Authority:</b> Links from external sites that act as "votes of confidence," significantly boosting your search engine ranking.
             </div>
         `;
     }
