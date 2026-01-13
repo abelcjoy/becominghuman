@@ -87,40 +87,51 @@ class StudentLibrary {
                         content: `
                             <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Cayley-Hamilton Theorem and Finding Eigenvalues/Eigenvectors are 16-mark sure-shots.</div>
                             <h2>1.1 Eigenvalues and Eigenvectors</h2>
-                            <p>For a square matrix A, a scalar λ is an <b>Eigenvalue</b> if there exists a non-zero vector X such that <i>AX = λX</i>. The vector X is the <b>Eigenvector</b>.</p>
-                            <div class="highlight-box">
-                                <b>Characteristic Equation:</b> |A - λI| = 0
-                            </div>
-                            <h3>Steps to find Eigenvalues:</h3>
-                            <ol>
-                                <li>Form the characteristic equation |A - λI| = 0.</li>
-                                <li>Solve for λ. The roots are the Eigenvalues.</li>
-                                <li>Substitute λ back into (A - λI)X = 0 to find the Eigenvectors.</li>
-                            </ol>
+                            <p>For a square matrix A, a scalar λ is an <b>Eigenvalue</b> if there exists a non-zero vector X such that <i>AX = λX</i>.</p>
+                            <div class="highlight-box"><b>Characteristic Equation:</b> |A - λI| = 0</div>
+                            <p><b>Properties:</b> 1. Sum of Eigenvalues = Trace of A. 2. Product of Eigenvalues = Det(A).</p>
                             <h2>1.2 Cayley-Hamilton Theorem</h2>
-                            <p><b>Statement:</b> Every square matrix satisfies its own characteristic equation.</p>
-                            <p><b>Applications:</b> Used to find the inverse of a matrix (A⁻¹) and higher powers of A (A⁴, A⁵ etc.).</p>
+                            <p>Every square matrix satisfies its own characteristic equation. If p(λ) = 0 is characteristic eq, then p(A) = 0.</p>
+                            <p><b>Inverse Calculation:</b> A⁻¹ = -1/aₙ (Aⁿ⁻¹ + a₁Aⁿ⁻² + ... + aₙ₋₁I)</p>
+                            <h2>1.3 Orthogonal Transformation</h2>
+                            <p>Reducing a quadratic form to canonical form by orthogonal transformation. Sum of squares is the result.</p>
                         `
                     },
                     {
                         name: 'Unit 2: Differential Calculus',
                         content: `
                             <h2>2.1 Limits and Continuity</h2>
-                            <p>A function f(x) is said to be <b>continuous</b> at x=a if the left-hand limit, right-hand limit, and the value of the function at 'a' are all equal.</p>
-                            <div class="highlight-box">
-                                <b>Formula:</b> lim(x→a) f(x) = f(a)
-                            </div>
-                            <h2>2.2 Derivatives</h2>
-                            <p>The derivative represents the rate of change of a function. The <b>Mean Value Theorem</b> is a key concept here, stating that for a continuous and differentiable function on [a,b], there's a point 'c' where the tangent is parallel to the secant.</p>
+                            <p>A function is continuous at 'a' if lim(x→a) f(x) = f(a).</p>
+                            <h2>2.2 Differentiation Rules</h2>
+                            <p>Product Rule, Quotient Rule, and Chain Rule. <b>Implicit Differentiation</b> is used when y cannot be explicitly expressed in terms of x.</p>
+                            <h2>2.3 Mean Value Theorems</h2>
+                            <p><b>Rolle's Theorem:</b> If f(a)=f(b), there exists c in (a,b) such that f'(c)=0.</p>
+                            <p><b>Taylor's Series:</b> Expansion of f(x) about a point 'a'.</p>
                         `
                     },
                     {
-                        name: 'Unit 3: Several Variables',
-                        content: `<h2>3.1 Partial Derivatives</h2><p>In functions of more than one variable, we differentiate with respect to one variable while keeping others constant.</p><h3>Euler's Theorem for Homogeneous Functions:</h3><p>If z is a homogeneous function of x and y of degree n, then:<br><b>x(∂z/∂x) + y(∂z/∂y) = nz</b></p>`
+                        name: 'Unit 3: Functions of Several Variables',
+                        content: `
+                            <h2>3.1 Partial Derivatives</h2><p>Differentiating with respect to one variable while others are constant.</p>
+                            <div class="highlight-box"><b>Euler's Theorem:</b> x(∂z/∂x) + y(∂z/∂y) = nz</div>
+                            <h2>3.2 Jacobians</h2><p>Used in transformation of coordinates. J = ∂(u,v)/∂(x,y).</p>
+                            <h2>3.3 Maxima and Minima</h2><p>Finding extreme values using Lagrange Multipliers method.</p>
+                        `
                     },
                     {
                         name: 'Unit 4: Integral Calculus',
-                        content: `<h2>4.1 Definite Integrals</h2><p>Used to find the area under a curve. Key techniques include Integration by Parts and Substitution.</p><div class="highlight-box"><b>Bernoulli's Formula:</b> ∫ u dv = uv - u'v₁ + u''v₂ - u'''v₃...</div>`
+                        content: `
+                            <h2>4.1 Integration Techniques</h2><p>Substitution, Integration by Parts, and Partial Fractions.</p>
+                            <div class="highlight-box"><b>Bernoulli's Formula:</b> ∫ u dv = uv - u'v₁ + u''v₂ - ...</div>
+                            <h2>4.2 Improper Integrals</h2><p>Integrals where limits are infinite or the function becomes infinite within intervals.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 5: Multiple Integrals',
+                        content: `
+                            <h2>5.1 Double and Triple Integrals</h2><p>Double integrals for Area (∫∫ dA) and Triple integrals for Volume (∫∫∫ dV).</p>
+                            <p><b>Change of Order:</b> Crucial for simplifying complex integration limits.</p>
+                        `
                     }
                 ],
                 tags: 'maths calculus matrices m1 anna university reg 2021'
@@ -136,21 +147,46 @@ class StudentLibrary {
                     {
                         name: 'Unit 1: Mechanics',
                         content: `
-                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Torsional Pendulum and Bending of Beams (Young's Modulus) are mandatory 16-mark questions.</div>
+                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Torsional Pendulum and Bending of Beams are mandatory 16-mark questions.</div>
                             <h2>1.1 Torsional Pendulum</h2>
-                            <p>A rigid body suspended by a thin wire which executes rotational oscillations. It is used to find the Rigidity Modulus (n) of the wire.</p>
-                            <div class="highlight-box">
-                                <b>Period of Oscillation:</b> T = 2π √(I/C)
-                                <br>Where I = Moment of Inertia, C = Restoring Couple per unit twist.
-                            </div>
-                            <h2>1.2 Elasticity</h2>
-                            <p><b>Young's Modulus (E):</b> Measurement of tensile or compressive stiffness.</p>
-                            <p><b>Rigidity Modulus (G):</b> Measurement of shear stiffness.</p>
+                            <p>Used to find the Rigidity Modulus (n) of a wire.</p>
+                            <div class="highlight-box"><b>Period:</b> T = 2π √(I/C)</div>
+                            <h2>1.2 Bending of Beams</h2>
+                            <p><b>Young's Modulus (E):</b> Determined using Uniform and Non-uniform bending methods.</p>
+                            <p><b>I-shaped Girders:</b> Used in construction as they provide maximum support with minimum weight.</p>
                         `
                     },
                     {
-                        name: 'Unit 4: Quantum Mechanics',
-                        content: `<h2>4.1 De-Broglie Hypothesis</h2><p>Matter has a dual nature, acting as both a particle and a wave.</p><div class="highlight-box"><b>Wavelength:</b> λ = h / p = h / mv</div><h2>4.2 Schrodinger Equation</h2><p>Describes how the quantum state of a physical system changes over time. The Time-Independent version is most commonly asked in exams.</p>`
+                        name: 'Unit 2: Electromagnetic Waves',
+                        content: `
+                            <h2>2.1 Maxwell's Equations</h2><p>Four fundamental equations that describe electromagnetism in terms of fields and forces.</p>
+                            <h2>2.2 Plane Electromagnetic Waves</h2><p>Waves where electric and magnetic vectors are perpendicular to each other and to the direction of propagation.</p>
+                            <div class="highlight-box"><b>Poynting Vector:</b> Represents the energy flux density of an EM field.</div>
+                        `
+                    },
+                    {
+                        name: 'Unit 3: Oscillations, Optics and Lasers',
+                        content: `
+                            <h2>3.1 Oscillations</h2><p>Damped and Forced oscillations. Resonance occurs when driving frequency matches natural frequency.</p>
+                            <h2>3.2 Lasers</h2><p><b>Characteristics:</b> Monochromaticity, Coherence, Directionality, and Intensity.</p>
+                            <p><b>Einstein's Coefficients:</b> A and B coefficients represent spontaneous and stimulated emission.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 4: Basic Quantum Mechanics',
+                        content: `
+                            <h2>4.1 De-Broglie Hypothesis</h2><p>Wavelength λ = h/p. Matter behaves as both particle and wave.</p>
+                            <div class="highlight-box"><b>Heisenberg Uncertainty Principle:</b> Δx.Δp ≥ h/4π</div>
+                            <h2>4.2 Schrodinger Equation</h2><p>Time-dependent and Time-independent equations. <b>Particle in a 1D box:</b> Energy is quantized.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 5: Applied Quantum Mechanics',
+                        content: `
+                            <h2>5.1 Quantum Structures</h2><p>Quantum dots, quantum wires, and quantum wells. These are nanostructures where quantum effects are dominant.</p>
+                            <h2>5.2 Electron Tunneling</h2><p>Phenomenon where a particle penetrates a potential barrier that it classical cannot surmount.</p>
+                            <div class="highlight-box"><b>Scanning Tunneling Microscope (STM):</b> Uses tunneling current to image surfaces at atomic scale.</div>
+                        `
                     }
                 ],
                 tags: 'physics ph3151 anna university'
@@ -166,28 +202,50 @@ class StudentLibrary {
                     {
                         name: 'Unit 1: Computational Thinking',
                         content: `
-                            <h2>1.1 Algorithms</h2>
-                            <p>A step-by-step procedure to solve a problem. Characteristics: Finiteness, Definiteness, Input, Output, Effectiveness.</p>
-                            <h3>Building Blocks of Algorithms:</h3>
-                            <ul>
-                                <li><b>Statements:</b> Single instructions.</li>
-                                <li><b>State:</b> Values of variables at a given time.</li>
-                                <li><b>Control Flow:</b> The order in which instructions are executed.</li>
-                            </ul>
+                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Building blocks of algorithms and Flowcharts are 13-mark questions.</div>
+                            <h2>1.1 Algorithms and Flowcharts</h2>
+                            <p><b>Algorithm:</b> Finite set of instructions to solve a problem.</p>
+                            <p><b>Flowchart:</b> Diagrammatic representation of an algorithm. (Start/End: Oval, Input/Output: Parallelogram, Process: Rectangle, Decision: Diamond).</p>
+                            <h2>1.2 Pseudo-code</h2><p>Informal high-level description of computer program or algorithm.</p>
                         `
                     },
                     {
-                        name: 'Unit 2: Linear Data Structures',
+                        name: 'Unit 2: Data, Expressions, Statements',
                         content: `
-                            <h2>2.1 Python Basics</h2>
-                            <p>Python is an interpreted, high-level, general-purpose programming language. Known for readability.</p>
+                            <h2>2.1 Variables and Types</h2>
+                            <p>In Python, memory is allocated automatically. Types: int, float, str, bool.</p>
                             <div class="highlight-box">
-                                <b>Example Code:</b><br>
-                                <pre>x = 10<br>if x > 5:<br>    print("Greater than 5")</pre>
+                                <b>Statements:</b> Instructions like <pre>x = 10 + 5</pre>
+                                <b>Expressions:</b> Combinations of values and operators like <pre>a * b + c</pre>
                             </div>
+                        `
+                    },
+                    {
+                        name: 'Unit 3: Control Flow, Functions',
+                        content: `
+                            <h2>3.1 Conditionals</h2><p>if, if-else, if-elif-else statements. Used for decision making.</p>
+                            <h2>3.2 Iteration (Loops)</h2><p><b>while-loop</b> and <b>for-loop</b>. Breaking and continuing loops.</p>
+                            <h2>3.3 Functions</h2><p>Reusable blocks of code. <b>Recursion:</b> A function calling itself.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 4: Compound Data Types',
+                        content: `
+                            <h2>4.1 Lists</h2><p>Mutable sequences. Methods: append, extend, insert, pop, remove.</p>
+                            <h2>4.2 Tuples</h2><p>Immutable sequences. Used for data that should not change.</p>
+                            <h2>4.3 Dictionaries</h2><p>Key-Value pairs (e.g., {'name': 'Alice', 'age': 20}).</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 5: Files, Modules, Packages',
+                        content: `
+                            <h2>5.1 File Handling</h2><p>Opening, reading, writing, and closing files. <b>Context Managers:</b> <i>with open() as f:</i> ensures file closure.</p>
+                            <h2>5.2 Modules and Packages</h2><p>Organizing code into reusable components. Using <i>import</i> statement to use libraries like <i>math</i> or <i>os</i>.</p>
                         `
                     }
                 ],
+                tags: 'python coding ge3151 programming anna university'
+            },
             {
                 id: 'au_chem_1',
                 title: 'CY3151: Engineering Chemistry',
@@ -198,10 +256,77 @@ class StudentLibrary {
                 chapters: [
                     {
                         name: 'Unit 1: Water Technology',
-                        content: `<h2>1.1 Hardness of Water</h2><p>Hardness is the property of water which prevents the lathering of soap. Types: Temporary (Carbonate) and Permanent (Non-carbonate).</p><div class="highlight-box"><b>EDTA Method:</b> Used to determine the total hardness of a water sample accurately.</div>`
+                        content: `
+                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Hardness estimation (EDTA) and Reverse Osmosis (RO) are 16-mark sure-shots.</div>
+                            <h2>1.1 Hardness of Water</h2>
+                            <p><b>Types:</b> Temporary (Carbonates of Ca, Mg) and Permanent (Chlorides, Sulfates of Ca, Mg).</p>
+                            <div class="highlight-box"><b>EDTA Method:</b> A complexometric titration used to find total hardness using EBT indicator.</div>
+                            <h2>1.2 Potable Water Treatment</h2><p>Zeolite process, Ion exchange process, and Desalination (Reverse Osmosis).</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 2: Nano Chemistry',
+                        content: `
+                            <h2>2.1 Nanomaterials</h2><p>Materials with at least one dimension in range of 1-100 nm. Properties change at nano-scale due to high surface area to volume ratio.</p>
+                            <h2>2.2 Synthesis of Nanomaterials</h2><p><b>Top-Down:</b> Breaking bulk (e.g., ball milling). <b>Bottom-Up:</b> Building atoms (e.g., Sol-gel, Chemical Vapor Deposition).</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 3: Phase Rule and Alloys',
+                        content: `
+                            <h2>3.1 Gibbs Phase Rule</h2><p><b>F = C - P + 2</b>. Describes state of systems at equilibrium.</p>
+                            <h2>3.2 Lead-Silver System</h2><p>Used in Pattinson's process for desilverization of lead.</p>
+                            <h2>3.3 Alloys</h2><p>Solid solution of two or more metals (e.g., Nichrome, Stainless Steel).</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 4: Fuels and Combustion',
+                        content: `
+                            <h2>4.1 Classification of Fuels</h2><p>Solid (Coal), Liquid (Petroleum), and Gaseous (Natural gas) fuels.</p>
+                            <div class="highlight-box"><b>Calorific Value:</b> Amount of heat produced by complete combustion of unit mass of fuel. Measured using Bomb Calorimeter.</div>
+                            <h2>4.2 Flue Gas Analysis</h2><p>Determining composition of stack gases using Orsat apparatus.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 5: Energy Sources and Storage Devices',
+                        content: `
+                            <h2>5.1 Nuclear Energy</h2><p>Nuclear Fission and Fusion. Nuclear reactors use controlled chain reactions.</p>
+                            <h2>5.2 Batteries</h2><p><b>Primary Batteries:</b> Non-rechargeable (e.g., Dry cell). <b>Secondary Batteries:</b> Rechargeable (e.g., Lead-acid, Lithium-ion).</p>
+                            <div class="highlight-box"><b>Fuel Cells:</b> Galvanic cells that convert chemical energy of fuel (like H₂) directly into electricity (e.g., H₂-O₂ cell).</div>
+                        `
                     }
                 ],
                 tags: 'chemistry cy3151 water tech anna university'
+            },
+            {
+                id: 'au_english_1',
+                title: 'HS3151: Professional English I',
+                univ: 'anna',
+                dept: 'Common First Year',
+                sem: 'Semester 1',
+                category: 'Engineering',
+                chapters: [
+                    { name: 'Unit 1: Sharing Information', content: `<h2>1.1 Parts of Speech</h2><p>Focus on nouns, verbs, and adjectives in technical context. <b>Wh-Questions:</b> Used for eliciting informations.</p>` },
+                    { name: 'Unit 2: Reading & Writing', content: `<h2>2.1 Reading Strategies</h2><p>Skimming and Scanning. <b>Writing:</b> Formal letters and emails.</p>` },
+                    { name: 'Unit 3: Grammar & Vocabulary', content: `<h2>3.1 Tenses</h2><p>Present, Past, and Future tenses. Subject-Verb agreement.</p>` },
+                    { name: 'Unit 4: Listening', content: `<h2>4.1 Active Listening</h2><p>Note-taking and summarizing conversations.</p>` },
+                    { name: 'Unit 5: Speaking', content: `<h2>5.1 Oral Communication</h2><p>Self-introduction and describing everyday objects.</p>` }
+                ],
+                tags: 'english hs3151 communication'
+            },
+            {
+                id: 'au_tamil_1',
+                title: 'GE3152: Heritage of Tamils',
+                univ: 'anna',
+                dept: 'Common First Year',
+                sem: 'Semester 1',
+                category: 'Engineering',
+                chapters: [
+                    { name: 'Unit 1: Language and Literature', content: `<h2>1.1 Sangam Literature</h2><p>Ettuthogai (Eight Anthologies) and Pathupattu (Ten Idylls). 18 Lesser Texts (Pathinenkelkanakku).</p>` },
+                    { name: 'Unit 2: Heritage of Tamils', content: `<h2>2.1 Arts and Crafts</h2><p>Sculpture, Architecture, and Fine arts. Temple architecture (Dravidian style).</p>` },
+                    { name: 'Unit 3: Music and Dance', content: `<h2>3.1 Folk Arts</h2><p>Isai (Music) and Nadagam (Drama). Traditional folk dances.</p>` }
+                ],
+                tags: 'tamil heritage ge3152'
             },
             {
                 id: 'upsc_polity_1',
