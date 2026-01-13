@@ -2,14 +2,19 @@
  * 💎 Clarity For Humans - NATIONAL STUDENT LIBRARY 🇮🇳 💎
  * 
  * Objective: The #1 Direct-Access Repository for Indian Students.
- * Features: Category-First UI, Real-time Global Search, Scrollable Notes.
+ * Features: Level-Drill Navigation, Real-time Global Search, Exam-Ready Notes.
  */
 
 class StudentLibrary {
     constructor() {
         this.categories = this.initCategories();
+        this.universities = this.initUniversities();
         this.subjects = this.initSubjects();
-        this.currentView = 'home'; // 'home', 'category', 'reader'
+
+        // Navigation State
+        this.navStack = [];
+        this.currentView = 'home';
+
         this.init();
     }
 
@@ -18,13 +23,13 @@ class StudentLibrary {
 
         const search = document.getElementById('search');
         if (search) {
-            search.placeholder = "Type anything: 'Anna Univ Physics', 'UPSC Polity', 'NCERT Science'...";
+            search.placeholder = "Search 'Anna Univ', 'Python', 'Matrices', 'UPSC'...";
             search.addEventListener('input', (e) => {
                 const query = e.target.value.trim();
                 if (query.length > 0) {
                     this.renderSearchResults(query);
                 } else {
-                    this.renderHome();
+                    this.renderFromStack();
                 }
             });
         }
@@ -35,171 +40,166 @@ class StudentLibrary {
         }
     }
 
+    // --- DATA INITIALIZATION ---
+
+    initCategories() {
+        return [
+            { id: 'eng', name: 'Engineering & Technology', icon: '👷', desc: 'University-wise notes for all Indian Engineering hubs.' },
+            { id: 'comp', name: 'Competitive Exams (INDIA)', icon: '🚀', desc: 'JEE, NEET, UPSC, GATE, SSC & Bank Exams.' },
+            { id: 'school', name: 'School Education (K-12)', icon: '🎒', desc: 'NCERT, CBSE & All State Boards.' },
+            { id: 'medical', name: 'Medical & Health Sciences', icon: '🩺', desc: 'MBBS, BDS, Nursing & Pharmacy.' },
+            { id: 'arts', name: 'Arts, Science & Commerce', icon: '🎨', desc: 'UGC-CBCS, DU, Madras Univ & more.' },
+            { id: 'distance', name: 'Distance & Open Learning', icon: '📚', desc: 'IGNOU & NIOS Resources.' }
+        ];
+    }
+
+    initUniversities() {
+        return {
+            'eng': [
+                { id: 'anna', name: 'Anna University (TN)', depts: ['Semester 1 (Common)', 'Semester 2 (Common)', 'Computer Science (CSE)', 'Information Tech (IT)', 'Electronics (ECE)', 'Electrical (EEE)', 'Mechanical Eng', 'Civil Eng'] },
+                { id: 'vtu', name: 'Visvesvaraya Tech Univ (VTU)', depts: ['Physics Cycle', 'Chemistry Cycle', 'CSE', 'ISE', 'ECE', 'ME'] },
+                { id: 'aktu', name: 'AKTU (Uttar Pradesh)', depts: ['First Year', 'CSE', 'IT', 'ECE', 'ME', 'CE'] },
+                { id: 'mu', name: 'Mumbai University (MU)', depts: ['First Year', 'Computer Eng', 'IT', 'EXTC', 'Mechanical'] },
+                { id: 'jntuh', name: 'JNTU Hyderabad', depts: ['R22 Regular', 'CSE', 'IT', 'ECE', 'EEE'] },
+                { id: 'ktu', name: 'APJ Abdul Kalam Tech Univ (KTU)', depts: ['S1 & S2', 'CSE', 'ECE', 'ME'] }
+            ]
+        };
+    }
+
+    initSubjects() {
+        return [
+            // ANNA UNIVERSITY - SEM 1
+            { id: 'au_maths_1', title: 'MA3151: Matrices and Calculus', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Matrices</h2><p>Characteristic equation, Eigenvalues and Eigenvectors of a real matrix...</p>`, tags: 'maths calculus matrices m1 anna university reg 2021' },
+            { id: 'au_physics_1', title: 'PH3151: Engineering Physics', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Mechanics</h2><p>Multiparticle systems, Center of mass, rigid body rotation...</p>`, tags: 'physics ph3151 mechanics anna university' },
+            { id: 'au_python_1', title: 'GE3151: Problem Solving & Python', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Computational Thinking</h2><p>Algorithms, building blocks of algorithms, notation...</p>`, tags: 'python coding ge3151 programming anna university' },
+
+            // COMPETITIVE
+            { id: 'upsc_polity_1', title: 'Fundamental Rights (Polity)', category: 'Competitive Exams', content: `<h2>Fundamental Rights</h2><p>Articles 12 to 35...</p>`, tags: 'upsc polity civil services' }
+        ];
+    }
+
+    // --- NAVIGATION LOGIC ---
+
+    renderHome() {
+        this.navStack = [{ type: 'home' }];
+        this.renderFromStack();
+    }
+
+    renderFromStack() {
+        const current = this.navStack[this.navStack.length - 1];
+        const grid = document.getElementById('grid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        this.currentView = current.type;
+
+        if (current.type === 'home') {
+            this.categories.forEach(cat => this.createCard(cat.name, cat.desc, cat.icon, 'CATEGORY', () => this.pushNav({ type: 'category', data: cat }), grid));
+        }
+        else if (current.type === 'category') {
+            const cat = current.data;
+            this.renderHeader(`${cat.icon} ${cat.name}`, 'Select your University or Board', grid);
+
+            if (this.universities[cat.id]) {
+                this.universities[cat.id].forEach(univ => {
+                    this.createCard(univ.name, `Access all departments of ${univ.name}`, '🏛️', 'UNIVERSITY', () => this.pushNav({ type: 'university', data: univ, catId: cat.id }), grid);
+                });
+            } else {
+                this.renderSubjects(this.subjects.filter(s => s.category === cat.name), grid);
+            }
+        }
+        else if (current.type === 'university') {
+            const univ = current.data;
+            this.renderHeader(`🏛️ ${univ.name}`, 'Select Department or Semester', grid);
+            univ.depts.forEach(dept => {
+                this.createCard(dept, `Detailed notes for ${dept} students.`, '📁', 'DEPARTMENT', () => this.pushNav({ type: 'dept', data: dept, univId: univ.id }), grid);
+            });
+        }
+        else if (current.type === 'dept') {
+            const dept = current.data;
+            const univId = current.univId;
+            this.renderHeader(`📁 ${dept}`, 'Available Subjects', grid);
+            const filtered = this.subjects.filter(s => s.univ === univId && s.dept === dept);
+            this.renderSubjects(filtered, grid);
+        }
+    }
+
+    pushNav(item) {
+        this.navStack.push(item);
+        this.renderFromStack();
+    }
+
     handleBack() {
         if (this.currentView === 'reader') {
-            this.currentView = 'home'; // Or back to category if we track history
             const view = document.getElementById('tool-view');
             if (view) view.classList.remove('active');
             document.body.style.overflow = 'auto';
+            this.currentView = this.navStack[this.navStack.length - 1].type;
+        } else if (this.navStack.length > 1) {
+            this.navStack.pop();
+            this.renderFromStack();
         } else {
             this.renderHome();
         }
     }
 
-    initCategories() {
-        return [
-            { id: 'comp', name: 'Competitive Exams (INDIA)', icon: '🚀', desc: 'JEE, NEET, UPSC, GATE, SSC, Bank Exams' },
-            { id: 'eng', name: 'Engineering & Technology', icon: '👷', desc: 'Anna Univ, VTU, JNTU, AKTU, Mumbai Univ' },
-            { id: 'school', name: 'School Education (K-12)', icon: '🎒', desc: 'NCERT, CBSE, ICSE & All State Boards' },
-            { id: 'medical', name: 'Medical & Health Sciences', icon: '🩺', desc: 'MBBS, Dental, Nursing, Pharmacy Council' },
-            { id: 'arts', name: 'Arts, Science & Commerce', icon: '🎨', desc: 'UGC-CBCS, DU, Madras Univ, Calcutta Univ' },
-            { id: 'distance', name: 'Distance & Open Learning', icon: '📚', desc: 'IGNOU Study Material, NIOS Resources' }
-        ];
-    }
+    // --- RENDER HELPERS ---
 
-    initSubjects() {
-        return [
-            {
-                id: 'anna_phys_1',
-                title: "Engineering Physics (Anna University)",
-                board: "Anna University",
-                category: "Engineering",
-                tags: "physics sem 1 engineering mechanics anna university regulation 2021",
-                content: `
-                    <div class="notes-container">
-                        <h2>Unit 1: Mechanics & Properties of Matter</h2>
-                        <p class="exam-tip">🎯 <b>EXAM TIP:</b> Hooke's Law is a frequent 2-mark question. Be sure to mention "within elastic limit."</p>
-                        
-                        <h3>1.1 Elasticity</h3>
-                        <p>Elasticity is the property of a body by virtue of which it tends to regain its original shape and size when the external deforming forces are removed.</p>
-                        
-                        <div class="highlight-box">
-                            <b>Hooke's Law:</b> Within elastic limits, stress is directly proportional to strain. 
-                            <br><i>Stress ∝ Strain ⇒ Stress = E × Strain</i>
-                        </div>
-
-                        <h3>1.2 Torsional Pendulum</h3>
-                        <p>A torsional pendulum is a rigid body suspended by a thin wire which executes rotational oscillations. It is used to determine the moment of inertia of the body or the rigidity modulus of the wire.</p>
-                        
-                        <h3>Important Academic Questions:</h3>
-                        <ul>
-                            <li><b>2 Marks:</b> Define Poisson's Ratio.</li>
-                            <li><b>16 Marks:</b> Derive the expression for the period of oscillation of a torsional pendulum. Include the derivation for rigidity modulus 'n'.</li>
-                        </ul>
-                    </div>
-                `
-            },
-            {
-                id: 'upsc_polity_1',
-                title: "Fundamental Rights (UPSC Polity)",
-                board: "UPSC / Civil Services",
-                category: "Competitive Exams",
-                tags: "upsc polity constitution fundamental rights ssc cgl current affairs",
-                content: `
-                    <div class="notes-container">
-                        <h2>Fundamental Rights (Part III, Art 12-35)</h2>
-                        <p class="exam-tip">🎯 <b>UPSC TIP:</b> Concentrate on the 'Exceptions' to each Right. UPSC loves tricky questions on Art 14-18.</p>
-
-                        <h3>The 6 Core Rights:</h3>
-                        <ol>
-                            <li>Right to Equality (Art 14-18)</li>
-                            <li>Right to Freedom (Art 19-22)</li>
-                            <li>Right against Exploitation (Art 23-24)</li>
-                            <li>Right to Freedom of Religion (Art 25-28)</li>
-                            <li>Cultural and Educational Rights (Art 29-30)</li>
-                            <li>Right to Constitutional Remedies (Art 32) - "The Heart and Soul" - Dr. Ambedkar</li>
-                        </ol>
-
-                        <div class="highlight-box">
-                            <b>Article 32:</b> Power of Supreme Court to issue Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, and Quo-Warranto.
-                        </div>
-                    </div>
-                `
-            }
-        ];
-    }
-
-    renderHome() {
-        const grid = document.getElementById('grid');
-        if (!grid) return;
-        this.currentView = 'home';
-        grid.innerHTML = '';
-
-        this.categories.forEach(cat => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-                <div class="card-header">
-                    <div class="card-category">CATEGORY</div>
-                    <div class="card-icon">${cat.icon}</div>
-                </div>
-                <div class="card-title">${cat.name}</div>
-                <div class="card-desc">${cat.desc}</div>
-            `;
-            card.onclick = () => this.renderCategoryView(cat);
-            grid.appendChild(card);
-        });
-    }
-
-    renderCategoryView(cat) {
-        const grid = document.getElementById('grid');
-        if (!grid) return;
-        this.currentView = 'category';
-        grid.innerHTML = `
-            <div style="grid-column: 1/-1; padding: 20px; text-align: center;">
-                <h2 style="color: #fff;">${cat.icon} ${cat.name}</h2>
-                <p style="color: #888;">Select a Subject or University below</p>
-                <button onclick="window.omni.renderHome()" style="background: #222; margin-top: 10px; font-size: 12px; padding: 8px 16px;">← Back to Categories</button>
-            </div>
+    renderHeader(title, subtitle, grid) {
+        const header = document.createElement('div');
+        header.style.cssText = 'grid-column: 1/-1; padding: 20px; text-align: center;';
+        header.innerHTML = `
+            <h2 style="color: #fff; margin-bottom:5px;">${title}</h2>
+            <p style="color: #666; font-size:14px;">${subtitle}</p>
+            <button onclick="window.omni.handleBack()" style="background: #111; border:1px solid #333; color:#888; margin-top:15px; font-size: 11px; padding: 6px 14px; border-radius:20px; cursor:pointer;">← Go Back</button>
         `;
+        grid.appendChild(header);
+    }
 
-        const filteredSubjs = this.subjects.filter(s => s.category.toLowerCase().includes(cat.name.split(' ')[0].toLowerCase()) || s.category === cat.name);
+    createCard(title, desc, icon, label, onClick, grid) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="card-header">
+                <div class="card-category">${label}</div>
+                <div class="card-icon">${icon}</div>
+            </div>
+            <div class="card-title">${title}</div>
+            <div class="card-desc">${desc}</div>
+        `;
+        card.onclick = onClick;
+        grid.appendChild(card);
+    }
 
-        if (filteredSubjs.length === 0) {
-            grid.innerHTML += `<div style="grid-column: 1/-1; text-align: center; color: #555; padding: 40px;">Coming Soon: Digital repository being populated...</div>`;
+    renderSubjects(list, grid) {
+        if (list.length === 0) {
+            grid.innerHTML += `<div style="grid-column: 1/-1; text-align: center; color: #444; padding: 40px;">Library is being updated. Coming soon!</div>`;
             return;
         }
-
-        filteredSubjs.forEach(subj => this.createSubjectCard(subj, grid));
+        list.forEach(subj => {
+            this.createCard(subj.title, `Board: ${subj.univ || 'National'}`, '📖', 'SUBJECT', () => this.openReader(subj.id), grid);
+        });
     }
 
     renderSearchResults(query) {
         const grid = document.getElementById('grid');
         if (!grid) return;
-        grid.innerHTML = '';
+        grid.innerHTML = `
+            <div style="grid-column:1/-1; padding:10px 20px; color:#666; font-size:13px; border-bottom:1px solid #222;">
+                SEARCH RESULTS FOR: <span style="color:#fff;">"${query.toUpperCase()}"</span>
+            </div>
+        `;
 
         const results = this.subjects.filter(subj => {
-            const searchStr = `${subj.title} ${subj.board} ${subj.tags} ${subj.category}`.toLowerCase();
+            const searchStr = `${subj.title} ${subj.univ} ${subj.dept} ${subj.tags} ${subj.category}`.toLowerCase();
             return searchStr.includes(query.toLowerCase());
         });
 
         if (results.length === 0) {
-            grid.innerHTML = `
-                <div style="grid-column: 1/-1; text-align: center; padding: 40px;">
-                    <div style="font-size: 3em; margin-bottom: 10px;">🔍</div>
-                    <div style="color: #fff; font-size: 1.2em;">No exact matches found</div>
-                    <div style="color: #666; margin-top: 5px;">Try searching for generic terms like "Physics" or "Anna"</div>
-                </div>
-            `;
+            grid.innerHTML += `<div style="grid-column: 1/-1; text-align: center; padding: 60px; color:#555;">No subjects found for "${query}"</div>`;
             return;
         }
 
-        results.forEach(subj => this.createSubjectCard(subj, grid));
-    }
-
-    createSubjectCard(subj, grid) {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
-            <div class="card-header">
-                <div class="card-category">${subj.category}</div>
-                <div class="card-icon">📖</div>
-            </div>
-            <div class="card-title">${subj.title}</div>
-            <div class="card-desc">Board: ${subj.board}</div>
-        `;
-        card.onclick = () => this.openReader(subj.id);
-        grid.appendChild(card);
+        results.forEach(subj => this.createCard(subj.title, `${subj.univ ? subj.univ.toUpperCase() : subj.category} - ${subj.dept || ''}`, '📖', 'RESULT', () => this.openReader(subj.id), grid));
     }
 
     openReader(subjectId) {
@@ -210,31 +210,26 @@ class StudentLibrary {
 
         if (content && subj) {
             content.innerHTML = `
-                <div style="padding: 10px;">
-                    <div style="font-size: 12px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
-                        ${subj.category} ❯ ${subj.board}
-                    </div>
-                    <h1 style="color: #fff; font-size: 2.2em; line-height: 1.2; margin-bottom: 20px;">${subj.title}</h1>
-                    <div class="scrollable-notes">
-                        ${subj.content}
-                    </div>
+                <div class="notes-wrapper">
+                    <div class="notes-breadcrumb">${subj.category} ❯ ${subj.univ || ''} ❯ ${subj.dept || ''}</div>
+                    <h1 class="notes-title">${subj.title}</h1>
+                    <div class="notes-body">${subj.content}</div>
                 </div>
                 <style>
-                    .scrollable-notes { color: #ddd; line-height: 1.8; font-size: 17px; }
-                    .scrollable-notes h2 { color: #fff; margin-top: 30px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-                    .scrollable-notes h3 { color: cyan; margin-top: 25px; font-size: 1.2em; }
-                    .scrollable-notes p { margin-bottom: 15px; }
-                    .scrollable-notes .highlight-box { background: rgba(0, 255, 255, 0.05); border-left: 4px solid cyan; padding: 15px; margin: 20px 0; border-radius: 4px; }
-                    .notes-container { max-width: 800px; margin: 0 auto; }
-                    .exam-tip { background: rgba(255, 255, 0, 0.1); border: 1px dashed yellow; color: yellow; padding: 10px; border-radius: 4px; font-size: 14px; margin: 15px 0; }
+                    .notes-wrapper { max-width: 850px; margin: 0 auto; color: #ddd; font-family: 'Inter', sans-serif; }
+                    .notes-breadcrumb { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+                    .notes-title { color: #fff; font-size: 2.5em; line-height: 1.2; margin-bottom: 30px; border-left: 5px solid #fff; padding-left: 20px; }
+                    .notes-body { line-height: 1.8; font-size: 18px; }
+                    .notes-body h2 { color: #fff; margin-top: 40px; border-bottom: 1px solid #222; padding-bottom: 10px; }
+                    .notes-body p { margin-bottom: 20px; }
                 </style>
             `;
             view.classList.add('active');
-            document.body.style.overflow = 'hidden';
             view.scrollTop = 0;
+            document.body.style.overflow = 'hidden';
         }
     }
 }
 
-// Global initialization
+// Initialize the Portal
 window.omni = new StudentLibrary();

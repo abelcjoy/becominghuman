@@ -1,18 +1,37 @@
-# Clarity For Humans - ACADEMIC REPOSITORY 🇮🇳
+# Clarity For Humans - NATIONAL STUDENT LIBRARY 🇮🇳
 
-**Project State:** Direct Notes Pivot 📚
-**Objective:** Provide full, scrollable academic notes for every major Indian board and university.
+**Project State:** Direct Notes Pivot - Phase 2 (Architecture Complete) 📚 🏛️
+**Objective:** Provide a structured, multi-level repository for all major Indian academic boards and universities.
 
-## Roadmap
-1. **The Infrastructure** (Done - Portal logic is ready)
-2. **Phase 1: Engineering Focus** (Anna University, VTU, Mumbai University)
-3. **Phase 2: School Focus** (NCERT, CBSE, State Boards)
-4. **Phase 3: Competitive Exams** (JEE, NEET, UPSC basic prep)
+## Navigation Hierarchy
+- **Level 1:** Category (Engineering, School, Medical, Competitive, etc.)
+- **Level 2:** University or Board (Anna University, VTU, CBSE, etc.)
+- **Level 3:** Department or Semester (CSE, Semester 1, Class 10, etc.)
+- **Level 4:** Specific Subject Notes
 
-## Current Content
-- [x] Portal UI Architecture
-- [ ] Anna University: Engineering Physics (Drafting)
-- [ ] NCERT Class 10: Science (Drafting)
+## Current Coverage
+### 👷 Engineering & Technology
+- **Anna University (TN):** Reg 2021 Sem 1, CSE, IT, ECE, EEE, MECH, CIVIL ready for content.
+- **VTU (Karnataka):** Physics Cycle, Chemistry Cycle, CSE, ISE, ECE ready.
+- **AKTU (UP):** First Year, CSE, IT ready.
+- **Mumbai University:** First Year, Computer Eng ready.
+- **JNTU Hyderabad:** R22 Regular, CSE, IT ready.
+- **KTU (Kerala):** S1 & S2, CSE ready.
 
-## Why this is Revolutionary
-Students currently have to navigate through malware-ridden PDF sites and outdated portals. By providing direct, scrollable text on a clean UI, we become the #1 destination for Indian student prep.
+### 🚀 Competitive Exams
+- **UPSC:** Indian Polity (Fundamental Rights) live.
+- **JEE/NEET/GATE:** Mapping in progress.
+
+### 🎒 School Education (K-12)
+- **NCERT/CBSE:** Framework ready.
+
+## Features implemented
+- [x] **Category-First Drill Down:** Easy 3-click access to any note.
+- [x] **Real-time Instant Search:** Results appear as you type.
+- [x] **Persistent Navigation Stack:** Deep-link style "Back" button functionality.
+- [x] **Optimized Reader UI:** High-contrast, dyslexia-friendly academic layout.
+
+## Next Steps
+- Population of Unit-wise notes for Anna University Semester 1.
+- Integration of NCERT Science & Math for Class 10.
+- Formula Cheat-Sheets for Engineering Maths.
