@@ -62,6 +62,27 @@ class StudentLibrary {
                 { id: 'mu', name: 'Mumbai University (MU)', depts: ['First Year', 'Computer Eng', 'IT', 'EXTC', 'Mechanical'] },
                 { id: 'jntuh', name: 'JNTU Hyderabad', depts: ['R22 Regular', 'CSE', 'IT', 'ECE', 'EEE'] },
                 { id: 'ktu', name: 'APJ Abdul Kalam Tech Univ (KTU)', depts: ['S1 & S2', 'CSE', 'ECE', 'ME'] }
+            ],
+            'school': [
+                { id: 'ncert', name: 'NCERT / CBSE (National)', depts: ['Class 12', 'Class 11', 'Class 10', 'Class 9', 'Class 8'] },
+                { id: 'icse', name: 'ICSE / ISC', depts: ['Class 12 (ISC)', 'Class 10 (ICSE)'] },
+                { id: 'tn_state', name: 'Tamil Nadu State Board', depts: ['Class 12', 'Class 11', 'Class 10'] },
+                { id: 'up_state', name: 'UP Board', depts: ['Intermediate (12th)', 'High School (10th)'] },
+                { id: 'mh_state', name: 'Maharashtra State Board', depts: ['HSC (12th)', 'SSC (10th)'] }
+            ],
+            'medical': [
+                { id: 'mgr', name: 'Dr. MGR Medical Univ (TN)', depts: ['MBBS Phase 1', 'MBBS Phase 2', 'BDS', 'Nursing', 'Pharmacy'] },
+                { id: 'rguhs', name: 'RGUHS (Karnataka)', depts: ['MBBS', 'Dental', 'Ayush'] },
+                { id: 'muhs', name: 'MUHS (Maharashtra)', depts: ['MBBS', 'BDS', 'BAMS'] }
+            ],
+            'arts': [
+                { id: 'du', name: 'University of Delhi (DU)', depts: ['B.A. Programme', 'B.Sc. Honours', 'B.Com'] },
+                { id: 'unom', name: 'University of Madras', depts: ['B.Sc IT', 'B.A English', 'B.Com General'] },
+                { id: 'cu', name: 'University of Calcutta', depts: ['Arts', 'Science', 'Commerce'] }
+            ],
+            'distance': [
+                { id: 'ignou', name: 'IGNOU', depts: ['BCA', 'MCA', 'B.A.', 'M.A.'] },
+                { id: 'nios', name: 'NIOS (National Open School)', depts: ['Secondary (10th)', 'Sr. Secondary (12th)'] }
             ]
         };
     }
