@@ -1,8 +1,8 @@
-/**
- * 💎 Omni Tools - 13 ELITE TOOLS (CORE EDITION) 💎
+ * 💎 Omni Tools - 23 ELITE TOOLS(CORE EDITION) 💎
  * 
  * CORE: Calculator, Unit Pro, Secret Key Gen
     * AI FINDER BATCH 1: Text - to - Image, Text - to - Video, Image - to - Video, Logo Gen, Upscalers, etc.
+ * AI FINDER BATCH 2: Text - to - Speech, Speech - to - Text, Voice Changers, Music Gen, etc.
  */
 
 class OmniTools {
@@ -16,13 +16,18 @@ class OmniTools {
         this.renderGrid();
 
         const search = document.getElementById('search');
-        let timeout;
-        search.addEventListener('input', (e) => {
-            clearTimeout(timeout);
-            timeout = setTimeout(() => this.renderGrid(e.target.value), 150);
-        });
+        if (search) {
+            let timeout;
+            search.addEventListener('input', (e) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => this.renderGrid(e.target.value), 150);
+            });
+        }
 
-        document.getElementById('back-btn').addEventListener('click', () => this.closeToolView());
+        const backBtn = document.getElementById('back-btn');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => this.closeToolView());
+        }
 
         // Privacy Logic
         const privacyView = document.getElementById('privacy-view');
@@ -35,10 +40,13 @@ class OmniTools {
                     document.body.style.overflow = 'hidden';
                 });
             }
-            document.getElementById('close-privacy-btn').addEventListener('click', () => {
-                privacyView.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
+            const closePrivacy = document.getElementById('close-privacy-btn');
+            if (closePrivacy) {
+                closePrivacy.addEventListener('click', () => {
+                    privacyView.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
         }
     }
 
@@ -188,12 +196,134 @@ class OmniTools {
                     { name: 'Luma Mesh', status: 'High Fidelity', link: 'https://lumalabs.ai/genie' },
                     { name: 'Meshy', status: 'Best for Game Dev', link: 'https://meshy.ai' }
                 ])
+            },
+            // === AI FINDER BATCH 2: AUDIO & VOICE ===
+            textToSpeechAI: {
+                name: "Text to Speech AI",
+                searchTerms: "ai voice generator text to speech read aloud narration",
+                description: "Lifelike voice narration",
+                icon: "🎙️",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Text to Speech', 'Convert written text into natural, lifelike human voices.', [
+                    { name: 'ElevenLabs', status: 'Industry Leader (Free Tier)', link: 'https://elevenlabs.io' },
+                    { name: 'Speechify', status: 'Best for Reading', link: 'https://speechify.com' },
+                    { name: 'Play.ht', status: 'Pro Voiceovers', link: 'https://play.ht' }
+                ])
+            },
+            speechToTextAI: {
+                name: "Speech to Text AI",
+                searchTerms: "ai transcribe speech to text meeting notes dictate",
+                description: "Transcribe audio to text",
+                icon: "✍️",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Speech to Text', 'Automatically transcribe meetings, interviews, and audio files into text.', [
+                    { name: 'Otter.ai', status: 'Best for Meetings', link: 'https://otter.ai' },
+                    { name: 'Whisper (OpenAI)', status: 'Most Accurate (API)', link: 'https://openai.com/research/whisper' },
+                    { name: 'Rev AI', status: 'Fast & Reliable', link: 'https://rev.ai' }
+                ])
+            },
+            voiceChangerAI: {
+                name: "Voice Changer AI",
+                searchTerms: "ai voice changer realtime filter anonymous gaming",
+                description: "Change your voice profile",
+                icon: "🎭",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Voice Changer', 'Alter your voice in real-time or for recordings using AI filters.', [
+                    { name: 'Voicemod', status: 'Top for Gaming', link: 'https://voicemod.net' },
+                    { name: 'Respeecher', status: 'Cinema Quality', link: 'https://respeecher.com' },
+                    { name: 'Kits.ai', status: 'Best for Music', link: 'https://kits.ai' }
+                ])
+            },
+            textToMusicAI: {
+                name: "Text to Music AI",
+                searchTerms: "ai music generator text to song compose beat",
+                description: "Compose songs from text",
+                icon: "🎵",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Text to Music', 'Generate full songs and background tracks from simple descriptions.', [
+                    { name: 'Suno AI', status: 'Incredible Full Songs', link: 'https://suno.com' },
+                    { name: 'Udio', status: 'Hyper-Realistic Audio', link: 'https://udio.com' },
+                    { name: 'Soundraw', status: 'Royalty-Free Beats', link: 'https://soundraw.io' }
+                ])
+            },
+            vocalRemoverAI: {
+                name: "Vocal Remover AI",
+                searchTerms: "ai remove vocals isolate voice karaoke instrumental",
+                description: "Isolate vocals or music",
+                icon: "🎧",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Vocal Remover', 'Extract vocals or instrumentals from any song with precision.', [
+                    { name: 'LALAL.AI', status: 'Best Stem Splitter', link: 'https://lalal.ai' },
+                    { name: 'Moises.ai', status: 'Best for Musicians', link: 'https://moises.ai' },
+                    { name: 'Gaudiolab', status: 'Totally Free (Web)', link: 'https://gaudiolab.com' }
+                ])
+            },
+            podcastEnhanceAI: {
+                name: "Podcast Enhancer AI",
+                searchTerms: "ai clean audio podcast fix noise studio quality",
+                description: "Fix bad audio quality",
+                icon: "🔊",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Podcast Enhancer', 'Turn bad microphone recordings into studio-quality audio instantly.', [
+                    { name: 'Adobe Podcast', status: 'Free (Game Changer)', link: 'https://podcast.adobe.com' },
+                    { name: 'Auphonic', status: 'One-Stop Mastering', link: 'https://auphonic.com' },
+                    { name: 'Cleanvoice', status: 'Removes Fillers', link: 'https://cleanvoice.ai' }
+                ])
+            },
+            voiceTranslateAI: {
+                name: "AI Voice Translate",
+                searchTerms: "ai translate voice video dubbing language",
+                description: "Dub video seamlessly",
+                icon: "🌍",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Voice Translator', 'Translate your videos into other languages while keeping your voice.', [
+                    { name: 'HeyGen', status: 'Best Video Dubbing', link: 'https://heygen.com' },
+                    { name: 'Rask.ai', status: 'Professional Translation', link: 'https://rask.ai' },
+                    { name: 'Dubverse', status: 'Fast Creator Support', link: 'https://dubverse.ai' }
+                ])
+            },
+            noiseFixerAI: {
+                name: "Noise Fixer AI",
+                searchTerms: "ai remove background noise krisp clear audio",
+                description: "Erase background noise",
+                icon: "🤫",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Noise Fixer', 'Remove background noise from your calls or recordings in real-time.', [
+                    { name: 'Krisp', status: 'Best for Meetings', link: 'https://krisp.ai' },
+                    { name: 'Podcastle', status: 'Great for Creators', link: 'https://podcastle.ai' },
+                    { name: 'Swell AI', status: 'Content Focus', link: 'https://swellai.com' }
+                ])
+            },
+            songGenAI: {
+                name: "AI Song Generator",
+                searchTerms: "ai write song lyrics composer music",
+                description: "Create custom songs",
+                icon: "🎸",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Song Generator', 'Build custom songs with lyrics and melodies using AI.', [
+                    { name: 'Boomy', status: 'Easiest Song Maker', link: 'https://boomy.com' },
+                    { name: 'AIVA', status: 'Cinematic Composer', link: 'https://aiva.ai' },
+                    { name: 'Stable Audio', status: 'Short Audio Loops', link: 'https://stableaudio.com' }
+                ])
+            },
+            audioScriptAI: {
+                name: "Audio Script AI",
+                searchTerms: "ai voiceover script script reader murf",
+                description: "Pro voiceovers for scripts",
+                icon: "📖",
+                category: "AI Finder",
+                render: () => this.renderAiFinder('Audio Script AI', 'Turn your scripts into professional voiceovers for videos.', [
+                    { name: 'Murf.ai', status: 'Studio Quality Voices', link: 'https://murf.ai' },
+                    { name: 'LOVO AI', status: 'Great for Games/Ads', link: 'https://lovo.ai' },
+                    { name: 'WellSaid Labs', status: 'Most Natural Tech', link: 'https://wellsaidlabs.com' }
+                ])
             }
         };
     }
 
     renderGrid(filter = '') {
-        const grid = document.getElementById('tools-grid');
+        const grid = document.getElementById('grid');
+        if (!grid) return;
         grid.innerHTML = '';
 
         const filtered = Object.entries(this.tools).filter(([id, tool]) => {
@@ -203,12 +333,14 @@ class OmniTools {
 
         filtered.forEach(([id, tool]) => {
             const card = document.createElement('div');
-            card.className = 'tool-card pulse-hover';
+            card.className = 'card';
             card.innerHTML = `
-                <div class="tool-icon">${tool.icon}</div>
-                <h3 class="tool-name">${tool.name}</h3>
-                <p class="tool-desc">${tool.description}</p>
-                <div class="tool-category">${tool.category}</div>
+                <div class="card-header">
+                    <div class="card-category">${tool.category}</div>
+                    <div class="card-icon">${tool.icon}</div>
+                </div>
+                <div class="card-title">${tool.name}</div>
+                <div class="card-desc">${tool.description}</div>
             `;
             card.addEventListener('click', () => this.openTool(id));
             grid.appendChild(card);
@@ -221,18 +353,24 @@ class OmniTools {
         const view = document.getElementById('tool-view');
         const content = document.getElementById('tool-content');
 
-        content.innerHTML = ''; // Clear previous
-        tool.render();
+        if (content) {
+            content.innerHTML = '';
+            tool.render();
+        }
 
-        view.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
+        if (view) {
+            view.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
     }
 
     closeToolView() {
         const view = document.getElementById('tool-view');
-        view.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        this.currentTool = null;
+        if (view) {
+            view.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            this.currentTool = null;
+        }
     }
 
     // === RENDER METHODS (AI FINDER) ===
@@ -241,7 +379,7 @@ class OmniTools {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <div style="text-align:center; padding-bottom: 20px;">
-                <h2 class="tool-title" style="margin-bottom:10px;">${title} AI</h2>
+                <h2 class="tool-title" style="margin-bottom:10px;">${title}</h2>
                 <p style="color:#888; font-size:14px; margin-bottom:20px;">${slogan}</p>
             </div>
             <div style="display:flex; flex-direction:column; gap:16px;">
@@ -257,23 +395,20 @@ class OmniTools {
                     </div>
                 `).join('')}
             </div>
-            <div style="margin-top:30px; padding:15px; background:rgba(255,255,255,0.03); border-radius:8px; font-size:11px; color:#555; text-align:center;">
-                Prices and features are subject to change. We recommend the "Free Tiers" for beginners.
-            </div>
         `;
     }
 
-    // === RENDER METHODS (CLEAN SLATE) ===
+    // === RENDER METHODS (CORE) ===
 
     renderCalculator() {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Omni Calculator</h2>
-            <div style="display:grid; grid-template-columns:1fr; gap:10px;">
-                <input type="text" id="calc-display" disabled style="width:100%; height:40px; text-align:right; font-size:1.5em; background:#111; color:lime; border:1px solid #333; padding:5px;">
-                <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:5px;">
+            <div style="display:grid; grid-template-columns:1fr; gap:10px; max-width:400px; margin:0 auto;">
+                <input type="text" id="calc-display" disabled style="width:100%; height:60px; text-align:right; font-size:2em; background:#111; color:lime; border:1px solid #333; padding:10px; margin-bottom:10px;">
+                <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
                     ${[7, 8, 9, '/', 4, 5, 6, '*', 1, 2, 3, '-', 0, '.', 'C', '+', '='].map(btn => `
-                        <button onclick="window.omniCalc('${btn}')" class="calc-btn">${btn}</button>
+                        <button onclick="window.omniCalc('${btn}')" style="padding:20px; font-size:18px; background:#1a1a1a; color:#fff; border:1px solid #333;">${btn}</button>
                     `).join('')}
                 </div>
             </div>
@@ -295,15 +430,15 @@ class OmniTools {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Unit Pro</h2>
-            <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="display:flex; flex-direction:column; gap:15px; max-width:400px; margin:0 auto;">
                 <input type="number" id="unit-val" value="1" style="width:100%;">
-                <select id="unit-type" style="width:100%; font-size:0.8em;">
+                <select id="unit-type" style="width:100%;">
                     <option value="km-mi">Kilometers to Miles</option>
                     <option value="kg-lb">Kilograms to Pounds</option>
                     <option value="c-f">Celsius to Fahrenheit</option>
                 </select>
-                <div id="unit-out" style="font-size:1.2em; color:cyan; text-align:center;">0.62 Miles</div>
-                <button onclick="window.omniConvert()" style="width:100%; background:#444;">CONVERT</button>
+                <div id="unit-out" class="result">0.62 Miles</div>
+                <button onclick="window.omniConvert()">CONVERT</button>
             </div>
         `;
 
@@ -321,10 +456,10 @@ class OmniTools {
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Secret Key Gen</h2>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-                <input type="text" id="pass-out" readonly style="width:100%; color:gold; text-align:center; background:#111;">
-                <button onclick="window.omniPass()" style="width:100%; background:#d32f2f;">GENERATE ENCRYPTED KEY</button>
-                <div style="font-size:0.6em; color:#888;">Uses local entropy for high-security randomness.</div>
+            <div style="display:flex; flex-direction:column; gap:15px; max-width:400px; margin:0 auto;">
+                <input type="text" id="pass-out" readonly style="width:100%; color:gold; text-align:center; height:60px; font-size:20px;">
+                <button onclick="window.omniPass()" style="background:#fff; color:#000;">GENERATE SECURE KEY</button>
+                <div style="font-size:12px; color:#666; text-align:center;">Uses local browser entropy for secure randomness.</div>
             </div>
         `;
 
