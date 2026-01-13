@@ -73,7 +73,7 @@ class StudentLibrary {
 
     initSubjects() {
         return [
-            // ANNA UNIVERSITY - SEM 1
+            // ANNA UNIVERSITY - SEM 1 (REGULATION 2021)
             {
                 id: 'au_maths_1',
                 title: 'MA3151: Matrices and Calculus',
@@ -82,10 +82,48 @@ class StudentLibrary {
                 sem: 'Semester 1',
                 category: 'Engineering',
                 chapters: [
-                    { name: 'Unit 1: Matrices', content: `<h2>Unit 1: Matrices</h2><p>Characteristic equation, Eigenvalues and Eigenvectors of a real matrix. Cayley-Hamilton theorem...</p>` },
-                    { name: 'Unit 2: Differential Calculus', content: `<h2>Unit 2: Differential Calculus</h2><p>Representation of functions, Limit of a function, Continuity...</p>` }
+                    {
+                        name: 'Unit 1: Matrices',
+                        content: `
+                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Cayley-Hamilton Theorem and Finding Eigenvalues/Eigenvectors are 16-mark sure-shots.</div>
+                            <h2>1.1 Eigenvalues and Eigenvectors</h2>
+                            <p>For a square matrix A, a scalar λ is an <b>Eigenvalue</b> if there exists a non-zero vector X such that <i>AX = λX</i>. The vector X is the <b>Eigenvector</b>.</p>
+                            <div class="highlight-box">
+                                <b>Characteristic Equation:</b> |A - λI| = 0
+                            </div>
+                            <h3>Steps to find Eigenvalues:</h3>
+                            <ol>
+                                <li>Form the characteristic equation |A - λI| = 0.</li>
+                                <li>Solve for λ. The roots are the Eigenvalues.</li>
+                                <li>Substitute λ back into (A - λI)X = 0 to find the Eigenvectors.</li>
+                            </ol>
+                            <h2>1.2 Cayley-Hamilton Theorem</h2>
+                            <p><b>Statement:</b> Every square matrix satisfies its own characteristic equation.</p>
+                            <p><b>Applications:</b> Used to find the inverse of a matrix (A⁻¹) and higher powers of A (A⁴, A⁵ etc.).</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 2: Differential Calculus',
+                        content: `
+                            <h2>2.1 Limits and Continuity</h2>
+                            <p>A function f(x) is said to be <b>continuous</b> at x=a if the left-hand limit, right-hand limit, and the value of the function at 'a' are all equal.</p>
+                            <div class="highlight-box">
+                                <b>Formula:</b> lim(x→a) f(x) = f(a)
+                            </div>
+                            <h2>2.2 Derivatives</h2>
+                            <p>The derivative represents the rate of change of a function. The <b>Mean Value Theorem</b> is a key concept here, stating that for a continuous and differentiable function on [a,b], there's a point 'c' where the tangent is parallel to the secant.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 3: Several Variables',
+                        content: `<h2>3.1 Partial Derivatives</h2><p>In functions of more than one variable, we differentiate with respect to one variable while keeping others constant.</p><h3>Euler's Theorem for Homogeneous Functions:</h3><p>If z is a homogeneous function of x and y of degree n, then:<br><b>x(∂z/∂x) + y(∂z/∂y) = nz</b></p>`
+                    },
+                    {
+                        name: 'Unit 4: Integral Calculus',
+                        content: `<h2>4.1 Definite Integrals</h2><p>Used to find the area under a curve. Key techniques include Integration by Parts and Substitution.</p><div class="highlight-box"><b>Bernoulli's Formula:</b> ∫ u dv = uv - u'v₁ + u''v₂ - u'''v₃...</div>`
+                    }
                 ],
-                tags: 'maths calculus matrices m1 anna university'
+                tags: 'maths calculus matrices m1 anna university reg 2021'
             },
             {
                 id: 'au_physics_1',
@@ -95,9 +133,99 @@ class StudentLibrary {
                 sem: 'Semester 1',
                 category: 'Engineering',
                 chapters: [
-                    { name: 'Unit 1: Mechanics', content: `<h2>Unit 1: Mechanics</h2><p>Multiparticle systems, Center of mass, rigid body rotation...</p>` }
+                    {
+                        name: 'Unit 1: Mechanics',
+                        content: `
+                            <div class="exam-tip">🎯 <b>EXAM FOCUS:</b> Torsional Pendulum and Bending of Beams (Young's Modulus) are mandatory 16-mark questions.</div>
+                            <h2>1.1 Torsional Pendulum</h2>
+                            <p>A rigid body suspended by a thin wire which executes rotational oscillations. It is used to find the Rigidity Modulus (n) of the wire.</p>
+                            <div class="highlight-box">
+                                <b>Period of Oscillation:</b> T = 2π √(I/C)
+                                <br>Where I = Moment of Inertia, C = Restoring Couple per unit twist.
+                            </div>
+                            <h2>1.2 Elasticity</h2>
+                            <p><b>Young's Modulus (E):</b> Measurement of tensile or compressive stiffness.</p>
+                            <p><b>Rigidity Modulus (G):</b> Measurement of shear stiffness.</p>
+                        `
+                    },
+                    {
+                        name: 'Unit 4: Quantum Mechanics',
+                        content: `<h2>4.1 De-Broglie Hypothesis</h2><p>Matter has a dual nature, acting as both a particle and a wave.</p><div class="highlight-box"><b>Wavelength:</b> λ = h / p = h / mv</div><h2>4.2 Schrodinger Equation</h2><p>Describes how the quantum state of a physical system changes over time. The Time-Independent version is most commonly asked in exams.</p>`
+                    }
                 ],
-                tags: 'physics ph3151'
+                tags: 'physics ph3151 anna university'
+            },
+            {
+                id: 'au_python_1',
+                title: 'GE3151: Problem Solving & Python',
+                univ: 'anna',
+                dept: 'Common First Year',
+                sem: 'Semester 1',
+                category: 'Engineering',
+                chapters: [
+                    {
+                        name: 'Unit 1: Computational Thinking',
+                        content: `
+                            <h2>1.1 Algorithms</h2>
+                            <p>A step-by-step procedure to solve a problem. Characteristics: Finiteness, Definiteness, Input, Output, Effectiveness.</p>
+                            <h3>Building Blocks of Algorithms:</h3>
+                            <ul>
+                                <li><b>Statements:</b> Single instructions.</li>
+                                <li><b>State:</b> Values of variables at a given time.</li>
+                                <li><b>Control Flow:</b> The order in which instructions are executed.</li>
+                            </ul>
+                        `
+                    },
+                    {
+                        name: 'Unit 2: Linear Data Structures',
+                        content: `
+                            <h2>2.1 Python Basics</h2>
+                            <p>Python is an interpreted, high-level, general-purpose programming language. Known for readability.</p>
+                            <div class="highlight-box">
+                                <b>Example Code:</b><br>
+                                <pre>x = 10<br>if x > 5:<br>    print("Greater than 5")</pre>
+                            </div>
+                        `
+                    }
+                ],
+            {
+                id: 'au_chem_1',
+                title: 'CY3151: Engineering Chemistry',
+                univ: 'anna',
+                dept: 'Common First Year',
+                sem: 'Semester 1',
+                category: 'Engineering',
+                chapters: [
+                    {
+                        name: 'Unit 1: Water Technology',
+                        content: `<h2>1.1 Hardness of Water</h2><p>Hardness is the property of water which prevents the lathering of soap. Types: Temporary (Carbonate) and Permanent (Non-carbonate).</p><div class="highlight-box"><b>EDTA Method:</b> Used to determine the total hardness of a water sample accurately.</div>`
+                    }
+                ],
+                tags: 'chemistry cy3151 water tech anna university'
+            },
+            {
+                id: 'upsc_polity_1',
+                title: 'Indian Polity: Constitution',
+                category: 'Competitive Exams',
+                chapters: [
+                    {
+                        name: '1. Fundamental Rights',
+                        content: `<h2>Fundamental Rights (Art 12-35)</h2><p>Art 14: Equality before law. Art 17: Abolition of untouchability. Art 19: Freedom of speech.</p>`
+                    }
+                ],
+                tags: 'upsc polity constitution'
+            },
+            {
+                id: 'ncert_science_10',
+                title: 'Science (Class 10 NCERT)',
+                univ: 'ncert',
+                dept: 'Class 10',
+                sem: 'Semester 1',
+                category: 'School Education (K-12)',
+                chapters: [
+                    { name: 'Ch 1: Chemical Reactions', content: `<h2>1.1 Chemical Equations</h2><p>Symbolic representation of a reaction. A + B -> AB (Combination).</p>` }
+                ],
+                tags: 'ncert science class 10'
             }
         ];
     }
