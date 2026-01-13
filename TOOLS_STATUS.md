@@ -1,31 +1,18 @@
-# Omni Tools Status - AI FINDER EDITION 🚀
+# Clarity For Humans - ACADEMIC REPOSITORY 🇮🇳
 
-**Total Tools:** 33 💎
-**Status:** EXPANDING WRITING & RESEARCH ✍️📚
+**Project State:** Direct Notes Pivot 📚
+**Objective:** Provide full, scrollable academic notes for every major Indian board and university.
 
-## Core Utilities
-1. **Omni Calculator**
-2. **Unit Pro**
-3. **Secret Key Gen**
+## Roadmap
+1. **The Infrastructure** (Done - Portal logic is ready)
+2. **Phase 1: Engineering Focus** (Anna University, VTU, Mumbai University)
+3. **Phase 2: School Focus** (NCERT, CBSE, State Boards)
+4. **Phase 3: Competitive Exams** (JEE, NEET, UPSC basic prep)
 
-## AI Finder Batch 1: Visual Generation
-- Text to Image, Video, Logo Gen, Upscalers, etc.
+## Current Content
+- [x] Portal UI Architecture
+- [ ] Anna University: Engineering Physics (Drafting)
+- [ ] NCERT Class 10: Science (Drafting)
 
-## AI Finder Batch 2: Audio & Voice
-- Text to Speech, Music Gen, Voice Translate, etc.
-
-## AI Finder Batch 3: Writing & Research (NEW)
-- **AI Essay Writer** (Textero.ai)
-- **PDF Summarizer AI** (ChatPDF)
-- **Email Automator AI** (Flowrite)
-- **AI Search Engine** (Perplexity)
-- **Grammar Fixer AI** (Grammarly)
-- **AI Study Helper** (Khanmigo)
-- **Content Ideas AI** (VidIQ)
-- **Resume Builder AI** (Rezi.ai)
-- **AI Plagiarism Check** (GPTZero)
-- **AI Legal Assistant** (DoNotPay)
-
-## Search Optimization
-- Keywords targeted: "ai essay writer," "pdf summarizer ai," "resume builder ai."
-- High-authority recommendations only.
+## Why this is Revolutionary
+Students currently have to navigate through malware-ridden PDF sites and outdated portals. By providing direct, scrollable text on a clean UI, we become the #1 destination for Indian student prep.
