@@ -306,39 +306,48 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Free Online Tools</h1>
-            <p class="subtitle">Simple, fast utilities for everyday tasks</p>
+    <div class="container" style="max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; background: #000;">
+        
+        <header style="position: absolute; top: 20px; left: 0; right: 0; text-align: center; z-index: 100; pointer-events: none;">
+            <h1 style="color: #0f0; text-shadow: 0 0 10px #0f0; font-family: 'Courier New', monospace; font-size: 32px; margin: 0;">THE FIREWALL GUARD</h1>
+            <p style="color: #rgba(0, 255, 0, 0.7); font-family: 'Courier New', monospace; font-size: 14px;">DEFEND THE MAINFRAME</p>
         </header>
 
-        <input type="text" id="search"
-            placeholder="Search tools (e.g., calculator, word counter, password generator...)" autocomplete="off">
+        <!-- Game Container -->
+        <div id="game-root" style="width: 100%; height: 100%; position: relative;">
+            <canvas id="game-canvas"></canvas>
+            
+            <!-- HUD -->
+            <div id="hud" style="position: absolute; top: 80px; left: 20px; color: #0f0; font-family: 'Courier New', monospace; font-size: 18px; pointer-events: none;">
+                <div>INTEGRITY: <span id="g-health">100</span>%</div>
+                <div style="margin-top: 10px;">BYTES: <span id="g-money">0</span></div>
+                <div style="margin-top: 10px;">SECTOR: <span id="g-level">1</span></div>
+            </div>
 
-        <div id="grid"></div>
+            <!-- Upgrades Dock -->
+            <div id="dock" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; background: rgba(0, 20, 0, 0.8); padding: 10px; border: 1px solid #0f0; border-radius: 8px;">
+                <button id="btn-upg-1" class="game-btn">AUTO-PATCHER (50)</button>
+                <button id="btn-upg-2" class="game-btn">BANDWIDTH+ (150)</button>
+                <button id="btn-nuke" class="game-btn" style="border-color: #f00; color: #f00;">SYS.PURGE() (500)</button>
+            </div>
 
-        <!-- AdSense Ad Unit -->
-        <div class="ad-container">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9639641684797882"
-                data-ad-slot="1234567890" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <!-- Game Over Overlay -->
+            <div id="game-overlay" style="display: none; position: absolute; inset: 0; background: rgba(0,0,0,0.9); flex-direction: column; align-items: center; justify-content: center; z-index: 200;">
+                <h1 style="color: #f00; font-size: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 20px #f00; margin-bottom: 20px;">SYSTEM FAILURE</h1>
+                <p id="go-score" style="color: #fff; font-family: 'Courier New', monospace; font-size: 24px; margin-bottom: 40px;"></p>
+                <button id="btn-restart" style="background: #0f0; color: #000; border: none; padding: 20px 40px; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace; cursor: pointer; box-shadow: 0 0 20px #0f0;">REBOOT SYSTEM</button>
+            </div>
         </div>
 
-        <footer>
-            <p>&copy; 2026 Clarity For Humans. All rights reserved.</p>
-            <p style="margin-top: 10px;">
-                <a href="mailto:clarityforhumanscfh@gmail.com">Contact</a> |
-                <a href="#privacy">Privacy Policy</a>
-            </p>
-        </footer>
     </div>
 
-    <div id="tool-view">
-        <div class="container">
-            <button id="back-btn">← Back to Tools</button>
-            <div id="tool-content"></div>
-        </div>
-    </div>
+    <script type="module" src="js/omni-simple.js"></script>
 
+    <!-- AdSense Auto Ads (Hidden/Background for earnings) -->
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</body>
     <div id="privacy-view"
         style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000; z-index: 2000; overflow-y: auto; padding: 20px;">
         <div class="container" style="max-width: 800px;">
