@@ -1,5 +1,5 @@
 /**
- * 💎 Omni Tools - 1,080 ELITE TOOLS! 💎
+ * 💎 Omni Tools - 1,120 ELITE TOOLS! 💎
  * 
  * BATCH 56: AiModels + PromptEng + TokenEst + NnLayers + TrainVsInfer + AiBias + Hallucination + VectorDb + Rlhf + FineTune
  * BATCH 57: WebWorkers + ServiceWorkers + StorageTypes + IndexedDb + FetchApi + GeoApi + ClipApi + InteractionObs + MutationObs + DeviceMotion
@@ -49,6 +49,10 @@
  * BATCH 101: WebCodecs + WebTransport + StreamsAPI + CompressionAPI + ReportingAPI + PermissionsAPI + ScreenCapture + FontAccess + ComputePressure + UaHints
  * BATCH 102: DoraMetrics + TeamTopos + InnerSource + TechDebt + RfcProcess + AdrRecords + LaddersRef + MentorsRef + IncidentMgmt + PostMortems
  * BATCH 103: CoreVitals + StructData + OpenGraph + Sitemaps + RobotsTxt + CanonTags + MetaTags + AltText + InternalLinks + Backlinks
+ * BATCH 104: MVPRef + Roadmaps + UserStories + PRDGuide + Stakeholders + BacklogRef + VelocityRef + BurnDown + UserResearch + Personas
+ * BATCH 105: DevRelRef + Community + Advocacy + Hackathons + DevPortal + ApiDocs + SamplesRef + Feedback + SocialDev + DevRelMetrics
+ * BATCH 106: KernelRef + FileSys + VirtMem + ProcSched + SystemCalls + Interrupts + BootLoader + ShellInt + Drivers + IPCRef
+ * BATCH 107: CPUArch + RamRef + GpuRef + DiskRef + BusRef + CacheRef + PsuRef + MoboRef + BiosRef + PeriphRef
  */
 
 class OmniTools {
@@ -8826,6 +8830,330 @@ class OmniTools {
                 icon: "📡",
                 category: "SEO",
                 render: () => this.renderBacklinksRef()
+            },
+            // === BATCH 104 - 1,090 TOOLS (PRODUCT MANAGEMENT) ===
+            mvpRef: {
+                name: "MVP Ref",
+                searchTerms: "product management mvp minimum viable product",
+                description: "Launch lean",
+                icon: "🚀",
+                category: "Product",
+                render: () => this.renderMvpRef()
+            },
+            roadmapsRef: {
+                name: "Roadmaps",
+                searchTerms: "product management roadmaps planning strategy",
+                description: "Vision timeline",
+                icon: "🗺️",
+                category: "Product",
+                render: () => this.renderRoadmapsRef()
+            },
+            userStoriesRef: {
+                name: "UserStories",
+                searchTerms: "product management user stories agile scrum",
+                description: "Feature specs",
+                icon: "👤",
+                category: "Product",
+                render: () => this.renderUserStoriesRef()
+            },
+            prdGuideRef: {
+                name: "PRD Guide",
+                searchTerms: "product management prd requirements document",
+                description: "Product specs",
+                icon: "📄",
+                category: "Product",
+                render: () => this.renderPrdGuideRef()
+            },
+            stakeholdersRef: {
+                name: "Stakeholders",
+                searchTerms: "product management stakeholders communication",
+                description: "Align teams",
+                icon: "🤝",
+                category: "Product",
+                render: () => this.renderStakeholdersRef()
+            },
+            backlogRef: {
+                name: "Backlog Ref",
+                searchTerms: "product management backlog prioritization agile",
+                description: "Task queue",
+                icon: "📥",
+                category: "Product",
+                render: () => this.renderBacklogRef()
+            },
+            velocityRef: {
+                name: "Velocity Ref",
+                searchTerms: "product management velocity sprint calculation",
+                description: "Team speed",
+                icon: "🚄",
+                category: "Product",
+                render: () => this.renderVelocityRef()
+            },
+            burnDownRef: {
+                name: "BurnDown",
+                searchTerms: "product management burndown chart sprint",
+                description: "Sprints progress",
+                icon: "📉",
+                category: "Product",
+                render: () => this.renderBurnDownRef()
+            },
+            userResearchRef: {
+                name: "UserResearch",
+                searchTerms: "product management user research interviews",
+                description: "Understand users",
+                icon: "🔍",
+                category: "Product",
+                render: () => this.renderUserResearchRef()
+            },
+            personasRef: {
+                name: "Personas",
+                searchTerms: "product management personas target audience",
+                description: "User profiles",
+                icon: "🎭",
+                category: "Product",
+                render: () => this.renderPersonasRef()
+            },
+            // === BATCH 105 - 1,100 TOOLS (DEVELOPER RELATIONS) ===
+            devRelRef: {
+                name: "DevRel Ref",
+                searchTerms: "devrel developer relations advocacy community",
+                description: "Engage devs",
+                icon: "📣",
+                category: "DevRel",
+                render: () => this.renderDevRelRef()
+            },
+            communityRef: {
+                name: "Community",
+                searchTerms: "devrel community management discord slack",
+                description: "Build tribe",
+                icon: "🌍",
+                category: "DevRel",
+                render: () => this.renderCommunityRef()
+            },
+            advocancyRef: {
+                name: "Advocacy",
+                searchTerms: "devrel advocacy feedback developer voice",
+                description: "Dev voice",
+                icon: "🛡️",
+                category: "DevRel",
+                render: () => this.renderAdvocacyRef()
+            },
+            hackathonsRef: {
+                name: "Hackathons",
+                searchTerms: "devrel hackathons events building",
+                description: "Event guide",
+                icon: "💻",
+                category: "DevRel",
+                render: () => this.renderHackathonsRef()
+            },
+            devPortalRef: {
+                name: "DevPortal",
+                searchTerms: "devrel developer portal documentation api",
+                description: "Self-serve dx",
+                icon: "🚪",
+                category: "DevRel",
+                render: () => this.renderDevPortalRef()
+            },
+            apiDocsRef: {
+                name: "ApiDocs",
+                searchTerms: "devrel api documentation swagger redoc",
+                description: "Doc strategy",
+                icon: "📖",
+                category: "DevRel",
+                render: () => this.renderApiDocsRef()
+            },
+            samplesRef: {
+                name: "Samples Ref",
+                searchTerms: "devrel sample code quickstarts examples",
+                description: "Start faster",
+                icon: "📦",
+                category: "DevRel",
+                render: () => this.renderSamplesRef()
+            },
+            feedbackRef: {
+                name: "Feedback",
+                searchTerms: "devrel customer feedback product improvement",
+                description: "Binary loops",
+                icon: "🔄",
+                category: "DevRel",
+                render: () => this.renderFeedbackRef()
+            },
+            socialDevRef: {
+                name: "SocialDev",
+                searchTerms: "devrel social media twitter dev.to content",
+                description: "Reach devs",
+                icon: "🐦",
+                category: "DevRel",
+                render: () => this.renderSocialDevRef()
+            },
+            devRelMetricsRef: {
+                name: "DevRelMetrics",
+                searchTerms: "devrel metrics reach engagement conversion",
+                description: "ROI tracking",
+                icon: "📊",
+                category: "DevRel",
+                render: () => this.renderDevRelMetricsRef()
+            },
+            // === BATCH 106 - 1,110 TOOLS (OS INTERNALS) ===
+            kernelRef: {
+                name: "Kernel Ref",
+                searchTerms: "os kernel monolith microkernel linux nt",
+                description: "Core OS logic",
+                icon: "🧠",
+                category: "OS",
+                render: () => this.renderKernelRef()
+            },
+            fileSysRef: {
+                name: "FileSys",
+                searchTerms: "os file system ext4 ntfs apfs fat32",
+                description: "Storage logic",
+                icon: "📂",
+                category: "OS",
+                render: () => this.renderFileSysRef()
+            },
+            virtMemRef: {
+                name: "VirtMem",
+                searchTerms: "os virtual memory paging segmentation swapping",
+                description: "Mem management",
+                icon: "💾",
+                category: "OS",
+                render: () => this.renderVirtMemRef()
+            },
+            procSchedRef: {
+                name: "ProcSched",
+                searchTerms: "os process scheduler round robin fifo",
+                description: "Task timing",
+                icon: "⏲️",
+                category: "OS",
+                render: () => this.renderProcSchedRef()
+            },
+            systemCallsRef: {
+                name: "SystemCalls",
+                searchTerms: "os system calls syscall user space kernel",
+                description: "API for Apps",
+                icon: "📞",
+                category: "OS",
+                render: () => this.renderSystemCallsRef()
+            },
+            interruptsRef: {
+                name: "Interrupts",
+                searchTerms: "os interrupts irq exception hardware",
+                description: "Event alerts",
+                icon: "⚡",
+                category: "OS",
+                render: () => this.renderInterruptsRef()
+            },
+            bootLoaderRef: {
+                name: "BootLoader",
+                searchTerms: "os bootloader grub bios uefi startup",
+                description: "System start",
+                icon: "👢",
+                category: "OS",
+                render: () => this.renderBootLoaderRef()
+            },
+            shellIntRef: {
+                name: "ShellInt",
+                searchTerms: "os shell bash zsh command execution",
+                description: "User interface",
+                icon: "🐚",
+                category: "OS",
+                render: () => this.renderShellIntRef()
+            },
+            driversRef: {
+                name: "Drivers",
+                searchTerms: "os device drivers hardware interface",
+                description: "HW bridge",
+                icon: "🎮",
+                category: "OS",
+                render: () => this.renderDriversRef()
+            },
+            ipcRef: {
+                name: "IPCRef",
+                searchTerms: "os inter-process communication pipes shared mem",
+                description: "App talk",
+                icon: "🤝",
+                category: "OS",
+                render: () => this.renderIpcRef()
+            },
+            // === BATCH 107 - 1,120 TOOLS (COMPUTER HARDWARE) ===
+            cpuArchRef: {
+                name: "CPUArch",
+                searchTerms: "hardware cpu architecture x86 arm risc-v",
+                description: "Processor logic",
+                icon: "🏁",
+                category: "HW",
+                render: () => this.renderCpuArchRef()
+            },
+            ramRef: {
+                name: "RamRef",
+                searchTerms: "hardware ram ddr4 ddr5 memory latency",
+                description: "Volatile mem",
+                icon: "🧠",
+                category: "HW",
+                render: () => this.renderRamRef()
+            },
+            gpuRef: {
+                name: "GpuRef",
+                searchTerms: "hardware gpu nvidia amd cuda graphics",
+                description: "Parallel engine",
+                icon: "🖼️",
+                category: "HW",
+                render: () => this.renderGpuRef()
+            },
+            diskRef: {
+                name: "DiskRef",
+                searchTerms: "hardware ssd hdd nvme storage sata",
+                description: "Mass storage",
+                icon: "💿",
+                category: "HW",
+                render: () => this.renderDiskRef()
+            },
+            busRef: {
+                name: "BusRef",
+                searchTerms: "hardware system bus pcie pci usb thunderbolt",
+                description: "Data lanes",
+                icon: "🚌",
+                category: "HW",
+                render: () => this.renderBusRef()
+            },
+            cacheRef: {
+                name: "CacheRef",
+                searchTerms: "hardware l1 l2 l3 cache cpu latency",
+                description: "Speed hierarchy",
+                icon: "⚡",
+                category: "HW",
+                render: () => this.renderCacheRef()
+            },
+            psuRef: {
+                name: "PsuRef",
+                searchTerms: "hardware psu power supply wattage modular",
+                description: "Energy source",
+                icon: "🔌",
+                category: "HW",
+                render: () => this.renderPsuRef()
+            },
+            moboRef: {
+                name: "MoboRef",
+                searchTerms: "hardware motherboard chipset socket b650 x670",
+                description: "Main board",
+                icon: "🌉",
+                category: "HW",
+                render: () => this.renderMoboRef()
+            },
+            biosRef: {
+                name: "BiosRef",
+                searchTerms: "hardware bios uefi firmware initialization",
+                description: "Initial SW",
+                icon: "🗝️",
+                category: "HW",
+                render: () => this.renderBiosRef()
+            },
+            periphRef: {
+                name: "PeriphRef",
+                searchTerms: "hardware peripherals mouse keyboard monitor",
+                description: "Input/Output",
+                icon: "🖱️",
+                category: "HW",
+                render: () => this.renderPeriphRef()
             }
         };
     }
@@ -28531,8 +28859,412 @@ Online: ${n.onLine}
         const content = document.getElementById('tool-content');
         content.innerHTML = `
             <h2 class="tool-title">Backlinks</h2>
-            <div style="font-size:0.7em; text-align:left;">
+            <div style="font-size:0.75em; text-align:left;">
                 <b>Authority:</b> Links from external sites that act as "votes of confidence," significantly boosting your search engine ranking.
+            </div>
+        `;
+    }
+
+    // === BATCH 104 - 1,090 TOOLS (PRODUCT MANAGEMENT) ===
+    renderMvpRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MVP Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Minimum Viable Product:</b> A version of a new product that allows a team to collect the maximum amount of validated learning about customers with the least effort.
+            </div>
+        `;
+    }
+
+    renderRoadmapsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Roadmaps</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Strategy:</b> High-level visual summary that maps out the vision and direction of your product offering over time.
+            </div>
+        `;
+    }
+
+    renderUserStoriesRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">UserStories</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Format:</b> "As a [user], I want [goal] so that [benefit]." Keeps the team focused on user value rather than just technical tasks.
+            </div>
+        `;
+    }
+
+    renderPrdGuideRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PRD Guide</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Product Requirements Document:</b> Defines the product you are building: who it's for, what features it must have, and how success is measured.
+            </div>
+        `;
+    }
+
+    renderStakeholdersRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Stakeholders</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Management:</b> Identifying, informing, and aligning everyone impacted by the project (Design, Tech, Sales, Marketing, Legal).
+            </div>
+        `;
+    }
+
+    renderBacklogRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Backlog Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Prioritization:</b> An ordered list of everything that might be needed in the product. The single source of requirements for any changes.
+            </div>
+        `;
+    }
+
+    renderVelocityRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Velocity Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Metrics:</b> The amount of work a team can tackle during a single sprint. Key for predicting how long the backlog will take to clear.
+            </div>
+        `;
+    }
+
+    renderBurnDownRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BurnDown</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Tracking:</b> A graphical representation of work left to do versus time. Helps predict if the sprint goal will be met.
+            </div>
+        `;
+    }
+
+    renderUserResearchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">UserResearch</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Insights:</b> Using qualitative (interviews) and quantitative (surveys, analytics) methods to understand user needs and pain points.
+            </div>
+        `;
+    }
+
+    renderPersonasRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Personas</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Modeling:</b> Fictional characters created to represent the different user types within your targeted demographic or user base.
+            </div>
+        `;
+    }
+
+    // === BATCH 105 - 1,100 TOOLS (DEVELOPER RELATIONS) ===
+    renderDevRelRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DevRel Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Mission:</b> Building relationships with developer communities to ensure their success with your product while relaying feedback to the team.
+            </div>
+        `;
+    }
+
+    renderCommunityRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Community</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Nurturing:</b> Creating a space (Discord, Slack, Forums) where developers can help each other, share projects, and feel connected to the brand.
+            </div>
+        `;
+    }
+
+    renderAdvocacyRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Advocacy</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Developer Voice:</b> Representing the developer's needs internally to product and engineering teams to improve Developer Experience (DX).
+            </div>
+        `;
+    }
+
+    renderHackathonsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Hackathons</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Innovation:</b> organizing high-energy coding events to drive platform adoption, discover bugs, and inspire creative use of your API.
+            </div>
+        `;
+    }
+
+    renderDevPortalRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DevPortal</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Product Hub:</b> A one-stop shop for developers to get API keys, read documentation, find sample code, and see system status.
+            </div>
+        `;
+    }
+
+    renderApiDocsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ApiDocs</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Clarity:</b> High-quality reference material that explains how to use your API, including error codes, rate limits, and authentication.
+            </div>
+        `;
+    }
+
+    renderSamplesRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Samples Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Speed to Hello World:</b> Providing copy-pasteable snippets and production-ready boilerplate to help developers integrate in minutes.
+            </div>
+        `;
+    }
+
+    renderFeedbackRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Feedback</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Closing the Loop:</b> Systematically gathering developer pain points and feature requests and communicating when they are addressed.
+            </div>
+        `;
+    }
+
+    renderSocialDevRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SocialDev</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Outreach:</b> Engaging on Twitter, LinkedIn, and dev.to with educational content, company news, and developer spotlights.
+            </div>
+        `;
+    }
+
+    renderDevRelMetricsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DevRelMetrics</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>ROI:</b> Measuring success through North Star metrics like API activation, community growth, content reach, and feedback impact.
+            </div>
+        `;
+    }
+
+    // === BATCH 106 - 1,110 TOOLS (OS INTERNALS) ===
+    renderKernelRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Kernel Ref</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Core Logic:</b> The heart of the OS. Manages memory, processes, and hardware communication. Bridges software to the CPU.
+            </div>
+        `;
+    }
+
+    renderFileSysRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">FileSys</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Hierarchy:</b> Translates logical files (the document you see) into actual bits on the disk platter or NAND flash.
+            </div>
+        `;
+    }
+
+    renderVirtMemRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">VirtMem</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>Abstraction:</b> Making each process think it has its own continuous block of memory, mapping virtual addresses to real RAM.
+            </div>
+        `;
+    }
+
+    renderProcSchedRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ProcSched</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>CPU Allocation:</b> Deciding which program gets to use the CPU next. Critical for preventing lag and system hangs.
+            </div>
+        `;
+    }
+
+    renderSystemCallsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">SystemCalls</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>OS API:</b> The boundary where user apps request the OS to perform privileged tasks like reading files or sending network packets.
+            </div>
+        `;
+    }
+
+    renderInterruptsRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">Interrupts</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Hardware Async:</b> Signals sent by devices (keyboard, mouse, network card) to tell the CPU to stop what it's doing and handle an event.
+            </div>
+        `;
+    }
+
+    renderBootLoaderRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BootLoader</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Ignition:</b> Small program that loads the OS into memory when the computer starts. (e.g., GRUB, Windows Boot Manager).
+            </div>
+        `;
+    }
+
+    renderShellIntRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">ShellInt</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Interpreter:</b> A command-line interface that allows users to interact with the kernel directly to run programs and manage files.
+            </div>
+        `;
+    }
+
+    renderDriversRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+           <h2 class="tool-title">Drivers</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>HW Bridge:</b> Specialized software that tells the OS how to communicate with a specific piece of hardware (e.g., a webcam).
+            </div>
+        `;
+    }
+
+    renderIpcRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">IPCRef</h2>
+            <div style="font-size:0.75em; text-align:left;">
+                <b>App Comms:</b> Inter-Process Communication. How different running programs share data securely (Pipes, Sockets, Signals).
+            </div>
+        `;
+    }
+
+    // === BATCH 107 - 1,120 TOOLS (COMPUTER HARDWARE) ===
+    renderCpuArchRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CPUArch</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Instruction Set:</b> The "language" a CPU speaks. x86 (Desktop), ARM (Mobile/Modern Mac), RISC-V (Open Source).
+            </div>
+        `;
+    }
+
+    renderRamRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">RamRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Working Memory:</b> High-speed, volatile storage where the computer keeps data it's actively using right now.
+            </div>
+        `;
+    }
+
+    renderGpuRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">GpuRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Parallelism:</b> Thousands of small cores designed for processing pixels, AI models, and heavy math simultaneously.
+            </div>
+        `;
+    }
+
+    renderDiskRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">DiskRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Persistence:</b> SSDs (fast, silent) and HDDs (cheap, massive) for storing your data when the power is off.
+            </div>
+        `;
+    }
+
+    renderBusRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BusRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Data Lanes:</b> The highways inside the computer (PCIe, SATA, USB) that move data between the CPU, RAM, and storage.
+            </div>
+        `;
+    }
+
+    renderCacheRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">CacheRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Proximity:</b> Tiny amounts of ultra-fast memory built directly into the CPU to store frequently used instructions.
+            </div>
+        `;
+    }
+
+    renderPsuRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PsuRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Power Plant:</b> Converts AC wall power into the precise DC voltages (12V, 5V, 3.3V) the computer parts need.
+            </div>
+        `;
+    }
+
+    renderMoboRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">MoboRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>Central Hub:</b> The large circuit board that ties everything together. Contains the Chipset and external ports.
+            </div>
+        `;
+    }
+
+    renderBiosRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">BiosRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>First Code:</b> Basic Input/Output System. Checks hardware during POST and hands over control to the OS bootloader.
+            </div>
+        `;
+    }
+
+    renderPeriphRef() {
+        const content = document.getElementById('tool-content');
+        content.innerHTML = `
+            <h2 class="tool-title">PeriphRef</h2>
+            <div style="font-size:0.7em; text-align:left;">
+                <b>IO:</b> External devices like mice, keyboards, printers, and monitors that allow you to interact with the machine.
             </div>
         `;
     }
