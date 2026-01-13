@@ -2,7 +2,7 @@
  * 💎 Clarity For Humans - NATIONAL STUDENT LIBRARY 🇮🇳 💎
  * 
  * Objective: The #1 Direct-Access Repository for Indian Students.
- * Features: Level-Drill Navigation, Real-time Global Search, Exam-Ready Notes.
+ * Features: Level-Drill Navigation, Chapter-wise Reading, Real-time Search.
  */
 
 class StudentLibrary {
@@ -12,14 +12,14 @@ class StudentLibrary {
         this.subjects = this.initSubjects();
 
         // Navigation State
-        this.navStack = [];
+        this.navStack = [{ type: 'home' }];
         this.currentView = 'home';
 
         this.init();
     }
 
     init() {
-        this.renderHome();
+        this.renderFromStack();
 
         const search = document.getElementById('search');
         if (search) {
@@ -90,12 +90,64 @@ class StudentLibrary {
     initSubjects() {
         return [
             // ANNA UNIVERSITY - SEM 1
-            { id: 'au_maths_1', title: 'MA3151: Matrices and Calculus', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Matrices</h2><p>Characteristic equation, Eigenvalues and Eigenvectors of a real matrix...</p>`, tags: 'maths calculus matrices m1 anna university reg 2021' },
-            { id: 'au_physics_1', title: 'PH3151: Engineering Physics', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Mechanics</h2><p>Multiparticle systems, Center of mass, rigid body rotation...</p>`, tags: 'physics ph3151 mechanics anna university' },
-            { id: 'au_python_1', title: 'GE3151: Problem Solving & Python', univ: 'anna', dept: 'Semester 1 (Common)', category: 'Engineering', content: `<h2>Unit 1: Computational Thinking</h2><p>Algorithms, building blocks of algorithms, notation...</p>`, tags: 'python coding ge3151 programming anna university' },
+            {
+                id: 'au_maths_1',
+                title: 'MA3151: Matrices and Calculus',
+                univ: 'anna',
+                dept: 'Semester 1 (Common)',
+                category: 'Engineering',
+                chapters: [
+                    { name: 'Unit 1: Matrices', content: `<h2>Unit 1: Matrices</h2><p>Characteristic equation, Eigenvalues and Eigenvectors of a real matrix. Cayley-Hamilton theorem...</p>` },
+                    { name: 'Unit 2: Differential Calculus', content: `<h2>Unit 2: Differential Calculus</h2><p>Representation of functions, Limit of a function, Continuity...</p>` },
+                    { name: 'Unit 3: Functions of Several Variables', content: `<h2>Unit 3: Functions of Several Variables</h2><p>Partial differentiation, Homogeneous functions and Euler's theorem...</p>` },
+                    { name: 'Unit 4: Integral Calculus', content: `<h2>Unit 4: Integral Calculus</h2><p>Definite and Indefinite integrals, Substitution rule, Techniques of Integration...</p>` },
+                    { name: 'Unit 5: Multiple Integrals', content: `<h2>Unit 5: Multiple Integrals</h2><p>Double integrals, Change of order of integration, Area enclosed by plane curves...</p>` }
+                ],
+                tags: 'maths calculus matrices m1 anna university reg 2021'
+            },
+            {
+                id: 'au_physics_1',
+                title: 'PH3151: Engineering Physics',
+                univ: 'anna',
+                dept: 'Semester 1 (Common)',
+                category: 'Engineering',
+                chapters: [
+                    { name: 'Unit 1: Mechanics', content: `<h2>Unit 1: Mechanics</h2><p>Multiparticle systems, Center of mass, rigid body rotation...</p>` },
+                    { name: 'Unit 2: Electromagnetic Waves', content: `<h2>Unit 2: Electromagnetic Waves</h2><p>Maxwell's equations, Polarisation, Properties of laser...</p>` },
+                    { name: 'Unit 3: Oscillations, Optics and Lasers', content: `<h2>Unit 3: Oscillations, Optics and Lasers</h2><p>Simple harmonic motion, Forced oscillations, Interference, Diffraction...</p>` },
+                    { name: 'Unit 4: Basic Quantum Mechanics', content: `<h2>Unit 4: Basic Quantum Mechanics</h2><p>Photons and light waves, De Broglie waves, Schrodinger equation...</p>` },
+                    { name: 'Unit 5: Applied Quantum Mechanics', content: `<h2>Unit 5: Applied Quantum Mechanics</h2><p>Free electron theory, Density of states, Quantum structures...</p>` }
+                ],
+                tags: 'physics ph3151 mechanics anna university'
+            },
+            {
+                id: 'au_python_1',
+                title: 'GE3151: Problem Solving & Python',
+                univ: 'anna',
+                dept: 'Semester 1 (Common)',
+                category: 'Engineering',
+                chapters: [
+                    { name: 'Unit 1: Computational Thinking', content: `<h2>Unit 1: Computational Thinking</h2><p>Algorithms, building blocks of algorithms, notation (pseudo code, flow chart, programming language)...</p>` },
+                    { name: 'Unit 2: Data, Expressions, Statements', content: `<h2>Unit 2: Data, Expressions, Statements</h2><p>Python interpreter and interactive mode, values and types, variables, expressions, statements...</p>` },
+                    { name: 'Unit 3: Control Flow, Functions', content: `<h2>Unit 3: Control Flow, Functions</h2><p>Conditionals, iteration, fruitfulness, recursion...</p>` },
+                    { name: 'Unit 4: Lists, Tuples, Dictionaries', content: `<h2>Unit 4: Lists, Tuples, Dictionaries</h2><p>Lists, list operations, list slices, list methods, list loop...</p>` },
+                    { name: 'Unit 5: Files, Modules, Packages', content: `<h2>Unit 5: Files, Modules, Packages</h2><p>Files and exception, text files, reading and writing files, format operator...</p>` }
+                ],
+                tags: 'python coding ge3151 programming anna university'
+            },
 
             // COMPETITIVE
-            { id: 'upsc_polity_1', title: 'Fundamental Rights (Polity)', category: 'Competitive Exams', content: `<h2>Fundamental Rights</h2><p>Articles 12 to 35...</p>`, tags: 'upsc polity civil services' }
+            {
+                id: 'upsc_polity_1',
+                title: 'Indian Polity: Constitution',
+                category: 'Competitive Exams',
+                chapters: [
+                    { name: 'Fundamental Rights (Art 12-35)', content: `<h2>Fundamental Rights</h2><p>Articles 12 to 35, Part III of the Constitution...</p>` },
+                    { name: 'Directive Principles (DPSP)', content: `<h2>Directive Principles of State Policy</h2><p>Part IV, Articles 36 to 51...</p>` },
+                    { name: 'Fundamental Duties', content: `<h2>Fundamental Duties</h2><p>Article 51A, Part IVA...</p>` }
+                ],
+                tags: 'upsc polity civil services constitution'
+            }
         ];
     }
 
@@ -125,7 +177,7 @@ class StudentLibrary {
                     this.createCard(univ.name, `Access all departments of ${univ.name}`, '🏛️', 'UNIVERSITY', () => this.pushNav({ type: 'university', data: univ, catId: cat.id }), grid);
                 });
             } else {
-                this.renderSubjects(this.subjects.filter(s => s.category === cat.name), grid);
+                this.renderSubjects(this.subjects.filter(s => s.category.includes(cat.name.split(' ')[0])), grid);
             }
         }
         else if (current.type === 'university') {
@@ -142,6 +194,13 @@ class StudentLibrary {
             const filtered = this.subjects.filter(s => s.univ === univId && s.dept === dept);
             this.renderSubjects(filtered, grid);
         }
+        else if (current.type === 'subject') {
+            const subject = current.data;
+            this.renderHeader(`📖 ${subject.title}`, 'Select Chapter to Read', grid);
+            subject.chapters.forEach((chapter, index) => {
+                this.createCard(chapter.name, `Read the full detailed notes for ${chapter.name}`, '📄', 'CHAPTER', () => this.openReader(subject.id, index), grid);
+            });
+        }
     }
 
     pushNav(item) {
@@ -150,12 +209,15 @@ class StudentLibrary {
     }
 
     handleBack() {
-        if (this.currentView === 'reader') {
-            const view = document.getElementById('tool-view');
-            if (view) view.classList.remove('active');
+        const view = document.getElementById('tool-view');
+        if (view && view.classList.contains('active')) {
+            view.classList.remove('active');
             document.body.style.overflow = 'auto';
             this.currentView = this.navStack[this.navStack.length - 1].type;
-        } else if (this.navStack.length > 1) {
+            return;
+        }
+
+        if (this.navStack.length > 1) {
             this.navStack.pop();
             this.renderFromStack();
         } else {
@@ -197,7 +259,7 @@ class StudentLibrary {
             return;
         }
         list.forEach(subj => {
-            this.createCard(subj.title, `Board: ${subj.univ || 'National'}`, '📖', 'SUBJECT', () => this.openReader(subj.id), grid);
+            this.createCard(subj.title, `University: ${subj.univ ? subj.univ.toUpperCase() : 'National'}`, '📖', 'SUBJECT', () => this.pushNav({ type: 'subject', data: subj }), grid);
         });
     }
 
@@ -207,6 +269,7 @@ class StudentLibrary {
         grid.innerHTML = `
             <div style="grid-column:1/-1; padding:10px 20px; color:#666; font-size:13px; border-bottom:1px solid #222;">
                 SEARCH RESULTS FOR: <span style="color:#fff;">"${query.toUpperCase()}"</span>
+                <button onclick="window.omni.renderFromStack()" style="float:right; background:none; border:none; color:cyan; cursor:pointer;">CLEAR</button>
             </div>
         `;
 
@@ -220,26 +283,27 @@ class StudentLibrary {
             return;
         }
 
-        results.forEach(subj => this.createCard(subj.title, `${subj.univ ? subj.univ.toUpperCase() : subj.category} - ${subj.dept || ''}`, '📖', 'RESULT', () => this.openReader(subj.id), grid));
+        results.forEach(subj => this.createCard(subj.title, `${subj.univ ? subj.univ.toUpperCase() : subj.category} - ${subj.dept || ''}`, '📖', 'RESULT', () => this.pushNav({ type: 'subject', data: subj }), grid));
     }
 
-    openReader(subjectId) {
+    openReader(subjectId, chapterIndex) {
         this.currentView = 'reader';
         const subj = this.subjects.find(s => s.id === subjectId);
+        const chapter = subj.chapters[chapterIndex];
         const view = document.getElementById('tool-view');
         const content = document.getElementById('tool-content');
 
-        if (content && subj) {
+        if (content && subj && chapter) {
             content.innerHTML = `
                 <div class="notes-wrapper">
-                    <div class="notes-breadcrumb">${subj.category} ❯ ${subj.univ || ''} ❯ ${subj.dept || ''}</div>
-                    <h1 class="notes-title">${subj.title}</h1>
-                    <div class="notes-body">${subj.content}</div>
+                    <div class="notes-breadcrumb">${subj.univ ? subj.univ.toUpperCase() : subj.category} ❯ ${subj.dept || ''} ❯ ${subj.title}</div>
+                    <h1 class="notes-title">${chapter.name}</h1>
+                    <div class="notes-body">${chapter.content}</div>
                 </div>
                 <style>
-                    .notes-wrapper { max-width: 850px; margin: 0 auto; color: #ddd; font-family: 'Inter', sans-serif; }
+                    .notes-wrapper { max-width: 850px; margin: 0 auto; color: #ddd; font-family: 'Inter', sans-serif; padding-top:20px;}
                     .notes-breadcrumb { color: #666; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-                    .notes-title { color: #fff; font-size: 2.5em; line-height: 1.2; margin-bottom: 30px; border-left: 5px solid #fff; padding-left: 20px; }
+                    .notes-title { color: #fff; font-size: 2.5em; line-height: 1.2; margin-bottom: 30px; border-left: 5px solid cyan; padding-left: 20px; }
                     .notes-body { line-height: 1.8; font-size: 18px; }
                     .notes-body h2 { color: #fff; margin-top: 40px; border-bottom: 1px solid #222; padding-bottom: 10px; }
                     .notes-body p { margin-bottom: 20px; }
