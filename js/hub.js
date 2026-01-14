@@ -1,58 +1,31 @@
-import { Silk } from './games/silk.js';
-import { Stardust } from './games/stardust.js';
-import { Liquid } from './games/liquid.js';
-import { Vortex } from './games/vortex.js';
-import { PopupSlayer } from './games/popupslayer.js';
-import { ErrorStorm } from './games/errorstorm.js';
+import { GravityDash } from './games/gravitydash.js';
+import { CoreBreaker } from './games/corebreaker.js';
+import { HexPulse } from './games/hexpulse.js';
 
 const artifacts = [
     {
-        id: 'popupslayer',
-        title: 'POPUP_SLAYER.exe',
-        desc: 'Slay the scams. Close the fake popups before they eat your RAM.',
-        thumb: '#ff00ff',
-        genre: 'SARCASM',
-        class: PopupSlayer
+        id: 'gravitydash',
+        title: 'GRAVITY_DASH.exe',
+        desc: 'Flip gravity, dodge lethal light. One touch is all you need for 100% CPU usage.',
+        thumb: 'linear-gradient(135deg, #00ffff, #0000ff)',
+        genre: 'REFLEX',
+        class: GravityDash
     },
     {
-        id: 'errorstorm',
-        title: 'CRITICAL_CRASH.bat',
-        desc: 'Experience the pure bliss of a 1995 system failure.',
-        thumb: '#000080',
-        genre: 'MEME',
-        class: ErrorStorm
+        id: 'corebreaker',
+        title: 'CORE_BREAKER.bat',
+        desc: 'Shatter the central data core. Stress-testing your timing in 16-bit neon.',
+        thumb: 'linear-gradient(135deg, #ff00ff, #00ffff)',
+        genre: 'TIMEOUT',
+        class: CoreBreaker
     },
     {
-        id: 'silk',
-        title: 'SILK.scr',
-        desc: 'A screensaver from a timeline where computers had feelings.',
-        thumb: '#00ff00',
-        genre: 'SENSORY',
-        class: Silk
-    },
-    {
-        id: 'stardust',
-        title: 'STAR_FIELD.exe',
-        desc: 'Loading 10,000 real stars into your RAM... please wait.',
-        thumb: '#ff6600',
-        genre: 'EXPLORER',
-        class: Stardust
-    },
-    {
-        id: 'liquid',
-        title: 'LAVA_LAMP_98.exe',
-        desc: 'Premium desktop accessory for the ultimate browsing experience.',
-        thumb: '#00ff88',
-        genre: 'RETRO',
-        class: Liquid
-    },
-    {
-        id: 'vortex',
-        title: 'INTERNET_HIGHWAY.sim',
-        desc: 'How the 90s thought the internet looked. Pure speed.',
-        thumb: '#0088ff',
-        genre: 'HISTORY',
-        class: Vortex
+        id: 'hexpulse',
+        title: 'HEX_PULSE.scr',
+        desc: 'Navigate the geometric collapse. A study in rhythmic survival and system logic.',
+        thumb: 'linear-gradient(135deg, #ffff00, #ff00ff)',
+        genre: 'SURVIVE',
+        class: HexPulse
     }
 ];
 
@@ -77,18 +50,19 @@ class GameHub {
     }
 
     renderGrid() {
+        if (!this.grid) return;
         this.grid.innerHTML = '';
         artifacts.forEach(item => {
             const card = document.createElement('div');
             card.className = 'game-card';
             card.innerHTML = `
                 <div class="card-thumb" style="background: ${item.thumb}; color: white; display:flex; align-items:center; justify-content:center; text-align:center; padding: 10px; font-weight: bold; border: 4px inset #fff;">
-                    ${item.title}
+                    ${item.title.split('.')[0]}
                 </div>
                 <div class="card-title">${item.title}</div>
                 <div class="card-meta">
                     <span>${item.genre}</span>
-                    <span>v1.0</span>
+                    <span>v2.0_RETRO</span>
                 </div>
                 <p style="margin-top: 10px; color: #333; font-size: 0.9rem;">${item.desc}</p>
             `;
@@ -104,7 +78,6 @@ class GameHub {
         this.gameView.classList.add('active');
         document.getElementById('active-game-title').innerText = data.title;
 
-        // Disable scroll
         document.body.style.overflow = 'hidden';
 
         this.activeGame = new data.class(this.canvas);
