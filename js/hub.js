@@ -1,118 +1,51 @@
-import { CyberBreaker } from './games/cyberbreaker.js';
-import { NeonPulse } from './games/neonpulse.js';
 import { Vortex } from './games/vortex.js';
-import { Atrophy } from './games/atrophy.js';
-import { Shift } from './games/shift.js';
 import { Aura } from './games/aura.js';
-import { Shatter } from './games/shatter.js';
-import { GlitchRun } from './games/glitchrun.js';
 import { Orbit } from './games/orbit.js';
 import { Prism } from './games/prism.js';
 import { Flux } from './games/flux.js';
 import { Echo } from './games/echo.js';
 import { Drift } from './games/drift.js';
 import { Entanglement } from './games/entanglement.js';
-import { Biosync } from './games/biosync.js';
 import { Monolith } from './games/monolith.js';
+import { Silk } from './games/silk.js';
+import { Stardust } from './games/stardust.js';
+import { Liquid } from './games/liquid.js';
 
 const games = [
     {
-        id: 'cyberbreaker',
-        title: 'CYBER BREAKER',
-        desc: 'Smash through system walls in this neon-infused block breaker.',
-        thumb: 'linear-gradient(135deg, #00f2ff, #0066ff)',
-        players: '1P',
-        genre: 'ARCADE',
-        class: CyberBreaker
+        id: 'silk',
+        title: 'SILK',
+        desc: 'A physical meditation in light. Weave through harmonic resonance nodes.',
+        thumb: 'linear-gradient(135deg, #4400ff, #00f2ff)',
+        players: 'SENSORY',
+        genre: 'ASMR',
+        class: Silk
     },
     {
-        id: 'neonpulse',
-        title: 'NEON PULSE',
-        desc: 'React to the rhythm of the grid. Extraordinary visuals & sound.',
-        thumb: 'linear-gradient(135deg, #ff00ff, #7000ff)',
-        players: '1P',
-        genre: 'RHYTHM',
-        class: NeonPulse
+        id: 'liquid',
+        title: 'LIQUID',
+        desc: 'Interact with a pool of photonic fluid. Mix colors and feel the tension.',
+        thumb: 'linear-gradient(135deg, #00ff88, #4400ff)',
+        players: 'SENSORY',
+        genre: 'FLUID',
+        class: Liquid
     },
     {
-        id: 'vortex',
-        title: 'VORTEX',
-        desc: 'Navigate the infinite void with hypnotic precision.',
-        thumb: 'linear-gradient(135deg, #00ff88, #0088ff)',
-        players: '1P',
-        genre: 'EVASIVE',
-        class: Vortex
-    },
-    {
-        id: 'atrophy',
-        title: 'ATROPHY',
-        desc: 'Keep the dying star stable. A masterclass in particle gravity.',
-        thumb: 'linear-gradient(135deg, #ff3366, #ff0000)',
-        players: '1P',
-        genre: 'SURVIVAL',
-        class: Atrophy
-    },
-    {
-        id: 'shift',
-        title: 'SHIFT',
-        desc: 'Phase through reality. Match your color to the obstacles.',
-        thumb: 'linear-gradient(135deg, #00f2ff, #ff00ff)',
-        players: '1P',
-        genre: 'PUZZLE',
-        class: Shift
-    },
-    {
-        id: 'aura',
-        title: 'AURA',
-        desc: 'Deploy ripples of light to dissolve the encroaching shadows.',
-        thumb: 'linear-gradient(135deg, #00f2ff, #ffffff)',
-        players: '1P',
-        genre: 'DEFENSE',
-        class: Aura
-    },
-    {
-        id: 'shatter',
-        title: 'SHATTER',
-        desc: 'High-impact physics destruction. Break everything.',
-        thumb: 'linear-gradient(135deg, #ffffff, #888888)',
-        players: '1P',
-        genre: 'PHYSICS',
-        class: Shatter
-    },
-    {
-        id: 'glitchrun',
-        title: 'GLITCH RUN',
-        desc: 'Outrun the system error in this high-speed dash.',
-        thumb: 'linear-gradient(135deg, #00ff00, #004400)',
-        players: '1P',
-        genre: 'RUNNER',
-        class: GlitchRun
-    },
-    {
-        id: 'orbit',
-        title: 'ORBIT',
-        desc: 'Master gravitational slingshots and luminous trails.',
-        thumb: 'linear-gradient(135deg, #00f2ff, #ff00ff)',
-        players: '1P',
-        genre: 'GRAVITY',
-        class: Orbit
-    },
-    {
-        id: 'prism',
-        title: 'PRISM',
-        desc: 'Refract light beams to hit the core in this visual puzzle.',
-        thumb: 'linear-gradient(135deg, #ff00ff, #00f2ff)',
-        players: '1P',
-        genre: 'PUZZLE',
-        class: Prism
+        id: 'stardust',
+        title: 'STARDUST',
+        desc: 'Command a solar storm. Manipulate thousands of star particles.',
+        thumb: 'linear-gradient(135deg, #ff6600, #ffcc00)',
+        players: 'SENSORY',
+        genre: 'SIM',
+        class: Stardust
     },
     {
         id: 'flux',
         title: 'FLUX',
-        desc: 'Interact with a hypnotic fluid particle field.',
+        desc: 'A hypnotic fluid particle field. High visual elegance and smooth motion.',
         thumb: 'linear-gradient(135deg, #00ffff, #008888)',
-        players: '1P',
-        genre: 'FLUID',
+        players: 'SENSORY',
+        genre: 'AESTHETIC',
         class: Flux
     },
     {
@@ -120,72 +53,83 @@ const games = [
         title: 'ECHO',
         desc: 'Match vibrational frequencies through visual harmony.',
         thumb: 'linear-gradient(135deg, #ffffff, #ff00ff)',
-        players: '1P',
+        players: 'SENSORY',
         genre: 'HARMONY',
         class: Echo
     },
     {
-        id: 'drift',
-        title: 'DRIFT',
-        desc: 'Neon-infused top-down drifting simulator.',
-        thumb: 'linear-gradient(135deg, #00f2ff, #222222)',
-        players: '1P',
-        genre: 'DRIVE',
-        class: Drift
+        id: 'vortex',
+        title: 'VORTEX',
+        desc: 'Navigate the infinite void with hypnotic precision.',
+        thumb: 'linear-gradient(135deg, #00ff88, #0088ff)',
+        players: 'SENSORY',
+        genre: 'EVASIVE',
+        class: Vortex
     },
     {
-        id: 'entanglement',
-        title: 'ENTANGLEMENT',
-        desc: 'Navigate the void with two nodes linked by a quantum thread.',
-        thumb: 'linear-gradient(135deg, #ff00ff, #00f2ff)',
-        players: '1P',
-        genre: 'PHYSICS',
-        class: Entanglement
-    },
-    {
-        id: 'biosync',
-        title: 'BIOSYNC',
-        desc: 'Balance biological rhythms in this organic survival game.',
-        thumb: 'linear-gradient(135deg, #ff3366, #00f2ff)',
-        players: '1P',
-        genre: 'BIO',
-        class: Biosync
+        id: 'aura',
+        title: 'AURA',
+        desc: 'Deploy ripples of light to dissolve the encroaching shadows.',
+        thumb: 'linear-gradient(135deg, #00f2ff, #ffffff)',
+        players: 'SENSORY',
+        genre: 'DEFENSE',
+        class: Aura
     },
     {
         id: 'monolith',
         title: 'MONOLITH',
         desc: 'Align the ancient monolith to unlock the path.',
         thumb: 'linear-gradient(135deg, #222222, #00f2ff)',
-        players: '1P',
+        players: 'SENSORY',
         genre: 'PUZZLE',
         class: Monolith
+    },
+    {
+        id: 'entanglement',
+        title: 'ENTANGLEMENT',
+        desc: 'Navigate the void with two nodes linked by a quantum thread.',
+        thumb: 'linear-gradient(135deg, #ff00ff, #00f2ff)',
+        players: 'SENSORY',
+        genre: 'PHYSICS',
+        class: Entanglement
     }
 ];
 
 class GameHub {
     constructor() {
         this.grid = document.getElementById('main-grid');
-        this.view = document.getElementById('game-view');
+        this.gameView = document.getElementById('game-view');
         this.canvas = document.getElementById('game-canvas');
         this.activeGame = null;
+        this.totalGamesElem = document.querySelector('.stat-item:first-child span');
 
         this.init();
     }
 
     init() {
         this.renderGrid();
-        this.setupEvents();
+        this.updateStats();
+
+        document.getElementById('quit-game').onclick = () => this.exitGame();
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') this.exitGame();
+        });
+    }
+
+    updateStats() {
+        if (this.totalGamesElem) {
+            this.totalGamesElem.innerText = games.length;
+        }
     }
 
     renderGrid() {
-        // Update stats
-        const gameCountEl = document.querySelector('.stat-item span');
-        if (gameCountEl) gameCountEl.innerText = games.length;
-
-        this.grid.innerHTML = games.map(game => `
-            <div class="game-card" data-id="${game.id}">
+        this.grid.innerHTML = '';
+        games.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `
                 <div class="card-thumb" style="background: ${game.thumb}">
-                    <div style="color:#fff; font-weight:800; font-size:2rem; opacity:0.3">${game.title.split(' ')[0]}</div>
+                    <div style="font-size: 3rem; opacity: 0.2; font-weight: 800;">${game.title[0]}</div>
                 </div>
                 <div class="card-info">
                     <div class="card-title">${game.title}</div>
@@ -193,62 +137,44 @@ class GameHub {
                         <span>${game.genre}</span>
                         <span>${game.players}</span>
                     </div>
-                </div>
-            </div>
-        `).join('');
-
-        // Add placeholders for "ton of games" effect
-        for (let i = 0; i < 6; i++) {
-            this.grid.innerHTML += `
-                <div class="game-card" style="opacity: 0.3; filter: grayscale(1); cursor: default;">
-                    <div class="card-thumb" style="background: #111"></div>
-                    <div class="card-info">
-                        <div class="card-title">LOCKED</div>
-                        <div class="card-meta"><span>???</span></div>
-                    </div>
+                    <p style="font-size: 0.85rem; color: #888; margin-top: 8px;">${game.desc}</p>
                 </div>
             `;
-        }
-    }
-
-    setupEvents() {
-        this.grid.addEventListener('click', (e) => {
-            const card = e.target.closest('.game-card');
-            if (card && card.dataset.id) {
-                this.launchGame(card.dataset.id);
-            }
-        });
-
-        document.getElementById('quit-game').addEventListener('click', () => this.exitGame());
-
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') this.exitGame();
+            card.onclick = () => this.launchGame(game.id);
+            this.grid.appendChild(card);
         });
     }
 
     launchGame(id) {
         const gameData = games.find(g => g.id === id);
-        if (!gameData || !gameData.class) return;
+        if (!gameData) return;
 
-        this.view.classList.add('active');
+        this.gameView.classList.add('active');
         document.getElementById('active-game-title').innerText = gameData.title;
 
-        // Hide body scroll
+        // Disable scrolling on body
         document.body.style.overflow = 'hidden';
 
-        // Instantiate game
         this.activeGame = new gameData.class(this.canvas);
         this.activeGame.start();
+
+        // Handle Resize
+        this.resizeHandler = () => this.activeGame.resize();
+        window.addEventListener('resize', this.resizeHandler);
     }
 
     exitGame() {
-        if (this.activeGame) {
-            this.activeGame.stop();
-            this.activeGame = null;
-        }
-        this.view.classList.remove('active');
+        if (!this.activeGame) return;
+
+        this.activeGame.stop();
+        this.activeGame = null;
+        this.gameView.classList.remove('active');
         document.body.style.overflow = 'auto';
+
+        window.removeEventListener('resize', this.resizeHandler);
     }
 }
 
-window.hub = new GameHub();
+document.addEventListener('DOMContentLoaded', () => {
+    new GameHub();
+});
