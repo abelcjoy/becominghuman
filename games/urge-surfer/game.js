@@ -114,9 +114,16 @@ function startTimer() {
 
 function completeSession() {
     cancelAnimationFrame(animationId);
+
+    // Save Stats
+    const currentMins = parseInt(localStorage.getItem('recovery_minutes') || 0);
+    const currentSessions = parseInt(localStorage.getItem('recovery_sessions') || 0);
+    localStorage.setItem('recovery_minutes', currentMins + 2); // 120s = 2 mins
+    localStorage.setItem('recovery_sessions', currentSessions + 1);
+
     startOverlay.innerHTML = `
         <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Session Complete</h2>
-        <p style="margin-bottom: 2rem;">The urge has passed. You are in control.</p>
+        <p style="margin-bottom: 2rem;">The urge has passed. You have reclaimed 2 minutes of your life.</p>
         <button onclick="location.href='../../index.html'" class="btn btn-primary">Return home</button>
     `;
     startOverlay.style.display = 'flex';

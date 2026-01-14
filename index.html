@@ -24,6 +24,20 @@
     </header>
 
     <main class="container">
+        <section class="dashboard glass"
+            style="margin-top: 2rem; padding: 1.5rem; display: flex; justify-content: space-around; align-items: center; animation: fadeIn 0.8s ease-out;">
+            <div class="stat-item" style="text-align: center;">
+                <div id="total-minutes" style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">0</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Minutes Reclaimed
+                </div>
+            </div>
+            <div style="width: 1px; height: 30px; background: var(--border);"></div>
+            <div class="stat-item" style="text-align: center;">
+                <div id="total-sessions" style="font-size: 1.5rem; font-weight: 800; color: var(--secondary);">0</div>
+                <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">Sessions Won</div>
+            </div>
+        </section>
+
         <section class="hero">
             <h1>The Recovery Arcade</h1>
             <p>Interactive tools built on clinical psychology to help you conquer cravings and regain focus, one minute
@@ -49,7 +63,7 @@
             </div>
 
             <!-- Game 2: Dopamine Loop -->
-            <div class="glass game-card" onclick="alert('Module loading in next iteration...')">
+            <div class="glass game-card" onclick="location.href='games/dopamine-flow/index.html'">
                 <div class="game-icon">🧩</div>
                 <div class="tag">Habit Wiring</div>
                 <h3>Dopamine Flow</h3>

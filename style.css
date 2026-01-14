@@ -13,6 +13,8 @@
     --border: rgba(255, 255, 255, 0.1);
     --glass: rgba(15, 23, 42, 0.8);
     --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 * {
@@ -20,6 +22,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -29,6 +32,8 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     position: relative;
+    padding-top: var(--safe-top);
+    padding-bottom: var(--safe-bottom);
 }
 
 body::after {
@@ -139,15 +144,16 @@ header {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
     letter-spacing: -0.03em;
     animation: fadeIn 0.8s ease-out;
+    line-height: 1.1;
 }
 
 .hero p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 4vw, 1.25rem);
     color: var(--text-muted);
     max-width: 600px;
     margin: 0 auto 2.5rem;
@@ -157,9 +163,9 @@ header {
 /* Game Grid */
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-    padding: 4rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
 }
 
 .game-card {

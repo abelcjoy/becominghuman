@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dopamine Flow | Momentum</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #020617;
+        }
+
+        #game-container {
+            width: 100%;
+            height: 70vh;
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            touch-action: none;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        .ui {
+            position: absolute;
+            top: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            pointer-events: none;
+        }
+
+        .score-val {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Outfit';
+        }
+
+        #start-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--background);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            padding: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container" style="padding: 1rem 0;">
+        <div class="nav-content">
+            <a href="../../index.html" class="brand" style="text-decoration: none;">MOMENTUM</a>
+            <div class="tag" style="background: var(--accent); color: white;">Module: Dopamine Flow</div>
+        </div>
+    </header>
+
+    <div id="game-container">
+        <div id="start-overlay">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Dopamine Flow</h2>
+            <p style="margin-bottom: 2rem; max-width: 400px; color: var(--text-muted);">Sort the particles into their
+                matching zones. Achieve 100% flow to stabilize your focus.</p>
+            <button id="start-btn" class="btn btn-primary">Start Sorting</button>
+        </div>
+        <div class="ui">
+            <div style="text-align: center;">
+                <div id="flow-pct" class="score-val">0%</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Flow Stability
+                </div>
+            </div>
+        </div>
+        <canvas id="flowCanvas"></canvas>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

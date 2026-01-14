@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(err => console.log('Service Worker Failed', err));
     }
 
+    // Load Stats
+    function updateStats() {
+        const minutes = localStorage.getItem('recovery_minutes') || 0;
+        const sessions = localStorage.getItem('recovery_sessions') || 0;
+
+        const minEl = document.getElementById('total-minutes');
+        const sessEl = document.getElementById('total-sessions');
+
+        if (minEl) minEl.textContent = minutes;
+        if (sessEl) sessEl.textContent = sessions;
+    }
+
+    updateStats();
+
     // Smooth scroll for anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
