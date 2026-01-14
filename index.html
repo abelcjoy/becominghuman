@@ -3,248 +3,89 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Clarity for Humans | Longitudinal Study</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momentum / Scientific Recovery Arcade</title>
+    <meta name="description"
+        content="A series of neuro-scientific games designed to help overcome cravings, rewire habits, and support addiction recovery.">
+    <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg: #f8f9fa;
-            --text-main: #1a1a1b;
-            --text-dim: #6c757d;
-            --accent: #000;
-            --border: #dee2e6;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        header {
-            padding: 2rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .study-id {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-weight: 600;
-        }
-
-        main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        #question-container {
-            max-width: 600px;
-            width: 100%;
-        }
-
-        .day-label {
-            font-size: 0.7rem;
-            color: var(--text-dim);
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .question-text {
-            font-size: 1.25rem;
-            font-weight: 400;
-            margin-bottom: 3rem;
-            min-height: 4.5rem;
-            /* ~3 lines of text */
-        }
-
-        .controls {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        button {
-            padding: 0.75rem 2.5rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid var(--accent);
-            background: transparent;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        button:hover {
-            background: var(--accent);
-            color: #fff;
-        }
-
-        button:disabled {
-            opacity: 0.3;
-            cursor: default;
-            pointer-events: none;
-        }
-
-        .voted-msg {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--text-dim);
-            display: none;
-        }
-
-        footer {
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-        }
-
-        #docs-trigger {
-            color: var(--text-dim);
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        #docs-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            z-index: 100;
-            display: none;
-            padding: 3rem 2rem;
-            overflow-y: auto;
-        }
-
-        .docs-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .docs-content h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .docs-content p {
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
-        }
-
-        .close-docs {
-            margin-top: 2rem;
-            display: inline-block;
-            text-decoration: underline;
-            cursor: pointer;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
-        }
-
-        @media (max-width: 480px) {
-            .question-text {
-                font-size: 1.15rem;
-            }
-
-            button {
-                padding: 0.75rem 2rem;
-            }
-        }
-    </style>
+    <link rel="icon" type="image/png" href="assets/icon.png">
 </head>
 
 <body>
-
-    <header>
-        <div class="study-id">Project Clarity / Segment Alpha</div>
-        <div id="date-display" class="study-id"></div>
+    <header class="glass container" style="margin-top: 1rem;">
+        <nav class="nav-content">
+            <div class="brand">MOMENTUM</div>
+            <div class="nav-links">
+                <a href="#games" class="btn" style="color: var(--text-muted);">Browse Games</a>
+                <a href="#" class="btn btn-primary">Start Journey</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <div id="question-container">
-            <div id="day-counter" class="day-label">Observational Interval: Day 0</div>
-            <div id="question" class="question-text">Initializing sequence...</div>
-            <div class="controls">
-                <button id="btn-yes">Yes</button>
-                <button id="btn-no">No</button>
-            </div>
-            <div id="voted-msg" class="voted-msg">Selection recorded. Sequence enters standby for 24 hours.</div>
+    <main class="container">
+        <section class="hero">
+            <h1>The Recovery Arcade</h1>
+            <p>Interactive tools built on clinical psychology to help you conquer cravings and regain focus, one minute
+                at a time.</p>
+            <a href="#games" class="btn btn-primary pulse">Fight a Craving Now</a>
+        </section>
+
+        <!-- AdSense Slot Top -->
+        <div class="glass"
+            style="margin: 2rem auto; padding: 1rem; text-align: center; max-width: 728px; min-height: 90px; color: var(--text-muted); font-size: 0.8rem;">
+            <!-- Placeholder for AdSense -->
+            <p>Support Scientific Recovery</p>
         </div>
+
+        <section id="games" class="game-grid">
+            <!-- Game 1: Urge Surfer -->
+            <div class="glass game-card" onclick="location.href='games/urge-surfer/index.html'">
+                <div class="game-icon">🌊</div>
+                <div class="tag">Distraction</div>
+                <h3>Urge Surfer</h3>
+                <p>A 120-second rhythmic experience designed to ride out peak cravings using neuro-distraction
+                    techniques.</p>
+            </div>
+
+            <!-- Game 2: Dopamine Loop -->
+            <div class="glass game-card" onclick="alert('Module loading in next iteration...')">
+                <div class="game-icon">🧩</div>
+                <div class="tag">Habit Wiring</div>
+                <h3>Dopamine Flow</h3>
+                <p>Physics-based sorting puzzles that provide healthy micro-hits of dopamine to stabilize your mood.</p>
+            </div>
+
+            <!-- Game 3: Habit Garden -->
+            <div class="glass game-card" onclick="alert('Module loading in next iteration...')">
+                <div class="game-icon">🌿</div>
+                <div class="tag">Long-Term</div>
+                <h3>The Zen Garden</h3>
+                <p>An idle growth simulator where your recovery time manifests as beautiful digital flora.</p>
+            </div>
+
+            <!-- Game 4: Refusal Master -->
+            <div class="glass game-card" onclick="alert('Module loading in next iteration...')">
+                <div class="game-icon">🛡️</div>
+                <div class="tag">Practice</div>
+                <h3>Social Shield</h3>
+                <p>Simulated social scenarios to build confidence in refusing triggers in real-world environments.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div id="docs-trigger">Project Documentation</div>
-        <div>2026-2126 © CFH RESEARCH FOUNDATION</div>
+        <div class="container">
+            <div class="brand" style="margin-bottom: 1rem;">MOMENTUM</div>
+            <p class="footer-text">Built for individuals, backed by science. Choice is your superpower.</p>
+            <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+                <p class="footer-text" style="opacity: 0.5;">&copy; 2026 Momentum Digital Therapeutics. All rights
+                    reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <div id="docs-overlay">
-        <div class="docs-content">
-            <h2>About Project Clarity</h2>
-            <p>The Clarity for Humans project is a longitudinal observation framework designed to catalog human moral
-                and emotional decision-making over a continuous 100-year span. By presenting a daily singular choice,
-                the sequence eliminates variable noise and focuses on the core cognitive response of the participant.
-                The project operates on a fixed temporal anchor, ensuring that all data points are mapped to a specific
-                progression of social and existential inquiry.</p>
-            <p>Data harvested through this framework is intended for retrospective analysis by future sociological
-                entities. The clinical isolation of the choice environment prevents external influence, promoting an
-                unbiased choice recording process. Participants are viewed as vital components of a long-term data pool,
-                contributing to the collective understanding of human value evolution over the 21st century.</p>
-            <p>Maintenance of the sequence is strictly static. The architecture is designed for zero-intervention
-                operation, relying on the participant's internal consistency and the reliability of local cryptographic
-                storage. The study concludes on December 31st, 2125.</p>
-
-            <h2>Privacy and Data Governance</h2>
-            <p>This study adheres to a zero-transmission policy. No personal identifiers, decision data, or telemetry is
-                transmitted to external servers or cloud repositories. All records of choice are held exclusively in the
-                participant's LocalStorage environment on the primary access device. The CFH Research Foundation has no
-                capacity to view, modify, or retrieve individual results.</p>
-
-            <h2>Inquiry</h2>
-            <p>Formal inquiries regarding the sequence may be directed via clarityforhumanscfh@gmail.com</p>
-
-            <div class="close-docs" id="docs-close">Exit Documentation</div>
-        </div>
-    </div>
-
     <script src="app.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js');
-        }
-    </script>
 </body>
 
 </html>

@@ -1,21 +1,16 @@
 {
-  "name": "Clarity for Humans",
-  "short_name": "Clarity",
-  "description": "100-Year Longitudinal Study on Human Choice.",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#f8f9fa",
-  "theme_color": "#1a1a1b",
-  "icons": [
-    {
-      "src": "https://via.placeholder.com/192/000000/FFFFFF?text=CFH",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://via.placeholder.com/512/000000/FFFFFF?text=CFH",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+    "name": "Momentum: Recovery Arcade",
+    "short_name": "Momentum",
+    "description": "Scientific games to help overcome addiction and cravings.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#3b82f6",
+    "icons": [
+        {
+            "src": "assets/icon.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
 }
