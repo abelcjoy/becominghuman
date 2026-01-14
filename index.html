@@ -4,397 +4,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clarity For Humans | Life Simulator & 150+ Free Developer Tools</title>
+    <title>NEBULA | Extraordinary Mini Games & Novel Experiments</title>
     <meta name="description"
-        content="Explore the Memento Mori Life Simulator and access 150+ free online tools including calculators, converters, SEO utilities, and more. No login required. Fast, private, and powerful.">
-    <link rel="canonical" href="https://clarityforhumans.com">
+        content="Discover NEBULA: A collection of visually stunning, novel mini-games and interactive experiments. Built for speed, premium aesthetics, and pure 'woah' moments.">
+    <meta name="keywords"
+        content="mini games, html5 games, visual experiments, indie games, nebula games, novel gameplay, arcade, rhythm games">
 
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="NEBULA | Extraordinary Mini Games">
+    <meta property="og:description" content="Small games, big visuals. Experience a new era of browser gaming.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://clarityforhumans.com/">
-    <meta property="og:title" content="Clarity For Humans | Life Simulator & 150+ Free Tools">
-    <meta property="og:description"
-        content="Explore the Memento Mori Life Simulator and access 150+ free online tools including calculators, converters, and dev utilities. Free, private, and fast.">
-    <meta property="og:image" content="https://clarityforhumans.com/og-image.jpg">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://clarityforhumans.com/">
-    <meta property="twitter:title" content="Clarity For Humans | Life Simulator & 150+ Tools">
-    <meta property="twitter:description"
-        content="Explore the Memento Mori Life Simulator and access 150+ free online tools. No login required.">
-    <meta property="twitter:image" content="https://clarityforhumans.com/og-image.jpg">
-
-    <!-- Google AdSense -->
+    <!-- Google AdSense (Required for Approval) -->
+    <meta name="google-adsense-account" content="ca-pub-9639641684797882">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9639641684797882"
         crossorigin="anonymous"></script>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
     <style>
+        :root {
+            --bg: #050505;
+            --accent: #00f2ff;
+            --accent-glow: rgba(0, 242, 255, 0.4);
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #888888;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            user-select: none;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #000;
-            color: #fff;
-            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+        /* Animated Background */
+        .nebula-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(70, 0, 255, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(0, 242, 255, 0.15) 0%, transparent 40%);
+            filter: blur(80px);
+            animation: nebula-drift 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes nebula-drift {
+            from {
+                transform: scale(1) translate(0, 0);
+            }
+
+            to {
+                transform: scale(1.2) translate(5%, 5%);
+            }
         }
 
         /* Header */
         header {
-            padding: 30px 0;
-            border-bottom: 1px solid #222;
-            margin-bottom: 40px;
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
-            color: #888;
-            font-size: 16px;
-        }
-
-        /* Search */
-        #search {
-            width: 100%;
-            max-width: 600px;
-            padding: 16px 20px;
-            font-size: 16px;
-            background: #111;
-            border: 2px solid #333;
-            border-radius: 8px;
-            color: #fff;
-            margin-bottom: 40px;
-            transition: border-color 0.2s;
-        }
-
-        #search:focus {
-            outline: none;
-            border-color: #fff;
-        }
-
-        #search::placeholder {
-            color: #666;
-        }
-
-        /* Grid */
-        #grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        /* Card */
-        .card {
-            background: #0a0a0a;
-            border: 1px solid #222;
-            border-radius: 8px;
-            padding: 24px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .card:hover {
-            border-color: #fff;
-            background: #111;
-            transform: translateY(-2px);
-        }
-
-        .card-header {
+            padding: 40px 5%;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 12px;
-        }
-
-        .card-category {
-            font-size: 11px;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
-        }
-
-        .card-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .card-icon {
-            font-size: 28px;
-            line-height: 1;
-        }
-
-        .card-desc {
-            font-size: 14px;
-            color: #999;
-            line-height: 1.5;
-        }
-
-        /* Tool View */
-        #tool-view {
-            display: none;
-            position: fixed;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #000;
-            z-index: 1000;
-            overflow-y: auto;
-            padding: 20px;
+            z-index: 100;
+            border-bottom: 1px solid var(--glass-border);
         }
 
-        #tool-view.active {
-            display: block;
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #fff 0%, #00f2ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 20px rgba(0, 242, 255, 0.2);
         }
 
-        #back-btn {
-            background: transparent;
-            border: 1px solid #333;
-            color: #fff;
-            padding: 12px 24px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            margin-bottom: 30px;
-            transition: all 0.2s;
+        .stats {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dim);
         }
 
-        #back-btn:hover {
-            background: #111;
-            border-color: #fff;
+        .stat-item span {
+            color: var(--accent);
+            font-weight: 600;
         }
 
-        #tool-content {
-            max-width: 800px;
+        /* Main Content */
+        main {
+            padding: 60px 5%;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Tool UI Elements */
-        .tool-title {
-            font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 30px;
+        .hero {
             text-align: center;
+            margin-bottom: 80px;
         }
 
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 14px 16px;
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 16px;
-            margin-bottom: 16px;
-            font-family: inherit;
-            transition: border-color 0.2s;
+        .hero h2 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1;
+            letter-spacing: -2px;
         }
 
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #fff;
+        .hero p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        input::placeholder,
-        textarea::placeholder {
-            color: #666;
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        button {
-            padding: 14px 28px;
-            background: #fff;
-            color: #000;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: 600;
+        .game-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 8px;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             cursor: pointer;
-            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
         }
 
-        button:hover {
-            background: #ddd;
-            transform: translateY(-1px);
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--accent-glow);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        button:active {
-            transform: translateY(0);
-        }
-
-        .result {
+        .card-thumb {
+            width: 100%;
+            aspect-ratio: 16/10;
             background: #111;
-            border: 1px solid #333;
-            border-radius: 6px;
-            padding: 24px;
-            margin-top: 20px;
-            font-size: 18px;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 60px;
-            padding: 40px 0;
-            border-top: 1px solid #222;
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #888;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 28px;
-            }
-
-            #grid {
-                grid-template-columns: 1fr;
-            }
-
-            .card {
-                padding: 20px;
-            }
-
-            .tool-title {
-                font-size: 24px;
-            }
-        }
-
-        /* AdSense Containers */
-        .ad-container {
-            margin: 40px 0;
-            min-height: 100px;
+            border-radius: 18px;
+            margin-bottom: 16px;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-thumb::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 60%);
+        }
+
+        .card-info {
+            padding: 0 16px 16px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Game Overlay */
+        #game-view {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+        }
+
+        #game-view.active {
+            display: flex;
+        }
+
+        #game-header {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        #game-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .close-btn {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--glass-border);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-dim);
         }
     </style>
 </head>
 
 <body>
-    <div class="container"
-        style="max-width: 100%; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; overflow: hidden; background: #000;">
+    <div class="nebula-bg"></div>
 
-        <header
-            style="position: absolute; top: 20px; left: 0; right: 0; text-align: center; z-index: 100; pointer-events: none;">
-            <h1
-                style="color: #0ff; text-shadow: 0 0 10px #0ff; font-family: 'Courier New', monospace; font-size: 32px; margin: 0;">
-                CYBER BREAKER</h1>
-            <p style="color: rgba(0, 255, 255, 0.7); font-family: 'Courier New', monospace; font-size: 14px;">SMASH THE
-                SYSTEM BLOCKS</p>
-        </header>
+    <header>
+        <div class="logo">NEBULA</div>
+        <div class="stats">
+            <div class="stat-item">GAMES: <span>12</span></div>
+            <div class="stat-item">ONLINE: <span>1,240</span></div>
+        </div>
+    </header>
 
-        <!-- Game Container -->
-        <div id="game-root" style="width: 100%; height: 100%; position: relative;">
-            <canvas id="game-canvas"></canvas>
+    <main>
+        <section class="hero">
+            <h2>Extraordinary Plays.</h2>
+            <p>A curated collection of hyper-visual mini games built for instant curiosity. No ads, no fluff, just pure
+                gameplay.</p>
+        </section>
 
-            <!-- HUD -->
-            <div id="hud"
-                style="position: absolute; top: 80px; left: 20px; color: #0ff; font-family: 'Courier New', monospace; font-size: 18px; pointer-events: none;">
-                <div>LIVES: <span id="g-health">3</span> ❤</div>
-                <div style="margin-top: 10px;">SCORE: <span id="g-money">0</span></div>
-                <div style="margin-top: 10px;">LEVEL: <span id="g-level">1</span></div>
-            </div>
-
-            <!-- Game Over Overlay -->
-            <div id="game-overlay"
-                style="display: none; position: absolute; inset: 0; background: rgba(0,0,0,0.9); flex-direction: column; align-items: center; justify-content: center; z-index: 200;">
-                <h1
-                    style="color: #0ff; font-size: 60px; font-family: 'Courier New', monospace; text-shadow: 0 0 20px #0ff; margin-bottom: 20px;">
-                    GAME OVER</h1>
-                <p id="go-score"
-                    style="color: #fff; font-family: 'Courier New', monospace; font-size: 24px; margin-bottom: 40px;">
-                </p>
-                <button id="btn-restart"
-                    style="background: #0ff; color: #000; border: none; padding: 20px 40px; font-size: 24px; font-weight: bold; font-family: 'Courier New', monospace; cursor: pointer; box-shadow: 0 0 20px #0ff;">RETRY</button>
-            </div>
+        <div class="game-grid" id="main-grid">
+            <!-- Game Cards will be injected here -->
         </div>
 
+        <!-- SEO Content Section -->
+        <section style="margin-top: 100px; padding: 60px 0; border-top: 1px solid var(--glass-border);">
+            <div style="max-width: 800px; margin: 0 auto; color: var(--text-dim); line-height: 1.8;">
+                <h3 style="color: #fff; margin-bottom: 20px; font-size: 2rem;">The Future of Browser Gaming</h3>
+                <p style="margin-bottom: 20px;">
+                    NEBULA is more than just a game portal. It is a research lab for <strong>novel mechanics</strong>
+                    and
+                    <strong>extraordinary visuals</strong>. We specialize in "Micro-Games"—experiences that take seconds
+                    to learn but offer deep visual satisfaction and innovative gameplay.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 10px;">Novel Concepts</h4>
+                        <p>Every game in our collection is built from the ground up to explore a unique interaction,
+                            from gravity-based survival to rhythm-reactive grids.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent); margin-bottom: 10px;">Premium Visuals</h4>
+                        <p>We leverage modern browser technologies to create high-performance effects, including custom
+                            particle systems and real-time lighting.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        style="padding: 40px 5%; border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-dim); font-size: 0.9rem;">
+        <p>&copy; 2026 NEBULA GAMES | Clarity For Humans. All rights reserved.</p>
+        <div style="margin-top: 10px;">
+            <a href="#" style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">Home</a>
+            <a href="#" style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">Privacy Policy</a>
+            <a href="#" style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Game View -->
+    <div id="game-view">
+        <div id="game-header">
+            <div class="logo" id="active-game-title">CYBER BREAKER</div>
+            <button class="close-btn" id="quit-game">QUIT MISSION (ESC)</button>
+        </div>
+        <div id="game-container">
+            <canvas id="game-canvas"></canvas>
+
+            <!-- Contextual HUDs can be injected here -->
+        </div>
     </div>
 
-    <script type="module" src="js/omni-simple.js"></script>
+    <script type="module" src="js/hub.js"></script>
 
-    <!-- AdSense Auto Ads (Hidden/Background for earnings) -->
+    <!-- AdSense Auto Ads Activation -->
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-</body>
-<div id="privacy-view"
-    style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #000; z-index: 2000; overflow-y: auto; padding: 20px;">
-    <div class="container" style="max-width: 800px;">
-        <button id="close-privacy-btn" style="margin-bottom: 20px;">← Close Policy</button>
-        <h1 class="tool-title">Privacy Policy</h1>
-        <div class="card-desc" style="color: #ccc; line-height: 1.8;">
-            <h3>1. Introduction</h3>
-            <p>Welcome to Clarity For Humans. We respect your privacy and are committed to protecting your personal
-                data.</p>
-            <br>
-            <h3>2. Data Collection</h3>
-            <p>We do not require user accounts. Most tools operate entirely client-side (in your browser). We do not
-                store your input data on our servers.</p>
-            <br>
-            <h3>3. Local Storage</h3>
-            <p>Some tools may use your browser's Local Storage to save your preferences or recent inputs for your
-                convenience. This data remains on your device.</p>
-            <br>
-            <h3>4. Cookies & Advertising</h3>
-            <p>We use Google AdSense to serve ads. Google may use cookies to serve ads based on your prior visits to
-                this website or other websites.</p>
-            <p>You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads"
-                    target="_blank" style="color: #fff; text-decoration: underline;">Google Ads Settings</a>.</p>
-            <br>
-            <h3>5. Analytics</h3>
-            <p>We use basic analytics to understand website traffic. No personally identifiable information (PII) is
-                collected.</p>
-            <br>
-            <h3>6. Contact</h3>
-            <p>If you have questions, please contact us at clarityforhumanscfh@gmail.com.</p>
-            <br><br>
-            <p style="font-size: 12px; color: #666;">Last Updated: January 2026</p>
-        </div>
-    </div>
-</div>
-
-<script type="module" src="js/omni-simple.js"></script>
-
-<!-- AdSense Auto Ads -->
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 </body>
 
 </html>
