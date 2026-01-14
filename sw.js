@@ -1,95 +1,51 @@
-const CACHE_NAME = 'clarity-v3-ultra';
+/**
+ * CFH SERVICE WORKER - SEGMENT ALPHA
+ * 
+ * NOTIFICATION STRINGS:
+ * 1. The sequence requires your daily input.
+ * 2. Your next choice is pending observation.
+ * 3. A new moral interval is available.
+ * 4. The foundation requests your response.
+ * 5. Unbiased choice recording must continue.
+ * 6. Temporal consistency requires feedback.
+ * 7. The 100-year sequence is awaiting sync.
+ * 8. Observation point reached. Enter selection.
+ * 9. Data integrity depends on your daily input.
+ * 10. The study is active. Participate.
+ */
+
+const CACHE_NAME = 'cfh-v1';
 const ASSETS = [
-    '/',
-    '/index.html',
-    '/styles.css',
-    '/js/app.js',
-    '/js/data.js',
-    '/js/reflections.js',
-    '/js/neural.js',
-    '/js/aurora.js',
-    '/js/monolith.js',
-    '/js/gravity.js',
-    '/js/zen.js',
-    '/js/navigator.js',
-    '/js/helios.js',
-    '/js/oracle.js',
-    '/js/scanner.js',
-    '/js/prism.js',
-    '/js/warp.js',
-    '/js/harmony.js',
-    '/js/ambience.js',
-    '/js/haptics.js',
-    '/js/scramble.js',
-    '/js/guardian.js',
-    '/js/relativity.js',
-    '/js/optimizer.js',
-    '/js/observer.js',
-    '/js/vitality.js',
-    '/js/breath.js',
-    '/js/capsule.js',
-    '/js/synapse.js',
-    '/js/sentinel.js',
-    '/js/legacy.js',
-    '/js/dial.js',
-    '/js/citation.js',
-    '/js/strand.js',
-    '/js/shield.js',
-    '/js/sync.js',
-    '/js/entropy.js',
-    '/js/voltaic.js',
-    '/js/horizon.js',
-    '/js/entanglement.js',
-    '/js/knowledge.js',
-    '/js/atmosphere.js',
-    '/js/stardust.js',
-    '/js/magnet.js',
-    '/js/velocity.js',
-    '/js/glint.js',
-    '/js/resonance.js',
-    '/js/prism.js',
-    '/js/lunar.js',
-    '/js/oracle.js',
-    '/js/biogrid.js',
-    '/js/aural.js',
-    '/js/shift.js',
-    '/js/cardio.js',
-    '/js/kinetic.js',
-    '/js/semantic.js',
-    '/js/aperture.js',
-    '/js/lumina.js',
-    '/js/typography.js',
-    '/js/biosync.js',
-    '/js/veil.js',
-    '/js/taptic.js',
-    '/favicon.svg',
-    '/manifest.json'
+    'index.html',
+    'app.js',
+    'questions.json',
+    'manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
-    self.skipWaiting();
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then((cache) => cache.addAll(ASSETS))
-    );
-});
-
-self.addEventListener('activate', (event) => {
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheName !== CACHE_NAME) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
+        caches.open(CACHE_NAME).then((cache) => {
+            return cache.addAll(ASSETS);
         })
     );
 });
 
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        fetch(event.request).catch(() => caches.match(event.request))
+        caches.match(event.request).then((response) => {
+            return response || fetch(event.request);
+        })
+    );
+});
+
+// Implementation of push logic placeholders for clinical observation
+self.addEventListener('push', (event) => {
+    const options = {
+        body: 'The sequence requires your daily input.',
+        icon: 'https://via.placeholder.com/192/000000/FFFFFF?text=CFH',
+        badge: 'https://via.placeholder.com/192/000000/FFFFFF?text=CFH'
+    };
+    event.waitUntil(
+        self.registration.showNotification('Clarity for Humans', options)
     );
 });

@@ -1,57 +1,21 @@
 {
-  "name": "Clarity For Humans | Life Countdown & Time Management",
+  "name": "Clarity for Humans",
   "short_name": "Clarity",
-  "description": "Free life expectancy calculator and time management tool. Track your conscious hours, manage relationships, and overcome digital addiction with science-based neurobiology protocols.",
-  "start_url": "/",
-  "scope": "/",
+  "description": "100-Year Longitudinal Study on Human Choice.",
+  "start_url": "index.html",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "categories": [
-    "productivity",
-    "lifestyle",
-    "health",
-    "utilities"
-  ],
+  "background_color": "#f8f9fa",
+  "theme_color": "#1a1a1b",
   "icons": [
     {
-      "src": "favicon.svg",
+      "src": "https://via.placeholder.com/192/000000/FFFFFF?text=CFH",
       "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "favicon.svg",
+      "src": "https://via.placeholder.com/512/000000/FFFFFF?text=CFH",
       "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Crisis Mode",
-      "short_name": "Crisis",
-      "description": "Enter 15-minute crisis override mode",
-      "url": "/?crisis=true",
-      "icons": [
-        {
-          "src": "favicon.svg",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "Protocol",
-      "short_name": "Protocol",
-      "description": "View neurobiological optimization protocols",
-      "url": "/?protocol=true",
-      "icons": [
-        {
-          "src": "favicon.svg",
-          "sizes": "192x192"
-        }
-      ]
+      "type": "image/png"
     }
   ]
 }
