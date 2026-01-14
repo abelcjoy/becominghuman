@@ -1,6 +1,7 @@
 import { GravityDash } from './games/gravitydash.js';
 import { CoreBreaker } from './games/corebreaker.js';
 import { HexPulse } from './games/hexpulse.js';
+import { BitCollector } from './games/bitcollector.js';
 
 const artifacts = [
     {
@@ -10,6 +11,14 @@ const artifacts = [
         thumb: 'linear-gradient(135deg, #00ffff, #0000ff)',
         genre: 'REFLEX',
         class: GravityDash
+    },
+    {
+        id: 'bitcollector',
+        title: 'BIT_COLLECTOR.exe',
+        desc: 'Catch the currency, avoid the malware. Your digital bank account depends on it.',
+        thumb: 'linear-gradient(135deg, #00ff00, #004400)',
+        genre: 'ARCADE',
+        class: BitCollector
     },
     {
         id: 'corebreaker',
