@@ -18,6 +18,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (minEl) minEl.textContent = minutes;
         if (sessEl) sessEl.textContent = sessions;
+
+        checkMilestones(minutes, sessions);
+    }
+
+    function checkMilestones(mins, sess) {
+        if (mins >= 10 && !localStorage.getItem('m_10min')) {
+            showToast("🌱 Achievement: First 10 Minutes Reclaimed!");
+            localStorage.setItem('m_10min', 'true');
+        }
+        if (sess >= 5 && !localStorage.getItem('m_5sess')) {
+            showToast("🏆 Achievement: 5 Sessions Completed!");
+            localStorage.setItem('m_5sess', 'true');
+        }
+    }
+
+    function showToast(message) {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+
+        const toast = document.createElement('div');
+        toast.className = 'toast glass';
+        toast.textContent = message;
+        container.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => toast.remove(), 500);
+        }, 4000);
     }
 
     updateStats();

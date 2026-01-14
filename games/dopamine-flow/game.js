@@ -65,6 +65,7 @@ class Particle {
                 if (!this.sorted) {
                     this.sorted = true;
                     flowStability += 1;
+                    if (RecoveryAudio) RecoveryAudio.playSuccess();
                     this.reset();
                 }
             } else {
@@ -166,6 +167,7 @@ function completeSession() {
 }
 
 startBtn.addEventListener('click', () => {
+    RecoveryAudio.init();
     startOverlay.style.display = 'none';
     gameActive = true;
     flowStability = 0;

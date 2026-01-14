@@ -7,9 +7,53 @@
     <title>Momentum / Scientific Recovery Arcade</title>
     <meta name="description"
         content="A series of neuro-scientific games designed to help overcome cravings, rewire habits, and support addiction recovery.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://momentum-recovery.app/">
+    <meta property="og:title" content="Momentum / The Scientific Recovery Arcade">
+    <meta property="og:description"
+        content="Battle cravings with neuro-science. Free, private, and research-backed web tools.">
+    <meta property="og:image" content="assets/icon.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/png" href="assets/icon.png">
+    <style>
+        #toast-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            pointer-events: none;
+        }
+
+        .toast {
+            background: var(--surface);
+            border: 1px solid var(--primary);
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            color: var(--text);
+            box-shadow: var(--shadow);
+            animation: slideIn 0.3s ease-out;
+            pointer-events: auto;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +66,7 @@
             </div>
         </nav>
     </header>
-
+    <div id="toast-container"></div>
     <main class="container">
         <section class="dashboard glass"
             style="margin-top: 2rem; padding: 1.5rem; display: flex; justify-content: space-around; align-items: center; animation: fadeIn 0.8s ease-out;">
@@ -71,7 +115,7 @@
             </div>
 
             <!-- Game 3: Habit Garden -->
-            <div class="glass game-card" onclick="alert('Module loading in next iteration...')">
+            <div class="glass game-card" onclick="location.href='games/zen-garden/index.html'">
                 <div class="game-icon">🌿</div>
                 <div class="tag">Long-Term</div>
                 <h3>The Zen Garden</h3>

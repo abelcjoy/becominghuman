@@ -130,6 +130,7 @@ function completeSession() {
 }
 
 startBtn.addEventListener('click', () => {
+    RecoveryAudio.init();
     startOverlay.style.display = 'none';
     gameActive = true;
     timeLeft = 120;
