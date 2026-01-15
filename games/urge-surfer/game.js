@@ -2,7 +2,7 @@ const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 const startBtn = document.getElementById('start-btn');
 const startOverlay = document.getElementById('game-start-overlay');
-const timerDisplay = document.getElementById('timer');
+const progressBar = document.getElementById('progress-bar');
 
 let width, height;
 let gameActive = false;
@@ -96,13 +96,15 @@ function draw() {
 }
 
 function startTimer() {
+    const totalTime = 120;
     const interval = setInterval(() => {
         if (!gameActive) {
             clearInterval(interval);
             return;
         }
         timeLeft--;
-        timerDisplay.textContent = timeLeft;
+        const pct = (timeLeft / totalTime) * 100;
+        if (progressBar) progressBar.style.width = pct + '%';
 
         if (timeLeft <= 0) {
             gameActive = false;
@@ -134,7 +136,7 @@ startBtn.addEventListener('click', () => {
     startOverlay.style.display = 'none';
     gameActive = true;
     timeLeft = 120;
-    timerDisplay.textContent = timeLeft;
+    if (progressBar) progressBar.style.width = '100%';
     startTimer();
     draw();
 });

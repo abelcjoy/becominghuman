@@ -1,6 +1,5 @@
 const canvas = document.getElementById('gardenCanvas');
 const ctx = canvas.getContext('2d');
-const growthLabel = document.getElementById('growth-label');
 
 let width, height;
 let minutes = parseInt(localStorage.getItem('recovery_minutes') || 0);
@@ -64,8 +63,6 @@ function updateGarden() {
         stage = "Sapling";
         baseLen = 70;
     }
-
-    growthLabel.textContent = `Stage: ${stage} (${minutes}m)`;
 
     // Draw the tree in the center-bottom
     drawTree(width / 2, height - 20, baseLen, 0, 8, '#94a3b8', '#10b981', 0);

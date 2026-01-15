@@ -2,7 +2,7 @@ const canvas = document.getElementById('flowCanvas');
 const ctx = canvas.getContext('2d');
 const startBtn = document.getElementById('start-btn');
 const startOverlay = document.getElementById('start-overlay');
-const flowPctDisplay = document.getElementById('flow-pct');
+const progressBar = document.getElementById('progress-bar');
 
 let width, height;
 let particles = [];
@@ -142,7 +142,7 @@ function loop() {
     });
 
     const displayPct = Math.min(100, Math.floor(flowStability / 2));
-    flowPctDisplay.textContent = displayPct + '%';
+    if (progressBar) progressBar.style.width = displayPct + '%';
 
     if (displayPct >= 100) {
         gameActive = false;

@@ -73,19 +73,15 @@
 
     <div id="game-container">
         <div id="start-overlay">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Dopamine Flow</h2>
-            <p style="margin-bottom: 2rem; max-width: 400px; color: var(--text-muted);">Sort the particles into their
-                matching zones. Achieve 100% flow to stabilize your focus.</p>
-            <button id="start-btn" class="btn btn-primary">Start Sorting</button>
-        </div>
-        <div class="ui">
-            <div style="text-align: center;">
-                <div id="flow-pct" class="score-val">0%</div>
-                <div style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Flow Stability
-                </div>
-            </div>
+            <button id="start-btn" class="btn btn-primary" style="padding: 1rem 3rem; font-size: 1.2rem;">ENTER
+                FLOW</button>
         </div>
         <canvas id="flowCanvas"></canvas>
+        <div id="progress-container"
+            style="position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.05);">
+            <div id="progress-bar"
+                style="width: 0%; height: 100%; background: var(--accent); transition: width 0.3s ease-out;"></div>
+        </div>
     </div>
 
     <script src="../../components/audio.js"></script>
