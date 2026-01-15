@@ -92,8 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderFeed() {
         const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
         feed.innerHTML = '';
+        const adminFeed = document.getElementById('admin-posts-list');
+        if (adminFeed) adminFeed.innerHTML = '';
 
-        advices.forEach(item => {
+        advices.forEach((item, index) => {
+            // Public Feed
             const card = document.createElement('div');
             card.className = 'advice-card';
             card.innerHTML = `
@@ -102,8 +105,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
             `;
             feed.appendChild(card);
+
+            // Admin Management List
+            if (adminFeed) {
+                const adminItem = document.createElement('div');
+                adminItem.style.cssText = 'padding:1rem; border:1px solid #eee; margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem;';
+                adminItem.innerHTML = `
+                    <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:70%;">[${item.category}] ${item.text.substring(0, 30)}...</div>
+                    <button onclick="deleteAdvice(${index})" style="background:#ff000011; border:1px solid #ff0000; color:#ff0000; padding:0.25rem 0.75rem; cursor:pointer; font-size:0.6rem; text-transform:uppercase;">DELETE</button>
+                `;
+                adminFeed.appendChild(adminItem);
+            }
         });
     }
+
+    window.deleteAdvice = (index) => {
+        if (confirm('Permanently delete this advice from the live feed?')) {
+            let advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+            advices.splice(index, 1);
+            localStorage.setItem('cfh_advices', JSON.stringify(advices));
+            renderFeed();
+        }
+    };
 
     if (saveBtn) saveBtn.addEventListener('click', saveAdvice);
     renderFeed();

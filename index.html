@@ -223,8 +223,15 @@
         <input type="text" id="advice-link" placeholder="Source link (URL)..."
             style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
         <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff;">POST TO FEED</button>
+
+        <div style="margin-top: 3rem; border-top: 1px solid #eee; padding-top: 2rem;">
+            <h3 style="text-transform:uppercase; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1rem;">Live
+                Feed Management</h3>
+            <div id="admin-posts-list" style="max-height: 300px; overflow-y: auto;"></div>
+        </div>
+
         <button onclick="document.getElementById('admin-panel').style.display='none'"
-            style="margin-top:2rem; border:none; background:none; text-decoration:underline; cursor:pointer;">CLOSE_ADMIN</button>
+            style="margin-top:2rem; border:none; background:none; text-decoration:underline; cursor:pointer; font-size: 0.7rem;">CLOSE_ADMIN</button>
     </div>
 
     <div id="entry-screen">
