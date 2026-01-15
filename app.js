@@ -11,13 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterBtn = document.getElementById('enter-cfh');
     const entryScreen = document.getElementById('entry-screen');
     const selection = document.getElementById('selection-screen');
-    const backBtn = document.getElementById('back-btn');
+    const backBtn = document.getElementById('back-home');
 
     if (enterBtn) {
         enterBtn.addEventListener('click', () => {
             entryScreen.classList.add('hidden');
             selection.style.display = 'flex';
-            if (backBtn) backBtn.classList.remove('hidden');
         });
     }
 
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         backBtn.addEventListener('click', () => {
             entryScreen.classList.remove('hidden');
             selection.style.display = 'none';
-            backBtn.classList.add('hidden');
         });
     }
 
