@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('enter-cfh').addEventListener('click', () => {
         showScreen('selection-screen');
+        selector.style.display = 'flex';
+        detailView.style.display = 'none';
         const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
         if (installBtn && !isInstalled) installBtn.style.display = 'block';
     });
