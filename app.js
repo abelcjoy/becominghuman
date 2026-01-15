@@ -173,8 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'advice-card';
                 card.innerHTML = `
-                    <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">Advice for ${item.category}</div>
-                    <div style="font-size:0.95rem; line-height:1.6;">${item.text}</div>
+                    <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">Advice for ${item.category}</div>
+                    <div style="font-size:0.95rem; line-height:1.6; color: #000; font-weight: 400; overflow-wrap: break-word;">${item.text}</div>
                     ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
                 `;
                 feed.appendChild(card);
