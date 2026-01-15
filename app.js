@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (installBtn) {
         // If it's iOS, update the label to show it's a guide
         if (isIOS) {
-            installBtn.textContent = 'INSTALL ON IPHONE +';
+            installBtn.textContent = 'ADD TO HOME +';
         }
 
         installBtn.addEventListener('click', (e) => {
