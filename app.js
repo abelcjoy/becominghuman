@@ -59,18 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     specialAdd.addEventListener('click', () => {
-        // Evaluate and check against the secret
         try {
             const res = parseFloat(eval(currentInput));
             if (res === SECRET_ANSWER) {
                 adminPanel.style.display = 'flex';
                 gate.style.display = 'none';
                 clearCalc();
-            } else {
-                alert('ACCESS_DENIED: Result does not match security protocol.');
             }
         } catch {
-            alert('INPUT_ERROR');
+            // Silent fail
         }
     });
 
