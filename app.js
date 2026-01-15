@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.getElementById('secret-trigger');
     const gate = document.getElementById('calculator-gate');
     const screen = document.getElementById('calc-screen');
-    const specialAdd = document.getElementById('special-add');
     const adminPanel = document.getElementById('admin-panel');
 
     let currentInput = '';
@@ -45,7 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.compute = () => {
         try {
-            currentInput = eval(currentInput).toString();
+            const res = eval(currentInput);
+            if (res === SECRET_ANSWER) {
+                adminPanel.style.display = 'flex';
+                gate.style.display = 'none';
+                clearCalc();
+                return;
+            }
+            currentInput = res.toString();
             screen.textContent = currentInput;
         } catch {
             screen.textContent = 'ERROR';
@@ -57,19 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gate.style.display = 'none';
         clearCalc();
     };
-
-    specialAdd.addEventListener('click', () => {
-        try {
-            const res = parseFloat(eval(currentInput));
-            if (res === SECRET_ANSWER) {
-                adminPanel.style.display = 'flex';
-                gate.style.display = 'none';
-                clearCalc();
-            }
-        } catch {
-            // Silent fail
-        }
-    });
 
     // Admin Advice Logic
     const saveBtn = document.getElementById('save-advice');
