@@ -90,6 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
         showScreen('selection-screen');
         selector.style.display = 'flex';
         detailView.style.display = 'none';
+
+        // Notification Logic
+        const notifyPrompt = document.getElementById('notification-prompt');
+        const notifyBtn = document.getElementById('enable-alerts');
+        if (Notification.permission === 'granted' && notifyPrompt) {
+            notifyPrompt.style.display = 'none';
+        }
+
+        if (notifyBtn) {
+            notifyBtn.addEventListener('click', () => {
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        navigator.serviceWorker.ready.then(registration => {
+                            messaging.getToken({
+                                serviceWorkerRegistration: registration,
+                                vapidKey: 'BFMMPXGv8s1QUGI3Rl50DwiZnHteiJ5629LPX5tICWsOfXSJ6QiFpzsyljATAHDl2bRNpHdEtIhTptZ3f1QcYG8'
+                            }).then(token => {
+                                if (token) {
+                                    console.log('User registered for Alerts:', token);
+                                    if (notifyPrompt) notifyPrompt.style.display = 'none';
+                                    alert('Live Alerts Activated.');
+                                }
+                            });
+                        });
+                    }
+                });
+            });
+        }
+
         const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
         if (installBtn && !isInstalled) installBtn.style.display = 'block';
     });
