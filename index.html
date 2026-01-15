@@ -48,23 +48,31 @@
         }
 
         .protocol-item {
-            padding: 1.5rem;
+            padding: 1.5rem 2rem;
             background: #ffffff;
-            border-bottom: 1px solid #eeeeee;
+            border: 1px solid #000000;
             color: #000000;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            font-size: 0.8rem;
+            letter-spacing: 0.25em;
+            font-size: 0.85rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.2s;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         .protocol-item:hover {
-            background: #fafafa;
-            padding-left: 2rem;
+            background: #000000;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .protocol-item:active {
+            transform: translateY(0);
         }
 
         #back-home {
