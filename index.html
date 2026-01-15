@@ -408,41 +408,23 @@
             style="width:100%; max-width:300px; border:2px solid #000; padding:1.5rem; font-size:1.5rem; text-align:right; margin-bottom:1rem; font-family:monospace;">
             0</div>
         <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:300px;">
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('7')">7</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('8')">8</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('9')">9</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('/')">/</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('4')">4</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('5')">5</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('6')">6</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('*')">*</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('1')">1</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('2')">2</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('3')">3</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('-')">-</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('0')">0</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('.')">.</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="compute()">=</button>
-            <button class="btn btn-primary" style="padding:1rem; border:1px solid #000; background:#fff; color:#000;"
-                onclick="press('+')">+</button>
-            <button class="btn btn-primary"
-                style="padding:1rem; border:1px solid #000; background:#fff; color:#000; grid-column:span 4; margin-top:10px;"
-                onclick="clearCalc()">CLEAR</button>
+            <button class="calc-btn" onclick="press('7')">7</button>
+            <button class="calc-btn" onclick="press('8')">8</button>
+            <button class="calc-btn" onclick="press('9')">9</button>
+            <button class="calc-btn" onclick="press('/')">/</button>
+            <button class="calc-btn" onclick="press('4')">4</button>
+            <button class="calc-btn" onclick="press('5')">5</button>
+            <button class="calc-btn" onclick="press('6')">6</button>
+            <button class="calc-btn" onclick="press('*')">*</button>
+            <button class="calc-btn" onclick="press('1')">1</button>
+            <button class="calc-btn" onclick="press('2')">2</button>
+            <button class="calc-btn" onclick="press('3')">3</button>
+            <button class="calc-btn" onclick="press('-')">-</button>
+            <button class="calc-btn" onclick="press('0')">0</button>
+            <button class="calc-btn" onclick="press('.')">.</button>
+            <button class="calc-btn" onclick="compute()">=</button>
+            <button class="calc-btn" onclick="press('+')">+</button>
+            <button class="calc-btn" style="grid-column:span 4; margin-top:10px;" onclick="clearCalc()">CLEAR</button>
         </div>
         <div class="back-link" style="margin-top:2rem;" onclick="closeSecretCalc()">Cancel</div>
     </div>
