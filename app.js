@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js')
+            .then(() => console.log('CFH Protocol PWA Active'))
+            .catch(err => console.log('PWA Failed', err));
+    }
+
     // Basic Navigation
     const enterBtn = document.getElementById('enter-cfh');
     const entryScreen = document.getElementById('entry-screen');
