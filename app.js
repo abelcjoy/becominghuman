@@ -1,13 +1,37 @@
+// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCiJbxoviq2H7AkxrVIXmxwPLNeIwWJOXM",
+    authDomain: "cfh-protocol.firebaseapp.com",
+    projectId: "cfh-protocol",
+    storageBucket: "cfh-protocol.firebasestorage.app",
+    messagingSenderId: "576464528755",
+    appId: "1:576464528755:web:6aba2a06731c3dbb68d106"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
-            .then(() => {
+            .then((registration) => {
                 console.log('CFH Protocol PWA Active');
-                // Request Notification Permission
-                if ('Notification' in window) {
-                    Notification.requestPermission();
-                }
+
+                // Set up Firebase Messaging with Service Worker
+                messaging.getToken({
+                    serviceWorkerRegistration: registration,
+                    vapidKey: 'BFMMPXGv8s1QUGI3Rl50DwiZnHteiJ5629LPX5tICWsOfXSJ6QiFpzsyljATAHDl2bRNpHdEtIhTptZ3f1QcYG8'
+                }).then((currentToken) => {
+                    if (currentToken) {
+                        console.log('Broadcast Token Received:', currentToken);
+                        // In a real app, you'd save this to a database.
+                        // For now, users are registered to receive broadcasts.
+                    }
+                }).catch((err) => {
+                    console.log('Notification registration failed', err);
+                });
             })
             .catch(err => console.log('PWA Failed', err));
     }

@@ -1,3 +1,18 @@
+importScripts('https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js');
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCiJbxoviq2H7AkxrVIXmxwPLNeIwWJOXM",
+    authDomain: "cfh-protocol.firebaseapp.com",
+    projectId: "cfh-protocol",
+    storageBucket: "cfh-protocol.firebasestorage.app",
+    messagingSenderId: "576464528755",
+    appId: "1:576464528755:web:6aba2a06731c3dbb68d106"
+};
+
+firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
+
 const CACHE_NAME = 'cfh-v2';
 const ASSETS = [
     '/',
