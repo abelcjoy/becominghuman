@@ -1,11 +1,9 @@
-const CACHE_NAME = 'cfh-v1';
+const CACHE_NAME = 'cfh-v2';
 const ASSETS = [
+    '/',
     'index.html',
     'style.css',
-    'app.js',
-    'about.html',
-    'privacy.html',
-    'terms.html'
+    'app.js'
 ];
 
 // Install: Cache core assets (Initial setup)
