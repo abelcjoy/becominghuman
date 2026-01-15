@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compute | CFH Protocol</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #ffffff;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        #calculator-gate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .calc-display {
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid #000;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            text-align: right;
+            margin-bottom: 1rem;
+            font-family: monospace;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .calc-btn {
+            padding: 1rem;
+            border: 1px solid #000;
+            background: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.1s;
+        }
+
+        .calc-btn:active {
+            background: #eee;
+        }
+
+        #admin-panel {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .admin-item {
+            padding: 1rem;
+            border: 1px solid #eee;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+        }
+
+        .delete-btn {
+            background: #ff000011;
+            border: 1px solid #ff0000;
+            color: #ff0000;
+            padding: 0.25rem 0.75rem;
+            cursor: pointer;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Backdoor Step 1: The Calculator -->
+    <div id="calculator-gate">
+        <h2
+            style="text-transform:uppercase; letter-spacing:0.2em; font-size: 0.8rem; margin-bottom: 2rem; color: #888;">
+            System Computation</h2>
+        <div id="calc-screen" class="calc-display">0</div>
+        <div class="calc-grid">
+            <button class="calc-btn" onclick="press('7')">7</button>
+            <button class="calc-btn" onclick="press('8')">8</button>
+            <button class="calc-btn" onclick="press('9')">9</button>
+            <button class="calc-btn" onclick="press('/')">/</button>
+            <button class="calc-btn" onclick="press('4')">4</button>
+            <button class="calc-btn" onclick="press('5')">5</button>
+            <button class="calc-btn" onclick="press('6')">6</button>
+            <button class="calc-btn" onclick="press('*')">*</button>
+            <button class="calc-btn" onclick="press('1')">1</button>
+            <button class="calc-btn" onclick="press('2')">2</button>
+            <button class="calc-btn" onclick="press('3')">3</button>
+            <button class="calc-btn" onclick="press('-')">-</button>
+            <button class="calc-btn" onclick="press('0')">0</button>
+            <button class="calc-btn" onclick="press('.')">.</button>
+            <button class="calc-btn" onclick="compute()">=</button>
+            <button class="calc-btn" onclick="press('+')">+</button>
+            <button class="calc-btn" onclick="clearCalc()" style="grid-column: span 4;">CLEAR</button>
+        </div>
+        <a href="index.html"
+            style="margin-top:2rem; color: #888; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;">Return
+            to Core</a>
+    </div>
+
+    <!-- Backdoor Step 2: The Admin Panel -->
+    <div id="admin-panel">
+        <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed</h2>
+
+        <select id="advice-category" style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width: 100%;">
+            <option value="P.M.O. Recovery">P.M.O. Recovery</option>
+            <option value="Reflections">Reflections</option>
+        </select>
+
+        <textarea id="advice-text" placeholder="Enter clinical advice or reflection..."
+            style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem; font-family:inherit;"></textarea>
+
+        <input type="text" id="advice-date" placeholder="Date (e.g. 5 July 2026)..."
+            style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:1rem;">
+
+        <input type="text" id="advice-link" placeholder="Source link (URL)..."
+            style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
+
+        <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width: 100%;">POST TO LIVE
+            FEED</button>
+
+        <div style="margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem;">
+            <h3 style="text-transform:uppercase; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1.5rem;">Live
+                Feed Management</h3>
+            <div id="admin-posts-list" style="max-height: 400px; overflow-y: auto;"></div>
+        </div>
+
+        <button onclick="location.reload()"
+            style="margin-top:3rem; border:1px solid #000; background:none; padding: 1rem; cursor:pointer; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">Secure
+            Logout / Refresh</button>
+    </div>
+
+    <script>
+        const gate = document.getElementById('calculator-gate');
+        const screen = document.getElementById('calc-screen');
+        const adminPanel = document.getElementById('admin-panel');
+        const saveBtn = document.getElementById('save-advice');
+        const adviceText = document.getElementById('advice-text');
+        const adviceDate = document.getElementById('advice-date');
+        const adviceLink = document.getElementById('advice-link');
+        const adviceCategory = document.getElementById('advice-category');
+        const adminFeed = document.getElementById('admin-posts-list');
+
+        let currentInput = '';
+        const SECRET_ANSWER = 370.9219; // Result of 25.68790 + 345.234
+
+        window.press = (val) => {
+            currentInput += val;
+            screen.textContent = currentInput;
+        };
+
+        window.clearCalc = () => {
+            currentInput = '';
+            screen.textContent = '0';
+        };
+
+        window.compute = () => {
+            try {
+                const res = eval(currentInput);
+                if (res === SECRET_ANSWER) {
+                    adminPanel.style.display = 'flex';
+                    gate.style.display = 'none';
+                    renderAdminList();
+                    return;
+                }
+                currentInput = res.toString();
+                screen.textContent = currentInput;
+            } catch {
+                screen.textContent = 'ERROR';
+                currentInput = '';
+            }
+        };
+
+        function saveAdvice() {
+            if (!adviceText.value) return;
+
+            const advice = {
+                category: adviceCategory.value,
+                text: adviceText.value,
+                date: adviceDate.value || new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
+                link: adviceLink.value,
+                timestamp: new Date().getTime()
+            };
+
+            let advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+            advices.unshift(advice);
+            localStorage.setItem('cfh_advices', JSON.stringify(advices));
+
+            adviceText.value = '';
+            adviceDate.value = '';
+            adviceLink.value = '';
+            renderAdminList();
+            alert('Post published successfully.');
+        }
+
+        function renderAdminList() {
+            const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+            adminFeed.innerHTML = '';
+
+            advices.forEach((item, index) => {
+                const adminItem = document.createElement('div');
+                adminItem.className = 'admin-item';
+                adminItem.innerHTML = `
+                    <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:70%;">[${item.category}] ${item.text.substring(0, 40)}...</div>
+                    <button class="delete-btn" onclick="deleteAdvice(${index})">DELETE</button>
+                `;
+                adminFeed.appendChild(adminItem);
+            });
+        }
+
+        window.deleteAdvice = (index) => {
+            if (confirm('Permanently delete this post?')) {
+                let advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+                advices.splice(index, 1);
+                localStorage.setItem('cfh_advices', JSON.stringify(advices));
+                renderAdminList();
+            }
+        };
+
+        saveBtn.addEventListener('click', saveAdvice);
+    </script>
+</body>
+
+</html>
