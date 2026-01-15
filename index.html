@@ -259,17 +259,7 @@
             <div class="protocol-item" onclick="openProtocol('P.M.O. Recovery')">P.M.O. Recovery</div>
             <div class="protocol-item" onclick="openProtocol('Reflections')">Reflections</div>
 
-            <div id="notification-prompt"
-                style="margin-top: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
-                <div
-                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
-                    Broadcast Protocol</div>
-                <div style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Receive real-time clinical
-                    alerts and reflections.</div>
-                <button id="enable-alerts" class="btn btn-primary"
-                    style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
-                    LIVE ALERTS</button>
-            </div>
+
 
             <button id="install-btn" class="btn btn-primary"
                 style="display:none; margin-top: 2rem; width: 100%; max-width: 400px; align-self: center; background: #000; color: #fff;">ADD
@@ -282,6 +272,7 @@
                 style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
                 BACK TO SELECTION</div>
 
+            <!-- Reload Banner -->
             <div
                 style="color: #000; text-align: center; border: 2px solid #000; padding: 1.5rem; width: 100%; margin-bottom: 2.5rem;">
                 <div
@@ -293,6 +284,19 @@
                 <button onclick="location.reload()"
                     style="background: #000; color: #fff; border: none; padding: 0.6rem 1.2rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">RELOAD
                     PAGE</button>
+            </div>
+
+            <!-- Global Broadcast Prompt -->
+            <div id="notification-prompt"
+                style="margin-bottom: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
+                <div
+                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
+                    Broadcast Protocol</div>
+                <div style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Receive real-time clinical
+                    alerts and reflections on your device.</div>
+                <button id="enable-alerts" class="btn btn-primary"
+                    style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
+                    LIVE ALERTS</button>
             </div>
 
             <div id="advice-feed"></div>
