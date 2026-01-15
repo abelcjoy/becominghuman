@@ -175,9 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!filterCategory || item.category === filterCategory) {
                 const card = document.createElement('div');
                 card.className = 'advice-card';
+
+                const isLong = item.text.length > 250;
+                const displayText = isLong ? item.text.substring(0, 250) + '...' : item.text;
+
                 card.innerHTML = `
                     <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">${item.date || ''}</div>
-                    <div style="font-size:0.95rem; line-height:1.6; color: #000; font-weight: 400; overflow-wrap: break-word;">${item.text}</div>
+                    <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color: #000; font-weight: 400; overflow-wrap: break-word;">${displayText}</div>
+                    ${isLong ? `<button class="read-more-toggle" onclick="toggleReadMore(this, ${index})">READ MORE</button>` : ''}
                     ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
                 `;
                 feed.appendChild(card);
@@ -202,6 +207,20 @@ document.addEventListener('DOMContentLoaded', () => {
             advices.splice(index, 1);
             localStorage.setItem('cfh_advices', JSON.stringify(advices));
             renderFeed();
+        }
+    };
+
+    window.toggleReadMore = (btn, index) => {
+        const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+        const item = advices[index];
+        const contentDiv = btn.previousElementSibling;
+
+        if (btn.textContent === 'READ MORE') {
+            contentDiv.textContent = item.text;
+            btn.textContent = 'READ LESS';
+        } else {
+            contentDiv.textContent = item.text.substring(0, 250) + '...';
+            btn.textContent = 'READ MORE';
         }
     };
 
