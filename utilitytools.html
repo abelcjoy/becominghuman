@@ -4,25 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compute | CFH Protocol</title>
+    <title>Utility Tools | CFH Protocol</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
             background: #ffffff;
+            color: #000;
             padding: 2rem;
-            overflow-y: auto;
-        }
-
-        #calculator-gate {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+        }
+
+        .tools-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tools-header h1 {
+            font-size: 1.5rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             width: 100%;
+            max-width: 1000px;
+        }
+
+        .tool-card {
+            border: 1px solid #eee;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tool-card:hover {
+            border-color: #000;
+            transform: translateY(-5px);
+        }
+
+        .tool-card h3 {
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: #888;
+        }
+
+        .tool-content {
+            font-size: 0.8rem;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        /* Calculator Overlay (Hidden by default) */
+        #calculator-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 1000;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
         }
 
         .calc-display {
@@ -51,19 +106,24 @@
             cursor: pointer;
             font-weight: bold;
             font-size: 1rem;
-            transition: background 0.1s;
         }
 
-        .calc-btn:active {
-            background: #eee;
-        }
-
+        /* Admin Panel Overlay */
         #admin-panel {
             display: none;
+            position: fixed;
+            inset: 0;
+            background: #fff;
+            z-index: 2000;
             flex-direction: column;
+            padding: 2rem;
+            overflow-y: auto;
+            align-items: center;
+        }
+
+        #admin-panel-content {
             width: 100%;
             max-width: 600px;
-            animation: fadeIn 0.5s ease-out;
         }
 
         .admin-item {
@@ -85,16 +145,60 @@
             font-size: 0.6rem;
             text-transform: uppercase;
         }
+
+        .back-link {
+            margin-top: 2rem;
+            color: #888;
+            text-decoration: underline;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Backdoor Step 1: The Calculator -->
-    <div id="calculator-gate">
+    <div class="tools-header">
+        <h1>Utility Tools</h1>
+        <p style="font-size: 0.6rem; color: #888; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 1rem;">
+            Clinical & Technical Support Suite</p>
+    </div>
+
+    <div class="tools-grid">
+        <!-- BMI Tool -->
+        <div class="tool-card" onclick="alert('BMI Calculator coming soon in the next clinical update.')">
+            <h3>Body Mass Index</h3>
+            <div class="tool-content">Standard clinical metric for health assessment.</div>
+        </div>
+
+        <!-- Stop Watch -->
+        <div class="tool-card" onclick="alert('Session Timer coming soon.')">
+            <h3>Protocol Timer</h3>
+            <div class="tool-content">Monitor session duration and focus periods.</div>
+        </div>
+
+        <!-- The Secret Backdoor Tool -->
+        <div class="tool-card" onclick="openSecretCalc()">
+            <h3>System Computation</h3>
+            <div class="tool-content">Internal mathematical utility for data validation.</div>
+        </div>
+
+        <!-- Notes placeholder -->
+        <div class="tool-card" onclick="alert('Secure Notes coming soon.')">
+            <h3>Clinical Notes</h3>
+            <div class="tool-content">Encrypted local notes for personal recovery tracking.</div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link" style="margin-top: 5rem;">Back to Entry</a>
+
+    <!-- Hidden Calculator -->
+    <div id="calculator-overlay">
         <h2
             style="text-transform:uppercase; letter-spacing:0.2em; font-size: 0.8rem; margin-bottom: 2rem; color: #888;">
-            System Computation</h2>
+            Data Validation</h2>
         <div id="calc-screen" class="calc-display">0</div>
         <div class="calc-grid">
             <button class="calc-btn" onclick="press('7')">7</button>
@@ -113,49 +217,49 @@
             <button class="calc-btn" onclick="press('.')">.</button>
             <button class="calc-btn" onclick="compute()">=</button>
             <button class="calc-btn" onclick="press('+')">+</button>
-            <button class="calc-btn" onclick="clearCalc()" style="grid-column: span 4;">CLEAR</button>
+            <button class="calc-btn" onclick="clearCalc()" style="grid-column: span 4; margin-top: 10px;">CLEAR</button>
         </div>
-        <a href="index.html"
-            style="margin-top:2rem; color: #888; text-decoration: underline; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em;">Return
-            to Core</a>
+        <div class="back-link" onclick="closeSecretCalc()">Cancel</div>
     </div>
 
-    <!-- Backdoor Step 2: The Admin Panel -->
+    <!-- Hidden Admin Panel -->
     <div id="admin-panel">
-        <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed</h2>
+        <div id="admin-panel-content">
+            <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed</h2>
 
-        <select id="advice-category" style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width: 100%;">
-            <option value="P.M.O. Recovery">P.M.O. Recovery</option>
-            <option value="Reflections">Reflections</option>
-        </select>
+            <select id="advice-category" style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width: 100%;">
+                <option value="P.M.O. Recovery">P.M.O. Recovery</option>
+                <option value="Reflections">Reflections</option>
+            </select>
 
-        <textarea id="advice-text" placeholder="Enter clinical advice or reflection..."
-            style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem; font-family:inherit;"></textarea>
+            <textarea id="advice-text" placeholder="Enter clinical advice or reflection..."
+                style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem; font-family:inherit;"></textarea>
 
-        <input type="text" id="advice-date" placeholder="Date (e.g. 5 July 2026)..."
-            style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:1rem;">
+            <input type="text" id="advice-date" placeholder="Date (e.g. 5 July 2026)..."
+                style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:1rem;">
 
-        <input type="text" id="advice-link" placeholder="Source link (URL)..."
-            style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
+            <input type="text" id="advice-link" placeholder="Source link (URL)..."
+                style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
 
-        <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width: 100%;">POST TO LIVE
-            FEED</button>
+            <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width: 100%;">POST TO
+                LIVE FEED</button>
 
-        <div style="margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem;">
-            <h3 style="text-transform:uppercase; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1.5rem;">Live
-                Feed Management</h3>
-            <div id="admin-posts-list" style="max-height: 400px; overflow-y: auto;"></div>
+            <div style="margin-top: 4rem; border-top: 1px solid #eee; padding-top: 2rem;">
+                <h3 style="text-transform:uppercase; font-size: 0.8rem; letter-spacing: 0.2em; margin-bottom: 1.5rem;">
+                    Live Feed Management</h3>
+                <div id="admin-posts-list" style="max-height: 400px; overflow-y: auto;"></div>
+            </div>
+
+            <button onclick="location.reload()"
+                style="margin-top:3rem; border:1px solid #000; background:none; padding: 1rem; cursor:pointer; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; width: 100%;">Secure
+                Logout</button>
         </div>
-
-        <button onclick="location.reload()"
-            style="margin-top:3rem; border:1px solid #000; background:none; padding: 1rem; cursor:pointer; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700;">Secure
-            Logout / Refresh</button>
     </div>
 
     <script>
-        const gate = document.getElementById('calculator-gate');
-        const screen = document.getElementById('calc-screen');
+        const calcOverlay = document.getElementById('calculator-overlay');
         const adminPanel = document.getElementById('admin-panel');
+        const screen = document.getElementById('calc-screen');
         const saveBtn = document.getElementById('save-advice');
         const adviceText = document.getElementById('advice-text');
         const adviceDate = document.getElementById('advice-date');
@@ -164,7 +268,16 @@
         const adminFeed = document.getElementById('admin-posts-list');
 
         let currentInput = '';
-        const SECRET_ANSWER = 370.9219; // Result of 25.68790 + 345.234
+        const SECRET_ANSWER = 370.9219;
+
+        window.openSecretCalc = () => {
+            calcOverlay.style.display = 'flex';
+        };
+
+        window.closeSecretCalc = () => {
+            calcOverlay.style.display = 'none';
+            clearCalc();
+        };
 
         window.press = (val) => {
             currentInput += val;
@@ -181,7 +294,7 @@
                 const res = eval(currentInput);
                 if (res === SECRET_ANSWER) {
                     adminPanel.style.display = 'flex';
-                    gate.style.display = 'none';
+                    calcOverlay.style.display = 'none';
                     renderAdminList();
                     return;
                 }
