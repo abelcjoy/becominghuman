@@ -138,12 +138,21 @@ document.addEventListener('DOMContentLoaded', () => {
         detailView.style.display = 'flex';
         renderFeed(category);
 
-        // Manage Notification Prompt Visibility
+        // Manage Notification Prompt Visibility & Text
+        const notifyText = document.getElementById('notification-text');
         if (notifyPrompt) {
             if (Notification.permission === 'granted') {
                 notifyPrompt.style.display = 'none';
             } else {
                 notifyPrompt.style.display = 'block';
+                // Simplified, custom text based on category
+                if (category === 'P.M.O. Recovery') {
+                    notifyText.textContent = 'Get PMO recovery advice and tips whenever they are posted.';
+                } else if (category === 'Reflections') {
+                    notifyText.textContent = 'Get new reflections like these as soon as they are posted.';
+                } else {
+                    notifyText.textContent = 'Get alerts whenever new updates are posted.';
+                }
             }
         }
 
