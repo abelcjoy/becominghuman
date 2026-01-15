@@ -2,7 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Register Service Worker for PWA
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('CFH Protocol PWA Active'))
+            .then(() => {
+                console.log('CFH Protocol PWA Active');
+                // Request Notification Permission
+                if ('Notification' in window) {
+                    Notification.requestPermission();
+                }
+            })
             .catch(err => console.log('PWA Failed', err));
     }
 
@@ -83,6 +89,13 @@ document.addEventListener('DOMContentLoaded', () => {
         selector.style.display = 'none';
         detailView.style.display = 'flex';
         renderFeed(category);
+
+        // Clear App Badge when feed is viewed
+        if ('clearAppBadge' in navigator) {
+            navigator.clearAppBadge().catch((error) => {
+                console.error('Error clearing badge:', error);
+            });
+        }
     };
 
     // Secret Calculator & Admin Logic
@@ -156,6 +169,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('advice-link').value = '';
         renderAdminList();
         renderFeed();
+
+        // Trigger Local Notification & Badge (For demo/admin)
+        if ('setAppBadge' in navigator) {
+            navigator.setAppBadge(1).catch((error) => {
+                console.error('Error setting badge:', error);
+            });
+        }
+
+        if (Notification.permission === 'granted') {
+            navigator.serviceWorker.ready.then(registration => {
+                registration.showNotification('CFH Protocol Update', {
+                    body: `New post in ${category}: ${text.substring(0, 50)}...`,
+                    icon: 'assets/icon.png',
+                    badge: 'assets/icon.png',
+                    tag: 'new-post'
+                });
+            });
+        }
+
         alert('Published.');
     }
 
