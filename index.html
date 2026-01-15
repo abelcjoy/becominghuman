@@ -42,13 +42,14 @@
             background: #ffffff;
         }
 
-        .protocol-list {
+        .protocol-list,
+        #protocol-detail {
             display: flex;
             flex-direction: column;
             gap: 1rem;
             width: 100%;
             max-width: 600px;
-            margin: 4rem auto;
+            margin: 6rem auto 4rem;
         }
 
         .protocol-item {
@@ -250,13 +251,18 @@
     <div id="selection-screen">
         <div id="back-home">BACK TO HOME</div>
 
-        <div class="protocol-list">
-            <!-- Advice Feed -->
-            <div id="advice-feed"></div>
+        <!-- List of Protocols -->
+        <div id="protocol-selector" class="protocol-list">
+            <div class="protocol-item" onclick="openProtocol('P.M.O. Recovery')">P.M.O. Recovery</div>
+            <div class="protocol-item" onclick="openProtocol('Reflections')">Reflections</div>
+        </div>
 
-            <!-- Addiction List -->
-            <div class="protocol-item">P.M.O. Recovery</div>
-            <div class="protocol-item">Reflections</div>
+        <!-- Detail View (Initially Hidden) -->
+        <div id="protocol-detail" class="hidden">
+            <div id="back-to-selection"
+                style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
+                BACK TO SELECTION</div>
+            <div id="advice-feed"></div>
         </div>
     </div>
 

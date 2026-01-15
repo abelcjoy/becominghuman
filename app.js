@@ -12,12 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const selector = document.getElementById('protocol-selector');
+    const detailView = document.getElementById('protocol-detail');
+    const backToSelect = document.getElementById('back-to-selection');
+
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             entryScreen.classList.remove('hidden');
             selection.style.display = 'none';
+            selector.classList.remove('hidden');
+            detailView.classList.add('hidden');
         });
     }
+
+    if (backToSelect) {
+        backToSelect.addEventListener('click', () => {
+            selector.classList.remove('hidden');
+            detailView.classList.add('hidden');
+        });
+    }
+
+    window.openProtocol = (category) => {
+        selector.classList.add('hidden');
+        detailView.classList.remove('hidden');
+        renderFeed(category);
+    };
 
     // Secret Calculator Logic
     const trigger = document.getElementById('secret-trigger');
@@ -89,24 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
         adviceLink.value = '';
     }
 
-    function renderFeed() {
+    function renderFeed(filterCategory = null) {
         const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
         feed.innerHTML = '';
         const adminFeed = document.getElementById('admin-posts-list');
         if (adminFeed) adminFeed.innerHTML = '';
 
         advices.forEach((item, index) => {
-            // Public Feed
-            const card = document.createElement('div');
-            card.className = 'advice-card';
-            card.innerHTML = `
-                <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">Advice for ${item.category}</div>
-                <div style="font-size:0.95rem; line-height:1.6;">${item.text}</div>
-                ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
-            `;
-            feed.appendChild(card);
+            // Filter logic for public view
+            if (!filterCategory || item.category === filterCategory) {
+                const card = document.createElement('div');
+                card.className = 'advice-card';
+                card.innerHTML = `
+                    <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">Advice for ${item.category}</div>
+                    <div style="font-size:0.95rem; line-height:1.6;">${item.text}</div>
+                    ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
+                `;
+                feed.appendChild(card);
+            }
 
-            // Admin Management List
+            // Admin Management List (Always show all for admin)
             if (adminFeed) {
                 const adminItem = document.createElement('div');
                 adminItem.style.cssText = 'padding:1rem; border:1px solid #eee; margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem;';
