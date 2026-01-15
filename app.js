@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Admin Advice Logic
     const saveBtn = document.getElementById('save-advice');
     const adviceText = document.getElementById('advice-text');
+    const adviceDate = document.getElementById('advice-date');
     const adviceLink = document.getElementById('advice-link');
     const adviceCategory = document.getElementById('advice-category');
     const feed = document.getElementById('advice-feed');
@@ -147,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const advice = {
             category: adviceCategory.value,
             text: adviceText.value,
+            date: adviceDate.value || new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
             link: adviceLink.value,
             timestamp: new Date().getTime()
         };
@@ -158,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderFeed();
         adminPanel.style.display = 'none';
         adviceText.value = '';
+        adviceDate.value = '';
         adviceLink.value = '';
     }
 
@@ -173,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const card = document.createElement('div');
                 card.className = 'advice-card';
                 card.innerHTML = `
-                    <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">Advice for ${item.category}</div>
+                    <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">${item.date || ''}</div>
                     <div style="font-size:0.95rem; line-height:1.6; color: #000; font-weight: 400; overflow-wrap: break-word;">${item.text}</div>
                     ${item.link ? `<a href="${item.link}" target="_blank" class="link-preview">VIEW_EXTERNAL_RESOURCE</a>` : ''}
                 `;
