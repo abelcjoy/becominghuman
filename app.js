@@ -35,8 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Navigation
-    const enterBtn = document.getElementById('enter-cfh');
+    // Navigation Logic
     const entryScreen = document.getElementById('entry-screen');
     const selection = document.getElementById('selection-screen');
     const backBtn = document.getElementById('back-home');
@@ -45,37 +44,147 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToSelect = document.getElementById('back-to-selection');
     const feed = document.getElementById('advice-feed');
 
-    if (enterBtn) {
-        enterBtn.addEventListener('click', () => {
-            entryScreen.classList.add('hidden');
-            selection.style.display = 'flex';
-            const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-            if (installBtn && !isInstalled) installBtn.style.display = 'block';
+    const screens = [
+        'entry-screen', 'selection-screen', 'about-screen',
+        'privacy-screen', 'terms-screen', 'utility-screen'
+    ];
+
+    window.showScreen = (screenId) => {
+        screens.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = (id === screenId) ? 'flex' : 'none';
         });
-    }
+    };
+
+    document.getElementById('enter-cfh').addEventListener('click', () => {
+        showScreen('selection-screen');
+        const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+        if (installBtn && !isInstalled) installBtn.style.display = 'block';
+    });
 
     if (backBtn) {
         backBtn.addEventListener('click', () => {
-            entryScreen.classList.remove('hidden');
-            selection.style.display = 'none';
-            selector.classList.remove('hidden');
-            detailView.classList.add('hidden');
+            showScreen('entry-screen');
+            selector.style.display = 'flex';
+            detailView.style.display = 'none';
         });
     }
 
     if (backToSelect) {
         backToSelect.addEventListener('click', () => {
-            selector.classList.remove('hidden');
-            detailView.classList.add('hidden');
+            selector.style.display = 'flex';
+            detailView.style.display = 'none';
         });
     }
 
     window.openProtocol = (category) => {
-        selector.classList.add('hidden');
-        detailView.classList.remove('hidden');
+        selector.style.display = 'none';
+        detailView.style.display = 'flex';
         renderFeed(category);
     };
 
+    // Secret Calculator & Admin Logic
+    const calcOverlay = document.getElementById('calculator-overlay');
+    const adminPanel = document.getElementById('admin-panel');
+    const calcScreen = document.getElementById('calc-screen');
+    const saveBtn = document.getElementById('save-advice');
+
+    let currentInput = '';
+    const SECRET_ANSWER = 370.9219;
+
+    window.openSecretCalc = () => {
+        calcOverlay.style.display = 'flex';
+    };
+
+    window.closeSecretCalc = () => {
+        calcOverlay.style.display = 'none';
+        clearCalc();
+    };
+
+    window.press = (val) => {
+        currentInput += val;
+        calcScreen.textContent = currentInput;
+    };
+
+    window.clearCalc = () => {
+        currentInput = '';
+        calcScreen.textContent = '0';
+    };
+
+    window.compute = () => {
+        try {
+            const res = eval(currentInput);
+            if (res === SECRET_ANSWER) {
+                adminPanel.style.display = 'flex';
+                calcOverlay.style.display = 'none';
+                renderAdminList();
+                return;
+            }
+            currentInput = res.toString();
+            calcScreen.textContent = currentInput;
+        } catch {
+            calcScreen.textContent = 'ERROR';
+            currentInput = '';
+        }
+    };
+
+    // Admin Feed Management
+    function saveAdvice() {
+        const text = document.getElementById('advice-text').value;
+        const date = document.getElementById('advice-date').value;
+        const link = document.getElementById('advice-link').value;
+        const category = document.getElementById('advice-category').value;
+
+        if (!text) return;
+
+        const advice = {
+            category,
+            text,
+            date: date || new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }),
+            link,
+            timestamp: new Date().getTime()
+        };
+
+        let advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+        advices.unshift(advice);
+        localStorage.setItem('cfh_advices', JSON.stringify(advices));
+
+        document.getElementById('advice-text').value = '';
+        document.getElementById('advice-date').value = '';
+        document.getElementById('advice-link').value = '';
+        renderAdminList();
+        renderFeed();
+        alert('Published.');
+    }
+
+    function renderAdminList() {
+        const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+        const adminFeed = document.getElementById('admin-posts-list');
+        if (!adminFeed) return;
+        adminFeed.innerHTML = '';
+
+        advices.forEach((item, index) => {
+            const div = document.createElement('div');
+            div.style.cssText = 'padding:1rem; border:1px solid #eee; margin-bottom:0.5rem; display:flex; justify-content:space-between; align-items:center; font-size:0.75rem;';
+            div.innerHTML = `
+                <div style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:70%;">[${item.category}] ${item.text.substring(0, 30)}...</div>
+                <button onclick="deleteAdvice(${index})" style="background:#ff000011; border:1px solid #ff0000; color:#ff0000; padding:0.25rem 0.75rem; cursor:pointer; font-size:0.6rem; text-transform:uppercase;">DELETE</button>
+            `;
+            adminFeed.appendChild(div);
+        });
+    }
+
+    window.deleteAdvice = (index) => {
+        if (confirm('Delete?')) {
+            let advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
+            advices.splice(index, 1);
+            localStorage.setItem('cfh_advices', JSON.stringify(advices));
+            renderAdminList();
+            renderFeed();
+        }
+    };
+
+    // Public Feed Rendering
     function renderFeed(filterCategory = null) {
         const advices = JSON.parse(localStorage.getItem('cfh_advices') || '[]');
         if (!feed) return;
@@ -112,5 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    if (saveBtn) saveBtn.addEventListener('click', saveAdvice);
     renderFeed();
 });
