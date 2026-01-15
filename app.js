@@ -10,30 +10,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let deferredPrompt;
     const installBtn = document.getElementById('install-btn');
 
+    // Check if it's iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
     window.addEventListener('beforeinstallprompt', (e) => {
-        // Prevent Chrome 67 and earlier from automatically showing the prompt
         e.preventDefault();
-        // Stash the event so it can be triggered later.
         deferredPrompt = e;
-        // Update UI notify the user they can add to home screen
-        if (installBtn) installBtn.style.display = 'block';
+        // Button visibility is now handled in the 'enter-cfh' click listener
     });
 
     if (installBtn) {
+        // If it's iOS, update the label to show it's a guide
+        if (isIOS) {
+            installBtn.textContent = 'INSTALL ON IPHONE +';
+        }
+
         installBtn.addEventListener('click', (e) => {
-            // hide our install button
-            installBtn.style.display = 'none';
-            // Show the prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('User accepted the A2HS prompt');
-                } else {
-                    console.log('User dismissed the A2HS prompt');
-                }
-                deferredPrompt = null;
-            });
+            if (isIOS) {
+                alert('To install on iPhone: \n1. Tap the Share button at the bottom center. \n2. Scroll down and select "Add to Home Screen".');
+                return;
+            }
+
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        installBtn.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert('Please wait a moment for the browser to enable the installation protocol, or use your browser\'s manual "Add to Home Screen" option.');
+            }
         });
     }
 
@@ -47,6 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
         enterBtn.addEventListener('click', () => {
             entryScreen.classList.add('hidden');
             selection.style.display = 'flex';
+
+            // Show the install button explicitly when entering CFH
+            // Hide it only if the app is already installed
+            const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
+            if (installBtn && !isInstalled) {
+                installBtn.style.display = 'block';
+            }
         });
     }
 
