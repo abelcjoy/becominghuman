@@ -8,14 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(err => console.log('Service Worker Failed', err));
     }
 
-    const enterBtn = document.getElementById('enter-btn');
-    const mainGate = document.getElementById('main-gate');
+    const enterBtn = document.getElementById('enter-cfh');
+    const entryScreen = document.getElementById('entry-screen');
     const selection = document.getElementById('selection-screen');
+    const backBtn = document.getElementById('back-btn');
 
     if (enterBtn) {
         enterBtn.addEventListener('click', () => {
-            mainGate.classList.add('hidden');
+            entryScreen.classList.add('hidden');
             selection.style.display = 'flex';
+            if (backBtn) backBtn.classList.remove('hidden');
+        });
+    }
+
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            entryScreen.classList.remove('hidden');
+            selection.style.display = 'none';
+            backBtn.classList.add('hidden');
         });
     }
 
