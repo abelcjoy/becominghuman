@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Safe Elements Access ---
     const enterBtn = document.getElementById('enter-cfh');
     const notifyBtn = document.getElementById('enable-alerts');
+    const backBtn = document.getElementById('back-home');
 
     // --- 1. Attach Button Listeners (Immediate) ---
     if (enterBtn) {
