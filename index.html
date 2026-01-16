@@ -276,212 +276,224 @@
         <!-- List of Protocols -->
         <div id="protocol-selector" class="protocol-list">
             <div class="protocol-item" onclick="openProtocol('P.M.O. Recovery')">P.M.O. Recovery</div>
-            <div class="protocol-item" onclick="openProtocol('Reflections')">Reflections</div>
-
-
 
             <button id="install-btn" class="btn btn-primary"
                 style="display:none; margin-top: 2rem; width: 100%; max-width: 400px; align-self: center; background: #000; color: #fff;">ADD
                 TO HOME +</button>
+
+            <!-- Detail View (Initially Hidden) -->
+            <div id="protocol-detail" style="display: none; flex-direction: column;">
+                <div id="back-to-selection"
+                    style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
+                    BACK TO SELECTION</div>
+
+                <!-- Reload Banner -->
+                <div
+                    style="color: #000; text-align: center; border: 2px solid #000; padding: 1.5rem; width: 100%; margin-bottom: 2.5rem;">
+                    <div
+                        style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">
+                        REFRESH FOR LATEST UPDATES</div>
+                    <div
+                        style="font-size: 0.6rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;">
+                        New clinical data may require a manual reload to bypass system cache.</div>
+                    <button onclick="location.reload()"
+                        style="background: #000; color: #fff; border: none; padding: 0.6rem 1.2rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">RELOAD
+                        PAGE</button>
+                </div>
+
+                <!-- Global Broadcast Prompt -->
+                <div id="notification-prompt"
+                    style="margin-bottom: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
+                    <div
+                        style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
+                        Broadcast Protocol</div>
+                    <div id="notification-text" style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Get
+                        alerts whenever new advice is posted.</div>
+                    <button id="enable-alerts" class="btn btn-primary"
+                        style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
+                        LIVE ALERTS</button>
+                </div>
+
+                <div id="advice-feed"></div>
+            </div>
         </div>
 
-        <!-- Detail View (Initially Hidden) -->
-        <div id="protocol-detail" style="display: none; flex-direction: column;">
-            <div id="back-to-selection"
-                style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
-                BACK TO SELECTION</div>
+        <!-- About Screen -->
+        <div id="about-screen">
+            <div class="content-container">
+                <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
+                <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">About
+                    the
+                    Mission</h1>
+                <p style="margin-bottom:1.5rem;">CFH (Clarity for Humans) is a digital laboratory dedicated to the
+                    science
+                    of behavioral recovery. Our mission is to provide evidence-based insights and real-time
+                    interventions
+                    for individuals struggling with high-intensity digital stimuli and compulsive behaviors.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Evidence-Based Approach</h2>
+                <p style="margin-bottom:1.5rem;">We believe in the power of neuroscience and behavioral psychology. Our
+                    protocols are designed to help users stabilize their reward systems and regain cognitive control
+                    through
+                    focused advice and clinical reflections.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Professional Integrity</h2>
+                <p style="margin-bottom:1.5rem;">CFH is operated as an educational resource. We prioritize user privacy
+                    and
+                    data security above all else, ensuring a safe harbor for those on their journey toward behavioral
+                    freedom.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Contact</h2>
+                <p>For inquiries regarding our protocols or research mission:
+                    <br><strong>clarityforhumanscfh@gmail.com</strong>
+                </p>
+            </div>
+        </div>
 
-            <!-- Reload Banner -->
-            <div
-                style="color: #000; text-align: center; border: 2px solid #000; padding: 1.5rem; width: 100%; margin-bottom: 2.5rem;">
-                <div
-                    style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">
-                    REFRESH FOR LATEST UPDATES</div>
-                <div
-                    style="font-size: 0.6rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;">
-                    New clinical data may require a manual reload to bypass system cache.</div>
+        <!-- Privacy Screen -->
+        <div id="privacy-screen">
+            <div class="content-container">
+                <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
+                <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">
+                    Privacy
+                    Policy</h1>
+                <p>At CFH, one of our main priorities is the privacy of our visitors. This Privacy Policy document
+                    contains
+                    types of information that is collected and recorded by CFH and how we use it.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Log Files</h2>
+                <p>CFH follows a standard procedure of using log files. These files log visitors when they visit
+                    websites.
+                    This is not linked to any information that is personally identifiable.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Cookies</h2>
+                <p>Like any other website, CFH uses "cookies". These cookies are used to store information including
+                    visitors' preferences and optimized user experience.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Consent</h2>
+                <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.
+                </p>
+            </div>
+        </div>
+
+        <!-- Terms Screen -->
+        <div id="terms-screen">
+            <div class="content-container">
+                <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
+                <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">Terms
+                    of
+                    Service</h1>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">1. Agreement</h2>
+                <p>By accessing CFH, you agree to be bound by these terms of service and all applicable laws.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">2. Disclaimer</h2>
+                <p>The materials on CFH's website are provided on an 'as is' basis. CFH makes no warranties, expressed
+                    or
+                    implied.</p>
+                <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">3. Medical Disclaimer</h2>
+                <p>Content on CFH is for educational purposes only and does not constitute medical advice, diagnosis, or
+                    treatment. Always seek professional help.</p>
+            </div>
+        </div>
+
+        <!-- Utility Screen -->
+        <div id="utility-screen">
+            <div class="content-container">
+                <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
+                <h1
+                    style="text-transform:uppercase; letter-spacing:0.3em; margin-bottom: 3rem; font-weight:300; text-align:center;">
+                    Utility Tools</h1>
+                <div class="tools-grid">
+                    <div class="tool-card" onclick="alert('Coming soon')">
+                        <h3
+                            style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
+                            BMI Calculator</h3>
+                        <p style="font-size:0.8rem;">Calculate health metrics.</p>
+                    </div>
+                    <div class="tool-card" onclick="alert('Coming soon')">
+                        <h3
+                            style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
+                            Stopwatch</h3>
+                        <p style="font-size:0.8rem;">Track your progress.</p>
+                    </div>
+                    <div class="tool-card" onclick="openSecretCalc()">
+                        <h3
+                            style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
+                            Calculator</h3>
+                        <p style="font-size:0.8rem;">Standard math utility.</p>
+                    </div>
+                    <div class="tool-card" onclick="alert('Coming soon')">
+                        <h3
+                            style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
+                            Notepad</h3>
+                        <p style="font-size:0.8rem;">Save local thoughts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Secret Calculator Overlay -->
+        <div id="calculator-overlay">
+            <h2
+                style="text-transform:uppercase; letter-spacing:0.2em; font-size: 0.8rem; margin-bottom: 2rem; color: #888;">
+                Calculator</h2>
+            <div id="calc-screen"
+                style="width:100%; max-width:300px; border:2px solid #000; padding:1.5rem; font-size:1.5rem; text-align:right; margin-bottom:1rem; font-family:monospace;">
+                0</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:300px;">
+                <button class="calc-btn" onclick="press('7')">7</button>
+                <button class="calc-btn" onclick="press('8')">8</button>
+                <button class="calc-btn" onclick="press('9')">9</button>
+                <button class="calc-btn" onclick="press('/')">/</button>
+                <button class="calc-btn" onclick="press('4')">4</button>
+                <button class="calc-btn" onclick="press('5')">5</button>
+                <button class="calc-btn" onclick="press('6')">6</button>
+                <button class="calc-btn" onclick="press('*')">*</button>
+                <button class="calc-btn" onclick="press('1')">1</button>
+                <button class="calc-btn" onclick="press('2')">2</button>
+                <button class="calc-btn" onclick="press('3')">3</button>
+                <button class="calc-btn" onclick="press('-')">-</button>
+                <button class="calc-btn" onclick="press('0')">0</button>
+                <button class="calc-btn" onclick="press('.')">.</button>
+                <button class="calc-btn" onclick="compute()">=</button>
+                <button class="calc-btn" onclick="press('+')">+</button>
+                <button class="calc-btn" style="grid-column:span 4; margin-top:10px;"
+                    onclick="clearCalc()">CLEAR</button>
+            </div>
+            <div class="back-link" style="margin-top:2rem;" onclick="closeSecretCalc()">Cancel</div>
+        </div>
+
+        <!-- Hidden Admin Panel -->
+        <div id="admin-panel">
+            <div style="width:100%; max-width:600px;">
+                <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed
+                </h2>
+                <select id="advice-category"
+                    style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width:100%;">
+                    <option value="P.M.O. Recovery">P.M.O. Recovery</option>
+                    <option value="Reflections">Reflections</option>
+                </select>
+                <textarea id="advice-text" placeholder="Enter clinical advice..."
+                    style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem;"></textarea>
+                <input type="text" id="advice-date" placeholder="Date..."
+                    style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:1rem;">
+                <input type="text" id="advice-link" placeholder="Source URL..."
+                    style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
+                <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width:100%;">POST
+                    TO
+                    LIVE FEED</button>
+
+                <div style="margin-top:4rem; border-top:1px solid #eee; padding-top:2rem;">
+                    <h3 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:0.2em; margin-bottom:1.5rem;">
+                        Live
+                        Feed Management</h3>
+                    <div id="admin-posts-list" style="max-height:400px; overflow-y:auto;"></div>
+                </div>
                 <button onclick="location.reload()"
-                    style="background: #000; color: #fff; border: none; padding: 0.6rem 1.2rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">RELOAD
-                    PAGE</button>
-            </div>
-
-            <!-- Global Broadcast Prompt -->
-            <div id="notification-prompt"
-                style="margin-bottom: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
-                <div
-                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
-                    Broadcast Protocol</div>
-                <div id="notification-text" style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Get
-                    alerts whenever new advice is posted.</div>
-                <button id="enable-alerts" class="btn btn-primary"
-                    style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
-                    LIVE ALERTS</button>
-            </div>
-
-            <div id="advice-feed"></div>
-        </div>
-    </div>
-
-    <!-- About Screen -->
-    <div id="about-screen">
-        <div class="content-container">
-            <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">About the
-                Mission</h1>
-            <p style="margin-bottom:1.5rem;">CFH (Clarity for Humans) is a digital laboratory dedicated to the science
-                of behavioral recovery. Our mission is to provide evidence-based insights and real-time interventions
-                for individuals struggling with high-intensity digital stimuli and compulsive behaviors.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Evidence-Based Approach</h2>
-            <p style="margin-bottom:1.5rem;">We believe in the power of neuroscience and behavioral psychology. Our
-                protocols are designed to help users stabilize their reward systems and regain cognitive control through
-                focused advice and clinical reflections.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Professional Integrity</h2>
-            <p style="margin-bottom:1.5rem;">CFH is operated as an educational resource. We prioritize user privacy and
-                data security above all else, ensuring a safe harbor for those on their journey toward behavioral
-                freedom.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Contact</h2>
-            <p>For inquiries regarding our protocols or research mission:
-                <br><strong>clarityforhumanscfh@gmail.com</strong>
-            </p>
-        </div>
-    </div>
-
-    <!-- Privacy Screen -->
-    <div id="privacy-screen">
-        <div class="content-container">
-            <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">Privacy
-                Policy</h1>
-            <p>At CFH, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains
-                types of information that is collected and recorded by CFH and how we use it.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Log Files</h2>
-            <p>CFH follows a standard procedure of using log files. These files log visitors when they visit websites.
-                This is not linked to any information that is personally identifiable.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Cookies</h2>
-            <p>Like any other website, CFH uses "cookies". These cookies are used to store information including
-                visitors' preferences and optimized user experience.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Consent</h2>
-            <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
-        </div>
-    </div>
-
-    <!-- Terms Screen -->
-    <div id="terms-screen">
-        <div class="content-container">
-            <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">Terms of
-                Service</h1>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">1. Agreement</h2>
-            <p>By accessing CFH, you agree to be bound by these terms of service and all applicable laws.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">2. Disclaimer</h2>
-            <p>The materials on CFH's website are provided on an 'as is' basis. CFH makes no warranties, expressed or
-                implied.</p>
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0;">3. Medical Disclaimer</h2>
-            <p>Content on CFH is for educational purposes only and does not constitute medical advice, diagnosis, or
-                treatment. Always seek professional help.</p>
-        </div>
-    </div>
-
-    <!-- Utility Screen -->
-    <div id="utility-screen">
-        <div class="content-container">
-            <div class="back-link" onclick="showScreen('entry-screen')">Return to Core</div>
-            <h1
-                style="text-transform:uppercase; letter-spacing:0.3em; margin-bottom: 3rem; font-weight:300; text-align:center;">
-                Utility Tools</h1>
-            <div class="tools-grid">
-                <div class="tool-card" onclick="alert('Coming soon')">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        BMI Calculator</h3>
-                    <p style="font-size:0.8rem;">Calculate health metrics.</p>
-                </div>
-                <div class="tool-card" onclick="alert('Coming soon')">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        Stopwatch</h3>
-                    <p style="font-size:0.8rem;">Track your progress.</p>
-                </div>
-                <div class="tool-card" onclick="openSecretCalc()">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        Calculator</h3>
-                    <p style="font-size:0.8rem;">Standard math utility.</p>
-                </div>
-                <div class="tool-card" onclick="alert('Coming soon')">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        Notepad</h3>
-                    <p style="font-size:0.8rem;">Save local thoughts.</p>
-                </div>
+                    style="margin-top:3rem; border:1px solid #000; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">SECURE
+                    LOGOUT</button>
             </div>
         </div>
-    </div>
 
-    <!-- Secret Calculator Overlay -->
-    <div id="calculator-overlay">
-        <h2
-            style="text-transform:uppercase; letter-spacing:0.2em; font-size: 0.8rem; margin-bottom: 2rem; color: #888;">
-            Calculator</h2>
-        <div id="calc-screen"
-            style="width:100%; max-width:300px; border:2px solid #000; padding:1.5rem; font-size:1.5rem; text-align:right; margin-bottom:1rem; font-family:monospace;">
-            0</div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:300px;">
-            <button class="calc-btn" onclick="press('7')">7</button>
-            <button class="calc-btn" onclick="press('8')">8</button>
-            <button class="calc-btn" onclick="press('9')">9</button>
-            <button class="calc-btn" onclick="press('/')">/</button>
-            <button class="calc-btn" onclick="press('4')">4</button>
-            <button class="calc-btn" onclick="press('5')">5</button>
-            <button class="calc-btn" onclick="press('6')">6</button>
-            <button class="calc-btn" onclick="press('*')">*</button>
-            <button class="calc-btn" onclick="press('1')">1</button>
-            <button class="calc-btn" onclick="press('2')">2</button>
-            <button class="calc-btn" onclick="press('3')">3</button>
-            <button class="calc-btn" onclick="press('-')">-</button>
-            <button class="calc-btn" onclick="press('0')">0</button>
-            <button class="calc-btn" onclick="press('.')">.</button>
-            <button class="calc-btn" onclick="compute()">=</button>
-            <button class="calc-btn" onclick="press('+')">+</button>
-            <button class="calc-btn" style="grid-column:span 4; margin-top:10px;" onclick="clearCalc()">CLEAR</button>
-        </div>
-        <div class="back-link" style="margin-top:2rem;" onclick="closeSecretCalc()">Cancel</div>
-    </div>
+        <!-- Firebase SDKs -->
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
-    <!-- Hidden Admin Panel -->
-    <div id="admin-panel">
-        <div style="width:100%; max-width:600px;">
-            <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed</h2>
-            <select id="advice-category" style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width:100%;">
-                <option value="P.M.O. Recovery">P.M.O. Recovery</option>
-                <option value="Reflections">Reflections</option>
-            </select>
-            <textarea id="advice-text" placeholder="Enter clinical advice..."
-                style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem;"></textarea>
-            <input type="text" id="advice-date" placeholder="Date..."
-                style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:1rem;">
-            <input type="text" id="advice-link" placeholder="Source URL..."
-                style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
-            <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width:100%;">POST TO
-                LIVE FEED</button>
-
-            <div style="margin-top:4rem; border-top:1px solid #eee; padding-top:2rem;">
-                <h3 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:0.2em; margin-bottom:1.5rem;">Live
-                    Feed Management</h3>
-                <div id="admin-posts-list" style="max-height:400px; overflow-y:auto;"></div>
-            </div>
-            <button onclick="location.reload()"
-                style="margin-top:3rem; border:1px solid #000; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">SECURE
-                LOGOUT</button>
-        </div>
-    </div>
-
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-    <script src="app.js"></script>
+        <script src="app.js"></script>
 </body>
 
 </html>
