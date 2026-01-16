@@ -53,8 +53,8 @@ window.openProtocol = function (category) {
             }
         } else {
             if (notifyText) notifyText.textContent = category === 'P.M.O. Recovery'
-                ? 'Get recovery advice daily.'
-                : 'Get alerts for updates.';
+                ? 'Updated Daily with 5 New Posts.'
+                : 'Get alerts for daily updates.';
 
             if (notifyBtn) {
                 notifyBtn.textContent = 'ENABLE LIVE ALERTS';
