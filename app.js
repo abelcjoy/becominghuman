@@ -90,27 +90,33 @@ window.renderFeed = function (filterCategory = null) {
     }
 
     let hasContent = false;
-    globalPosts.forEach((item, index) => {
-        if (!filterCategory || item.category === filterCategory) {
-            hasContent = true;
-            const card = document.createElement('div');
-            card.className = 'advice-card';
 
-            const isLong = item.text.length > 250;
-            const displayText = isLong ? item.text.substring(0, 250) + '...' : item.text;
+    // Safety check filter first to get total count
+    const relevantPosts = globalPosts.filter(p => !filterCategory || p.category === filterCategory);
+    const totalCount = relevantPosts.length;
 
-            card.innerHTML = `
-                <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">
-                    ${item.date || 'TODAY'}
-                </div>
-                <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color:#000;">
-                    ${displayText}
-                </div>
-                ${isLong ? `<button class="read-more-toggle" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
-                ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview">OPEN RESOURCE</a></div>` : ''}
-            `;
-            feed.appendChild(card);
-        }
+    relevantPosts.forEach((item, index) => {
+        hasContent = true;
+        const card = document.createElement('div');
+        card.className = 'advice-card';
+
+        const isLong = item.text.length > 250;
+        const displayText = isLong ? item.text.substring(0, 250) + '...' : item.text;
+
+        // Calculate Number (Newest is highest)
+        const postNum = totalCount - index;
+
+        card.innerHTML = `
+            <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">
+                PROTOCOL POST #${postNum}
+            </div>
+            <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color:#000;">
+                ${displayText}
+            </div>
+            ${isLong ? `<button class="read-more-toggle" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
+            ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview">OPEN RESOURCE</a></div>` : ''}
+        `;
+        feed.appendChild(card);
     });
 
     if (!hasContent) {
@@ -297,17 +303,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Admin List
+    // Admin List
     window.renderAdminList = () => {
         const list = document.getElementById('admin-posts-list');
         if (!list) return;
         list.innerHTML = '';
-        globalPosts.forEach(p => {
+
+        let count = globalPosts.length;
+
+        globalPosts.forEach((p, i) => {
             const row = document.createElement('div');
             row.style.borderBottom = '1px solid #eee';
             row.style.padding = '10px';
             row.style.display = 'flex';
             row.style.justifyContent = 'space-between';
-            row.innerHTML = `<span>${p.text.substring(0, 30)}...</span> <button onclick="deletePost('${p.id}')" style="color:red;">DEL</button>`;
+            const postNum = count - i;
+
+            row.innerHTML = `<span style="font-size:0.75rem;"><b>#${postNum}</b>: ${p.text.substring(0, 30)}...</span> <button onclick="deletePost('${p.id}')" style="color:red; cursor:pointer;">DEL</button>`;
             list.appendChild(row);
         });
     };
@@ -327,7 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 db.collection('posts').add({
                     text: txt,
                     category: cat,
-                    date: document.getElementById('advice-date').value || new Date().toLocaleDateString(),
                     link: document.getElementById('advice-link').value,
                     timestamp: new Date().getTime()
                 }).then(() => {
