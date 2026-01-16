@@ -93,16 +93,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Manage Notification Prompt
         const notifyText = document.getElementById('notification-text');
+        const notifyBtn = document.getElementById('enable-alerts');
+
         if (notifyPrompt) {
+            notifyPrompt.style.display = 'block'; // Always show for now
             if (Notification.permission === 'granted') {
-                notifyPrompt.style.display = 'none';
+                if (notifyText) notifyText.textContent = 'Live Alerts are Active.';
+                if (notifyBtn) {
+                    notifyBtn.textContent = 'ALERTS ON';
+                    notifyBtn.style.opacity = '0.5';
+                    notifyBtn.disabled = true;
+                }
             } else {
-                notifyPrompt.style.display = 'block';
                 // Dynamic Text
                 if (category === 'P.M.O. Recovery') {
                     if (notifyText) notifyText.textContent = 'Get PMO recovery advice and tips whenever they are posted.';
                 } else {
                     if (notifyText) notifyText.textContent = 'Get alerts whenever new updates are posted.';
+                }
+                if (notifyBtn) {
+                    notifyBtn.textContent = 'ENABLE LIVE ALERTS';
+                    notifyBtn.style.opacity = '1';
+                    notifyBtn.disabled = false;
                 }
             }
         }
@@ -125,8 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         }).then(token => {
                             if (token) {
                                 console.log('User registered:', token);
-                                if (notifyPrompt) notifyPrompt.style.display = 'none';
                                 alert('Live Alerts Activated.');
+                                // Update UI immediately
+                                const notifyText = document.getElementById('notification-text');
+                                if (notifyText) notifyText.textContent = 'Live Alerts are Active.';
+                                notifyBtn.textContent = 'ALERTS ON';
+                                notifyBtn.style.opacity = '0.5';
+                                notifyBtn.disabled = true;
                             }
                         });
                     });
@@ -140,9 +157,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!feed) return;
         feed.innerHTML = '';
 
+        let hasContent = false;
+
         globalPosts.forEach((item, index) => {
             // Filter logic
             if (!filterCategory || item.category === filterCategory) {
+                hasContent = true;
                 const card = document.createElement('div');
                 card.className = 'advice-card';
 
@@ -158,6 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 feed.appendChild(card);
             }
         });
+
+        if (!hasContent) {
+            feed.innerHTML = `<div style="text-align:center; color:#888; margin-top:2rem; font-size:0.8rem;">NO CONTENT AVAILABLE. <br> PLEASE RELOAD OR CHECK BACK LATER.</div>`;
+        }
     }
 
     // Toggle Read More
