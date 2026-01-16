@@ -144,9 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Safe Elements Access ---
     const enterBtn = document.getElementById('enter-cfh');
-    const backBtn = document.getElementById('back-home');
-    const backSelectBtn = document.getElementById('back-to-selection');
-    const installBtn = document.getElementById('install-btn');
     const notifyBtn = document.getElementById('enable-alerts');
 
     // --- 1. Attach Button Listeners (Immediate) ---
@@ -158,12 +155,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (selector) selector.style.display = 'flex';
             if (detailView) detailView.style.display = 'none';
             showScreen('selection-screen');
-
-            // Show Install Button if applicable
-            const isInstalled = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-            if (installBtn && !isInstalled) installBtn.style.display = 'block';
         };
     }
+    const backSelectBtn = document.getElementById('back-to-selection');
+
 
     if (backBtn) backBtn.onclick = () => showScreen('entry-screen');
 
@@ -227,22 +222,49 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 3. Notification Logic ---
-    if (notifyBtn && messaging) {
+    if (notifyBtn) {
+        console.log("Notification Logic: Button Found");
         notifyBtn.onclick = () => {
+            console.log("Notification Logic: Clicked");
+            if (!('Notification' in window)) {
+                alert("This browser does not support desktop notification");
+                return;
+            }
+
+            if (Notification.permission === 'denied') {
+                alert("Notifications are blocked. Please reset permission in browser settings.");
+                return;
+            }
+
+            if (!messaging) {
+                console.error("Messaging not ready yet.");
+                alert("System initializing... please wait 2 seconds and try again.");
+                return;
+            }
+
             Notification.requestPermission().then(permission => {
+                console.log("Permission:", permission);
                 if (permission === 'granted') {
                     navigator.serviceWorker.ready.then(reg => {
+                        console.log("SW Ready, getting token...");
                         messaging.getToken({
                             serviceWorkerRegistration: reg,
                             vapidKey: 'BFMMPXGv8s1QUGI3Rl50DwiZnHteiJ5629LPX5tICWsOfXSJ6QiFpzsyljATAHDl2bRNpHdEtIhTptZ3f1QcYG8'
-                        }).then(() => {
+                        }).then((token) => {
+                            console.log("Token Received:", token);
                             alert("Protocol Alerts Enabled.");
-                            document.getElementById('notification-text').textContent = 'Live Alerts are Active.';
+                            const txt = document.getElementById('notification-text');
+                            if (txt) txt.textContent = 'Live Alerts are Active.';
                             notifyBtn.textContent = 'ALERTS ON';
                             notifyBtn.style.opacity = '0.5';
                             notifyBtn.disabled = true;
+                        }).catch(err => {
+                            console.error("Token Error:", err);
+                            alert("Error subscribing to alerts: " + err.message);
                         });
                     });
+                } else {
+                    alert("Notifications were not granted.");
                 }
             });
         };
