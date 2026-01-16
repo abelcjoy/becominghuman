@@ -280,42 +280,42 @@
             <button id="install-btn" class="btn btn-primary"
                 style="display:none; margin-top: 2rem; width: 100%; max-width: 400px; align-self: center; background: #000; color: #fff;">ADD
                 TO HOME +</button>
+        </div>
 
-            <!-- Detail View (Initially Hidden) -->
-            <div id="protocol-detail" style="display: none; flex-direction: column;">
-                <div id="back-to-selection"
-                    style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
-                    BACK TO SELECTION</div>
+        <!-- Detail View (Initially Hidden) -->
+        <div id="protocol-detail" style="display: none; flex-direction: column;">
+            <div id="back-to-selection"
+                style="cursor:pointer; font-size: 0.7rem; letter-spacing: 0.3em; margin-bottom: 2rem; color: #888; text-transform: uppercase; font-weight: 700; border-bottom: 1px solid #eee; padding-bottom: 5px; display: inline-block;">
+                BACK TO SELECTION</div>
 
-                <!-- Reload Banner -->
+            <!-- Reload Banner -->
+            <div
+                style="color: #000; text-align: center; border: 2px solid #000; padding: 1.5rem; width: 100%; margin-bottom: 2.5rem;">
                 <div
-                    style="color: #000; text-align: center; border: 2px solid #000; padding: 1.5rem; width: 100%; margin-bottom: 2.5rem;">
-                    <div
-                        style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">
-                        REFRESH FOR LATEST UPDATES</div>
-                    <div
-                        style="font-size: 0.6rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;">
-                        New clinical data may require a manual reload to bypass system cache.</div>
-                    <button onclick="location.reload()"
-                        style="background: #000; color: #fff; border: none; padding: 0.6rem 1.2rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">RELOAD
-                        PAGE</button>
-                </div>
-
-                <!-- Global Broadcast Prompt -->
-                <div id="notification-prompt"
-                    style="margin-bottom: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
-                    <div
-                        style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
-                        Broadcast Protocol</div>
-                    <div id="notification-text" style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Get
-                        alerts whenever new advice is posted.</div>
-                    <button id="enable-alerts" class="btn btn-primary"
-                        style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
-                        LIVE ALERTS</button>
-                </div>
-
-                <div id="advice-feed"></div>
+                    style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 800; margin-bottom: 0.5rem;">
+                    REFRESH FOR LATEST UPDATES</div>
+                <div
+                    style="font-size: 0.6rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;">
+                    New clinical data may require a manual reload to bypass system cache.</div>
+                <button onclick="location.reload()"
+                    style="background: #000; color: #fff; border: none; padding: 0.6rem 1.2rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;">RELOAD
+                    PAGE</button>
             </div>
+
+            <!-- Global Broadcast Prompt -->
+            <div id="notification-prompt"
+                style="margin-bottom: 3rem; padding: 1.5rem; border: 1px dashed #ccc; text-align: center;">
+                <div
+                    style="font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem;">
+                    Broadcast Protocol</div>
+                <div id="notification-text" style="font-size: 0.8rem; margin-bottom: 1.2rem; font-weight: 500;">Get
+                    alerts whenever new advice is posted.</div>
+                <button id="enable-alerts" class="btn btn-primary"
+                    style="background: #000; color: #fff; font-size: 0.6rem; padding: 0.8rem 1.5rem; width: auto;">ENABLE
+                    LIVE ALERTS</button>
+            </div>
+
+            <div id="advice-feed"></div>
         </div>
 
         <!-- About Screen -->
