@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const enterBtn = document.getElementById('enter-cfh');
     const notifyBtn = document.getElementById('enable-alerts');
     const backBtn = document.getElementById('back-home');
+    const backSelectBtn = document.getElementById('back-to-selection');
 
     // --- 1. Attach Button Listeners (Immediate) ---
     if (enterBtn) {
@@ -158,17 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
             showScreen('selection-screen');
         };
     }
-    const backSelectBtn = document.getElementById('back-to-selection');
-
 
     if (backBtn) backBtn.onclick = () => showScreen('entry-screen');
 
-    if (backSelectBtn) backSelectBtn.onclick = () => {
-        const selector = document.getElementById('protocol-selector');
-        const detailView = document.getElementById('protocol-detail');
-        if (selector) selector.style.display = 'flex';
-        if (detailView) detailView.style.display = 'none';
-    };
+    if (backSelectBtn) {
+        backSelectBtn.onclick = () => {
+            console.log("Back to Selection Clicked");
+            const selector = document.getElementById('protocol-selector');
+            const detailView = document.getElementById('protocol-detail');
+            if (selector) selector.style.display = 'flex';
+            if (detailView) detailView.style.display = 'none';
+        };
+    }
 
     // --- 2. Initialize Firebase ---
     let db = null;
@@ -233,13 +235,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (Notification.permission === 'denied') {
-                alert("Notifications are blocked. Please reset permission in browser settings.");
+                alert("⚠️ ACCESS BLOCKED ⚠️\n\nYour browser is blocking notifications.\n\nTO FIX THIS:\n1. Click the Lock icon 🔒 (or Settings) in your address bar.\n2. Find 'Notifications' and set to 'Allow'.\n3. Reload the page.\n\nThe app cannot override this setting.");
                 return;
             }
 
             if (!messaging) {
                 console.error("Messaging not ready yet.");
-                alert("System initializing... please wait 2 seconds and try again.");
+                alert("Establishing secure connection... wait 2 seconds and click again.");
                 return;
             }
 
