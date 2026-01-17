@@ -112,7 +112,8 @@ window.renderFeed = function (filterCategory = null) {
         let displayTag = item.category || 'P_Addiction';
 
         if (displayTag === 'Health Advice') bgColor = '#cc0000'; // Red
-        if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow for readability
+        if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow
+        if (displayTag === 'Wisdom') bgColor = '#666666'; // Gray
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
