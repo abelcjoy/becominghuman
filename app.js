@@ -9,32 +9,28 @@ let globalPosts = [];
 // Navigation: Entry -> Selection -> About/Privacy/etc
 window.showScreen = function (screenId) {
     const screens = [
-        'entry-screen', 'selection-screen', 'about-screen',
+        'main-discovery-feed', 'entry-screen', 'selection-screen', 'about-screen',
         'privacy-screen', 'terms-screen', 'utility-screen'
     ];
     screens.forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.style.display = (id === screenId) ? 'flex' : 'none';
+        if (el) el.style.display = (id === screenId) ? (id.includes('feed') ? 'block' : 'flex') : 'none';
     });
+
+    // Auto-scroll to top on screen change
+    window.scrollTo(0, 0);
 };
 
 // Navigation: Selection -> Protocol Detail
 window.openProtocol = function (category) {
     // 1. Get Elements
-    const selector = document.getElementById('protocol-selector');
     const detailView = document.getElementById('protocol-detail');
-    const notifyPrompt = document.getElementById('notification-prompt');
-    const notifyText = document.getElementById('notification-text');
-    const notifyBtn = document.getElementById('enable-alerts');
+    const mainFeed = document.getElementById('main-discovery-feed');
 
-    // 2. Debug Check (Remove later if annoying, but helpful now)
-    console.log("Opening Protocol:", category);
+    // 2. Navigation
+    if (mainFeed) showScreen('main-discovery-feed');
 
-    // 3. Toggle Visibility
-    if (selector) selector.style.display = 'none';
-    if (detailView) detailView.style.display = 'flex';
-
-    // 4. Render the Feed content
+    // 3. Render
     renderFeed(category);
 
     // 5. Setup Notification Box
@@ -201,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
             db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
                 globalPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-                // Refresh View if we are currently looking at a feed
-                const detail = document.getElementById('protocol-detail');
-                if (detail && detail.style.display === 'flex') {
-                    renderFeed('P.M.O. Recovery'); // Default refresh
+                // Auto-render if we are on the main feed
+                const mainFeed = document.getElementById('main-discovery-feed');
+                if (mainFeed && mainFeed.style.display !== 'none') {
+                    renderFeed('P.M.O. Recovery');
                 }
 
                 // Refresh Admin
