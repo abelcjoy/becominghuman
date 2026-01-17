@@ -292,7 +292,15 @@ document.addEventListener('DOMContentLoaded', () => {
         notifyBtn.onclick = () => {
             console.log("Notification Logic: Clicked");
             if (!('Notification' in window)) {
-                alert("This browser does not support desktop notification");
+                const ua = navigator.userAgent || navigator.vendor || window.opera;
+                const isInstagram = ua.indexOf('Instagram') > -1;
+                const isFacebook = (ua.indexOf('FBAN') > -1) || (ua.indexOf('FBAV') > -1);
+
+                if (isInstagram || isFacebook) {
+                    alert("⚠️ SYSTEM LIMITATION ⚠️\n\nYou are viewing this inside the Instagram/Facebook app.\n\nIn-app browsers block notifications and installs.\n\nTO FIX THIS:\n1. Tap the 3 dots (...) in the top right.\n2. Tap 'Open in External Browser' (or Chrome/Safari).\n\nThen you can enable notifications and install the laboratory icon.");
+                } else {
+                    alert("This browser does not support notifications. Please try using Chrome or Safari.");
+                }
                 return;
             }
 
