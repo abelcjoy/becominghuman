@@ -114,6 +114,7 @@ window.renderFeed = function (filterCategory = null) {
         if (displayTag === 'Health Advice') bgColor = '#cc0000'; // Red
         if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow
         if (displayTag === 'Wisdom') bgColor = '#666666'; // Gray
+        if (displayTag === 'Oh Really!?') bgColor = '#4b0082'; // Indigo/Deep Purple for 'Wonder'
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
