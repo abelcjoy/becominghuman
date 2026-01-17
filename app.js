@@ -24,8 +24,10 @@ window.showScreen = function (screenId) {
 // Navigation: Selection -> Protocol Detail
 window.openProtocol = function (category) {
     // 1. Get Elements
-    const detailView = document.getElementById('protocol-detail');
     const mainFeed = document.getElementById('main-discovery-feed');
+    const notifyPrompt = document.getElementById('notification-prompt');
+    const notifyText = document.getElementById('notification-text');
+    const notifyBtn = document.getElementById('enable-alerts');
 
     // 2. Navigation
     if (mainFeed) showScreen('main-discovery-feed');
@@ -48,10 +50,7 @@ window.openProtocol = function (category) {
                 notifyBtn.disabled = true;
             }
         } else {
-            if (notifyText) notifyText.textContent = category === 'P.M.O. Recovery'
-                ? 'Updated Daily with 5 New Posts.'
-                : 'Get alerts for daily updates.';
-
+            if (notifyText) notifyText.textContent = 'Updated Daily with 5 New Posts.';
             if (notifyBtn) {
                 notifyBtn.textContent = 'ENABLE LIVE ALERTS';
                 notifyBtn.style.opacity = '1';
@@ -162,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    if (backBtn) backBtn.onclick = () => showScreen('entry-screen');
+    if (backBtn) backBtn.onclick = () => showScreen('main-discovery-feed');
 
     if (backSelectBtn) {
         backSelectBtn.onclick = () => {
@@ -345,4 +344,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    // Final Init: Show the feed immediately
+    showScreen('main-discovery-feed');
 });
