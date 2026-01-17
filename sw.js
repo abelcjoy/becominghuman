@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-const CACHE_NAME = 'cfh-v3';
+const CACHE_NAME = 'cfh-v4';
 const ASSETS = [
     '/',
     'index.html',
