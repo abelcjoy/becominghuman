@@ -61,7 +61,7 @@ window.openProtocol = function (category) {
                 notifyBtn.disabled = true;
             }
         } else {
-            if (notifyText) notifyText.textContent = 'Updated Daily with 5 New Posts.';
+            if (notifyText) notifyText.textContent = "Hey you... you'll definitely forget about this page. That's for sure. Enable notifications so we can pull you back into clarity whenever we post.";
             if (notifyBtn) {
                 notifyBtn.textContent = 'ENABLE POST NOTIFICATIONS';
                 notifyBtn.style.opacity = '1';
