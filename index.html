@@ -46,14 +46,21 @@
             height: 100%;
             background: #ffffff;
             color: #000000;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Enable vertical scroll */
+        }
+
+        #main-discovery-feed {
+            display: block;
+            /* Change from flex to block for natural scrolling */
+            width: 100%;
+            min-height: 100vh;
         }
 
         #entry-screen {
-            display: flex;
+            display: none;
+            /* Hidden now */
             align-items: center;
             justify-content: center;
             width: 100%;
