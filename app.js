@@ -123,6 +123,10 @@ window.renderFeed = function (filterCategory = null) {
         feed.appendChild(card);
     });
 
+    // Reveal manifest toggle once posts have loaded
+    const toggleCont = document.getElementById('manifest-toggle-container');
+    if (toggleCont) toggleCont.style.display = 'block';
+
     if (!hasContent) {
         feed.innerHTML = `
             <div style="text-align:center; padding:3rem 1rem; color:#888;">
