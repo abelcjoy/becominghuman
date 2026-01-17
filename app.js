@@ -109,11 +109,15 @@ window.renderFeed = function (filterCategory = null) {
 
         // Determine Tag Style (Strict Monochrome Laboratory Aesthetic)
         let bgColor = '#000000'; // Default Black
-        let displayTag = item.category || 'P_Addiction';
+        let displayTag = item.category || 'Addiction Recovery';
 
-        // Clean up legacy/internal names for display
-        if (displayTag === 'P_Addiction') displayTag = 'Recovery Protocol';
+        // Clean up legacy/internal names for display (Robust Check)
+        const lowTag = (item.category || "").toLowerCase();
+        if (lowTag.includes('pmo') || lowTag.includes('p_addiction') || lowTag.includes('recovery protocol')) {
+            displayTag = 'Addiction Recovery';
+        }
 
+        if (displayTag === 'Addiction Recovery') bgColor = '#000000'; // Pure Black
         if (displayTag === 'Biological Calibration') bgColor = '#444444'; // Dark Gray
         if (displayTag === 'Philosophy of Focus') bgColor = '#888888';   // Mid Gray
 
