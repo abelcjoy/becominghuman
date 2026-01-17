@@ -28,7 +28,7 @@ window.toggleManifest = function () {
     if (el) {
         const isHidden = el.style.display === 'none';
         el.style.display = isHidden ? 'block' : 'none';
-        btn.textContent = isHidden ? 'HIDE OUR VISION' : 'READ OUR VISION';
+        btn.textContent = isHidden ? 'CLICK TO HIDE' : 'READ OUR VISION';
     }
 };
 
@@ -124,6 +124,10 @@ window.renderFeed = function (filterCategory = null) {
         `;
         feed.appendChild(card);
     });
+
+    // Reveal manifest toggle once we have content or confirmed loading finished
+    const toggleCont = document.getElementById('manifest-toggle-container');
+    if (toggleCont) toggleCont.style.display = 'block';
 
     if (!hasContent) {
         feed.innerHTML = `
