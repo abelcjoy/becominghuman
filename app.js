@@ -43,16 +43,16 @@ window.openProtocol = function (category) {
         if (window.Notification && Notification.permission === 'granted') isActive = true;
 
         if (isActive) {
-            if (notifyText) notifyText.textContent = 'Live Alerts are Active.';
+            if (notifyText) notifyText.textContent = 'Post Notifications are Active.';
             if (notifyBtn) {
-                notifyBtn.textContent = 'ALERTS ON';
+                notifyBtn.textContent = 'NOTIFICATIONS ON';
                 notifyBtn.style.opacity = '0.5';
                 notifyBtn.disabled = true;
             }
         } else {
             if (notifyText) notifyText.textContent = 'Updated Daily with 5 New Posts.';
             if (notifyBtn) {
-                notifyBtn.textContent = 'ENABLE LIVE ALERTS';
+                notifyBtn.textContent = 'ENABLE POST NOTIFICATIONS';
                 notifyBtn.style.opacity = '1';
                 notifyBtn.disabled = false;
             }
@@ -256,10 +256,10 @@ document.addEventListener('DOMContentLoaded', () => {
                             vapidKey: 'BFMMPXGv8s1QUGI3Rl50DwiZnHteiJ5629LPX5tICWsOfXSJ6QiFpzsyljATAHDl2bRNpHdEtIhTptZ3f1QcYG8'
                         }).then((token) => {
                             console.log("Token Received:", token);
-                            alert("Protocol Alerts Enabled.");
+                            alert("Post Notifications Enabled.");
                             const txt = document.getElementById('notification-text');
-                            if (txt) txt.textContent = 'Live Alerts are Active.';
-                            notifyBtn.textContent = 'ALERTS ON';
+                            if (txt) txt.textContent = 'Post Notifications are Active.';
+                            notifyBtn.textContent = 'NOTIFICATIONS ON';
                             notifyBtn.style.opacity = '0.5';
                             notifyBtn.disabled = true;
                         }).catch(err => {
