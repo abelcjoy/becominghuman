@@ -107,12 +107,21 @@ window.renderFeed = function (filterCategory = null) {
         const isLong = item.text.length > 250;
         const displayText = isLong ? item.text.substring(0, 250) + '...' : item.text;
 
-        // Calculate Number (Newest is highest)
-        const postNum = totalCount - index;
+        // Determine Tag Style
+        let bgColor = '#0066cc'; // Default Blue
+        let displayTag = item.category || 'P_Addiction';
+
+        if (displayTag === 'Health Advice') bgColor = '#cc0000'; // Red
+        if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow for readability
 
         card.innerHTML = `
-            <div style="font-size:0.6rem; color:#888; margin-bottom:0.5rem; text-transform:uppercase; letter-spacing:0.1em;">
-                PROTOCOL POST #${postNum}
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">
+                    PROTOCOL POST #${postNum}
+                </div>
+                <div style="font-size:0.55rem; background:${bgColor}; color:#fff; padding:0.3rem 0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">
+                    ${displayTag}
+                </div>
             </div>
             <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color:#000;">
                 ${displayText}
@@ -217,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Auto-render if we are on the main feed
                 const mainFeed = document.getElementById('main-discovery-feed');
                 if (mainFeed && mainFeed.style.display !== 'none') {
-                    renderFeed('P.M.O. Recovery');
+                    renderFeed(null); // Show all posts on the main feed
                 }
 
                 // Refresh Admin
@@ -370,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cached) {
             globalPosts = JSON.parse(cached);
             console.log("Instant Load: Loading from device memory...");
-            renderFeed('P.M.O. Recovery');
+            renderFeed(null); // Show all posts
         }
     } catch (e) { console.warn("Cache items invalid", e); }
 
