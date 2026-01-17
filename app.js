@@ -107,14 +107,15 @@ window.renderFeed = function (filterCategory = null) {
         const isLong = item.text.length > 250;
         const displayText = isLong ? item.text.substring(0, 250) + '...' : item.text;
 
-        // Determine Tag Style
-        let bgColor = '#0066cc'; // Default Blue
+        // Determine Tag Style (Strict Monochrome Laboratory Aesthetic)
+        let bgColor = '#000000'; // Default Black
         let displayTag = item.category || 'P_Addiction';
 
-        if (displayTag === 'Health Advice') bgColor = '#cc0000'; // Red
-        if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow
-        if (displayTag === 'Wisdom') bgColor = '#666666'; // Gray
-        if (displayTag === 'Oh Really!?') bgColor = '#4b0082'; // Indigo/Deep Purple for 'Wonder'
+        // Clean up legacy/internal names for display
+        if (displayTag === 'P_Addiction') displayTag = 'Recovery Protocol';
+
+        if (displayTag === 'Biological Calibration') bgColor = '#444444'; // Dark Gray
+        if (displayTag === 'Philosophy of Focus') bgColor = '#888888';   // Mid Gray
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
