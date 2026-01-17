@@ -125,11 +125,11 @@ window.renderFeed = function (filterCategory = null) {
         const postNum = totalCount - index;
 
         card.innerHTML = `
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">
-                    PROTOCOL POST #${postNum}
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 10px;">
+                <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em; white-space: nowrap;">
+                    POST #${postNum}
                 </div>
-                <div style="font-size:0.55rem; background:${bgColor}; color:#fff; padding:0.3rem 0.6rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">
+                <div style="font-size:0.5rem; background:${bgColor}; color:#fff; padding:0.3rem 0.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; text-align: right; line-height: 1.2;">
                     ${displayTag}
                 </div>
             </div>
