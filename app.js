@@ -28,7 +28,7 @@ window.toggleManifest = function () {
     if (el) {
         const isHidden = el.style.display === 'none';
         el.style.display = isHidden ? 'block' : 'none';
-        btn.textContent = isHidden ? 'CLICK TO HIDE' : 'READ OUR VISION';
+        btn.textContent = isHidden ? 'HIDE OUR VISION' : 'READ OUR VISION';
     }
 };
 
@@ -125,10 +125,6 @@ window.renderFeed = function (filterCategory = null) {
         feed.appendChild(card);
     });
 
-    // Reveal manifest toggle once we have content or confirmed loading finished
-    const toggleCont = document.getElementById('manifest-toggle-container');
-    if (toggleCont) toggleCont.style.display = 'block';
-
     if (!hasContent) {
         feed.innerHTML = `
             <div style="text-align:center; padding:3rem 1rem; color:#888;">
@@ -210,6 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Start Listening for Data logic
             db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
                 globalPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+                // Save to Cache for instant loading next time
+                try {
+                    localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
+                } catch (e) { console.warn("Cache save failed", e); }
 
                 // Auto-render if we are on the main feed
                 const mainFeed = document.getElementById('main-discovery-feed');
@@ -358,6 +359,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     }
+
+    // --- 5. Initial Load (Instant Cache) ---
+    try {
+        const cached = localStorage.getItem('cfh_cached_posts');
+        if (cached) {
+            globalPosts = JSON.parse(cached);
+            console.log("Instant Load: Loading from device memory...");
+            renderFeed('P.M.O. Recovery');
+        }
+    } catch (e) { console.warn("Cache items invalid", e); }
 
     // Final Init: Show the feed immediately
     showScreen('main-discovery-feed');
