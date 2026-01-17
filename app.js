@@ -7,18 +7,19 @@
 let globalPosts = [];
 
 // Navigation: Entry -> Selection -> About/Privacy/etc
+// Navigation System (Hardened)
 window.showScreen = function (screenId) {
-    const screens = [
-        'main-discovery-feed', 'entry-screen', 'selection-screen', 'about-screen',
-        'privacy-screen', 'terms-screen', 'utility-screen'
-    ];
-    screens.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = (id === screenId) ? (id.includes('feed') ? 'block' : 'flex') : 'none';
+    const screens = document.querySelectorAll('.cfh-screen');
+    screens.forEach(s => {
+        if (s.id === screenId) {
+            s.style.display = (s.id === 'main-discovery-feed') ? 'block' : 'flex';
+        } else {
+            s.style.display = 'none';
+        }
     });
 
     // Auto-scroll to top on screen change
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'instant' });
 };
 
 // Toggle the Manifest/Vision section
