@@ -297,7 +297,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             if (Notification.permission === 'denied') {
-                alert("⚠️ ACCESS BLOCKED ⚠️\n\nYour browser is blocking notifications.\n\nTO FIX THIS:\n1. Click the Lock icon 🔒 (or Settings) in your address bar.\n2. Find 'Notifications' and set to 'Allow'.\n3. Reload the page.\n\nThe app cannot override this setting.");
+                const isPWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+                if (isPWA) {
+                    alert("⚠️ NOTIFICATIONS BLOCKED ⚠️\n\nYou are using the App version of CFH, where browser settings are hidden.\n\nTO FIX THIS:\n1. Open your Phone Settings.\n2. Go to 'Apps' -> 'CFH Protocol'.\n3. Tap 'Notifications' and set to 'Allowed'.\n\nOnce done, close and reopen the app.");
+                } else {
+                    alert("⚠️ ACCESS BLOCKED ⚠️\n\nYour browser is blocking notifications.\n\nTO FIX THIS:\n1. Click the Lock icon 🔒 (or Settings) in your address bar.\n2. Find 'Notifications' and set to 'Allow'.\n3. Reload the page.");
+                }
                 return;
             }
 
