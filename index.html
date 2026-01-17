@@ -32,7 +32,7 @@
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script defer src="app.js?v=1.5"></script>
+    <script defer src="app.js?v=1.6"></script>
 
 
 
@@ -46,6 +46,7 @@
     <!-- iOS support -->
     <link rel="apple-touch-icon" href="assets/icon.png">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="manifest" href="manifest.json">
     <style>
         body,
         html {
@@ -266,8 +267,18 @@
 
 <body>
 
+    <!-- PWA Install Prompt -->
+    <div id="pwa-install-prompt"
+        style="display: none; background: #000; color: #fff; padding: 1rem; position: sticky; top: 0; z-index: 9999; justify-content: space-between; align-items: center; width: 100%;">
+        <div style="font-size: 0.7rem; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase;">Install CFH
+            for Better Access</div>
+        <button id="pwa-install-btn"
+            style="background: #fff; color: #000; border: none; padding: 0.5rem 1rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; cursor: pointer; letter-spacing: 0.1em;">ADD
+            TO HOME</button>
+    </div>
+
     <!-- The Main Discovery Feed (New Homepage) -->
-    <div id="main-discovery-feed" style="max-width: 800px; margin: 0 auto; padding: 2rem 1.5rem;">
+    <div id="main-discovery-feed" style="max-width: 800px; margin: 0 auto; padding: 1.5rem;">
 
         <!-- Minimal Spacer -->
         <div style="height: 2rem;"></div>

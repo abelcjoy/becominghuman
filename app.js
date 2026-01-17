@@ -168,6 +168,30 @@ window.toggleReadMore = function (btn, id) {
     }
 };
 
+// --- PWA Install Logic ---
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    const promptDiv = document.getElementById('pwa-install-prompt');
+    if (promptDiv) promptDiv.style.display = 'flex';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const installBtn = document.getElementById('pwa-install-btn');
+    if (installBtn) {
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                const promptDiv = document.getElementById('pwa-install-prompt');
+                if (promptDiv) promptDiv.style.display = 'none';
+            }
+        });
+    }
+});
+
 
 // ==========================================
 // 2. FIREBASE & APP INIT
