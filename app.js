@@ -21,6 +21,17 @@ window.showScreen = function (screenId) {
     window.scrollTo(0, 0);
 };
 
+// Toggle the Manifest/Vision section
+window.toggleManifest = function () {
+    const el = document.getElementById('protocol-manifest');
+    const btn = document.getElementById('manifest-toggle-btn');
+    if (el) {
+        const isHidden = el.style.display === 'none';
+        el.style.display = isHidden ? 'block' : 'none';
+        btn.textContent = isHidden ? 'HIDE OUR VISION' : 'READ OUR VISION';
+    }
+};
+
 // Navigation: Selection -> Protocol Detail
 window.openProtocol = function (category) {
     // 1. Get Elements
