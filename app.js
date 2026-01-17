@@ -28,7 +28,7 @@ window.toggleManifest = function () {
     if (el) {
         const isHidden = el.style.display === 'none';
         el.style.display = isHidden ? 'block' : 'none';
-        btn.textContent = isHidden ? 'HIDE OUR VISION' : 'READ OUR VISION';
+        btn.textContent = isHidden ? 'CLICK TO HIDE' : 'READ OUR VISION';
     }
 };
 
@@ -86,10 +86,8 @@ window.renderFeed = function (filterCategory = null) {
     // If no posts yet (or still loading), show message
     if (!globalPosts || globalPosts.length === 0) {
         feed.innerHTML = `
-            <div style="text-align:center; padding:2rem; color:#666;">
-                <div style="font-size:1.5rem; margin-bottom:1rem;">📡</div>
-                <div style="font-size:0.9rem; margin-bottom:0.5rem; font-weight:700;">CONNECTING TO SERVER...</div>
-                <div style="font-size:0.75rem;">If this takes too long, please Reload.</div>
+            <div style="text-align:center; padding:4rem 2rem; color:#ddd; font-size:0.7rem; letter-spacing:0.1em; font-weight:700;">
+                INITIALIZING LABORATORY...
             </div>
         `;
         return;
@@ -359,8 +357,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     }
+});
 
-    // --- 5. Initial Load (Instant Cache) ---
+// --- 5. Initial Load (Instant Execution - Outside listener) ---
+(function () {
     try {
         const cached = localStorage.getItem('cfh_cached_posts');
         if (cached) {
@@ -370,6 +370,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     } catch (e) { console.warn("Cache items invalid", e); }
 
-    // Final Init: Show the feed immediately
+    // Show the feed immediately as soon as scripts parse
     showScreen('main-discovery-feed');
-});
+})();
