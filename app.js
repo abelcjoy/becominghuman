@@ -113,7 +113,7 @@ window.renderFeed = function (filterCategory = null) {
 
         // Clean up legacy/internal names for display (Robust Check)
         const lowTag = (item.category || "").toLowerCase();
-        if (lowTag.includes('pmo') || lowTag.includes('p_addiction') || lowTag.includes('recovery protocol')) {
+        if (lowTag.includes('pmo') || lowTag.includes('p.m.o') || lowTag.includes('p_addiction') || lowTag.includes('recovery protocol')) {
             displayTag = 'Addiction Recovery';
         }
 
