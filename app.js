@@ -114,6 +114,9 @@ window.renderFeed = function (filterCategory = null) {
         if (displayTag === 'Health Advice') bgColor = '#cc0000'; // Red
         if (displayTag === 'Positive News') bgColor = '#cc9900'; // Darker Yellow for readability
 
+        // Calculate Number (Newest is highest)
+        const postNum = totalCount - index;
+
         card.innerHTML = `
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                 <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em;">
