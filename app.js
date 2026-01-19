@@ -422,6 +422,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- 5. Initial Load (Instant Execution - Outside listener) ---
 (function () {
+    // SECURITY CHECK: Clearance Level
+    const clearance = localStorage.getItem('cfh_clearance_token');
+    if (!clearance) {
+        // Access Denied -> Show Paywall
+        showScreen('paywall-screen');
+        return;
+    }
+
     try {
         const cached = localStorage.getItem('cfh_cached_posts');
         if (cached) {
@@ -434,3 +442,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show the feed immediately as soon as scripts parse
     showScreen('main-discovery-feed');
 })();
+
+// --- 6. Razorpay Clearance (Payment) ---
+window.initiateClearance = function () {
+    const options = {
+        "key": "rzp_test_placeholder", // REPLACE THIS WITH YOUR KEY
+        "amount": 19900, // Amount is in subunits (19900 = 199.00 INR)
+        "currency": "INR",
+        "name": "CFH Protocol",
+        "description": "Clearance Level: Authorized",
+        "image": "https://clarityforhumans.com/assets/icon.png",
+        "handler": function (response) {
+            // Success!
+            alert("Clearance Granted. Welcome to the Protocol.");
+            localStorage.setItem('cfh_clearance_token', 'active_' + response.razorpay_payment_id);
+            location.reload();
+        },
+        "theme": {
+            "color": "#000000"
+        }
+    };
+    const rzp1 = new Razorpay(options);
+    rzp1.open();
+};
