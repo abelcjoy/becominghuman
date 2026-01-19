@@ -446,7 +446,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // --- 6. Razorpay Clearance (Payment) ---
 window.initiateClearance = function () {
     const options = {
-        "key": "rzp_test_placeholder", // REPLACE THIS WITH YOUR KEY
+        "key": "rzp_test_S5j4hGie8mRk0G", // ACTIVE TEST KEY
         "amount": 19900, // Amount is in subunits (19900 = 199.00 INR)
         "currency": "INR",
         "name": "CFH Protocol",
