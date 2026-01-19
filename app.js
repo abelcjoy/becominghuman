@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.initiateClearance = function () {
     const options = {
         "key": "rzp_test_S5j4hGie8mRk0G", // ACTIVE TEST KEY
-        "amount": 19900, // Amount is in subunits (19900 = 199.00 INR)
+        "amount": 4900, // Amount is in subunits (4900 = 49.00 INR)
         "currency": "INR",
         "name": "CFH Protocol",
         "description": "Clearance Level: Authorized",
