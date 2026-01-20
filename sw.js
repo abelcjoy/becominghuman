@@ -13,13 +13,15 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-const CACHE_NAME = 'cfh-v4';
+const CACHE_NAME = 'cfh-v5';
 const ASSETS = [
     '/',
     'index.html',
     'style.css',
     'app.js',
-    'assets/icon.svg'
+    'manifest.json',
+    'assets/icon.svg',
+    'assets/social_preview.png'
 ];
 
 // Install: Cache core assets (Initial setup)

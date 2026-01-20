@@ -268,20 +268,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     .orderBy('timestamp', 'desc')
                     .limit(20);
 
-                if (window.lastVisibleDoc) {
+                const isFirstPage = !window.lastVisibleDoc;
+                if (!isFirstPage) {
                     query = query.startAfter(window.lastVisibleDoc);
                 }
-
                 query.get().then((snapshot) => {
                     if (!snapshot.empty) {
                         window.lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
                         const newPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-                        // Append to global state
-                        globalPosts = [...globalPosts, ...newPosts];
-
-                        // Render (pass true to append)
-                        renderFeed(null, true);
+                        if (isFirstPage) {
+                            // First batch: Replace global state to handle refresh
+                            globalPosts = newPosts;
+                            // Save to Cache for offline use
+                            try {
+                                localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
+                            } catch (e) { console.warn("Cache save failed", e); }
+                            renderFeed(null, false);
+                        } else {
+                            // Subsequent batches: Append
+                            globalPosts = [...globalPosts, ...newPosts];
+                            renderFeed(null, true);
+                        }
                     } else {
                         // End of list
                         const btn = document.getElementById('load-more-btn');
@@ -298,13 +306,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).catch((error) => {
                     console.error("Firestore Loading Error:", error);
                     const feed = document.getElementById('advice-feed');
-                    if (feed && globalPosts.length === 0) feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
+                    // If we have cached posts, don't show error, just keep what we have
+                    if (globalPosts.length === 0 && feed) {
+                        feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
+                    }
                 });
             };
 
             // Initial Load
             window.lastVisibleDoc = null;
-            globalPosts = []; // Reset
+            // Removed globalPosts = [] reset to allow cache to persist
             loadPosts();
 
             // PWA Service Worker
