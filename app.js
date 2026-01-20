@@ -394,6 +394,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    // Inject Admin Link if Authorized
+    if (localStorage.getItem('cfh_clearance_token') === 'admin_permit') {
+        const footerInfo = document.querySelector('footer div:last-child');
+        if (footerInfo) {
+            const adminBtn = document.createElement('div');
+            adminBtn.innerHTML = `<span onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:bold; margin-top:1rem; display:block;">[ SERVER ACCESS ]</span>`;
+            footerInfo.innerHTML += adminBtn.innerHTML;
+        }
+    }
+
     window.deletePost = (id) => {
         if (db && confirm('Delete?')) db.collection('posts').doc(id).delete();
     };
@@ -520,6 +530,15 @@ window.verifyProtocolKey = function () {
     const key = input.value.trim();
 
     if (!key) { alert("Please enter a key."); return; }
+
+    // --- ADMIN OVERRIDE ---
+    if (key === 'cfh-master-access') {
+        alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
+        localStorage.setItem('cfh_clearance_token', 'admin_permit');
+        localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString()); // Admin never expires basically
+        location.reload();
+        return;
+    }
 
     // 1. Check Cloud
     if (typeof firebase !== 'undefined' && firebase.firestore()) {
