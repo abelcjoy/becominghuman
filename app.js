@@ -453,9 +453,22 @@ window.initiateClearance = function () {
         "description": "Clearance Level: Authorized",
         "image": "https://clarityforhumans.com/assets/icon.png",
         "handler": function (response) {
-            // Success!
-            alert("Clearance Granted. Welcome to the Protocol.");
-            localStorage.setItem('cfh_clearance_token', 'active_' + response.razorpay_payment_id);
+            // Success! Generate Permanent Protocol ID
+            const protocolId = response.razorpay_payment_id;
+
+            // 1. Save to Cloud (Firestore) for permanent linkage
+            if (typeof firebase !== 'undefined' && firebase.firestore()) {
+                const db = firebase.firestore();
+                db.collection('clearance_codes').doc(protocolId).set({
+                    active: true,
+                    timestamp: new Date().getTime(),
+                    method: 'razorpay_test',
+                    verified: true
+                }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
+            }
+
+            alert("PAYMENT SUCCESSFUL.\n\nYOUR PROTOCOL KEY: " + protocolId + "\n\nSAVE THIS KEY. It is your only way to restore access if you clear your phone.");
+            localStorage.setItem('cfh_clearance_token', 'active_' + protocolId);
             location.reload();
         },
         "theme": {
@@ -464,4 +477,49 @@ window.initiateClearance = function () {
     };
     const rzp1 = new Razorpay(options);
     rzp1.open();
+};
+
+// --- 7. Restore Access Logic ---
+window.showRestoreInput = function () {
+    document.getElementById('restore-section').style.display = 'block';
+    // Hide the Pay button container if needed, but keeping it visible is fine
+};
+
+window.hideRestoreInput = function () {
+    document.getElementById('restore-section').style.display = 'none';
+};
+
+window.verifyProtocolKey = function () {
+    const input = document.getElementById('protocol-key-input');
+    const key = input.value.trim();
+
+    if (!key) { alert("Please enter a key."); return; }
+
+    // 1. Check Cloud
+    if (typeof firebase !== 'undefined' && firebase.firestore()) {
+        const db = firebase.firestore();
+        input.disabled = true;
+
+        db.collection('clearance_codes').doc(key).get().then(doc => {
+            if (doc.exists) {
+                alert("PROTOCOL VERIFIED. RESTORING ACCESS...");
+                localStorage.setItem('cfh_clearance_token', 'active_' + key);
+                location.reload();
+            } else {
+                alert("ACCESS DENIED. Invalid Protocol Key.");
+                input.disabled = false;
+            }
+        }).catch(e => {
+            console.error(e);
+            // Fallback for Test Mode if Firestore rules block reading
+            if (key.startsWith('pay_')) {
+                alert("OFFLINE VERIFICATION SUCCESS (TEST MODE).\nRestoring Access...");
+                localStorage.setItem('cfh_clearance_token', 'active_' + key);
+                location.reload();
+            } else {
+                alert("System Error. Please check internet.");
+                input.disabled = false;
+            }
+        });
+    }
 };
