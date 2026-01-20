@@ -278,14 +278,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         const newPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
                         if (isFirstPage) {
+                            // First batch: Replace global state to ensure fresh data
                             globalPosts = newPosts;
                             try {
                                 localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
                             } catch (e) { console.warn("Cache save failed", e); }
                             renderFeed(null, false);
                         } else {
-                            globalPosts = [...globalPosts, ...newPosts];
-                            renderFeed(null, true);
+                            // Subsequent batches: Only add posts that aren't already in the list
+                            const existingIds = new Set(globalPosts.map(p => p.id));
+                            const uniqueNewPosts = newPosts.filter(p => !existingIds.has(p.id));
+
+                            if (uniqueNewPosts.length > 0) {
+                                globalPosts = [...globalPosts, ...uniqueNewPosts];
+                                renderFeed(null, true);
+                            }
                         }
 
                         // FIX: Ensure Admin List updates if terminal is open
