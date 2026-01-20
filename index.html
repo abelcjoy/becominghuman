@@ -227,7 +227,7 @@
             position: fixed;
             inset: 0;
             background: #fff;
-            z-index: 5000;
+            z-index: 10000;
             flex-direction: column;
             padding: 2rem;
             overflow-y: auto;
@@ -505,8 +505,11 @@
                     Feed Management</h3>
                 <div id="admin-posts-list" style="max-height:400px; overflow-y:auto;"></div>
             </div>
+            <button onclick="document.getElementById('admin-panel').style.display='none'"
+                style="margin-top:2rem; border:1px solid #000; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">CLOSE
+                PANEL</button>
             <button onclick="location.reload()"
-                style="margin-top:3rem; border:1px solid #000; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">SECURE
+                style="margin-top:1rem; border:none; color:red; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">SECURE
                 LOGOUT</button>
         </div>
     </div>
