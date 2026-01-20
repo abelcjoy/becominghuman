@@ -421,10 +421,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- 5. Initial Load (Instant Execution - Outside listener) ---
+// --- 5. Initial Load (Instant Execution - Outside listener) ---
 (function () {
-    // SECURITY CHECK: Clearance Level
+    const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
+
+    // SECURITY CHECK: Clearance Level & Expiration
     const clearance = localStorage.getItem('cfh_clearance_token');
-    if (!clearance) {
+    const tokenTime = localStorage.getItem('cfh_token_timestamp');
+
+    let isValid = false;
+
+    if (clearance) {
+        if (tokenTime) {
+            const timeDiff = new Date().getTime() - parseInt(tokenTime);
+            if (timeDiff < THIRTY_DAYS) {
+                isValid = true;
+            } else {
+                console.warn("Token Expired");
+                localStorage.removeItem('cfh_clearance_token');
+                localStorage.removeItem('cfh_token_timestamp');
+            }
+        } else {
+            // Legacy/Test user fallback (Assume valid for now, or force re-verify)
+            isValid = true;
+        }
+    }
+
+    if (!isValid) {
         // Access Denied -> Show Paywall
         showScreen('paywall-screen');
         return;
@@ -455,13 +478,14 @@ window.initiateClearance = function () {
         "handler": function (response) {
             // Success! Generate Permanent Protocol ID
             const protocolId = response.razorpay_payment_id;
+            const now = new Date().getTime();
 
             // 1. Save to Cloud (Firestore) for permanent linkage
             if (typeof firebase !== 'undefined' && firebase.firestore()) {
                 const db = firebase.firestore();
                 db.collection('clearance_codes').doc(protocolId).set({
                     active: true,
-                    timestamp: new Date().getTime(),
+                    timestamp: now,
                     method: 'razorpay_test',
                     verified: true
                 }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
@@ -469,6 +493,7 @@ window.initiateClearance = function () {
 
             alert("PAYMENT SUCCESSFUL.\n\nYOUR PROTOCOL KEY: " + protocolId + "\n\nSAVE THIS KEY. It is your only way to restore access if you clear your phone.");
             localStorage.setItem('cfh_clearance_token', 'active_' + protocolId);
+            localStorage.setItem('cfh_token_timestamp', now.toString());
             location.reload();
         },
         "theme": {
@@ -478,6 +503,7 @@ window.initiateClearance = function () {
     const rzp1 = new Razorpay(options);
     rzp1.open();
 };
+
 
 // --- 7. Restore Access Logic ---
 window.showRestoreInput = function () {
