@@ -402,7 +402,11 @@ document.addEventListener('DOMContentLoaded', () => {
             row.style.justifyContent = 'space-between';
             const postNum = count - i;
 
-            row.innerHTML = `<span style="font-size:0.75rem;"><b>#${postNum}</b>: ${p.text.substring(0, 30)}...</span> <button onclick="deletePost('${p.id}')" style="color:red; cursor:pointer;">DEL</button>`;
+            row.innerHTML = `<span style="font-size:0.75rem;"><b>#${postNum}</b>: ${p.text.substring(0, 30)}...</span> 
+            <div>
+                <button onclick="editPost('${p.id}')" style="color:blue; cursor:pointer; margin-right:5px;">EDIT</button>
+                <button onclick="deletePost('${p.id}')" style="color:red; cursor:pointer;">DEL</button>
+            </div>`;
             list.appendChild(row);
         });
     };
@@ -423,6 +427,21 @@ document.addEventListener('DOMContentLoaded', () => {
         if (db && confirm('Delete?')) db.collection('posts').doc(id).delete();
     };
 
+    // Global variable to track editing state
+    let editingId = null;
+
+    window.editPost = (id) => {
+        const p = globalPosts.find(post => post.id === id);
+        if (p) {
+            document.getElementById('advice-text').value = p.text;
+            document.getElementById('advice-category').value = p.category || 'Addiction Recovery';
+            document.getElementById('advice-link').value = p.link || '';
+            editingId = id;
+            document.getElementById('save-advice').textContent = "UPDATE POST (OVERWRITE)";
+            document.getElementById('has-edit-mode').textContent = "EDIT MODE ACTIVE"; // Optional UI feedback
+        }
+    };
+
     // Admin Save
     const saveBtn = document.getElementById('save-advice');
     if (saveBtn) {
@@ -430,18 +449,39 @@ document.addEventListener('DOMContentLoaded', () => {
             const txt = document.getElementById('advice-text').value;
             const cat = document.getElementById('advice-category').value;
             if (!txt) return;
+
             if (db) {
-                db.collection('posts').add({
-                    text: txt,
-                    category: cat,
-                    link: document.getElementById('advice-link').value,
-                    timestamp: new Date().getTime()
-                }).then(() => {
-                    alert('Published.');
-                    document.getElementById('advice-text').value = '';
-                });
+                if (editingId) {
+                    // Update Mode
+                    db.collection('posts').doc(editingId).update({
+                        text: txt,
+                        category: cat,
+                        link: document.getElementById('advice-link').value
+                    }).then(() => {
+                        alert('Post Updated.');
+                        resetEditor();
+                    });
+                } else {
+                    // Create Mode
+                    db.collection('posts').add({
+                        text: txt,
+                        category: cat,
+                        link: document.getElementById('advice-link').value,
+                        timestamp: new Date().getTime()
+                    }).then(() => {
+                        alert('Published.');
+                        resetEditor();
+                    });
+                }
             }
         };
+    }
+
+    function resetEditor() {
+        document.getElementById('advice-text').value = '';
+        document.getElementById('advice-link').value = '';
+        editingId = null;
+        document.getElementById('save-advice').textContent = "POST TO LIVE FEED";
     }
 });
 
