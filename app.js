@@ -259,11 +259,16 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Firebase connected.");
 
             // Start Listening for Data logic
-            // Reverted to standard real-time listener as requested
+            // FORCE LOAD ALL: Removing orderBy from DB side to bypass indexing limits
             db.collection('posts')
-                .orderBy('timestamp', 'desc')
                 .onSnapshot((snapshot) => {
-                    globalPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    // Fetch everything, then sort manually in JS to ensure no data is lost
+                    let allPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+                    // Manual Sort (Newest First)
+                    allPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
+                    globalPosts = allPosts;
 
                     // Update cache for offline viewing
                     try {
