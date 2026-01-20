@@ -259,73 +259,37 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Firebase connected.");
 
             // Start Listening for Data logic
-            // OPTIMIZED: Pagination implemented to save usage costs
-            window.loadPosts = function () {
-                const btn = document.getElementById('load-more-btn');
-                if (btn) btn.textContent = 'LOADING DATA...';
+            // Reverted to standard real-time listener as requested
+            db.collection('posts')
+                .orderBy('timestamp', 'desc')
+                .onSnapshot((snapshot) => {
+                    globalPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
-                let query = db.collection('posts')
-                    .orderBy('timestamp', 'desc')
-                    .limit(50); // Increased batch size for better visibility
+                    // Update cache for offline viewing
+                    try {
+                        localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
+                    } catch (e) { console.warn("Cache save failed", e); }
 
-                const isFirstPage = !window.lastVisibleDoc;
-                if (!isFirstPage) {
-                    query = query.startAfter(window.lastVisibleDoc);
-                }
-                query.get().then((snapshot) => {
-                    if (!snapshot.empty) {
-                        window.lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
-                        const newPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    // Render the full feed
+                    renderFeed();
 
-                        if (isFirstPage) {
-                            // First batch: Replace global state to ensure fresh data
-                            globalPosts = newPosts;
-                            try {
-                                localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
-                            } catch (e) { console.warn("Cache save failed", e); }
-                            renderFeed(null, false);
-                        } else {
-                            // Subsequent batches: Only add posts that aren't already in the list
-                            const existingIds = new Set(globalPosts.map(p => p.id));
-                            const uniqueNewPosts = newPosts.filter(p => !existingIds.has(p.id));
-
-                            if (uniqueNewPosts.length > 0) {
-                                globalPosts = [...globalPosts, ...uniqueNewPosts];
-                                renderFeed(null, true);
-                            }
-                        }
-
-                        // FIX: Ensure Admin List updates if terminal is open
-                        if (document.getElementById('admin-panel').style.display === 'flex') {
-                            renderAdminList();
-                        }
-                    } else {
-                        // End of list
-                        const btn = document.getElementById('load-more-btn');
-                        if (btn) {
-                            btn.textContent = 'END OF ARCHIVES';
-                            btn.disabled = true;
-                            btn.style.opacity = '0.5';
-                        }
+                    // Update Admin Panel if open
+                    if (document.getElementById('admin-panel').style.display === 'flex') {
+                        renderAdminList();
                     }
 
-                    // Reset button if still valid
-                    if (btn && !btn.disabled) btn.textContent = 'LOAD MORE ARCHIVES';
-
-                }).catch((error) => {
-                    console.error("Firestore Loading Error:", error);
+                    // Show manifest toggle if posts exist
+                    if (globalPosts.length > 0) {
+                        const toggle = document.getElementById('manifest-toggle-container');
+                        if (toggle) toggle.style.display = 'block';
+                    }
+                }, (error) => {
+                    console.error("Firestore Error:", error);
                     const feed = document.getElementById('advice-feed');
-                    // If we have cached posts, don't show error, just keep what we have
                     if (globalPosts.length === 0 && feed) {
                         feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
                     }
                 });
-            };
-
-            // Initial Load
-            window.lastVisibleDoc = null;
-            // Removed globalPosts = [] reset to allow cache to persist
-            loadPosts();
 
             // PWA Service Worker
             if ('serviceWorker' in navigator) {
