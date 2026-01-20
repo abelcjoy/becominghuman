@@ -273,40 +273,60 @@ document.addEventListener('DOMContentLoaded', () => {
             messaging = firebase.messaging();
             console.log("Firebase connected.");
 
-            // Start Listening for Data logic
-            // FORCE LOAD ALL: Removing orderBy from DB side to bypass indexing limits
+            // START DELTA SYNC PROTOCOL
+            // 1. Load context from internal storage
+            const cached = localStorage.getItem('cfh_cached_posts');
+            if (cached) {
+                try {
+                    globalPosts = JSON.parse(cached);
+                    renderFeed(); // Instant UI from cache
+                    console.log("Delta Sync: Context loaded from device memory.");
+                } catch (e) { globalPosts = []; }
+            }
+
+            // 2. Determine "High Watermark" (Newest post timestamp)
+            let lastSync = 0;
+            if (globalPosts.length > 0) {
+                lastSync = Math.max(...globalPosts.map(p => p.timestamp || 0));
+            }
+
+            // 3. SECURE DELTA LISTENER: Only download what we don't have
             db.collection('posts')
+                .where('timestamp', '>', lastSync)
                 .onSnapshot((snapshot) => {
-                    // Fetch everything, then sort manually in JS to ensure no data is lost
-                    let allPosts = snapshot.docs
-                        .map(doc => ({ id: doc.id, ...doc.data() }))
-                        .filter(p => p.deleted !== true);
+                    if (snapshot.empty) return;
 
-                    // Manual Sort (Newest First)
-                    allPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                    snapshot.docChanges().forEach((change) => {
+                        const postData = { id: change.doc.id, ...change.doc.data() };
+                        const index = globalPosts.findIndex(p => p.id === postData.id);
 
-                    globalPosts = allPosts;
+                        if (postData.deleted === true) {
+                            if (index !== -1) globalPosts.splice(index, 1);
+                        } else {
+                            if (index !== -1) {
+                                globalPosts[index] = postData; // Update existing
+                            } else {
+                                globalPosts.push(postData); // Add new
+                            }
+                        }
+                    });
 
-                    // Update cache for offline viewing
+                    // 4. Sort and Store result
+                    globalPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+
                     try {
                         localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
-                    } catch (e) { console.warn("Cache save failed", e); }
+                    } catch (e) { console.warn("Sync Storage Full", e); }
 
-                    // Render the full feed
                     renderFeed();
+                    if (document.getElementById('admin-panel').style.display === 'flex') renderAdminList();
 
-                    // Update Admin Panel if open
-                    if (document.getElementById('admin-panel').style.display === 'flex') {
-                        renderAdminList();
-                    }
-
-                    // Show manifest toggle if posts exist
                     if (globalPosts.length > 0) {
                         const toggle = document.getElementById('manifest-toggle-container');
                         if (toggle) toggle.style.display = 'block';
                     }
                 }, (error) => {
-                    console.error("Firestore Error:", error);
+                    console.error("Delta Sync Failure:", error);
                     const feed = document.getElementById('advice-feed');
                     if (globalPosts.length === 0 && feed) {
                         feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
@@ -442,6 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (db && confirm('Delete?')) {
             db.collection('posts').doc(id).update({
                 deleted: true,
+                timestamp: new Date().getTime(), // Refresh timestamp for Delta Sync
                 auth_sig: 'cfh_ops_secure_9922'
             }).then(() => {
                 alert('Post removed from live feed.');
@@ -479,6 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         text: txt,
                         category: cat,
                         link: document.getElementById('advice-link').value,
+                        timestamp: new Date().getTime(), // Refresh timestamp for Delta Sync
                         auth_sig: 'cfh_ops_secure_9922' // SECURE SIGNATURE
                     }).then(() => {
                         alert('Post Updated.');
