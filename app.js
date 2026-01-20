@@ -123,13 +123,13 @@ window.renderFeed = function (filterCategory = null, append = false) {
 
         // Clean up legacy/internal names for display (Robust Check)
         const lowTag = (item.category || "").toLowerCase();
-        if (lowTag.includes('pmo') || lowTag.includes('p.m.o') || lowTag.includes('p_addiction') || lowTag.includes('recovery protocol')) {
+        const legacyTags = ['pmo', 'p.m.o', 'p_addiction', 'recovery protocol', 'biological calibration', 'philosophy of focus'];
+
+        if (legacyTags.some(tag => lowTag.includes(tag))) {
             displayTag = 'Addiction Recovery';
         }
 
         if (displayTag === 'Addiction Recovery') bgColor = '#000000'; // Pure Black
-        if (displayTag === 'Biological Calibration') bgColor = '#444444'; // Dark Gray
-        if (displayTag === 'Philosophy of Focus') bgColor = '#888888';   // Mid Gray
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
