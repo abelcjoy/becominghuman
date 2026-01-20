@@ -376,13 +376,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject Admin Link if Authorized
     if (localStorage.getItem('cfh_clearance_token') === 'admin_permit') {
-        const footerInfo = document.querySelector('footer div:last-child');
-        if (footerInfo) {
+        const updateControl = document.getElementById('system-update-control');
+        if (updateControl) {
             const adminBtn = document.createElement('div');
             adminBtn.innerHTML = `<button onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:700; background:none; border:2px solid red; padding:1rem; margin-top:2rem; width:100%; text-transform:uppercase; letter-spacing:0.1em;">
                 [ OPEN POSTING TERMINAL ]
             </button>`;
-            footerInfo.innerHTML += adminBtn.innerHTML;
+            updateControl.appendChild(adminBtn);
         }
     }
 
