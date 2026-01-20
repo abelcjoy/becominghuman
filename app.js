@@ -158,6 +158,11 @@ window.renderFeed = function (filterCategory = null, append = false) {
             </div>
             ${isLong ? `<button class="read-more-toggle" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
             ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview">OPEN RESOURCE</a></div>` : ''}
+            
+            <!-- Protocol Disclaimer (Shadow Banning Prevention) -->
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #f0f0f0; font-size:0.5rem; color:#aaa; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
+                NOT MEDICAL ADVICE. THIS PROTOCOL IS FOR EDUCATIONAL PURPOSES. CONSULT A PROFESSIONAL BEFORE APPLICATION.
+            </div>
         `;
         feed.appendChild(card);
     });
