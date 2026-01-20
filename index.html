@@ -608,6 +608,32 @@
             v3.1</div>
     </div>
 
+    <!-- Passport Screen (Post-Payment) -->
+    <div id="passport-screen" class="cfh-screen"
+        style="display: none; min-height: 100vh; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2rem; background: #fff; position: fixed; inset: 0; z-index: 9500; overflow-y: auto;">
+
+        <h2
+            style="text-transform: uppercase; letter-spacing: 0.3em; font-size: 1rem; margin-bottom: 2rem; font-weight: 800;">
+            Protocol Authorized</h2>
+
+        <!-- Canvas for Dynamic Passport Generation -->
+        <canvas id="passport-canvas" width="600" height="900"
+            style="width: 100%; max-width: 320px; box-shadow: 0 20px 50px rgba(0,0,0,0.15); border-radius: 12px; margin-bottom: 2rem; background: #000;"></canvas>
+
+        <p style="font-size: 0.75rem; color: #666; margin-bottom: 2rem; max-width: 300px; line-height: 1.6;">
+            Your Protocol Key is embedded in this card. <strong>Save it to your Photos.</strong> This is your only
+            backup.
+        </p>
+
+        <button onclick="downloadPassport()"
+            style="background: transparent; color: #000; border: 1px solid #000; width: 100%; max-width: 320px; padding: 1rem; margin-bottom: 1rem; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.1em; cursor: pointer; text-transform: uppercase;">DOWNLOAD
+            PASSPORT</button>
+
+        <button onclick="location.reload()"
+            style="background: #000; color: #fff; width: 100%; max-width: 320px; padding: 1.2rem; border: none; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.2em; cursor: pointer; text-transform: uppercase;">ENTER
+            THE PORTAL</button>
+    </div>
+
 </body>
 
 </html>

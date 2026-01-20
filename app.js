@@ -603,10 +603,13 @@ window.initiateClearance = function () {
                 }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
             }
 
-            alert("PAYMENT SUCCESSFUL.\n\nYOUR PROTOCOL KEY: " + protocolId + "\n\nSAVE THIS KEY. It is your only way to restore access if you clear your phone.");
+            // 2. Local Persistence
             localStorage.setItem('cfh_clearance_token', 'active_' + protocolId);
             localStorage.setItem('cfh_token_timestamp', now.toString());
-            location.reload();
+
+            // 3. Generate Visual Passport (The Novel Solution)
+            generateProtocolPassport(protocolId);
+            showScreen('passport-screen');
         },
         "theme": {
             "color": "#000000"
@@ -614,6 +617,88 @@ window.initiateClearance = function () {
     };
     const rzp1 = new Razorpay(options);
     rzp1.open();
+};
+
+window.generateProtocolPassport = function (pid) {
+    const canvas = document.getElementById('passport-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    // 1. Background (Laboratory Aesthetics)
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, 600, 900);
+
+    // 2. Subtle Grid Lines
+    ctx.strokeStyle = '#222';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 600; i += 40) {
+        ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, 900); ctx.stroke();
+    }
+    for (let j = 0; j < 900; j += 40) {
+        ctx.beginPath(); ctx.moveTo(0, j); ctx.lineTo(600, j); ctx.stroke();
+    }
+
+    // 3. Header
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 40px Inter, sans-serif';
+    ctx.letterSpacing = "4px";
+    ctx.fillText("CFH PROTOCOL", 50, 100);
+
+    ctx.fillStyle = '#888';
+    ctx.font = '16px Inter, sans-serif';
+    ctx.fillText("CLARITY FOR HUMANS | LAB ID: 00922", 50, 130);
+
+    // 4. Content Block
+    ctx.fillStyle = '#111';
+    ctx.fillRect(50, 200, 500, 450);
+    ctx.strokeStyle = '#333';
+    ctx.strokeRect(50, 200, 500, 450);
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 24px Inter, sans-serif';
+    ctx.fillText("CLEARANCE: AUTHORIZED", 80, 260);
+
+    ctx.fillStyle = '#888';
+    ctx.font = '14px Inter, sans-serif';
+    ctx.fillText("YOUR UNIQUE PROTOCOL ID:", 80, 320);
+
+    ctx.fillStyle = '#FFF';
+    ctx.font = 'bold 28px monospace';
+    ctx.fillText(pid, 80, 360);
+
+    ctx.fillStyle = '#888';
+    ctx.font = '14px Inter, sans-serif';
+    ctx.fillText("ASSOCIATED DEVICE:", 80, 420);
+    ctx.fillText(getDeviceId().substring(0, 20) + "...", 80, 450);
+
+    // 5. Digital Seal
+    ctx.strokeStyle = '#00FF00';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(450, 550, 60, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.fillStyle = '#00FF00';
+    ctx.font = 'bold 12px Inter, sans-serif';
+    ctx.fillText("VERIFIED", 423, 555);
+
+    // 6. Footer Instructions
+    ctx.fillStyle = '#444';
+    ctx.font = 'italic 16px Inter, sans-serif';
+    ctx.fillText("This card is your permanent record.", 50, 750);
+    ctx.fillText("Do not share this Protocol ID.", 50, 780);
+
+    ctx.fillStyle = '#FFF';
+    ctx.font = 'bold 20px Inter, sans-serif';
+    ctx.fillText("CFH LABS v3.1", 50, 850);
+};
+
+window.downloadPassport = function () {
+    const canvas = document.getElementById('passport-canvas');
+    if (!canvas) return;
+    const link = document.createElement('a');
+    link.download = 'CFH-Protocol-Passport.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
 };
 
 
