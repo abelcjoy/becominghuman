@@ -6,6 +6,16 @@
 // Global state
 let globalPosts = [];
 
+// SECURITY: Device Fingerprinting for License Protection
+function getDeviceId() {
+    let id = localStorage.getItem('cfh_device_uuid');
+    if (!id) {
+        id = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now().toString(36);
+        localStorage.setItem('cfh_device_uuid', id);
+    }
+    return id;
+}
+
 // Navigation: Entry -> Selection -> About/Privacy/etc
 // Navigation System (Hardened)
 window.showScreen = function (screenId) {
@@ -553,7 +563,8 @@ window.initiateClearance = function () {
                     active: true,
                     timestamp: now,
                     method: 'razorpay_test',
-                    verified: true
+                    verified: true,
+                    devices: [getDeviceId()] // Register purchasing device
                 }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
             }
 
@@ -619,6 +630,23 @@ function checkCloudKey(key, input) {
                     alert("ACCESS DENIED. This key has expired (30 Day Limit). Please renew membership.");
                     input.disabled = false;
                     return;
+                }
+
+                // 2. DEVICE LOCKING CHECK (Anti-Leak Protocol)
+                const currentDevice = getDeviceId();
+                const registeredDevices = data.devices || [];
+
+                if (!registeredDevices.includes(currentDevice)) {
+                    if (registeredDevices.length >= 2) {
+                        alert("SECURITY ALERT: This Protocol Key has reached its maximum device limit (2). \n\nSharing keys is a violation of the protocol. Please purchase a new key for this device.");
+                        input.disabled = false;
+                        return;
+                    } else {
+                        // Register this as the second device
+                        db.collection('clearance_codes').doc(key).update({
+                            devices: firebase.firestore.FieldValue.arrayUnion(currentDevice)
+                        });
+                    }
                 }
 
                 alert("PROTOCOL VERIFIED. RESTORING ACCESS...");
