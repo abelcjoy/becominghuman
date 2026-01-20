@@ -589,7 +589,7 @@ window.verifyProtocolKey = function () {
     // --- ADMIN OVERRIDE (SECURE HASH CHECK) ---
     // Hashes input and compares to stored signature
     sha256(key).then(hash => {
-        if (hash === '509a909be56353986047ebde3f6c8d76b7db0a02796e6a1006e8854caab8d289') {
+        if (hash === 'ae04dd8028ee359a0f91a48d49449a51fc8b97437c0dc53fcb96facf25ead44d') {
             alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
             localStorage.setItem('cfh_clearance_token', 'admin_permit');
             localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString());
