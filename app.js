@@ -513,15 +513,22 @@ window.verifyProtocolKey = function () {
 
     if (!key) { alert("Please enter a key."); return; }
 
-    // --- ADMIN OVERRIDE ---
-    if (key === 'cfhdudefromanaconda-#cfhmaster12#') {
-        alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
-        localStorage.setItem('cfh_clearance_token', 'admin_permit');
-        localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString()); // Admin never expires basically
-        location.reload();
-        return;
-    }
+    // --- ADMIN OVERRIDE (SECURE HASH CHECK) ---
+    // Hashes input and compares to stored signature
+    sha256(key).then(hash => {
+        if (hash === '509a909be56353986047ebde3f6c8d76b7db0a02796e6a1006e8854caab8d289') {
+            alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
+            localStorage.setItem('cfh_clearance_token', 'admin_permit');
+            localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString());
+            location.reload();
+        } else {
+            // 1. If not admin, Proceed to Check Cloud for User Key
+            checkCloudKey(key, input);
+        }
+    });
+};
 
+function checkCloudKey(key, input) {
     // 1. Check Cloud
     if (typeof firebase !== 'undefined' && firebase.firestore()) {
         const db = firebase.firestore();
@@ -529,8 +536,20 @@ window.verifyProtocolKey = function () {
 
         db.collection('clearance_codes').doc(key).get().then(doc => {
             if (doc.exists) {
+                // Check Expiration (Server Side Logic Simulation)
+                const data = doc.data();
+                const now = new Date().getTime();
+                const THIRTY_DAYS = 30 * 24 * 60 * 60 * 1000;
+
+                if (data.timestamp && (now - data.timestamp > THIRTY_DAYS)) {
+                    alert("ACCESS DENIED. This key has expired (30 Day Limit). Please renew membership.");
+                    input.disabled = false;
+                    return;
+                }
+
                 alert("PROTOCOL VERIFIED. RESTORING ACCESS...");
                 localStorage.setItem('cfh_clearance_token', 'active_' + key);
+                if (data.timestamp) localStorage.setItem('cfh_token_timestamp', data.timestamp.toString());
                 location.reload();
             } else {
                 alert("ACCESS DENIED. Invalid Protocol Key.");
@@ -549,4 +568,12 @@ window.verifyProtocolKey = function () {
             }
         });
     }
-};
+}
+
+// Helper: SHA-256 Hash
+async function sha256(message) {
+    const msgBuffer = new TextEncoder().encode(message);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
