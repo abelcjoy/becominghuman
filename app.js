@@ -379,7 +379,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const footerInfo = document.querySelector('footer div:last-child');
         if (footerInfo) {
             const adminBtn = document.createElement('div');
-            adminBtn.innerHTML = `<span onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:bold; margin-top:1rem; display:block;">[ SERVER ACCESS ]</span>`;
+            adminBtn.innerHTML = `<button onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:700; background:none; border:2px solid red; padding:1rem; margin-top:2rem; width:100%; text-transform:uppercase; letter-spacing:0.1em;">
+                [ OPEN POSTING TERMINAL ]
+            </button>`;
             footerInfo.innerHTML += adminBtn.innerHTML;
         }
     }
