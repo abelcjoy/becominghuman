@@ -311,6 +311,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // PWA Service Worker
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('sw.js');
+
+                // FORCE RELOAD when a new service worker takes over (Cache Trap Fix)
+                let refreshing = false;
+                navigator.serviceWorker.addEventListener('controllerchange', () => {
+                    if (refreshing) return;
+                    refreshing = true;
+                    window.location.reload();
+                });
             }
 
         } catch (e) {

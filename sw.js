@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-const CACHE_NAME = 'cfh-v5';
+const CACHE_NAME = 'cfh-v6';
 const ASSETS = [
     '/',
     'index.html',
@@ -30,6 +30,7 @@ self.addEventListener('install', event => {
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(ASSETS))
     );
+    self.skipWaiting(); // FORCE immediate update
 });
 
 // Activate: Clean up old caches
@@ -39,6 +40,7 @@ self.addEventListener('activate', event => {
             return Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)));
         })
     );
+    self.clients.claim(); // FORCE immediate control
 });
 
 // Fetch: NETWORK-FIRST Strategy
