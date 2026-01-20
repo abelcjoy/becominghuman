@@ -532,7 +532,7 @@ window.verifyProtocolKey = function () {
     if (!key) { alert("Please enter a key."); return; }
 
     // --- ADMIN OVERRIDE ---
-    if (key === 'cfh-master-access') {
+    if (key === 'cfhdudefromanaconda-#cfhmaster12#') {
         alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
         localStorage.setItem('cfh_clearance_token', 'admin_permit');
         localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString()); // Admin never expires basically
