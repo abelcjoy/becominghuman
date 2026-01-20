@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 let query = db.collection('posts')
                     .orderBy('timestamp', 'desc')
-                    .limit(20);
+                    .limit(50); // Increased batch size for better visibility
 
                 const isFirstPage = !window.lastVisibleDoc;
                 if (!isFirstPage) {
@@ -278,17 +278,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         const newPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 
                         if (isFirstPage) {
-                            // First batch: Replace global state to handle refresh
                             globalPosts = newPosts;
-                            // Save to Cache for offline use
                             try {
                                 localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
                             } catch (e) { console.warn("Cache save failed", e); }
                             renderFeed(null, false);
                         } else {
-                            // Subsequent batches: Append
                             globalPosts = [...globalPosts, ...newPosts];
                             renderFeed(null, true);
+                        }
+
+                        // FIX: Ensure Admin List updates if terminal is open
+                        if (document.getElementById('admin-panel').style.display === 'flex') {
+                            renderAdminList();
                         }
                     } else {
                         // End of list
