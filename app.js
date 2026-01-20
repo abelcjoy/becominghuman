@@ -77,12 +77,12 @@ window.openProtocol = function (category) {
     }
 };
 
-window.renderFeed = function (filterCategory = null) {
+window.renderFeed = function (filterCategory = null, append = false) {
     const feed = document.getElementById('advice-feed');
     if (!feed) return;
 
-    // Clear current content
-    feed.innerHTML = '';
+    // Clear current content ONLY if not appending
+    if (!append) feed.innerHTML = '';
 
     // If no posts yet (or still loading), show message
     if (!globalPosts || globalPosts.length === 0) {
@@ -98,6 +98,15 @@ window.renderFeed = function (filterCategory = null) {
 
     // Safety check filter first to get total count
     const relevantPosts = globalPosts.filter(p => !filterCategory || p.category === filterCategory);
+
+    // Logic for Appending: Calculate start index
+    // If not appending, start at 0. If appending, start at previous length.
+    // For simplicity with this quick architecture, we will re-render intelligently or just render the chunk.
+    // Actually, to keep it simple and robust:
+
+    feed.innerHTML = ''; // Full Re-render is safest for index alignment with globalPosts
+
+    // Fix: We want to re-render ALL relevant posts because "Post #Num" changes based on total count
     const totalCount = relevantPosts.length;
 
     relevantPosts.forEach((item, index) => {
@@ -250,29 +259,53 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Firebase connected.");
 
             // Start Listening for Data logic
-            db.collection('posts').orderBy('timestamp', 'desc').onSnapshot((snapshot) => {
-                globalPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            // OPTIMIZED: Pagination implemented to save usage costs
+            window.loadPosts = function () {
+                const btn = document.getElementById('load-more-btn');
+                if (btn) btn.textContent = 'LOADING DATA...';
 
-                // Save to Cache for instant loading next time
-                try {
-                    localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
-                } catch (e) { console.warn("Cache save failed", e); }
+                let query = db.collection('posts')
+                    .orderBy('timestamp', 'desc')
+                    .limit(20);
 
-                // Auto-render if we are on the main feed
-                const mainFeed = document.getElementById('main-discovery-feed');
-                if (mainFeed && mainFeed.style.display !== 'none') {
-                    renderFeed(null); // Show all posts on the main feed
+                if (window.lastVisibleDoc) {
+                    query = query.startAfter(window.lastVisibleDoc);
                 }
 
-                // Refresh Admin
-                if (document.getElementById('admin-panel').style.display === 'flex') {
-                    renderAdminList();
-                }
-            }, (error) => {
-                console.error("Firestore Listen Error:", error);
-                const feed = document.getElementById('advice-feed');
-                if (feed) feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
-            });
+                query.get().then((snapshot) => {
+                    if (!snapshot.empty) {
+                        window.lastVisibleDoc = snapshot.docs[snapshot.docs.length - 1];
+                        const newPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+
+                        // Append to global state
+                        globalPosts = [...globalPosts, ...newPosts];
+
+                        // Render (pass true to append)
+                        renderFeed(null, true);
+                    } else {
+                        // End of list
+                        const btn = document.getElementById('load-more-btn');
+                        if (btn) {
+                            btn.textContent = 'END OF ARCHIVES';
+                            btn.disabled = true;
+                            btn.style.opacity = '0.5';
+                        }
+                    }
+
+                    // Reset button if still valid
+                    if (btn && !btn.disabled) btn.textContent = 'LOAD MORE ARCHIVES';
+
+                }).catch((error) => {
+                    console.error("Firestore Loading Error:", error);
+                    const feed = document.getElementById('advice-feed');
+                    if (feed && globalPosts.length === 0) feed.innerHTML = '<div style="text-align:center; padding:2rem; color:red;">SERVER ERROR.<br>Please check your internet connection.</div>';
+                });
+            };
+
+            // Initial Load
+            window.lastVisibleDoc = null;
+            globalPosts = []; // Reset
+            loadPosts();
 
             // PWA Service Worker
             if ('serviceWorker' in navigator) {
