@@ -356,8 +356,7 @@
             <div style="display:flex; justify-content:center; gap:1.5rem; margin-bottom: 2rem;">
                 <span onclick="showScreen('about-screen')"
                     style="cursor:pointer; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; font-weight:700;">About</span>
-                <span onclick="showScreen('utility-screen')"
-                    style="cursor:pointer; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; font-weight:700;">Utility</span>
+
                 <span onclick="showScreen('privacy-screen')"
                     style="cursor:pointer; font-size:0.6rem; text-transform:uppercase; letter-spacing:0.1em; font-weight:700;">Privacy</span>
                 <span onclick="showScreen('terms-screen')"
@@ -480,71 +479,7 @@
         </div>
     </div>
 
-    <!-- Utility Screen -->
-    <div id="utility-screen" class="cfh-screen">
-        <div class="content-container">
-            <div class="back-link" onclick="showScreen('main-discovery-feed')">Return to Core</div>
-            <h1
-                style="text-transform:uppercase; letter-spacing:0.3em; margin-bottom: 3rem; font-weight:300; text-align:center;">
-                Utility Tools</h1>
-            <div class="tools-grid">
-                <div class="tool-card" style="opacity:0.5; cursor:default;">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        BMI Calculator</h3>
-                    <p style="font-size:0.8rem;">Clinical Health Metrics<br>(In Development)</p>
-                </div>
-                <div class="tool-card" style="opacity:0.5; cursor:default;">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        Stopwatch</h3>
-                    <p style="font-size:0.8rem;">Urge Surfing Timer<br>(In Development)</p>
-                </div>
-                <div class="tool-card" onclick="openSecretCalc()">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#000; font-weight:700;">
-                        Calculator</h3>
-                    <p style="font-size:0.8rem;">Standard Math Utility<br>(Active)</p>
-                </div>
-                <div class="tool-card" style="opacity:0.5; cursor:default;">
-                    <h3
-                        style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; color:#888;">
-                        Reflections Log</h3>
-                    <p style="font-size:0.8rem;">Private Journaling<br>(In Development)</p>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Secret Calculator Overlay -->
-    <div id="calculator-overlay" class="cfh-screen">
-        <h2
-            style="text-transform:uppercase; letter-spacing:0.2em; font-size: 0.8rem; margin-bottom: 2rem; color: #888;">
-            Calculator</h2>
-        <div id="calc-screen"
-            style="width:100%; max-width:300px; border:2px solid #000; padding:1.5rem; font-size:1.5rem; text-align:right; margin-bottom:1rem; font-family:monospace;">
-            0</div>
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; width:100%; max-width:300px;">
-            <button class="calc-btn" onclick="press('7')">7</button>
-            <button class="calc-btn" onclick="press('8')">8</button>
-            <button class="calc-btn" onclick="press('9')">9</button>
-            <button class="calc-btn" onclick="press('/')">/</button>
-            <button class="calc-btn" onclick="press('4')">4</button>
-            <button class="calc-btn" onclick="press('5')">5</button>
-            <button class="calc-btn" onclick="press('6')">6</button>
-            <button class="calc-btn" onclick="press('*')">*</button>
-            <button class="calc-btn" onclick="press('1')">1</button>
-            <button class="calc-btn" onclick="press('2')">2</button>
-            <button class="calc-btn" onclick="press('3')">3</button>
-            <button class="calc-btn" onclick="press('-')">-</button>
-            <button class="calc-btn" onclick="press('0')">0</button>
-            <button class="calc-btn" onclick="press('.')">.</button>
-            <button class="calc-btn" onclick="compute()">=</button>
-            <button class="calc-btn" onclick="press('+')">+</button>
-            <button class="calc-btn" style="grid-column:span 4; margin-top:10px;" onclick="clearCalc()">CLEAR</button>
-        </div>
-        <div class="back-link" style="margin-top:2rem;" onclick="closeSecretCalc()">Cancel</div>
-    </div>
 
     <!-- Hidden Admin Panel -->
     <div id="admin-panel">

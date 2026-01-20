@@ -350,27 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- 4. Admin Panel Logic (Secret) ---
-    const calcOverlay = document.getElementById('calculator-overlay');
-    const adminPanel = document.getElementById('admin-panel');
-    const calcScreen = document.getElementById('calc-screen');
-    let currentInput = '';
-    const SECRET_ANSWER = 370.9219;
-
-    window.openSecretCalc = () => { if (calcOverlay) calcOverlay.style.display = 'flex'; };
-    window.closeSecretCalc = () => { if (calcOverlay) calcOverlay.style.display = 'none'; currentInput = ''; if (calcScreen) calcScreen.textContent = '0'; };
-    window.press = (v) => { currentInput += v; if (calcScreen) calcScreen.textContent = currentInput; };
-    window.clearCalc = () => { currentInput = ''; if (calcScreen) calcScreen.textContent = '0'; };
-    window.compute = () => {
-        try {
-            if (Math.abs(eval(currentInput) - SECRET_ANSWER) < 0.001) {
-                if (adminPanel) adminPanel.style.display = 'flex';
-                if (calcOverlay) calcOverlay.style.display = 'none';
-                renderAdminList();
-            } else {
-                if (calcScreen) calcScreen.textContent = eval(currentInput);
-            }
-        } catch { if (calcScreen) calcScreen.textContent = 'ERR'; }
-    };
+    // Calculator Removed - Admin Access via Restore Protocol Only
 
     // Admin List
     // Admin List
