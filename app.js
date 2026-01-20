@@ -263,7 +263,9 @@ document.addEventListener('DOMContentLoaded', () => {
             db.collection('posts')
                 .onSnapshot((snapshot) => {
                     // Fetch everything, then sort manually in JS to ensure no data is lost
-                    let allPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                    let allPosts = snapshot.docs
+                        .map(doc => ({ id: doc.id, ...doc.data() }))
+                        .filter(p => p.deleted !== true);
 
                     // Manual Sort (Newest First)
                     allPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
@@ -413,7 +415,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.deletePost = (id) => {
-        if (db && confirm('Delete?')) db.collection('posts').doc(id).delete();
+        // SECURE SOFT DELETE: Instead of deleting the doc, we mark it as deleted with a signature
+        if (db && confirm('Delete?')) {
+            db.collection('posts').doc(id).update({
+                deleted: true,
+                auth_sig: 'cfh_ops_secure_9922'
+            }).then(() => {
+                alert('Post removed from live feed.');
+            });
+        }
     };
 
     // Global variable to track editing state
@@ -445,7 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     db.collection('posts').doc(editingId).update({
                         text: txt,
                         category: cat,
-                        link: document.getElementById('advice-link').value
+                        link: document.getElementById('advice-link').value,
+                        auth_sig: 'cfh_ops_secure_9922' // SECURE SIGNATURE
                     }).then(() => {
                         alert('Post Updated.');
                         resetEditor();
@@ -456,7 +467,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         text: txt,
                         category: cat,
                         link: document.getElementById('advice-link').value,
-                        timestamp: new Date().getTime()
+                        timestamp: new Date().getTime(),
+                        auth_sig: 'cfh_ops_secure_9922' // SECURE SIGNATURE
                     }).then(() => {
                         alert('Published.');
                         resetEditor();
