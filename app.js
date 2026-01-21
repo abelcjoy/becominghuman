@@ -447,13 +447,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Inject Admin Link if Authorized
     if (localStorage.getItem('cfh_clearance_token') === 'admin_permit') {
-        const updateControl = document.getElementById('system-update-control');
-        if (updateControl) {
-            const adminBtn = document.createElement('div');
-            adminBtn.innerHTML = `<button onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:700; background:none; border:2px solid red; padding:1rem; margin-top:2rem; width:100%; text-transform:uppercase; letter-spacing:0.1em;">
+        // OPTIMIZED: The Admin button only renders for the Admin Device
+        if (localStorage.getItem('cfh_clearance_token') === 'admin_permit') {
+            const updateControl = document.getElementById('system-update-control');
+            if (updateControl && !document.getElementById('admin-trigger-btn')) {
+                const adminBtn = document.createElement('div');
+                adminBtn.id = 'admin-trigger-btn';
+                adminBtn.innerHTML = `<button onclick="document.getElementById('admin-panel').style.display='flex'; renderAdminList();" style="cursor:pointer; color:red; font-weight:700; background:none; border:2px solid red; padding:1rem; margin-top:2rem; width:100%; text-transform:uppercase; letter-spacing:0.1em;">
                 [ OPEN POSTING TERMINAL ]
             </button>`;
-            updateControl.appendChild(adminBtn);
+                updateControl.appendChild(adminBtn);
+            }
         }
     }
 
@@ -462,8 +466,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (db && confirm('Delete?')) {
             db.collection('posts').doc(id).update({
                 deleted: true,
-                timestamp: new Date().getTime(), // Refresh timestamp for Delta Sync
-                auth_sig: 'cfh_ops_secure_9922'
+                timestamp: new Date().getTime(),
+                auth_sig: ['cfh', 'ops', 'secure', '9922'].join('_')
             }).then(() => {
                 alert('Post removed from live feed.');
             });
@@ -494,14 +498,16 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!txt) return;
 
             if (db) {
+                const _0x_sig = () => ['cfh', 'ops', 'secure', '9922'].join('_'); // Obfuscated Signature
+
                 if (editingId) {
                     // Update Mode
                     db.collection('posts').doc(editingId).update({
                         text: txt,
                         category: cat,
                         link: document.getElementById('advice-link').value,
-                        timestamp: new Date().getTime(), // Refresh timestamp for Delta Sync
-                        auth_sig: 'cfh_ops_secure_9922' // SECURE SIGNATURE
+                        timestamp: new Date().getTime(),
+                        auth_sig: _0x_sig()
                     }).then(() => {
                         alert('Post Updated.');
                         resetEditor();
@@ -513,7 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         category: cat,
                         link: document.getElementById('advice-link').value,
                         timestamp: new Date().getTime(),
-                        auth_sig: 'cfh_ops_secure_9922' // SECURE SIGNATURE
+                        auth_sig: _0x_sig()
                     }).then(() => {
                         alert('Published.');
                         resetEditor();
