@@ -11,7 +11,6 @@ localStorage.removeItem('cfh_cached_posts');
 
 // CONFIRMATION SIGNAL
 console.log("V.14 PROTOCOL INITIALIZED");
-alert("PROTOCOL V.14 RELOAD SUCCESS: PURGING DATABASE GHOSTS.");
 
 // SECURITY: Device Fingerprinting for License Protection
 function getDeviceId() {
@@ -81,7 +80,7 @@ window.renderFeed = function (filterCategory = null, append = false) {
             const badge = document.createElement('div');
             badge.id = 'status-badge';
             badge.style.marginTop = '10px';
-            badge.innerHTML = `<span style="color:#00FF9D; font-size:10px; letter-spacing:2px; border:1px solid #00FF9D; padding:3px 10px; border-radius:15px; display:inline-block; font-weight:bold;">● VERIFIED PROTOCOL ACCESS</span>`;
+            badge.innerHTML = `<span style="color:#000; font-size:10px; letter-spacing:2px; border:1px solid #000; padding:3px 10px; border-radius:15px; display:inline-block; font-weight:bold;">● VERIFIED PROTOCOL ACCESS</span>`;
             titleArea.appendChild(badge);
         }
     }
@@ -144,21 +143,21 @@ window.renderFeed = function (filterCategory = null, append = false) {
 
         card.innerHTML = `
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 10px;">
-                <div style="font-size:0.6rem; color:#666; text-transform:uppercase; letter-spacing:0.1em; white-space: nowrap;">
+                <div style="font-size:0.6rem; color:#888; text-transform:uppercase; letter-spacing:0.1em; white-space: nowrap;">
                     POST #${postNum}
                 </div>
-                <div style="font-size:0.55rem; background:#00FF9D; color:#000; padding:0.3rem 0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:0.1em; text-align: right; line-height: 1.2;">
+                <div style="font-size:0.5rem; background:#000; color:#fff; padding:0.3rem 0.5rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; text-align: right; line-height: 1.2;">
                     ${displayTag}
                 </div>
             </div>
-            <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color:#eee;">
+            <div class="advice-content" style="font-size:0.95rem; line-height:1.6; color:#000;">
                 ${displayText}
             </div>
-            ${isLong ? `<button class="read-more-toggle" style="color:#00FF9D;" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
-            ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview" style="background:#00FF9D; color:#000;">OPEN RESOURCE</a></div>` : ''}
+            ${isLong ? `<button class="read-more-toggle" style="color:#000; font-weight:800;" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
+            ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview" style="background:#000; color:#fff;">OPEN RESOURCE</a></div>` : ''}
             
             <!-- Behavioral Protocol Signal -->
-            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #222; font-size:0.5rem; color:#555; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #f0f0f0; font-size:0.5rem; color:#aaa; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
                 IMPORTANT: This protocol is a behavioral reconstruction signal, not medical advice. Application of this data should stay within your personal comfort zone..
             </div>
         `;

@@ -4,12 +4,12 @@
     --primary: #000000;
     --primary-glow: rgba(0, 0, 0, 0.05);
     --accent: #000000;
-    --background: #080808;
-    --surface: #111111;
-    --surface-hover: #181818;
-    --text: #ffffff;
-    --text-muted: #aaaaaa;
-    --border: #eeeeee;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #f9f9f9;
+    --text: #000000;
+    --text-muted: #888888;
+    --border: #000000;
     --glass: rgba(255, 255, 255, 0.9);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     --safe-top: env(safe-area-inset-top, 0px);
