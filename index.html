@@ -10,6 +10,33 @@
         gtag('js', new Date());
         gtag('config', 'G-PQK86PEED6');
     </script>
+    <!-- FORCE CACHE BREAK (Temporary Nuclear Option) -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(registrations => {
+                for (let registration of registrations) {
+                    registration.unregister();
+                }
+            });
+        }
+        if ('caches' in window) {
+            caches.keys().then(names => {
+                for (let name of names) caches.delete(name);
+            });
+        }
+    </script>
+    <!-- GHOST PURGE PROTOCOL (V14) -->
+    <script>
+        const PURGE_TARGET = /NOT MEDICAL ADVICE[\s\S]*?APPLICATION\.?/gi;
+        const purgeDom = () => {
+            document.querySelectorAll('*').forEach(el => {
+                if (el.children.length === 0 && PURGE_TARGET.test(el.innerText)) {
+                    el.innerText = el.innerText.replace(PURGE_TARGET, "");
+                }
+            });
+        };
+        setInterval(purgeDom, 500); // Continuous scanning for ghost text
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>CFH Protocol | Clarity for Humans</title>
@@ -59,7 +86,8 @@
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js"></script>
     <script defer src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-    <script defer src="app.js"></script>
+    <script>alert("PROTOCOL V14 SYNC: PURGING CACHE...");</script>
+    <script defer src="core_v14.js?v=14"></script>
 
 
 
@@ -68,10 +96,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
-    <!-- iOS support -->
-    <link rel="apple-touch-icon" href="assets/icon.svg">
+    <link rel="stylesheet" href="style_v14.css">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <link rel="manifest" href="manifest.json">
     <style>
@@ -86,8 +111,8 @@
         }
 
         #main-discovery-feed {
-            display: block;
-            /* Change from flex to block for natural scrolling */
+            display: none;
+            /* SECURE BY DEFAULT: JavaScript will reveal after auth check */
             width: 100%;
             min-height: 100vh;
         }
@@ -103,12 +128,6 @@
 
         #selection-screen {
             display: none;
-            width: 100%;
-            height: 100vh;
-            flex-direction: column;
-            padding: 2rem;
-            overflow-y: auto;
-            background: #ffffff;
         }
 
         .protocol-list,
@@ -429,123 +448,140 @@
     <!-- Hidden / Virtual Screens -->
 
 
-    <!-- About Screen -->
+    <!-- About Screen (Clinical Mission) -->
     <div id="about-screen" class="cfh-screen">
         <div class="content-container">
             <div class="back-link" onclick="showScreen('main-discovery-feed')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">What is
-                CFH?</h1>
+            <h1
+                style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom: 2rem; font-weight:800; font-size: 1.4rem;">
+                PROTOCOL MISSION STATEMENT</h1>
 
             <section style="margin-bottom: 3rem;">
-                <p style="margin-bottom:1.5rem; line-height: 1.8;">
-                    CFH stands for Clarity for Humans. It is a project started because the digital world has become too
-                    loud and too addictive. Most of us are living in a fog of constant stimulation, and we have
-                    forgotten what it feels like to just be present and focused.
+                <p style="margin-bottom:1.5rem; line-height: 1.8; color: #444;">
+                    <strong>CFH (Clarity for Humans)</strong> is a behavioral architecture protocol designed to
+                    counteract the neurological fragmentation caused by modern digital consumption. Our mission is to
+                    provide clinical-grade behavioral anchors derived from developmental psychology and focus-state
+                    research.
                 </p>
-                <p style="margin-bottom:1.5rem; line-height: 1.8;">
-                    We do not believe in quick fixes or empty motivation. Instead, we look at how our habits actually
-                    affect us and how we can slowly untangle our brains from those "high dopamine" loops. It is about
-                    building a life that is not controlled by a screen.
+                <p style="margin-bottom:1.5rem; line-height: 1.8; color: #444;">
+                    The digital ecosystem is engineered for retention, often leading to dopamine-loop entrapment. CFH
+                    Protocol provides the inverse: a clean, data-driven environment for cognitive recalibration. We
+                    focus on long-term behavioral sobriety and the restoration of human agency.
                 </p>
             </section>
 
             <h2
-                style="text-transform:uppercase; font-size:1.1rem; margin:3rem 0 1.5rem; letter-spacing: 0.1em; font-weight: 700;">
-                Our Approach</h2>
-            <p style="margin-bottom:1.5rem; line-height: 1.8;">
-                The main idea here is consistent awareness. Every day, we post a few simple reminders or bits of advice
-                to help you stay on track. Whether you are dealing with a specific habit or just feel overwhelmed by the
-                internet, these posts are designed to give you a moment of clarity in your busy day.
+                style="text-transform:uppercase; font-size:0.9rem; margin:3rem 0 1.5rem; letter-spacing: 0.2rem; font-weight: 800;">
+                METHODOLOGY</h2>
+            <p style="margin-bottom:1.5rem; line-height: 1.8; color: #444;">
+                We utilize high-frequency, low-friction behavioral signals. By delivering structured reflections via our
+                secure digital laboratory, we help users maintain a consistent state of self-audit. This is not
+                "motivation"—this is systematic cognitive restructuring.
             </p>
 
             <h2
-                style="text-transform:uppercase; font-size:1.1rem; margin:3rem 0 1.5rem; letter-spacing: 0.1em; font-weight: 700;">
-                Why we do this</h2>
-            <p style="margin-bottom:1.5rem; line-height: 1.8;">
-                We keep this site clean and simple because clarity should not be complicated. There are no tracking
-                scripts, no personalized ads, and no complicated sign-ups. It is just a place for humans to get better.
+                style="text-transform:uppercase; font-size:0.9rem; margin:3rem 0 1.5rem; letter-spacing: 0.2rem; font-weight: 800;">
+                INFRASTRUCTURE</h2>
+            <p style="margin-bottom:1.5rem; line-height: 1.8; color: #444;">
+                Our platform is engineered for absolute privacy. There are zero third-party behavioral trackers
+                (pixel-tracking) within our core feed. We operate a "Zero-Retention" policy on personal identity,
+                focusing entirely on the transmission of recovery data.
             </p>
 
             <h2
-                style="text-transform:uppercase; font-size:1.1rem; margin:3rem 0 1.5rem; letter-spacing: 0.1em; font-weight: 700;">
-                Get in touch</h2>
-            <p style="margin-bottom: 4rem;">If you have questions or just want to reach out, you can send an email here:
+                style="text-transform:uppercase; font-size:0.8rem; margin:3rem 0 1.5rem; letter-spacing: 0.1rem; font-weight: 800; color: #888;">
+                COMMUNICATIONS</h2>
+            <p style="margin-bottom: 4rem; color: #444;">For administrative inquiries or professional collaboration:
                 <br><strong
-                    style="border-bottom: 1px solid #000; padding-top: 10px; display: inline-block;">clarityforhumanscfh@gmail.com</strong>
+                    style="border-bottom: 1px solid #000; padding-top: 10px; display: inline-block; font-family: monospace;">clarityforhumanscfh@gmail.com</strong>
             </p>
         </div>
     </div>
 
-    <!-- Privacy Screen -->
+    <!-- Privacy Screen (Hardened Compliance) -->
     <div id="privacy-screen" class="cfh-screen">
         <div class="content-container">
             <div class="back-link" onclick="showScreen('main-discovery-feed')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">How we
-                handle your privacy</h1>
-            <p style="margin-bottom: 1.5rem;">We care about your privacy as much as we care about our own. This page
-                explains what little data we might see and what we do with it.</p>
+            <h1
+                style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom: 2rem; font-weight:800; font-size: 1.4rem;">
+                DIGITAL PRIVACY PROTOCOL</h1>
+            <p style="margin-bottom: 1.5rem; color: #444;">This document outlines the systematic handling of metadata
+                within the CFH Laboratory. We prioritize cognitive sovereignty and data minimization.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">The Basics</h2>
-            <p style="margin-bottom: 1.5rem;">Like almost every website, our hosting company keeps basic logs. This
-                usually includes things like your IP address, what browser you use, and when you visited. We do not use
-                this to identify you personally; it is just standard technical stuff that helps us keep the site
-                running.</p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:2rem 0 1rem; font-weight: 800;">1. DATA
+                MINIMIZATION</h2>
+            <p style="margin-bottom: 1.5rem; color: #444;">CFH does not collect names, phone numbers, or residential
+                addresses. Your unique <strong>Protocol ID</strong> is the primary identifier for your clearance level.
+                We utilize hardware-level fingerprinting (Device UUID) solely for license integrity and anti-piracy
+                measures.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Google Ads</h2>
-            <p style="margin-bottom: 1.5rem;">We use Google to show ads on our site. Google uses cookies (sometimes
-                called DART cookies) to show ads based on your visit here and on other sites. If you do not like this,
-                you can opt out in your Google account settings or by visiting the Google ad policy page.</p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:2rem 0 1rem; font-weight: 800;">2. VAULT
+                ENCRYPTION</h2>
+            <p style="margin-bottom: 1.5rem; color: #444;">All behavioral content delivered to your device is stored in
+                a <strong>Secure Vault</strong>. This data is encrypted using a unique device-derived key and remains
+                unreadable to third-party scripts or external file inspectors. We ensure your progress remains local and
+                sovereign.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:2rem 0 1rem;">Third Party Sites</h2>
-            <p style="margin-bottom: 1.5rem;">Our privacy policy only covers what happens on our own site. If you click
-                a link and go somewhere else, their rules apply instead. We recommend checking their privacy pages if
-                you have concerns.</p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:2rem 0 1rem; font-weight: 800;">3. GOOGLE
+                ADSENSE DISCLOSURE</h2>
+            <p style="margin-bottom: 1.5rem; color: #444;">We utilize Google AdSense for sustainable infrastructure
+                funding. Google may use cookies to serve ads based on your visit to this and other websites. These ads
+                are served by third parties and are not under the behavioral control of CFH Protocol. You may opt-out
+                via Google's centralized Ad Settings.</p>
 
             <h2
-                style="text-transform:uppercase; font-size:1.1rem; margin:1.5rem 0 0.5rem; font-size: 0.9rem; font-weight: 700;">
-                Acceptance</h2>
-            <p style="margin-bottom: 4rem;">By using CFH, you are agreeing to how we handle things here. We keep it as
-                simple and transparent as possible.</p>
+                style="text-transform:uppercase; font-size:0.7rem; margin:1.5rem 0 0.5rem; font-weight: 800; color: #888;">
+                CONSENT & ACCEPTANCE</h2>
+            <p style="margin-bottom: 4rem; color: #666; font-size: 0.7rem; letter-spacing: 0.05rem;">BY ACCESSING THE
+                CFH PROTOCOL, YOU ACKNOWLEDGE THE USE OF LOCALSTORAGE ENCRYPTION AND DEVICE IDENTIFICATION FOR THE
+                PURPOSE OF SECURE ACCESS MANAGEMENT. WE RESERVE THE RIGHT TO REVOKE ACCESS IF ATTACK VECTORS AGAINST OUR
+                INFRASTRUCTURE ARE DETECTED.</p>
         </div>
     </div>
 
-    <!-- Terms Screen -->
+    <!-- Terms Screen (Clinical Compliance) -->
     <div id="terms-screen" class="cfh-screen">
         <div class="content-container">
             <div class="back-link" onclick="showScreen('main-discovery-feed')">Return to Core</div>
-            <h1 style="text-transform:uppercase; letter-spacing:0.1em; margin-bottom: 2rem; font-weight:300;">Terms of
-                Service</h1>
+            <h1
+                style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom: 2rem; font-weight:800; font-size: 1.4rem;">
+                TERMS OF SERVICE</h1>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0; font-weight: 700;">1. Using CFH</h2>
-            <p style="margin-bottom: 1.5rem;">By coming here and using this site, you agree to follow these simple
-                rules. If you do not agree, then you probably should not use the site.</p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:1rem 0; font-weight: 800;">1. PROTOCOL USAGE
+            </h2>
+            <p style="margin-bottom: 1.5rem; color: #444; line-height: 1.6;">By accessing the CFH Laboratory and utilize
+                our behavioral data, you enter into a binding agreement to adhere to these operational standards. This
+                platform is provided for individual cognitive development and research purposes only.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0; font-weight: 700;">2. The Content</h2>
-            <p style="margin-bottom: 1.5rem;">You can use the information on this site for your own personal use. But
-                please do not copy our software or use our content for commercial purposes without asking first.</p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:1rem 0; font-weight: 800;">2. INTELLECTUAL
+                PROPERTY</h2>
+            <p style="margin-bottom: 1.5rem; color: #444; line-height: 1.6;">All behavioral anchors, protocol
+                definitions, and clinical reflections delivered via this platform are the proprietary property of CFH.
+                Unauthorized reproduction, programmatic scraping, or commercial redistribution of our "Seed Content" is
+                strictly prohibited.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0; font-weight: 700;">3. Important
-                Disclaimer</h2>
-            <p style="margin-bottom: 1.5rem; color: #d00; font-weight: 500;">Everything we post on CFH is for
-                information and encouragement only. We are not doctors or therapists. This is not medical advice. If you
-                have a serious medical condition or addiction, please talk to a professional before making big changes.
-            </p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:1rem 0; font-weight: 800; color: #d00;">3.
+                MEDICAL ADVICE WAIVER</h2>
+            <p style="margin-bottom: 1.5rem; color: #d00; font-weight: 600; line-height: 1.6;">CFH PROTOCOL IS NOT A
+                MEDICAL PROVIDER. OUR CONTENT IS FOR EDUCATIONAL AND ARCHIVAL PURPOSES. WE DO NOT DIAGNOSE, TREAT, OR
+                CURE ANY CLINICAL DISORDER. IF YOU ARE EXPERIENCING SEVERE WITHDRAWAL, DEPRESSION, OR CRISIS, CONSULT A
+                LICENSED MEDICAL PROFESSIONAL IMMEDIATELY.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0; font-weight: 700;">4. Limitation of
-                Liability</h2>
-            <p style="margin-bottom: 2rem;">We do our best to provide good advice, but we cannot guarantee everything
-                will work for everyone or that the site will always be available. Use the materials at your own risk.
-            </p>
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:1rem 0; font-weight: 800;">4. LIMITATION OF
+                LIABILITY</h2>
+            <p style="margin-bottom: 2rem; color: #444; line-height: 1.6;">We provide behavioral signals on an "As-Is"
+                basis. CFH Laboratory does not guarantee specific neurological outcomes. You utilize our protocol at
+                your own psychological and physical risk.</p>
 
-            <h2 style="text-transform:uppercase; font-size:1.1rem; margin:1rem 0; font-weight: 700;">5. Refunds &
-                Cancellations</h2>
-            <p style="margin-bottom: 4rem;">
-                <strong>Cancellation:</strong> Access is prepaid for 30 days. It does not auto-renew, so you do not need
-                to cancel.
+            <h2 style="text-transform:uppercase; font-size:0.9rem; margin:1rem 0; font-weight: 800;">5. TRANSACTIONAL
+                CLEARANCE</h2>
+            <p style="margin-bottom: 4rem; color: #444; line-height: 1.6;">
+                <strong>NON-RECURRING:</strong> Access keys provide 30 days of clearance. We do not operate on a
+                recurring billing model. You must manually renew to maintain access.
                 <br><br>
-                <strong>Refunds:</strong> Since this is a digital product with immediate access to proprietary content,
-                we generally do not offer refunds once the key is used. However, if you face technical issues preventing
-                access, please email us within 24 hours of payment for assistance.
+                <strong>REFUNDS:</strong> Due to the digital and proprietary nature of the Protocol Key, all sales are
+                final upon delivery of the Protocol Passport. Technical support is available for access-related
+                discrepancies.
             </p>
         </div>
     </div>
@@ -583,7 +619,8 @@
                 <button onclick="document.getElementById('admin-panel').style.display='none'"
                     style="border: 1px solid #333; background:none; color: #fff; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700;">EXIT
                     TERMINAL</button>
-                <button onclick="location.reload()"
+                <button
+                    onclick="localStorage.removeItem('cfh_clearance_token'); localStorage.removeItem('cfh_token_timestamp'); location.reload();"
                     style="border: 1px solid #d00; color:#d00; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700;">REVOKE
                     ACCESS</button>
             </div>
@@ -605,7 +642,7 @@
                 style="text-transform: uppercase; font-size: 0.7rem; color: #888; margin-bottom: 1rem; letter-spacing: 0.1em;">
                 MEMBERSHIP</div>
             <div style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">₹ 49<span
-                    style="font-size: 0.8rem; font-weight: 400; color: #666;"> / month</span></div>
+                    style="font-size: 0.8rem; font-weight: 400; color: #666;"> / 30 days</span></div>
             <ul
                 style="text-align: left; font-size: 0.8rem; line-height: 1.8; margin-bottom: 2rem; color: #444; list-style: none; padding: 0;">
                 <li>+ Daily Recovery Advice</li>

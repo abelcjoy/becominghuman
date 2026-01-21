@@ -1,74 +1,33 @@
-importScripts('https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js');
-importScripts('https://www.gstatic.com/firebasejs/9.22.0/firebase-messaging-compat.js');
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCiJbxoviq2H7AkxrVIXmxwPLNeIwWJOXM",
-    authDomain: "cfh-protocol.firebaseapp.com",
-    projectId: "cfh-protocol",
-    storageBucket: "cfh-protocol.firebasestorage.app",
-    messagingSenderId: "576464528755",
-    appId: "1:576464528755:web:6aba2a06731c3dbb68d106"
-};
+const CACHE_NAME = 'cfh-v13-KILL-SWITCH';
 
-firebase.initializeApp(firebaseConfig);
-const messaging = firebase.messaging();
-
-const CACHE_NAME = 'cfh-v7';
-const ASSETS = [
-    '/',
-    'index.html',
-    'style.css',
-    'app.js',
-    'manifest.json',
-    'assets/icon.png',
-    'assets/social_preview.png'
-];
-
-// Install: Cache core assets (Initial setup)
-self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => cache.addAll(ASSETS))
-    );
-    self.skipWaiting(); // FORCE immediate update
+self.addEventListener('install', (event) => {
+    self.skipWaiting();
+    console.log("SW Install: Kill Switch Active");
 });
 
-// Activate: Clean up old caches
-self.addEventListener('activate', event => {
+self.addEventListener('activate', (event) => {
     event.waitUntil(
-        caches.keys().then(keys => {
-            return Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)));
-        })
-    );
-    self.clients.claim(); // FORCE immediate control
-});
-
-// Fetch: NETWORK-FIRST Strategy
-// This ensures the user ALWAYS sees your latest advice if they have internet.
-// If offline, it falls back to the local cache.
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        fetch(event.request).catch(() => {
-            return caches.match(event.request);
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    console.log("SW Activate: Deleting Cache", cacheName);
+                    return caches.delete(cacheName);
+                })
+            );
+        }).then(() => {
+            console.log("SW Activate: All Caches Cleared. Claiming Clients.");
+            return self.clients.claim();
+        }).then(() => {
+            // Force reload all open tabs
+            return self.clients.matchAll().then(clients => {
+                clients.forEach(client => client.navigate(client.url));
+            });
         })
     );
 });
 
-// Notification Click: Open the app
-self.addEventListener('notificationclick', event => {
-    event.notification.close();
-    event.waitUntil(
-        clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clientList => {
-            if (clientList.length > 0) {
-                let client = clientList[0];
-                for (let i = 0; i < clientList.length; i++) {
-                    if (clientList[i].focused) {
-                        client = clientList[i];
-                    }
-                }
-                return client.focus();
-            }
-            return clients.openWindow('/');
-        })
-    );
+// Fetch listener that bypasses everything
+self.addEventListener('fetch', (event) => {
+    event.respondWith(fetch(event.request));
 });
