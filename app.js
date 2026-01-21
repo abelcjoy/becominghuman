@@ -16,6 +16,27 @@ function getDeviceId() {
     return id;
 }
 
+// PREMIUM: SECURE laboratory vault (XOR + Base64)
+const _SALT = "cfh_lab_09922_ops";
+const Vault = {
+    _k: getDeviceId() + _SALT,
+    encrypt: (data) => {
+        const str = JSON.stringify(data);
+        return btoa(str.split('').map((c, i) =>
+            String.fromCharCode(c.charCodeAt(0) ^ Vault._k.charCodeAt(i % Vault._k.length))
+        ).join(''));
+    },
+    decrypt: (blob) => {
+        if (!blob) return null;
+        try {
+            const str = atob(blob).split('').map((c, i) =>
+                String.fromCharCode(c.charCodeAt(0) ^ Vault._k.charCodeAt(i % Vault._k.length))
+            ).join('');
+            return JSON.parse(str);
+        } catch (e) { return null; }
+    }
+};
+
 // Navigation: Entry -> Selection -> About/Privacy/etc
 // Navigation System (Hardened)
 window.showScreen = function (screenId) {
@@ -287,14 +308,18 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Firebase connected.");
 
             // START DELTA SYNC PROTOCOL
-            // 1. Load context from internal storage
+            // 1. Load context from internal storage (Decrypted from Vault)
             const cached = localStorage.getItem('cfh_cached_posts');
             if (cached) {
-                try {
-                    globalPosts = JSON.parse(cached);
+                const decrypted = Vault.decrypt(cached);
+                if (decrypted) {
+                    globalPosts = decrypted;
                     renderFeed(); // Instant UI from cache
-                    console.log("Delta Sync: Context loaded from device memory.");
-                } catch (e) { globalPosts = []; }
+                    console.log("Delta Sync: Context securely loaded from device memory.");
+                } else {
+                    // Fallback if encryption fails/key changes
+                    localStorage.removeItem('cfh_cached_posts');
+                }
             }
 
             // 2. Determine "High Watermark" (Newest post timestamp)
@@ -328,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     globalPosts.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
 
                     try {
-                        localStorage.setItem('cfh_cached_posts', JSON.stringify(globalPosts));
+                        localStorage.setItem('cfh_cached_posts', Vault.encrypt(globalPosts));
                     } catch (e) { console.warn("Sync Storage Full", e); }
 
                     renderFeed();

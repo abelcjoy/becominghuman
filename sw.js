@@ -13,14 +13,14 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
-const CACHE_NAME = 'cfh-v6';
+const CACHE_NAME = 'cfh-v7';
 const ASSETS = [
     '/',
     'index.html',
     'style.css',
     'app.js',
     'manifest.json',
-    'assets/icon.svg',
+    'assets/icon.png',
     'assets/social_preview.png'
 ];
 
