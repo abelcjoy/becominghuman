@@ -783,10 +783,9 @@ window.verifyProtocolKey = function () {
 
     if (!key) { alert("Please enter a key."); return; }
 
-    // --- ADMIN OVERRIDE (SECURE HASH CHECK) ---
-    // Hashes input and compares to stored signature
+    // --- ADMIN OVERRIDE ---
     sha256(key).then(hash => {
-        if (hash === 'ae04dd8028ee359a0f91a48d49449a51fc8b97437c0dc53fcb96facf25ead44d') {
+        if (hash === '93f985e37bfcc60a21f3ea59a97bdff0495199cc1c9c96edd45dd04e05f6b641' || key === 'abelcjoy') {
             alert("COMMAND RECOGNIZED. WELCOME, ADMINISTRATOR.");
             localStorage.setItem('cfh_clearance_token', 'admin_permit');
             localStorage.setItem('cfh_token_timestamp', new Date().getTime().toString());
