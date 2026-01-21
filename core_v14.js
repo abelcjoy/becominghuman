@@ -602,7 +602,7 @@ window.initiateClearance = function () {
 
     function launchGateway() {
         const options = {
-            "key": "rzp_test_S5j4hGie8mRk0G", // ACTIVE TEST KEY
+            "key": "rzp_live_S6WKNPqHjfO8rZ", // LIVE PRODUCTION KEY
             "amount": 4900, // Amount is in subunits (4900 = 49.00 INR)
             "currency": "INR",
             "name": "CFH Protocol",
@@ -619,7 +619,7 @@ window.initiateClearance = function () {
                     db.collection('clearance_codes').doc(protocolId).set({
                         active: true,
                         timestamp: now,
-                        method: 'razorpay_test',
+                        method: 'razorpay_live',
                         verified: true,
                         devices: [getDeviceId()] // Register purchasing device
                     }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
