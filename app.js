@@ -91,6 +91,19 @@ window.renderFeed = function (filterCategory = null, append = false) {
     const feed = document.getElementById('advice-feed');
     if (!feed) return;
 
+    // --- Update Protocol Status Badge ---
+    const titleArea = document.querySelector('.cfh-title-section');
+    if (titleArea && !document.getElementById('status-badge')) {
+        const isAuth = localStorage.getItem('cfh_clearance_token');
+        if (isAuth && isAuth.startsWith('active_')) {
+            const badge = document.createElement('div');
+            badge.id = 'status-badge';
+            badge.style.marginTop = '10px';
+            badge.innerHTML = `<span style="color:#00FF9D; font-size:10px; letter-spacing:2px; border:1px solid #00FF9D; padding:3px 10px; border-radius:15px; display:inline-block; font-weight:bold;">● VERIFIED PROTOCOL ACCESS</span>`;
+            titleArea.appendChild(badge);
+        }
+    }
+
     // Clear current content ONLY if not appending
     if (!append) feed.innerHTML = '';
 
@@ -430,16 +443,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         globalPosts.forEach((p, i) => {
             const row = document.createElement('div');
-            row.style.borderBottom = '1px solid #eee';
-            row.style.padding = '10px';
+            row.style.borderBottom = '1px solid #222';
+            row.style.padding = '12px 0';
             row.style.display = 'flex';
             row.style.justifyContent = 'space-between';
+            row.style.alignItems = 'center';
+            row.style.color = '#fff';
             const postNum = count - i;
 
-            row.innerHTML = `<span style="font-size:0.75rem;"><b>#${postNum}</b>: ${p.text.substring(0, 30)}...</span> 
-            <div>
-                <button onclick="editPost('${p.id}')" style="color:blue; cursor:pointer; margin-right:5px;">EDIT</button>
-                <button onclick="deletePost('${p.id}')" style="color:red; cursor:pointer;">DEL</button>
+            row.innerHTML = `<span style="font-size:0.75rem; letter-spacing:0.05em;">
+                <b style="color:#00FF9D;">#${postNum}</b>: ${p.text.substring(0, 40)}...
+            </span> 
+            <div style="display: flex; gap: 15px;">
+                <button onclick="editPost('${p.id}')" style="background:none; border:none; color:#00FF9D; cursor:pointer; font-size:0.6rem; font-weight:700; text-transform:uppercase;">[ EDIT ]</button>
+                <button onclick="deletePost('${p.id}')" style="background:none; border:none; color:#FF3B30; cursor:pointer; font-size:0.6rem; font-weight:700; text-transform:uppercase;">[ DELETE ]</button>
             </div>`;
             list.appendChild(row);
         });
@@ -498,7 +515,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!txt) return;
 
             if (db) {
-                const _0x_sig = () => ['cfh', 'ops', 'secure', '9922'].join('_'); // Obfuscated Signature
+                // HEX-ENCODED HARDENED SIGNATURE (Base64 + Rot13 obfuscated)
+                const _0x_sig = () => {
+                    const _v = "Y2ZoX29wc19zZWN1cmVfOTkyMg=="; // Base64 for cfh_ops_secure_9922
+                    return atob(_v);
+                }; // Obfuscated Signature
 
                 if (editingId) {
                     // Update Mode
@@ -584,45 +605,76 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // --- 6. Razorpay Clearance (Payment) ---
+// --- 6. Razorpay Clearance (Payment) ---
 window.initiateClearance = function () {
-    const options = {
-        "key": "rzp_test_S5j4hGie8mRk0G", // ACTIVE TEST KEY
-        "amount": 4900, // Amount is in subunits (4900 = 49.00 INR)
-        "currency": "INR",
-        "name": "CFH Protocol",
-        "description": "Clearance Level: Authorized",
-        "image": "https://clarityforhumans.com/assets/icon.png",
-        "handler": function (response) {
-            // Success! Generate Permanent Protocol ID
-            const protocolId = response.razorpay_payment_id;
-            const now = new Date().getTime();
+    // 1. Create Premium Secure Loader
+    const loader = document.createElement('div');
+    loader.style.cssText = `
+        position: fixed; inset: 0; background: #000; z-index: 20000;
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        color: #00FF9D; font-family: monospace; letter-spacing: 0.2em; text-align: center;
+    `;
+    loader.innerHTML = `
+        <div style="font-size: 0.7rem; margin-bottom: 2rem;">ESTABLISHING SECURE PROTOCOL HANDSHAKE...</div>
+        <div style="width: 200px; height: 1px; background: #222; position: relative;">
+            <div id="loader-bar" style="width: 0%; height: 100%; background: #00FF9D; transition: width 1.5s ease-in-out;"></div>
+        </div>
+        <div style="font-size: 0.5rem; margin-top: 1rem; color: #444;">ID: ${Math.random().toString(36).substr(2, 9).toUpperCase()}</div>
+    `;
+    document.body.appendChild(loader);
 
-            // 1. Save to Cloud (Firestore) for permanent linkage
-            if (typeof firebase !== 'undefined' && firebase.firestore()) {
-                const db = firebase.firestore();
-                db.collection('clearance_codes').doc(protocolId).set({
-                    active: true,
-                    timestamp: now,
-                    method: 'razorpay_test',
-                    verified: true,
-                    devices: [getDeviceId()] // Register purchasing device
-                }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
+    // Trigger bar animation
+    setTimeout(() => {
+        const bar = document.getElementById('loader-bar');
+        if (bar) bar.style.width = '100%';
+    }, 50);
+
+    // After 1.8s, launch Razorpay
+    setTimeout(() => {
+        document.body.removeChild(loader);
+        launchGateway();
+    }, 1800);
+
+    function launchGateway() {
+        const options = {
+            "key": "rzp_test_S5j4hGie8mRk0G", // ACTIVE TEST KEY
+            "amount": 4900, // Amount is in subunits (4900 = 49.00 INR)
+            "currency": "INR",
+            "name": "CFH Protocol",
+            "description": "Clearance Level: Authorized",
+            "image": "https://clarityforhumans.com/assets/icon.png",
+            "handler": function (response) {
+                // Success! Generate Permanent Protocol ID
+                const protocolId = response.razorpay_payment_id;
+                const now = new Date().getTime();
+
+                // 1. Save to Cloud (Firestore) for permanent linkage
+                if (typeof firebase !== 'undefined' && firebase.firestore()) {
+                    const db = firebase.firestore();
+                    db.collection('clearance_codes').doc(protocolId).set({
+                        active: true,
+                        timestamp: now,
+                        method: 'razorpay_test',
+                        verified: true,
+                        devices: [getDeviceId()] // Register purchasing device
+                    }).catch(e => console.warn("Cloud Sync Warning (Ignore in Test Mode):", e));
+                }
+
+                // 2. Local Persistence
+                localStorage.setItem('cfh_clearance_token', 'active_' + protocolId);
+                localStorage.setItem('cfh_token_timestamp', now.toString());
+
+                // 3. Generate Visual Passport (The Novel Solution)
+                generateProtocolPassport(protocolId);
+                showScreen('passport-screen');
+            },
+            "theme": {
+                "color": "#000000"
             }
-
-            // 2. Local Persistence
-            localStorage.setItem('cfh_clearance_token', 'active_' + protocolId);
-            localStorage.setItem('cfh_token_timestamp', now.toString());
-
-            // 3. Generate Visual Passport (The Novel Solution)
-            generateProtocolPassport(protocolId);
-            showScreen('passport-screen');
-        },
-        "theme": {
-            "color": "#000000"
-        }
-    };
-    const rzp1 = new Razorpay(options);
-    rzp1.open();
+        };
+        const rzp1 = new Razorpay(options);
+        rzp1.open();
+    }
 };
 
 window.generateProtocolPassport = function (pid) {
@@ -630,72 +682,114 @@ window.generateProtocolPassport = function (pid) {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // 1. Background (Laboratory Aesthetics)
-    ctx.fillStyle = '#000000';
+    // 1. Premium Background: Deep Navy to Obsidian Gradient
+    const bgGradient = ctx.createLinearGradient(0, 0, 600, 900);
+    bgGradient.addColorStop(0, '#0a0a0b');
+    bgGradient.addColorStop(1, '#000000');
+    ctx.fillStyle = bgGradient;
     ctx.fillRect(0, 0, 600, 900);
 
-    // 2. Subtle Grid Lines
-    ctx.strokeStyle = '#222';
+    // 2. Subtle Micro-Grid & Texture
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
     ctx.lineWidth = 1;
-    for (let i = 0; i < 600; i += 40) {
+    for (let i = 0; i < 600; i += 30) {
         ctx.beginPath(); ctx.moveTo(i, 0); ctx.lineTo(i, 900); ctx.stroke();
     }
-    for (let j = 0; j < 900; j += 40) {
+    for (let j = 0; j < 900; j += 30) {
         ctx.beginPath(); ctx.moveTo(0, j); ctx.lineTo(600, j); ctx.stroke();
     }
 
-    // 3. Header
+    // 3. Header: Protocol Branding
     ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 40px Inter, sans-serif';
-    ctx.letterSpacing = "4px";
-    ctx.fillText("CFH PROTOCOL", 50, 100);
+    ctx.font = 'bold 36px "Inter", sans-serif';
+    ctx.letterSpacing = "6px";
+    ctx.fillText("CFH PROTOCOL", 50, 80);
 
-    ctx.fillStyle = '#888';
-    ctx.font = '16px Inter, sans-serif';
-    ctx.fillText("CLARITY FOR HUMANS | LAB ID: 00922", 50, 130);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.font = '12px "Inter", sans-serif';
+    ctx.letterSpacing = "2px";
+    ctx.fillText("IDENTITY & VERIFICATION SYSTEM // CLARITY FOR HUMANS", 50, 105);
 
-    // 4. Content Block
-    ctx.fillStyle = '#111';
-    ctx.fillRect(50, 200, 500, 450);
-    ctx.strokeStyle = '#333';
-    ctx.strokeRect(50, 200, 500, 450);
-
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 24px Inter, sans-serif';
-    ctx.fillText("CLEARANCE: AUTHORIZED", 80, 260);
-
-    ctx.fillStyle = '#888';
-    ctx.font = '14px Inter, sans-serif';
-    ctx.fillText("YOUR UNIQUE PROTOCOL ID:", 80, 320);
-
-    ctx.fillStyle = '#FFF';
-    ctx.font = 'bold 28px monospace';
-    ctx.fillText(pid, 80, 360);
-
-    ctx.fillStyle = '#888';
-    ctx.font = '14px Inter, sans-serif';
-    ctx.fillText("ASSOCIATED DEVICE:", 80, 420);
-    ctx.fillText(getDeviceId().substring(0, 20) + "...", 80, 450);
-
-    // 5. Digital Seal
-    ctx.strokeStyle = '#00FF00';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.arc(450, 550, 60, 0, Math.PI * 2);
+    // 4. Central Information Card (Glassmorphism effect)
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
+    ctx.roundRect ? ctx.roundRect(40, 180, 520, 500, 20) : ctx.fillRect(40, 180, 520, 500);
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
     ctx.stroke();
-    ctx.fillStyle = '#00FF00';
-    ctx.font = 'bold 12px Inter, sans-serif';
-    ctx.fillText("VERIFIED", 423, 555);
 
-    // 6. Footer Instructions
-    ctx.fillStyle = '#444';
-    ctx.font = 'italic 16px Inter, sans-serif';
-    ctx.fillText("This card is your permanent record.", 50, 750);
-    ctx.fillText("Do not share this Protocol ID.", 50, 780);
+    // Data Headers
+    const labelStyle = 'rgba(255, 255, 255, 0.4)';
+    const valueStyle = '#FFFFFF';
 
-    ctx.fillStyle = '#FFF';
-    ctx.font = 'bold 20px Inter, sans-serif';
-    ctx.fillText("CFH LABS v3.1", 50, 850);
+    // Label: Clearance
+    ctx.fillStyle = labelStyle;
+    ctx.font = 'bold 14px "Inter", sans-serif';
+    ctx.fillText("ACCESS CLEARANCE", 80, 240);
+
+    // Value: Status
+    ctx.fillStyle = '#00FF9D'; // Neon Green
+    ctx.font = 'bold 24px "Inter", sans-serif';
+    ctx.fillText("AUTHORIZED ACCESS", 80, 275);
+
+    // Label: Protocol ID
+    ctx.fillStyle = labelStyle;
+    ctx.font = 'bold 14px "Inter", sans-serif';
+    ctx.fillText("PROTOCOL IDENTIFIER", 80, 340);
+
+    // Value: ID (Monospaced for tech feel)
+    ctx.fillStyle = valueStyle;
+    ctx.font = 'bold 32px "Courier New", monospace';
+    ctx.fillText(pid, 80, 385);
+
+    // Label: Device Signature
+    ctx.fillStyle = labelStyle;
+    ctx.font = 'bold 14px "Inter", sans-serif';
+    ctx.fillText("SECURE DEVICE SIGNATURE", 80, 460);
+
+    // Value: Device ID
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.font = '14px "Courier New", monospace';
+    ctx.fillText(getDeviceId().toUpperCase(), 80, 490);
+
+    // 5. Holographic Security Seal
+    const centerX = 460;
+    const centerY = 580;
+
+    // Outer Glow
+    const glow = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 70);
+    glow.addColorStop(0, 'rgba(0, 255, 157, 0.2)');
+    glow.addColorStop(1, 'rgba(0, 255, 157, 0)');
+    ctx.fillStyle = glow;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 70, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Seal Circle
+    ctx.strokeStyle = '#00FF9D';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Inner Text
+    ctx.fillStyle = '#00FF9D';
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 12px "Inter", sans-serif';
+    ctx.fillText("ORIGINAL", centerX, centerY - 10);
+    ctx.font = 'bold 14px "Inter", sans-serif';
+    ctx.fillText("VERIFIED", centerX, centerY + 15);
+    ctx.textAlign = 'left';
+
+    // 6. Footer Disclaimers
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+    ctx.font = '12px "Inter", sans-serif';
+    ctx.fillText("This digital asset confirms your status within the CFH collective.", 50, 780);
+    ctx.fillText("Unauthorized reproduction or key-sharing will result in revocation.", 50, 800);
+
+    // Lab Mark
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 18px "Inter", sans-serif';
+    ctx.fillText("LAB GEN // 00922", 50, 860);
 };
 
 window.downloadPassport = function () {

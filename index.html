@@ -246,13 +246,29 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: #fff;
+            background: #000;
             z-index: 10001;
             /* Supreme Layer */
             flex-direction: column;
             padding: 2rem;
             overflow-y: auto;
             align-items: center;
+            color: #fff;
+        }
+
+        .admin-input {
+            background: #000;
+            color: #fff;
+            border: 1px solid #333;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            width: 100%;
+            font-family: inherit;
+        }
+
+        .admin-input:focus {
+            border-color: #00FF9D;
+            outline: none;
         }
 
         .tools-grid {
@@ -531,34 +547,41 @@
 
 
 
-    <!-- Hidden Admin Panel -->
+    <!-- Hidden Admin Panel (Command Center) -->
     <div id="admin-panel">
         <div style="width:100%; max-width:600px;">
-            <h2 style="text-transform:uppercase; letter-spacing:0.2em; margin-bottom:2rem;">Manage Protocol Feed
-            </h2>
-            <select id="advice-category" style="padding:1rem; border:1px solid #000; margin-bottom:1rem; width:100%;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2 style="text-transform:uppercase; letter-spacing:0.2em; font-size: 1rem; margin: 0;">PROTOCOL
+                    TERMINAL</h2>
+                <div style="font-size: 0.6rem; color: #00FF9D; letter-spacing: 0.1em;">● SYSTEM ONLINE</div>
+            </div>
+
+            <select id="advice-category" class="admin-input">
                 <option value="Addiction Recovery">Addiction Recovery</option>
             </select>
-            <textarea id="advice-text" placeholder="Enter clinical advice..."
-                style="width:100%; height:150px; padding:1rem; border:1px solid #000; margin-bottom:1rem;"></textarea>
-            <input type="text" id="advice-link" placeholder="Source URL..."
-                style="width:100%; padding:1rem; border:1px solid #000; margin-bottom:2rem;">
-            <button id="save-advice" class="btn btn-primary" style="background:#000; color:#fff; width:100%;">POST
-                TO
-                LIVE FEED</button>
+            <textarea id="advice-text" placeholder="Enter clinical advice..." class="admin-input"
+                style="height:150px;"></textarea>
+            <input type="text" id="advice-link" placeholder="Source URL (Optional)..." class="admin-input">
 
-            <div style="margin-top:4rem; border-top:1px solid #eee; padding-top:2rem;">
-                <h3 style="text-transform:uppercase; font-size:0.8rem; letter-spacing:0.2em; margin-bottom:1.5rem;">
-                    Live
-                    Feed Management</h3>
+            <button id="save-advice" class="btn btn-primary"
+                style="background: #00FF9D; color: #000; width:100%; font-weight: 800; border: none; padding: 1rem;">PUBLISH
+                TO PROTOCOL</button>
+
+            <div style="margin-top:4rem; border-top:1px solid #333; padding-top:2rem;">
+                <h3
+                    style="text-transform:uppercase; font-size:0.7rem; letter-spacing:0.2em; margin-bottom:1.5rem; color: #888;">
+                    ACTIVE ARCHIVE</h3>
                 <div id="admin-posts-list" style="max-height:400px; overflow-y:auto;"></div>
             </div>
-            <button onclick="document.getElementById('admin-panel').style.display='none'"
-                style="margin-top:2rem; border:1px solid #000; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">CLOSE
-                PANEL</button>
-            <button onclick="location.reload()"
-                style="margin-top:1rem; border:none; color:red; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700; width:100%;">SECURE
-                LOGOUT</button>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 2rem;">
+                <button onclick="document.getElementById('admin-panel').style.display='none'"
+                    style="border: 1px solid #333; background:none; color: #fff; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700;">EXIT
+                    TERMINAL</button>
+                <button onclick="location.reload()"
+                    style="border: 1px solid #d00; color:#d00; background:none; padding:1rem; cursor:pointer; font-size:0.7rem; font-weight:700;">REVOKE
+                    ACCESS</button>
+            </div>
         </div>
     </div>
 
