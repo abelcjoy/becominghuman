@@ -158,7 +158,7 @@ window.renderFeed = function (filterCategory = null, append = false) {
             
             <!-- Behavioral Protocol Signal -->
             <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #f0f0f0; font-size:0.5rem; color:#aaa; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
-                IMPORTANT: This protocol is a behavioral reconstruction signal, not medical advice. Application of this data should stay within your personal comfort zone..
+                IMPORTANT: This protocol is a behavioral reconstruction signal. Application of this data should stay within your personal comfort zone.
             </div>
         `;
         feed.appendChild(card);
