@@ -126,17 +126,7 @@ window.renderFeed = function (filterCategory = null, append = false) {
 
         // Determine Tag Style (Strict Monochrome Laboratory Aesthetic)
         let bgColor = '#000000'; // Default Black
-        let displayTag = item.category || 'Addiction Recovery';
-
-        // Clean up legacy/internal names for display (Robust Check)
-        const lowTag = (item.category || "").toLowerCase();
-        const legacyTags = ['pmo', 'p.m.o', 'p_addiction', 'recovery protocol', 'biological calibration', 'philosophy of focus'];
-
-        if (legacyTags.some(tag => lowTag.includes(tag))) {
-            displayTag = 'Addiction Recovery';
-        }
-
-        if (displayTag === 'Addiction Recovery') bgColor = '#000000'; // Pure Black
+        let displayTag = item.category || 'TECH DEAL';
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
@@ -156,9 +146,9 @@ window.renderFeed = function (filterCategory = null, append = false) {
             ${isLong ? `<button class="read-more-toggle" style="color:#000; font-weight:800;" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
             ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview" style="background:#000; color:#fff;">OPEN RESOURCE</a></div>` : ''}
             
-            <!-- Behavioral Protocol Signal -->
+            <!-- Price Volatility Signal -->
             <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #f0f0f0; font-size:0.5rem; color:#aaa; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
-                IMPORTANT: This protocol is a behavioral reconstruction signal. Application of this data should stay within your personal comfort zone.
+                PRICE ALERT: Prices are volatile and may expire immediately. Verify before purchase.
             </div>
         `;
         feed.appendChild(card);
