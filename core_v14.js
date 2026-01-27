@@ -126,7 +126,7 @@ window.renderFeed = function (filterCategory = null, append = false) {
 
         // Determine Tag Style (Strict Monochrome Laboratory Aesthetic)
         let bgColor = '#000000'; // Default Black
-        let displayTag = item.category || 'TECH DEAL';
+        let displayTag = item.category || 'CRINGE';
 
         // Calculate Number (Newest is highest)
         const postNum = totalCount - index;
@@ -146,9 +146,9 @@ window.renderFeed = function (filterCategory = null, append = false) {
             ${isLong ? `<button class="read-more-toggle" style="color:#000; font-weight:800;" onclick="toggleReadMore(this, '${item.id}')">READ MORE</button>` : ''}
             ${item.link ? `<div style="margin-top:1rem;"><a href="${item.link}" target="_blank" class="link-preview" style="background:#000; color:#fff;">OPEN RESOURCE</a></div>` : ''}
             
-            <!-- Price Volatility Signal -->
+            <!-- Biohazard Signal -->
             <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid #f0f0f0; font-size:0.5rem; color:#aaa; font-weight:500; text-transform:uppercase; letter-spacing:0.05em; line-height:1.4;">
-                PRICE ALERT: Prices are volatile and may expire immediately. Verify before purchase.
+                WARNING: Loss of IQ points possible. Content is Satire/Brainrot. Do not attempt to replicate.
             </div>
         `;
         feed.appendChild(card);

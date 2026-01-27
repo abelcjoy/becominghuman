@@ -1,53 +1,101 @@
 const puppeteer = require('puppeteer');
 
 (async () => {
-    // 1. Launch the Browser (Headless: false so you can watch it happen)
+    console.log("🚀 STARTING NUCLEAR ARBITRAGE BOT...");
+
     const browser = await puppeteer.launch({
         headless: false,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--window-size=1280,800',
+            '--disable-notifications',
+            '--disable-geolocation' // We handle geo manually
+        ]
     });
 
     const page = await browser.newPage();
+    await page.setViewport({ width: 1280, height: 800 });
 
-    // 2. THE TELEPORTATION HACK
-    // We are overriding the browser's permission system to allow Geolocation immediately
+    // 1. FORCE GEOLOCATION (The "Teleport")
     const context = browser.defaultBrowserContext();
     await context.overridePermissions('https://blinkit.com', ['geolocation']);
+    await page.setGeolocation({ latitude: 28.6304, longitude: 77.2177 }); // Delhi
 
-    // 3. Set Fake Coordinates (Connaught Place, Delhi)
-    // Lat: 28.6304, Long: 77.2177
-    await page.setGeolocation({ latitude: 28.6304, longitude: 77.2177 });
+    console.log("📍 Location Spoofed: DELHI");
 
-    console.log("📍 Teleporting to Delhi...");
-
-    // 4. Go to Blinkit
-    await page.goto('https://blinkit.com', { waitUntil: 'networkidle2' });
-
-    console.log("🚀 Arrived at Blinkit. Waiting for location auto-detect...");
-
-    // 5. Search for Amul Butter
-    // Note: In a real script, we would click the "Detect Location" button if it pops up.
-    // For now, let's just search and see if the prices reflect Delhi.
-
-    // Waiting for the search bar
     try {
-        await page.waitForSelector('input[class*="SearchBar"]', { timeout: 10000 });
-        await page.type('input[class*="SearchBar"]', 'Amul Butter');
-        await page.keyboard.press('Enter');
+        // 2. BYPASS HOMEPAGE -> GO DIRECTLY TO SEARCH URL
+        // Instead of fighting with the search bar, we just go to the results page!
+        const product = "Amul Butter";
+        const query = encodeURIComponent(product);
+        const searchUrl = `https://blinkit.com/s/?q=${query}`;
 
-        console.log("🔍 Searching for Amul Butter...");
+        console.log(`🔗 Navigating direct to: ${searchUrl}`);
+        await page.goto(searchUrl, { waitUntil: 'networkidle2', timeout: 60000 });
 
-        // Wait for results
-        await page.waitForNavigation({ waitUntil: 'networkidle2' });
+        // 3. NUCLEAR POPUP KILLER
+        // If a popup exists, we remove it from the DOM entirely.
+        await page.evaluate(() => {
+            const popup = document.querySelector('button[class*="LocationButton"]');
+            if (popup) popup.click();
+        });
 
-        console.log("📸 Taking a screenshot of the prices...");
-        await page.screenshot({ path: 'delhi_prices.png' });
+        // 4. WAIT FOR RESULTS
+        console.log("⏳ Waiting 8s for product grid...");
+        await new Promise(r => setTimeout(r, 8000));
 
-        console.log("✅ Done! Check 'delhi_prices.png'.");
+        // 5. EXTRACT DATA
+        console.log("📊 Extracting Data...");
+        const data = await page.evaluate(() => {
+            const items = [];
+            // Generic Card Scraper
+            const cards = document.querySelectorAll('div, a'); // Scan everything
+
+            // We look for elements that contain BOTH a price "₹" and text "ADD" (button)
+            // This identifies a product card reliably
+
+            let count = 0;
+            for (const card of cards) {
+                if (count >= 5) break;
+                // Optimization: Don't scan huge containers
+                if (card.innerText.length > 300) continue;
+                if (!card.innerText.includes('₹')) continue;
+
+                // Regex for Price
+                const priceMatch = card.innerText.match(/₹\s*(\d+)/);
+                if (!priceMatch) continue;
+
+                const price = parseInt(priceMatch[1]);
+
+                // Regex for Name (The longest line of text usually)
+                const lines = card.innerText.split('\n').filter(l => l.length > 5 && !l.includes('₹') && !l.includes('MIN'));
+                const name = lines[0] || "Unknown Item";
+
+                // Stock
+                const isOOS = card.innerText.toLowerCase().includes('out of stock');
+
+                // Deduplication
+                if (items.some(i => i.name === name)) continue;
+
+                items.push({
+                    name: name,
+                    price: price,
+                    stock: isOOS ? "OUT OF STOCK" : "IN STOCK"
+                });
+                count++;
+            }
+            return items;
+        });
+
+        console.log("\n✅ FINAL RESULTS:");
+        console.log(JSON.stringify(data, null, 2));
+
     } catch (e) {
-        console.log("⚠️ Could not find search bar. You might need to manually click 'Detect Location' in the window.");
+        console.error("🔥 CRITICAL FAILURE:", e.message);
+        await page.screenshot({ path: 'nuclear_fail.png' });
     }
 
-    // Keep browser open for 30 seconds so you can see it
-    // await browser.close();
+    // console.log("👋 Closing in 30s...");
 })();
