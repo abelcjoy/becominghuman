@@ -1,83 +1,105 @@
-// THE CORPORATE TRANSLATOR ENGINE (V.20-SAFE)
-// Core Logic for sanitizing workplace rage.
+// THE FOUNDATION ENGINE (V.21-EDU)
+// A Linear Progression Matrix for English Learning.
+
+let currentLevel = 1;
+
+// DATA MATRICES
+const subjects = ["I", "You", "We", "They", "He", "She", "The Man", "The Woman", "It"];
+const verbs = ["eat", "see", "want", "have", "need", "like", "find", "take", "make", "know"];
+const objects = ["water", "food", "home", "work", "time", "money", "books", "cars", "friends", "ideas"];
+const adjectives = ["good", "bad", "fast", "slow", "happy", "sad", "new", "old", "big", "small"];
+const times = ["now", "today", "tomorrow", "soon", "later", "always", "never", "often", "rarely"];
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Translation Engine Loaded.");
-    // REVEAL INTERFACE (Was previously hidden for Auth)
-    document.getElementById('main-discovery-feed').style.display = 'block';
+    console.log("Foundation Engine Loaded.");
+
+    // Resume Progress from LocalStorage
+    const savedLevel = localStorage.getItem('foundation_level');
+    if (savedLevel) {
+        currentLevel = parseInt(savedLevel);
+    }
+
+    // Initial Render
+    renderLevel();
 });
 
+function generateSentence(level) {
+    // Deterministic Generation based on Level ID
+    // This ensures Level 542 is ALWAYS the same sentence for everyone.
 
-// THE DICTIONARY (Rage -> Corporate)
-const dictionary = [
-    { regex: /stupid|idiot|dumb|moron/gi, replacement: "misaligned with our strategic vision" },
-    { regex: /shut up|stop talking/gi, replacement: "let's take this offline to preserve bandwidth" },
-    { regex: /i don't care|do not care/gi, replacement: "i appreciate the context, but we must prioritize critical path items" },
-    { regex: /waste of time|useless/gi, replacement: "an opportunity to optimize our meeting cadence" },
-    { regex: /hate|loathe/gi, replacement: "have concerns regarding the current direction" },
-    { regex: /bullshit|nonsense/gi, replacement: "information that requires further verification" },
-    { regex: /do it yourself/gi, replacement: "i encourage you to take ownership of this initiative" },
-    { regex: /late|slow/gi, replacement: "experiencing latency in deliverables" },
-    { regex: /fuck off|go away/gi, replacement: "let's circle back when we have more clarity" },
-    { regex: /you are wrong/gi, replacement: "i believe there may be a disconnect in our understanding" },
-    { regex: /boring/gi, replacement: "straightforward and procedural" },
-    { regex: /pay me more/gi, replacement: "i would like to discuss the calibration of my compensation package relative to market value" },
-    { regex: /fire him|fire her/gi, replacement: "evaluate their long-term fit within the organization" },
-    { regex: /stop emailing me/gi, replacement: "please condense future updates into a single weekly digest" }
-];
+    // Phase 1: Simple SV (Subject Verb) - Levels 1-50
+    if (level <= 50) {
+        const s = subjects[(level % subjects.length)];
+        const v = verbs[(level % verbs.length)];
+        return `${s} ${v}.`;
+    }
 
-// FALLBACK GENERATOR (If no keywords match)
-const fallbacks = [
-    "Thank you for your input. I will review this and align with the team.",
-    "Let's synchronize on this to ensure we are all driving towards the same OKRs.",
-    "This is an interesting perspective; let's parking-lot this for now.",
-    "I hear what you're saying. Let's pivot to a more scalable approach."
-];
+    // Phase 2: SVO (Subject Verb Object) - Levels 51-200
+    if (level <= 200) {
+        const s = subjects[(level % subjects.length)];
+        const v = verbs[(level % verbs.length)];
+        const o = objects[(level % objects.length)];
+        return `${s} ${v} ${o}.`;
+    }
 
-function runTranslation() {
-    const input = document.getElementById('rage-input').value.trim();
-    const outputDiv = document.getElementById('safe-output');
-    const outputContainer = document.getElementById('output-container');
+    // Phase 3: SVAO (Subject Verb Adjective Object) - Levels 201-500
+    if (level <= 500) {
+        const s = subjects[(level % subjects.length)];
+        const v = verbs[(level % verbs.length)];
+        const a = adjectives[(level % adjectives.length)];
+        const o = objects[(level % objects.length)];
+        return `${s} ${v} ${a} ${o}.`;
+    }
 
-    if (!input) {
-        alert("Please enter your grievance.");
+    // Phase 4: Complex Time - Levels 501+
+    const s = subjects[(level % subjects.length)];
+    const v = verbs[(level % verbs.length)];
+    const a = adjectives[(level % adjectives.length)];
+    const o = objects[(level % objects.length)];
+    const t = times[(level % times.length)];
+    return `${s} ${v} ${a} ${o} ${t}.`;
+}
+
+function renderLevel() {
+    document.getElementById('level-indicator').innerText = currentLevel;
+
+    const sentence = generateSentence(currentLevel);
+    document.getElementById('lesson-content').innerText = sentence;
+
+    // Meta tag explains the structure
+    let structure = "[ Subject + Verb ]";
+    if (currentLevel > 50) structure = "[ Subject + Verb + Object ]";
+    if (currentLevel > 200) structure = "[ Subject + Verb + Adjective + Object ]";
+
+    document.getElementById('lesson-meta').innerText = structure;
+}
+
+function nextLevel() {
+    // Visual Feedback
+    const card = document.getElementById('lesson-card');
+    card.style.transform = "scale(0.95)";
+    setTimeout(() => card.style.transform = "scale(1)", 100);
+
+    // PAYWALL CHECK
+    const hasClearance = localStorage.getItem('cfh_clearance_token');
+    if (currentLevel >= 50 && !hasClearance) {
+        document.getElementById('paywall-screen').style.display = 'flex';
         return;
     }
 
-    let translation = input;
-    let matchFound = false;
-
-    // 1. Keyword Replacement
-    dictionary.forEach(rule => {
-        if (translation.match(rule.regex)) {
-            translation = translation.replace(rule.regex, rule.replacement);
-            matchFound = true;
-        }
-    });
-
-    // 2. Formatting & Fallback
-    if (!matchFound) {
-        // If nothing matches, append a generic corporate closer
-        const randomFallback = fallbacks[Math.floor(Math.random() * fallbacks.length)];
-        translation = `Regarding your recent point: ${randomFallback}`;
-    } else {
-        // Polish the sentence
-        translation = translation.charAt(0).toUpperCase() + translation.slice(1);
-        if (!translation.endsWith('.')) translation += '.';
-        translation = `Per our discussion, ${translation} Please advise if this aligns with your expectations.`;
-    }
-
-    // 3. Render
-    outputDiv.innerText = translation;
-    outputContainer.style.display = 'block';
-
-    // Scroll to result
-    outputContainer.scrollIntoView({ behavior: 'smooth' });
+    // Advance
+    currentLevel++;
+    localStorage.setItem('foundation_level', currentLevel);
+    renderLevel();
 }
 
-function copyOutput() {
-    const text = document.getElementById('safe-output').innerText;
-    navigator.clipboard.writeText(text).then(() => {
-        alert("COPIED TO CLIPBOARD. SAFE TO SEND.");
-    });
+// Payment/Unlock Helper (retained from old code)
+function initiateClearance() {
+    // Dummy Success for now (or integrate Razorpay here)
+    // alert("Redirecting to Secure Gateway...");
+
+    // SIMULATED SUCCESS:
+    localStorage.setItem('cfh_clearance_token', 'ACCESS_GRANTED_V21');
+    document.getElementById('paywall-screen').style.display = 'none';
+    alert("ACCESS GRANTED. The Continuum is open.");
 }
