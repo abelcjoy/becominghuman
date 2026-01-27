@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial Render
     renderLevel();
+
+    // REVEAL INTERFACE
+    document.getElementById('main-discovery-feed').style.display = 'block';
 });
 
 // RANK DEFINITIONS
