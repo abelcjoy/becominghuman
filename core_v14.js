@@ -23,55 +23,76 @@ document.addEventListener('DOMContentLoaded', () => {
     renderLevel();
 });
 
-function generateSentence(level) {
-    // Deterministic Generation based on Level ID
-    // This ensures Level 542 is ALWAYS the same sentence for everyone.
+// RANK DEFINITIONS
+function getRank(level) {
+    if (level <= 50) return "BEGINNER";
+    if (level <= 150) return "PRIMARY";
+    if (level <= 500) return "JUNIOR";
+    if (level <= 2000) return "INTERMEDIATE";
+    return "SENIOR";
+}
 
-    // Phase 1: Simple SV (Subject Verb) - Levels 1-50
+function generateLesson(level) {
+    // Returns { text: "Sentence", rule: "Grammar Explanation" }
+
+    // SECTOR 1: BEGINNER (Survival)
     if (level <= 50) {
         const s = subjects[(level % subjects.length)];
         const v = verbs[(level % verbs.length)];
-        return `${s} ${v}.`;
+        return {
+            text: `${s} ${v}.`,
+            rule: "RULE: Subject + Verb. The simplest form of action."
+        };
     }
 
-    // Phase 2: SVO (Subject Verb Object) - Levels 51-200
-    if (level <= 200) {
-        const s = subjects[(level % subjects.length)];
-        const v = verbs[(level % verbs.length)];
-        const o = objects[(level % objects.length)];
-        return `${s} ${v} ${o}.`;
-    }
-
-    // Phase 3: SVAO (Subject Verb Adjective Object) - Levels 201-500
-    if (level <= 500) {
+    // SECTOR 2: PRIMARY (Description)
+    if (level <= 150) {
         const s = subjects[(level % subjects.length)];
         const v = verbs[(level % verbs.length)];
         const a = adjectives[(level % adjectives.length)];
         const o = objects[(level % objects.length)];
-        return `${s} ${v} ${a} ${o}.`;
+        return {
+            text: `${s} ${v} ${a} ${o}.`,
+            rule: "RULE: Adjectives always describe the Object (Noun)."
+        };
     }
 
-    // Phase 4: Complex Time - Levels 501+
-    const s = subjects[(level % subjects.length)];
-    const v = verbs[(level % verbs.length)];
-    const a = adjectives[(level % adjectives.length)];
-    const o = objects[(level % objects.length)];
-    const t = times[(level % times.length)];
-    return `${s} ${v} ${a} ${o} ${t}.`;
+    // SECTOR 3: JUNIOR (Tense & Time)
+    if (level <= 500) {
+        const s = subjects[(level % subjects.length)];
+        const v = verbs[(level % verbs.length)];
+        const t = times[(level % times.length)];
+        return {
+            text: `${s} will ${v} ${t}.`,
+            rule: "RULE: Future Tense. 'Will' projects action forward."
+        };
+    }
+
+    // SECTOR 4: INTERMEDIATE (Management)
+    if (level <= 2000) {
+        return {
+            text: `Therefore, we must ${verbs[level % verbs.length]} the ${objects[level % objects.length]}.`,
+            rule: "RULE: Logic Connectors. 'Therefore' implies consequence."
+        };
+    }
+
+    // SECTOR 5: SENIOR (Abstraction)
+    return {
+        text: `The optimization of ${objects[level % objects.length]} is paramount.`,
+        rule: "RULE: Passive Voice & Abstraction. CEO Language."
+    };
 }
 
 function renderLevel() {
     document.getElementById('level-indicator').innerText = currentLevel;
 
-    const sentence = generateSentence(currentLevel);
-    document.getElementById('lesson-content').innerText = sentence;
+    // Update Rank Display
+    const rank = getRank(currentLevel);
 
-    // Meta tag explains the structure
-    let structure = "[ Subject + Verb ]";
-    if (currentLevel > 50) structure = "[ Subject + Verb + Object ]";
-    if (currentLevel > 200) structure = "[ Subject + Verb + Adjective + Object ]";
-
-    document.getElementById('lesson-meta').innerText = structure;
+    // Using lesson-meta to show both Rank and Rule for now
+    const lesson = generateLesson(currentLevel);
+    document.getElementById('lesson-content').innerText = lesson.text;
+    document.getElementById('lesson-meta').innerText = `[${rank}] ${lesson.rule}`;
 }
 
 function nextLevel() {
