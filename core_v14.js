@@ -3,7 +3,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Translation Engine Loaded.");
-    // No Firebase Feed loading needed. The tool is local.
+    // REVEAL INTERFACE (Was previously hidden for Auth)
+    document.getElementById('main-discovery-feed').style.display = 'block';
 });
 
 
