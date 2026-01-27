@@ -6,8 +6,12 @@ const MASTER_KEY_HASH = "cfhfromanaconda-#cfhmaster12#";
 const RAZORPAY_KEY = "rzp_live_S8s3wbkdIc9lXi"; // LIVE KEY ACTIVE
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD-Your-Key-Here",
-    projectId: "becoming-human-999",
+    apiKey: "AIzaSyCiJbxoviq2H7AkxrVIXmxwPLNeIwWJOXM",
+    authDomain: "cfh-protocol.firebaseapp.com",
+    projectId: "cfh-protocol",
+    storageBucket: "cfh-protocol.firebasestorage.app",
+    messagingSenderId: "576464528755",
+    appId: "1:576464528755:web:6aba2a06731c3dbb68d106"
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,11 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. INIT FIREBASE
     if (!firebase.apps.length) {
         try {
-            firebase.initializeApp({
-                // Placeholder - User must maintain this config
-                apiKey: "PASTE_YOUR_API_KEY",
-                projectId: "cfh-demo"
-            });
+            firebase.initializeApp(firebaseConfig);
         } catch (e) { console.log(e); }
     }
 });
@@ -196,10 +196,12 @@ function uploadData() {
         db.collection('construct_feed').doc(editingId).update({
             category: category,
             title: title || "SYSTEM MESSAGE",
-            content: content,
-            // timestamp: firebase.firestore.FieldValue.serverTimestamp() // Keep original time? Or update? Let's keep original.
+            content: content
         }).then(() => {
             resetAdminPanel(status, "UPDATE SUCCESSFUL.");
+        }).catch(err => {
+            status.innerText = "ERROR: " + err.message;
+            alert("UPDATE FAILED: " + err.message);
         });
     } else {
         // CREATE NEW
@@ -210,6 +212,9 @@ function uploadData() {
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }).then(() => {
             resetAdminPanel(status, "UPLOAD SUCCESSFUL.");
+        }).catch(err => {
+            status.innerText = "ERROR: " + err.message;
+            alert("UPLOAD FAILED: " + err.message);
         });
     }
 }
