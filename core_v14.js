@@ -3,7 +3,7 @@
 
 // SECURITY CONFIG
 const MASTER_KEY_HASH = "cfhfromanaconda-#cfhmaster12#";
-const RAZORPAY_KEY = "rzp_live_PLACEHOLDER_KEY"; // REPLACE WITH LIVE KEY
+const RAZORPAY_KEY = "rzp_live_S8s3wbkdIc9lXi"; // LIVE KEY ACTIVE
 
 const firebaseConfig = {
     apiKey: "AIzaSyD-Your-Key-Here",
