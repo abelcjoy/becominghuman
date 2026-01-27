@@ -77,14 +77,16 @@
             style="margin-bottom: 2rem; color: #fff; background: #00FF41; color: #000; padding: 0.5rem; display: inline-block;">
             ADMIN OVERRIDE</h2>
 
-        <select id="post-category" class="admin-input">
-            <option value="VOCABULARY">VOCABULARY_UPLOAD</option>
-            <option value="GRAMMAR">GRAMMAR_RULE</option>
-            <option value="THEORY">THEORY_MATRIX</option>
-            <option value="MESSAGE">SYSTEM_MESSAGE</option>
+        <select id="post-category" class="admin-input" style="margin-bottom: 0.5rem;">
+            <option value="VOCABULARY">VOCABULARY</option>
+            <option value="GRAMMAR">GRAMMAR</option>
+            <option value="MINDSET">MINDSET</option>
         </select>
 
-        <textarea id="post-content" class="admin-input" style="height: 200px;"
+        <input type="text" id="post-title" class="admin-input" placeholder="TITLE (e.g. TIP #1)"
+            style="margin-bottom: 0.5rem;">
+
+        <textarea id="post-content" class="admin-input" style="height: 150px;"
             placeholder="ENTER RAW DATA..."></textarea>
 
         <button class="btn" onclick="uploadData()">UPLOAD TO MAINFRAME</button>

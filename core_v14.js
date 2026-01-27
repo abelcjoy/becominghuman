@@ -117,11 +117,12 @@ function loadFeed() {
                 card.className = 'data-card';
 
                 const date = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleDateString() : "##-##-####";
+                const title = data.title || "TRANSMISSION"; // Fallback
 
                 card.innerHTML = `
                 <div class="card-header">
-                    <span>SECTOR: ${data.category}</span>
-                    <span>// ${date}</span>
+                    <span>SECTOR: ${data.category} // ${title}</span>
+                    <span>${date}</span>
                 </div>
                 <div class="card-content">${formatContent(data.content)}</div>
               `;
@@ -137,6 +138,7 @@ function formatContent(text) {
 // ADMIN UPLOAD
 function uploadData() {
     const category = document.getElementById('post-category').value;
+    const title = document.getElementById('post-title').value; // New Title Input
     const content = document.getElementById('post-content').value;
     const status = document.getElementById('upload-status');
 
@@ -147,11 +149,13 @@ function uploadData() {
     const db = firebase.firestore();
     db.collection('construct_feed').add({
         category: category,
+        title: title || "SYSTEM MESSAGE", // Save Title
         content: content,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
         status.innerText = "UPLOAD SUCCESSFUL.";
         document.getElementById('post-content').value = "";
+        document.getElementById('post-title').value = ""; // Clear Title
         setTimeout(() => { document.getElementById('admin-terminal').style.display = 'none'; }, 1000);
     });
 }
