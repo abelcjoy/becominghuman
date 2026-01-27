@@ -101,9 +101,10 @@ let editingId = null; // Track if we are editing an existing post
 function loadFeed() {
     const feed = document.getElementById('feed-container');
     const db = firebase.firestore();
-    const isAdmin = localStorage.getItem('cfh_license_type') === 'ADMIN'; // Check Admin Status
+    const isAdmin = localStorage.getItem('cfh_license_type') === 'ADMIN';
 
-    db.collection('construct_feed')
+    // Switch to 'advice-feed' to match legacy permission rules
+    db.collection('advice-feed')
         .orderBy('timestamp', 'desc')
         .limit(30)
         .onSnapshot((snapshot) => {
@@ -191,9 +192,16 @@ function uploadData() {
     status.innerText = "TRANSMITTING...";
     const db = firebase.firestore();
 
+    const payload = {
+        category: category,
+        title: title || "SYSTEM MESSAGE",
+        content: content,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    };
+
     if (editingId) {
-        // UPDATE EXISTING
-        db.collection('construct_feed').doc(editingId).update({
+        // UPDATE EXISTING (Using "advice-feed" for compatibility)
+        db.collection('advice-feed').doc(editingId).update({
             category: category,
             title: title || "SYSTEM MESSAGE",
             content: content
@@ -205,12 +213,7 @@ function uploadData() {
         });
     } else {
         // CREATE NEW
-        db.collection('construct_feed').add({
-            category: category,
-            title: title || "SYSTEM MESSAGE",
-            content: content,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        }).then(() => {
+        db.collection('advice-feed').add(payload).then(() => {
             resetAdminPanel(status, "UPLOAD SUCCESSFUL.");
         }).catch(err => {
             status.innerText = "ERROR: " + err.message;
