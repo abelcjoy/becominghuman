@@ -4,11 +4,40 @@
 let currentLevel = 1;
 
 // DATA MATRICES
-const subjects = ["I", "You", "We", "They", "He", "She", "The Man", "The Woman", "It"];
-const verbs = ["eat", "see", "want", "have", "need", "like", "find", "take", "make", "know"];
-const objects = ["water", "food", "home", "work", "time", "money", "books", "cars", "friends", "ideas"];
-const adjectives = ["good", "bad", "fast", "slow", "happy", "sad", "new", "old", "big", "small"];
-const times = ["now", "today", "tomorrow", "soon", "later", "always", "never", "often", "rarely"];
+// EXPANDED DATA MATRICES (50+ Items each for Variation)
+const subjects = [
+    "I", "You", "We", "They", "He", "She", "It", "The Man", "The Woman", "The Doctor",
+    "The Teacher", "The Driver", "The Boss", "The Client", "The Manager", "Nobody", "Everybody",
+    "The System", "The Machine", "My Friend", "Your Brother", "The Government", "The Artist",
+    "The Engineer", "The Pilot", "The Chef", "The Actor", "The Writer", "The Soldier", "The Lawyer",
+    "Someone", "The Team", "The Group", "The Company", "The Brand", "The User", "The Admin"
+];
+const verbs = [
+    "eat", "see", "want", "have", "need", "like", "find", "take", "make", "know",
+    "call", "try", "ask", "feel", "become", "leave", "put", "mean", "keep", "let",
+    "begin", "seem", "help", "talk", "turn", "start", "show", "hear", "play", "run",
+    "move", "live", "believe", "hold", "bring", "happen", "must", "write", "provide", "sit",
+    "stand", "lose", "pay", "meet", "include", "continue", "set", "learn", "change", "lead"
+];
+const objects = [
+    "water", "food", "home", "work", "time", "money", "books", "cars", "friends", "ideas",
+    "power", "results", "solutions", "answers", "questions", "history", "stories", "games",
+    "systems", "programs", "data", "music", "art", "code", "files", "phones", "keys",
+    "rules", "laws", "goals", "plans", "projects", "contracts", "papers", "reports", "numbers",
+    "sales", "growth", "value", "stocks", "markets", "clients", "products", "services", "skills"
+];
+const adjectives = [
+    "good", "bad", "fast", "slow", "happy", "sad", "new", "old", "big", "small",
+    "great", "little", "own", "other", "right", "left", "high", "low", "long", "short",
+    "large", "young", "different", "important", "public", "private", "clean", "dirty", "cheap",
+    "expensive", "busy", "free", "rich", "poor", "hard", "soft", "loud", "quiet", "strong",
+    "weak", "safe", "dangerous", "easy", "difficult", "true", "false", "bright", "dark"
+];
+const times = [
+    "now", "today", "tomorrow", "soon", "later", "always", "never", "often", "rarely",
+    "yesterday", "tonight", "this morning", "last week", "next month", "once", "twice",
+    "eventually", "immediately", "recently", "currently", "formerly", "frequently", "occasionally"
+];
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Foundation Engine Loaded.");
