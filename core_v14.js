@@ -1,111 +1,148 @@
-// THE CONSTRUCT ENGINE (V1.0)
-// Manual Feed + Admin Logic
+// THE CONSTRUCT ENGINE (V1.1 - SECURE)
+// Manual Feed + Master Key Only Access
+
+// SECURITY CONFIG
+const MASTER_KEY_HASH = "cfhfromanaconda-#cfhmaster12#";
+const RAZORPAY_KEY = "rzp_live_PLACEHOLDER_KEY"; // REPLACE WITH LIVE KEY
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD-Your-Key-Here", // We rely on existing config in old cache or define it if needed. 
-    // Ideally user provides config or we reuse what we had. 
-    // Since I wiped the files, I need to restore the config.
-    // I will assume the standard config is needed or use a placeholder 
-    // If the previous app worked, the config was in app.js or similar.
-    // I will use a generic placeholder loop or just existing env if available.
-    // *Correction*: I will fetch the config from the user's environment or assume it's injected.
-    // For now I will put standard placeholder, user might need to re-add if they wiped it.
+    apiKey: "AIzaSyD-Your-Key-Here",
     projectId: "becoming-human-999",
 };
 
-// Assuming Firebase SDK puts 'firebase' in global scope.
-// Since we don't have the exact keys handy after the wipe, 
-// I will rely on the fact that 'firebase.initializeApp' usually takes the config object.
-// I will attempt to read the config if it existed, otherwise I'll need to ask the user.
-// WAIT -> The user kept .git. The config might be in history but I don't have it.
-// I will add a prompt for Config if missing or just use standard logic.
-
-// FOR NOW: I will imply the user has the config or I will use a standard Setup.
-// Actually, to make it work 'out of the box' for the user who just wiped, 
-// I need the config.
-// I'll leave a comment for them to add it or use a simplified local storage version if offline.
-
-const APP_MODE = "ONLINE"; // Set to OFFLINE to test without Firebase
-
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Construct Initializing...");
+    console.log("Secure Link Establishing...");
 
-    // Initialize (Try/Catch in case config is missing)
-    try {
-        if (!firebase.apps.length) {
-            // NOTE TO USER: PASTE YOUR FIREBASE CONFIG HERE IF BLANK
+    // 1. CHECK LOCAL LICENSE
+    const license = localStorage.getItem('cfh_license_type');
+
+    if (license === 'ADMIN' || license === 'STUDENT') {
+        unlockGate(license);
+    } else {
+        lockGate();
+    }
+
+    // 2. INIT FIREBASE
+    if (!firebase.apps.length) {
+        try {
             firebase.initializeApp({
-                apiKey: "AIzaSyCX.........",
-                authDomain: "cfh-demo.firebaseapp.com",
-                projectId: "cfh-demo",
-                storageBucket: "cfh-demo.appspot.com"
+                // Placeholder - User must maintain this config
+                apiKey: "PASTE_YOUR_API_KEY",
+                projectId: "cfh-demo"
             });
-        }
-    } catch (e) {
-        console.log("Firebase not configured: " + e);
+        } catch (e) { console.log(e); }
+    }
+});
+
+// GATEKEEPING LOGIC
+function lockGate() {
+    document.getElementById('main-terminal').style.display = 'none';
+    document.getElementById('paywall-overlay').style.display = 'flex';
+}
+
+function unlockGate(type) {
+    document.getElementById('paywall-overlay').style.display = 'none';
+    document.getElementById('main-terminal').style.display = 'flex';
+
+    if (type === 'ADMIN') {
+        enableAdminTools();
     }
 
     loadFeed();
-});
+}
 
+function enableAdminTools() {
+    // Enable CTRL+M
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key === 'm') {
+            document.getElementById('admin-terminal').style.display = 'block';
+        }
+    });
+    // Visual Cue
+    document.querySelector('body').style.border = "1px solid #00FF41";
+}
+
+// ACCESS RESTORATION (Key Entry)
+function verifyMasterKey() {
+    const input = document.getElementById('master-key-input').value;
+
+    if (input === MASTER_KEY_HASH) {
+        localStorage.setItem('cfh_license_type', 'ADMIN');
+        unlockGate('ADMIN');
+        alert("WELCOME, OPERATOR.");
+    } else {
+        alert("ACCESS DENIED.");
+    }
+}
+
+// RAZORPAY INTEGRATION
+function startPayment() {
+    var options = {
+        "key": RAZORPAY_KEY,
+        "amount": 9900,
+        "currency": "INR",
+        "name": "The Construct",
+        "description": "Linguistic Access License",
+        "image": "https://clarityforhumans.com/assets/icon.png",
+        "handler": function (response) {
+            // Success
+            localStorage.setItem('cfh_license_type', 'STUDENT');
+            unlockGate('STUDENT');
+        },
+        "theme": { "color": "#00FF41" }
+    };
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+}
+
+// FEED LOGIC
 function loadFeed() {
     const feed = document.getElementById('feed-container');
     const db = firebase.firestore();
 
-    db.collection('construct_feed') // New Collection Name
+    db.collection('construct_feed')
         .orderBy('timestamp', 'desc')
-        .limit(20)
+        .limit(30)
         .onSnapshot((snapshot) => {
             if (snapshot.empty) {
-                feed.innerHTML = `<div style="text-align:center; padding:2rem; color:#005500;">[ NO DATA FOUND IN SECTOR ]</div>`;
+                feed.innerHTML = `<div style="text-align:center; padding:2rem; color:#005500;">[ NO DATA FOUND ]</div>`;
                 return;
             }
 
-            feed.innerHTML = ""; // Clear loader
+            feed.innerHTML = "";
 
             snapshot.forEach(doc => {
                 const data = doc.data();
                 const card = document.createElement('div');
                 card.className = 'data-card';
 
-                const date = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleString() : "UNKNOWN_TIME";
+                const date = data.timestamp ? new Date(data.timestamp.toDate()).toLocaleDateString() : "##-##-####";
 
                 card.innerHTML = `
                 <div class="card-header">
-                    <span>TYPE: ${data.category}</span>
-                    <span>ID: ${doc.id.substring(0, 6)}</span>
+                    <span>SECTOR: ${data.category}</span>
+                    <span>// ${date}</span>
                 </div>
                 <div class="card-content">${formatContent(data.content)}</div>
-                <div class="card-footer">
-                    UPLOADED: ${date}
-                </div>
               `;
                 feed.appendChild(card);
             });
-        }, (error) => {
-            console.error("Feed Error:", error);
-            feed.innerHTML = `<div style="color:red; text-align:center;">[ SYSTEM FAILURE: CHECK CONSOLE ]</div>`;
         });
 }
 
 function formatContent(text) {
-    // Simple formatter: Handles newlines and mimics code blocks
     return text.replace(/\n/g, "<br>");
 }
 
-// ADMIN UPLOAD FUNCTION
+// ADMIN UPLOAD
 function uploadData() {
     const category = document.getElementById('post-category').value;
     const content = document.getElementById('post-content').value;
     const status = document.getElementById('upload-status');
 
-    if (!content) {
-        alert("DATA EMPTY.");
-        return;
-    }
+    if (!content) { alert("EMPTY."); return; }
 
-    status.innerText = "UPLOADING...";
-    status.style.color = "yellow";
+    status.innerText = "TRANSMITTING...";
 
     const db = firebase.firestore();
     db.collection('construct_feed').add({
@@ -113,14 +150,8 @@ function uploadData() {
         content: content,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(() => {
-        status.innerText = "UPLOAD COMPLETE.";
-        status.style.color = "#00FF41";
-        document.getElementById('post-content').value = ""; // Clear
-        setTimeout(() => {
-            document.getElementById('admin-terminal').style.display = 'none'; // Close
-        }, 1000);
-    }).catch((error) => {
-        status.innerText = "ERROR: " + error.message;
-        status.style.color = "red";
+        status.innerText = "UPLOAD SUCCESSFUL.";
+        document.getElementById('post-content').value = "";
+        setTimeout(() => { document.getElementById('admin-terminal').style.display = 'none'; }, 1000);
     });
 }

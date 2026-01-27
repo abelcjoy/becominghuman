@@ -18,7 +18,7 @@
 <body>
 
     <!-- VISUAL TERMINAL -->
-    <div id="main-terminal">
+    <div id="main-terminal" style="display:none;"> <!-- Hidden by default, unlocked by JS -->
         <header>
             <h1>Don't Worry.</h1>
             <div style="font-size: 0.8rem; color: #008F11; margin-top: 1rem; line-height: 1.5;">
@@ -38,6 +38,30 @@
             <div style="text-align: center; margin-top: 5rem; color: #008F11;">
                 [ WAITING FOR SIGNAL INPUT... ]<br><br>
                 <span class="cursor-blink">_</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYWALL OVERLAY -->
+    <div id="paywall-overlay"
+        style="display:flex; position:fixed; inset:0; background:#000; z-index:50; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+        <h1 style="color:#00FF41; margin-bottom:1rem; text-shadow:0 0 20px #00FF41;">ACCESS RESTRICTED</h1>
+        <p style="color:#008F11; max-width:300px; margin-bottom:2rem; line-height:1.6;">
+            This node contains restricted linguistic data.
+            <br>Clearance required for neural upload.
+        </p>
+
+        <button class="btn" onclick="startPayment()" style="margin-bottom:2rem;">ACQUIRE LICENSE [₹99]</button>
+
+        <div style="margin-top:2rem;">
+            <p style="font-size:0.7rem; color:#005500; cursor:pointer;"
+                onclick="document.getElementById('master-input-area').style.display='block'">> ALREADY HAVE A KEY?</p>
+            <div id="master-input-area" style="display:none; margin-top:1rem;">
+                <input type="password" id="master-key-input" class="admin-input" placeholder="ENTER ACCESS HASH"
+                    style="width:200px; text-align:center;">
+                <br>
+                <button class="btn" style="padding:0.5rem 1rem; font-size:0.7rem;"
+                    onclick="verifyMasterKey()">AUTHENTICATE</button>
             </div>
         </div>
     </div>
